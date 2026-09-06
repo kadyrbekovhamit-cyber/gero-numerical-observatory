@@ -1,0 +1,68 @@
+1
+00:00:00,000 --> 00:00:05,298
+Can a reference implementation lose
+numerical accuracy? Yes. GERO tests the
+
+2
+00:00:05,298 --> 00:00:09,633
+mathematical contract as well as comparing
+the two outputs.
+
+3
+00:00:10,133 --> 00:00:15,258
+We ran one hundred twenty-three synthetic
+graphs with runtime optimizations
+
+4
+00:00:15,258 --> 00:00:20,383
+off and on. Two hundred thirty-two
+evaluations passed. Fourteen divergences
+
+5
+00:00:20,383 --> 00:00:22,433
+came from seven graphs.
+
+6
+00:00:22,933 --> 00:00:28,777
+All fourteen flagged archives reproduced. We
+also checked the seven graph
+
+7
+00:00:28,777 --> 00:00:31,433
+formulas with eighty-digit decimal
+calculations.
+
+8
+00:00:31,933 --> 00:00:37,302
+One layer normalization graph returned
+seventeen non-finite values out of
+
+9
+00:00:37,302 --> 00:00:42,133
+sixty-eight in ONNX Runtime. The
+high-precision calculation was finite.
+
+10
+00:00:42,633 --> 00:00:48,202
+In other cases, the official reference
+evaluator produced non-finite values.
+
+11
+00:00:48,202 --> 00:00:52,100
+A disagreement needs investigation before
+assigning blame.
+
+12
+00:00:52,600 --> 00:00:58,275
+These are version-specific observations. We
+have not established new bugs or
+
+13
+00:00:58,275 --> 00:01:03,433
+regressions between versions. Quantize
+Linear is excluded from this benchmark.
+
+14
+00:01:03,933 --> 00:01:10,400
+Explore the tolerances, test graphs, and
+reproducible reports at gero dot uz.

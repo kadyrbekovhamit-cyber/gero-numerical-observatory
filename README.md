@@ -2,7 +2,7 @@
 
 A reproducible CPU benchmark for mathematical contracts in ONNX graphs. It runs identical models in **ONNX Runtime** and the official **ONNX ReferenceEvaluator**, checks invariants, preserves artifacts and exports a filterable static dashboard.
 
-[Interactive reports](https://www.gero.uz/stability/) · [Publication and limits](https://www.gero.uz/research/articles/onnx-numerical-observatory-reproduced-snapshot.html) · [Measured snapshot](benchmarks/2026-09-06/latest.json) · [Reverification](benchmarks/2026-09-06/reverification.json)
+[71-second video](https://www.youtube.com/shorts/KTLC9_FomBs) · [Interactive reports](https://www.gero.uz/stability/) · [Publication and limits](https://www.gero.uz/research/articles/onnx-numerical-observatory-reproduced-snapshot.html) · [Measured snapshot](benchmarks/2026-09-06/latest.json) · [Reverification](benchmarks/2026-09-06/reverification.json)
 
 ## Published snapshot, 6 September 2026
 

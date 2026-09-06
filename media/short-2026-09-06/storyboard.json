@@ -1,0 +1,58 @@
+[
+  {
+    "title": "Check the\nreference.",
+    "label": "A QUESTION FOR ML ENGINEERS",
+    "source": "S1\u2013S4",
+    "speech": "Can a reference implementation lose numerical accuracy? Yes. GERO tests the mathematical contract as well as comparing the two outputs.",
+    "caption": "Compare the outputs.\nTest the contract.",
+    "kind": "intro"
+  },
+  {
+    "title": "246 evaluations.",
+    "label": "ONE DOCUMENTED CPU SNAPSHOT",
+    "source": "S1",
+    "speech": "We ran one hundred twenty-three synthetic graphs with runtime optimizations off and on. Two hundred thirty-two evaluations passed. Fourteen divergences came from seven graphs.",
+    "caption": "123 graphs \u00d7 2 optimization settings",
+    "kind": "counts"
+  },
+  {
+    "title": "14 out of 14.",
+    "label": "REPLAY THE EVIDENCE",
+    "source": "S2",
+    "speech": "All fourteen flagged archives reproduced. We also checked the seven graph formulas with eighty-digit decimal calculations.",
+    "caption": "Algorithmically independent check.\nSame project; not third-party validation.",
+    "kind": "replay"
+  },
+  {
+    "title": "17 non-finite\noutputs.",
+    "label": "LAYER NORMALIZATION \u00b7 FLOAT32",
+    "source": "S2",
+    "speech": "One layer normalization graph returned seventeen non-finite values out of sixty-eight in ONNX Runtime. The high-precision calculation was finite.",
+    "caption": "One graph \u00b7 [4, 17] \u00b7 large offset\nONNX Runtime 1.22.1 \u00b7 CPU",
+    "kind": "layer"
+  },
+  {
+    "title": "The reference\ncan fail, too.",
+    "label": "LOG SOFTMAX \u00b7 FLOAT32",
+    "source": "S2",
+    "speech": "In other cases, the official reference evaluator produced non-finite values. A disagreement needs investigation before assigning blame.",
+    "caption": "LogSoftmax / random-022\nReference: 458 non-finite / 508 outputs",
+    "kind": "reference"
+  },
+  {
+    "title": "Keep the\nversion boundary.",
+    "label": "WHAT THE EVIDENCE SUPPORTS",
+    "source": "S1\u2013S3",
+    "speech": "These are version-specific observations. We have not established new bugs or regressions between versions. Quantize Linear is excluded from this benchmark.",
+    "caption": "ONNX 1.19.0 \u00b7 ORT 1.22.1\nNumPy 2.2.6 \u00b7 macOS arm64 CPU",
+    "kind": "scope"
+  },
+  {
+    "title": "Inspect.\nDownload.\nReplay.",
+    "label": "GERO NUMERICAL OBSERVATORY",
+    "source": "S1\u2013S3",
+    "speech": "Explore the tolerances, test graphs, and reproducible reports at gero dot uz.",
+    "caption": "gero.uz/stability\nSources and code in the description.",
+    "kind": "end"
+  }
+]
