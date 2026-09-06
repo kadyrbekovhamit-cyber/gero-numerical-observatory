@@ -1,0 +1,513 @@
+{
+  "artifacts": {
+    "bundle": "observations/8f10cf91a456d0d76b0036c8c6a134930adfef0e4a28efbcf2d8d01294892374/reproducer.zip",
+    "bundle_sha256": "9a1bc994fb0b008f4c05deb2ce1ac796daa9e87cf8623097bac0df483ccb44d0",
+    "case": "artifacts/ce11d7866f5a48c828c12ef81478be3863df27611146e39cbcbca5c41b258a47/case.json",
+    "inputs": "artifacts/ce11d7866f5a48c828c12ef81478be3863df27611146e39cbcbca5c41b258a47/inputs.npz",
+    "manifest": "artifacts/ce11d7866f5a48c828c12ef81478be3863df27611146e39cbcbca5c41b258a47/manifest.json",
+    "model": "artifacts/ce11d7866f5a48c828c12ef81478be3863df27611146e39cbcbca5c41b258a47/model.onnx",
+    "outputs": "observations/8f10cf91a456d0d76b0036c8c6a134930adfef0e4a28efbcf2d8d01294892374/outputs.npz"
+  },
+  "candidate_group": "2f0fa00b7f8b6a39d17a6f0f11bbed275d9aa70f6797889b475cd90e83f711eb",
+  "case_id": "ce11d7866f5a48c828c12ef81478be3863df27611146e39cbcbca5c41b258a47",
+  "category": "metrics",
+  "checks": [
+    {
+      "backend": "reference",
+      "name": "finite_output",
+      "passed": true
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        1
+      ],
+      "backend": "reference",
+      "elements": 4,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        1
+      ],
+      "first_mismatch": null,
+      "max_abs": 9.5367431640625e-07,
+      "max_budget_ratio": 0.007699296521436273,
+      "max_rel": 7.761961143312038e-08,
+      "max_ulp": 1,
+      "mismatched": 0,
+      "name": "mse_float64_oracle",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "backend": "reference",
+      "name": "mse_nonnegative",
+      "passed": true
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        1
+      ],
+      "backend": "reference",
+      "elements": 4,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        1
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_partition",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        1
+      ],
+      "backend": "reference",
+      "elements": 4,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        1
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_permutation",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        1
+      ],
+      "backend": "reference",
+      "elements": 4,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        1
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_reshape",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        8,
+        1
+      ],
+      "backend": "reference",
+      "elements": 8,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        8,
+        1
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_duplicate",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        1
+      ],
+      "backend": "reference",
+      "elements": 4,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        1
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "equivalent_graph",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "backend": "ort",
+      "name": "finite_output",
+      "passed": true
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        1
+      ],
+      "backend": "ort",
+      "elements": 4,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        1
+      ],
+      "first_mismatch": null,
+      "max_abs": 1.9073486328125e-06,
+      "max_budget_ratio": 0.015398593042872546,
+      "max_rel": 1.5523922286624076e-07,
+      "max_ulp": 2,
+      "mismatched": 0,
+      "name": "mse_float64_oracle",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "backend": "ort",
+      "name": "mse_nonnegative",
+      "passed": true
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        1
+      ],
+      "backend": "ort",
+      "elements": 4,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        1
+      ],
+      "first_mismatch": null,
+      "max_abs": 9.5367431640625e-07,
+      "max_budget_ratio": 0.01155515571635402,
+      "max_rel": 1.169688048876117e-07,
+      "max_ulp": 1,
+      "mismatched": 0,
+      "name": "batch_partition",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        1
+      ],
+      "backend": "ort",
+      "elements": 4,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        1
+      ],
+      "first_mismatch": null,
+      "max_abs": 9.5367431640625e-07,
+      "max_budget_ratio": 0.01155515571635402,
+      "max_rel": 1.169688048876117e-07,
+      "max_ulp": 1,
+      "mismatched": 0,
+      "name": "batch_permutation",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        1
+      ],
+      "backend": "ort",
+      "elements": 4,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        1
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_reshape",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        8,
+        1
+      ],
+      "backend": "ort",
+      "elements": 8,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        8,
+        1
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_duplicate",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        1
+      ],
+      "backend": "ort",
+      "elements": 4,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        1
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "equivalent_graph",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    }
+  ],
+  "comparison": {
+    "actual_dtype": "float32",
+    "actual_shape": [
+      4,
+      1
+    ],
+    "elements": 4,
+    "expected_dtype": "float32",
+    "expected_shape": [
+      4,
+      1
+    ],
+    "first_mismatch": null,
+    "max_abs": 9.5367431640625e-07,
+    "max_budget_ratio": 0.011555157051570411,
+    "max_rel": 1.1696881856931461e-07,
+    "max_ulp": 1,
+    "mismatched": 0,
+    "nonfinite": 0,
+    "numerical_divergence": false,
+    "passed": true,
+    "reason": null,
+    "tolerance": {
+      "atol": 1e-06,
+      "rtol": 1e-05
+    }
+  },
+  "comparison_key": "6f97644250005bd97ac58ef8a5a4c6f2ecfa353b2527470d4042d5329f5577be",
+  "contract": "mse",
+  "environment": {
+    "dependencies": {
+      "flatbuffers": "25.12.19",
+      "ml_dtypes": "0.6.0",
+      "numpy": "2.2.6",
+      "onnx": "1.19.0",
+      "onnxruntime": "1.22.1",
+      "packaging": "26.3",
+      "protobuf": "7.36.1",
+      "sympy": "1.14.0"
+    },
+    "deterministic_compute": true,
+    "gero_version": "0.1.0",
+    "machine": "arm64",
+    "numpy": "2.2.6",
+    "onnx": "1.19.0",
+    "onnxruntime": "1.22.1",
+    "ort_build": "ORT Build Info: git-branch=HEAD, git-commit-id=89746dc19a, build type=Release, cmake cxx flags: -DNDEBUG -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -O3 -pipe -ffunction-sections -fdata-sections -fvisibility=hidden -fvisibility-inlines-hidden",
+    "platform": "macOS-15.5-arm64-arm-64bit",
+    "processor": "arm (CPU model unavailable)",
+    "provider": "CPUExecutionProvider",
+    "python": "3.12.13",
+    "reference_optimized": false,
+    "source_digest": "79a49f45e5b7f5c2e1a21debe1ef3d85383fcb8e6152089619073e800cac7c1f",
+    "threads": 1
+  },
+  "errors": [],
+  "inputs": {
+    "target": {
+      "dtype": "float32",
+      "shape": [
+        4,
+        78
+      ]
+    },
+    "x": {
+      "dtype": "float32",
+      "shape": [
+        4,
+        78
+      ]
+    }
+  },
+  "ir_version": 10,
+  "name": "MSE/random-019/float32/4x78/seed-20260906",
+  "observation_id": "8f10cf91a456d0d76b0036c8c6a134930adfef0e4a28efbcf2d8d01294892374",
+  "operation": "MSE",
+  "operators": [
+    "Mul",
+    "ReduceMean",
+    "Sub"
+  ],
+  "opset": 19,
+  "optimization": "all",
+  "output_hash": "966afb910c85dcafae24be609746657133750a135e80904bfad8c1fd2df8979f",
+  "outputs": {},
+  "parameters": {},
+  "regression": "not_assessed",
+  "seed": 20260906,
+  "status": "pass",
+  "timings": {
+    "ort": {
+      "median_ms": 0.004458,
+      "p95_ms": 0.0050294,
+      "repeats": 7,
+      "samples_ms": [
+        0.005,
+        0.005042,
+        0.004959,
+        0.004458,
+        0.00425,
+        0.004292,
+        0.004292
+      ],
+      "scope": "synchronous run including Python overhead; session construction excluded",
+      "warmup": 2
+    },
+    "reference": {
+      "median_ms": 0.019125,
+      "p95_ms": 0.020829300000000002,
+      "repeats": 7,
+      "samples_ms": [
+        0.021042,
+        0.020333,
+        0.019583,
+        0.019125,
+        0.019083,
+        0.018667,
+        0.018875
+      ],
+      "scope": "synchronous run including Python overhead; session construction excluded",
+      "warmup": 2
+    }
+  },
+  "tolerance": {
+    "atol": 1e-06,
+    "rtol": 1e-05
+  },
+  "variant": "random-019",
+  "warnings": []
+}

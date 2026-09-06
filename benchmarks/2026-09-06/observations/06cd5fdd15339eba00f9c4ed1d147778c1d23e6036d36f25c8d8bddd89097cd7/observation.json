@@ -1,0 +1,513 @@
+{
+  "artifacts": {
+    "bundle": "observations/06cd5fdd15339eba00f9c4ed1d147778c1d23e6036d36f25c8d8bddd89097cd7/reproducer.zip",
+    "bundle_sha256": "b70c0b6972cef44e9c54a33a9ea6bf57bd2caccdd0b8d5fae9b9c08f2608b094",
+    "case": "artifacts/645d119f64a054c15055aecbc532e9f9e4266cfa268b6c3c8876d940501d3931/case.json",
+    "inputs": "artifacts/645d119f64a054c15055aecbc532e9f9e4266cfa268b6c3c8876d940501d3931/inputs.npz",
+    "manifest": "artifacts/645d119f64a054c15055aecbc532e9f9e4266cfa268b6c3c8876d940501d3931/manifest.json",
+    "model": "artifacts/645d119f64a054c15055aecbc532e9f9e4266cfa268b6c3c8876d940501d3931/model.onnx",
+    "outputs": "observations/06cd5fdd15339eba00f9c4ed1d147778c1d23e6036d36f25c8d8bddd89097cd7/outputs.npz"
+  },
+  "candidate_group": "3ed6a8ae37e922bdf726cfa8755a8f423e7019e832cb21e01b47a4e72682a1d1",
+  "case_id": "645d119f64a054c15055aecbc532e9f9e4266cfa268b6c3c8876d940501d3931",
+  "category": "metrics",
+  "checks": [
+    {
+      "backend": "reference",
+      "name": "finite_output",
+      "passed": true
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        1
+      ],
+      "backend": "reference",
+      "elements": 4,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        1
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0625,
+      "max_budget_ratio": 0.012486940845090682,
+      "max_rel": 1.2486943339870247e-07,
+      "max_ulp": 2,
+      "mismatched": 0,
+      "name": "mse_float64_oracle",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "backend": "reference",
+      "name": "mse_nonnegative",
+      "passed": true
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        1
+      ],
+      "backend": "reference",
+      "elements": 4,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        1
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_partition",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        1
+      ],
+      "backend": "reference",
+      "elements": 4,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        1
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_permutation",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        1
+      ],
+      "backend": "reference",
+      "elements": 4,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        1
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_reshape",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        8,
+        1
+      ],
+      "backend": "reference",
+      "elements": 8,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        8,
+        1
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_duplicate",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        1
+      ],
+      "backend": "reference",
+      "elements": 4,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        1
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "equivalent_graph",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "backend": "ort",
+      "name": "finite_output",
+      "passed": true
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        1
+      ],
+      "backend": "ort",
+      "elements": 4,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        1
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0625,
+      "max_budget_ratio": 0.009952564485252967,
+      "max_rel": 9.952566070109857e-08,
+      "max_ulp": 1,
+      "mismatched": 0,
+      "name": "mse_float64_oracle",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "backend": "ort",
+      "name": "mse_nonnegative",
+      "passed": true
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        1
+      ],
+      "backend": "ort",
+      "elements": 4,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        1
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.125,
+      "max_budget_ratio": 0.019905130951576925,
+      "max_rel": 1.9905134121291337e-07,
+      "max_ulp": 2,
+      "mismatched": 0,
+      "name": "batch_partition",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        1
+      ],
+      "backend": "ort",
+      "elements": 4,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        1
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.125,
+      "max_budget_ratio": 0.019905130951576925,
+      "max_rel": 1.9905134121291337e-07,
+      "max_ulp": 2,
+      "mismatched": 0,
+      "name": "batch_permutation",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        1
+      ],
+      "backend": "ort",
+      "elements": 4,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        1
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_reshape",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        8,
+        1
+      ],
+      "backend": "ort",
+      "elements": 8,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        8,
+        1
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_duplicate",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        1
+      ],
+      "backend": "ort",
+      "elements": 4,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        1
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "equivalent_graph",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    }
+  ],
+  "comparison": {
+    "actual_dtype": "float32",
+    "actual_shape": [
+      4,
+      1
+    ],
+    "elements": 4,
+    "expected_dtype": "float32",
+    "expected_shape": [
+      4,
+      1
+    ],
+    "first_mismatch": null,
+    "max_abs": 0.125,
+    "max_budget_ratio": 0.01873041360649169,
+    "max_rel": 1.8730417348661973e-07,
+    "max_ulp": 3,
+    "mismatched": 0,
+    "nonfinite": 0,
+    "numerical_divergence": false,
+    "passed": true,
+    "reason": null,
+    "tolerance": {
+      "atol": 1e-06,
+      "rtol": 1e-05
+    }
+  },
+  "comparison_key": "44b212683876fcab434c68406aed97fe720c89661e582829f74a22960bc8d948",
+  "contract": "mse",
+  "environment": {
+    "dependencies": {
+      "flatbuffers": "25.12.19",
+      "ml_dtypes": "0.6.0",
+      "numpy": "2.2.6",
+      "onnx": "1.19.0",
+      "onnxruntime": "1.22.1",
+      "packaging": "26.3",
+      "protobuf": "7.36.1",
+      "sympy": "1.14.0"
+    },
+    "deterministic_compute": true,
+    "gero_version": "0.1.0",
+    "machine": "arm64",
+    "numpy": "2.2.6",
+    "onnx": "1.19.0",
+    "onnxruntime": "1.22.1",
+    "ort_build": "ORT Build Info: git-branch=HEAD, git-commit-id=89746dc19a, build type=Release, cmake cxx flags: -DNDEBUG -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -O3 -pipe -ffunction-sections -fdata-sections -fvisibility=hidden -fvisibility-inlines-hidden",
+    "platform": "macOS-15.5-arm64-arm-64bit",
+    "processor": "arm (CPU model unavailable)",
+    "provider": "CPUExecutionProvider",
+    "python": "3.12.13",
+    "reference_optimized": false,
+    "source_digest": "79a49f45e5b7f5c2e1a21debe1ef3d85383fcb8e6152089619073e800cac7c1f",
+    "threads": 1
+  },
+  "errors": [],
+  "inputs": {
+    "target": {
+      "dtype": "float32",
+      "shape": [
+        4,
+        53
+      ]
+    },
+    "x": {
+      "dtype": "float32",
+      "shape": [
+        4,
+        53
+      ]
+    }
+  },
+  "ir_version": 10,
+  "name": "MSE/random-005/float32/4x53/seed-20260906",
+  "observation_id": "06cd5fdd15339eba00f9c4ed1d147778c1d23e6036d36f25c8d8bddd89097cd7",
+  "operation": "MSE",
+  "operators": [
+    "Mul",
+    "ReduceMean",
+    "Sub"
+  ],
+  "opset": 19,
+  "optimization": "disabled",
+  "output_hash": "ab7924fd290cef7a27b156483ef9e3bc56f83d5c0014cb961cc429554543621c",
+  "outputs": {},
+  "parameters": {},
+  "regression": "not_assessed",
+  "seed": 20260906,
+  "status": "pass",
+  "timings": {
+    "ort": {
+      "median_ms": 0.00425,
+      "p95_ms": 0.0046914,
+      "repeats": 7,
+      "samples_ms": [
+        0.004416,
+        0.004791,
+        0.004459,
+        0.00425,
+        0.004,
+        0.004041,
+        0.003875
+      ],
+      "scope": "synchronous run including Python overhead; session construction excluded",
+      "warmup": 2
+    },
+    "reference": {
+      "median_ms": 0.019458,
+      "p95_ms": 0.0215623,
+      "repeats": 7,
+      "samples_ms": [
+        0.021416,
+        0.02075,
+        0.019458,
+        0.018958,
+        0.018917,
+        0.021625,
+        0.019125
+      ],
+      "scope": "synchronous run including Python overhead; session construction excluded",
+      "warmup": 2
+    }
+  },
+  "tolerance": {
+    "atol": 1e-06,
+    "rtol": 1e-05
+  },
+  "variant": "random-005",
+  "warnings": []
+}

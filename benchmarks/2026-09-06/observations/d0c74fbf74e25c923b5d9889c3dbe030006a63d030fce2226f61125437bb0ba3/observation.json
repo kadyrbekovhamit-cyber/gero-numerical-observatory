@@ -1,0 +1,500 @@
+{
+  "artifacts": {
+    "bundle": "observations/d0c74fbf74e25c923b5d9889c3dbe030006a63d030fce2226f61125437bb0ba3/reproducer.zip",
+    "bundle_sha256": "3c1730906878922e3fe091755ca75777308d9574ed30d56c23ca98ed725c846d",
+    "case": "artifacts/d813fed155d60e1d98e3314fd012a8315222cb75f8b6610c01a5c9966e973a2b/case.json",
+    "inputs": "artifacts/d813fed155d60e1d98e3314fd012a8315222cb75f8b6610c01a5c9966e973a2b/inputs.npz",
+    "manifest": "artifacts/d813fed155d60e1d98e3314fd012a8315222cb75f8b6610c01a5c9966e973a2b/manifest.json",
+    "model": "artifacts/d813fed155d60e1d98e3314fd012a8315222cb75f8b6610c01a5c9966e973a2b/model.onnx",
+    "outputs": "observations/d0c74fbf74e25c923b5d9889c3dbe030006a63d030fce2226f61125437bb0ba3/outputs.npz"
+  },
+  "candidate_group": "5eb626ab5f17c5c921112ef67917dc96bd221e5806e584536772823e10a4a6f3",
+  "case_id": "d813fed155d60e1d98e3314fd012a8315222cb75f8b6610c01a5c9966e973a2b",
+  "category": "softmax",
+  "checks": [
+    {
+      "backend": "reference",
+      "name": "finite_output",
+      "passed": true
+    },
+    {
+      "backend": "reference",
+      "name": "probability_range",
+      "passed": true
+    },
+    {
+      "actual_dtype": "float64",
+      "actual_shape": [
+        4
+      ],
+      "backend": "reference",
+      "elements": 4,
+      "expected_dtype": "float64",
+      "expected_shape": [
+        4
+      ],
+      "first_mismatch": null,
+      "max_abs": 2.220446049250313e-16,
+      "max_budget_ratio": 0.00020185873175002848,
+      "max_rel": 2.220446049250313e-16,
+      "max_ulp": 1,
+      "mismatched": 0,
+      "name": "probability_mass",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-13,
+        "rtol": 1e-12
+      }
+    },
+    {
+      "actual_dtype": "float64",
+      "actual_shape": [
+        4,
+        17
+      ],
+      "backend": "reference",
+      "elements": 68,
+      "expected_dtype": "float64",
+      "expected_shape": [
+        4,
+        17
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_partition",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-13,
+        "rtol": 1e-12
+      }
+    },
+    {
+      "actual_dtype": "float64",
+      "actual_shape": [
+        4,
+        17
+      ],
+      "backend": "reference",
+      "elements": 68,
+      "expected_dtype": "float64",
+      "expected_shape": [
+        4,
+        17
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_permutation",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-13,
+        "rtol": 1e-12
+      }
+    },
+    {
+      "actual_dtype": "float64",
+      "actual_shape": [
+        4,
+        17
+      ],
+      "backend": "reference",
+      "elements": 68,
+      "expected_dtype": "float64",
+      "expected_shape": [
+        4,
+        17
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_reshape",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-13,
+        "rtol": 1e-12
+      }
+    },
+    {
+      "actual_dtype": "float64",
+      "actual_shape": [
+        8,
+        17
+      ],
+      "backend": "reference",
+      "elements": 136,
+      "expected_dtype": "float64",
+      "expected_shape": [
+        8,
+        17
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_duplicate",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-13,
+        "rtol": 1e-12
+      }
+    },
+    {
+      "actual_dtype": "float64",
+      "actual_shape": [
+        4,
+        17
+      ],
+      "backend": "reference",
+      "elements": 68,
+      "expected_dtype": "float64",
+      "expected_shape": [
+        4,
+        17
+      ],
+      "first_mismatch": null,
+      "max_abs": 4.440892098500626e-16,
+      "max_budget_ratio": 0.00015645269279148988,
+      "max_rel": 1.6216579613217228e-16,
+      "max_ulp": 1,
+      "mismatched": 0,
+      "name": "equivalent_graph",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-13,
+        "rtol": 1e-12
+      }
+    },
+    {
+      "backend": "ort",
+      "name": "finite_output",
+      "passed": true
+    },
+    {
+      "backend": "ort",
+      "name": "probability_range",
+      "passed": true
+    },
+    {
+      "actual_dtype": "float64",
+      "actual_shape": [
+        4
+      ],
+      "backend": "ort",
+      "elements": 4,
+      "expected_dtype": "float64",
+      "expected_shape": [
+        4
+      ],
+      "first_mismatch": null,
+      "max_abs": 2.220446049250313e-16,
+      "max_budget_ratio": 0.00020185873175002848,
+      "max_rel": 2.220446049250313e-16,
+      "max_ulp": 2,
+      "mismatched": 0,
+      "name": "probability_mass",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-13,
+        "rtol": 1e-12
+      }
+    },
+    {
+      "actual_dtype": "float64",
+      "actual_shape": [
+        4,
+        17
+      ],
+      "backend": "ort",
+      "elements": 68,
+      "expected_dtype": "float64",
+      "expected_shape": [
+        4,
+        17
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_partition",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-13,
+        "rtol": 1e-12
+      }
+    },
+    {
+      "actual_dtype": "float64",
+      "actual_shape": [
+        4,
+        17
+      ],
+      "backend": "ort",
+      "elements": 68,
+      "expected_dtype": "float64",
+      "expected_shape": [
+        4,
+        17
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_permutation",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-13,
+        "rtol": 1e-12
+      }
+    },
+    {
+      "actual_dtype": "float64",
+      "actual_shape": [
+        4,
+        17
+      ],
+      "backend": "ort",
+      "elements": 68,
+      "expected_dtype": "float64",
+      "expected_shape": [
+        4,
+        17
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_reshape",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-13,
+        "rtol": 1e-12
+      }
+    },
+    {
+      "actual_dtype": "float64",
+      "actual_shape": [
+        8,
+        17
+      ],
+      "backend": "ort",
+      "elements": 136,
+      "expected_dtype": "float64",
+      "expected_shape": [
+        8,
+        17
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_duplicate",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-13,
+        "rtol": 1e-12
+      }
+    },
+    {
+      "actual_dtype": "float64",
+      "actual_shape": [
+        4,
+        17
+      ],
+      "backend": "ort",
+      "elements": 68,
+      "expected_dtype": "float64",
+      "expected_shape": [
+        4,
+        17
+      ],
+      "first_mismatch": null,
+      "max_abs": 4.440892098500626e-16,
+      "max_budget_ratio": 0.00016397075130063183,
+      "max_rel": 1.7025714403490451e-16,
+      "max_ulp": 1,
+      "mismatched": 0,
+      "name": "equivalent_graph",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-13,
+        "rtol": 1e-12
+      }
+    }
+  ],
+  "comparison": {
+    "actual_dtype": "float64",
+    "actual_shape": [
+      4,
+      17
+    ],
+    "elements": 68,
+    "expected_dtype": "float64",
+    "expected_shape": [
+      4,
+      17
+    ],
+    "first_mismatch": null,
+    "max_abs": 4.440892098500626e-16,
+    "max_budget_ratio": 0.00015645269279148988,
+    "max_rel": 1.6216579613217228e-16,
+    "max_ulp": 1,
+    "mismatched": 0,
+    "nonfinite": 0,
+    "numerical_divergence": false,
+    "passed": true,
+    "reason": null,
+    "tolerance": {
+      "atol": 1e-13,
+      "rtol": 1e-12
+    }
+  },
+  "comparison_key": "94459997145008e2eeb669d02fd09ec63f744cd0f04a0179e8425eb733836434",
+  "contract": "log_probability",
+  "environment": {
+    "dependencies": {
+      "flatbuffers": "25.12.19",
+      "ml_dtypes": "0.6.0",
+      "numpy": "2.2.6",
+      "onnx": "1.19.0",
+      "onnxruntime": "1.22.1",
+      "packaging": "26.3",
+      "protobuf": "7.36.1",
+      "sympy": "1.14.0"
+    },
+    "deterministic_compute": true,
+    "gero_version": "0.1.0",
+    "machine": "arm64",
+    "numpy": "2.2.6",
+    "onnx": "1.19.0",
+    "onnxruntime": "1.22.1",
+    "ort_build": "ORT Build Info: git-branch=HEAD, git-commit-id=89746dc19a, build type=Release, cmake cxx flags: -DNDEBUG -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -O3 -pipe -ffunction-sections -fdata-sections -fvisibility=hidden -fvisibility-inlines-hidden",
+    "platform": "macOS-15.5-arm64-arm-64bit",
+    "processor": "arm (CPU model unavailable)",
+    "provider": "CPUExecutionProvider",
+    "python": "3.12.13",
+    "reference_optimized": false,
+    "source_digest": "79a49f45e5b7f5c2e1a21debe1ef3d85383fcb8e6152089619073e800cac7c1f",
+    "threads": 1
+  },
+  "errors": [],
+  "inputs": {
+    "x": {
+      "dtype": "float64",
+      "shape": [
+        4,
+        17
+      ]
+    }
+  },
+  "ir_version": 10,
+  "name": "LogSoftmax/large_offset/float64/4x17/seed-20260906",
+  "observation_id": "d0c74fbf74e25c923b5d9889c3dbe030006a63d030fce2226f61125437bb0ba3",
+  "operation": "LogSoftmax",
+  "operators": [
+    "LogSoftmax"
+  ],
+  "opset": 19,
+  "optimization": "all",
+  "output_hash": "b70451bd909fd112677baa7e7e3465b25f7d182580a19ab5a1d9aa5f7d6a7302",
+  "outputs": {},
+  "parameters": {},
+  "regression": "not_assessed",
+  "seed": 20260906,
+  "status": "pass",
+  "timings": {
+    "ort": {
+      "median_ms": 0.003417,
+      "p95_ms": 0.0038626,
+      "repeats": 7,
+      "samples_ms": [
+        0.003542,
+        0.004,
+        0.003458,
+        0.003417,
+        0.003375,
+        0.003083,
+        0.003166
+      ],
+      "scope": "synchronous run including Python overhead; session construction excluded",
+      "warmup": 2
+    },
+    "reference": {
+      "median_ms": 0.008666,
+      "p95_ms": 0.0096206,
+      "repeats": 7,
+      "samples_ms": [
+        0.009833,
+        0.009125,
+        0.008792,
+        0.008666,
+        0.0085,
+        0.008625,
+        0.008417
+      ],
+      "scope": "synchronous run including Python overhead; session construction excluded",
+      "warmup": 2
+    }
+  },
+  "tolerance": {
+    "atol": 1e-13,
+    "rtol": 1e-12
+  },
+  "variant": "large_offset",
+  "warnings": []
+}

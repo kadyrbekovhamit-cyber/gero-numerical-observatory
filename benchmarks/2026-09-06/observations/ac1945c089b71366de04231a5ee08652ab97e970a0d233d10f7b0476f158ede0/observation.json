@@ -1,0 +1,500 @@
+{
+  "artifacts": {
+    "bundle": "observations/ac1945c089b71366de04231a5ee08652ab97e970a0d233d10f7b0476f158ede0/reproducer.zip",
+    "bundle_sha256": "012f02cfdad1a2b903434d5a3903d882c8caf8c76fb421076643e3abb4cab6d5",
+    "case": "artifacts/69519cc6a7202843566eff6a39f7b045f43da9b27362b15608accd1cc75af42e/case.json",
+    "inputs": "artifacts/69519cc6a7202843566eff6a39f7b045f43da9b27362b15608accd1cc75af42e/inputs.npz",
+    "manifest": "artifacts/69519cc6a7202843566eff6a39f7b045f43da9b27362b15608accd1cc75af42e/manifest.json",
+    "model": "artifacts/69519cc6a7202843566eff6a39f7b045f43da9b27362b15608accd1cc75af42e/model.onnx",
+    "outputs": "observations/ac1945c089b71366de04231a5ee08652ab97e970a0d233d10f7b0476f158ede0/outputs.npz"
+  },
+  "candidate_group": "103e248d29653e5cebf56c68baf6552078b6c9c90c7b68afa7773b99d04a88be",
+  "case_id": "69519cc6a7202843566eff6a39f7b045f43da9b27362b15608accd1cc75af42e",
+  "category": "softmax",
+  "checks": [
+    {
+      "backend": "reference",
+      "name": "finite_output",
+      "passed": true
+    },
+    {
+      "backend": "reference",
+      "name": "probability_range",
+      "passed": true
+    },
+    {
+      "actual_dtype": "float64",
+      "actual_shape": [
+        4
+      ],
+      "backend": "reference",
+      "elements": 4,
+      "expected_dtype": "float64",
+      "expected_shape": [
+        4
+      ],
+      "first_mismatch": null,
+      "max_abs": 9.286291402510471e-08,
+      "max_budget_ratio": 0.008442083093191336,
+      "max_rel": 9.286291402510471e-08,
+      "max_ulp": 836434770,
+      "mismatched": 0,
+      "name": "probability_mass",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        39
+      ],
+      "backend": "reference",
+      "elements": 156,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        39
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_partition",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        39
+      ],
+      "backend": "reference",
+      "elements": 156,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        39
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_permutation",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        39
+      ],
+      "backend": "reference",
+      "elements": 156,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        39
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_reshape",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        8,
+        39
+      ],
+      "backend": "reference",
+      "elements": 312,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        8,
+        39
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_duplicate",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        39
+      ],
+      "backend": "reference",
+      "elements": 156,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        39
+      ],
+      "first_mismatch": null,
+      "max_abs": 3.814697265625e-06,
+      "max_budget_ratio": 0.015486293575569028,
+      "max_rel": 9.185993307636436e-07,
+      "max_ulp": 10,
+      "mismatched": 0,
+      "name": "equivalent_graph",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "backend": "ort",
+      "name": "finite_output",
+      "passed": true
+    },
+    {
+      "backend": "ort",
+      "name": "probability_range",
+      "passed": true
+    },
+    {
+      "actual_dtype": "float64",
+      "actual_shape": [
+        4
+      ],
+      "backend": "ort",
+      "elements": 4,
+      "expected_dtype": "float64",
+      "expected_shape": [
+        4
+      ],
+      "first_mismatch": null,
+      "max_abs": 7.279055536102419e-08,
+      "max_budget_ratio": 0.006617323214638562,
+      "max_rel": 7.279055536102419e-08,
+      "max_ulp": 655639036,
+      "mismatched": 0,
+      "name": "probability_mass",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        39
+      ],
+      "backend": "ort",
+      "elements": 156,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        39
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_partition",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        39
+      ],
+      "backend": "ort",
+      "elements": 156,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        39
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_permutation",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        39
+      ],
+      "backend": "ort",
+      "elements": 156,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        39
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_reshape",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        8,
+        39
+      ],
+      "backend": "ort",
+      "elements": 312,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        8,
+        39
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_duplicate",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        39
+      ],
+      "backend": "ort",
+      "elements": 156,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        39
+      ],
+      "first_mismatch": null,
+      "max_abs": 7.450580596923828e-09,
+      "max_budget_ratio": 0.0035895936073185894,
+      "max_rel": 9.185948585143456e-08,
+      "max_ulp": 1,
+      "mismatched": 0,
+      "name": "equivalent_graph",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    }
+  ],
+  "comparison": {
+    "actual_dtype": "float32",
+    "actual_shape": [
+      4,
+      39
+    ],
+    "elements": 156,
+    "expected_dtype": "float32",
+    "expected_shape": [
+      4,
+      39
+    ],
+    "first_mismatch": null,
+    "max_abs": 3.814697265625e-06,
+    "max_budget_ratio": 0.08207735595051585,
+    "max_rel": 4.8685764530473105e-06,
+    "max_ulp": 53,
+    "mismatched": 0,
+    "nonfinite": 0,
+    "numerical_divergence": false,
+    "passed": true,
+    "reason": null,
+    "tolerance": {
+      "atol": 1e-06,
+      "rtol": 1e-05
+    }
+  },
+  "comparison_key": "6ea0e47d0fc2e71f5f24a234abc40327bb159116f5e4cbe03a4819dcbe19dfbc",
+  "contract": "log_probability",
+  "environment": {
+    "dependencies": {
+      "flatbuffers": "25.12.19",
+      "ml_dtypes": "0.6.0",
+      "numpy": "2.2.6",
+      "onnx": "1.19.0",
+      "onnxruntime": "1.22.1",
+      "packaging": "26.3",
+      "protobuf": "7.36.1",
+      "sympy": "1.14.0"
+    },
+    "deterministic_compute": true,
+    "gero_version": "0.1.0",
+    "machine": "arm64",
+    "numpy": "2.2.6",
+    "onnx": "1.19.0",
+    "onnxruntime": "1.22.1",
+    "ort_build": "ORT Build Info: git-branch=HEAD, git-commit-id=89746dc19a, build type=Release, cmake cxx flags: -DNDEBUG -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -O3 -pipe -ffunction-sections -fdata-sections -fvisibility=hidden -fvisibility-inlines-hidden",
+    "platform": "macOS-15.5-arm64-arm-64bit",
+    "processor": "arm (CPU model unavailable)",
+    "provider": "CPUExecutionProvider",
+    "python": "3.12.13",
+    "reference_optimized": false,
+    "source_digest": "79a49f45e5b7f5c2e1a21debe1ef3d85383fcb8e6152089619073e800cac7c1f",
+    "threads": 1
+  },
+  "errors": [],
+  "inputs": {
+    "x": {
+      "dtype": "float32",
+      "shape": [
+        4,
+        39
+      ]
+    }
+  },
+  "ir_version": 10,
+  "name": "LogSoftmax/random-008/float32/4x39/seed-20260906",
+  "observation_id": "ac1945c089b71366de04231a5ee08652ab97e970a0d233d10f7b0476f158ede0",
+  "operation": "LogSoftmax",
+  "operators": [
+    "LogSoftmax"
+  ],
+  "opset": 19,
+  "optimization": "all",
+  "output_hash": "d754b5c80d936a75183eff80ee84196aaf5770db2d4aeba73483b33232ed146c",
+  "outputs": {},
+  "parameters": {},
+  "regression": "not_assessed",
+  "seed": 20260906,
+  "status": "pass",
+  "timings": {
+    "ort": {
+      "median_ms": 0.003083,
+      "p95_ms": 0.0038249999999999994,
+      "repeats": 7,
+      "samples_ms": [
+        0.003083,
+        0.004125,
+        0.003125,
+        0.003125,
+        0.00275,
+        0.003083,
+        0.002791
+      ],
+      "scope": "synchronous run including Python overhead; session construction excluded",
+      "warmup": 2
+    },
+    "reference": {
+      "median_ms": 0.009334,
+      "p95_ms": 0.0104669,
+      "repeats": 7,
+      "samples_ms": [
+        0.010667,
+        0.01,
+        0.009625,
+        0.009334,
+        0.00925,
+        0.009,
+        0.009042
+      ],
+      "scope": "synchronous run including Python overhead; session construction excluded",
+      "warmup": 2
+    }
+  },
+  "tolerance": {
+    "atol": 1e-06,
+    "rtol": 1e-05
+  },
+  "variant": "random-008",
+  "warnings": []
+}

@@ -1,0 +1,500 @@
+{
+  "artifacts": {
+    "bundle": "observations/50b2c7ea71e63afe0bb471c99b2f71169c5ac35ff6dbc9bddfa0348c5ff3a181/reproducer.zip",
+    "bundle_sha256": "0dca119804678e4067e3b476f7df006e573c77cec539db9fff522d6d3ce0acff",
+    "case": "artifacts/ccfb2f7d31b5d00ad5478735613b2aadf80ef23349e4421ab8a8292eb3e47e6e/case.json",
+    "inputs": "artifacts/ccfb2f7d31b5d00ad5478735613b2aadf80ef23349e4421ab8a8292eb3e47e6e/inputs.npz",
+    "manifest": "artifacts/ccfb2f7d31b5d00ad5478735613b2aadf80ef23349e4421ab8a8292eb3e47e6e/manifest.json",
+    "model": "artifacts/ccfb2f7d31b5d00ad5478735613b2aadf80ef23349e4421ab8a8292eb3e47e6e/model.onnx",
+    "outputs": "observations/50b2c7ea71e63afe0bb471c99b2f71169c5ac35ff6dbc9bddfa0348c5ff3a181/outputs.npz"
+  },
+  "candidate_group": "6e97e627526df7e7ab558073b1dccfbf767861bf02392fc0285040710b0d1a4e",
+  "case_id": "ccfb2f7d31b5d00ad5478735613b2aadf80ef23349e4421ab8a8292eb3e47e6e",
+  "category": "softmax",
+  "checks": [
+    {
+      "backend": "reference",
+      "name": "finite_output",
+      "passed": true
+    },
+    {
+      "backend": "reference",
+      "name": "probability_range",
+      "passed": true
+    },
+    {
+      "actual_dtype": "float64",
+      "actual_shape": [
+        4
+      ],
+      "backend": "reference",
+      "elements": 4,
+      "expected_dtype": "float64",
+      "expected_shape": [
+        4
+      ],
+      "first_mismatch": null,
+      "max_abs": 3.725290298461914e-09,
+      "max_budget_ratio": 0.0003386627544056285,
+      "max_rel": 3.725290298461914e-09,
+      "max_ulp": 16777216,
+      "mismatched": 0,
+      "name": "probability_mass",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        17
+      ],
+      "backend": "reference",
+      "elements": 68,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        17
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_partition",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        17
+      ],
+      "backend": "reference",
+      "elements": 68,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        17
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_permutation",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        17
+      ],
+      "backend": "reference",
+      "elements": 68,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        17
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_reshape",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        8,
+        17
+      ],
+      "backend": "reference",
+      "elements": 136,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        8,
+        17
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_duplicate",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        17
+      ],
+      "backend": "reference",
+      "elements": 68,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        17
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "equivalent_graph",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "backend": "ort",
+      "name": "finite_output",
+      "passed": true
+    },
+    {
+      "backend": "ort",
+      "name": "probability_range",
+      "passed": true
+    },
+    {
+      "actual_dtype": "float64",
+      "actual_shape": [
+        4
+      ],
+      "backend": "ort",
+      "elements": 4,
+      "expected_dtype": "float64",
+      "expected_shape": [
+        4
+      ],
+      "first_mismatch": null,
+      "max_abs": 3.725290298461914e-09,
+      "max_budget_ratio": 0.0003386627544056285,
+      "max_rel": 3.725290298461914e-09,
+      "max_ulp": 16777216,
+      "mismatched": 0,
+      "name": "probability_mass",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        17
+      ],
+      "backend": "ort",
+      "elements": 68,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        17
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_partition",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        17
+      ],
+      "backend": "ort",
+      "elements": 68,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        17
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_permutation",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        17
+      ],
+      "backend": "ort",
+      "elements": 68,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        17
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_reshape",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        8,
+        17
+      ],
+      "backend": "ort",
+      "elements": 136,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        8,
+        17
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_duplicate",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        17
+      ],
+      "backend": "ort",
+      "elements": 68,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        17
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "equivalent_graph",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    }
+  ],
+  "comparison": {
+    "actual_dtype": "float32",
+    "actual_shape": [
+      4,
+      17
+    ],
+    "elements": 68,
+    "expected_dtype": "float32",
+    "expected_shape": [
+      4,
+      17
+    ],
+    "first_mismatch": null,
+    "max_abs": 0.0,
+    "max_budget_ratio": 0.0,
+    "max_rel": 0.0,
+    "max_ulp": 0,
+    "mismatched": 0,
+    "nonfinite": 0,
+    "numerical_divergence": false,
+    "passed": true,
+    "reason": null,
+    "tolerance": {
+      "atol": 1e-06,
+      "rtol": 1e-05
+    }
+  },
+  "comparison_key": "c08484042e00e22a1abec3599565efb0613f645ca66a3635fc85d9152fbcbf5f",
+  "contract": "probability",
+  "environment": {
+    "dependencies": {
+      "flatbuffers": "25.12.19",
+      "ml_dtypes": "0.6.0",
+      "numpy": "2.2.6",
+      "onnx": "1.19.0",
+      "onnxruntime": "1.22.1",
+      "packaging": "26.3",
+      "protobuf": "7.36.1",
+      "sympy": "1.14.0"
+    },
+    "deterministic_compute": true,
+    "gero_version": "0.1.0",
+    "machine": "arm64",
+    "numpy": "2.2.6",
+    "onnx": "1.19.0",
+    "onnxruntime": "1.22.1",
+    "ort_build": "ORT Build Info: git-branch=HEAD, git-commit-id=89746dc19a, build type=Release, cmake cxx flags: -DNDEBUG -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -O3 -pipe -ffunction-sections -fdata-sections -fvisibility=hidden -fvisibility-inlines-hidden",
+    "platform": "macOS-15.5-arm64-arm-64bit",
+    "processor": "arm (CPU model unavailable)",
+    "provider": "CPUExecutionProvider",
+    "python": "3.12.13",
+    "reference_optimized": false,
+    "source_digest": "79a49f45e5b7f5c2e1a21debe1ef3d85383fcb8e6152089619073e800cac7c1f",
+    "threads": 1
+  },
+  "errors": [],
+  "inputs": {
+    "x": {
+      "dtype": "float32",
+      "shape": [
+        4,
+        17
+      ]
+    }
+  },
+  "ir_version": 10,
+  "name": "Softmax/constant/float32/4x17/seed-20260906",
+  "observation_id": "50b2c7ea71e63afe0bb471c99b2f71169c5ac35ff6dbc9bddfa0348c5ff3a181",
+  "operation": "Softmax",
+  "operators": [
+    "Softmax"
+  ],
+  "opset": 19,
+  "optimization": "disabled",
+  "output_hash": "4744852e52bd33335ed2c60bc090f957605ef873b3cf71f064b0c5393ddc5d5d",
+  "outputs": {},
+  "parameters": {},
+  "regression": "not_assessed",
+  "seed": 20260906,
+  "status": "pass",
+  "timings": {
+    "ort": {
+      "median_ms": 0.002792,
+      "p95_ms": 0.0032747999999999996,
+      "repeats": 7,
+      "samples_ms": [
+        0.002917,
+        0.003375,
+        0.003041,
+        0.002792,
+        0.002709,
+        0.002792,
+        0.0025
+      ],
+      "scope": "synchronous run including Python overhead; session construction excluded",
+      "warmup": 2
+    },
+    "reference": {
+      "median_ms": 0.008333,
+      "p95_ms": 0.009349999999999999,
+      "repeats": 7,
+      "samples_ms": [
+        0.0095,
+        0.009,
+        0.008458,
+        0.008333,
+        0.008167,
+        0.008042,
+        0.008
+      ],
+      "scope": "synchronous run including Python overhead; session construction excluded",
+      "warmup": 2
+    }
+  },
+  "tolerance": {
+    "atol": 1e-06,
+    "rtol": 1e-05
+  },
+  "variant": "constant",
+  "warnings": []
+}

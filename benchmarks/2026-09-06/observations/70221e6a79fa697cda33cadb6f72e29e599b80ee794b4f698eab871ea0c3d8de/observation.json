@@ -1,0 +1,470 @@
+{
+  "artifacts": {
+    "bundle": "observations/70221e6a79fa697cda33cadb6f72e29e599b80ee794b4f698eab871ea0c3d8de/reproducer.zip",
+    "bundle_sha256": "52988052d1eda3ea83f6aacf13fd3fbc590cf5080f62d0966994f650bfb7430e",
+    "case": "artifacts/54b87cc0e965d6e0cf5649919afec633a75e7f9469f0062c7372eee1d948adf0/case.json",
+    "inputs": "artifacts/54b87cc0e965d6e0cf5649919afec633a75e7f9469f0062c7372eee1d948adf0/inputs.npz",
+    "manifest": "artifacts/54b87cc0e965d6e0cf5649919afec633a75e7f9469f0062c7372eee1d948adf0/manifest.json",
+    "model": "artifacts/54b87cc0e965d6e0cf5649919afec633a75e7f9469f0062c7372eee1d948adf0/model.onnx",
+    "outputs": "observations/70221e6a79fa697cda33cadb6f72e29e599b80ee794b4f698eab871ea0c3d8de/outputs.npz"
+  },
+  "candidate_group": "a93c6868cc2c919c146528e443d355cc133883ed54b9612a736fd73cc3451ab2",
+  "case_id": "54b87cc0e965d6e0cf5649919afec633a75e7f9469f0062c7372eee1d948adf0",
+  "category": "masking",
+  "checks": [
+    {
+      "backend": "reference",
+      "name": "finite_output",
+      "passed": true
+    },
+    {
+      "backend": "reference",
+      "name": "probability_range",
+      "passed": true
+    },
+    {
+      "backend": "reference",
+      "name": "masked_entries_exact_zero",
+      "passed": true
+    },
+    {
+      "actual_dtype": "float64",
+      "actual_shape": [
+        4
+      ],
+      "backend": "reference",
+      "elements": 4,
+      "expected_dtype": "float64",
+      "expected_shape": [
+        4
+      ],
+      "first_mismatch": null,
+      "max_abs": 6.891787052154541e-08,
+      "max_budget_ratio": 0.0062652609565041276,
+      "max_rel": 6.891787052154541e-08,
+      "max_ulp": 310378496,
+      "mismatched": 0,
+      "name": "probability_mass",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        71
+      ],
+      "backend": "reference",
+      "elements": 284,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        71
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_partition",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        71
+      ],
+      "backend": "reference",
+      "elements": 284,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        71
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_permutation",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        71
+      ],
+      "backend": "reference",
+      "elements": 284,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        71
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_reshape",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        8,
+        71
+      ],
+      "backend": "reference",
+      "elements": 568,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        8,
+        71
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_duplicate",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "backend": "ort",
+      "name": "finite_output",
+      "passed": true
+    },
+    {
+      "backend": "ort",
+      "name": "probability_range",
+      "passed": true
+    },
+    {
+      "backend": "ort",
+      "name": "masked_entries_exact_zero",
+      "passed": true
+    },
+    {
+      "actual_dtype": "float64",
+      "actual_shape": [
+        4
+      ],
+      "backend": "ort",
+      "elements": 4,
+      "expected_dtype": "float64",
+      "expected_shape": [
+        4
+      ],
+      "first_mismatch": null,
+      "max_abs": 6.891787052154541e-08,
+      "max_budget_ratio": 0.0062652609565041276,
+      "max_rel": 6.891787052154541e-08,
+      "max_ulp": 310378496,
+      "mismatched": 0,
+      "name": "probability_mass",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        71
+      ],
+      "backend": "ort",
+      "elements": 284,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        71
+      ],
+      "first_mismatch": null,
+      "max_abs": 3.725290298461914e-09,
+      "max_budget_ratio": 0.0028378931361030904,
+      "max_rel": 1.191346582616371e-07,
+      "max_ulp": 1,
+      "mismatched": 0,
+      "name": "batch_partition",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        71
+      ],
+      "backend": "ort",
+      "elements": 284,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        71
+      ],
+      "first_mismatch": null,
+      "max_abs": 3.725290298461914e-09,
+      "max_budget_ratio": 0.0029221081592562155,
+      "max_rel": 1.3553216195144628e-07,
+      "max_ulp": 2,
+      "mismatched": 0,
+      "name": "batch_permutation",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        71
+      ],
+      "backend": "ort",
+      "elements": 284,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        71
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_reshape",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        8,
+        71
+      ],
+      "backend": "ort",
+      "elements": 568,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        8,
+        71
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_duplicate",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    }
+  ],
+  "comparison": {
+    "actual_dtype": "float32",
+    "actual_shape": [
+      4,
+      71
+    ],
+    "elements": 284,
+    "expected_dtype": "float32",
+    "expected_shape": [
+      4,
+      71
+    ],
+    "first_mismatch": null,
+    "max_abs": 3.725290298461914e-09,
+    "max_budget_ratio": 0.002969605058800615,
+    "max_rel": 1.4639217937843637e-07,
+    "max_ulp": 2,
+    "mismatched": 0,
+    "nonfinite": 0,
+    "numerical_divergence": false,
+    "passed": true,
+    "reason": null,
+    "tolerance": {
+      "atol": 1e-06,
+      "rtol": 1e-05
+    }
+  },
+  "comparison_key": "22b39efa7f2ac31f7f012c03d0134642a9ffc97f66bf1e0eb6487a70234c1154",
+  "contract": "masked_probability",
+  "environment": {
+    "dependencies": {
+      "flatbuffers": "25.12.19",
+      "ml_dtypes": "0.6.0",
+      "numpy": "2.2.6",
+      "onnx": "1.19.0",
+      "onnxruntime": "1.22.1",
+      "packaging": "26.3",
+      "protobuf": "7.36.1",
+      "sympy": "1.14.0"
+    },
+    "deterministic_compute": true,
+    "gero_version": "0.1.0",
+    "machine": "arm64",
+    "numpy": "2.2.6",
+    "onnx": "1.19.0",
+    "onnxruntime": "1.22.1",
+    "ort_build": "ORT Build Info: git-branch=HEAD, git-commit-id=89746dc19a, build type=Release, cmake cxx flags: -DNDEBUG -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -O3 -pipe -ffunction-sections -fdata-sections -fvisibility=hidden -fvisibility-inlines-hidden",
+    "platform": "macOS-15.5-arm64-arm-64bit",
+    "processor": "arm (CPU model unavailable)",
+    "provider": "CPUExecutionProvider",
+    "python": "3.12.13",
+    "reference_optimized": false,
+    "source_digest": "79a49f45e5b7f5c2e1a21debe1ef3d85383fcb8e6152089619073e800cac7c1f",
+    "threads": 1
+  },
+  "errors": [],
+  "inputs": {
+    "mask": {
+      "dtype": "bool",
+      "shape": [
+        4,
+        71
+      ]
+    },
+    "x": {
+      "dtype": "float32",
+      "shape": [
+        4,
+        71
+      ]
+    }
+  },
+  "ir_version": 10,
+  "name": "MaskedSoftmax/random-023/float32/4x71/seed-20260906",
+  "observation_id": "70221e6a79fa697cda33cadb6f72e29e599b80ee794b4f698eab871ea0c3d8de",
+  "operation": "MaskedSoftmax",
+  "operators": [
+    "Div",
+    "Equal",
+    "Exp",
+    "ReduceMax",
+    "ReduceSum",
+    "Sub",
+    "Where"
+  ],
+  "opset": 19,
+  "optimization": "all",
+  "output_hash": "3ac3cb5e2093db1cd1239117bbc9129a8e07e6de4d059a2a34729f51df9d30c0",
+  "outputs": {},
+  "parameters": {},
+  "regression": "not_assessed",
+  "seed": 20260906,
+  "status": "pass",
+  "timings": {
+    "ort": {
+      "median_ms": 0.007458,
+      "p95_ms": 0.0079205,
+      "repeats": 7,
+      "samples_ms": [
+        0.007958,
+        0.007833,
+        0.0075,
+        0.00725,
+        0.007458,
+        0.00725,
+        0.007084
+      ],
+      "scope": "synchronous run including Python overhead; session construction excluded",
+      "warmup": 2
+    },
+    "reference": {
+      "median_ms": 0.048333,
+      "p95_ms": 0.0501875,
+      "repeats": 7,
+      "samples_ms": [
+        0.05075,
+        0.048875,
+        0.048333,
+        0.047959,
+        0.048583,
+        0.044833,
+        0.045667
+      ],
+      "scope": "synchronous run including Python overhead; session construction excluded",
+      "warmup": 2
+    }
+  },
+  "tolerance": {
+    "atol": 1e-06,
+    "rtol": 1e-05
+  },
+  "variant": "random-023",
+  "warnings": [
+    {
+      "backend": "reference",
+      "message": "underflow encountered in exp"
+    }
+  ]
+}

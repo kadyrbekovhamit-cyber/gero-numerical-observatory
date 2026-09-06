@@ -1,0 +1,1 @@
+{"category":"metrics","contract":"cosine","inputs":{"target":{"dtype":"float32","shape":[4,92]},"x":{"dtype":"float32","shape":[4,92]}},"ir_version":10,"name":"CosineSimilarity/random-013/float32/4x92/seed-20260906","operation":"CosineSimilarity","operators":["Div","Max","Mul","ReduceSum","Sqrt"],"opset":19,"parameters":{"epsilon":1e-06},"seed":20260906,"variant":"random-013"}

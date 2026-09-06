@@ -1,0 +1,1 @@
+{"category":"normalization","contract":"layer_norm","inputs":{"x":{"dtype":"float32","shape":[4,17]}},"ir_version":10,"name":"LayerNormalization/large_offset/float32/4x17/seed-20260906","operation":"LayerNormalization","operators":["LayerNormalization"],"opset":19,"parameters":{"epsilon":1e-05},"seed":20260906,"variant":"large_offset"}

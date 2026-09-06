@@ -1,0 +1,1 @@
+{"category":"metrics","contract":"mse","inputs":{"target":{"dtype":"float32","shape":[4,125]},"x":{"dtype":"float32","shape":[4,125]}},"ir_version":10,"name":"MSE/random-012/float32/4x125/seed-20260906","operation":"MSE","operators":["Mul","ReduceMean","Sub"],"opset":19,"parameters":{},"seed":20260906,"variant":"random-012"}

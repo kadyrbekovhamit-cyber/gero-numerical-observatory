@@ -1,0 +1,1 @@
+{"category":"normalization","contract":"layer_norm","inputs":{"x":{"dtype":"float32","shape":[4,83]}},"ir_version":10,"name":"LayerNormalization/random-003/float32/4x83/seed-20260906","operation":"LayerNormalization","operators":["LayerNormalization"],"opset":19,"parameters":{"epsilon":1e-05},"seed":20260906,"variant":"random-003"}

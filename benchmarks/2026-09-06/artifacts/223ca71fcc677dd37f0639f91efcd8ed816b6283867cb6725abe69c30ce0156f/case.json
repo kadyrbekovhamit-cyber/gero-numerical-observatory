@@ -1,0 +1,1 @@
+{"category":"softmax","contract":"log_probability","inputs":{"x":{"dtype":"float32","shape":[4,17]}},"ir_version":10,"name":"LogSoftmax/large_offset/float32/4x17/seed-20260906","operation":"LogSoftmax","operators":["LogSoftmax"],"opset":19,"parameters":{},"seed":20260906,"variant":"large_offset"}

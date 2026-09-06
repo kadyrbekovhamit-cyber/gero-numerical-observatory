@@ -1,0 +1,1 @@
+{"category":"normalization","contract":"unit_norm","inputs":{"x":{"dtype":"float16","shape":[4,257]}},"ir_version":10,"name":"LpNormalization/wide/float16/4x257/seed-20260906","operation":"LpNormalization","operators":["LpNormalization"],"opset":19,"parameters":{},"seed":20260906,"variant":"wide"}

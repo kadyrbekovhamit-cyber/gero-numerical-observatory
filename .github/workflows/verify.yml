@@ -1,0 +1,37 @@
+name: Numerical contracts
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cpu:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, macos-14]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: python -m pip install -r requirements.lock
+      - name: Strict contract tests
+        run: python -m pytest -q
+      - name: Differential discovery benchmark
+        run: python -m gero_stability.cli run --output reports/ci --random-cases 24
+      - name: Export reviewable dashboard
+        if: always()
+        run: python -m gero_stability.cli export reports/ci/latest.json --site site
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gero-${{ matrix.os }}
+          path: |
+            reports/ci
+            site
+          retention-days: 30

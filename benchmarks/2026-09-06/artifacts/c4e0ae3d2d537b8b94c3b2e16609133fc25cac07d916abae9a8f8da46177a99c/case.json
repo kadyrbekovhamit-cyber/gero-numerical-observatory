@@ -1,0 +1,1 @@
+{"category":"softmax","contract":"probability","inputs":{"x":{"dtype":"float64","shape":[4,17]}},"ir_version":10,"name":"Softmax/tiny/float64/4x17/seed-20260906","operation":"Softmax","operators":["Softmax"],"opset":19,"parameters":{},"seed":20260906,"variant":"tiny"}

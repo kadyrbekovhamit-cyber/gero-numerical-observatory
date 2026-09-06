@@ -1,0 +1,509 @@
+{
+  "artifacts": {
+    "bundle": "observations/2be360bfde8f424274467cfb0915723891ca3a439ba7f7b429e89e0fc9485e59/reproducer.zip",
+    "bundle_sha256": "2939d81ea68070c0cb31d01886464dedba07aeac928f9406c04b55f759347f12",
+    "case": "artifacts/6e739d54f1eae43e8852f197450cf3c27d6a0ed62fab0cc7526e0699c3c9324c/case.json",
+    "inputs": "artifacts/6e739d54f1eae43e8852f197450cf3c27d6a0ed62fab0cc7526e0699c3c9324c/inputs.npz",
+    "manifest": "artifacts/6e739d54f1eae43e8852f197450cf3c27d6a0ed62fab0cc7526e0699c3c9324c/manifest.json",
+    "model": "artifacts/6e739d54f1eae43e8852f197450cf3c27d6a0ed62fab0cc7526e0699c3c9324c/model.onnx",
+    "outputs": "observations/2be360bfde8f424274467cfb0915723891ca3a439ba7f7b429e89e0fc9485e59/outputs.npz"
+  },
+  "candidate_group": "aec977c93f96d9177a5b9570d1a9a8f34a5f159f8959977d62a2091818bf0db4",
+  "case_id": "6e739d54f1eae43e8852f197450cf3c27d6a0ed62fab0cc7526e0699c3c9324c",
+  "category": "softmax",
+  "checks": [
+    {
+      "backend": "reference",
+      "name": "finite_output",
+      "passed": true
+    },
+    {
+      "backend": "reference",
+      "name": "probability_range",
+      "passed": true
+    },
+    {
+      "actual_dtype": "float64",
+      "actual_shape": [
+        4
+      ],
+      "backend": "reference",
+      "elements": 4,
+      "expected_dtype": "float64",
+      "expected_shape": [
+        4
+      ],
+      "first_mismatch": null,
+      "max_abs": 7.194103135432783e-08,
+      "max_budget_ratio": 0.006540093759484347,
+      "max_rel": 7.194103135432783e-08,
+      "max_ulp": 489357312,
+      "mismatched": 0,
+      "name": "probability_mass",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        85
+      ],
+      "backend": "reference",
+      "elements": 340,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        85
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_partition",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        85
+      ],
+      "backend": "reference",
+      "elements": 340,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        85
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_permutation",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        85
+      ],
+      "backend": "reference",
+      "elements": 340,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        85
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_reshape",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        8,
+        85
+      ],
+      "backend": "reference",
+      "elements": 680,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        8,
+        85
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_duplicate",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        85
+      ],
+      "backend": "reference",
+      "elements": 340,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        85
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "equivalent_graph",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "backend": "ort",
+      "name": "finite_output",
+      "passed": true
+    },
+    {
+      "backend": "ort",
+      "name": "probability_range",
+      "passed": true
+    },
+    {
+      "actual_dtype": "float64",
+      "actual_shape": [
+        4
+      ],
+      "backend": "ort",
+      "elements": 4,
+      "expected_dtype": "float64",
+      "expected_shape": [
+        4
+      ],
+      "first_mismatch": null,
+      "max_abs": 7.194103135432783e-08,
+      "max_budget_ratio": 0.006540093759484347,
+      "max_rel": 7.194103135432783e-08,
+      "max_ulp": 489357312,
+      "mismatched": 0,
+      "name": "probability_mass",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        85
+      ],
+      "backend": "ort",
+      "elements": 340,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        85
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_partition",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        85
+      ],
+      "backend": "ort",
+      "elements": 340,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        85
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_permutation",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        85
+      ],
+      "backend": "ort",
+      "elements": 340,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        85
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_reshape",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        8,
+        85
+      ],
+      "backend": "ort",
+      "elements": 680,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        8,
+        85
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_duplicate",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        85
+      ],
+      "backend": "ort",
+      "elements": 340,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        85
+      ],
+      "first_mismatch": null,
+      "max_abs": 2.1815820869163406e-39,
+      "max_budget_ratio": 2.1815820869163406e-33,
+      "max_rel": 9.804537851970274e+268,
+      "max_ulp": 1556829,
+      "mismatched": 0,
+      "name": "equivalent_graph",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    }
+  ],
+  "comparison": {
+    "actual_dtype": "float32",
+    "actual_shape": [
+      4,
+      85
+    ],
+    "elements": 340,
+    "expected_dtype": "float32",
+    "expected_shape": [
+      4,
+      85
+    ],
+    "first_mismatch": null,
+    "max_abs": 3.2311742677852644e-27,
+    "max_budget_ratio": 3.2311742677852644e-21,
+    "max_rel": 1.0,
+    "max_ulp": 1556829,
+    "mismatched": 0,
+    "nonfinite": 0,
+    "numerical_divergence": false,
+    "passed": true,
+    "reason": null,
+    "tolerance": {
+      "atol": 1e-06,
+      "rtol": 1e-05
+    }
+  },
+  "comparison_key": "72e9dda7cb1dd0997f68f1713f546af4d0a1e7e13844cb2a4acdbbe2adc8550c",
+  "contract": "probability",
+  "environment": {
+    "dependencies": {
+      "flatbuffers": "25.12.19",
+      "ml_dtypes": "0.6.0",
+      "numpy": "2.2.6",
+      "onnx": "1.19.0",
+      "onnxruntime": "1.22.1",
+      "packaging": "26.3",
+      "protobuf": "7.36.1",
+      "sympy": "1.14.0"
+    },
+    "deterministic_compute": true,
+    "gero_version": "0.1.0",
+    "machine": "arm64",
+    "numpy": "2.2.6",
+    "onnx": "1.19.0",
+    "onnxruntime": "1.22.1",
+    "ort_build": "ORT Build Info: git-branch=HEAD, git-commit-id=89746dc19a, build type=Release, cmake cxx flags: -DNDEBUG -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -O3 -pipe -ffunction-sections -fdata-sections -fvisibility=hidden -fvisibility-inlines-hidden",
+    "platform": "macOS-15.5-arm64-arm-64bit",
+    "processor": "arm (CPU model unavailable)",
+    "provider": "CPUExecutionProvider",
+    "python": "3.12.13",
+    "reference_optimized": false,
+    "source_digest": "79a49f45e5b7f5c2e1a21debe1ef3d85383fcb8e6152089619073e800cac7c1f",
+    "threads": 1
+  },
+  "errors": [],
+  "inputs": {
+    "x": {
+      "dtype": "float32",
+      "shape": [
+        4,
+        85
+      ]
+    }
+  },
+  "ir_version": 10,
+  "name": "Softmax/random-021/float32/4x85/seed-20260906",
+  "observation_id": "2be360bfde8f424274467cfb0915723891ca3a439ba7f7b429e89e0fc9485e59",
+  "operation": "Softmax",
+  "operators": [
+    "Softmax"
+  ],
+  "opset": 19,
+  "optimization": "disabled",
+  "output_hash": "e83e6e6e55b4303cbc6eab92557d664ebb17ae7c75e8eeabff28167f4ea300af",
+  "outputs": {},
+  "parameters": {},
+  "regression": "not_assessed",
+  "seed": 20260906,
+  "status": "pass",
+  "timings": {
+    "ort": {
+      "median_ms": 0.003084,
+      "p95_ms": 0.0036211,
+      "repeats": 7,
+      "samples_ms": [
+        0.00325,
+        0.003709,
+        0.003084,
+        0.003416,
+        0.003,
+        0.002875,
+        0.002958
+      ],
+      "scope": "synchronous run including Python overhead; session construction excluded",
+      "warmup": 2
+    },
+    "reference": {
+      "median_ms": 0.011209,
+      "p95_ms": 0.06644549999999994,
+      "repeats": 7,
+      "samples_ms": [
+        0.012458,
+        0.011458,
+        0.011209,
+        0.011125,
+        0.010959,
+        0.011,
+        0.089583
+      ],
+      "scope": "synchronous run including Python overhead; session construction excluded",
+      "warmup": 2
+    }
+  },
+  "tolerance": {
+    "atol": 1e-06,
+    "rtol": 1e-05
+  },
+  "variant": "random-021",
+  "warnings": [
+    {
+      "backend": "reference",
+      "message": "underflow encountered in divide"
+    },
+    {
+      "backend": "reference",
+      "message": "underflow encountered in exp"
+    }
+  ]
+}

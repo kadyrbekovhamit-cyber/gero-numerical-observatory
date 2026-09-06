@@ -1,0 +1,1 @@
+{"category":"quantization","contract":"dequantize","inputs":{"x":{"dtype":"uint8","shape":[4,17]}},"ir_version":10,"name":"DequantizeLinear/per_tensor/uint8/4x17/seed-20260906","operation":"DequantizeLinear","operators":["DequantizeLinear"],"opset":19,"parameters":{"per_axis":false},"seed":20260906,"variant":"per_tensor"}

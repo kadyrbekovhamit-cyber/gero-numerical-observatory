@@ -1,0 +1,1 @@
+{"category":"metrics","contract":"mse","inputs":{"target":{"dtype":"float16","shape":[4,17]},"x":{"dtype":"float16","shape":[4,17]}},"ir_version":10,"name":"MSE/tiny/float16/4x17/seed-20260906","operation":"MSE","operators":["Mul","ReduceMean","Sub"],"opset":19,"parameters":{},"seed":20260906,"variant":"tiny"}

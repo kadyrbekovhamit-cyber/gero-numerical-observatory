@@ -1,0 +1,1 @@
+{"category":"softmax","contract":"log_probability","inputs":{"x":{"dtype":"float32","shape":[4,127]}},"ir_version":10,"name":"LogSoftmax/random-022/float32/4x127/seed-20260906","operation":"LogSoftmax","operators":["LogSoftmax"],"opset":19,"parameters":{},"seed":20260906,"variant":"random-022"}

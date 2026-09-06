@@ -1,0 +1,554 @@
+{
+  "artifacts": {
+    "bundle": "observations/8a8ec2daccb7f2a2631ab966d45ed0183d082a9305300868f7eceea90e719024/reproducer.zip",
+    "bundle_sha256": "1e313d61407f2541b5ce3c7dfb82e1dc96f94e1e071dcd5acab9fba75f9e001f",
+    "case": "artifacts/ea6ee1fa428648655807b50b6ee7ce84519017e6b852c34b6f2a367537033014/case.json",
+    "inputs": "artifacts/ea6ee1fa428648655807b50b6ee7ce84519017e6b852c34b6f2a367537033014/inputs.npz",
+    "manifest": "artifacts/ea6ee1fa428648655807b50b6ee7ce84519017e6b852c34b6f2a367537033014/manifest.json",
+    "model": "artifacts/ea6ee1fa428648655807b50b6ee7ce84519017e6b852c34b6f2a367537033014/model.onnx",
+    "outputs": "observations/8a8ec2daccb7f2a2631ab966d45ed0183d082a9305300868f7eceea90e719024/outputs.npz"
+  },
+  "candidate_group": "2e7f18e5d825e764ea2890c1747ece69fa26764698875d70cd8577c904a17708",
+  "case_id": "ea6ee1fa428648655807b50b6ee7ce84519017e6b852c34b6f2a367537033014",
+  "category": "normalization",
+  "checks": [
+    {
+      "backend": "reference",
+      "name": "finite_output",
+      "passed": true
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        83
+      ],
+      "backend": "reference",
+      "elements": 332,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        83
+      ],
+      "first_mismatch": null,
+      "max_abs": 2.384185791015625e-07,
+      "max_budget_ratio": 0.01743071600870713,
+      "max_rel": 0.0003116543515307663,
+      "max_ulp": 4794,
+      "mismatched": 0,
+      "name": "centered_float64_oracle",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float64",
+      "actual_shape": [
+        4,
+        1
+      ],
+      "backend": "reference",
+      "elements": 4,
+      "expected_dtype": "float64",
+      "expected_shape": [
+        4,
+        1
+      ],
+      "first_mismatch": null,
+      "max_abs": 1.8407762047978338e-07,
+      "max_budget_ratio": 0.016738852809237422,
+      "max_rel": 1.8413235842348725e-07,
+      "max_ulp": 1658023806,
+      "mismatched": 0,
+      "name": "normalized_variance",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        83
+      ],
+      "backend": "reference",
+      "elements": 332,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        83
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_partition",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        83
+      ],
+      "backend": "reference",
+      "elements": 332,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        83
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_permutation",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        83
+      ],
+      "backend": "reference",
+      "elements": 332,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        83
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_reshape",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        8,
+        83
+      ],
+      "backend": "reference",
+      "elements": 664,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        8,
+        83
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_duplicate",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        83
+      ],
+      "backend": "reference",
+      "elements": 332,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        83
+      ],
+      "first_mismatch": null,
+      "max_abs": 2.384185791015625e-07,
+      "max_budget_ratio": 0.010991641252526538,
+      "max_rel": 1.1671343373956611e-07,
+      "max_ulp": 1,
+      "mismatched": 0,
+      "name": "equivalent_graph",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "backend": "ort",
+      "name": "finite_output",
+      "passed": true
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        83
+      ],
+      "backend": "ort",
+      "elements": 332,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        83
+      ],
+      "first_mismatch": null,
+      "max_abs": 2.384185791015625e-07,
+      "max_budget_ratio": 0.01787772548103806,
+      "max_rel": 0.00024599500754952437,
+      "max_ulp": 3784,
+      "mismatched": 0,
+      "name": "centered_float64_oracle",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float64",
+      "actual_shape": [
+        4,
+        1
+      ],
+      "backend": "ort",
+      "elements": 4,
+      "expected_dtype": "float64",
+      "expected_shape": [
+        4,
+        1
+      ],
+      "first_mismatch": null,
+      "max_abs": 1.558245660282509e-07,
+      "max_budget_ratio": 0.014169887807201943,
+      "max_rel": 1.5587318724346586e-07,
+      "max_ulp": 1403542915,
+      "mismatched": 0,
+      "name": "normalized_variance",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        83
+      ],
+      "backend": "ort",
+      "elements": 332,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        83
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_partition",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        83
+      ],
+      "backend": "ort",
+      "elements": 332,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        83
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_permutation",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        83
+      ],
+      "backend": "ort",
+      "elements": 332,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        83
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_reshape",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        8,
+        83
+      ],
+      "backend": "ort",
+      "elements": 664,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        8,
+        83
+      ],
+      "first_mismatch": null,
+      "max_abs": 0.0,
+      "max_budget_ratio": 0.0,
+      "max_rel": 0.0,
+      "max_ulp": 0,
+      "mismatched": 0,
+      "name": "batch_duplicate",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    },
+    {
+      "actual_dtype": "float32",
+      "actual_shape": [
+        4,
+        83
+      ],
+      "backend": "ort",
+      "elements": 332,
+      "expected_dtype": "float32",
+      "expected_shape": [
+        4,
+        83
+      ],
+      "first_mismatch": null,
+      "max_abs": 2.384185791015625e-07,
+      "max_budget_ratio": 0.031192768713552702,
+      "max_rel": 0.0005578515970395825,
+      "max_ulp": 8579,
+      "mismatched": 0,
+      "name": "equivalent_graph",
+      "nonfinite": 0,
+      "numerical_divergence": false,
+      "passed": true,
+      "reason": null,
+      "tolerance": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      }
+    }
+  ],
+  "comparison": {
+    "actual_dtype": "float32",
+    "actual_shape": [
+      4,
+      83
+    ],
+    "elements": 332,
+    "expected_dtype": "float32",
+    "expected_shape": [
+      4,
+      83
+    ],
+    "first_mismatch": null,
+    "max_abs": 4.76837158203125e-07,
+    "max_budget_ratio": 0.03118912304133686,
+    "max_rel": 0.0005574756193776393,
+    "max_ulp": 8578,
+    "mismatched": 0,
+    "nonfinite": 0,
+    "numerical_divergence": false,
+    "passed": true,
+    "reason": null,
+    "tolerance": {
+      "atol": 1e-06,
+      "rtol": 1e-05
+    }
+  },
+  "comparison_key": "4ccdb68c3c277b24bb88ef3765cb5c869c8d83a9d585b7a993d33994f470bd2c",
+  "contract": "layer_norm",
+  "environment": {
+    "dependencies": {
+      "flatbuffers": "25.12.19",
+      "ml_dtypes": "0.6.0",
+      "numpy": "2.2.6",
+      "onnx": "1.19.0",
+      "onnxruntime": "1.22.1",
+      "packaging": "26.3",
+      "protobuf": "7.36.1",
+      "sympy": "1.14.0"
+    },
+    "deterministic_compute": true,
+    "gero_version": "0.1.0",
+    "machine": "arm64",
+    "numpy": "2.2.6",
+    "onnx": "1.19.0",
+    "onnxruntime": "1.22.1",
+    "ort_build": "ORT Build Info: git-branch=HEAD, git-commit-id=89746dc19a, build type=Release, cmake cxx flags: -DNDEBUG -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -O3 -pipe -ffunction-sections -fdata-sections -fvisibility=hidden -fvisibility-inlines-hidden",
+    "platform": "macOS-15.5-arm64-arm-64bit",
+    "processor": "arm (CPU model unavailable)",
+    "provider": "CPUExecutionProvider",
+    "python": "3.12.13",
+    "reference_optimized": false,
+    "source_digest": "79a49f45e5b7f5c2e1a21debe1ef3d85383fcb8e6152089619073e800cac7c1f",
+    "threads": 1
+  },
+  "errors": [],
+  "inputs": {
+    "x": {
+      "dtype": "float32",
+      "shape": [
+        4,
+        83
+      ]
+    }
+  },
+  "ir_version": 10,
+  "name": "LayerNormalization/random-003/float32/4x83/seed-20260906",
+  "observation_id": "8a8ec2daccb7f2a2631ab966d45ed0183d082a9305300868f7eceea90e719024",
+  "operation": "LayerNormalization",
+  "operators": [
+    "LayerNormalization"
+  ],
+  "opset": 19,
+  "optimization": "disabled",
+  "output_hash": "3f0e54857fa4ab65578470b4ba4d85e58e410dcbb69ea42206b14c6e25c28507",
+  "outputs": {},
+  "parameters": {
+    "epsilon": 1e-05
+  },
+  "regression": "not_assessed",
+  "seed": 20260906,
+  "status": "pass",
+  "timings": {
+    "ort": {
+      "median_ms": 0.00325,
+      "p95_ms": 0.0036211,
+      "repeats": 7,
+      "samples_ms": [
+        0.003125,
+        0.003709,
+        0.003416,
+        0.003209,
+        0.00325,
+        0.003375,
+        0.002917
+      ],
+      "scope": "synchronous run including Python overhead; session construction excluded",
+      "warmup": 2
+    },
+    "reference": {
+      "median_ms": 0.017417,
+      "p95_ms": 0.0188588,
+      "repeats": 7,
+      "samples_ms": [
+        0.018959,
+        0.018291,
+        0.018625,
+        0.017417,
+        0.017084,
+        0.016875,
+        0.01725
+      ],
+      "scope": "synchronous run including Python overhead; session construction excluded",
+      "warmup": 2
+    }
+  },
+  "tolerance": {
+    "atol": 1e-06,
+    "rtol": 1e-05
+  },
+  "variant": "random-003",
+  "warnings": []
+}

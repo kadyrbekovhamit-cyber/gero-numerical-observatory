@@ -1,0 +1,169 @@
+{
+  "run_id": "ecf59104f767379863b0c7913f410831f5fbde7515a943bb22588fcb9332eee3",
+  "test_count": 57,
+  "total_evaluations": 246,
+  "summary": {
+    "divergence": 14,
+    "pass": 232
+  },
+  "replayed_archives": 14,
+  "distinct_candidate_graphs": 7,
+  "status": "all original observations reproduced",
+  "high_precision_checks": [
+    {
+      "operation": "CosineSimilarity",
+      "variant": "large_offset",
+      "dtype": "float16",
+      "case_id": "b4eaa370b87ca85ed3d66eba0000d9143683243a97e7a9a0df27405dc2d81f93",
+      "oracle": "Decimal, 80 digits; exact conversion of stored binary input and epsilon; final oracle exported as float64",
+      "oracle_all_finite": true,
+      "comparisons": {
+        "ort": {
+          "nonfinite": 0,
+          "total": 4,
+          "outside_tolerance": 0,
+          "max_abs_finite": 7.434659532457033e-08
+        },
+        "reference": {
+          "nonfinite": 4,
+          "total": 4,
+          "outside_tolerance": 4,
+          "max_abs_finite": null
+        }
+      }
+    },
+    {
+      "operation": "CosineSimilarity",
+      "variant": "tiny",
+      "dtype": "float16",
+      "case_id": "2965f56cd92655f0aa10d8740fb3e5271e12daa553264b4ed7ea7148a9072ab3",
+      "oracle": "Decimal, 80 digits; exact conversion of stored binary input and epsilon; final oracle exported as float64",
+      "oracle_all_finite": true,
+      "comparisons": {
+        "ort": {
+          "nonfinite": 0,
+          "total": 4,
+          "outside_tolerance": 0,
+          "max_abs_finite": 5.7209601677515876e-05
+        },
+        "reference": {
+          "nonfinite": 0,
+          "total": 4,
+          "outside_tolerance": 4,
+          "max_abs_finite": 1.9235191236641775
+        }
+      }
+    },
+    {
+      "operation": "LayerNormalization",
+      "variant": "large_offset",
+      "dtype": "float32",
+      "case_id": "2438080ccfb7d623c6113b3157ecf20fe7b1833aad624dee6097ad00d8e5f49b",
+      "oracle": "Decimal, 80 digits; exact conversion of stored binary input and epsilon; final oracle exported as float64",
+      "oracle_all_finite": true,
+      "comparisons": {
+        "ort": {
+          "nonfinite": 17,
+          "total": 68,
+          "outside_tolerance": 68,
+          "max_abs_finite": 2.3035069015309637
+        },
+        "reference": {
+          "nonfinite": 0,
+          "total": 68,
+          "outside_tolerance": 68,
+          "max_abs_finite": 0.003606553235768306
+        }
+      }
+    },
+    {
+      "operation": "LogSoftmax",
+      "variant": "random-001",
+      "dtype": "float32",
+      "case_id": "7fd92f5ab9dbbb6f185776841f2dba00d077fa88456e18ebfb53f7610cf5c6b2",
+      "oracle": "Decimal, 80 digits; exact conversion of stored binary input and epsilon; final oracle exported as float64",
+      "oracle_all_finite": true,
+      "comparisons": {
+        "ort": {
+          "nonfinite": 0,
+          "total": 420,
+          "outside_tolerance": 0,
+          "max_abs_finite": 1.2162186180830759e-05
+        },
+        "reference": {
+          "nonfinite": 141,
+          "total": 420,
+          "outside_tolerance": 166,
+          "max_abs_finite": 0.4133033902489842
+        }
+      }
+    },
+    {
+      "operation": "LogSoftmax",
+      "variant": "random-022",
+      "dtype": "float32",
+      "case_id": "2fc18a24c42bbda7a98ab28226bfcb3cbbecb6096993cc486187e8ad12d6b31a",
+      "oracle": "Decimal, 80 digits; exact conversion of stored binary input and epsilon; final oracle exported as float64",
+      "oracle_all_finite": true,
+      "comparisons": {
+        "ort": {
+          "nonfinite": 0,
+          "total": 508,
+          "outside_tolerance": 0,
+          "max_abs_finite": 2.0366356579870626e-05
+        },
+        "reference": {
+          "nonfinite": 458,
+          "total": 508,
+          "outside_tolerance": 465,
+          "max_abs_finite": 0.26478545739566073
+        }
+      }
+    },
+    {
+      "operation": "LpNormalization",
+      "variant": "large_offset",
+      "dtype": "float16",
+      "case_id": "49db6cd40097be38311d45dac965498978848ba8462d8017ab1f30ea67f53f0a",
+      "oracle": "Decimal, 80 digits; exact conversion of stored binary input and epsilon; final oracle exported as float64",
+      "oracle_all_finite": true,
+      "comparisons": {
+        "ort": {
+          "nonfinite": 0,
+          "total": 68,
+          "outside_tolerance": 0,
+          "max_abs_finite": 6.003467445439559e-05
+        },
+        "reference": {
+          "nonfinite": 0,
+          "total": 68,
+          "outside_tolerance": 68,
+          "max_abs_finite": 0.24318608904939726
+        }
+      }
+    },
+    {
+      "operation": "LpNormalization",
+      "variant": "tiny",
+      "dtype": "float16",
+      "case_id": "554a9eabfdd5be921eab3dc6b654d994d0ea1aa6e2fd79dc5b497574d47f5620",
+      "oracle": "Decimal, 80 digits; exact conversion of stored binary input and epsilon; final oracle exported as float64",
+      "oracle_all_finite": true,
+      "comparisons": {
+        "ort": {
+          "nonfinite": 0,
+          "total": 68,
+          "outside_tolerance": 0,
+          "max_abs_finite": 0.00021713565494207998
+        },
+        "reference": {
+          "nonfinite": 17,
+          "total": 68,
+          "outside_tolerance": 67,
+          "max_abs_finite": 0.23801010440494208
+        }
+      }
+    }
+  ],
+  "scope": "Algorithmically independent Decimal check, not third-party validation. No novelty or version-regression claim."
+}
