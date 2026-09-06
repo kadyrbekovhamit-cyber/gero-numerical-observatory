@@ -4,6 +4,18 @@ A reproducible CPU benchmark for mathematical contracts in ONNX graphs. It runs 
 
 [71-second video](https://www.youtube.com/shorts/KTLC9_FomBs) · [Interactive reports](https://www.gero.uz/stability/) · [Publication and limits](https://www.gero.uz/research/articles/onnx-numerical-observatory-reproduced-snapshot.html) · [Measured snapshot](benchmarks/2026-09-06/latest.json) · [Reverification](benchmarks/2026-09-06/reverification.json)
 
+## Small-sample validation note
+
+The repository also contains a standalone, standard-library calculation for a
+common assurance error: treating zero observed false positives as proof of a
+zero false-positive rate. With zero failures in two representative negative
+cases, the one-sided exact 95% upper bound is 77.6393%; 59 clean cases are
+needed to push that bound below 5%, and 299 to push it below 1%.
+
+[Read the evidence boundary](docs/ZERO_FALSE_POSITIVES.md) ·
+[Run the calculation](tools/zero_failure_bounds.py) ·
+[Read the public GERO note](https://www.gero.uz/research/articles/zero-observed-false-positives-small-sample.html)
+
 ## Published snapshot, 6 September 2026
 
 | Measure | Result |
