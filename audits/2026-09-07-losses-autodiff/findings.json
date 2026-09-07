@@ -1,0 +1,77 @@
+{
+  "findings": [
+    {
+      "id": "MLX-BCE-TAIL-2026-09-07",
+      "family": "binary_cross_entropy_tail_cancellation",
+      "status": "locally_reproduced_and_patched",
+      "operator": "nn.losses.binary_cross_entropy",
+      "input": {
+        "logit": 20,
+        "target": 1,
+        "dtype": "float32"
+      },
+      "observed": 0.0,
+      "expected": 2.061153620314381e-09,
+      "violated_invariant": "Label/sign symmetry and positive representable loss",
+      "fix": "Separate the linear term by sign, and use log1p(exp(-abs(x))) with a differentiable branch at zero.",
+      "verification": "31 tests pass on official CPU and Metal, including existing upstream BCE test.",
+      "patch": "patches/mlx-bce.patch",
+      "publication_status": "prepared_for_authorized_publication",
+      "duplicate_status": "No exact match found in recorded public searches; not a priority guarantee or upstream confirmation.",
+      "version_regression_proven": false,
+      "publication_article": "https://www.gero.uz/research/articles/when-small-losses-and-gradients-disappear.html"
+    },
+    {
+      "id": "MLX-LOGADDEXP-GRAD-2026-09-07",
+      "family": "asymmetric_logaddexp_derivative",
+      "status": "locally_reproduced_and_patched",
+      "operator": "LogAddExp::vjp and ::jvp",
+      "input": {
+        "a": 20,
+        "b": 0,
+        "differentiated_argument": "b",
+        "dtype": "float32"
+      },
+      "observed": 0.0,
+      "expected": 2.0611536181902037e-09,
+      "violated_invariant": "Exchange arguments and exchange their derivatives",
+      "fix": "Compute sigmoid(a-b) and sigmoid(b-a) directly instead of subtracting a saturated sigmoid from one.",
+      "verification": "438 native C++ CPU checks; original 72 failures. Native Metal patch not built/tested.",
+      "patch": "patches/mlx-logaddexp.patch",
+      "publication_status": "prepared_for_authorized_publication",
+      "duplicate_status": "No exact match found in recorded public searches; not a priority guarantee or upstream confirmation.",
+      "version_regression_proven": false,
+      "publication_article": "https://www.gero.uz/research/articles/when-small-losses-and-gradients-disappear.html"
+    },
+    {
+      "id": "NNTRAINER-SIGMOID-TAIL-2026-09-07",
+      "family": "binary_cross_entropy_tail_cancellation",
+      "status": "locally_reproduced_and_patched",
+      "operator": "CrossEntropySigmoidLossLayer",
+      "input": {
+        "logit": 20,
+        "target": 1,
+        "dtype": "FP32",
+        "loss_scale": 1
+      },
+      "observed": {
+        "loss": 0.0,
+        "gradient": 0.0
+      },
+      "expected": {
+        "loss": 2.061153620314381e-09,
+        "gradient": -2.0611536181902037e-09
+      },
+      "violated_invariant": "Positive representable loss and analytic gradient",
+      "fix": "Use log1p and sign-dependent linear terms; compute the sigmoid tail directly for backward.",
+      "verification": "77 CPU tests pass: five new tests, six prior softmax tests, 66 existing loss semantics tests.",
+      "patch": "patches/nntrainer-bce.patch",
+      "publication_status": "prepared_for_authorized_publication",
+      "duplicate_status": "No exact match found in recorded public searches; not a priority guarantee or upstream confirmation.",
+      "version_regression_proven": false,
+      "publication_article": "https://www.gero.uz/research/articles/when-small-losses-and-gradients-disappear.html"
+    }
+  ],
+  "root_cause_families": 2,
+  "affected_implementation_reports": 3
+}

@@ -1,0 +1,340 @@
+FFFFFFFFFFFFFFFFFFF.F......FFF.                                          [100%]
+=================================== FAILURES ===================================
+_________ test_positive_tail_and_gradient[0.0-shape0-float32-80-3e-06] _________
+software-audits/current-stack-2026-09-07-round3/test_bce.py:37: in test_positive_tail_and_gradient
+    np.testing.assert_allclose(as_np(grad), gradient, rtol=rtol, atol=0)
+E   AssertionError: 
+E   Not equal to tolerance rtol=3e-06, atol=0
+E   
+E   Mismatched elements: 7 / 8 (87.5%)
+E   Max absolute difference among violations: 2.76311126e-08
+E   Max relative difference among violations: 1.
+E    ACTUAL: array([5.000000e-01, 1.090765e-05, 0.000000e+00, 0.000000e+00,
+E          0.000000e+00, 0.000000e+00, 0.000000e+00, 0.000000e+00])
+E    DESIRED: array([5.000000e-01, 1.088002e-05, 1.183774e-10, 1.287965e-15,
+E          1.401321e-20, 1.524659e-25, 1.658853e-30, 1.804851e-35])
+_________ test_positive_tail_and_gradient[0.0-shape0-float16-8-0.003] __________
+software-audits/current-stack-2026-09-07-round3/test_bce.py:37: in test_positive_tail_and_gradient
+    np.testing.assert_allclose(as_np(grad), gradient, rtol=rtol, atol=0)
+E   AssertionError: 
+E   Not equal to tolerance rtol=0.003, atol=0
+E   
+E   Mismatched elements: 4 / 8 (50%)
+E   Max absolute difference among violations: 0.00018985
+E   Max relative difference among violations: 0.45603417
+E    ACTUAL: array([5.000000e-01, 2.421875e-01, 9.228516e-02, 3.125000e-02,
+E          1.025391e-02, 3.417969e-03, 9.765625e-04, 4.882812e-04])
+E    DESIRED: array([5.000000e-01, 2.418473e-01, 9.235980e-02, 3.143985e-02,
+E          1.024860e-02, 3.285833e-03, 1.052569e-03, 3.353501e-04])
+_________ test_positive_tail_and_gradient[0.0-shape0-bfloat16-80-0.02] _________
+software-audits/current-stack-2026-09-07-round3/test_bce.py:37: in test_positive_tail_and_gradient
+    np.testing.assert_allclose(as_np(grad), gradient, rtol=rtol, atol=0)
+E   AssertionError: 
+E   Not equal to tolerance rtol=0.02, atol=0
+E   
+E   Mismatched elements: 7 / 8 (87.5%)
+E   Max absolute difference among violations: 1.07833122e-05
+E   Max relative difference among violations: 1.
+E    ACTUAL: array([0.5, 0. , 0. , 0. , 0. , 0. , 0. , 0. ])
+E    DESIRED: array([5.000000e-01, 1.078331e-05, 1.162823e-10, 1.334793e-15,
+E          1.352158e-20, 1.369749e-25, 1.781673e-30, 1.804851e-35])
+_________ test_positive_tail_and_gradient[0.0-shape1-float32-80-3e-06] _________
+software-audits/current-stack-2026-09-07-round3/test_bce.py:37: in test_positive_tail_and_gradient
+    np.testing.assert_allclose(as_np(grad), gradient, rtol=rtol, atol=0)
+E   AssertionError: 
+E   Not equal to tolerance rtol=3e-06, atol=0
+E   
+E   Mismatched elements: 7 / 8 (87.5%)
+E   Max absolute difference among violations: 2.76311126e-08
+E   Max relative difference among violations: 1.
+E    ACTUAL: array([[5.000000e-01, 1.090765e-05, 0.000000e+00, 0.000000e+00],
+E          [0.000000e+00, 0.000000e+00, 0.000000e+00, 0.000000e+00]])
+E    DESIRED: array([[5.000000e-01, 1.088002e-05, 1.183774e-10, 1.287965e-15],
+E          [1.401321e-20, 1.524659e-25, 1.658853e-30, 1.804851e-35]])
+_________ test_positive_tail_and_gradient[0.0-shape1-float16-8-0.003] __________
+software-audits/current-stack-2026-09-07-round3/test_bce.py:37: in test_positive_tail_and_gradient
+    np.testing.assert_allclose(as_np(grad), gradient, rtol=rtol, atol=0)
+E   AssertionError: 
+E   Not equal to tolerance rtol=0.003, atol=0
+E   
+E   Mismatched elements: 4 / 8 (50%)
+E   Max absolute difference among violations: 0.00018985
+E   Max relative difference among violations: 0.45603417
+E    ACTUAL: array([[5.000000e-01, 2.421875e-01, 9.228516e-02, 3.125000e-02],
+E          [1.025391e-02, 3.417969e-03, 9.765625e-04, 4.882812e-04]])
+E    DESIRED: array([[5.000000e-01, 2.418473e-01, 9.235980e-02, 3.143985e-02],
+E          [1.024860e-02, 3.285833e-03, 1.052569e-03, 3.353501e-04]])
+_________ test_positive_tail_and_gradient[0.0-shape1-bfloat16-80-0.02] _________
+software-audits/current-stack-2026-09-07-round3/test_bce.py:37: in test_positive_tail_and_gradient
+    np.testing.assert_allclose(as_np(grad), gradient, rtol=rtol, atol=0)
+E   AssertionError: 
+E   Not equal to tolerance rtol=0.02, atol=0
+E   
+E   Mismatched elements: 7 / 8 (87.5%)
+E   Max absolute difference among violations: 1.07833122e-05
+E   Max relative difference among violations: 1.
+E    ACTUAL: array([[0.5, 0. , 0. , 0. ],
+E          [0. , 0. , 0. , 0. ]])
+E    DESIRED: array([[5.000000e-01, 1.078331e-05, 1.162823e-10, 1.334793e-15],
+E          [1.352158e-20, 1.369749e-25, 1.781673e-30, 1.804851e-35]])
+_________ test_positive_tail_and_gradient[0.0-shape2-float32-80-3e-06] _________
+software-audits/current-stack-2026-09-07-round3/test_bce.py:37: in test_positive_tail_and_gradient
+    np.testing.assert_allclose(as_np(grad), gradient, rtol=rtol, atol=0)
+E   AssertionError: 
+E   Not equal to tolerance rtol=3e-06, atol=0
+E   
+E   Mismatched elements: 7 / 8 (87.5%)
+E   Max absolute difference among violations: 2.76311126e-08
+E   Max relative difference among violations: 1.
+E    ACTUAL: array([[[5.000000e-01, 1.090765e-05],
+E           [0.000000e+00, 0.000000e+00]],
+E   ...
+E    DESIRED: array([[[5.000000e-01, 1.088002e-05],
+E           [1.183774e-10, 1.287965e-15]],
+E   ...
+_________ test_positive_tail_and_gradient[0.0-shape2-float16-8-0.003] __________
+software-audits/current-stack-2026-09-07-round3/test_bce.py:37: in test_positive_tail_and_gradient
+    np.testing.assert_allclose(as_np(grad), gradient, rtol=rtol, atol=0)
+E   AssertionError: 
+E   Not equal to tolerance rtol=0.003, atol=0
+E   
+E   Mismatched elements: 4 / 8 (50%)
+E   Max absolute difference among violations: 0.00018985
+E   Max relative difference among violations: 0.45603417
+E    ACTUAL: array([[[5.000000e-01, 2.421875e-01],
+E           [9.228516e-02, 3.125000e-02]],
+E   ...
+E    DESIRED: array([[[5.000000e-01, 2.418473e-01],
+E           [9.235980e-02, 3.143985e-02]],
+E   ...
+_________ test_positive_tail_and_gradient[0.0-shape2-bfloat16-80-0.02] _________
+software-audits/current-stack-2026-09-07-round3/test_bce.py:37: in test_positive_tail_and_gradient
+    np.testing.assert_allclose(as_np(grad), gradient, rtol=rtol, atol=0)
+E   AssertionError: 
+E   Not equal to tolerance rtol=0.02, atol=0
+E   
+E   Mismatched elements: 7 / 8 (87.5%)
+E   Max absolute difference among violations: 1.07833122e-05
+E   Max relative difference among violations: 1.
+E    ACTUAL: array([[[0.5, 0. ],
+E           [0. , 0. ]],
+E   ...
+E    DESIRED: array([[[5.000000e-01, 1.078331e-05],
+E           [1.162823e-10, 1.334793e-15]],
+E   ...
+_________ test_positive_tail_and_gradient[1.0-shape0-float32-80-3e-06] _________
+software-audits/current-stack-2026-09-07-round3/test_bce.py:36: in test_positive_tail_and_gradient
+    np.testing.assert_allclose(as_np(got), expected, rtol=rtol, atol=0)
+E   AssertionError: 
+E   Not equal to tolerance rtol=3e-06, atol=0
+E   
+E   Mismatched elements: 7 / 8 (87.5%)
+E   Max absolute difference among violations: 3.89660589e-07
+E   Max relative difference among violations: 1.
+E    ACTUAL: array([6.931472e-01, 1.049042e-05, 0.000000e+00, 0.000000e+00,
+E          0.000000e+00, 0.000000e+00, 0.000000e+00, 0.000000e+00])
+E    DESIRED: array([6.931472e-01, 1.088008e-05, 1.183774e-10, 1.287965e-15,
+E          1.401321e-20, 1.524659e-25, 1.658853e-30, 1.804851e-35])
+_________ test_positive_tail_and_gradient[1.0-shape0-float16-8-0.003] __________
+software-audits/current-stack-2026-09-07-round3/test_bce.py:36: in test_positive_tail_and_gradient
+    np.testing.assert_allclose(as_np(got), expected, rtol=rtol, atol=0)
+E   AssertionError: 
+E   Not equal to tolerance rtol=0.003, atol=0
+E   
+E   Mismatched elements: 6 / 8 (75%)
+E   Max absolute difference among violations: 0.00141727
+E   Max relative difference among violations: 1.
+E    ACTUAL: array([0.693359, 0.277344, 0.097656, 0.03125 , 0.011719, 0.003906,
+E          0.      , 0.      ])
+E    DESIRED: array([6.931472e-01, 2.768705e-01, 9.690723e-02, 3.194469e-02,
+E          1.030148e-02, 3.291243e-03, 1.053123e-03, 3.354064e-04])
+_________ test_positive_tail_and_gradient[1.0-shape0-bfloat16-80-0.02] _________
+software-audits/current-stack-2026-09-07-round3/test_bce.py:36: in test_positive_tail_and_gradient
+    np.testing.assert_allclose(as_np(got), expected, rtol=rtol, atol=0)
+E   AssertionError: 
+E   Not equal to tolerance rtol=0.02, atol=0
+E   
+E   Mismatched elements: 7 / 8 (87.5%)
+E   Max absolute difference among violations: 1.07833704e-05
+E   Max relative difference among violations: 1.
+E    ACTUAL: array([0.691406, 0.      , 0.      , 0.      , 0.      , 0.      ,
+E          0.      , 0.      ])
+E    DESIRED: array([6.931472e-01, 1.078337e-05, 1.162823e-10, 1.334793e-15,
+E          1.352158e-20, 1.369749e-25, 1.781673e-30, 1.804851e-35])
+_________ test_positive_tail_and_gradient[1.0-shape1-float32-80-3e-06] _________
+software-audits/current-stack-2026-09-07-round3/test_bce.py:36: in test_positive_tail_and_gradient
+    np.testing.assert_allclose(as_np(got), expected, rtol=rtol, atol=0)
+E   AssertionError: 
+E   Not equal to tolerance rtol=3e-06, atol=0
+E   
+E   Mismatched elements: 7 / 8 (87.5%)
+E   Max absolute difference among violations: 3.89660589e-07
+E   Max relative difference among violations: 1.
+E    ACTUAL: array([[6.931472e-01, 1.049042e-05, 0.000000e+00, 0.000000e+00],
+E          [0.000000e+00, 0.000000e+00, 0.000000e+00, 0.000000e+00]])
+E    DESIRED: array([[6.931472e-01, 1.088008e-05, 1.183774e-10, 1.287965e-15],
+E          [1.401321e-20, 1.524659e-25, 1.658853e-30, 1.804851e-35]])
+_________ test_positive_tail_and_gradient[1.0-shape1-float16-8-0.003] __________
+software-audits/current-stack-2026-09-07-round3/test_bce.py:36: in test_positive_tail_and_gradient
+    np.testing.assert_allclose(as_np(got), expected, rtol=rtol, atol=0)
+E   AssertionError: 
+E   Not equal to tolerance rtol=0.003, atol=0
+E   
+E   Mismatched elements: 6 / 8 (75%)
+E   Max absolute difference among violations: 0.00141727
+E   Max relative difference among violations: 1.
+E    ACTUAL: array([[0.693359, 0.277344, 0.097656, 0.03125 ],
+E          [0.011719, 0.003906, 0.      , 0.      ]])
+E    DESIRED: array([[6.931472e-01, 2.768705e-01, 9.690723e-02, 3.194469e-02],
+E          [1.030148e-02, 3.291243e-03, 1.053123e-03, 3.354064e-04]])
+_________ test_positive_tail_and_gradient[1.0-shape1-bfloat16-80-0.02] _________
+software-audits/current-stack-2026-09-07-round3/test_bce.py:36: in test_positive_tail_and_gradient
+    np.testing.assert_allclose(as_np(got), expected, rtol=rtol, atol=0)
+E   AssertionError: 
+E   Not equal to tolerance rtol=0.02, atol=0
+E   
+E   Mismatched elements: 7 / 8 (87.5%)
+E   Max absolute difference among violations: 1.07833704e-05
+E   Max relative difference among violations: 1.
+E    ACTUAL: array([[0.691406, 0.      , 0.      , 0.      ],
+E          [0.      , 0.      , 0.      , 0.      ]])
+E    DESIRED: array([[6.931472e-01, 1.078337e-05, 1.162823e-10, 1.334793e-15],
+E          [1.352158e-20, 1.369749e-25, 1.781673e-30, 1.804851e-35]])
+_________ test_positive_tail_and_gradient[1.0-shape2-float32-80-3e-06] _________
+software-audits/current-stack-2026-09-07-round3/test_bce.py:36: in test_positive_tail_and_gradient
+    np.testing.assert_allclose(as_np(got), expected, rtol=rtol, atol=0)
+E   AssertionError: 
+E   Not equal to tolerance rtol=3e-06, atol=0
+E   
+E   Mismatched elements: 7 / 8 (87.5%)
+E   Max absolute difference among violations: 3.89660589e-07
+E   Max relative difference among violations: 1.
+E    ACTUAL: array([[[6.931472e-01, 1.049042e-05],
+E           [0.000000e+00, 0.000000e+00]],
+E   ...
+E    DESIRED: array([[[6.931472e-01, 1.088008e-05],
+E           [1.183774e-10, 1.287965e-15]],
+E   ...
+_________ test_positive_tail_and_gradient[1.0-shape2-float16-8-0.003] __________
+software-audits/current-stack-2026-09-07-round3/test_bce.py:36: in test_positive_tail_and_gradient
+    np.testing.assert_allclose(as_np(got), expected, rtol=rtol, atol=0)
+E   AssertionError: 
+E   Not equal to tolerance rtol=0.003, atol=0
+E   
+E   Mismatched elements: 6 / 8 (75%)
+E   Max absolute difference among violations: 0.00141727
+E   Max relative difference among violations: 1.
+E    ACTUAL: array([[[0.693359, 0.277344],
+E           [0.097656, 0.03125 ]],
+E   ...
+E    DESIRED: array([[[6.931472e-01, 2.768705e-01],
+E           [9.690723e-02, 3.194469e-02]],
+E   ...
+_________ test_positive_tail_and_gradient[1.0-shape2-bfloat16-80-0.02] _________
+software-audits/current-stack-2026-09-07-round3/test_bce.py:36: in test_positive_tail_and_gradient
+    np.testing.assert_allclose(as_np(got), expected, rtol=rtol, atol=0)
+E   AssertionError: 
+E   Not equal to tolerance rtol=0.02, atol=0
+E   
+E   Mismatched elements: 7 / 8 (87.5%)
+E   Max absolute difference among violations: 1.07833704e-05
+E   Max relative difference among violations: 1.
+E    ACTUAL: array([[[0.691406, 0.      ],
+E           [0.      , 0.      ]],
+E   ...
+E    DESIRED: array([[[6.931472e-01, 1.078337e-05],
+E           [1.162823e-10, 1.334793e-15]],
+E   ...
+___________ test_weighted_binary_and_soft_labels[none-float32-3e-06] ___________
+software-audits/current-stack-2026-09-07-round3/test_bce.py:51: in test_weighted_binary_and_soft_labels
+    np.testing.assert_allclose(as_np(losses.binary_cross_entropy(x, y, weights, reduction=reduction)), ref, rtol=rtol, atol=6e-8 if dtype_name == 'float16' else 0)
+E   AssertionError: 
+E   Not equal to tolerance rtol=3e-06, atol=0
+E   
+E   Mismatched elements: 1 / 7 (14.3%)
+E   Max absolute difference among violations: 1.80485139e-35
+E   Max relative difference among violations: 1.
+E    ACTUAL: array([1.804851e-35, 1.001343e+01, 3.240694e-01, 6.931472e-01,
+E          3.240694e-01, 1.001343e+01, 0.000000e+00])
+E    DESIRED: array([1.804851e-35, 1.001343e+01, 3.240694e-01, 6.931472e-01,
+E          3.240694e-01, 1.001343e+01, 1.804851e-35])
+___________ test_weighted_binary_and_soft_labels[none-bfloat16-0.02] ___________
+software-audits/current-stack-2026-09-07-round3/test_bce.py:51: in test_weighted_binary_and_soft_labels
+    np.testing.assert_allclose(as_np(losses.binary_cross_entropy(x, y, weights, reduction=reduction)), ref, rtol=rtol, atol=6e-8 if dtype_name == 'float16' else 0)
+E   AssertionError: 
+E   Not equal to tolerance rtol=0.02, atol=0
+E   
+E   Mismatched elements: 1 / 7 (14.3%)
+E   Max absolute difference among violations: 1.80485139e-35
+E   Max relative difference among violations: 1.
+E    ACTUAL: array([1.805559e-35, 1.000000e+01, 3.242188e-01, 6.914062e-01,
+E          3.242188e-01, 1.000000e+01, 0.000000e+00])
+E    DESIRED: array([1.804851e-35, 1.001343e+01, 3.240499e-01, 6.931472e-01,
+E          3.240499e-01, 1.001343e+01, 1.804851e-35])
+_________________ test_batch_layout_and_label_symmetry[shape0] _________________
+software-audits/current-stack-2026-09-07-round3/test_bce.py:60: in test_batch_layout_and_label_symmetry
+    np.testing.assert_allclose(as_np(actual), as_np(reflected), rtol=3e-6, atol=0)
+E   AssertionError: 
+E   Not equal to tolerance rtol=3e-06, atol=0
+E   
+E   Mismatched elements: 4 / 8 (50%)
+E   Max absolute difference among violations: 2.06115347e-09
+E   Max relative difference among violations: 1.
+E    ACTUAL: array([4.248354e-18, 2.061153e-09, 5.006715e+00, 9.740770e-01,
+E          9.740770e-01, 5.006715e+00, 0.000000e+00, 0.000000e+00])
+E    DESIRED: array([0.000000e+00, 0.000000e+00, 5.006715e+00, 9.740770e-01,
+E          9.740770e-01, 5.006715e+00, 2.061153e-09, 4.248354e-18])
+_________________ test_batch_layout_and_label_symmetry[shape1] _________________
+software-audits/current-stack-2026-09-07-round3/test_bce.py:60: in test_batch_layout_and_label_symmetry
+    np.testing.assert_allclose(as_np(actual), as_np(reflected), rtol=3e-6, atol=0)
+E   AssertionError: 
+E   Not equal to tolerance rtol=3e-06, atol=0
+E   
+E   Mismatched elements: 4 / 8 (50%)
+E   Max absolute difference among violations: 2.06115347e-09
+E   Max relative difference among violations: 1.
+E    ACTUAL: array([[4.248354e-18, 2.061153e-09, 5.006715e+00, 9.740770e-01],
+E          [9.740770e-01, 5.006715e+00, 0.000000e+00, 0.000000e+00]])
+E    DESIRED: array([[0.000000e+00, 0.000000e+00, 5.006715e+00, 9.740770e-01],
+E          [9.740770e-01, 5.006715e+00, 2.061153e-09, 4.248354e-18]])
+_________________ test_batch_layout_and_label_symmetry[shape2] _________________
+software-audits/current-stack-2026-09-07-round3/test_bce.py:60: in test_batch_layout_and_label_symmetry
+    np.testing.assert_allclose(as_np(actual), as_np(reflected), rtol=3e-6, atol=0)
+E   AssertionError: 
+E   Not equal to tolerance rtol=3e-06, atol=0
+E   
+E   Mismatched elements: 4 / 8 (50%)
+E   Max absolute difference among violations: 2.06115347e-09
+E   Max relative difference among violations: 1.
+E    ACTUAL: array([[[4.248354e-18, 2.061153e-09],
+E           [5.006715e+00, 9.740770e-01]],
+E   ...
+E    DESIRED: array([[[0.000000e+00, 0.000000e+00],
+E           [5.006715e+00, 9.740770e-01]],
+E   ...
+- generated xml file: <WORKSPACE>/software-audits/current-stack-2026-09-07-round3/bce-before-cpu.xml -
+=========================== short test summary info ============================
+FAILED software-audits/current-stack-2026-09-07-round3/test_bce.py::test_positive_tail_and_gradient[0.0-shape0-float32-80-3e-06]
+FAILED software-audits/current-stack-2026-09-07-round3/test_bce.py::test_positive_tail_and_gradient[0.0-shape0-float16-8-0.003]
+FAILED software-audits/current-stack-2026-09-07-round3/test_bce.py::test_positive_tail_and_gradient[0.0-shape0-bfloat16-80-0.02]
+FAILED software-audits/current-stack-2026-09-07-round3/test_bce.py::test_positive_tail_and_gradient[0.0-shape1-float32-80-3e-06]
+FAILED software-audits/current-stack-2026-09-07-round3/test_bce.py::test_positive_tail_and_gradient[0.0-shape1-float16-8-0.003]
+FAILED software-audits/current-stack-2026-09-07-round3/test_bce.py::test_positive_tail_and_gradient[0.0-shape1-bfloat16-80-0.02]
+FAILED software-audits/current-stack-2026-09-07-round3/test_bce.py::test_positive_tail_and_gradient[0.0-shape2-float32-80-3e-06]
+FAILED software-audits/current-stack-2026-09-07-round3/test_bce.py::test_positive_tail_and_gradient[0.0-shape2-float16-8-0.003]
+FAILED software-audits/current-stack-2026-09-07-round3/test_bce.py::test_positive_tail_and_gradient[0.0-shape2-bfloat16-80-0.02]
+FAILED software-audits/current-stack-2026-09-07-round3/test_bce.py::test_positive_tail_and_gradient[1.0-shape0-float32-80-3e-06]
+FAILED software-audits/current-stack-2026-09-07-round3/test_bce.py::test_positive_tail_and_gradient[1.0-shape0-float16-8-0.003]
+FAILED software-audits/current-stack-2026-09-07-round3/test_bce.py::test_positive_tail_and_gradient[1.0-shape0-bfloat16-80-0.02]
+FAILED software-audits/current-stack-2026-09-07-round3/test_bce.py::test_positive_tail_and_gradient[1.0-shape1-float32-80-3e-06]
+FAILED software-audits/current-stack-2026-09-07-round3/test_bce.py::test_positive_tail_and_gradient[1.0-shape1-float16-8-0.003]
+FAILED software-audits/current-stack-2026-09-07-round3/test_bce.py::test_positive_tail_and_gradient[1.0-shape1-bfloat16-80-0.02]
+FAILED software-audits/current-stack-2026-09-07-round3/test_bce.py::test_positive_tail_and_gradient[1.0-shape2-float32-80-3e-06]
+FAILED software-audits/current-stack-2026-09-07-round3/test_bce.py::test_positive_tail_and_gradient[1.0-shape2-float16-8-0.003]
+FAILED software-audits/current-stack-2026-09-07-round3/test_bce.py::test_positive_tail_and_gradient[1.0-shape2-bfloat16-80-0.02]
+FAILED software-audits/current-stack-2026-09-07-round3/test_bce.py::test_weighted_binary_and_soft_labels[none-float32-3e-06]
+FAILED software-audits/current-stack-2026-09-07-round3/test_bce.py::test_weighted_binary_and_soft_labels[none-bfloat16-0.02]
+FAILED software-audits/current-stack-2026-09-07-round3/test_bce.py::test_batch_layout_and_label_symmetry[shape0]
+FAILED software-audits/current-stack-2026-09-07-round3/test_bce.py::test_batch_layout_and_label_symmetry[shape1]
+FAILED software-audits/current-stack-2026-09-07-round3/test_bce.py::test_batch_layout_and_label_symmetry[shape2]
+23 failed, 8 passed in 0.26s

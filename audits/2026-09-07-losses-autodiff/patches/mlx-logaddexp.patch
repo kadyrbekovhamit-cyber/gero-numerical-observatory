@@ -1,0 +1,36 @@
+--- a/mlx/primitives.cpp
++++ b/mlx/primitives.cpp
+@@ -2932,13 +2932,12 @@
+     const std::vector<array>&) {
+   auto a = primals[0];
+   auto b = primals[1];
+-  auto s = sigmoid(subtract(a, b, stream()), stream());
+   std::vector<array> vjps;
+   for (auto arg : argnums) {
++    auto difference =
++        arg == 0 ? subtract(a, b, stream()) : subtract(b, a, stream());
+     vjps.push_back(multiply(
+-        cotangents[0],
+-        arg == 0 ? s : subtract(array(1.0f, s.dtype()), s, stream()),
+-        stream()));
++        cotangents[0], sigmoid(difference, stream()), stream()));
+   }
+   return vjps;
+ }
+@@ -2949,13 +2948,12 @@
+     const std::vector<int>& argnums) {
+   auto a = primals[0];
+   auto b = primals[1];
+-  auto s = sigmoid(subtract(a, b, stream()), stream());
+   auto jvp_fun = [&](int i) {
+     int arg = argnums[i];
++    auto difference =
++        arg == 0 ? subtract(a, b, stream()) : subtract(b, a, stream());
+     return multiply(
+-        tangents[i],
+-        arg == 0 ? s : subtract(array(1.0f, s.dtype()), s, stream()),
+-        stream());
++        tangents[i], sigmoid(difference, stream()), stream());
+   };
+   auto out = jvp_fun(0);
+   if (argnums.size() > 1) {

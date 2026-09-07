@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="77" failures="4" disabled="0" errors="0" time="0.017" timestamp="2026-09-07T11:24:44.391" name="AllTests">
+  <testsuite name="CrossEntropyStability" tests="6" failures="0" disabled="0" skipped="0" errors="0" time="0.001" timestamp="2026-09-07T11:24:44.391">
+    <testcase name="FiniteLogitsPreserveLargeLoss" file="../test/unittest/layers/unittest_layers_loss.cpp" line="62" status="run" result="completed" time="0.001" timestamp="2026-09-07T11:24:44.391" classname="CrossEntropyStability">
+      <properties>
+        <property name="loss_gap_0" value="0.693147"/>
+        <property name="loss_gap_10" value="10.000046"/>
+        <property name="loss_gap_50" value="50.000000"/>
+        <property name="loss_gap_104" value="104.000000"/>
+        <property name="loss_gap_1000" value="1000.000000"/>
+      </properties>
+    </testcase>
+    <testcase name="ForwardAndBackwardAgree" file="../test/unittest/layers/unittest_layers_loss.cpp" line="74" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.393" classname="CrossEntropyStability">
+      <properties>
+        <property name="backward_derivative" value="-1.000000"/>
+        <property name="finite_difference" value="-1.000000"/>
+      </properties>
+    </testcase>
+    <testcase name="SoftTargetsPreserveLargeLoss" file="../test/unittest/layers/unittest_layers_loss.cpp" line="85" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.393" classname="CrossEntropyStability" />
+    <testcase name="BatchMeanAndLastAxisReduction" file="../test/unittest/layers/unittest_layers_loss.cpp" line="90" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.393" classname="CrossEntropyStability" />
+    <testcase name="CommonLogitOffsetDoesNotChangeLoss" file="../test/unittest/layers/unittest_layers_loss.cpp" line="101" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.393" classname="CrossEntropyStability" />
+    <testcase name="InPlaceForwardUsesOriginalLogits" file="../test/unittest/layers/unittest_layers_loss.cpp" line="108" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.393" classname="CrossEntropyStability" />
+  </testsuite>
+  <testsuite name="SigmoidLossStability" tests="5" failures="4" disabled="0" skipped="0" errors="0" time="0.001" timestamp="2026-09-07T11:24:44.393">
+    <testcase name="SmallPositiveLossSurvives" file="../test/unittest/layers/unittest_layers_loss.cpp" line="162" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.393" classname="SigmoidLossStability">
+      <failure message="../test/unittest/layers/unittest_layers_loss.cpp:169&#x0A;The difference between result.loss and expected is 5.0790143459045201e-08, which exceeds expected * 3e-6, where&#x0A;result.loss evaluates to 0.0067152976989746094,&#x0A;expected evaluates to 0.0067153484891180684, and&#x0A;expected * 3e-6 evaluates to 2.0146045467354206e-08.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_loss.cpp:164: 5&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_loss.cpp:169
+The difference between result.loss and expected is 5.0790143459045201e-08, which exceeds expected * 3e-6, where
+result.loss evaluates to 0.0067152976989746094,
+expected evaluates to 0.0067153484891180684, and
+expected * 3e-6 evaluates to 2.0146045467354206e-08.
+Google Test trace:
+../test/unittest/layers/unittest_layers_loss.cpp:164: 5
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_loss.cpp:169&#x0A;The difference between result.loss and expected is 1.8806916001795528e-08, which exceeds expected * 3e-6, where&#x0A;result.loss evaluates to 4.5417706132866442e-05,&#x0A;expected evaluates to 4.5398899216864647e-05, and&#x0A;expected * 3e-6 evaluates to 1.3619669765059395e-10.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_loss.cpp:164: 10&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_loss.cpp:169
+The difference between result.loss and expected is 1.8806916001795528e-08, which exceeds expected * 3e-6, where
+result.loss evaluates to 4.5417706132866442e-05,
+expected evaluates to 4.5398899216864647e-05, and
+expected * 3e-6 evaluates to 1.3619669765059395e-10.
+Google Test trace:
+../test/unittest/layers/unittest_layers_loss.cpp:164: 10
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_loss.cpp:169&#x0A;The difference between result.loss and expected is 3.7746797063535332e-07, which exceeds expected * 3e-6, where&#x0A;result.loss evaluates to 4.57763671875e-05,&#x0A;expected evaluates to 4.5398899216864647e-05, and&#x0A;expected * 3e-6 evaluates to 1.3619669765059395e-10.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_loss.cpp:164: 10&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_loss.cpp:169
+The difference between result.loss and expected is 3.7746797063535332e-07, which exceeds expected * 3e-6, where
+result.loss evaluates to 4.57763671875e-05,
+expected evaluates to 4.5398899216864647e-05, and
+expected * 3e-6 evaluates to 1.3619669765059395e-10.
+Google Test trace:
+../test/unittest/layers/unittest_layers_loss.cpp:164: 10
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_loss.cpp:169&#x0A;The difference between result.loss and expected is 2.0611536203143808e-09, which exceeds expected * 3e-6, where&#x0A;result.loss evaluates to 0,&#x0A;expected evaluates to 2.0611536203143808e-09, and&#x0A;expected * 3e-6 evaluates to 6.1834608609431427e-15.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_loss.cpp:164: 20&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_loss.cpp:169
+The difference between result.loss and expected is 2.0611536203143808e-09, which exceeds expected * 3e-6, where
+result.loss evaluates to 0,
+expected evaluates to 2.0611536203143808e-09, and
+expected * 3e-6 evaluates to 6.1834608609431427e-15.
+Google Test trace:
+../test/unittest/layers/unittest_layers_loss.cpp:164: 20
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_loss.cpp:169&#x0A;The difference between result.loss and expected is 2.0611536203143808e-09, which exceeds expected * 3e-6, where&#x0A;result.loss evaluates to 0,&#x0A;expected evaluates to 2.0611536203143808e-09, and&#x0A;expected * 3e-6 evaluates to 6.1834608609431427e-15.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_loss.cpp:164: 20&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_loss.cpp:169
+The difference between result.loss and expected is 2.0611536203143808e-09, which exceeds expected * 3e-6, where
+result.loss evaluates to 0,
+expected evaluates to 2.0611536203143808e-09, and
+expected * 3e-6 evaluates to 6.1834608609431427e-15.
+Google Test trace:
+../test/unittest/layers/unittest_layers_loss.cpp:164: 20
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_loss.cpp:169&#x0A;The difference between result.loss and expected is 4.2483542552915889e-18, which exceeds expected * 3e-6, where&#x0A;result.loss evaluates to 0,&#x0A;expected evaluates to 4.2483542552915889e-18, and&#x0A;expected * 3e-6 evaluates to 1.2745062765874768e-23.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_loss.cpp:164: 40&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_loss.cpp:169
+The difference between result.loss and expected is 4.2483542552915889e-18, which exceeds expected * 3e-6, where
+result.loss evaluates to 0,
+expected evaluates to 4.2483542552915889e-18, and
+expected * 3e-6 evaluates to 1.2745062765874768e-23.
+Google Test trace:
+../test/unittest/layers/unittest_layers_loss.cpp:164: 40
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_loss.cpp:169&#x0A;The difference between result.loss and expected is 4.2483542552915889e-18, which exceeds expected * 3e-6, where&#x0A;result.loss evaluates to 0,&#x0A;expected evaluates to 4.2483542552915889e-18, and&#x0A;expected * 3e-6 evaluates to 1.2745062765874768e-23.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_loss.cpp:164: 40&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_loss.cpp:169
+The difference between result.loss and expected is 4.2483542552915889e-18, which exceeds expected * 3e-6, where
+result.loss evaluates to 0,
+expected evaluates to 4.2483542552915889e-18, and
+expected * 3e-6 evaluates to 1.2745062765874768e-23.
+Google Test trace:
+../test/unittest/layers/unittest_layers_loss.cpp:164: 40
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_loss.cpp:169&#x0A;The difference between result.loss and expected is 1.8048513878454153e-35, which exceeds expected * 3e-6, where&#x0A;result.loss evaluates to 0,&#x0A;expected evaluates to 1.8048513878454153e-35, and&#x0A;expected * 3e-6 evaluates to 5.414554163536246e-41.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_loss.cpp:164: 80&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_loss.cpp:169
+The difference between result.loss and expected is 1.8048513878454153e-35, which exceeds expected * 3e-6, where
+result.loss evaluates to 0,
+expected evaluates to 1.8048513878454153e-35, and
+expected * 3e-6 evaluates to 5.414554163536246e-41.
+Google Test trace:
+../test/unittest/layers/unittest_layers_loss.cpp:164: 80
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_loss.cpp:169&#x0A;The difference between result.loss and expected is 1.8048513878454153e-35, which exceeds expected * 3e-6, where&#x0A;result.loss evaluates to 0,&#x0A;expected evaluates to 1.8048513878454153e-35, and&#x0A;expected * 3e-6 evaluates to 5.414554163536246e-41.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_loss.cpp:164: 80&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_loss.cpp:169
+The difference between result.loss and expected is 1.8048513878454153e-35, which exceeds expected * 3e-6, where
+result.loss evaluates to 0,
+expected evaluates to 1.8048513878454153e-35, and
+expected * 3e-6 evaluates to 5.414554163536246e-41.
+Google Test trace:
+../test/unittest/layers/unittest_layers_loss.cpp:164: 80
+]]></failure>
+    </testcase>
+    <testcase name="SmallGradientSurvives" file="../test/unittest/layers/unittest_layers_loss.cpp" line="174" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.393" classname="SigmoidLossStability">
+      <failure message="../test/unittest/layers/unittest_layers_loss.cpp:180&#x0A;The difference between positive.derivative[0] and -expected is 2.4176390568328432e-08, which exceeds expected * 3e-6, where&#x0A;positive.derivative[0] evaluates to -0.0066928267478942871,&#x0A;-expected evaluates to -0.0066928509242848554, and&#x0A;expected * 3e-6 evaluates to 2.0078552772854566e-08.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_loss.cpp:176: 5&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_loss.cpp:180
+The difference between positive.derivative[0] and -expected is 2.4176390568328432e-08, which exceeds expected * 3e-6, where
+positive.derivative[0] evaluates to -0.0066928267478942871,
+-expected evaluates to -0.0066928509242848554, and
+expected * 3e-6 evaluates to 2.0078552772854566e-08.
+Google Test trace:
+../test/unittest/layers/unittest_layers_loss.cpp:176: 5
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_loss.cpp:180&#x0A;The difference between positive.derivative[0] and -expected is 2.0870616413261669e-08, which exceeds expected * 3e-6, where&#x0A;positive.derivative[0] evaluates to -4.5418739318847656e-05,&#x0A;-expected evaluates to -4.5397868702434395e-05, and&#x0A;expected * 3e-6 evaluates to 1.3619360610730319e-10.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_loss.cpp:176: 10&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_loss.cpp:180
+The difference between positive.derivative[0] and -expected is 2.0870616413261669e-08, which exceeds expected * 3e-6, where
+positive.derivative[0] evaluates to -4.5418739318847656e-05,
+-expected evaluates to -4.5397868702434395e-05, and
+expected * 3e-6 evaluates to 1.3619360610730319e-10.
+Google Test trace:
+../test/unittest/layers/unittest_layers_loss.cpp:176: 10
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_loss.cpp:180&#x0A;The difference between positive.derivative[0] and -expected is 2.0611536181902037e-09, which exceeds expected * 3e-6, where&#x0A;positive.derivative[0] evaluates to 0,&#x0A;-expected evaluates to -2.0611536181902037e-09, and&#x0A;expected * 3e-6 evaluates to 6.1834608545706115e-15.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_loss.cpp:176: 20&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_loss.cpp:180
+The difference between positive.derivative[0] and -expected is 2.0611536181902037e-09, which exceeds expected * 3e-6, where
+positive.derivative[0] evaluates to 0,
+-expected evaluates to -2.0611536181902037e-09, and
+expected * 3e-6 evaluates to 6.1834608545706115e-15.
+Google Test trace:
+../test/unittest/layers/unittest_layers_loss.cpp:176: 20
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_loss.cpp:180&#x0A;The difference between positive.derivative[0] and -expected is 4.2483542552915889e-18, which exceeds expected * 3e-6, where&#x0A;positive.derivative[0] evaluates to 0,&#x0A;-expected evaluates to -4.2483542552915889e-18, and&#x0A;expected * 3e-6 evaluates to 1.2745062765874768e-23.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_loss.cpp:176: 40&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_loss.cpp:180
+The difference between positive.derivative[0] and -expected is 4.2483542552915889e-18, which exceeds expected * 3e-6, where
+positive.derivative[0] evaluates to 0,
+-expected evaluates to -4.2483542552915889e-18, and
+expected * 3e-6 evaluates to 1.2745062765874768e-23.
+Google Test trace:
+../test/unittest/layers/unittest_layers_loss.cpp:176: 40
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_loss.cpp:180&#x0A;The difference between positive.derivative[0] and -expected is 1.8048513878454153e-35, which exceeds expected * 3e-6, where&#x0A;positive.derivative[0] evaluates to 0,&#x0A;-expected evaluates to -1.8048513878454153e-35, and&#x0A;expected * 3e-6 evaluates to 5.414554163536246e-41.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_loss.cpp:176: 80&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_loss.cpp:180
+The difference between positive.derivative[0] and -expected is 1.8048513878454153e-35, which exceeds expected * 3e-6, where
+positive.derivative[0] evaluates to 0,
+-expected evaluates to -1.8048513878454153e-35, and
+expected * 3e-6 evaluates to 5.414554163536246e-41.
+Google Test trace:
+../test/unittest/layers/unittest_layers_loss.cpp:176: 80
+]]></failure>
+    </testcase>
+    <testcase name="BatchShapePreservesMean" file="../test/unittest/layers/unittest_layers_loss.cpp" line="185" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.394" classname="SigmoidLossStability" />
+    <testcase name="SoftLabelsAndWrongClasses" file="../test/unittest/layers/unittest_layers_loss.cpp" line="195" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.394" classname="SigmoidLossStability">
+      <failure message="../test/unittest/layers/unittest_layers_loss.cpp:202&#x0A;The difference between result.loss and expected is 1.8048513878454153e-35, which exceeds expected * 3e-6, where&#x0A;result.loss evaluates to 0,&#x0A;expected evaluates to 1.8048513878454153e-35, and&#x0A;expected * 3e-6 evaluates to 5.414554163536246e-41.&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_loss.cpp:202
+The difference between result.loss and expected is 1.8048513878454153e-35, which exceeds expected * 3e-6, where
+result.loss evaluates to 0,
+expected evaluates to 1.8048513878454153e-35, and
+expected * 3e-6 evaluates to 5.414554163536246e-41.
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_loss.cpp:202&#x0A;The difference between result.loss and expected is 5.0790143459045201e-08, which exceeds expected * 3e-6, where&#x0A;result.loss evaluates to 0.0067152976989746094,&#x0A;expected evaluates to 0.0067153484891180684, and&#x0A;expected * 3e-6 evaluates to 2.0146045467354206e-08.&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_loss.cpp:202
+The difference between result.loss and expected is 5.0790143459045201e-08, which exceeds expected * 3e-6, where
+result.loss evaluates to 0.0067152976989746094,
+expected evaluates to 0.0067153484891180684, and
+expected * 3e-6 evaluates to 2.0146045467354206e-08.
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_loss.cpp:202&#x0A;The difference between result.loss and expected is 1.8048513878454153e-35, which exceeds expected * 3e-6, where&#x0A;result.loss evaluates to 0,&#x0A;expected evaluates to 1.8048513878454153e-35, and&#x0A;expected * 3e-6 evaluates to 5.414554163536246e-41.&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_loss.cpp:202
+The difference between result.loss and expected is 1.8048513878454153e-35, which exceeds expected * 3e-6, where
+result.loss evaluates to 0,
+expected evaluates to 1.8048513878454153e-35, and
+expected * 3e-6 evaluates to 5.414554163536246e-41.
+]]></failure>
+    </testcase>
+    <testcase name="GradientAgreesWithFiniteDifference" file="../test/unittest/layers/unittest_layers_loss.cpp" line="209" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.394" classname="SigmoidLossStability">
+      <failure message="../test/unittest/layers/unittest_layers_loss.cpp:216&#x0A;The difference between finite_difference and expected is 2.0611536181902037e-09, which exceeds std::abs(expected) * 1e-3, where&#x0A;finite_difference evaluates to 0,&#x0A;expected evaluates to -2.0611536181902037e-09, and&#x0A;std::abs(expected) * 1e-3 evaluates to 2.0611536181902037e-12.&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_loss.cpp:216
+The difference between finite_difference and expected is 2.0611536181902037e-09, which exceeds std::abs(expected) * 1e-3, where
+finite_difference evaluates to 0,
+expected evaluates to -2.0611536181902037e-09, and
+std::abs(expected) * 1e-3 evaluates to 2.0611536181902037e-12.
+]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="LossCross/LayerSemantics" tests="66" failures="0" disabled="0" skipped="0" errors="0" time="0.013" timestamp="2026-09-07T11:24:44.394">
+    <testcase name="createFromAppContext_pn/0" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 EC-0C 37-02 01-00 00-00 00-00 00-00 00-00 00-00 20-D0 F1-48 01-00 00-00&gt;, &quot;cross&quot;, {}, 0, true, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="27" status="run" result="completed" time="0.011" timestamp="2026-09-07T11:24:44.394" classname="LossCross/LayerSemantics" />
+    <testcase name="createFromAppContext_pn/1" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 88-0A 37-02 01-00 00-00 00-00 00-00 00-00 00-00 20-D0 F1-48 01-00 00-00&gt;, &quot;mse&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="27" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.406" classname="LossCross/LayerSemantics" />
+    <testcase name="createFromAppContext_pn/2" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 98-09 37-02 01-00 00-00 00-00 00-00 00-00 00-00 20-D0 F1-48 01-00 00-00&gt;, &quot;cross_softmax&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="27" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.406" classname="LossCross/LayerSemantics" />
+    <testcase name="createFromAppContext_pn/3" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 A8-08 37-02 01-00 00-00 00-00 00-00 00-00 00-00 20-D0 F1-48 01-00 00-00&gt;, &quot;cross_sigmoid&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="27" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.406" classname="LossCross/LayerSemantics" />
+    <testcase name="createFromAppContext_pn/4" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 68-0C 37-02 01-00 00-00 00-00 00-00 00-00 00-00 20-D0 F1-48 01-00 00-00&gt;, &quot;constant_derivative&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="27" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.406" classname="LossCross/LayerSemantics" />
+    <testcase name="createFromAppContext_pn/5" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 78-0B 37-02 01-00 00-00 00-00 00-00 00-00 00-00 20-D0 F1-48 01-00 00-00&gt;, &quot;kld&quot;, {}, 0, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="27" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.406" classname="LossCross/LayerSemantics" />
+    <testcase name="setPropertiesInvalid_01_n/0" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 EC-0C 37-02 01-00 00-00 00-00 00-00 00-00 00-00 C0-E8 F2-48 01-00 00-00&gt;, &quot;cross&quot;, {}, 0, true, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="44" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.406" classname="LossCross/LayerSemantics" />
+    <testcase name="setPropertiesInvalid_01_n/1" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 88-0A 37-02 01-00 00-00 00-00 00-00 00-00 00-00 C0-E8 F2-48 01-00 00-00&gt;, &quot;mse&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="44" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.407" classname="LossCross/LayerSemantics" />
+    <testcase name="setPropertiesInvalid_01_n/2" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 98-09 37-02 01-00 00-00 00-00 00-00 00-00 00-00 C0-E8 F2-48 01-00 00-00&gt;, &quot;cross_softmax&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="44" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.407" classname="LossCross/LayerSemantics" />
+    <testcase name="setPropertiesInvalid_01_n/3" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 A8-08 37-02 01-00 00-00 00-00 00-00 00-00 00-00 C0-E8 F2-48 01-00 00-00&gt;, &quot;cross_sigmoid&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="44" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.407" classname="LossCross/LayerSemantics" />
+    <testcase name="setPropertiesInvalid_01_n/4" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 68-0C 37-02 01-00 00-00 00-00 00-00 00-00 00-00 C0-E8 F2-48 01-00 00-00&gt;, &quot;constant_derivative&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="44" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.407" classname="LossCross/LayerSemantics" />
+    <testcase name="setPropertiesInvalid_01_n/5" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 78-0B 37-02 01-00 00-00 00-00 00-00 00-00 00-00 C0-E8 F2-48 01-00 00-00&gt;, &quot;kld&quot;, {}, 0, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="44" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.407" classname="LossCross/LayerSemantics" />
+    <testcase name="setPropertiesInvalid_02_n/0" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 EC-0C 37-02 01-00 00-00 00-00 00-00 00-00 00-00 70-06 E1-48 01-00 00-00&gt;, &quot;cross&quot;, {}, 0, true, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="50" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.407" classname="LossCross/LayerSemantics" />
+    <testcase name="setPropertiesInvalid_02_n/1" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 88-0A 37-02 01-00 00-00 00-00 00-00 00-00 00-00 70-06 E1-48 01-00 00-00&gt;, &quot;mse&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="50" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.407" classname="LossCross/LayerSemantics" />
+    <testcase name="setPropertiesInvalid_02_n/2" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 98-09 37-02 01-00 00-00 00-00 00-00 00-00 00-00 70-06 E1-48 01-00 00-00&gt;, &quot;cross_softmax&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="50" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.407" classname="LossCross/LayerSemantics" />
+    <testcase name="setPropertiesInvalid_02_n/3" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 A8-08 37-02 01-00 00-00 00-00 00-00 00-00 00-00 70-06 E1-48 01-00 00-00&gt;, &quot;cross_sigmoid&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="50" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.407" classname="LossCross/LayerSemantics" />
+    <testcase name="setPropertiesInvalid_02_n/4" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 68-0C 37-02 01-00 00-00 00-00 00-00 00-00 00-00 70-06 E1-48 01-00 00-00&gt;, &quot;constant_derivative&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="50" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.407" classname="LossCross/LayerSemantics" />
+    <testcase name="setPropertiesInvalid_02_n/5" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 78-0B 37-02 01-00 00-00 00-00 00-00 00-00 00-00 70-06 E1-48 01-00 00-00&gt;, &quot;kld&quot;, {}, 0, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="50" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.407" classname="LossCross/LayerSemantics" />
+    <testcase name="finalizeValidateLayerNode_p/0" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 EC-0C 37-02 01-00 00-00 00-00 00-00 00-00 00-00 E0-FD E1-48 01-00 00-00&gt;, &quot;cross&quot;, {}, 0, true, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="56" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.407" classname="LossCross/LayerSemantics" />
+    <testcase name="finalizeValidateLayerNode_p/1" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 88-0A 37-02 01-00 00-00 00-00 00-00 00-00 00-00 E0-FD E1-48 01-00 00-00&gt;, &quot;mse&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="56" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.407" classname="LossCross/LayerSemantics" />
+    <testcase name="finalizeValidateLayerNode_p/2" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 98-09 37-02 01-00 00-00 00-00 00-00 00-00 00-00 E0-FD E1-48 01-00 00-00&gt;, &quot;cross_softmax&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="56" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.407" classname="LossCross/LayerSemantics" />
+    <testcase name="finalizeValidateLayerNode_p/3" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 A8-08 37-02 01-00 00-00 00-00 00-00 00-00 00-00 E0-FD E1-48 01-00 00-00&gt;, &quot;cross_sigmoid&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="56" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.407" classname="LossCross/LayerSemantics" />
+    <testcase name="finalizeValidateLayerNode_p/4" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 68-0C 37-02 01-00 00-00 00-00 00-00 00-00 00-00 E0-FD E1-48 01-00 00-00&gt;, &quot;constant_derivative&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="56" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.407" classname="LossCross/LayerSemantics" />
+    <testcase name="finalizeValidateLayerNode_p/5" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 78-0B 37-02 01-00 00-00 00-00 00-00 00-00 00-00 E0-FD E1-48 01-00 00-00&gt;, &quot;kld&quot;, {}, 0, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="56" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.407" classname="LossCross/LayerSemantics" />
+    <testcase name="getTypeValidateLayerNode_p/0" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 EC-0C 37-02 01-00 00-00 00-00 00-00 00-00 00-00 20-BC E2-48 01-00 00-00&gt;, &quot;cross&quot;, {}, 0, true, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="86" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.407" classname="LossCross/LayerSemantics" />
+    <testcase name="getTypeValidateLayerNode_p/1" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 88-0A 37-02 01-00 00-00 00-00 00-00 00-00 00-00 20-BC E2-48 01-00 00-00&gt;, &quot;mse&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="86" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.407" classname="LossCross/LayerSemantics" />
+    <testcase name="getTypeValidateLayerNode_p/2" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 98-09 37-02 01-00 00-00 00-00 00-00 00-00 00-00 20-BC E2-48 01-00 00-00&gt;, &quot;cross_softmax&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="86" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.407" classname="LossCross/LayerSemantics" />
+    <testcase name="getTypeValidateLayerNode_p/3" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 A8-08 37-02 01-00 00-00 00-00 00-00 00-00 00-00 20-BC E2-48 01-00 00-00&gt;, &quot;cross_sigmoid&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="86" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.407" classname="LossCross/LayerSemantics" />
+    <testcase name="getTypeValidateLayerNode_p/4" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 68-0C 37-02 01-00 00-00 00-00 00-00 00-00 00-00 20-BC E2-48 01-00 00-00&gt;, &quot;constant_derivative&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="86" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="getTypeValidateLayerNode_p/5" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 78-0B 37-02 01-00 00-00 00-00 00-00 00-00 00-00 20-BC E2-48 01-00 00-00&gt;, &quot;kld&quot;, {}, 0, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="86" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="gettersValidateLayerNode_p/0" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 EC-0C 37-02 01-00 00-00 00-00 00-00 00-00 00-00 80-B2 E3-48 01-00 00-00&gt;, &quot;cross&quot;, {}, 0, true, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="94" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="gettersValidateLayerNode_p/1" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 88-0A 37-02 01-00 00-00 00-00 00-00 00-00 00-00 80-B2 E3-48 01-00 00-00&gt;, &quot;mse&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="94" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="gettersValidateLayerNode_p/2" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 98-09 37-02 01-00 00-00 00-00 00-00 00-00 00-00 80-B2 E3-48 01-00 00-00&gt;, &quot;cross_softmax&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="94" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="gettersValidateLayerNode_p/3" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 A8-08 37-02 01-00 00-00 00-00 00-00 00-00 00-00 80-B2 E3-48 01-00 00-00&gt;, &quot;cross_sigmoid&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="94" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="gettersValidateLayerNode_p/4" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 68-0C 37-02 01-00 00-00 00-00 00-00 00-00 00-00 80-B2 E3-48 01-00 00-00&gt;, &quot;constant_derivative&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="94" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="gettersValidateLayerNode_p/5" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 78-0B 37-02 01-00 00-00 00-00 00-00 00-00 00-00 80-B2 E3-48 01-00 00-00&gt;, &quot;kld&quot;, {}, 0, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="94" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="setBatchValidateLayerNode_p/0" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 EC-0C 37-02 01-00 00-00 00-00 00-00 00-00 00-00 D0-89 E4-48 01-00 00-00&gt;, &quot;cross&quot;, {}, 0, true, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="102" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="setBatchValidateLayerNode_p/1" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 88-0A 37-02 01-00 00-00 00-00 00-00 00-00 00-00 D0-89 E4-48 01-00 00-00&gt;, &quot;mse&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="102" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="setBatchValidateLayerNode_p/2" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 98-09 37-02 01-00 00-00 00-00 00-00 00-00 00-00 D0-89 E4-48 01-00 00-00&gt;, &quot;cross_softmax&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="102" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="setBatchValidateLayerNode_p/3" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 A8-08 37-02 01-00 00-00 00-00 00-00 00-00 00-00 D0-89 E4-48 01-00 00-00&gt;, &quot;cross_sigmoid&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="102" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="setBatchValidateLayerNode_p/4" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 68-0C 37-02 01-00 00-00 00-00 00-00 00-00 00-00 D0-89 E4-48 01-00 00-00&gt;, &quot;constant_derivative&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="102" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="setBatchValidateLayerNode_p/5" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 78-0B 37-02 01-00 00-00 00-00 00-00 00-00 00-00 D0-89 E4-48 01-00 00-00&gt;, &quot;kld&quot;, {}, 0, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="102" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="setProperties_n/0" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 EC-0C 37-02 01-00 00-00 00-00 00-00 00-00 00-00 F0-68 E5-48 01-00 00-00&gt;, &quot;cross&quot;, {}, 0, true, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="23" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="setProperties_n/1" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 88-0A 37-02 01-00 00-00 00-00 00-00 00-00 00-00 F0-68 E5-48 01-00 00-00&gt;, &quot;mse&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="23" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="setProperties_n/2" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 98-09 37-02 01-00 00-00 00-00 00-00 00-00 00-00 F0-68 E5-48 01-00 00-00&gt;, &quot;cross_softmax&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="23" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="setProperties_n/3" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 A8-08 37-02 01-00 00-00 00-00 00-00 00-00 00-00 F0-68 E5-48 01-00 00-00&gt;, &quot;cross_sigmoid&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="23" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="setProperties_n/4" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 68-0C 37-02 01-00 00-00 00-00 00-00 00-00 00-00 F0-68 E5-48 01-00 00-00&gt;, &quot;constant_derivative&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="23" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="setProperties_n/5" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 78-0B 37-02 01-00 00-00 00-00 00-00 00-00 00-00 F0-68 E5-48 01-00 00-00&gt;, &quot;kld&quot;, {}, 0, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="23" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="gettersValidate_p/0" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 EC-0C 37-02 01-00 00-00 00-00 00-00 00-00 00-00 A0-35 E6-48 01-00 00-00&gt;, &quot;cross&quot;, {}, 0, true, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="32" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="gettersValidate_p/1" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 88-0A 37-02 01-00 00-00 00-00 00-00 00-00 00-00 A0-35 E6-48 01-00 00-00&gt;, &quot;mse&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="32" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="gettersValidate_p/2" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 98-09 37-02 01-00 00-00 00-00 00-00 00-00 00-00 A0-35 E6-48 01-00 00-00&gt;, &quot;cross_softmax&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="32" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="gettersValidate_p/3" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 A8-08 37-02 01-00 00-00 00-00 00-00 00-00 00-00 A0-35 E6-48 01-00 00-00&gt;, &quot;cross_sigmoid&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="32" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="gettersValidate_p/4" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 68-0C 37-02 01-00 00-00 00-00 00-00 00-00 00-00 A0-35 E6-48 01-00 00-00&gt;, &quot;constant_derivative&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="32" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="gettersValidate_p/5" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 78-0B 37-02 01-00 00-00 00-00 00-00 00-00 00-00 A0-35 E6-48 01-00 00-00&gt;, &quot;kld&quot;, {}, 0, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="32" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="finalizeValidate_p/0" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 EC-0C 37-02 01-00 00-00 00-00 00-00 00-00 00-00 30-1C E7-48 01-00 00-00&gt;, &quot;cross&quot;, {}, 0, true, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="42" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="finalizeValidate_p/1" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 88-0A 37-02 01-00 00-00 00-00 00-00 00-00 00-00 30-1C E7-48 01-00 00-00&gt;, &quot;mse&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="42" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="finalizeValidate_p/2" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 98-09 37-02 01-00 00-00 00-00 00-00 00-00 00-00 30-1C E7-48 01-00 00-00&gt;, &quot;cross_softmax&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="42" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="finalizeValidate_p/3" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 A8-08 37-02 01-00 00-00 00-00 00-00 00-00 00-00 30-1C E7-48 01-00 00-00&gt;, &quot;cross_sigmoid&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="42" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="finalizeValidate_p/4" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 68-0C 37-02 01-00 00-00 00-00 00-00 00-00 00-00 30-1C E7-48 01-00 00-00&gt;, &quot;constant_derivative&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="42" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="finalizeValidate_p/5" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 78-0B 37-02 01-00 00-00 00-00 00-00 00-00 00-00 30-1C E7-48 01-00 00-00&gt;, &quot;kld&quot;, {}, 0, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="42" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="setBatchValidate_p/0" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 EC-0C 37-02 01-00 00-00 00-00 00-00 00-00 00-00 90-F5 E7-48 01-00 00-00&gt;, &quot;cross&quot;, {}, 0, true, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="67" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="setBatchValidate_p/1" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 88-0A 37-02 01-00 00-00 00-00 00-00 00-00 00-00 90-F5 E7-48 01-00 00-00&gt;, &quot;mse&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="67" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="setBatchValidate_p/2" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 98-09 37-02 01-00 00-00 00-00 00-00 00-00 00-00 90-F5 E7-48 01-00 00-00&gt;, &quot;cross_softmax&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="67" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="setBatchValidate_p/3" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 A8-08 37-02 01-00 00-00 00-00 00-00 00-00 00-00 90-F5 E7-48 01-00 00-00&gt;, &quot;cross_sigmoid&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="67" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="setBatchValidate_p/4" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 68-0C 37-02 01-00 00-00 00-00 00-00 00-00 00-00 90-F5 E7-48 01-00 00-00&gt;, &quot;constant_derivative&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="67" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+    <testcase name="setBatchValidate_p/5" value_param="(32-byte object &lt;48-46 46-02 01-00 00-00 78-0B 37-02 01-00 00-00 00-00 00-00 00-00 00-00 90-F5 E7-48 01-00 00-00&gt;, &quot;kld&quot;, {}, 0, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="67" status="run" result="completed" time="0." timestamp="2026-09-07T11:24:44.408" classname="LossCross/LayerSemantics" />
+  </testsuite>
+</testsuites>

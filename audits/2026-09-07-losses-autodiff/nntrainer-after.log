@@ -1,0 +1,170 @@
+Running main() from ../subprojects/googletest/googletest/src/gtest_main.cc
+Note: Google Test filter = SigmoidLossStability.*:CrossEntropyStability.*:LossCross/*
+[==========] Running 77 tests from 3 test suites.
+[----------] Global test environment set-up.
+[----------] 6 tests from CrossEntropyStability
+[ RUN      ] CrossEntropyStability.FiniteLogitsPreserveLargeLoss
+[       OK ] CrossEntropyStability.FiniteLogitsPreserveLargeLoss (0 ms)
+[ RUN      ] CrossEntropyStability.ForwardAndBackwardAgree
+[       OK ] CrossEntropyStability.ForwardAndBackwardAgree (0 ms)
+[ RUN      ] CrossEntropyStability.SoftTargetsPreserveLargeLoss
+[       OK ] CrossEntropyStability.SoftTargetsPreserveLargeLoss (0 ms)
+[ RUN      ] CrossEntropyStability.BatchMeanAndLastAxisReduction
+[       OK ] CrossEntropyStability.BatchMeanAndLastAxisReduction (0 ms)
+[ RUN      ] CrossEntropyStability.CommonLogitOffsetDoesNotChangeLoss
+[       OK ] CrossEntropyStability.CommonLogitOffsetDoesNotChangeLoss (0 ms)
+[ RUN      ] CrossEntropyStability.InPlaceForwardUsesOriginalLogits
+[       OK ] CrossEntropyStability.InPlaceForwardUsesOriginalLogits (0 ms)
+[----------] 6 tests from CrossEntropyStability (0 ms total)
+
+[----------] 5 tests from SigmoidLossStability
+[ RUN      ] SigmoidLossStability.SmallPositiveLossSurvives
+[       OK ] SigmoidLossStability.SmallPositiveLossSurvives (0 ms)
+[ RUN      ] SigmoidLossStability.SmallGradientSurvives
+[       OK ] SigmoidLossStability.SmallGradientSurvives (0 ms)
+[ RUN      ] SigmoidLossStability.BatchShapePreservesMean
+[       OK ] SigmoidLossStability.BatchShapePreservesMean (0 ms)
+[ RUN      ] SigmoidLossStability.SoftLabelsAndWrongClasses
+[       OK ] SigmoidLossStability.SoftLabelsAndWrongClasses (0 ms)
+[ RUN      ] SigmoidLossStability.GradientAgreesWithFiniteDifference
+[       OK ] SigmoidLossStability.GradientAgreesWithFiniteDifference (0 ms)
+[----------] 5 tests from SigmoidLossStability (0 ms total)
+
+[----------] 66 tests from LossCross/LayerSemantics
+[ RUN      ] LossCross/LayerSemantics.createFromAppContext_pn/0
+[       OK ] LossCross/LayerSemantics.createFromAppContext_pn/0 (3 ms)
+[ RUN      ] LossCross/LayerSemantics.createFromAppContext_pn/1
+[       OK ] LossCross/LayerSemantics.createFromAppContext_pn/1 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.createFromAppContext_pn/2
+[       OK ] LossCross/LayerSemantics.createFromAppContext_pn/2 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.createFromAppContext_pn/3
+[       OK ] LossCross/LayerSemantics.createFromAppContext_pn/3 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.createFromAppContext_pn/4
+[       OK ] LossCross/LayerSemantics.createFromAppContext_pn/4 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.createFromAppContext_pn/5
+[       OK ] LossCross/LayerSemantics.createFromAppContext_pn/5 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setPropertiesInvalid_01_n/0
+[       OK ] LossCross/LayerSemantics.setPropertiesInvalid_01_n/0 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setPropertiesInvalid_01_n/1
+[       OK ] LossCross/LayerSemantics.setPropertiesInvalid_01_n/1 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setPropertiesInvalid_01_n/2
+[       OK ] LossCross/LayerSemantics.setPropertiesInvalid_01_n/2 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setPropertiesInvalid_01_n/3
+[       OK ] LossCross/LayerSemantics.setPropertiesInvalid_01_n/3 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setPropertiesInvalid_01_n/4
+[       OK ] LossCross/LayerSemantics.setPropertiesInvalid_01_n/4 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setPropertiesInvalid_01_n/5
+[       OK ] LossCross/LayerSemantics.setPropertiesInvalid_01_n/5 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setPropertiesInvalid_02_n/0
+[       OK ] LossCross/LayerSemantics.setPropertiesInvalid_02_n/0 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setPropertiesInvalid_02_n/1
+[       OK ] LossCross/LayerSemantics.setPropertiesInvalid_02_n/1 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setPropertiesInvalid_02_n/2
+[       OK ] LossCross/LayerSemantics.setPropertiesInvalid_02_n/2 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setPropertiesInvalid_02_n/3
+[       OK ] LossCross/LayerSemantics.setPropertiesInvalid_02_n/3 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setPropertiesInvalid_02_n/4
+[       OK ] LossCross/LayerSemantics.setPropertiesInvalid_02_n/4 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setPropertiesInvalid_02_n/5
+[       OK ] LossCross/LayerSemantics.setPropertiesInvalid_02_n/5 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.finalizeValidateLayerNode_p/0
+[       OK ] LossCross/LayerSemantics.finalizeValidateLayerNode_p/0 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.finalizeValidateLayerNode_p/1
+[       OK ] LossCross/LayerSemantics.finalizeValidateLayerNode_p/1 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.finalizeValidateLayerNode_p/2
+[       OK ] LossCross/LayerSemantics.finalizeValidateLayerNode_p/2 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.finalizeValidateLayerNode_p/3
+[       OK ] LossCross/LayerSemantics.finalizeValidateLayerNode_p/3 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.finalizeValidateLayerNode_p/4
+[       OK ] LossCross/LayerSemantics.finalizeValidateLayerNode_p/4 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.finalizeValidateLayerNode_p/5
+[       OK ] LossCross/LayerSemantics.finalizeValidateLayerNode_p/5 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.getTypeValidateLayerNode_p/0
+[       OK ] LossCross/LayerSemantics.getTypeValidateLayerNode_p/0 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.getTypeValidateLayerNode_p/1
+[       OK ] LossCross/LayerSemantics.getTypeValidateLayerNode_p/1 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.getTypeValidateLayerNode_p/2
+[       OK ] LossCross/LayerSemantics.getTypeValidateLayerNode_p/2 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.getTypeValidateLayerNode_p/3
+[       OK ] LossCross/LayerSemantics.getTypeValidateLayerNode_p/3 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.getTypeValidateLayerNode_p/4
+[       OK ] LossCross/LayerSemantics.getTypeValidateLayerNode_p/4 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.getTypeValidateLayerNode_p/5
+[       OK ] LossCross/LayerSemantics.getTypeValidateLayerNode_p/5 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.gettersValidateLayerNode_p/0
+[       OK ] LossCross/LayerSemantics.gettersValidateLayerNode_p/0 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.gettersValidateLayerNode_p/1
+[       OK ] LossCross/LayerSemantics.gettersValidateLayerNode_p/1 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.gettersValidateLayerNode_p/2
+[       OK ] LossCross/LayerSemantics.gettersValidateLayerNode_p/2 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.gettersValidateLayerNode_p/3
+[       OK ] LossCross/LayerSemantics.gettersValidateLayerNode_p/3 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.gettersValidateLayerNode_p/4
+[       OK ] LossCross/LayerSemantics.gettersValidateLayerNode_p/4 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.gettersValidateLayerNode_p/5
+[       OK ] LossCross/LayerSemantics.gettersValidateLayerNode_p/5 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setBatchValidateLayerNode_p/0
+[       OK ] LossCross/LayerSemantics.setBatchValidateLayerNode_p/0 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setBatchValidateLayerNode_p/1
+[       OK ] LossCross/LayerSemantics.setBatchValidateLayerNode_p/1 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setBatchValidateLayerNode_p/2
+[       OK ] LossCross/LayerSemantics.setBatchValidateLayerNode_p/2 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setBatchValidateLayerNode_p/3
+[       OK ] LossCross/LayerSemantics.setBatchValidateLayerNode_p/3 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setBatchValidateLayerNode_p/4
+[       OK ] LossCross/LayerSemantics.setBatchValidateLayerNode_p/4 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setBatchValidateLayerNode_p/5
+[       OK ] LossCross/LayerSemantics.setBatchValidateLayerNode_p/5 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setProperties_n/0
+[       OK ] LossCross/LayerSemantics.setProperties_n/0 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setProperties_n/1
+[       OK ] LossCross/LayerSemantics.setProperties_n/1 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setProperties_n/2
+[       OK ] LossCross/LayerSemantics.setProperties_n/2 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setProperties_n/3
+[       OK ] LossCross/LayerSemantics.setProperties_n/3 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setProperties_n/4
+[       OK ] LossCross/LayerSemantics.setProperties_n/4 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setProperties_n/5
+[       OK ] LossCross/LayerSemantics.setProperties_n/5 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.gettersValidate_p/0
+[       OK ] LossCross/LayerSemantics.gettersValidate_p/0 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.gettersValidate_p/1
+[       OK ] LossCross/LayerSemantics.gettersValidate_p/1 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.gettersValidate_p/2
+[       OK ] LossCross/LayerSemantics.gettersValidate_p/2 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.gettersValidate_p/3
+[       OK ] LossCross/LayerSemantics.gettersValidate_p/3 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.gettersValidate_p/4
+[       OK ] LossCross/LayerSemantics.gettersValidate_p/4 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.gettersValidate_p/5
+[       OK ] LossCross/LayerSemantics.gettersValidate_p/5 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.finalizeValidate_p/0
+[       OK ] LossCross/LayerSemantics.finalizeValidate_p/0 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.finalizeValidate_p/1
+[       OK ] LossCross/LayerSemantics.finalizeValidate_p/1 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.finalizeValidate_p/2
+[       OK ] LossCross/LayerSemantics.finalizeValidate_p/2 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.finalizeValidate_p/3
+[       OK ] LossCross/LayerSemantics.finalizeValidate_p/3 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.finalizeValidate_p/4
+[       OK ] LossCross/LayerSemantics.finalizeValidate_p/4 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.finalizeValidate_p/5
+[       OK ] LossCross/LayerSemantics.finalizeValidate_p/5 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setBatchValidate_p/0
+[       OK ] LossCross/LayerSemantics.setBatchValidate_p/0 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setBatchValidate_p/1
+[       OK ] LossCross/LayerSemantics.setBatchValidate_p/1 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setBatchValidate_p/2
+[       OK ] LossCross/LayerSemantics.setBatchValidate_p/2 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setBatchValidate_p/3
+[       OK ] LossCross/LayerSemantics.setBatchValidate_p/3 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setBatchValidate_p/4
+[       OK ] LossCross/LayerSemantics.setBatchValidate_p/4 (0 ms)
+[ RUN      ] LossCross/LayerSemantics.setBatchValidate_p/5
+[       OK ] LossCross/LayerSemantics.setBatchValidate_p/5 (0 ms)
+[----------] 66 tests from LossCross/LayerSemantics (4 ms total)
+
+[----------] Global test environment tear-down
+[==========] 77 tests from 3 test suites ran. (5 ms total)
+[  PASSED  ] 77 tests.

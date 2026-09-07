@@ -1,0 +1,101 @@
+#include <algorithm>
+#include <cmath>
+#include <gtest/gtest.h>
+#include <cross_entropy_sigmoid_loss_layer.h>
+#include <layer_context.h>
+#include <var_grad.h>
+namespace {
+struct SigmoidLossResult {
+  float loss;
+  std::vector<float> derivative;
+  std::vector<float> probabilities;
+};
+
+SigmoidLossResult evaluateSigmoidLoss(const std::vector<float> &logits,
+                                      const std::vector<float> &labels,
+                                      unsigned int batch = 1) {
+  const nntrainer::TensorDim dim(
+    {batch, 1, 1, static_cast<unsigned int>(logits.size() / batch)});
+  nntrainer::CrossEntropySigmoidLossLayer layer;
+  nntrainer::InitLayerContext init({dim}, {true}, false, "sigmoid_stability");
+  layer.finalize(init);
+  nntrainer::Var_Grad input(dim, nntrainer::Initializer::NONE, true, true,
+                            "input");
+  nntrainer::Var_Grad output(dim, nntrainer::Initializer::NONE, true, true,
+                             "output");
+  nntrainer::RunLayerContext context("sigmoid_stability", true, 0.0f, false,
+                                     1.0f, nullptr, false, {}, {&input},
+                                     {&output}, {});
+  std::copy(logits.begin(), logits.end(), input.getVariableRef().getData());
+  std::copy(labels.begin(), labels.end(), output.getGradientRef().getData());
+  layer.forwarding(context, true);
+  layer.calcDerivative(context);
+  for (unsigned int i = 0; i < labels.size(); ++i)
+    EXPECT_EQ(output.getGradientRef().getData()[i], labels[i]);
+  const float *derivative = input.getGradientRef().getData();
+  const float *probabilities = output.getVariableRef().getData();
+  return {context.getLoss(),
+          {derivative, derivative + logits.size()},
+          {probabilities, probabilities + logits.size()}};
+}
+} // namespace
+
+TEST(SigmoidLossStability, SmallPositiveLossSurvives) {
+  for (float gap : {0.0f, 5.0f, 10.0f, 20.0f, 40.0f, 80.0f}) {
+    SCOPED_TRACE(gap);
+    const double expected = std::log1p(std::exp(-double(gap)));
+    for (float label : {0.0f, 1.0f}) {
+      const auto result =
+        evaluateSigmoidLoss({label == 1 ? gap : -gap}, {label});
+      EXPECT_NEAR(result.loss, expected, expected * 3e-6);
+    }
+  }
+}
+
+TEST(SigmoidLossStability, SmallGradientSurvives) {
+  for (float gap : {0.0f, 5.0f, 10.0f, 20.0f, 40.0f, 80.0f}) {
+    SCOPED_TRACE(gap);
+    const double expected = 1.0 / (1.0 + std::exp(double(gap)));
+    const auto positive = evaluateSigmoidLoss({gap}, {1.0f});
+    const auto negative = evaluateSigmoidLoss({-gap}, {0.0f});
+    EXPECT_NEAR(positive.derivative[0], -expected, expected * 3e-6);
+    EXPECT_NEAR(negative.derivative[0], expected, expected * 3e-6);
+  }
+}
+
+TEST(SigmoidLossStability, BatchShapePreservesMean) {
+  const std::vector<float> logits{-20.0f, 20.0f, -40.0f, 40.0f};
+  const std::vector<float> labels{0.0f, 1.0f, 0.0f, 1.0f};
+  const auto flat = evaluateSigmoidLoss(logits, labels);
+  const auto batched = evaluateSigmoidLoss(logits, labels, 2);
+  EXPECT_FLOAT_EQ(flat.loss, batched.loss);
+  for (unsigned int i = 0; i < logits.size(); ++i)
+    EXPECT_FLOAT_EQ(flat.derivative[i], batched.derivative[i]);
+}
+
+TEST(SigmoidLossStability, SoftLabelsAndWrongClasses) {
+  for (float value : {-80.0f, -5.0f, 0.0f, 5.0f, 80.0f}) {
+    for (float label : {0.0f, 0.25f, 0.5f, 0.75f, 1.0f}) {
+      const auto result = evaluateSigmoidLoss({value}, {label});
+      const double expected =
+        std::log1p(std::exp(-std::abs(double(value)))) +
+        (value >= 0 ? value * (1.0 - label) : -value * label);
+      EXPECT_NEAR(result.loss, expected, expected * 3e-6);
+      EXPECT_GE(result.probabilities[0], 0.0f);
+      EXPECT_LE(result.probabilities[0], 1.0f);
+    }
+  }
+}
+
+TEST(SigmoidLossStability, GradientAgreesWithFiniteDifference) {
+  constexpr float step = 0.015625f;
+  const auto center = evaluateSigmoidLoss({20.0f}, {1.0f});
+  const auto plus = evaluateSigmoidLoss({20.0f + step}, {1.0f});
+  const auto minus = evaluateSigmoidLoss({20.0f - step}, {1.0f});
+  const double expected = -1.0 / (1.0 + std::exp(20.0));
+  const double finite_difference = (plus.loss - minus.loss) / (2 * step);
+  EXPECT_NEAR(finite_difference, expected, std::abs(expected) * 1e-3);
+  EXPECT_NEAR(center.derivative[0], finite_difference,
+              std::abs(expected) * 1e-3);
+}
+

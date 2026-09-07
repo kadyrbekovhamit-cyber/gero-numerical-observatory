@@ -4,6 +4,15 @@ A reproducible CPU benchmark for mathematical contracts in ONNX graphs. It runs 
 
 [71-second video](https://www.youtube.com/shorts/KTLC9_FomBs) · [Interactive reports](https://www.gero.uz/stability/) · [Publication and limits](https://www.gero.uz/research/articles/onnx-numerical-observatory-reproduced-snapshot.html) · [Measured snapshot](benchmarks/2026-09-06/latest.json) · [Reverification](benchmarks/2026-09-06/reverification.json)
 
+## Losses and autodiff audit, 7 September 2026
+
+Three reproduced implementation cases in two numerical failure families: BCE tails
+in MLX and nntrainer, and asymmetric logaddexp derivatives in MLX. Tested local
+patches, source pins, before/after logs and duplicate-search evidence are included.
+
+[Reproduce the audit](audits/2026-09-07-losses-autodiff/README.md) ·
+[Read the technical note](https://www.gero.uz/research/articles/when-small-losses-and-gradients-disappear.html)
+
 ## Activation stability audit, 7 September 2026
 
 Source-pinned ELU/SELU, GELU and Softplus observations, with local patch proposals,

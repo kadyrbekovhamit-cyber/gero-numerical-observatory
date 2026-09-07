@@ -1,0 +1,14 @@
+--- a/python/mlx/nn/losses.py
++++ b/python/mlx/nn/losses.py
+@@ -189,7 +189,10 @@
+         )
+ 
+     if with_logits:
+-        loss = mx.logaddexp(0.0, inputs) - inputs * targets
++        positive = inputs >= 0
++        linear = mx.where(positive, inputs * (1 - targets), -inputs * targets)
++        negative_abs = mx.where(positive, -inputs, inputs)
++        loss = linear + mx.log1p(mx.exp(negative_abs))
+     else:
+         log_inputs_clip = mx.clip(mx.log(inputs), a_min=-100, a_max=None)
+         log_inputs_inv_clip = mx.clip(mx.log(1 - inputs), a_min=-100, a_max=None)

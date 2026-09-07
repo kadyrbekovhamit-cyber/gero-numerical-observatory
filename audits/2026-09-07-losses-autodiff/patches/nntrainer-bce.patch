@@ -1,0 +1,55 @@
+--- a/nntrainer/layers/loss/cross_entropy_sigmoid_loss_layer.cpp
++++ b/nntrainer/layers/loss/cross_entropy_sigmoid_loss_layer.cpp
+@@ -34,21 +34,16 @@
+ 
+   if (context.isLabelAvailable(SINGLE_INOUT_IDX)) {
+     Tensor &y2 = context.getLabel(SINGLE_INOUT_IDX);
+-    // @todo: change this to apply_i
+-    // @note: the output should be logit before applying sigmoid
+-    // log(1 + exp(-abs(y))) + max(y, 0)
+-    Tensor mid_term = y.apply<float>(static_cast<float (*)(float)>(&std::fabs))
+-                        .multiply(-1.0f)
+-                        .apply<float>(static_cast<float (*)(float)>(&std::exp))
+-                        .add(1.0f)
+-                        .apply<float>(logFloat<float>);
+-    mid_term = mid_term.add(y.apply<float>(ActiFunc::relu<float>));
+-
+-    // y * y2
+-    Tensor end_term = y2.chain().multiply_i(y).run();
+-
+-    // loss = log(1 + exp(-abs(y))) + max(y, 0) - (y * y2)
+-    l = mid_term.subtract(end_term).average();
++    double total = 0.0;
++    for (unsigned int i = 0; i < y.size(); ++i) {
++      const double value = y.getData()[i];
++      const double target = y2.getData()[i];
++      const double linear =
++        value >= 0 ? value * (1.0 - target) : -value * target;
++      total += linear + std::log1p(std::exp(-std::abs(value)));
++    }
++    l = Tensor(TensorDim({1, 1, 1, 1}));
++    l.getData()[0] = static_cast<float>(total / y.size());
+ 
+     // update the loss value
+     LossLayer::updateLoss(context, l);
+@@ -60,12 +55,14 @@
+   const Tensor &y2 = context.getIncomingDerivative(SINGLE_INOUT_IDX);
+   Tensor &y = context.getInput(SINGLE_INOUT_IDX);
+ 
+-  y.apply<float>(ActiFunc::sigmoid<float>, ret_derivative);
+-  ret_derivative.subtract_i(y2);
+-  if (ret_derivative.divide_i(static_cast<float>(ret_derivative.size())) !=
+-      ML_ERROR_NONE) {
+-    throw std::runtime_error("[CrossEntropySigmoidLossLayer::calcDerivative] "
+-                             "Error when calculating loss");
++  for (unsigned int i = 0; i < y.size(); ++i) {
++    const double value = y.getData()[i];
++    const double target = y2.getData()[i];
++    const double exponential = std::exp(-std::abs(value));
++    const double tail = exponential / (1.0 + exponential);
++    const double derivative =
++      value >= 0 ? (1.0 - target) - tail : tail - target;
++    ret_derivative.getData()[i] = static_cast<float>(derivative / y.size());
+   }
+ }
+ 

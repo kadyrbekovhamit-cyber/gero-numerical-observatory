@@ -1,0 +1,26 @@
+{
+  "mlx": "0.32.2",
+  "platform": "macOS-15.5-arm64-arm-64bit",
+  "observations": [
+    {
+      "device": "cpu",
+      "bce_positive": 0.0,
+      "bce_reflected": 2.061153470123145e-09,
+      "bce_expected": 2.061153620314381e-09,
+      "logaddexp_vjp_second": 0.0,
+      "logaddexp_vjp_swapped_first": 2.061153470123145e-09,
+      "logaddexp_jvp_second": 0.0,
+      "gradient_expected": 2.0611536181902037e-09
+    },
+    {
+      "device": "gpu",
+      "bce_positive": 0.0,
+      "bce_reflected": 2.06115369216775e-09,
+      "bce_expected": 2.061153620314381e-09,
+      "logaddexp_vjp_second": 0.0,
+      "logaddexp_vjp_swapped_first": 2.061153470123145e-09,
+      "logaddexp_jvp_second": 0.0,
+      "gradient_expected": 2.0611536181902037e-09
+    }
+  ]
+}

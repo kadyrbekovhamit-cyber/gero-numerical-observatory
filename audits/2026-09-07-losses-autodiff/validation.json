@@ -1,0 +1,21 @@
+{
+  "patches": [
+    {
+      "patch": "mlx-bce.patch",
+      "applies_to_unmodified_head": true
+    },
+    {
+      "patch": "mlx-logaddexp.patch",
+      "applies_to_unmodified_head": true
+    },
+    {
+      "patch": "nntrainer-bce.patch",
+      "applies_to_unmodified_head": true
+    },
+    {
+      "patch": "nntrainer-tests.patch",
+      "applies_to_unmodified_head": true
+    }
+  ],
+  "all_recorded_after_checks_pass": true
+}
