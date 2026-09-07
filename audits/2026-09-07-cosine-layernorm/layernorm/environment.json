@@ -1,0 +1,18 @@
+{
+  "platform": "macOS-15.5-arm64-arm-64bit",
+  "architecture": "arm64",
+  "processor": "Apple M4 (recorded in earlier rounds on the same host)",
+  "compiler": "Apple clang version 17.0.0 (clang-1700.0.13.5)",
+  "source_sha": "a7ea056e79ab8e14447ea305c1b634e233343258",
+  "meson_options": {
+    "enable-app": false,
+    "enable-capi": "disabled",
+    "enable-ccapi": true,
+    "enable-test": true,
+    "nntr-num-threads": 1,
+    "enable-blas": false,
+    "enable-fp16": false,
+    "enable-opencl": false,
+    "thread-backend": "none"
+  }
+}

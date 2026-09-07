@@ -1,0 +1,37 @@
+diff --git a/nntrainer/layers/layer_normalization_layer.cpp b/nntrainer/layers/layer_normalization_layer.cpp
+index 7a6b131..7fa8ed5 100644
+--- a/nntrainer/layers/layer_normalization_layer.cpp
++++ b/nntrainer/layers/layer_normalization_layer.cpp
+@@ -291,21 +291,23 @@ void LayerNormalizationLayer::calcDerivative(RunLayerContext &context) {
+   Tensor &temp_normalized_size =
+     context.getTensor(wt_idx[LNParams::temp_normalized_size]);
+ 
+-  incoming_derivative.multiply(deviation, temp_origin_size);
+-  temp_origin_size.average(normalize_axes, temp_normalized_size);
+-  temp_normalized_size.divide_i(variance);
+-  deviation.multiply_i(temp_normalized_size);
+-
+   if (trainable) {
+     /** calculate d_gamma */
++    incoming_derivative.multiply(deviation, temp_origin_size);
+     temp_origin_size.multiply_i(inv_std_dev);
+     temp_origin_size.sum(remain_axes, d_gamma);
+   }
+-  incoming_derivative.average(normalize_axes, temp_normalized_size);
+-  incoming_derivative.subtract(temp_normalized_size, outgoing_derivative);
+-  outgoing_derivative.subtract_i(deviation);
+ 
+-  inv_std_dev.multiply_i(gamma);
++  // Apply the affine gradient before reducing over the normalized axes.
++  incoming_derivative.multiply(gamma, outgoing_derivative);
++  outgoing_derivative.multiply(deviation, temp_origin_size);
++  temp_origin_size.average(normalize_axes, temp_normalized_size);
++  temp_normalized_size.divide_i(variance);
++  deviation.multiply(temp_normalized_size, temp_origin_size);
++
++  outgoing_derivative.average(normalize_axes, temp_normalized_size);
++  outgoing_derivative.subtract_i(temp_normalized_size);
++  outgoing_derivative.subtract_i(temp_origin_size);
+   outgoing_derivative.multiply_i(inv_std_dev);
+ }
+ 

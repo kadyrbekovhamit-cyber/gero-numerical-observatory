@@ -1,0 +1,57 @@
+{
+  "id": "mlx-cosine-finite-values-and-zero-gradient-2026-09-07",
+  "fingerprint": "d1bcacef65a444d786a7e209a38dfa0fe8f307ad37385ed8775a17c9aa4c435e",
+  "status": "locally_reproduced_with_tested_patch",
+  "implementation_reports": 1,
+  "failure_mechanisms": [
+    "overflow before normalized division",
+    "nonfinite autodiff through inactive zero norm"
+  ],
+  "source_sha": "ce916dbbcaa88e433b6fd1e60a17f766d49c27fe",
+  "native_core": "official MLX 0.32.2 and mlx-metal 0.32.2; no new native main build",
+  "reproductions": {
+    "fresh_processes": 3,
+    "devices": [
+      "CPU",
+      "Metal"
+    ],
+    "examples_per_device": 3,
+    "all_repeats_match": true
+  },
+  "tests": {
+    "cosine-before-cpu": {
+      "tests": 101,
+      "failures": 62,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 39
+    },
+    "cosine-after-cpu": {
+      "tests": 101,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 101
+    },
+    "cosine-after-metal": {
+      "tests": 101,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 101
+    }
+  },
+  "patch": "mlx-cosine.patch",
+  "clean_head_patch_apply_check": "passed",
+  "duplicate_review": "No exact cosine match identified in retained public issue/PR searches; absolute novelty not established.",
+  "excluded_known_quantization": "https://github.com/ml-explore/mlx/pull/3912",
+  "limits": [
+    "No upstream acceptance",
+    "No measured model-training impact",
+    "No performance benchmark",
+    "No full-repository CI",
+    "No exhaustive floating-point domain or subnormal guarantee"
+  ],
+  "publication_status": "not_published_in_this_search_round",
+  "recorded_at_utc": "2026-09-07T09:10:53.111873+00:00"
+}

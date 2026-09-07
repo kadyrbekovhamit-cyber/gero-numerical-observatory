@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Reproduced cosine NaNs in MLX and an incorrect LayerNorm input gradient in nntrainer, with tested local patches and downloadable evidence." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="When Cosine and LayerNorm Break Their Contracts" />
+    <meta property="og:description" content="Reproduced cosine NaNs in MLX and an incorrect LayerNorm input gradient in nntrainer, with tested local patches and downloadable evidence." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/cosine-and-layernorm-contract-failures.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="When Cosine and LayerNorm Break Their Contracts" />
+    <meta name="twitter:description" content="Reproduced cosine NaNs in MLX and an incorrect LayerNorm input gradient in nntrainer, with tested local patches and downloadable evidence." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/cosine-and-layernorm-contract-failures.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>When Cosine and LayerNorm Break Their Contracts — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "When Cosine and LayerNorm Break Their Contracts", "description": "Reproduced cosine NaNs in MLX and an incorrect LayerNorm input gradient in nntrainer, with tested local patches and downloadable evidence.", "datePublished": "2026-09-07", "dateModified": "2026-09-07", "url": "https://www.gero.uz/research/articles/cosine-and-layernorm-contract-failures.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}}</script>
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+  <style>.audit-table{overflow-x:auto;margin:1.5rem 0}.audit-table table{width:100%;min-width:620px;border-collapse:collapse}.audit-table th,.audit-table td{padding:14px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #d4d9d5;font-size:14px}.article-prose code{overflow-wrap:anywhere}.article-prose pre{overflow-x:auto}</style></head>
+  <body class="research-body">
+
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    <main><article class="article-shell">
+<a class="back-link" href="../">← Research index</a>
+<header class="article-header"><div class="article-kicker"><span>TECHNICAL NOTE</span><span>7 September 2026</span></div>
+<h1>When Cosine and LayerNorm Break Their Contracts</h1>
+<p class="article-dek">A vector fails to match itself. A normalization layer loses a nonzero gradient. Two compact experiments turn mathematical invariants into reproducible implementation reports.</p>
+<div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54"><div><strong>Xamit Kadirbekov</strong><span>Reproducible numerical experiments · GERO Research</span></div></div>
+<div class="topic-row"><span>Numerical stability</span><span>Autodiff</span><span>Reproduction</span></div></header>
+<div class="evidence-banner"><strong>STATUS · LOCALLY REPRODUCED</strong><span>Two implementation reports with tested local patches. No exact duplicate identified within the recorded public searches. Maintainer confirmation, absolute novelty, version regression and model-level impact are not established.</span></div>
+<div class="article-prose">
+<p>These experiments run actual MLX and nntrainer code. The tests compare values and derivatives with mathematical references, check equivalent independent batch layouts, and preserve source versions, inputs and execution logs. They do not evaluate chatbot answers or establish a defect in any particular Apple or Samsung device.</p>
+<div class="audit-table" role="region" aria-label="Reproduced cosine and LayerNorm results" tabindex="0"><table><thead><tr><th>Implementation</th><th>Input</th><th>Original result</th><th>Mathematical target</th></tr></thead><tbody>
+<tr><td>MLX cosine, FP16</td><td>x=[1000,−1000,1000,−1000], compare x with itself</td><td>value NaN; gradient NaN</td><td>value 1; gradient 0</td></tr>
+<tr><td>MLX cosine, FP32</td><td>x=0, y=[1e−5,2e−5,−1e−5,1e−5], eps=1e−8</td><td>value 0; gradient NaN</td><td>value 0; gradient y/eps</td></tr>
+<tr><td>nntrainer LayerNorm, FP32 CPU</td><td>x=[−1,0,1,2], gamma=[1,2,4,8], dy=[1,1,1,1]</td><td>dx=[0,0,0,0]</td><td>dx≈[0.626,−0.537,−0.805,0.716]</td></tr>
+</tbody></table></div>
+<p>The first two examples are two failure mechanisms within one cosine implementation report. Test counts, data types and repeated processes are not counted as separate discoveries. Exact inputs and full-precision results are in the <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/audits/2026-09-07-cosine-layernorm">two evidence packages</a>.</p>
+<h2>Cosine: a finite answer becomes NaN</h2>
+<p>The audited contract is <code>dot(a,b) / max(norm(a)*norm(b), eps)</code>. The threshold applies to the product of norms. Clamping each norm separately would change the function.</p>
+<p>For the FP16 vector above, intermediate squares and products overflow although the final cosine is 1. The same mechanism is reproduced in FP32 at scale 1e20. A separate derivative failure appears at the zero vector: with positive eps, the function is locally <code>dot(a,b)/eps</code>, so the derivative in a is <code>b/eps</code>. An undefined derivative through the intermediate zero norm contaminates that finite result.</p>
+<p>The local Python patch promotes half-precision intermediates, scales vectors before squaring, preserves the product-of-norms epsilon rule, and guards inactive branches before dangerous operations. The patch applies to pinned MLX Python source and was executed with the official MLX/Metal 0.32.2 native core. It is not a newly compiled native main build. See the <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/audits/2026-09-07-cosine-layernorm/cosine/test_cosine.py">100-digit reference tests</a> and <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/audits/2026-09-07-cosine-layernorm/cosine/mlx-cosine.patch">isolated patch</a>.</p>
+<h2>LayerNorm: the affine weight disappears from backward</h2>
+<p>For the shown four-element example, use axis 3, beta=0 and epsilon=float32(1e−5). Differentiating the sum of outputs gives the nonzero vector in the table. Central differences of the actual native forward pass, with step 1/256, give <code>[0.62604523, −0.53656006, −0.80487061, 0.71552277]</code>, independently confirming the analytic result.</p>
+<p>There is an even simpler invariant: when gamma is identically zero, the output equals beta and cannot depend on x. Its input gradient must therefore be zero. The original implementation violates this property. The unit-gamma control passes, which shows why testing only the default affine initialization is insufficient.</p>
+<pre><code>d = x - mean(x)
+v = mean(d*d) + epsilon
+r = 1/sqrt(v)
+g = dy * gamma
+dx = r * (g - mean(g) - d*mean(g*d)/v)</code></pre>
+<p>The original code performs reductions before applying gamma. It then tries an unsupported in-place broadcast from the reduced inverse-standard-deviation tensor to gamma. The multiplication returns an error code that the caller ignores. The tested patch computes <code>dy*gamma</code> in a full-size buffer before both reductions and preserves the affine parameter gradients. See the <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/audits/2026-09-07-cosine-layernorm/layernorm/patches/nntrainer-layernorm.patch">patch</a> and <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/audits/2026-09-07-cosine-layernorm/layernorm/nntrainer_regression.cpp">native tests</a>.</p>
+<h2>What the local validation establishes</h2>
+<div class="audit-table" role="region" aria-label="Before and after validation" tabindex="0"><table><thead><tr><th>Suite</th><th>Before</th><th>After local patch</th></tr></thead><tbody>
+<tr><td>MLX cosine, CPU</td><td>62 failed / 39 passed</td><td>101 passed</td></tr>
+<tr><td>MLX cosine, Metal</td><td>Key examples reproduced</td><td>101 passed</td></tr>
+<tr><td>nntrainer LayerNorm, native FP32 CPU</td><td>20 failed / 22 passed</td><td>42 passed</td></tr>
+</tbody></table></div>
+<p>Cosine coverage includes FP16, BF16 and FP32 values and analytic gradients, multiple scales and axes, epsilon semantics, reductions and compiled execution. The nntrainer suite includes 24 new tests and 18 existing LayerNorm tests: all seven nonempty combinations of non-batch axes, trainable and frozen weights, finite differences, zero and constant gamma, independent batch transformations and shift invariance. Each audit repeats its key examples in three fresh processes.</p>
+<p>The host was macOS 15.5 arm64. nntrainer was built at commit <code>a7ea056e79ab8e14447ea305c1b634e233343258</code>; MLX Python source was pinned to <code>ce916dbbcaa88e433b6fd1e60a17f766d49c27fe</code>. The reused nntrainer build contains unrelated earlier loss and activation repairs; the LayerNorm baseline itself matches the pinned source. Full upstream CI, Linux/Android, nntrainer FP16/GPU, performance and end-to-end training impact were not tested.</p>
+<h2>Duplicate review and exclusions</h2>
+<p>No exact cosine match was identified in the retained public searches. The nntrainer review used nine queries covering 94 distinct public issues and pull requests, including closed entries. The nearest LayerNorm work concerns <a href="https://github.com/nntrainer/nntrainer/issues/3785">FP16 forward NaNs</a> and inference paths in <a href="https://github.com/nntrainer/nntrainer/pull/4096">PR #4096</a> and <a href="https://github.com/nntrainer/nntrainer/pull/4304">PR #4304</a>; the inspected changes do not repair this backward computation.</p>
+<p>This is a bounded novelty review. Private reports, unindexed material and every comment or unpublished branch are not covered. Known NVFP4 shape/tail behavior associated with <a href="https://github.com/ml-explore/mlx/pull/3912">MLX PR #3912</a> is excluded. QuantizeLinear and earlier loss/activation findings are not new cases in this release.</p>
+<!-- PUBLICATION_CROSSLINKS -->
+<h2>Download and reproduce</h2>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/audits/2026-09-07-cosine-layernorm">Open both reproducible GitHub packages →</a></p>
+<ul><li><a href="../data/cosine-audit-2026-09-07.zip" download>MLX cosine: tests, patch, logs and checksums</a><br>SHA-256: <code>09149a442b9592e0ddc3e7c2665cdc85fc3a54ecf720b6cb3b0eb288bb544c8d</code></li>
+<li><a href="../data/layernorm-audit-2026-09-07.zip" download>nntrainer LayerNorm: native tests, patch and checksums</a><br>SHA-256: <code>feec74e831228c90032a8422c38c710852eed13b72df0da3a2d9522dcb3fc433</code></li></ul>
+<p>The immutable ZIP files capture the research state before publication; the publication record is maintained separately. Experiments, local repair proposals and publication materials were prepared with AI assistance. Conclusions are grounded in recorded execution and mathematical references.</p>
+<h2>Primary implementation sources</h2>
+<ul><li><a href="https://github.com/ml-explore/mlx/blob/ce916dbbcaa88e433b6fd1e60a17f766d49c27fe/python/mlx/nn/losses.py">MLX loss source at the audited commit</a></li>
+<li><a href="https://github.com/nntrainer/nntrainer/blob/a7ea056e79ab8e14447ea305c1b634e233343258/nntrainer/layers/layer_normalization_layer.cpp">nntrainer LayerNorm at the audited commit</a></li></ul>
+</div></article></main>
+
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

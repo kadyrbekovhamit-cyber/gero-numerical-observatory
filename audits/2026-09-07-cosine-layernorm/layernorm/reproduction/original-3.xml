@@ -1,0 +1,1597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="4" failures="4" disabled="0" errors="0" time="0.003" timestamp="2026-09-07T16:04:36.079" name="AllTests">
+  <testsuite name="LayerNormNumericalAudit" tests="4" failures="4" disabled="0" skipped="0" errors="0" time="0.003" timestamp="2026-09-07T16:04:36.079">
+    <testcase name="OrdinaryNonuniformGamma" file="../test/unittest/layers/unittest_layers_layer_normalization.cpp" line="189" status="run" result="completed" time="0." timestamp="2026-09-07T16:04:36.079" classname="LayerNormNumericalAudit">
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:201&#x0A;The difference between result.dx[i] and expected is 0.62607184342459221, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to 0,&#x0A;expected evaluates to 0.62607184342459221, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:201
+The difference between result.dx[i] and expected is 0.62607184342459221, which exceeds 2e-6, where
+result.dx[i] evaluates to 0,
+expected evaluates to 0.62607184342459221, and
+2e-6 evaluates to 1.9999999999999999e-06.
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:201&#x0A;The difference between result.dx[i] and expected is 0.53666239661898418, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to 0,&#x0A;expected evaluates to -0.53666239661898418, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:201
+The difference between result.dx[i] and expected is 0.53666239661898418, which exceeds 2e-6, where
+result.dx[i] evaluates to 0,
+expected evaluates to -0.53666239661898418, and
+2e-6 evaluates to 1.9999999999999999e-06.
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:201&#x0A;The difference between result.dx[i] and expected is 0.80497302334994281, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to 0,&#x0A;expected evaluates to -0.80497302334994281, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:201
+The difference between result.dx[i] and expected is 0.80497302334994281, which exceeds 2e-6, where
+result.dx[i] evaluates to 0,
+expected evaluates to -0.80497302334994281, and
+2e-6 evaluates to 1.9999999999999999e-06.
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:201&#x0A;The difference between result.dx[i] and expected is 0.71556357654433478, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to 0,&#x0A;expected evaluates to 0.71556357654433478, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:201
+The difference between result.dx[i] and expected is 0.71556357654433478, which exceeds 2e-6, where
+result.dx[i] evaluates to 0,
+expected evaluates to 0.71556357654433478, and
+2e-6 evaluates to 1.9999999999999999e-06.
+]]></failure>
+    </testcase>
+    <testcase name="InputGradientMatchesActualForwardFiniteDifference" file="../test/unittest/layers/unittest_layers_layer_normalization.cpp" line="338" status="run" result="completed" time="0." timestamp="2026-09-07T16:04:36.080" classname="LayerNormNumericalAudit">
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:354&#x0A;The difference between result.dx[i] and finite_difference is 0.62604522705078125, which exceeds 5e-4, where&#x0A;result.dx[i] evaluates to 0,&#x0A;finite_difference evaluates to 0.62604522705078125, and&#x0A;5e-4 evaluates to 0.00050000000000000001.&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:354
+The difference between result.dx[i] and finite_difference is 0.62604522705078125, which exceeds 5e-4, where
+result.dx[i] evaluates to 0,
+finite_difference evaluates to 0.62604522705078125, and
+5e-4 evaluates to 0.00050000000000000001.
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:354&#x0A;The difference between result.dx[i] and finite_difference is 0.53656005859375, which exceeds 5e-4, where&#x0A;result.dx[i] evaluates to 0,&#x0A;finite_difference evaluates to -0.53656005859375, and&#x0A;5e-4 evaluates to 0.00050000000000000001.&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:354
+The difference between result.dx[i] and finite_difference is 0.53656005859375, which exceeds 5e-4, where
+result.dx[i] evaluates to 0,
+finite_difference evaluates to -0.53656005859375, and
+5e-4 evaluates to 0.00050000000000000001.
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:354&#x0A;The difference between result.dx[i] and finite_difference is 0.80487060546875, which exceeds 5e-4, where&#x0A;result.dx[i] evaluates to 0,&#x0A;finite_difference evaluates to -0.80487060546875, and&#x0A;5e-4 evaluates to 0.00050000000000000001.&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:354
+The difference between result.dx[i] and finite_difference is 0.80487060546875, which exceeds 5e-4, where
+result.dx[i] evaluates to 0,
+finite_difference evaluates to -0.80487060546875, and
+5e-4 evaluates to 0.00050000000000000001.
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:354&#x0A;The difference between result.dx[i] and finite_difference is 0.71552276611328125, which exceeds 5e-4, where&#x0A;result.dx[i] evaluates to 0,&#x0A;finite_difference evaluates to 0.71552276611328125, and&#x0A;5e-4 evaluates to 0.00050000000000000001.&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:354
+The difference between result.dx[i] and finite_difference is 0.71552276611328125, which exceeds 5e-4, where
+result.dx[i] evaluates to 0,
+finite_difference evaluates to 0.71552276611328125, and
+5e-4 evaluates to 0.00050000000000000001.
+]]></failure>
+    </testcase>
+    <testcase name="ZeroGammaMakesInputGradientZero" file="../test/unittest/layers/unittest_layers_layer_normalization.cpp" line="395" status="run" result="completed" time="0." timestamp="2026-09-07T16:04:36.080" classname="LayerNormNumericalAudit">
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.3729771375656128, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.3729771375656128,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 0&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.3729771375656128, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.3729771375656128,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 0
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.3285806179046631, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.3285806179046631,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 1&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.3285806179046631, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.3285806179046631,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 1
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.78239446878433228, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.78239446878433228,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 2&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.78239446878433228, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.78239446878433228,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 2
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.82679086923599243, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.82679086923599243,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 3&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.82679086923599243, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.82679086923599243,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 3
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.0031407871283590794, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.0031407871283590794,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 4&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.0031407871283590794, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.0031407871283590794,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 4
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.7625517845153809, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.7625517845153809,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 5&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.7625517845153809, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.7625517845153809,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 5
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.2598737478256226, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.2598737478256226,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 6&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.2598737478256226, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.2598737478256226,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 6
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 3.019284725189209, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 3.019284725189209,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 7&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 3.019284725189209, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 3.019284725189209,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 7
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.24215050041675568, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.24215050041675568,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 8&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.24215050041675568, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.24215050041675568,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 8
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.58807247877120972, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.58807247877120972,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 9&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.58807247877120972, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.58807247877120972,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 9
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.58807247877120972, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.58807247877120972,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 10&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.58807247877120972, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.58807247877120972,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 10
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.24215050041675568, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.24215050041675568,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 11&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.24215050041675568, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.24215050041675568,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 11
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.9981907606124878, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.9981907606124878,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 12&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.9981907606124878, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.9981907606124878,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 12
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.33305156230926514, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.33305156230926514,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 13&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.33305156230926514, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.33305156230926514,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 13
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.33305156230926514, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.33305156230926514,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 14&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.33305156230926514, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.33305156230926514,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 14
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.9981907606124878, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.9981907606124878,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 15&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.9981907606124878, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.9981907606124878,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 15
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.24215050041675568, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.24215050041675568,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 16&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.24215050041675568, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.24215050041675568,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 16
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.58807247877120972, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.58807247877120972,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 17&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.58807247877120972, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.58807247877120972,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 17
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.58807247877120972, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.58807247877120972,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 18&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.58807247877120972, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.58807247877120972,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 18
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.24215050041675568, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.24215050041675568,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 19&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.24215050041675568, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.24215050041675568,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 19
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.4326670169830322, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.4326670169830322,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 20&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.4326670169830322, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.4326670169830322,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 20
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.23877985775470734, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.23877985775470734,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 21&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.23877985775470734, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.23877985775470734,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 21
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.23877985775470734, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.23877985775470734,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 22&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.23877985775470734, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.23877985775470734,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 22
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.4326670169830322, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.4326670169830322,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 23&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.4326670169830322, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.4326670169830322,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 23
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.82679086923599243, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.82679086923599243,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 24&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.82679086923599243, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.82679086923599243,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 24
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.78239446878433228, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.78239446878433228,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 25&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.78239446878433228, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.78239446878433228,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 25
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.3285806179046631, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.3285806179046631,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 26&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.3285806179046631, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.3285806179046631,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 26
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.3729771375656128, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.3729771375656128,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 27&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.3729771375656128, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.3729771375656128,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 27
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.4326670169830322, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.4326670169830322,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 28&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.4326670169830322, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.4326670169830322,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 28
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.23877985775470734, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.23877985775470734,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 29&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.23877985775470734, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.23877985775470734,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 29
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.23877985775470734, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.23877985775470734,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 30&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.23877985775470734, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.23877985775470734,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 30
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.4326670169830322, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.4326670169830322,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 31&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.4326670169830322, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.4326670169830322,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 31
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.7645729780197144, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.7645729780197144,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 32&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.7645729780197144, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.7645729780197144,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 32
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.042004801332950592, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.042004801332950592,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 33&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.042004801332950592, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.042004801332950592,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 33
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.58819097280502319, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.58819097280502319,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 34&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.58819097280502319, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.58819097280502319,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 34
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.2183866500854492, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.2183866500854492,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 35&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.2183866500854492, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.2183866500854492,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 35
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.4326670169830322, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.4326670169830322,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 36&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.4326670169830322, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.4326670169830322,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 36
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.23877985775470734, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.23877985775470734,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 37&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.23877985775470734, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.23877985775470734,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 37
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.23877985775470734, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.23877985775470734,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 38&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.23877985775470734, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.23877985775470734,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 38
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.4326670169830322, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.4326670169830322,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 39&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.4326670169830322, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.4326670169830322,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 39
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.2651617527008057, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.2651617527008057,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 40&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.2651617527008057, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.2651617527008057,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 40
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.030124781653285027, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.030124781653285027,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 41&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.030124781653285027, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.030124781653285027,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 41
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.42172059416770935, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.42172059416770935,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 42&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.42172059416770935, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.42172059416770935,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 42
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.8735659122467041, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.8735659122467041,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 43&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.8735659122467041, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.8735659122467041,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 43
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.46611705422401428, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.46611705422401428,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 44&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.46611705422401428, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.46611705422401428,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 44
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 2.2164115905761719, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -2.2164115905761719,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 45&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 2.2164115905761719, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -2.2164115905761719,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 45
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.84582644701004028, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.84582644701004028,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 46&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.84582644701004028, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.84582644701004028,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 46
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.8367024660110474, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.8367024660110474,&#x0A;expected[i] evaluates to 0, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 47&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.8367024660110474, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.8367024660110474,
+expected[i] evaluates to 0, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0000000000000001e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 47
+]]></failure>
+    </testcase>
+    <testcase name="ConstantGammaScalesInputGradient" file="../test/unittest/layers/unittest_layers_layer_normalization.cpp" line="402" status="run" result="completed" time="0.001" timestamp="2026-09-07T16:04:36.081" classname="LayerNormNumericalAudit">
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 4.1189314766142235, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.3729771375656128,&#x0A;expected[i] evaluates to 2.7459543390486103, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00011237863017145831.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 0&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 4.1189314766142235, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.3729771375656128,
+expected[i] evaluates to 2.7459543390486103, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00011237863017145831.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 0
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 3.985741953055479, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.3285806179046631,&#x0A;expected[i] evaluates to -2.6571613351508159, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00010971484005452448.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 1&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 3.985741953055479, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.3285806179046631,
+expected[i] evaluates to -2.6571613351508159, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00010971484005452448.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 1
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 2.3471831964955641, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.78239446878433228,&#x0A;expected[i] evaluates to 1.5647887277112318, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 7.6943661831336952e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 2&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 2.3471831964955641, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.78239446878433228,
+expected[i] evaluates to 1.5647887277112318, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 7.6943661831336952e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 2
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 2.4803726008450182, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.82679086923599243,&#x0A;expected[i] evaluates to -1.6535817316090258, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 7.9607451948270771e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 3&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 2.4803726008450182, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.82679086923599243,
+expected[i] evaluates to -1.6535817316090258, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 7.9607451948270771e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 3
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.0094223510160243058, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.0031407871283590794,&#x0A;expected[i] evaluates to -0.0062815638876652256, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0188446916629958e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 4&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.0094223510160243058, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.0031407871283590794,
+expected[i] evaluates to -0.0062815638876652256, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0188446916629958e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 4
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 5.2876552494793962, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.7625517845153809,&#x0A;expected[i] evaluates to 3.5251034649640149, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00013575310394892045.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 5&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 5.2876552494793962, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.7625517845153809,
+expected[i] evaluates to 3.5251034649640149, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00013575310394892045.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 5
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 3.7796213577008491, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.2598737478256226,&#x0A;expected[i] evaluates to 2.5197476098752265, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00010559242829625679.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 6&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 3.7796213577008491, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.2598737478256226,
+expected[i] evaluates to 2.5197476098752265, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00010559242829625679.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 6
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 9.0578542361407841, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 3.019284725189209,&#x0A;expected[i] evaluates to -6.038569510951576, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.0002111570853285473.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 7&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 9.0578542361407841, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 3.019284725189209,
+expected[i] evaluates to -6.038569510951576, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.0002111570853285473.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 7
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.72645150902734079, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.24215050041675568,&#x0A;expected[i] evaluates to -0.48430100861058512, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 4.4529030258317553e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 8&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.72645150902734079, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.24215050041675568,
+expected[i] evaluates to -0.48430100861058512, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 4.4529030258317553e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 8
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.7642174226480625, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.58807247877120972,&#x0A;expected[i] evaluates to -1.1761449438768528, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 6.5284348316305588e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 9&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.7642174226480625, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.58807247877120972,
+expected[i] evaluates to -1.1761449438768528, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 6.5284348316305588e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 9
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.7642174226480625, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.58807247877120972,&#x0A;expected[i] evaluates to 1.1761449438768528, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 6.5284348316305588e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 10&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.7642174226480625, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.58807247877120972,
+expected[i] evaluates to 1.1761449438768528, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 6.5284348316305588e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 10
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.72645150902734079, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.24215050041675568,&#x0A;expected[i] evaluates to 0.48430100861058512, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 4.4529030258317553e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 11&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.72645150902734079, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.24215050041675568,
+expected[i] evaluates to 0.48430100861058512, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 4.4529030258317553e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 11
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 5.9945723766578967, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.9981907606124878,&#x0A;expected[i] evaluates to 3.9963816160454089, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00014989144848136227.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 12&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 5.9945723766578967, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.9981907606124878,
+expected[i] evaluates to 3.9963816160454089, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00014989144848136227.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 12
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.99915470961218211, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.33305156230926514,&#x0A;expected[i] evaluates to 0.66610314730291698, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 4.9983094419087511e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 13&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.99915470961218211, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.33305156230926514,
+expected[i] evaluates to 0.66610314730291698, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 4.9983094419087511e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 13
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.99915470961218211, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.33305156230926514,&#x0A;expected[i] evaluates to -0.66610314730291698, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 4.9983094419087511e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 14&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.99915470961218211, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.33305156230926514,
+expected[i] evaluates to -0.66610314730291698, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 4.9983094419087511e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 14
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 5.9945723766578967, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.9981907606124878,&#x0A;expected[i] evaluates to -3.9963816160454089, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00014989144848136227.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 15&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 5.9945723766578967, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.9981907606124878,
+expected[i] evaluates to -3.9963816160454089, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00014989144848136227.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 15
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.72645150902734079, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.24215050041675568,&#x0A;expected[i] evaluates to -0.48430100861058512, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 4.4529030258317553e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 16&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.72645150902734079, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.24215050041675568,
+expected[i] evaluates to -0.48430100861058512, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 4.4529030258317553e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 16
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.7642174226480625, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.58807247877120972,&#x0A;expected[i] evaluates to -1.1761449438768528, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 6.5284348316305588e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 17&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.7642174226480625, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.58807247877120972,
+expected[i] evaluates to -1.1761449438768528, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 6.5284348316305588e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 17
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.7642174226480625, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.58807247877120972,&#x0A;expected[i] evaluates to 1.1761449438768528, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 6.5284348316305588e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 18&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.7642174226480625, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.58807247877120972,
+expected[i] evaluates to 1.1761449438768528, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 6.5284348316305588e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 18
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.72645150902734079, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.24215050041675568,&#x0A;expected[i] evaluates to 0.48430100861058512, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 4.4529030258317553e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 19&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.72645150902734079, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.24215050041675568,
+expected[i] evaluates to 0.48430100861058512, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 4.4529030258317553e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 19
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 4.2980011778714093, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.4326670169830322,&#x0A;expected[i] evaluates to -2.8653341608883771, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00011596002482665132.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 20&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 4.2980011778714093, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.4326670169830322,
+expected[i] evaluates to -2.8653341608883771, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00011596002482665132.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 20
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.71633957272376603, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.23877985775470734,&#x0A;expected[i] evaluates to -0.47755971496905869, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 4.4326791449071762e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 21&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.71633957272376603, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.23877985775470734,
+expected[i] evaluates to -0.47755971496905869, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 4.4326791449071762e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 21
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.71633957272376603, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.23877985775470734,&#x0A;expected[i] evaluates to 0.47755971496905869, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 4.4326791449071762e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 22&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.71633957272376603, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.23877985775470734,
+expected[i] evaluates to 0.47755971496905869, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 4.4326791449071762e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 22
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 4.2980011778714093, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.4326670169830322,&#x0A;expected[i] evaluates to 2.8653341608883771, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00011596002482665132.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 23&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 4.2980011778714093, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.4326670169830322,
+expected[i] evaluates to 2.8653341608883771, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00011596002482665132.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 23
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 2.4803726008450182, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.82679086923599243,&#x0A;expected[i] evaluates to 1.6535817316090258, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 7.9607451948270771e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 24&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 2.4803726008450182, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.82679086923599243,
+expected[i] evaluates to 1.6535817316090258, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 7.9607451948270771e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 24
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 2.3471831964955641, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.78239446878433228,&#x0A;expected[i] evaluates to -1.5647887277112318, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 7.6943661831336952e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 25&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 2.3471831964955641, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.78239446878433228,
+expected[i] evaluates to -1.5647887277112318, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 7.6943661831336952e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 25
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 3.985741953055479, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.3285806179046631,&#x0A;expected[i] evaluates to 2.6571613351508159, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00010971484005452448.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 26&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 3.985741953055479, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.3285806179046631,
+expected[i] evaluates to 2.6571613351508159, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00010971484005452448.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 26
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 4.1189314766142235, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.3729771375656128,&#x0A;expected[i] evaluates to -2.7459543390486103, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00011237863017145831.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 27&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 4.1189314766142235, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.3729771375656128,
+expected[i] evaluates to -2.7459543390486103, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00011237863017145831.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 27
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 4.2980011778714093, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.4326670169830322,&#x0A;expected[i] evaluates to -2.8653341608883771, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00011596002482665132.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 28&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 4.2980011778714093, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.4326670169830322,
+expected[i] evaluates to -2.8653341608883771, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00011596002482665132.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 28
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.71633957272376603, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.23877985775470734,&#x0A;expected[i] evaluates to -0.47755971496905869, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 4.4326791449071762e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 29&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.71633957272376603, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.23877985775470734,
+expected[i] evaluates to -0.47755971496905869, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 4.4326791449071762e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 29
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.71633957272376603, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.23877985775470734,&#x0A;expected[i] evaluates to 0.47755971496905869, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 4.4326791449071762e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 30&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.71633957272376603, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.23877985775470734,
+expected[i] evaluates to 0.47755971496905869, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 4.4326791449071762e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 30
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 4.2980011778714093, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.4326670169830322,&#x0A;expected[i] evaluates to 2.8653341608883771, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00011596002482665132.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 31&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 4.2980011778714093, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.4326670169830322,
+expected[i] evaluates to 2.8653341608883771, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00011596002482665132.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 31
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 5.2937189509822513, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.7645729780197144,&#x0A;expected[i] evaluates to 3.5291459729625374, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00013587437918887612.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 32&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 5.2937189509822513, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.7645729780197144,
+expected[i] evaluates to 3.5291459729625374, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00013587437918887612.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 32
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.12601418488087873, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.042004801332950592,&#x0A;expected[i] evaluates to 0.084009383547928154, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.2520281506437844e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 33&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.12601418488087873, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.042004801332950592,
+expected[i] evaluates to 0.084009383547928154, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.2520281506437844e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 33
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.7645729637925356, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.58819097280502319,&#x0A;expected[i] evaluates to -1.1763819909875124, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 6.5291459729625376e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 34&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.7645729637925356, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.58819097280502319,
+expected[i] evaluates to -1.1763819909875124, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 6.5291459729625376e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 34
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 3.6551600156084021, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.2183866500854492,&#x0A;expected[i] evaluates to -2.4367733655229529, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00010310320096568859.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 35&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 3.6551600156084021, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.2183866500854492,
+expected[i] evaluates to -2.4367733655229529, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00010310320096568859.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 35
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 4.2980011778714093, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.4326670169830322,&#x0A;expected[i] evaluates to -2.8653341608883771, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00011596002482665132.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 36&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 4.2980011778714093, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.4326670169830322,
+expected[i] evaluates to -2.8653341608883771, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00011596002482665132.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 36
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.71633957272376603, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.23877985775470734,&#x0A;expected[i] evaluates to -0.47755971496905869, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 4.4326791449071762e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 37&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.71633957272376603, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.23877985775470734,
+expected[i] evaluates to -0.47755971496905869, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 4.4326791449071762e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 37
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.71633957272376603, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.23877985775470734,&#x0A;expected[i] evaluates to 0.47755971496905869, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 4.4326791449071762e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 38&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.71633957272376603, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.23877985775470734,
+expected[i] evaluates to 0.47755971496905869, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 4.4326791449071762e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 38
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 4.2980011778714093, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.4326670169830322,&#x0A;expected[i] evaluates to 2.8653341608883771, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00011596002482665132.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 39&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 4.2980011778714093, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.4326670169830322,
+expected[i] evaluates to 2.8653341608883771, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00011596002482665132.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 39
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 3.7954853612802064, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.2651617527008057,&#x0A;expected[i] evaluates to -2.5303236085794008, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00010590970825738203.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 40&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 3.7954853612802064, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.2651617527008057,
+expected[i] evaluates to -2.5303236085794008, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00010590970825738203.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 40
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.090374350599158298, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.030124781653285027,&#x0A;expected[i] evaluates to -0.060249568945873279, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.18074870683762e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 41&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.090374350599158298, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.030124781653285027,
+expected[i] evaluates to -0.060249568945873279, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.18074870683762e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 41
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.2651617970275095, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.42172059416770935,&#x0A;expected[i] evaluates to 0.84344120285980018, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 5.530323608579401e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 42&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.2651617970275095, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.42172059416770935,
+expected[i] evaluates to 0.84344120285980018, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 5.530323608579401e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 42
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 2.6206978869121773, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.8735659122467041,&#x0A;expected[i] evaluates to 1.7471319746654734, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 8.2413959239964205e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 43&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 2.6206978869121773, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.8735659122467041,
+expected[i] evaluates to 1.7471319746654734, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 8.2413959239964205e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 43
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.3983512609816087, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.46611705422401428,&#x0A;expected[i] evaluates to 0.9322342067575945, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 5.7967026202727836e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 44&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.3983512609816087, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.46611705422401428,
+expected[i] evaluates to 0.9322342067575945, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 5.7967026202727836e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 44
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 6.6492351447487756, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -2.2164115905761719,&#x0A;expected[i] evaluates to 4.4328235541726038, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00016298470662517813.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 45&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 6.6492351447487756, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -2.2164115905761719,
+expected[i] evaluates to 4.4328235541726038, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00016298470662517813.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 45
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 2.5374792824839005, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.84582644701004028,&#x0A;expected[i] evaluates to -1.69165283547386, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 8.0749585064215806e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 46&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 2.5374792824839005, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.84582644701004028,
+expected[i] evaluates to -1.69165283547386, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 8.0749585064215806e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 46
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 5.5101073914673862, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.8367024660110474,&#x0A;expected[i] evaluates to -3.6734049254563383, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00014020214776369014.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 47&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 5.5101073914673862, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.8367024660110474,
+expected[i] evaluates to -3.6734049254563383, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00014020214776369014.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 47
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.68648855280346022, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.3729771375656128,&#x0A;expected[i] evaluates to -0.68648858476215258, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 5.0594657542864576e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 0&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.68648855280346022, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.3729771375656128,
+expected[i] evaluates to -0.68648858476215258, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 5.0594657542864576e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 0
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.66429028411695912, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.3285806179046631,&#x0A;expected[i] evaluates to 0.66429033378770397, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 4.9928710013631121e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 1&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.66429028411695912, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.3285806179046631,
+expected[i] evaluates to 0.66429033378770397, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 4.9928710013631121e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 1
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.39119728685652433, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.78239446878433228,&#x0A;expected[i] evaluates to -0.39119718192780795, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 4.1735915457834239e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 2&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.39119728685652433, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.78239446878433228,
+expected[i] evaluates to -0.39119718192780795, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 4.1735915457834239e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 2
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.41339543633373599, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.82679086923599243,&#x0A;expected[i] evaluates to 0.41339543290225644, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 4.2401862987067694e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 3&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.41339543633373599, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.82679086923599243,
+expected[i] evaluates to 0.41339543290225644, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 4.2401862987067694e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 3
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.001570396156442773, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.0031407871283590794,&#x0A;expected[i] evaluates to 0.0015703909719163064, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.004711172915749e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 4&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.001570396156442773, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.0031407871283590794,
+expected[i] evaluates to 0.0015703909719163064, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.004711172915749e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 4
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.88127591827437712, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.7625517845153809,&#x0A;expected[i] evaluates to -0.88127586624100374, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 5.6438275987230117e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 5&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.88127591827437712, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.7625517845153809,
+expected[i] evaluates to -0.88127586624100374, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 5.6438275987230117e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 5
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.62993684535681593, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.2598737478256226,&#x0A;expected[i] evaluates to -0.62993690246880663, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 4.8898107074064199e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 6&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.62993684535681593, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.2598737478256226,
+expected[i] evaluates to -0.62993690246880663, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 4.8898107074064199e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 6
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.509642347451315, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 3.019284725189209,&#x0A;expected[i] evaluates to 1.509642377737894, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 7.5289271332136816e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 7&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.509642347451315, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 3.019284725189209,
+expected[i] evaluates to 1.509642377737894, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 7.5289271332136816e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 7
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.1210752482641094, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.24215050041675568,&#x0A;expected[i] evaluates to 0.12107525215264628, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.3632257564579391e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 8&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.1210752482641094, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.24215050041675568,
+expected[i] evaluates to 0.12107525215264628, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.3632257564579391e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 8
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.29403624280199653, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.58807247877120972,&#x0A;expected[i] evaluates to 0.29403623596921319, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.8821087079076398e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 9&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.29403624280199653, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.58807247877120972,
+expected[i] evaluates to 0.29403623596921319, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.8821087079076398e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 9
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.29403624280199653, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.58807247877120972,&#x0A;expected[i] evaluates to -0.29403623596921319, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.8821087079076398e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 10&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.29403624280199653, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.58807247877120972,
+expected[i] evaluates to -0.29403623596921319, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.8821087079076398e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 10
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.1210752482641094, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.24215050041675568,&#x0A;expected[i] evaluates to -0.12107525215264628, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.3632257564579391e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 11&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.1210752482641094, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.24215050041675568,
+expected[i] evaluates to -0.12107525215264628, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.3632257564579391e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 11
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.99909535660113558, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.9981907606124878,&#x0A;expected[i] evaluates to -0.99909540401135222, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 5.9972862120340565e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 12&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.99909535660113558, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.9981907606124878,
+expected[i] evaluates to -0.99909540401135222, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 5.9972862120340565e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 12
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.16652577548353589, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.33305156230926514,&#x0A;expected[i] evaluates to -0.16652578682572924, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.4995773604771876e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 13&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.16652577548353589, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.33305156230926514,
+expected[i] evaluates to -0.16652578682572924, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.4995773604771876e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 13
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.16652577548353589, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.33305156230926514,&#x0A;expected[i] evaluates to 0.16652578682572924, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.4995773604771876e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 14&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.16652577548353589, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.33305156230926514,
+expected[i] evaluates to 0.16652578682572924, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.4995773604771876e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 14
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.99909535660113558, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.9981907606124878,&#x0A;expected[i] evaluates to 0.99909540401135222, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 5.9972862120340565e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 15&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.99909535660113558, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.9981907606124878,
+expected[i] evaluates to 0.99909540401135222, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 5.9972862120340565e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 15
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.1210752482641094, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.24215050041675568,&#x0A;expected[i] evaluates to 0.12107525215264628, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.3632257564579391e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 16&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.1210752482641094, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.24215050041675568,
+expected[i] evaluates to 0.12107525215264628, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.3632257564579391e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 16
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.29403624280199653, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.58807247877120972,&#x0A;expected[i] evaluates to 0.29403623596921319, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.8821087079076398e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 17&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.29403624280199653, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.58807247877120972,
+expected[i] evaluates to 0.29403623596921319, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.8821087079076398e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 17
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.29403624280199653, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.58807247877120972,&#x0A;expected[i] evaluates to -0.29403623596921319, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.8821087079076398e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 18&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.29403624280199653, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.58807247877120972,
+expected[i] evaluates to -0.29403623596921319, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.8821087079076398e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 18
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.1210752482641094, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.24215050041675568,&#x0A;expected[i] evaluates to -0.12107525215264628, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.3632257564579391e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 19&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.1210752482641094, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.24215050041675568,
+expected[i] evaluates to -0.12107525215264628, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.3632257564579391e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 19
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.71633347676093795, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.4326670169830322,&#x0A;expected[i] evaluates to 0.71633354022209428, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1490006206662832e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 20&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.71633347676093795, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.4326670169830322,
+expected[i] evaluates to 0.71633354022209428, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1490006206662832e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 20
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.11938992901244266, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.23877985775470734,&#x0A;expected[i] evaluates to 0.11938992874226467, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.3581697862267942e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 21&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.11938992901244266, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.23877985775470734,
+expected[i] evaluates to 0.11938992874226467, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.3581697862267942e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 21
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.11938992901244266, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.23877985775470734,&#x0A;expected[i] evaluates to -0.11938992874226467, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.3581697862267942e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 22&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.11938992901244266, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.23877985775470734,
+expected[i] evaluates to -0.11938992874226467, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.3581697862267942e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 22
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.71633347676093795, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.4326670169830322,&#x0A;expected[i] evaluates to -0.71633354022209428, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1490006206662832e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 23&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.71633347676093795, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.4326670169830322,
+expected[i] evaluates to -0.71633354022209428, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1490006206662832e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 23
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.41339543633373599, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.82679086923599243,&#x0A;expected[i] evaluates to -0.41339543290225644, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 4.2401862987067694e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 24&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.41339543633373599, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.82679086923599243,
+expected[i] evaluates to -0.41339543290225644, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 4.2401862987067694e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 24
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.39119728685652433, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.78239446878433228,&#x0A;expected[i] evaluates to 0.39119718192780795, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 4.1735915457834239e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 25&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.39119728685652433, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.78239446878433228,
+expected[i] evaluates to 0.39119718192780795, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 4.1735915457834239e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 25
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.66429028411695912, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.3285806179046631,&#x0A;expected[i] evaluates to -0.66429033378770397, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 4.9928710013631121e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 26&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.66429028411695912, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.3285806179046631,
+expected[i] evaluates to -0.66429033378770397, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 4.9928710013631121e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 26
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.68648855280346022, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.3729771375656128,&#x0A;expected[i] evaluates to 0.68648858476215258, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 5.0594657542864576e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 27&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.68648855280346022, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.3729771375656128,
+expected[i] evaluates to 0.68648858476215258, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 5.0594657542864576e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 27
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.71633347676093795, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.4326670169830322,&#x0A;expected[i] evaluates to 0.71633354022209428, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1490006206662832e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 28&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.71633347676093795, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.4326670169830322,
+expected[i] evaluates to 0.71633354022209428, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1490006206662832e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 28
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.11938992901244266, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.23877985775470734,&#x0A;expected[i] evaluates to 0.11938992874226467, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.3581697862267942e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 29&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.11938992901244266, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.23877985775470734,
+expected[i] evaluates to 0.11938992874226467, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.3581697862267942e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 29
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.11938992901244266, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.23877985775470734,&#x0A;expected[i] evaluates to -0.11938992874226467, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.3581697862267942e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 30&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.11938992901244266, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.23877985775470734,
+expected[i] evaluates to -0.11938992874226467, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.3581697862267942e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 30
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.71633347676093795, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.4326670169830322,&#x0A;expected[i] evaluates to -0.71633354022209428, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1490006206662832e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 31&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.71633347676093795, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.4326670169830322,
+expected[i] evaluates to -0.71633354022209428, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1490006206662832e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 31
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.88228648477908, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.7645729780197144,&#x0A;expected[i] evaluates to -0.88228649324063435, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 5.6468594797219035e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 32&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.88228648477908, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.7645729780197144,
+expected[i] evaluates to -0.88228649324063435, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 5.6468594797219035e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 32
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.021002455445968553, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.042004801332950592,&#x0A;expected[i] evaluates to -0.021002345886982039, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0630070376609464e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 33&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.021002455445968553, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.042004801332950592,
+expected[i] evaluates to -0.021002345886982039, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0630070376609464e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 33
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.29409547505814509, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.58819097280502319,&#x0A;expected[i] evaluates to 0.2940954977468781, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.8822864932406345e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 34&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.29409547505814509, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.58819097280502319,
+expected[i] evaluates to 0.2940954977468781, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.8822864932406345e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 34
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.609193308704711, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.2183866500854492,&#x0A;expected[i] evaluates to 0.60919334138073822, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 4.8275800241422147e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 35&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.609193308704711, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.2183866500854492,
+expected[i] evaluates to 0.60919334138073822, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 4.8275800241422147e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 35
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.71633347676093795, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.4326670169830322,&#x0A;expected[i] evaluates to 0.71633354022209428, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1490006206662832e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 36&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.71633347676093795, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.4326670169830322,
+expected[i] evaluates to 0.71633354022209428, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1490006206662832e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 36
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.11938992901244266, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.23877985775470734,&#x0A;expected[i] evaluates to 0.11938992874226467, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.3581697862267942e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 37&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.11938992901244266, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.23877985775470734,
+expected[i] evaluates to 0.11938992874226467, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.3581697862267942e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 37
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.11938992901244266, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.23877985775470734,&#x0A;expected[i] evaluates to -0.11938992874226467, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.3581697862267942e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 38&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.11938992901244266, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.23877985775470734,
+expected[i] evaluates to -0.11938992874226467, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.3581697862267942e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 38
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.71633347676093795, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.4326670169830322,&#x0A;expected[i] evaluates to -0.71633354022209428, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1490006206662832e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 39&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.71633347676093795, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.4326670169830322,
+expected[i] evaluates to -0.71633354022209428, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1490006206662832e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 39
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.63258085055595548, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.2651617527008057,&#x0A;expected[i] evaluates to 0.63258090214485019, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 4.8977427064345505e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 40&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.63258085055595548, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.2651617527008057,
+expected[i] evaluates to 0.63258090214485019, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 4.8977427064345505e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 40
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.015062389416816707, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.030124781653285027,&#x0A;expected[i] evaluates to 0.01506239223646832, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.045187176709405e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 41&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.015062389416816707, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.030124781653285027,
+expected[i] evaluates to 0.01506239223646832, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.045187176709405e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 41
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.21086029345275931, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.42172059416770935,&#x0A;expected[i] evaluates to -0.21086030071495004, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.6325809021448502e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 42&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.21086029345275931, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.42172059416770935,
+expected[i] evaluates to -0.21086030071495004, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.6325809021448502e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 42
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.43678291858033574, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.8735659122467041,&#x0A;expected[i] evaluates to -0.43678299366636836, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 4.3103489809991053e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 43&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.43678291858033574, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.8735659122467041,
+expected[i] evaluates to -0.43678299366636836, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 4.3103489809991053e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 43
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.23305850253461566, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.46611705422401428,&#x0A;expected[i] evaluates to -0.23305855168939862, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.6991756550681957e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 44&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.23305850253461566, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.46611705422401428,
+expected[i] evaluates to -0.23305855168939862, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.6991756550681957e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 44
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.1082057020330209, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -2.2164115905761719,&#x0A;expected[i] evaluates to -1.1082058885431509, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 6.324617665629453e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 45&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.1082057020330209, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -2.2164115905761719,
+expected[i] evaluates to -1.1082058885431509, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 6.324617665629453e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 45
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.42291323814157528, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.84582644701004028,&#x0A;expected[i] evaluates to 0.42291320886846501, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 4.2687396266053953e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 46&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.42291323814157528, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.84582644701004028,
+expected[i] evaluates to 0.42291320886846501, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 4.2687396266053953e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 46
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.91835123464696278, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.8367024660110474,&#x0A;expected[i] evaluates to 0.91835123136408459, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 5.755053694092254e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 47&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.91835123464696278, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.8367024660110474,
+expected[i] evaluates to 0.91835123136408459, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 5.755053694092254e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 47
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 2.7459543710073024, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.3729771375656128,&#x0A;expected[i] evaluates to -4.1189315085729152, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00015356794525718745.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 0&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 2.7459543710073024, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.3729771375656128,
+expected[i] evaluates to -4.1189315085729152, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00015356794525718745.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 0
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 2.6571613848215607, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.3285806179046631,&#x0A;expected[i] evaluates to 3.9857420027262238, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00014957226008178672.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 1&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 2.6571613848215607, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.3285806179046631,
+expected[i] evaluates to 3.9857420027262238, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00014957226008178672.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 1
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.5647886227825154, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.78239446878433228,&#x0A;expected[i] evaluates to -2.3471830915668477, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00010041549274700544.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 2&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.5647886227825154, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.78239446878433228,
+expected[i] evaluates to -2.3471830915668477, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00010041549274700544.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 2
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.6535817281775462, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.82679086923599243,&#x0A;expected[i] evaluates to 2.4803725974135387, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00010441117792240617.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 3&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.6535817281775462, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.82679086923599243,
+expected[i] evaluates to 2.4803725974135387, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00010441117792240617.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 3
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.0062815587031387343, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.0031407871283590794,&#x0A;expected[i] evaluates to 0.0094223458314978137, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0282670374944936e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 4&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.0062815587031387343, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.0031407871283590794,
+expected[i] evaluates to 0.0094223458314978137, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.0282670374944936e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 4
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 3.5251034129306422, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.7625517845153809,&#x0A;expected[i] evaluates to -5.2876551974460231, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00018862965592338069.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 5&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 3.5251034129306422, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.7625517845153809,
+expected[i] evaluates to -5.2876551974460231, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00018862965592338069.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 5
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 2.5197476669872163, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.2598737478256226,&#x0A;expected[i] evaluates to -3.7796214148128389, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00014338864244438517.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 6&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 2.5197476669872163, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.2598737478256226,
+expected[i] evaluates to -3.7796214148128389, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00014338864244438517.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 6
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 6.0385695412381555, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 3.019284725189209,&#x0A;expected[i] evaluates to 9.0578542664273645, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00030173562799282096.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 7&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 6.0385695412381555, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 3.019284725189209,
+expected[i] evaluates to 9.0578542664273645, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00030173562799282096.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 7
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.48430101249912183, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.24215050041675568,&#x0A;expected[i] evaluates to 0.72645151291587751, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1793545387476327e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 8&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.48430101249912183, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.24215050041675568,
+expected[i] evaluates to 0.72645151291587751, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1793545387476327e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 8
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.1761449370440695, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.58807247877120972,&#x0A;expected[i] evaluates to 1.7642174158152792, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 8.2926522474458377e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 9&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.1761449370440695, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.58807247877120972,
+expected[i] evaluates to 1.7642174158152792, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 8.2926522474458377e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 9
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.1761449370440695, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.58807247877120972,&#x0A;expected[i] evaluates to -1.7642174158152792, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 8.2926522474458377e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 10&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.1761449370440695, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.58807247877120972,
+expected[i] evaluates to -1.7642174158152792, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 8.2926522474458377e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 10
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.48430101249912183, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.24215050041675568,&#x0A;expected[i] evaluates to -0.72645151291587751, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1793545387476327e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 11&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.48430101249912183, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.24215050041675568,
+expected[i] evaluates to -0.72645151291587751, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1793545387476327e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 11
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 3.9963816634556251, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.9981907606124878,&#x0A;expected[i] evaluates to -5.9945724240681129, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00020983717272204339.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 12&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 3.9963816634556251, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.9981907606124878,
+expected[i] evaluates to -5.9945724240681129, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00020983717272204339.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 12
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.66610315864510994, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.33305156230926514,&#x0A;expected[i] evaluates to -0.99915472095437508, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 5.9974641628631254e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 13&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.66610315864510994, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.33305156230926514,
+expected[i] evaluates to -0.99915472095437508, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 5.9974641628631254e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 13
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.66610315864510994, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.33305156230926514,&#x0A;expected[i] evaluates to 0.99915472095437508, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 5.9974641628631254e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 14&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.66610315864510994, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.33305156230926514,
+expected[i] evaluates to 0.99915472095437508, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 5.9974641628631254e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 14
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 3.9963816634556251, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.9981907606124878,&#x0A;expected[i] evaluates to 5.9945724240681129, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00020983717272204339.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 15&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 3.9963816634556251, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.9981907606124878,
+expected[i] evaluates to 5.9945724240681129, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00020983717272204339.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 15
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.48430101249912183, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.24215050041675568,&#x0A;expected[i] evaluates to 0.72645151291587751, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1793545387476327e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 16&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.48430101249912183, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.24215050041675568,
+expected[i] evaluates to 0.72645151291587751, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1793545387476327e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 16
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.1761449370440695, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.58807247877120972,&#x0A;expected[i] evaluates to 1.7642174158152792, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 8.2926522474458377e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 17&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.1761449370440695, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.58807247877120972,
+expected[i] evaluates to 1.7642174158152792, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 8.2926522474458377e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 17
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.1761449370440695, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.58807247877120972,&#x0A;expected[i] evaluates to -1.7642174158152792, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 8.2926522474458377e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 18&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.1761449370440695, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.58807247877120972,
+expected[i] evaluates to -1.7642174158152792, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 8.2926522474458377e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 18
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.48430101249912183, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.24215050041675568,&#x0A;expected[i] evaluates to -0.72645151291587751, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1793545387476327e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 19&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.48430101249912183, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.24215050041675568,
+expected[i] evaluates to -0.72645151291587751, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1793545387476327e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 19
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 2.8653342243495334, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.4326670169830322,&#x0A;expected[i] evaluates to 4.2980012413325657, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00015894003723997696.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 20&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 2.8653342243495334, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.4326670169830322,
+expected[i] evaluates to 4.2980012413325657, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00015894003723997696.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 20
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.47755971469888081, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.23877985775470734,&#x0A;expected[i] evaluates to 0.71633957245358815, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1490187173607644e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 21&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.47755971469888081, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.23877985775470734,
+expected[i] evaluates to 0.71633957245358815, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1490187173607644e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 21
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.47755971469888081, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.23877985775470734,&#x0A;expected[i] evaluates to -0.71633957245358815, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1490187173607644e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 22&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.47755971469888081, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.23877985775470734,
+expected[i] evaluates to -0.71633957245358815, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1490187173607644e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 22
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 2.8653342243495334, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.4326670169830322,&#x0A;expected[i] evaluates to -4.2980012413325657, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00015894003723997696.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 23&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 2.8653342243495334, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.4326670169830322,
+expected[i] evaluates to -4.2980012413325657, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00015894003723997696.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 23
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.6535817281775462, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.82679086923599243,&#x0A;expected[i] evaluates to -2.4803725974135387, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00010441117792240617.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 24&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.6535817281775462, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.82679086923599243,
+expected[i] evaluates to -2.4803725974135387, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00010441117792240617.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 24
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.5647886227825154, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.78239446878433228,&#x0A;expected[i] evaluates to 2.3471830915668477, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00010041549274700544.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 25&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.5647886227825154, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.78239446878433228,
+expected[i] evaluates to 2.3471830915668477, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00010041549274700544.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 25
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 2.6571613848215607, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.3285806179046631,&#x0A;expected[i] evaluates to -3.9857420027262238, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00014957226008178672.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 26&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 2.6571613848215607, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.3285806179046631,
+expected[i] evaluates to -3.9857420027262238, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00014957226008178672.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 26
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 2.7459543710073024, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.3729771375656128,&#x0A;expected[i] evaluates to 4.1189315085729152, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00015356794525718745.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 27&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 2.7459543710073024, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.3729771375656128,
+expected[i] evaluates to 4.1189315085729152, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00015356794525718745.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 27
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 2.8653342243495334, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.4326670169830322,&#x0A;expected[i] evaluates to 4.2980012413325657, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00015894003723997696.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 28&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 2.8653342243495334, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.4326670169830322,
+expected[i] evaluates to 4.2980012413325657, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00015894003723997696.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 28
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.47755971469888081, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.23877985775470734,&#x0A;expected[i] evaluates to 0.71633957245358815, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1490187173607644e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 29&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.47755971469888081, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.23877985775470734,
+expected[i] evaluates to 0.71633957245358815, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1490187173607644e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 29
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.47755971469888081, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.23877985775470734,&#x0A;expected[i] evaluates to -0.71633957245358815, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1490187173607644e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 30&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.47755971469888081, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.23877985775470734,
+expected[i] evaluates to -0.71633957245358815, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1490187173607644e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 30
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 2.8653342243495334, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.4326670169830322,&#x0A;expected[i] evaluates to -4.2980012413325657, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00015894003723997696.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 31&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 2.8653342243495334, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.4326670169830322,
+expected[i] evaluates to -4.2980012413325657, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00015894003723997696.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 31
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 3.5291459814240911, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.7645729780197144,&#x0A;expected[i] evaluates to -5.2937189594438054, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00018881156878331417.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 32&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 3.5291459814240911, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.7645729780197144,
+expected[i] evaluates to -5.2937189594438054, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00018881156878331417.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 32
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.084009273988941313, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.042004801332950592,&#x0A;expected[i] evaluates to -0.12601407532189191, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.3780422259656757e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 33&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.084009273988941313, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.042004801332950592,
+expected[i] evaluates to -0.12601407532189191, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.3780422259656757e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 33
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.1763820136762455, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.58819097280502319,&#x0A;expected[i] evaluates to 1.7645729864812687, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 8.2937189594438059e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 34&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.1763820136762455, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.58819097280502319,
+expected[i] evaluates to 1.7645729864812687, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 8.2937189594438059e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 34
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 2.4367733981989801, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.2183866500854492,&#x0A;expected[i] evaluates to 3.6551600482844293, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00013965480144853288.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 35&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 2.4367733981989801, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.2183866500854492,
+expected[i] evaluates to 3.6551600482844293, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00013965480144853288.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 35
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 2.8653342243495334, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.4326670169830322,&#x0A;expected[i] evaluates to 4.2980012413325657, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00015894003723997696.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 36&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 2.8653342243495334, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.4326670169830322,
+expected[i] evaluates to 4.2980012413325657, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00015894003723997696.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 36
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.47755971469888081, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.23877985775470734,&#x0A;expected[i] evaluates to 0.71633957245358815, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1490187173607644e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 37&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.47755971469888081, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.23877985775470734,
+expected[i] evaluates to 0.71633957245358815, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1490187173607644e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 37
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.47755971469888081, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.23877985775470734,&#x0A;expected[i] evaluates to -0.71633957245358815, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1490187173607644e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 38&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.47755971469888081, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.23877985775470734,
+expected[i] evaluates to -0.71633957245358815, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 5.1490187173607644e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 38
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 2.8653342243495334, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -1.4326670169830322,&#x0A;expected[i] evaluates to -4.2980012413325657, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00015894003723997696.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 39&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 2.8653342243495334, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -1.4326670169830322,
+expected[i] evaluates to -4.2980012413325657, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00015894003723997696.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 39
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 2.5303236601682952, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.2651617527008057,&#x0A;expected[i] evaluates to 3.7954854128691009, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00014386456238607304.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 40&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 2.5303236601682952, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.2651617527008057,
+expected[i] evaluates to 3.7954854128691009, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00014386456238607304.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 40
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.060249571765524937, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.030124781653285027,&#x0A;expected[i] evaluates to 0.090374353418809963, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 3.2711230602564299e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 41&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.060249571765524937, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.030124781653285027,
+expected[i] evaluates to 0.090374353418809963, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 3.2711230602564299e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 41
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.84344121012199103, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.42172059416770935,&#x0A;expected[i] evaluates to -1.2651618042897004, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 6.7954854128691013e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 42&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.84344121012199103, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.42172059416770935,
+expected[i] evaluates to -1.2651618042897004, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 6.7954854128691013e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 42
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.7471320497515062, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.8735659122467041,&#x0A;expected[i] evaluates to -2.6206979619982103, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00010862093885994632.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 43&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.7471320497515062, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.8735659122467041,
+expected[i] evaluates to -2.6206979619982103, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00010862093885994632.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 43
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 0.93223425591237707, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -0.46611705422401428,&#x0A;expected[i] evaluates to -1.3983513101363914, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 7.1950539304091742e-05.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 44&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 0.93223425591237707, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -0.46611705422401428,
+expected[i] evaluates to -1.3983513101363914, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 7.1950539304091742e-05.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 44
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 4.4328237406827347, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to -2.2164115905761719,&#x0A;expected[i] evaluates to -6.6492353312589065, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00022947705993776719.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 45&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 4.4328237406827347, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to -2.2164115905761719,
+expected[i] evaluates to -6.6492353312589065, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00022947705993776719.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 45
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 1.6916528062007501, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 0.84582644701004028,&#x0A;expected[i] evaluates to 2.5374792532107904, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00010612437759632372.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 46&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 1.6916528062007501, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 0.84582644701004028,
+expected[i] evaluates to 2.5374792532107904, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00010612437759632372.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 46
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_layer_normalization.cpp:304&#x0A;The difference between actual[i] and expected[i] is 3.6734049221734599, which exceeds atol + 3e-5 * std::abs(expected[i]), where&#x0A;actual[i] evaluates to 1.8367024660110474,&#x0A;expected[i] evaluates to 5.5101073881845073, and&#x0A;atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00019530322164553523.&#x0A;Google Test trace:&#x0A;../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 47&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_layer_normalization.cpp:304
+The difference between actual[i] and expected[i] is 3.6734049221734599, which exceeds atol + 3e-5 * std::abs(expected[i]), where
+actual[i] evaluates to 1.8367024660110474,
+expected[i] evaluates to 5.5101073881845073, and
+atol + 3e-5 * std::abs(expected[i]) evaluates to 0.00019530322164553523.
+Google Test trace:
+../test/unittest/layers/unittest_layers_layer_normalization.cpp:302: 47
+]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

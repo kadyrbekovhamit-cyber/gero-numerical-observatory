@@ -1,0 +1,828 @@
+{
+  "checked_sources": [
+    "duplicate-search.json",
+    "cosine-duplicate-search.json"
+  ],
+  "searches": [
+    {
+      "query": "repo:ml-explore/mlx \"cosine\"",
+      "pages": [
+        {
+          "page": 1,
+          "total_count": 24,
+          "incomplete_results": false,
+          "retrieved": 24
+        }
+      ],
+      "checked_at_utc": "2026-09-07T08:50:22.145923+00:00",
+      "items": [
+        {
+          "number": 4217,
+          "title": "Validate decay_steps and step_size in the schedulers",
+          "html_url": "https://github.com/ml-explore/mlx/pull/4217",
+          "state": "closed",
+          "created_at": "2026-08-12T22:49:30Z",
+          "updated_at": "2026-08-13T10:16:53Z"
+        },
+        {
+          "number": 3990,
+          "title": "Fix unresolved mx.array docstring references",
+          "html_url": "https://github.com/ml-explore/mlx/pull/3990",
+          "state": "closed",
+          "created_at": "2026-08-03T13:36:26Z",
+          "updated_at": "2026-08-05T02:24:15Z"
+        },
+        {
+          "number": 3972,
+          "title": "Track BF16 Bluestein regression in reduced-precision Metal FFT",
+          "html_url": "https://github.com/ml-explore/mlx/issues/3972",
+          "state": "closed",
+          "created_at": "2026-08-02T05:36:40Z",
+          "updated_at": "2026-08-16T12:03:44Z"
+        },
+        {
+          "number": 3615,
+          "title": "Handle invalid dimensions in SinusoidalPositionalEncoding",
+          "html_url": "https://github.com/ml-explore/mlx/pull/3615",
+          "state": "closed",
+          "created_at": "2026-06-02T06:32:04Z",
+          "updated_at": "2026-06-05T22:09:23Z"
+        },
+        {
+          "number": 3614,
+          "title": "Validate dimensions in SinusoidalPositionalEncoding",
+          "html_url": "https://github.com/ml-explore/mlx/pull/3614",
+          "state": "closed",
+          "created_at": "2026-06-02T06:22:10Z",
+          "updated_at": "2026-06-02T06:33:17Z"
+        },
+        {
+          "number": 3797,
+          "title": "[BUG] NAX split-K GEMM (steel_gemm_splitk_axpby_nax) returns garbage for bf16 on M5 Max at the M\u00b7N \u2265 2048\u00b2 dispatch boundary",
+          "html_url": "https://github.com/ml-explore/mlx/issues/3797",
+          "state": "closed",
+          "created_at": "2026-07-04T03:24:00Z",
+          "updated_at": "2026-07-23T00:37:09Z"
+        },
+        {
+          "number": 3328,
+          "title": "Add TurboQuant KV cache compression with native Metal SDPA kernel",
+          "html_url": "https://github.com/ml-explore/mlx/pull/3328",
+          "state": "closed",
+          "created_at": "2026-03-28T10:27:36Z",
+          "updated_at": "2026-05-17T23:29:06Z"
+        },
+        {
+          "number": 3404,
+          "title": "Feature: Quantized KV cache support in scaled_dot_product_attention (TurboQuant)",
+          "html_url": "https://github.com/ml-explore/mlx/issues/3404",
+          "state": "closed",
+          "created_at": "2026-04-12T23:05:51Z",
+          "updated_at": "2026-04-14T10:11:10Z"
+        },
+        {
+          "number": 3124,
+          "title": "[featuring] - add hanning window function",
+          "html_url": "https://github.com/ml-explore/mlx/pull/3124",
+          "state": "closed",
+          "created_at": "2026-02-13T16:11:17Z",
+          "updated_at": "2026-02-16T19:14:58Z"
+        },
+        {
+          "number": 3136,
+          "title": "feat: implement mlx.core.blackman",
+          "html_url": "https://github.com/ml-explore/mlx/pull/3136",
+          "state": "closed",
+          "created_at": "2026-02-16T20:53:50Z",
+          "updated_at": "2026-02-25T21:42:41Z"
+        },
+        {
+          "number": 321,
+          "title": "SinusoidalPositionalEncoding suggestions ",
+          "html_url": "https://github.com/ml-explore/mlx/issues/321",
+          "state": "closed",
+          "created_at": "2023-12-30T13:09:55Z",
+          "updated_at": "2026-01-23T02:03:17Z"
+        },
+        {
+          "number": 2617,
+          "title": "[BUG] Learning Rate Scheduler Bug: Cosine Decay Starts During Warmup Phase",
+          "html_url": "https://github.com/ml-explore/mlx/issues/2617",
+          "state": "closed",
+          "created_at": "2025-09-23T11:11:02Z",
+          "updated_at": "2025-09-23T14:05:27Z"
+        },
+        {
+          "number": 2482,
+          "title": "Add CosineAnnealingWarmRestarts scheduler",
+          "html_url": "https://github.com/ml-explore/mlx/pull/2482",
+          "state": "closed",
+          "created_at": "2025-08-11T23:47:49Z",
+          "updated_at": "2025-08-15T18:50:25Z"
+        },
+        {
+          "number": 2483,
+          "title": "Add CyclicLR scheduler",
+          "html_url": "https://github.com/ml-explore/mlx/pull/2483",
+          "state": "closed",
+          "created_at": "2025-08-12T00:49:27Z",
+          "updated_at": "2025-08-15T18:49:45Z"
+        },
+        {
+          "number": 1542,
+          "title": "[BUG] How to improve the training perfomance in MLX compare to pytorch and keras ?",
+          "html_url": "https://github.com/ml-explore/mlx/issues/1542",
+          "state": "closed",
+          "created_at": "2024-10-30T07:06:11Z",
+          "updated_at": "2024-11-20T00:50:22Z"
+        },
+        {
+          "number": 1406,
+          "title": "[BUG] Memory overflow when lora fine-tuning meta-llama/Meta-Llama-3.1-8B-Instruct",
+          "html_url": "https://github.com/ml-explore/mlx/issues/1406",
+          "state": "closed",
+          "created_at": "2024-09-12T19:17:13Z",
+          "updated_at": "2024-09-17T23:45:30Z"
+        },
+        {
+          "number": 1138,
+          "title": "Update cosine decay to not clamp output, match other implementations",
+          "html_url": "https://github.com/ml-explore/mlx/pull/1138",
+          "state": "closed",
+          "created_at": "2024-05-18T00:55:27Z",
+          "updated_at": "2024-05-20T15:00:49Z"
+        },
+        {
+          "number": 859,
+          "title": "Add minimum for cosine decay function",
+          "html_url": "https://github.com/ml-explore/mlx/pull/859",
+          "state": "closed",
+          "created_at": "2024-03-20T20:13:21Z",
+          "updated_at": "2024-03-21T15:22:23Z"
+        },
+        {
+          "number": 1088,
+          "title": "[Feature] Rotary Positional Embeddings for Nomic Embed",
+          "html_url": "https://github.com/ml-explore/mlx/issues/1088",
+          "state": "closed",
+          "created_at": "2024-05-07T16:25:54Z",
+          "updated_at": "2024-05-07T18:39:10Z"
+        },
+        {
+          "number": 721,
+          "title": "Add linear warmup and schedule joining for use with existing schedules",
+          "html_url": "https://github.com/ml-explore/mlx/pull/721",
+          "state": "closed",
+          "created_at": "2024-02-21T23:58:48Z",
+          "updated_at": "2024-02-26T15:28:49Z"
+        },
+        {
+          "number": 336,
+          "title": "Additoinal losses",
+          "html_url": "https://github.com/ml-explore/mlx/pull/336",
+          "state": "closed",
+          "created_at": "2024-01-01T17:56:49Z",
+          "updated_at": "2024-01-08T22:01:14Z"
+        },
+        {
+          "number": 21,
+          "title": "No sine and bessel functions in documentation? ",
+          "html_url": "https://github.com/ml-explore/mlx/issues/21",
+          "state": "closed",
+          "created_at": "2023-12-06T13:42:10Z",
+          "updated_at": "2023-12-08T04:16:18Z"
+        },
+        {
+          "number": 334,
+          "title": "Support LR schedulers",
+          "html_url": "https://github.com/ml-explore/mlx/pull/334",
+          "state": "closed",
+          "created_at": "2024-01-01T15:34:07Z",
+          "updated_at": "2024-02-15T19:26:20Z"
+        },
+        {
+          "number": 209,
+          "title": "Add Lion optimizer",
+          "html_url": "https://github.com/ml-explore/mlx/pull/209",
+          "state": "closed",
+          "created_at": "2023-12-18T20:12:45Z",
+          "updated_at": "2023-12-20T22:36:21Z"
+        }
+      ]
+    },
+    {
+      "query": "repo:ml-explore/mlx \"RMSNorm\" \"gradient\"",
+      "pages": [
+        {
+          "page": 1,
+          "total_count": 6,
+          "incomplete_results": false,
+          "retrieved": 6
+        }
+      ],
+      "checked_at_utc": "2026-09-07T08:50:22.145923+00:00",
+      "items": [
+        {
+          "number": 3881,
+          "title": "[CUDA][Improvement] RMSNorm backward ",
+          "html_url": "https://github.com/ml-explore/mlx/pull/3881",
+          "state": "closed",
+          "created_at": "2026-07-21T13:44:15Z",
+          "updated_at": "2026-08-13T13:12:11Z"
+        },
+        {
+          "number": 4312,
+          "title": "Reject a negative eps in the normalization layers",
+          "html_url": "https://github.com/ml-explore/mlx/pull/4312",
+          "state": "closed",
+          "created_at": "2026-08-16T20:52:52Z",
+          "updated_at": "2026-08-18T12:19:03Z"
+        },
+        {
+          "number": 3923,
+          "title": "Add BitLinear: BitNet b1.58 quantization-aware training layer",
+          "html_url": "https://github.com/ml-explore/mlx/pull/3923",
+          "state": "closed",
+          "created_at": "2026-07-26T12:32:01Z",
+          "updated_at": "2026-08-02T07:56:14Z"
+        },
+        {
+          "number": 3630,
+          "title": "Fix intermittent wrong bias gradient in fast::layer_norm VJP (Metal WAR hazard)",
+          "html_url": "https://github.com/ml-explore/mlx/pull/3630",
+          "state": "closed",
+          "created_at": "2026-06-05T02:23:39Z",
+          "updated_at": "2026-06-12T21:33:42Z"
+        },
+        {
+          "number": 1914,
+          "title": "Adding support for the Muon Optimizer",
+          "html_url": "https://github.com/ml-explore/mlx/pull/1914",
+          "state": "closed",
+          "created_at": "2025-02-28T22:30:43Z",
+          "updated_at": "2025-07-19T12:31:46Z"
+        },
+        {
+          "number": 883,
+          "title": "Implement vjps for some primitives in the fast namespace",
+          "html_url": "https://github.com/ml-explore/mlx/pull/883",
+          "state": "closed",
+          "created_at": "2024-03-24T01:52:06Z",
+          "updated_at": "2024-03-26T23:35:35Z"
+        }
+      ]
+    },
+    {
+      "query": "repo:ml-explore/mlx \"rms_norm\" \"float16\"",
+      "pages": [
+        {
+          "page": 1,
+          "total_count": 1,
+          "incomplete_results": false,
+          "retrieved": 1
+        }
+      ],
+      "checked_at_utc": "2026-09-07T08:50:22.145923+00:00",
+      "items": [
+        {
+          "number": 2300,
+          "title": "[Experiment] ROCm backend",
+          "html_url": "https://github.com/ml-explore/mlx/pull/2300",
+          "state": "open",
+          "created_at": "2025-06-16T21:43:44Z",
+          "updated_at": "2026-08-14T19:45:58Z"
+        }
+      ]
+    },
+    {
+      "query": "repo:ml-explore/mlx \"LayerNorm\" \"gradient\"",
+      "pages": [
+        {
+          "page": 1,
+          "total_count": 9,
+          "incomplete_results": false,
+          "retrieved": 9
+        }
+      ],
+      "checked_at_utc": "2026-09-07T08:50:22.145923+00:00",
+      "items": [
+        {
+          "number": 4312,
+          "title": "Reject a negative eps in the normalization layers",
+          "html_url": "https://github.com/ml-explore/mlx/pull/4312",
+          "state": "closed",
+          "created_at": "2026-08-16T20:52:52Z",
+          "updated_at": "2026-08-18T12:19:03Z"
+        },
+        {
+          "number": 3630,
+          "title": "Fix intermittent wrong bias gradient in fast::layer_norm VJP (Metal WAR hazard)",
+          "html_url": "https://github.com/ml-explore/mlx/pull/3630",
+          "state": "closed",
+          "created_at": "2026-06-05T02:23:39Z",
+          "updated_at": "2026-06-12T21:33:42Z"
+        },
+        {
+          "number": 3220,
+          "title": "[BUG] LayerNorm VJP returns zeros_like(weight) instead of zeros_like(bias placeholder)",
+          "html_url": "https://github.com/ml-explore/mlx/issues/3220",
+          "state": "closed",
+          "created_at": "2026-03-08T22:43:46Z",
+          "updated_at": "2026-03-10T04:51:11Z"
+        },
+        {
+          "number": 2864,
+          "title": "[BUG] compile seems broken in latest mlx version 0.30.0",
+          "html_url": "https://github.com/ml-explore/mlx/issues/2864",
+          "state": "closed",
+          "created_at": "2025-12-03T19:23:36Z",
+          "updated_at": "2025-12-04T20:32:57Z"
+        },
+        {
+          "number": 2246,
+          "title": "Change layernorms to two pass algorithm",
+          "html_url": "https://github.com/ml-explore/mlx/pull/2246",
+          "state": "closed",
+          "created_at": "2025-06-06T08:08:02Z",
+          "updated_at": "2025-06-07T04:06:56Z"
+        },
+        {
+          "number": 1427,
+          "title": "[BUG] ValueError: [Primitive::vjp] Not implemented for ArgReduce. (Porting DINO DETR to MLX)",
+          "html_url": "https://github.com/ml-explore/mlx/issues/1427",
+          "state": "closed",
+          "created_at": "2024-09-22T08:54:57Z",
+          "updated_at": "2024-09-23T17:03:54Z"
+        },
+        {
+          "number": 1328,
+          "title": "[BUG] Unable to load from a saved checkpoint, `KeyError` for all dropout modules...",
+          "html_url": "https://github.com/ml-explore/mlx/issues/1328",
+          "state": "closed",
+          "created_at": "2024-08-14T15:58:10Z",
+          "updated_at": "2024-08-15T14:33:24Z"
+        },
+        {
+          "number": 883,
+          "title": "Implement vjps for some primitives in the fast namespace",
+          "html_url": "https://github.com/ml-explore/mlx/pull/883",
+          "state": "closed",
+          "created_at": "2024-03-24T01:52:06Z",
+          "updated_at": "2024-03-26T23:35:35Z"
+        },
+        {
+          "number": 1153,
+          "title": "Difference in training convergence between PyTorch & MLX",
+          "html_url": "https://github.com/ml-explore/mlx/issues/1153",
+          "state": "closed",
+          "created_at": "2024-05-23T17:41:14Z",
+          "updated_at": "2024-05-24T01:20:13Z"
+        }
+      ]
+    },
+    {
+      "query": "repo:ml-explore/mlx \"norm\" \"overflow\"",
+      "pages": [
+        {
+          "page": 1,
+          "total_count": 2,
+          "incomplete_results": false,
+          "retrieved": 2
+        }
+      ],
+      "checked_at_utc": "2026-09-07T08:50:22.145923+00:00",
+      "items": [
+        {
+          "number": 4230,
+          "title": "Stabilize reduced-precision InstanceNorm",
+          "html_url": "https://github.com/ml-explore/mlx/pull/4230",
+          "state": "closed",
+          "created_at": "2026-08-13T09:34:29Z",
+          "updated_at": "2026-08-22T01:49:57Z"
+        },
+        {
+          "number": 1049,
+          "title": "[FEATURE] in keras LayerNorm by default is apply to last dimension only",
+          "html_url": "https://github.com/ml-explore/mlx/issues/1049",
+          "state": "closed",
+          "created_at": "2024-04-28T16:35:36Z",
+          "updated_at": "2024-04-29T14:39:17Z"
+        }
+      ]
+    },
+    {
+      "query": "repo:ml-explore/mlx \"norm\" \"underflow\"",
+      "pages": [
+        {
+          "page": 1,
+          "total_count": 1,
+          "incomplete_results": false,
+          "retrieved": 1
+        }
+      ],
+      "checked_at_utc": "2026-09-07T08:50:22.145923+00:00",
+      "items": [
+        {
+          "number": 862,
+          "title": "Fast RMS Norm",
+          "html_url": "https://github.com/ml-explore/mlx/pull/862",
+          "state": "closed",
+          "created_at": "2024-03-20T22:31:26Z",
+          "updated_at": "2024-03-21T14:20:55Z"
+        }
+      ]
+    },
+    {
+      "query": "repo:ml-explore/mlx \"normalization\" \"stability\"",
+      "pages": [
+        {
+          "page": 1,
+          "total_count": 4,
+          "incomplete_results": false,
+          "retrieved": 4
+        }
+      ],
+      "checked_at_utc": "2026-09-07T08:50:22.145923+00:00",
+      "items": [
+        {
+          "number": 1888,
+          "title": "Feature Request: Add Weight Normalization Support (weight_norm)",
+          "html_url": "https://github.com/ml-explore/mlx/issues/1888",
+          "state": "open",
+          "created_at": "2025-02-19T23:45:02Z",
+          "updated_at": "2026-08-16T04:56:17Z"
+        },
+        {
+          "number": 1921,
+          "title": "Implement Weight Normalization, addressing issue #1888",
+          "html_url": "https://github.com/ml-explore/mlx/pull/1921",
+          "state": "closed",
+          "created_at": "2025-03-04T01:46:24Z",
+          "updated_at": "2025-07-02T13:12:39Z"
+        },
+        {
+          "number": 2246,
+          "title": "Change layernorms to two pass algorithm",
+          "html_url": "https://github.com/ml-explore/mlx/pull/2246",
+          "state": "closed",
+          "created_at": "2025-06-06T08:08:02Z",
+          "updated_at": "2025-06-07T04:06:56Z"
+        },
+        {
+          "number": 217,
+          "title": "implement-batch-norm-layer",
+          "html_url": "https://github.com/ml-explore/mlx/pull/217",
+          "state": "closed",
+          "created_at": "2023-12-19T02:51:47Z",
+          "updated_at": "2023-12-25T16:33:36Z"
+        }
+      ]
+    },
+    {
+      "query": "repo:ml-explore/mlx \"softmax\" \"masked\"",
+      "pages": [
+        {
+          "page": 1,
+          "total_count": 21,
+          "incomplete_results": false,
+          "retrieved": 21
+        }
+      ],
+      "checked_at_utc": "2026-09-07T08:50:22.145923+00:00",
+      "items": [
+        {
+          "number": 3919,
+          "title": "Fuse the causal mask into the SDPA fallback softmax",
+          "html_url": "https://github.com/ml-explore/mlx/pull/3919",
+          "state": "closed",
+          "created_at": "2026-07-25T21:35:24Z",
+          "updated_at": "2026-08-03T06:40:43Z"
+        },
+        {
+          "number": 4416,
+          "title": "Make head-dim-256 prefill with array mask run fused NAX kernel",
+          "html_url": "https://github.com/ml-explore/mlx/pull/4416",
+          "state": "closed",
+          "created_at": "2026-08-28T01:02:42Z",
+          "updated_at": "2026-09-02T04:43:47Z"
+        },
+        {
+          "number": 3957,
+          "title": "Overview of three perf PRs for LLM inference (#3918, #3919, #3920)",
+          "html_url": "https://github.com/ml-explore/mlx/issues/3957",
+          "state": "closed",
+          "created_at": "2026-07-31T18:21:12Z",
+          "updated_at": "2026-08-06T08:17:54Z"
+        },
+        {
+          "number": 246,
+          "title": "boolean mask or filter?",
+          "html_url": "https://github.com/ml-explore/mlx/issues/246",
+          "state": "open",
+          "created_at": "2023-12-21T21:03:45Z",
+          "updated_at": "2026-08-16T05:02:54Z"
+        },
+        {
+          "number": 3864,
+          "title": "Add inverse-CDF path for large categorical sampling",
+          "html_url": "https://github.com/ml-explore/mlx/pull/3864",
+          "state": "closed",
+          "created_at": "2026-07-17T16:25:31Z",
+          "updated_at": "2026-08-04T00:26:27Z"
+        },
+        {
+          "number": 3897,
+          "title": "Batched (padded/masked) attention diverges from single-sequence on M5, not on M3 Max",
+          "html_url": "https://github.com/ml-explore/mlx/issues/3897",
+          "state": "closed",
+          "created_at": "2026-07-23T17:26:01Z",
+          "updated_at": "2026-08-09T01:40:41Z"
+        },
+        {
+          "number": 3728,
+          "title": "Add math mode option for custom Metal kernels",
+          "html_url": "https://github.com/ml-explore/mlx/pull/3728",
+          "state": "closed",
+          "created_at": "2026-06-19T23:03:24Z",
+          "updated_at": "2026-07-07T04:10:15Z"
+        },
+        {
+          "number": 4022,
+          "title": "[BUG] Metal 2-pass vector SDPA kernel produces garbage decode output on M3 Max (applegpu_g15s) with GQA once KV length reaches 1024",
+          "html_url": "https://github.com/ml-explore/mlx/issues/4022",
+          "state": "closed",
+          "created_at": "2026-08-05T23:12:39Z",
+          "updated_at": "2026-08-16T12:06:31Z"
+        },
+        {
+          "number": 3592,
+          "title": "`mx.fast.metal_kernel`: Add support for compiler options (`-fmetal-math-mode`, integer template parameters, Metal 4 Tensor types",
+          "html_url": "https://github.com/ml-explore/mlx/issues/3592",
+          "state": "closed",
+          "created_at": "2026-05-27T01:47:07Z",
+          "updated_at": "2026-07-07T04:10:16Z"
+        },
+        {
+          "number": 3826,
+          "title": "mx.fast.scaled_dot_product_attention: 2.3\u20132.8\u00d7 latency jump from L=8 to L=12 queries (kernel-routing gap), flat until L\u226548",
+          "html_url": "https://github.com/ml-explore/mlx/issues/3826",
+          "state": "closed",
+          "created_at": "2026-07-09T21:35:25Z",
+          "updated_at": "2026-08-06T04:33:14Z"
+        },
+        {
+          "number": 3842,
+          "title": "Add a fused full-attention path for head_dim 256 on NAX devices",
+          "html_url": "https://github.com/ml-explore/mlx/pull/3842",
+          "state": "closed",
+          "created_at": "2026-07-13T20:28:04Z",
+          "updated_at": "2026-09-04T03:59:27Z"
+        },
+        {
+          "number": 3658,
+          "title": "Allow force using fused kernel in scaled_dot_product_attention",
+          "html_url": "https://github.com/ml-explore/mlx/issues/3658",
+          "state": "closed",
+          "created_at": "2026-06-11T10:59:25Z",
+          "updated_at": "2026-08-19T13:20:48Z"
+        },
+        {
+          "number": 3361,
+          "title": "Fix int16 overflow in SDPA NAX mask indexing for KV sequences > 32K",
+          "html_url": "https://github.com/ml-explore/mlx/pull/3361",
+          "state": "closed",
+          "created_at": "2026-04-03T19:46:57Z",
+          "updated_at": "2026-04-10T08:08:47Z"
+        },
+        {
+          "number": 2967,
+          "title": "Use lower-right causal mask alignment consistently",
+          "html_url": "https://github.com/ml-explore/mlx/pull/2967",
+          "state": "closed",
+          "created_at": "2026-01-04T04:08:03Z",
+          "updated_at": "2026-01-30T05:33:06Z"
+        },
+        {
+          "number": 3586,
+          "title": "Xcode 26.5 / metalfe-32023.883 mis-compiles NAX GEMM kernel",
+          "html_url": "https://github.com/ml-explore/mlx/issues/3586",
+          "state": "closed",
+          "created_at": "2026-05-24T20:23:54Z",
+          "updated_at": "2026-06-13T01:54:30Z"
+        },
+        {
+          "number": 2626,
+          "title": "SDPA error with masked full attention",
+          "html_url": "https://github.com/ml-explore/mlx/issues/2626",
+          "state": "closed",
+          "created_at": "2025-09-26T01:27:58Z",
+          "updated_at": "2025-09-26T15:06:17Z"
+        },
+        {
+          "number": 2395,
+          "title": "[Feature Request] Add Safe Softmax for SDPA",
+          "html_url": "https://github.com/ml-explore/mlx/issues/2395",
+          "state": "closed",
+          "created_at": "2025-07-20T12:39:10Z",
+          "updated_at": "2025-07-28T12:29:04Z"
+        },
+        {
+          "number": 2390,
+          "title": "[BUG] ImportError: libmlx.so: cannot open shared object file: No such file or directory",
+          "html_url": "https://github.com/ml-explore/mlx/issues/2390",
+          "state": "closed",
+          "created_at": "2025-07-19T00:45:28Z",
+          "updated_at": "2025-07-19T03:01:10Z"
+        },
+        {
+          "number": 1839,
+          "title": "[BUG] ERROR: ERROR: Failed to build installable wheels for some pyproject.toml based projects (mlx)",
+          "html_url": "https://github.com/ml-explore/mlx/issues/1839",
+          "state": "closed",
+          "created_at": "2025-02-06T19:04:41Z",
+          "updated_at": "2025-02-19T23:04:33Z"
+        },
+        {
+          "number": 1045,
+          "title": "[BUG] Cannot install MLX locally",
+          "html_url": "https://github.com/ml-explore/mlx/issues/1045",
+          "state": "closed",
+          "created_at": "2024-04-28T00:01:03Z",
+          "updated_at": "2024-05-03T16:07:03Z"
+        },
+        {
+          "number": 1153,
+          "title": "Difference in training convergence between PyTorch & MLX",
+          "html_url": "https://github.com/ml-explore/mlx/issues/1153",
+          "state": "closed",
+          "created_at": "2024-05-23T17:41:14Z",
+          "updated_at": "2024-05-24T01:20:13Z"
+        }
+      ]
+    },
+    {
+      "query": "repo:ml-explore/mlx \"quantized_matmul\" \"precision\"",
+      "pages": [
+        {
+          "page": 1,
+          "total_count": 8,
+          "incomplete_results": false,
+          "retrieved": 8
+        }
+      ],
+      "checked_at_utc": "2026-09-07T08:50:22.145923+00:00",
+      "items": [
+        {
+          "number": 3879,
+          "title": "[CUDA] GLM-5.2/DeepseekV32 mxfp4 forward numerically wrong on Blackwell (sm_120/121/110), correct on Metal \u2014 individual ops fine, composed forward diverges ~25%",
+          "html_url": "https://github.com/ml-explore/mlx/issues/3879",
+          "state": "open",
+          "created_at": "2026-07-21T06:39:43Z",
+          "updated_at": "2026-08-08T06:59:18Z"
+        },
+        {
+          "number": 3883,
+          "title": "Warn once when float32 ops silently run at TF32 precision",
+          "html_url": "https://github.com/ml-explore/mlx/pull/3883",
+          "state": "closed",
+          "created_at": "2026-07-21T18:45:32Z",
+          "updated_at": "2026-08-03T01:57:44Z"
+        },
+        {
+          "number": 4265,
+          "title": "quantized_matmul does not amortize the weight read for small M, while the bf16 path does",
+          "html_url": "https://github.com/ml-explore/mlx/issues/4265",
+          "state": "closed",
+          "created_at": "2026-08-15T06:12:44Z",
+          "updated_at": "2026-08-16T11:38:10Z"
+        },
+        {
+          "number": 3852,
+          "title": "2-bit quantized_matmul loses its size advantage over 4-bit at M >= 3",
+          "html_url": "https://github.com/ml-explore/mlx/issues/3852",
+          "state": "closed",
+          "created_at": "2026-07-16T21:20:59Z",
+          "updated_at": "2026-08-16T12:02:33Z"
+        },
+        {
+          "number": 2887,
+          "title": "[BUG] Get 'kernel not found' error when doing quantized_matmul with mxfp8",
+          "html_url": "https://github.com/ml-explore/mlx/issues/2887",
+          "state": "closed",
+          "created_at": "2025-12-09T16:52:51Z",
+          "updated_at": "2026-07-01T07:19:42Z"
+        },
+        {
+          "number": 3473,
+          "title": "Add MLX_NUMERICAL_STRICT_MODE for shape-independent quantized_matmul",
+          "html_url": "https://github.com/ml-explore/mlx/pull/3473",
+          "state": "closed",
+          "created_at": "2026-05-02T17:08:37Z",
+          "updated_at": "2026-05-08T14:14:21Z"
+        },
+        {
+          "number": 3600,
+          "title": "block_fp8: 2D-block FP8 quantized matmul + MoE kernels (DeepSeek-V3 / MiMo)",
+          "html_url": "https://github.com/ml-explore/mlx/pull/3600",
+          "state": "closed",
+          "created_at": "2026-05-28T19:29:55Z",
+          "updated_at": "2026-05-31T23:17:53Z"
+        },
+        {
+          "number": 3251,
+          "title": "`quantized_matmul` performance degrades significantly with `group_size=32` vs `group_size=128`",
+          "html_url": "https://github.com/ml-explore/mlx/issues/3251",
+          "state": "closed",
+          "created_at": "2026-03-14T15:19:43Z",
+          "updated_at": "2026-03-17T04:06:54Z"
+        }
+      ]
+    },
+    {
+      "query": "repo:nntrainer/nntrainer \"layer normalization\" \"numerical\"",
+      "pages": [
+        {
+          "page": 1,
+          "total_count": 3,
+          "incomplete_results": false,
+          "retrieved": 3
+        }
+      ],
+      "checked_at_utc": "2026-09-07T08:50:22.145923+00:00",
+      "items": [
+        {
+          "number": 4304,
+          "title": "[ Wait for #4302 ] [cpu_backend][layers] Extend the whole-op table and collapse the layer forks onto it",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4304",
+          "state": "open",
+          "created_at": "2026-08-30T03:29:46Z",
+          "updated_at": "2026-09-01T04:16:59Z"
+        },
+        {
+          "number": 4292,
+          "title": "[draft] Feat/ced w8a8 int8 resident",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4292",
+          "state": "open",
+          "created_at": "2026-08-24T15:59:38Z",
+          "updated_at": "2026-08-27T04:21:16Z"
+        },
+        {
+          "number": 4022,
+          "title": "[CausalLM/layers] implement SwiGLU backward pass for LoRA training",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4022",
+          "state": "closed",
+          "created_at": "2026-06-29T11:27:58Z",
+          "updated_at": "2026-08-26T02:41:35Z"
+        }
+      ]
+    },
+    {
+      "query": "repo:safety-research/bloom \"score\" \"bug\"",
+      "pages": [
+        {
+          "page": 1,
+          "total_count": 0,
+          "incomplete_results": false,
+          "retrieved": 0
+        }
+      ],
+      "checked_at_utc": "2026-09-07T08:50:22.145923+00:00",
+      "items": []
+    },
+    {
+      "query": "repo:ml-explore/mlx \"cosine\" \"NaN\"",
+      "total_count": 1,
+      "incomplete_results": false,
+      "checked_at_utc": "2026-09-07T09:06:31.547295+00:00",
+      "items": [
+        {
+          "number": 3797,
+          "title": "[BUG] NAX split-K GEMM (steel_gemm_splitk_axpby_nax) returns garbage for bf16 on M5 Max at the M\u00b7N \u2265 2048\u00b2 dispatch boundary",
+          "html_url": "https://github.com/ml-explore/mlx/issues/3797",
+          "state": "closed"
+        }
+      ]
+    },
+    {
+      "query": "repo:ml-explore/mlx \"linalg.norm\" \"zero\"",
+      "total_count": 0,
+      "incomplete_results": false,
+      "checked_at_utc": "2026-09-07T09:06:31.547295+00:00",
+      "items": []
+    },
+    {
+      "query": "repo:ml-explore/mlx \"cosine_similarity_loss\"",
+      "total_count": 1,
+      "incomplete_results": false,
+      "checked_at_utc": "2026-09-07T09:06:31.547295+00:00",
+      "items": [
+        {
+          "number": 3990,
+          "title": "Fix unresolved mx.array docstring references",
+          "html_url": "https://github.com/ml-explore/mlx/pull/3990",
+          "state": "closed"
+        }
+      ]
+    }
+  ]
+}

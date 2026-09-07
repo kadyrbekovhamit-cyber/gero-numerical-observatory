@@ -1,0 +1,94 @@
+{
+  "id": "nntrainer-layernorm-affine-input-gradient-2026-09-07",
+  "fingerprint": "ae50a66efaeb4dbfb14b3dbdae04fd48d5c9894d8f1bb79760a8184a5f5ab23b",
+  "status": "locally_reproduced_with_tested_patch",
+  "implementation_reports": 1,
+  "source_sha": "a7ea056e79ab8e14447ea305c1b634e233343258",
+  "recorded_at_utc": "2026-09-07T11:07:51.531698+00:00",
+  "stack": "Native nntrainer C++ CPU FP32 NCHW",
+  "input": {
+    "shape": [
+      1,
+      1,
+      1,
+      4
+    ],
+    "axis": 3,
+    "x": [
+      -1,
+      0,
+      1,
+      2
+    ],
+    "gamma": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "beta": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "dy": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "epsilon": 1e-05
+  },
+  "original_input_gradient": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "patched_input_gradient": [
+    0.6260718107,
+    -0.5366623998,
+    -0.8049730062,
+    0.7155635953
+  ],
+  "forward_finite_difference": [
+    0.6260452271,
+    -0.5365600586,
+    -0.8048706055,
+    0.7155227661
+  ],
+  "finite_difference_step": 0.00390625,
+  "tests": {
+    "nntrainer-before": {
+      "tests": 42,
+      "failures": 20,
+      "errors": 0,
+      "disabled": 0,
+      "passed": 22
+    },
+    "nntrainer-after": {
+      "tests": 42,
+      "failures": 0,
+      "errors": 0,
+      "disabled": 0,
+      "passed": 42
+    }
+  },
+  "duplicate_review": {
+    "queries": 9,
+    "unique_public_entries": 94,
+    "exact_match_found": false,
+    "global_novelty_proven": false
+  },
+  "patch": "patches/nntrainer-layernorm.patch",
+  "publication_status": "not_published_in_this_search_round",
+  "limits": [
+    "No maintainer confirmation or upstream fix",
+    "No claim of a recent version regression",
+    "No end-to-end model impact measurement",
+    "No Samsung device or proprietary product testing",
+    "No FP16, GPU, Linux, Android, or full CI coverage",
+    "Existing native build contains unrelated earlier loss and activation repairs; LayerNorm baseline matches pinned source"
+  ]
+}

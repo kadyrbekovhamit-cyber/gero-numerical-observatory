@@ -1,0 +1,26 @@
+{
+  "suites": {
+    "nntrainer-before": {
+      "tests": 42,
+      "failures": 20,
+      "errors": 0,
+      "disabled": 0,
+      "passed": 22
+    },
+    "nntrainer-after": {
+      "tests": 42,
+      "failures": 0,
+      "errors": 0,
+      "disabled": 0,
+      "passed": 42
+    }
+  },
+  "new_tests": 24,
+  "upstream_layernorm_tests": 18,
+  "fresh_processes_per_version": 3,
+  "focused_tests_per_process": 4,
+  "all_replays_match": true,
+  "isolated_patches_apply_to_pinned_source": true,
+  "cpp_format_version": "14.0.6",
+  "full_upstream_CI": false
+}

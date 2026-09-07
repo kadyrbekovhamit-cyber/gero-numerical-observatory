@@ -1,0 +1,108 @@
+Running main() from ../subprojects/googletest/googletest/src/gtest_main.cc
+Note: Google Test filter = LayerNormNumericalAudit.*:EveryNonBatchAxis/*:LayerNormalization/*
+[==========] Running 42 tests from 4 test suites.
+[----------] Global test environment set-up.
+[----------] 10 tests from LayerNormNumericalAudit
+[ RUN      ] LayerNormNumericalAudit.OrdinaryNonuniformGamma
+AUDIT_DX 0.6260718107 -0.5366623998 -0.8049730062 0.7155635953
+[       OK ] LayerNormNumericalAudit.OrdinaryNonuniformGamma (0 ms)
+[ RUN      ] LayerNormNumericalAudit.InputGradientMatchesActualForwardFiniteDifference
+AUDIT_FINITE_DIFFERENCE 0 0.6260452271
+AUDIT_FINITE_DIFFERENCE 1 -0.5365600586
+AUDIT_FINITE_DIFFERENCE 2 -0.8048706055
+AUDIT_FINITE_DIFFERENCE 3 0.7155227661
+[       OK ] LayerNormNumericalAudit.InputGradientMatchesActualForwardFiniteDifference (0 ms)
+[ RUN      ] LayerNormNumericalAudit.MultiAxisInputAndWeightsMatchFiniteDifference
+[       OK ] LayerNormNumericalAudit.MultiAxisInputAndWeightsMatchFiniteDifference (1 ms)
+[ RUN      ] LayerNormNumericalAudit.UnitGammaControl
+[       OK ] LayerNormNumericalAudit.UnitGammaControl (0 ms)
+[ RUN      ] LayerNormNumericalAudit.ZeroGammaMakesInputGradientZero
+[       OK ] LayerNormNumericalAudit.ZeroGammaMakesInputGradientZero (0 ms)
+[ RUN      ] LayerNormNumericalAudit.ConstantGammaScalesInputGradient
+[       OK ] LayerNormNumericalAudit.ConstantGammaScalesInputGradient (0 ms)
+[ RUN      ] LayerNormNumericalAudit.ConstantInputUsesEpsilon
+[       OK ] LayerNormNumericalAudit.ConstantInputUsesEpsilon (0 ms)
+[ RUN      ] LayerNormNumericalAudit.IndependentBatchPartition
+[       OK ] LayerNormNumericalAudit.IndependentBatchPartition (0 ms)
+[ RUN      ] LayerNormNumericalAudit.EquivalentIndependentBatchShape
+[       OK ] LayerNormNumericalAudit.EquivalentIndependentBatchShape (0 ms)
+[ RUN      ] LayerNormNumericalAudit.ShiftInvarianceAndZeroSumInputGradient
+[       OK ] LayerNormNumericalAudit.ShiftInvarianceAndZeroSumInputGradient (0 ms)
+[----------] 10 tests from LayerNormNumericalAudit (2 ms total)
+
+[----------] 11 tests from LayerNormalization/LayerSemantics
+[ RUN      ] LayerNormalization/LayerSemantics.createFromAppContext_pn/0
+[       OK ] LayerNormalization/LayerSemantics.createFromAppContext_pn/0 (2 ms)
+[ RUN      ] LayerNormalization/LayerSemantics.setPropertiesInvalid_01_n/0
+[       OK ] LayerNormalization/LayerSemantics.setPropertiesInvalid_01_n/0 (0 ms)
+[ RUN      ] LayerNormalization/LayerSemantics.setPropertiesInvalid_02_n/0
+[       OK ] LayerNormalization/LayerSemantics.setPropertiesInvalid_02_n/0 (0 ms)
+[ RUN      ] LayerNormalization/LayerSemantics.finalizeValidateLayerNode_p/0
+[       OK ] LayerNormalization/LayerSemantics.finalizeValidateLayerNode_p/0 (0 ms)
+[ RUN      ] LayerNormalization/LayerSemantics.getTypeValidateLayerNode_p/0
+[       OK ] LayerNormalization/LayerSemantics.getTypeValidateLayerNode_p/0 (0 ms)
+[ RUN      ] LayerNormalization/LayerSemantics.gettersValidateLayerNode_p/0
+[       OK ] LayerNormalization/LayerSemantics.gettersValidateLayerNode_p/0 (0 ms)
+[ RUN      ] LayerNormalization/LayerSemantics.setBatchValidateLayerNode_p/0
+[       OK ] LayerNormalization/LayerSemantics.setBatchValidateLayerNode_p/0 (0 ms)
+[ RUN      ] LayerNormalization/LayerSemantics.setProperties_n/0
+[       OK ] LayerNormalization/LayerSemantics.setProperties_n/0 (0 ms)
+[ RUN      ] LayerNormalization/LayerSemantics.gettersValidate_p/0
+[       OK ] LayerNormalization/LayerSemantics.gettersValidate_p/0 (0 ms)
+[ RUN      ] LayerNormalization/LayerSemantics.finalizeValidate_p/0
+[       OK ] LayerNormalization/LayerSemantics.finalizeValidate_p/0 (0 ms)
+[ RUN      ] LayerNormalization/LayerSemantics.setBatchValidate_p/0
+[       OK ] LayerNormalization/LayerSemantics.setBatchValidate_p/0 (0 ms)
+[----------] 11 tests from LayerNormalization/LayerSemantics (3 ms total)
+
+[----------] 7 tests from LayerNormalization/LayerGoldenTest
+[ RUN      ] LayerNormalization/LayerGoldenTest.run/0
+[       OK ] LayerNormalization/LayerGoldenTest.run/0 (0 ms)
+[ RUN      ] LayerNormalization/LayerGoldenTest.run/1
+[       OK ] LayerNormalization/LayerGoldenTest.run/1 (0 ms)
+[ RUN      ] LayerNormalization/LayerGoldenTest.run/2
+[       OK ] LayerNormalization/LayerGoldenTest.run/2 (0 ms)
+[ RUN      ] LayerNormalization/LayerGoldenTest.run/3
+[       OK ] LayerNormalization/LayerGoldenTest.run/3 (0 ms)
+[ RUN      ] LayerNormalization/LayerGoldenTest.run/4
+[       OK ] LayerNormalization/LayerGoldenTest.run/4 (0 ms)
+[ RUN      ] LayerNormalization/LayerGoldenTest.run/5
+[       OK ] LayerNormalization/LayerGoldenTest.run/5 (0 ms)
+[ RUN      ] LayerNormalization/LayerGoldenTest.run/6
+[       OK ] LayerNormalization/LayerGoldenTest.run/6 (0 ms)
+[----------] 7 tests from LayerNormalization/LayerGoldenTest (1 ms total)
+
+[----------] 14 tests from EveryNonBatchAxis/LayerNormAxesAudit
+[ RUN      ] EveryNonBatchAxis/LayerNormAxesAudit.AffineOutputAndAllGradients/0
+[       OK ] EveryNonBatchAxis/LayerNormAxesAudit.AffineOutputAndAllGradients/0 (0 ms)
+[ RUN      ] EveryNonBatchAxis/LayerNormAxesAudit.AffineOutputAndAllGradients/1
+[       OK ] EveryNonBatchAxis/LayerNormAxesAudit.AffineOutputAndAllGradients/1 (0 ms)
+[ RUN      ] EveryNonBatchAxis/LayerNormAxesAudit.AffineOutputAndAllGradients/2
+[       OK ] EveryNonBatchAxis/LayerNormAxesAudit.AffineOutputAndAllGradients/2 (0 ms)
+[ RUN      ] EveryNonBatchAxis/LayerNormAxesAudit.AffineOutputAndAllGradients/3
+[       OK ] EveryNonBatchAxis/LayerNormAxesAudit.AffineOutputAndAllGradients/3 (0 ms)
+[ RUN      ] EveryNonBatchAxis/LayerNormAxesAudit.AffineOutputAndAllGradients/4
+[       OK ] EveryNonBatchAxis/LayerNormAxesAudit.AffineOutputAndAllGradients/4 (0 ms)
+[ RUN      ] EveryNonBatchAxis/LayerNormAxesAudit.AffineOutputAndAllGradients/5
+[       OK ] EveryNonBatchAxis/LayerNormAxesAudit.AffineOutputAndAllGradients/5 (0 ms)
+[ RUN      ] EveryNonBatchAxis/LayerNormAxesAudit.AffineOutputAndAllGradients/6
+[       OK ] EveryNonBatchAxis/LayerNormAxesAudit.AffineOutputAndAllGradients/6 (0 ms)
+[ RUN      ] EveryNonBatchAxis/LayerNormAxesAudit.AffineOutputAndAllGradients/7
+[       OK ] EveryNonBatchAxis/LayerNormAxesAudit.AffineOutputAndAllGradients/7 (0 ms)
+[ RUN      ] EveryNonBatchAxis/LayerNormAxesAudit.AffineOutputAndAllGradients/8
+[       OK ] EveryNonBatchAxis/LayerNormAxesAudit.AffineOutputAndAllGradients/8 (0 ms)
+[ RUN      ] EveryNonBatchAxis/LayerNormAxesAudit.AffineOutputAndAllGradients/9
+[       OK ] EveryNonBatchAxis/LayerNormAxesAudit.AffineOutputAndAllGradients/9 (0 ms)
+[ RUN      ] EveryNonBatchAxis/LayerNormAxesAudit.AffineOutputAndAllGradients/10
+[       OK ] EveryNonBatchAxis/LayerNormAxesAudit.AffineOutputAndAllGradients/10 (0 ms)
+[ RUN      ] EveryNonBatchAxis/LayerNormAxesAudit.AffineOutputAndAllGradients/11
+[       OK ] EveryNonBatchAxis/LayerNormAxesAudit.AffineOutputAndAllGradients/11 (0 ms)
+[ RUN      ] EveryNonBatchAxis/LayerNormAxesAudit.AffineOutputAndAllGradients/12
+[       OK ] EveryNonBatchAxis/LayerNormAxesAudit.AffineOutputAndAllGradients/12 (0 ms)
+[ RUN      ] EveryNonBatchAxis/LayerNormAxesAudit.AffineOutputAndAllGradients/13
+[       OK ] EveryNonBatchAxis/LayerNormAxesAudit.AffineOutputAndAllGradients/13 (0 ms)
+[----------] 14 tests from EveryNonBatchAxis/LayerNormAxesAudit (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 42 tests from 4 test suites ran. (7 ms total)
+[  PASSED  ] 42 tests.

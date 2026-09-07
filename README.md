@@ -4,6 +4,17 @@ A reproducible CPU benchmark for mathematical contracts in ONNX graphs. It runs 
 
 [71-second video](https://www.youtube.com/shorts/KTLC9_FomBs) · [Interactive reports](https://www.gero.uz/stability/) · [Publication and limits](https://www.gero.uz/research/articles/onnx-numerical-observatory-reproduced-snapshot.html) · [Measured snapshot](benchmarks/2026-09-06/latest.json) · [Reverification](benchmarks/2026-09-06/reverification.json)
 
+## Cosine and LayerNorm audit, 7 September 2026
+
+Two reproduced implementation reports: finite-input cosine NaNs in MLX and an
+incorrect affine LayerNorm input derivative in nntrainer. Local patches pass
+101 cosine tests on each CPU/Metal backend and 42 native nntrainer CPU tests.
+No exact duplicate identified in the recorded searches; no upstream acceptance
+or model-impact claim.
+
+[Reproduce both cases](audits/2026-09-07-cosine-layernorm/README.md) ·
+[Read the technical note](https://www.gero.uz/research/articles/cosine-and-layernorm-contract-failures.html)
+
 ## Losses and autodiff audit, 7 September 2026
 
 Three reproduced implementation cases in two numerical failure families: BCE tails

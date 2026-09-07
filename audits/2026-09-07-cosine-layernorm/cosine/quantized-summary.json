@@ -1,0 +1,21 @@
+{
+  "quantize": {
+    "recorded": 3,
+    "flagged": 0,
+    "errors": 3,
+    "classified_as_prior_art": 3
+  },
+  "dequantize": {
+    "recorded": 96,
+    "flagged": 0,
+    "errors": 3,
+    "classified_as_prior_art": 3
+  },
+  "matmul": {
+    "recorded": 384,
+    "flagged": 6,
+    "errors": 0,
+    "classified_as_prior_art": 6
+  },
+  "unclassified_flags": []
+}

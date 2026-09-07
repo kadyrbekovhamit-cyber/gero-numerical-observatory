@@ -1,0 +1,883 @@
+{
+  "queries": [
+    {
+      "query": "repo:nntrainer/nntrainer \"layer normalization\"",
+      "total_count": 65,
+      "incomplete_results": false,
+      "retrieved": 65,
+      "items": [
+        {
+          "number": 4304,
+          "title": "[ Wait for #4302 ] [cpu_backend][layers] Extend the whole-op table and collapse the layer forks onto it",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4304",
+          "state": "open"
+        },
+        {
+          "number": 4061,
+          "title": "[CausalLM] Support screen_ai",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4061",
+          "state": "open"
+        },
+        {
+          "number": 4292,
+          "title": "[draft] Feat/ced w8a8 int8 resident",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4292",
+          "state": "open"
+        },
+        {
+          "number": 4022,
+          "title": "[CausalLM/layers] implement SwiGLU backward pass for LoRA training",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4022",
+          "state": "closed"
+        },
+        {
+          "number": 4296,
+          "title": "[CausalLM] add Gemma4 MoE support",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4296",
+          "state": "open"
+        },
+        {
+          "number": 3793,
+          "title": "[GPU Backend] Adreno Compatible opencl kernel for Layer Normalization ",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/3793",
+          "state": "closed"
+        },
+        {
+          "number": 3859,
+          "title": "Implement RMSNorm layer with proper forward and backward pass",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/3859",
+          "state": "closed"
+        },
+        {
+          "number": 3785,
+          "title": "[Bug] LayerNormalization layer produces NaNs on building with ENABLE_FP16",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/3785",
+          "state": "closed"
+        },
+        {
+          "number": 3979,
+          "title": "[test] CausalLM tiny-model unit tests and HF differential reference fixtures",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/3979",
+          "state": "closed"
+        },
+        {
+          "number": 3890,
+          "title": "[CausalLM] Support tiny-bert",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/3890",
+          "state": "closed"
+        },
+        {
+          "number": 3837,
+          "title": "Base code for ThreadManager, TorchFXConverter, GraphVisualizer, SafeTensor, Tensor API, Symbolic Graph, 1Bit Support",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/3837",
+          "state": "closed"
+        },
+        {
+          "number": 3780,
+          "title": "[Issue] Enhancing `incremental_forwarding` interface",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/3780",
+          "state": "closed"
+        },
+        {
+          "number": 2408,
+          "title": "Normalization Layer: FP32/FP16 should NOT be determined at compile-time",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/2408",
+          "state": "closed"
+        },
+        {
+          "number": 2856,
+          "title": "[ Layer ] Move the Weight Read Function to Layer object",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/2856",
+          "state": "closed"
+        },
+        {
+          "number": 869,
+          "title": "Batch normalization folding",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/869",
+          "state": "closed"
+        },
+        {
+          "number": 2984,
+          "title": "Context, Context Data and Context Allocator",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/2984",
+          "state": "closed"
+        },
+        {
+          "number": 3051,
+          "title": "Support Various Context and Memory Buffer",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/3051",
+          "state": "closed"
+        },
+        {
+          "number": 2615,
+          "title": "[Wait for #2607] [ Layer ] Mixed Precision support for BN Layer",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/2615",
+          "state": "closed"
+        },
+        {
+          "number": 2912,
+          "title": "[Coverity] Fix DIVIDE_BY_ZERO issue",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/2912",
+          "state": "closed"
+        },
+        {
+          "number": 2663,
+          "title": "[Wait for #2615] Enable Mixed Precision Training in NNTrainer @open sesame 11/09 15:18",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/2663",
+          "state": "closed"
+        },
+        {
+          "number": 2757,
+          "title": "[Loss&Test] Implement KLD Loss & Add Unit Test on loss layers @open sesame 10/28 13:48",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/2757",
+          "state": "closed"
+        },
+        {
+          "number": 1972,
+          "title": "Support transformer",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/1972",
+          "state": "closed"
+        },
+        {
+          "number": 2592,
+          "title": "Q&A] How to solve build failure for flatbuffers's Table. ",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/2592",
+          "state": "closed"
+        },
+        {
+          "number": 1698,
+          "title": "Tizen 7.0 Items",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/1698",
+          "state": "closed"
+        },
+        {
+          "number": 1879,
+          "title": "Exporter for TFLite ",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/1879",
+          "state": "closed"
+        },
+        {
+          "number": 2286,
+          "title": "[ Wait for #2266] enable W16A16 for picoGPT Application",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/2286",
+          "state": "closed"
+        },
+        {
+          "number": 2396,
+          "title": "[ BLAS ] add inv squared root transformation inplace function for fp16",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/2396",
+          "state": "closed"
+        },
+        {
+          "number": 2602,
+          "title": "Running examples on PC issue",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/2602",
+          "state": "closed"
+        },
+        {
+          "number": 2250,
+          "title": "[Wait for #2247][Application] add RMS normalization for LLaMa ",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/2250",
+          "state": "closed"
+        },
+        {
+          "number": 2193,
+          "title": "[tflite] Support Tensorflow Lite Selected Ops in nntrainer ",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/2193",
+          "state": "closed"
+        },
+        {
+          "number": 2235,
+          "title": "[ Bug ] Fix the bug read the weight for batch normalization layer",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/2235",
+          "state": "closed"
+        },
+        {
+          "number": 2053,
+          "title": "[ln] optimize layer normalization layer input memory",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/2053",
+          "state": "closed"
+        },
+        {
+          "number": 1993,
+          "title": "[layer normalization] Implement layer normalization",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/1993",
+          "state": "closed"
+        },
+        {
+          "number": 2001,
+          "title": "[ README ] add new features in README",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/2001",
+          "state": "closed"
+        },
+        {
+          "number": 2203,
+          "title": "Conflict of Android build with NDK r25c?",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/2203",
+          "state": "closed"
+        },
+        {
+          "number": 2052,
+          "title": "[API] add ml_train_model_get_weight api",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/2052",
+          "state": "closed"
+        },
+        {
+          "number": 888,
+          "title": "`nntrainer::forwarding(input, label, training)` need attention",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/888",
+          "state": "closed"
+        },
+        {
+          "number": 1127,
+          "title": "Memory optimization for Training and Inference",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/1127",
+          "state": "closed"
+        },
+        {
+          "number": 1883,
+          "title": "[Wait for #1882] [ Interpreter ] add batch normalziation realizer @open sesame 04/26 10:37",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/1883",
+          "state": "closed"
+        },
+        {
+          "number": 1881,
+          "title": "[ Compiler ] add batch norm layer realizer",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/1881",
+          "state": "closed"
+        },
+        {
+          "number": 1842,
+          "title": "[Load/Save] Update to load and save the adam momentum variables",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/1842",
+          "state": "closed"
+        },
+        {
+          "number": 410,
+          "title": "[ README ] Update README file",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/410",
+          "state": "closed"
+        },
+        {
+          "number": 1522,
+          "title": "[Manager] Manager use TensorPool for Weights",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/1522",
+          "state": "closed"
+        },
+        {
+          "number": 1860,
+          "title": "Segmentation Fault with C++ API on Tizen",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/1860",
+          "state": "closed"
+        },
+        {
+          "number": 1650,
+          "title": "layer] Create property for axis in batch normalization ",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/1650",
+          "state": "closed"
+        },
+        {
+          "number": 452,
+          "title": "[ Documents ] Add Documentation",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/452",
+          "state": "closed"
+        },
+        {
+          "number": 848,
+          "title": "[Layer] Add eval mode for the training",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/848",
+          "state": "closed"
+        },
+        {
+          "number": 849,
+          "title": "[Tools] Fix bug that translayer cannot detect bn",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/849",
+          "state": "closed"
+        },
+        {
+          "number": 872,
+          "title": "[optimization] Bug fix for in-place layer optimization",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/872",
+          "state": "closed"
+        },
+        {
+          "number": 871,
+          "title": "Certain order of layers causes Tensor exception",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/871",
+          "state": "closed"
+        },
+        {
+          "number": 892,
+          "title": "Manager bug when allocating gradient",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/892",
+          "state": "closed"
+        },
+        {
+          "number": 889,
+          "title": "[manager] Bug fix using tensor map",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/889",
+          "state": "closed"
+        },
+        {
+          "number": 810,
+          "title": "[layer] Support in-place batch normalization",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/810",
+          "state": "closed"
+        },
+        {
+          "number": 826,
+          "title": "in-place memory optimization layers",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/826",
+          "state": "closed"
+        },
+        {
+          "number": 771,
+          "title": "bn layer inference bug",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/771",
+          "state": "closed"
+        },
+        {
+          "number": 748,
+          "title": "[conv] Remove standardization and normalization",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/748",
+          "state": "closed"
+        },
+        {
+          "number": 21,
+          "title": "Evaluate & Modification of Batch Normalization Layer",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/21",
+          "state": "closed"
+        },
+        {
+          "number": 597,
+          "title": "batch normalization not ready for inference",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/597",
+          "state": "closed"
+        },
+        {
+          "number": 882,
+          "title": "RGB image management and intensity normalizations",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/882",
+          "state": "closed"
+        },
+        {
+          "number": 749,
+          "title": "[tensor] Reduce overall memory overhead",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/749",
+          "state": "closed"
+        },
+        {
+          "number": 444,
+          "title": "[bn_layer] Remove unused gradients",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/444",
+          "state": "closed"
+        },
+        {
+          "number": 611,
+          "title": "Adding flatten layer to cs slowing down significantly",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/611",
+          "state": "closed"
+        },
+        {
+          "number": 764,
+          "title": "[memory] Memory based optimizations and fixes",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/764",
+          "state": "closed"
+        },
+        {
+          "number": 209,
+          "title": "[API] About batch_normalization",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/209",
+          "state": "closed"
+        },
+        {
+          "number": 100,
+          "title": "[Layer] Refactoring Layers class",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/100",
+          "state": "closed"
+        }
+      ]
+    },
+    {
+      "query": "repo:nntrainer/nntrainer \"layer_normalization\"",
+      "total_count": 4,
+      "incomplete_results": false,
+      "retrieved": 4,
+      "items": [
+        {
+          "number": 4061,
+          "title": "[CausalLM] Support screen_ai",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4061",
+          "state": "open"
+        },
+        {
+          "number": 4292,
+          "title": "[draft] Feat/ced w8a8 int8 resident",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4292",
+          "state": "open"
+        },
+        {
+          "number": 3785,
+          "title": "[Bug] LayerNormalization layer produces NaNs on building with ENABLE_FP16",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/3785",
+          "state": "closed"
+        },
+        {
+          "number": 3780,
+          "title": "[Issue] Enhancing `incremental_forwarding` interface",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/3780",
+          "state": "closed"
+        }
+      ]
+    },
+    {
+      "query": "repo:nntrainer/nntrainer \"layernorm\"",
+      "total_count": 15,
+      "incomplete_results": false,
+      "retrieved": 15,
+      "items": [
+        {
+          "number": 4096,
+          "title": "[LayerNorm] Add parallel width-axis fast path",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4096",
+          "state": "open"
+        },
+        {
+          "number": 4321,
+          "title": "[draft] siglip2 encoder, bert, yolo v11",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4321",
+          "state": "open"
+        },
+        {
+          "number": 4313,
+          "title": "[ Wait for #4304, #4305, #4306, #4307 ] [cuda] An additive NVIDIA backend: bring-up, Unified-Memory tensors, quantized FC, attention, and graph decode",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4313",
+          "state": "open"
+        },
+        {
+          "number": 4312,
+          "title": "[ Wait for #4309, #4311 ] [opencl] GPU attention: flash decode, two-conv prefill, and the sliding-window mask",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4312",
+          "state": "open"
+        },
+        {
+          "number": 4008,
+          "title": "[CausalLM] Add BERT cross-attention decoder",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4008",
+          "state": "open"
+        },
+        {
+          "number": 4007,
+          "title": "[CausalLM] Add SigLIP2 vision encoder",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4007",
+          "state": "open"
+        },
+        {
+          "number": 3942,
+          "title": "[Application/CausalLM] Add V-JEPA 2.1 ViT-B video encoder",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/3942",
+          "state": "closed"
+        },
+        {
+          "number": 4005,
+          "title": "[CausalLM] Add V-JEPA 2.1 \u2192 LFM2 video-language model",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4005",
+          "state": "closed"
+        },
+        {
+          "number": 3830,
+          "title": "Optimized Remaining Layernorm Kernels Using SIMD",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/3830",
+          "state": "closed"
+        },
+        {
+          "number": 3966,
+          "title": "[Wait for #3963] [CausalLM] LFM2-VL-450M multimodal on Quick.AI v0.4.0 base (draft, for #3963 validation)",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/3966",
+          "state": "closed"
+        },
+        {
+          "number": 3965,
+          "title": "[Wait for #3960,#3961] [CausalLM] Add LFM2-VL multimodal support (SigLIP2 vision + connector + LFM2 LM)",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/3965",
+          "state": "closed"
+        },
+        {
+          "number": 3979,
+          "title": "[test] CausalLM tiny-model unit tests and HF differential reference fixtures",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/3979",
+          "state": "closed"
+        },
+        {
+          "number": 3859,
+          "title": "Implement RMSNorm layer with proper forward and backward pass",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/3859",
+          "state": "closed"
+        },
+        {
+          "number": 3716,
+          "title": "Support gliner2-multi-v1 model",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/3716",
+          "state": "closed"
+        },
+        {
+          "number": 2912,
+          "title": "[Coverity] Fix DIVIDE_BY_ZERO issue",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/2912",
+          "state": "closed"
+        }
+      ]
+    },
+    {
+      "query": "repo:nntrainer/nntrainer \"gamma\" \"gradient\"",
+      "total_count": 7,
+      "incomplete_results": false,
+      "retrieved": 7,
+      "items": [
+        {
+          "number": 4271,
+          "title": "[CausalLM] Add backprop for rms_norm, reshaped_rms_norm and swiglu",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4271",
+          "state": "open"
+        },
+        {
+          "number": 4318,
+          "title": "[ Wait for #4317 ] [Application/CausalLM] GPU layer variants and the mmap'd embedding sidecar",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4318",
+          "state": "open"
+        },
+        {
+          "number": 4026,
+          "title": "[CausalLM/layers] implement RMSNorm backward pass for LoRA training",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4026",
+          "state": "closed"
+        },
+        {
+          "number": 4027,
+          "title": "[CausalLM/layers] implement ReshapedRMSNorm backward pass for LoRA training",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4027",
+          "state": "closed"
+        },
+        {
+          "number": 3865,
+          "title": "Implement ReshapedRMSNorm layer with proper forward and backward pass",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/3865",
+          "state": "closed"
+        },
+        {
+          "number": 4194,
+          "title": "[causallm] Inference correctness: FFN gate/up load order, prompt BOS, FP16 activation overflow, loader fail-loud, q4_0 shape gate, factory int_key, softcap, lmhead_untie",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4194",
+          "state": "closed"
+        },
+        {
+          "number": 2780,
+          "title": "Add AdamW `Optimizer` @open sesame 12/04 16:19",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/2780",
+          "state": "closed"
+        }
+      ]
+    },
+    {
+      "query": "repo:nntrainer/nntrainer \"normalization\" \"derivative\"",
+      "total_count": 13,
+      "incomplete_results": false,
+      "retrieved": 13,
+      "items": [
+        {
+          "number": 4304,
+          "title": "[ Wait for #4302 ] [cpu_backend][layers] Extend the whole-op table and collapse the layer forks onto it",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4304",
+          "state": "open"
+        },
+        {
+          "number": 4022,
+          "title": "[CausalLM/layers] implement SwiGLU backward pass for LoRA training",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4022",
+          "state": "closed"
+        },
+        {
+          "number": 4198,
+          "title": "[CausalLM] Chunked forward prefill: cap the activation plane at long context (model + layer block-call contract)",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4198",
+          "state": "closed"
+        },
+        {
+          "number": 2757,
+          "title": "[Loss&Test] Implement KLD Loss & Add Unit Test on loss layers @open sesame 10/28 13:48",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/2757",
+          "state": "closed"
+        },
+        {
+          "number": 2663,
+          "title": "[Wait for #2615] Enable Mixed Precision Training in NNTrainer @open sesame 11/09 15:18",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/2663",
+          "state": "closed"
+        },
+        {
+          "number": 2602,
+          "title": "Running examples on PC issue",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/2602",
+          "state": "closed"
+        },
+        {
+          "number": 2193,
+          "title": "[tflite] Support Tensorflow Lite Selected Ops in nntrainer ",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/2193",
+          "state": "closed"
+        },
+        {
+          "number": 2203,
+          "title": "Conflict of Android build with NDK r25c?",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/2203",
+          "state": "closed"
+        },
+        {
+          "number": 1127,
+          "title": "Memory optimization for Training and Inference",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/1127",
+          "state": "closed"
+        },
+        {
+          "number": 1522,
+          "title": "[Manager] Manager use TensorPool for Weights",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/1522",
+          "state": "closed"
+        },
+        {
+          "number": 872,
+          "title": "[optimization] Bug fix for in-place layer optimization",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/872",
+          "state": "closed"
+        },
+        {
+          "number": 764,
+          "title": "[memory] Memory based optimizations and fixes",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/764",
+          "state": "closed"
+        },
+        {
+          "number": 344,
+          "title": "[activation] Update signature of activation prime",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/344",
+          "state": "closed"
+        }
+      ]
+    },
+    {
+      "query": "repo:nntrainer/nntrainer \"LayerNormalizationLayer\"",
+      "total_count": 3,
+      "incomplete_results": false,
+      "retrieved": 3,
+      "items": [
+        {
+          "number": 4304,
+          "title": "[ Wait for #4302 ] [cpu_backend][layers] Extend the whole-op table and collapse the layer forks onto it",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4304",
+          "state": "open"
+        },
+        {
+          "number": 3785,
+          "title": "[Bug] LayerNormalization layer produces NaNs on building with ENABLE_FP16",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/3785",
+          "state": "closed"
+        },
+        {
+          "number": 3780,
+          "title": "[Issue] Enhancing `incremental_forwarding` interface",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/3780",
+          "state": "closed"
+        }
+      ]
+    },
+    {
+      "query": "repo:nntrainer/nntrainer \"normalization\" \"backward\"",
+      "total_count": 21,
+      "incomplete_results": false,
+      "retrieved": 21,
+      "items": [
+        {
+          "number": 4304,
+          "title": "[ Wait for #4302 ] [cpu_backend][layers] Extend the whole-op table and collapse the layer forks onto it",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4304",
+          "state": "open"
+        },
+        {
+          "number": 4022,
+          "title": "[CausalLM/layers] implement SwiGLU backward pass for LoRA training",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4022",
+          "state": "closed"
+        },
+        {
+          "number": 3859,
+          "title": "Implement RMSNorm layer with proper forward and backward pass",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/3859",
+          "state": "closed"
+        },
+        {
+          "number": 4198,
+          "title": "[CausalLM] Chunked forward prefill: cap the activation plane at long context (model + layer block-call contract)",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4198",
+          "state": "closed"
+        },
+        {
+          "number": 3662,
+          "title": "Pull request code review",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/3662",
+          "state": "closed"
+        },
+        {
+          "number": 3780,
+          "title": "[Issue] Enhancing `incremental_forwarding` interface",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/3780",
+          "state": "closed"
+        },
+        {
+          "number": 2663,
+          "title": "[Wait for #2615] Enable Mixed Precision Training in NNTrainer @open sesame 11/09 15:18",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/2663",
+          "state": "closed"
+        },
+        {
+          "number": 2757,
+          "title": "[Loss&Test] Implement KLD Loss & Add Unit Test on loss layers @open sesame 10/28 13:48",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/2757",
+          "state": "closed"
+        },
+        {
+          "number": 1972,
+          "title": "Support transformer",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/1972",
+          "state": "closed"
+        },
+        {
+          "number": 2053,
+          "title": "[ln] optimize layer normalization layer input memory",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/2053",
+          "state": "closed"
+        },
+        {
+          "number": 888,
+          "title": "`nntrainer::forwarding(input, label, training)` need attention",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/888",
+          "state": "closed"
+        },
+        {
+          "number": 1127,
+          "title": "Memory optimization for Training and Inference",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/1127",
+          "state": "closed"
+        },
+        {
+          "number": 1555,
+          "title": "[in-place] Support in-place Activation & BatchNorm @open sesame 10/18 13:31",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/1555",
+          "state": "closed"
+        },
+        {
+          "number": 1590,
+          "title": "[batchnorm] Optimize batch norm for memory and speed @open sesame 09/28 18:42",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/1590",
+          "state": "closed"
+        },
+        {
+          "number": 1522,
+          "title": "[Manager] Manager use TensorPool for Weights",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/1522",
+          "state": "closed"
+        },
+        {
+          "number": 678,
+          "title": "[IntegratedTest] Add batch normalization test ",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/678",
+          "state": "closed"
+        },
+        {
+          "number": 708,
+          "title": "[Test] Add conv2d Integrated test",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/708",
+          "state": "closed"
+        },
+        {
+          "number": 810,
+          "title": "[layer] Support in-place batch normalization",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/810",
+          "state": "closed"
+        },
+        {
+          "number": 748,
+          "title": "[conv] Remove standardization and normalization",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/748",
+          "state": "closed"
+        },
+        {
+          "number": 345,
+          "title": "batch normalization unittest bug",
+          "html_url": "https://github.com/nntrainer/nntrainer/issues/345",
+          "state": "closed"
+        },
+        {
+          "number": 252,
+          "title": "Rework bn forward & backward @open sesame 07/08 16:10",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/252",
+          "state": "closed"
+        }
+      ]
+    },
+    {
+      "query": "repo:nntrainer/nntrainer \"gamma\" \"incorrect\"",
+      "total_count": 2,
+      "incomplete_results": false,
+      "retrieved": 2,
+      "items": [
+        {
+          "number": 3865,
+          "title": "Implement ReshapedRMSNorm layer with proper forward and backward pass",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/3865",
+          "state": "closed"
+        },
+        {
+          "number": 3933,
+          "title": "[Wait for #3919] Add Gemma4 and optimizations",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/3933",
+          "state": "closed"
+        }
+      ]
+    },
+    {
+      "query": "repo:nntrainer/nntrainer \"gamma\" \"ignored\"",
+      "total_count": 4,
+      "incomplete_results": false,
+      "retrieved": 4,
+      "items": [
+        {
+          "number": 4027,
+          "title": "[CausalLM/layers] implement ReshapedRMSNorm backward pass for LoRA training",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4027",
+          "state": "closed"
+        },
+        {
+          "number": 3859,
+          "title": "Implement RMSNorm layer with proper forward and backward pass",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/3859",
+          "state": "closed"
+        },
+        {
+          "number": 3865,
+          "title": "Implement ReshapedRMSNorm layer with proper forward and backward pass",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/3865",
+          "state": "closed"
+        },
+        {
+          "number": 4194,
+          "title": "[causallm] Inference correctness: FFN gate/up load order, prompt BOS, FP16 activation overflow, loader fail-loud, q4_0 shape gate, factory int_key, softcap, lmhead_untie",
+          "html_url": "https://github.com/nntrainer/nntrainer/pull/4194",
+          "state": "closed"
+        }
+      ]
+    }
+  ],
+  "unique_entries": 94,
+  "exact_duplicate_found": false,
+  "scope": "Public GitHub issues and pull requests, open and closed; no claim about private or unindexed reports."
+}

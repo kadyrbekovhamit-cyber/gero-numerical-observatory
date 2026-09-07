@@ -1,0 +1,56 @@
+[
+  {
+    "run": 1,
+    "tests": 4,
+    "failures": 4,
+    "returncode": 1,
+    "input_gradient": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "forward_finite_difference": [
+      0.6260452271,
+      -0.5365600586,
+      -0.8048706055,
+      0.7155227661
+    ]
+  },
+  {
+    "run": 2,
+    "tests": 4,
+    "failures": 4,
+    "returncode": 1,
+    "input_gradient": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "forward_finite_difference": [
+      0.6260452271,
+      -0.5365600586,
+      -0.8048706055,
+      0.7155227661
+    ]
+  },
+  {
+    "run": 3,
+    "tests": 4,
+    "failures": 4,
+    "returncode": 1,
+    "input_gradient": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "forward_finite_difference": [
+      0.6260452271,
+      -0.5365600586,
+      -0.8048706055,
+      0.7155227661
+    ]
+  }
+]

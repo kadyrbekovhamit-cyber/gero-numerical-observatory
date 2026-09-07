@@ -1,0 +1,27 @@
+{
+  "suites": {
+    "cosine-before-cpu": {
+      "tests": 101,
+      "failures": 62,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 39
+    },
+    "cosine-after-cpu": {
+      "tests": 101,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 101
+    },
+    "cosine-after-metal": {
+      "tests": 101,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 101
+    }
+  },
+  "fresh_process_replays_match": true,
+  "patch_applies_to_clean_head": true
+}

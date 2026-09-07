@@ -1,0 +1,2339 @@
+.FF.FF.FFFFFFFFFFFFFFFFFFFFFFFFFFFFF.F..F..F.FFFFFFFFF.F..F..F.....FF... [ 71%]
+.FFFF..FF..........FFFF.FF...                                            [100%]
+=================================== FAILURES ===================================
+______ test_values_gradients_batch_axes[ordinary-shape0-1-float16-0.005] _______
+
+dtype = 'float16', rtol = 0.005, shape = (2, 4), axis = 1, case = 'ordinary'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+        np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+>       np.testing.assert_allclose(as_np(da),ga,rtol=rtol,atol=6e-8 if dtype=='float16' else 1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.005, atol=6e-08
+E       
+E       Mismatched elements: 6 / 8 (75%)
+E       Max absolute difference among violations: 0.00060577
+E       Max relative difference among violations: 0.01403657
+E        ACTUAL: array([[ 0.097656, -0.056641,  0.085327, -0.040527],
+E              [ 0.097656, -0.056641,  0.085327, -0.040527]])
+E        DESIRED: array([[ 0.09705 , -0.057086,  0.085059, -0.041104],
+E              [ 0.09705 , -0.057086,  0.085059, -0.041104]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:77: AssertionError
+______ test_values_gradients_batch_axes[ordinary-shape0-1-bfloat16-0.025] ______
+
+dtype = 'bfloat16', rtol = 0.025, shape = (2, 4), axis = 1, case = 'ordinary'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+        np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+>       np.testing.assert_allclose(as_np(da),ga,rtol=rtol,atol=6e-8 if dtype=='float16' else 1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.025, atol=1e-35
+E       
+E       Mismatched elements: 4 / 8 (50%)
+E       Max absolute difference among violations: 0.00592329
+E       Max relative difference among violations: 0.14464097
+E        ACTUAL: array([[ 0.095703, -0.060547,  0.084961, -0.046875],
+E              [ 0.095703, -0.060547,  0.084961, -0.046875]])
+E        DESIRED: array([[ 0.097163, -0.057614,  0.085005, -0.040952],
+E              [ 0.097163, -0.057614,  0.085005, -0.040952]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:77: AssertionError
+______ test_values_gradients_batch_axes[ordinary-shape1--1-float16-0.005] ______
+
+dtype = 'float16', rtol = 0.005, shape = (1, 2, 4), axis = -1, case = 'ordinary'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+        np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+>       np.testing.assert_allclose(as_np(da),ga,rtol=rtol,atol=6e-8 if dtype=='float16' else 1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.005, atol=6e-08
+E       
+E       Mismatched elements: 6 / 8 (75%)
+E       Max absolute difference among violations: 0.00060577
+E       Max relative difference among violations: 0.01403657
+E        ACTUAL: array([[[ 0.097656, -0.056641,  0.085327, -0.040527],
+E               [ 0.097656, -0.056641,  0.085327, -0.040527]]])
+E        DESIRED: array([[[ 0.09705 , -0.057086,  0.085059, -0.041104],
+E               [ 0.09705 , -0.057086,  0.085059, -0.041104]]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:77: AssertionError
+_____ test_values_gradients_batch_axes[ordinary-shape1--1-bfloat16-0.025] ______
+
+dtype = 'bfloat16', rtol = 0.025, shape = (1, 2, 4), axis = -1
+case = 'ordinary'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+        np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+>       np.testing.assert_allclose(as_np(da),ga,rtol=rtol,atol=6e-8 if dtype=='float16' else 1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.025, atol=1e-35
+E       
+E       Mismatched elements: 4 / 8 (50%)
+E       Max absolute difference among violations: 0.00592329
+E       Max relative difference among violations: 0.14464097
+E        ACTUAL: array([[[ 0.095703, -0.060547,  0.084961, -0.046875],
+E               [ 0.095703, -0.060547,  0.084961, -0.046875]]])
+E        DESIRED: array([[[ 0.097163, -0.057614,  0.085005, -0.040952],
+E               [ 0.097163, -0.057614,  0.085005, -0.040952]]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:77: AssertionError
+______ test_values_gradients_batch_axes[ordinary-shape2-0-float16-0.005] _______
+
+dtype = 'float16', rtol = 0.005, shape = (4, 2), axis = 0, case = 'ordinary'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+        np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+>       np.testing.assert_allclose(as_np(da),ga,rtol=rtol,atol=6e-8 if dtype=='float16' else 1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.005, atol=6e-08
+E       
+E       Mismatched elements: 6 / 8 (75%)
+E       Max absolute difference among violations: 0.00060577
+E       Max relative difference among violations: 0.01403657
+E        ACTUAL: array([[ 0.097656,  0.097656],
+E              [-0.056641, -0.056641],
+E              [ 0.085327,  0.085327],
+E              [-0.040527, -0.040527]])
+E        DESIRED: array([[ 0.09705 ,  0.09705 ],
+E              [-0.057086, -0.057086],
+E              [ 0.085059,  0.085059],
+E              [-0.041104, -0.041104]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:77: AssertionError
+______ test_values_gradients_batch_axes[ordinary-shape2-0-bfloat16-0.025] ______
+
+dtype = 'bfloat16', rtol = 0.025, shape = (4, 2), axis = 0, case = 'ordinary'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+        np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+>       np.testing.assert_allclose(as_np(da),ga,rtol=rtol,atol=6e-8 if dtype=='float16' else 1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.025, atol=1e-35
+E       
+E       Mismatched elements: 4 / 8 (50%)
+E       Max absolute difference among violations: 0.00592329
+E       Max relative difference among violations: 0.14464097
+E        ACTUAL: array([[ 0.095703,  0.095703],
+E              [-0.060547, -0.060547],
+E              [ 0.084961,  0.084961],
+E              [-0.046875, -0.046875]])
+E        DESIRED: array([[ 0.097163,  0.097163],
+E              [-0.057614, -0.057614],
+E              [ 0.085005,  0.085005],
+E              [-0.040952, -0.040952]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:77: AssertionError
+________ test_values_gradients_batch_axes[large-shape0-1-float32-5e-06] ________
+
+dtype = 'float32', rtol = 5e-06, shape = (2, 4), axis = 1, case = 'large'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=5e-06, atol=1e-07
+E       
+E       nan location mismatch:
+E        ACTUAL: array([nan, nan])
+E        DESIRED: array([-0.138675, -0.138675])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:76: AssertionError
+________ test_values_gradients_batch_axes[large-shape0-1-float16-0.005] ________
+
+dtype = 'float16', rtol = 0.005, shape = (2, 4), axis = 1, case = 'large'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.005, atol=1e-07
+E       
+E       nan location mismatch:
+E        ACTUAL: array([nan, nan])
+E        DESIRED: array([-0.138675, -0.138675])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:76: AssertionError
+_______ test_values_gradients_batch_axes[large-shape0-1-bfloat16-0.025] ________
+
+dtype = 'bfloat16', rtol = 0.025, shape = (2, 4), axis = 1, case = 'large'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.025, atol=1e-07
+E       
+E       nan location mismatch:
+E        ACTUAL: array([nan, nan])
+E        DESIRED: array([-0.138675, -0.138675])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:76: AssertionError
+_______ test_values_gradients_batch_axes[large-shape1--1-float32-5e-06] ________
+
+dtype = 'float32', rtol = 5e-06, shape = (1, 2, 4), axis = -1, case = 'large'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=5e-06, atol=1e-07
+E       
+E       nan location mismatch:
+E        ACTUAL: array([[nan, nan]])
+E        DESIRED: array([[-0.138675, -0.138675]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:76: AssertionError
+_______ test_values_gradients_batch_axes[large-shape1--1-float16-0.005] ________
+
+dtype = 'float16', rtol = 0.005, shape = (1, 2, 4), axis = -1, case = 'large'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.005, atol=1e-07
+E       
+E       nan location mismatch:
+E        ACTUAL: array([[nan, nan]])
+E        DESIRED: array([[-0.138675, -0.138675]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:76: AssertionError
+_______ test_values_gradients_batch_axes[large-shape1--1-bfloat16-0.025] _______
+
+dtype = 'bfloat16', rtol = 0.025, shape = (1, 2, 4), axis = -1, case = 'large'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.025, atol=1e-07
+E       
+E       nan location mismatch:
+E        ACTUAL: array([[nan, nan]])
+E        DESIRED: array([[-0.138675, -0.138675]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:76: AssertionError
+________ test_values_gradients_batch_axes[large-shape2-0-float32-5e-06] ________
+
+dtype = 'float32', rtol = 5e-06, shape = (4, 2), axis = 0, case = 'large'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=5e-06, atol=1e-07
+E       
+E       nan location mismatch:
+E        ACTUAL: array([nan, nan])
+E        DESIRED: array([-0.138675, -0.138675])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:76: AssertionError
+________ test_values_gradients_batch_axes[large-shape2-0-float16-0.005] ________
+
+dtype = 'float16', rtol = 0.005, shape = (4, 2), axis = 0, case = 'large'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.005, atol=1e-07
+E       
+E       nan location mismatch:
+E        ACTUAL: array([nan, nan])
+E        DESIRED: array([-0.138675, -0.138675])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:76: AssertionError
+_______ test_values_gradients_batch_axes[large-shape2-0-bfloat16-0.025] ________
+
+dtype = 'bfloat16', rtol = 0.025, shape = (4, 2), axis = 0, case = 'large'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.025, atol=1e-07
+E       
+E       nan location mismatch:
+E        ACTUAL: array([nan, nan])
+E        DESIRED: array([-0.138675, -0.138675])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:76: AssertionError
+______ test_values_gradients_batch_axes[opposite-shape0-1-float32-5e-06] _______
+
+dtype = 'float32', rtol = 5e-06, shape = (2, 4), axis = 1, case = 'opposite'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=5e-06, atol=1e-07
+E       
+E       nan location mismatch:
+E        ACTUAL: array([nan, nan])
+E        DESIRED: array([-1., -1.])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:76: AssertionError
+______ test_values_gradients_batch_axes[opposite-shape0-1-float16-0.005] _______
+
+dtype = 'float16', rtol = 0.005, shape = (2, 4), axis = 1, case = 'opposite'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.005, atol=1e-07
+E       
+E       nan location mismatch:
+E        ACTUAL: array([nan, nan])
+E        DESIRED: array([-1., -1.])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:76: AssertionError
+______ test_values_gradients_batch_axes[opposite-shape0-1-bfloat16-0.025] ______
+
+dtype = 'bfloat16', rtol = 0.025, shape = (2, 4), axis = 1, case = 'opposite'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.025, atol=1e-07
+E       
+E       nan location mismatch:
+E        ACTUAL: array([nan, nan])
+E        DESIRED: array([-1., -1.])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:76: AssertionError
+______ test_values_gradients_batch_axes[opposite-shape1--1-float32-5e-06] ______
+
+dtype = 'float32', rtol = 5e-06, shape = (1, 2, 4), axis = -1, case = 'opposite'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=5e-06, atol=1e-07
+E       
+E       nan location mismatch:
+E        ACTUAL: array([[nan, nan]])
+E        DESIRED: array([[-1., -1.]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:76: AssertionError
+______ test_values_gradients_batch_axes[opposite-shape1--1-float16-0.005] ______
+
+dtype = 'float16', rtol = 0.005, shape = (1, 2, 4), axis = -1, case = 'opposite'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.005, atol=1e-07
+E       
+E       nan location mismatch:
+E        ACTUAL: array([[nan, nan]])
+E        DESIRED: array([[-1., -1.]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:76: AssertionError
+_____ test_values_gradients_batch_axes[opposite-shape1--1-bfloat16-0.025] ______
+
+dtype = 'bfloat16', rtol = 0.025, shape = (1, 2, 4), axis = -1
+case = 'opposite'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.025, atol=1e-07
+E       
+E       nan location mismatch:
+E        ACTUAL: array([[nan, nan]])
+E        DESIRED: array([[-1., -1.]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:76: AssertionError
+______ test_values_gradients_batch_axes[opposite-shape2-0-float32-5e-06] _______
+
+dtype = 'float32', rtol = 5e-06, shape = (4, 2), axis = 0, case = 'opposite'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=5e-06, atol=1e-07
+E       
+E       nan location mismatch:
+E        ACTUAL: array([nan, nan])
+E        DESIRED: array([-1., -1.])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:76: AssertionError
+______ test_values_gradients_batch_axes[opposite-shape2-0-float16-0.005] _______
+
+dtype = 'float16', rtol = 0.005, shape = (4, 2), axis = 0, case = 'opposite'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.005, atol=1e-07
+E       
+E       nan location mismatch:
+E        ACTUAL: array([nan, nan])
+E        DESIRED: array([-1., -1.])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:76: AssertionError
+______ test_values_gradients_batch_axes[opposite-shape2-0-bfloat16-0.025] ______
+
+dtype = 'bfloat16', rtol = 0.025, shape = (4, 2), axis = 0, case = 'opposite'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.025, atol=1e-07
+E       
+E       nan location mismatch:
+E        ACTUAL: array([nan, nan])
+E        DESIRED: array([-1., -1.])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:76: AssertionError
+_____ test_values_gradients_batch_axes[orthogonal-shape0-1-float32-5e-06] ______
+
+dtype = 'float32', rtol = 5e-06, shape = (2, 4), axis = 1, case = 'orthogonal'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+        np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+>       np.testing.assert_allclose(as_np(da),ga,rtol=rtol,atol=6e-8 if dtype=='float16' else 1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=5e-06, atol=1e-35
+E       
+E       nan location mismatch:
+E        ACTUAL: array([[nan, nan, nan, nan],
+E              [nan, nan, nan, nan]])
+E        DESIRED: array([[0.e+00, 1.e-20, 0.e+00, 0.e+00],
+E              [0.e+00, 1.e-20, 0.e+00, 0.e+00]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:77: AssertionError
+_____ test_values_gradients_batch_axes[orthogonal-shape0-1-float16-0.005] ______
+
+dtype = 'float16', rtol = 0.005, shape = (2, 4), axis = 1, case = 'orthogonal'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+        np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+>       np.testing.assert_allclose(as_np(da),ga,rtol=rtol,atol=6e-8 if dtype=='float16' else 1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.005, atol=6e-08
+E       
+E       nan location mismatch:
+E        ACTUAL: array([[nan, nan, nan, nan],
+E              [nan, nan, nan, nan]])
+E        DESIRED: array([[0.   , 0.001, 0.   , 0.   ],
+E              [0.   , 0.001, 0.   , 0.   ]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:77: AssertionError
+_____ test_values_gradients_batch_axes[orthogonal-shape0-1-bfloat16-0.025] _____
+
+dtype = 'bfloat16', rtol = 0.025, shape = (2, 4), axis = 1, case = 'orthogonal'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+        np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+>       np.testing.assert_allclose(as_np(da),ga,rtol=rtol,atol=6e-8 if dtype=='float16' else 1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.025, atol=1e-35
+E       
+E       nan location mismatch:
+E        ACTUAL: array([[nan, nan, nan, nan],
+E              [nan, nan, nan, nan]])
+E        DESIRED: array([[0.00000e+00, 1.00273e-20, 0.00000e+00, 0.00000e+00],
+E              [0.00000e+00, 1.00273e-20, 0.00000e+00, 0.00000e+00]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:77: AssertionError
+_____ test_values_gradients_batch_axes[orthogonal-shape1--1-float32-5e-06] _____
+
+dtype = 'float32', rtol = 5e-06, shape = (1, 2, 4), axis = -1
+case = 'orthogonal'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+        np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+>       np.testing.assert_allclose(as_np(da),ga,rtol=rtol,atol=6e-8 if dtype=='float16' else 1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=5e-06, atol=1e-35
+E       
+E       nan location mismatch:
+E        ACTUAL: array([[[nan, nan, nan, nan],
+E               [nan, nan, nan, nan]]])
+E        DESIRED: array([[[0.e+00, 1.e-20, 0.e+00, 0.e+00],
+E               [0.e+00, 1.e-20, 0.e+00, 0.e+00]]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:77: AssertionError
+_____ test_values_gradients_batch_axes[orthogonal-shape1--1-float16-0.005] _____
+
+dtype = 'float16', rtol = 0.005, shape = (1, 2, 4), axis = -1
+case = 'orthogonal'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+        np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+>       np.testing.assert_allclose(as_np(da),ga,rtol=rtol,atol=6e-8 if dtype=='float16' else 1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.005, atol=6e-08
+E       
+E       nan location mismatch:
+E        ACTUAL: array([[[nan, nan, nan, nan],
+E               [nan, nan, nan, nan]]])
+E        DESIRED: array([[[0.   , 0.001, 0.   , 0.   ],
+E               [0.   , 0.001, 0.   , 0.   ]]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:77: AssertionError
+____ test_values_gradients_batch_axes[orthogonal-shape1--1-bfloat16-0.025] _____
+
+dtype = 'bfloat16', rtol = 0.025, shape = (1, 2, 4), axis = -1
+case = 'orthogonal'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+        np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+>       np.testing.assert_allclose(as_np(da),ga,rtol=rtol,atol=6e-8 if dtype=='float16' else 1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.025, atol=1e-35
+E       
+E       nan location mismatch:
+E        ACTUAL: array([[[nan, nan, nan, nan],
+E               [nan, nan, nan, nan]]])
+E        DESIRED: array([[[0.00000e+00, 1.00273e-20, 0.00000e+00, 0.00000e+00],
+E               [0.00000e+00, 1.00273e-20, 0.00000e+00, 0.00000e+00]]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:77: AssertionError
+_____ test_values_gradients_batch_axes[orthogonal-shape2-0-float32-5e-06] ______
+
+dtype = 'float32', rtol = 5e-06, shape = (4, 2), axis = 0, case = 'orthogonal'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+        np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+>       np.testing.assert_allclose(as_np(da),ga,rtol=rtol,atol=6e-8 if dtype=='float16' else 1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=5e-06, atol=1e-35
+E       
+E       nan location mismatch:
+E        ACTUAL: array([[nan, nan],
+E              [nan, nan],
+E              [nan, nan],
+E              [nan, nan]])
+E        DESIRED: array([[0.e+00, 0.e+00],
+E              [1.e-20, 1.e-20],
+E              [0.e+00, 0.e+00],
+E              [0.e+00, 0.e+00]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:77: AssertionError
+_____ test_values_gradients_batch_axes[orthogonal-shape2-0-float16-0.005] ______
+
+dtype = 'float16', rtol = 0.005, shape = (4, 2), axis = 0, case = 'orthogonal'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+        np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+>       np.testing.assert_allclose(as_np(da),ga,rtol=rtol,atol=6e-8 if dtype=='float16' else 1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.005, atol=6e-08
+E       
+E       nan location mismatch:
+E        ACTUAL: array([[nan, nan],
+E              [nan, nan],
+E              [nan, nan],
+E              [nan, nan]])
+E        DESIRED: array([[0.   , 0.   ],
+E              [0.001, 0.001],
+E              [0.   , 0.   ],
+E              [0.   , 0.   ]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:77: AssertionError
+_____ test_values_gradients_batch_axes[orthogonal-shape2-0-bfloat16-0.025] _____
+
+dtype = 'bfloat16', rtol = 0.025, shape = (4, 2), axis = 0, case = 'orthogonal'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+        np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+>       np.testing.assert_allclose(as_np(da),ga,rtol=rtol,atol=6e-8 if dtype=='float16' else 1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.025, atol=1e-35
+E       
+E       nan location mismatch:
+E        ACTUAL: array([[nan, nan],
+E              [nan, nan],
+E              [nan, nan],
+E              [nan, nan]])
+E        DESIRED: array([[0.00000e+00, 0.00000e+00],
+E              [1.00273e-20, 1.00273e-20],
+E              [0.00000e+00, 0.00000e+00],
+E              [0.00000e+00, 0.00000e+00]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:77: AssertionError
+________ test_values_gradients_batch_axes[small-shape0-1-float16-0.005] ________
+
+dtype = 'float16', rtol = 0.005, shape = (2, 4), axis = 1, case = 'small'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.005, atol=1e-07
+E       
+E       nan location mismatch:
+E        ACTUAL: array([nan, nan])
+E        DESIRED: array([0.000308, 0.000308])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:76: AssertionError
+_______ test_values_gradients_batch_axes[small-shape1--1-float16-0.005] ________
+
+dtype = 'float16', rtol = 0.005, shape = (1, 2, 4), axis = -1, case = 'small'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.005, atol=1e-07
+E       
+E       nan location mismatch:
+E        ACTUAL: array([[nan, nan]])
+E        DESIRED: array([[0.000308, 0.000308]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:76: AssertionError
+________ test_values_gradients_batch_axes[small-shape2-0-float16-0.005] ________
+
+dtype = 'float16', rtol = 0.005, shape = (4, 2), axis = 0, case = 'small'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.005, atol=1e-07
+E       
+E       nan location mismatch:
+E        ACTUAL: array([nan, nan])
+E        DESIRED: array([0.000308, 0.000308])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:76: AssertionError
+________ test_values_gradients_batch_axes[zero-shape0-1-float32-5e-06] _________
+
+dtype = 'float32', rtol = 5e-06, shape = (2, 4), axis = 1, case = 'zero'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+        np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+>       np.testing.assert_allclose(as_np(da),ga,rtol=rtol,atol=6e-8 if dtype=='float16' else 1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=5e-06, atol=1e-35
+E       
+E       nan location mismatch:
+E        ACTUAL: array([[nan, nan, nan, nan],
+E              [nan, nan, nan, nan]])
+E        DESIRED: array([[ 999.999975, 1999.999949, -999.999975,  999.999975],
+E              [ 999.999975, 1999.999949, -999.999975,  999.999975]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:77: AssertionError
+________ test_values_gradients_batch_axes[zero-shape0-1-float16-0.005] _________
+
+dtype = 'float16', rtol = 0.005, shape = (2, 4), axis = 1, case = 'zero'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.005, atol=1e-07
+E       
+E       nan location mismatch:
+E        ACTUAL: array([nan, nan])
+E        DESIRED: array([0., 0.])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:76: AssertionError
+________ test_values_gradients_batch_axes[zero-shape0-1-bfloat16-0.025] ________
+
+dtype = 'bfloat16', rtol = 0.025, shape = (2, 4), axis = 1, case = 'zero'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+        np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+>       np.testing.assert_allclose(as_np(da),ga,rtol=rtol,atol=6e-8 if dtype=='float16' else 1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.025, atol=1e-35
+E       
+E       nan location mismatch:
+E        ACTUAL: array([[nan, nan, nan, nan],
+E              [nan, nan, nan, nan]])
+E        DESIRED: array([[ 1001.358032,  2002.716064, -1001.358032,  1001.358032],
+E              [ 1001.358032,  2002.716064, -1001.358032,  1001.358032]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:77: AssertionError
+________ test_values_gradients_batch_axes[zero-shape1--1-float32-5e-06] ________
+
+dtype = 'float32', rtol = 5e-06, shape = (1, 2, 4), axis = -1, case = 'zero'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+        np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+>       np.testing.assert_allclose(as_np(da),ga,rtol=rtol,atol=6e-8 if dtype=='float16' else 1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=5e-06, atol=1e-35
+E       
+E       nan location mismatch:
+E        ACTUAL: array([[[nan, nan, nan, nan],
+E               [nan, nan, nan, nan]]])
+E        DESIRED: array([[[ 999.999975, 1999.999949, -999.999975,  999.999975],
+E               [ 999.999975, 1999.999949, -999.999975,  999.999975]]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:77: AssertionError
+________ test_values_gradients_batch_axes[zero-shape1--1-float16-0.005] ________
+
+dtype = 'float16', rtol = 0.005, shape = (1, 2, 4), axis = -1, case = 'zero'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.005, atol=1e-07
+E       
+E       nan location mismatch:
+E        ACTUAL: array([[nan, nan]])
+E        DESIRED: array([[0., 0.]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:76: AssertionError
+_______ test_values_gradients_batch_axes[zero-shape1--1-bfloat16-0.025] ________
+
+dtype = 'bfloat16', rtol = 0.025, shape = (1, 2, 4), axis = -1, case = 'zero'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+        np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+>       np.testing.assert_allclose(as_np(da),ga,rtol=rtol,atol=6e-8 if dtype=='float16' else 1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.025, atol=1e-35
+E       
+E       nan location mismatch:
+E        ACTUAL: array([[[nan, nan, nan, nan],
+E               [nan, nan, nan, nan]]])
+E        DESIRED: array([[[ 1001.358032,  2002.716064, -1001.358032,  1001.358032],
+E               [ 1001.358032,  2002.716064, -1001.358032,  1001.358032]]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:77: AssertionError
+________ test_values_gradients_batch_axes[zero-shape2-0-float32-5e-06] _________
+
+dtype = 'float32', rtol = 5e-06, shape = (4, 2), axis = 0, case = 'zero'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+        np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+>       np.testing.assert_allclose(as_np(da),ga,rtol=rtol,atol=6e-8 if dtype=='float16' else 1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=5e-06, atol=1e-35
+E       
+E       nan location mismatch:
+E        ACTUAL: array([[nan, nan],
+E              [nan, nan],
+E              [nan, nan],
+E              [nan, nan]])
+E        DESIRED: array([[ 999.999975,  999.999975],
+E              [1999.999949, 1999.999949],
+E              [-999.999975, -999.999975],
+E              [ 999.999975,  999.999975]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:77: AssertionError
+________ test_values_gradients_batch_axes[zero-shape2-0-float16-0.005] _________
+
+dtype = 'float16', rtol = 0.005, shape = (4, 2), axis = 0, case = 'zero'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.005, atol=1e-07
+E       
+E       nan location mismatch:
+E        ACTUAL: array([nan, nan])
+E        DESIRED: array([0., 0.])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:76: AssertionError
+________ test_values_gradients_batch_axes[zero-shape2-0-bfloat16-0.025] ________
+
+dtype = 'bfloat16', rtol = 0.025, shape = (4, 2), axis = 0, case = 'zero'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+        np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+>       np.testing.assert_allclose(as_np(da),ga,rtol=rtol,atol=6e-8 if dtype=='float16' else 1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.025, atol=1e-35
+E       
+E       nan location mismatch:
+E        ACTUAL: array([[nan, nan],
+E              [nan, nan],
+E              [nan, nan],
+E              [nan, nan]])
+E        DESIRED: array([[ 1001.358032,  1001.358032],
+E              [ 2002.716064,  2002.716064],
+E              [-1001.358032, -1001.358032],
+E              [ 1001.358032,  1001.358032]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:77: AssertionError
+_______ test_values_gradients_batch_axes[unequal-shape0-1-float16-0.005] _______
+
+dtype = 'float16', rtol = 0.005, shape = (2, 4), axis = 1, case = 'unequal'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.005, atol=1e-07
+E       
+E       Mismatched elements: 2 / 2 (100%)
+E       Max absolute difference among violations: 0.5
+E       Max relative difference among violations: 1.
+E        ACTUAL: array([0., 0.])
+E        DESIRED: array([0.5, 0.5])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:76: AssertionError
+______ test_values_gradients_batch_axes[unequal-shape1--1-float16-0.005] _______
+
+dtype = 'float16', rtol = 0.005, shape = (1, 2, 4), axis = -1, case = 'unequal'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.005, atol=1e-07
+E       
+E       Mismatched elements: 2 / 2 (100%)
+E       Max absolute difference among violations: 0.5
+E       Max relative difference among violations: 1.
+E        ACTUAL: array([[0., 0.]])
+E        DESIRED: array([[0.5, 0.5]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:76: AssertionError
+_______ test_values_gradients_batch_axes[unequal-shape2-0-float16-0.005] _______
+
+dtype = 'float16', rtol = 0.005, shape = (4, 2), axis = 0, case = 'unequal'
+
+    @pytest.mark.parametrize('dtype,rtol', [('float32', 5e-6), ('float16', 0.005), ('bfloat16', 0.025)])
+    @pytest.mark.parametrize('shape,axis', [((2,4),1), ((1,2,4),-1), ((4,2),0)])
+    @pytest.mark.parametrize('case', ['ordinary', 'large', 'opposite', 'orthogonal', 'small', 'zero', 'unequal'])
+    def test_values_gradients_batch_axes(dtype, rtol, shape, axis, case):
+        magnitude = 1000. if dtype == 'float16' else 1e20
+        cases = {
+            'ordinary': ([.5, .5, .2, .9], [.6, .4, .3, .8]),
+            'large': ([magnitude, -magnitude, magnitude, -magnitude], [magnitude, magnitude, -magnitude, -magnitude/2]),
+            'opposite': ([magnitude]*4, [-magnitude]*4),
+            'orthogonal': ([magnitude, 0, 0, 0], [0, magnitude, 0, 0]),
+            'small': ([1e-6]*4, [2e-6, -1e-6, 1e-6, 1e-6]),
+            'zero': ([0.]*4, [1e-5, 2e-5, -1e-5, 1e-5]),
+            'unequal': ([1e-3]*4, [1000., -1000., 1000., 1000.]),
+        }
+        a0,b0 = cases[case]
+        a_np,b_np = np.tile(a0,(2,1)),np.tile(b0,(2,1))
+        if axis == 0:
+            a_np,b_np=a_np.T,b_np.T
+        a=mx.array(a_np.reshape(shape),getattr(mx,dtype));b=mx.array(b_np.reshape(shape),a.dtype)
+        aa,bb=np.moveaxis(as_np(a),axis,-1),np.moveaxis(as_np(b),axis,-1)
+        triples=[oracle(x,y) for x,y in zip(aa.reshape(-1,4),bb.reshape(-1,4))]
+        expected=np.array([t[0] for t in triples]).reshape(aa.shape[:-1])
+        ga=np.moveaxis(np.array([t[1] for t in triples]).reshape(aa.shape),-1,axis)
+        gb=np.moveaxis(np.array([t[2] for t in triples]).reshape(bb.shape),-1,axis)
+        got=cosine(a,b,axis=axis)
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y,axis=axis)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(got),expected,rtol=rtol,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.005, atol=1e-07
+E       
+E       Mismatched elements: 2 / 2 (100%)
+E       Max absolute difference among violations: 0.5
+E       Max relative difference among violations: 1.
+E        ACTUAL: array([0., 0.])
+E        DESIRED: array([0.5, 0.5])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:76: AssertionError
+__________________ test_scale_range_and_symmetry[self-1e+20] ___________________
+
+magnitude = 1e+20, relation = 'self'
+
+    @pytest.mark.parametrize('magnitude', [1e-30, 1e-20, 1e-6, 1., 1e20, 1e30])
+    @pytest.mark.parametrize('relation', ['self', 'opposite', 'reciprocal'])
+    def test_scale_range_and_symmetry(magnitude, relation):
+        a=mx.array([[magnitude,-magnitude,magnitude,-magnitude]],mx.float32)
+        b=-a if relation=='opposite' else (mx.array([[1/magnitude,-1/magnitude,1/magnitude,-1/magnitude]],mx.float32) if relation=='reciprocal' else a)
+        ref,_,_=oracle(as_np(a)[0],as_np(b)[0])
+        value=as_np(cosine(a,b))
+>       np.testing.assert_allclose(value,[ref],rtol=5e-6,atol=1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=5e-06, atol=1e-35
+E       
+E       nan location mismatch:
+E        ACTUAL: array([nan])
+E        DESIRED: array([1.])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:89: AssertionError
+__________________ test_scale_range_and_symmetry[self-1e+30] ___________________
+
+magnitude = 1e+30, relation = 'self'
+
+    @pytest.mark.parametrize('magnitude', [1e-30, 1e-20, 1e-6, 1., 1e20, 1e30])
+    @pytest.mark.parametrize('relation', ['self', 'opposite', 'reciprocal'])
+    def test_scale_range_and_symmetry(magnitude, relation):
+        a=mx.array([[magnitude,-magnitude,magnitude,-magnitude]],mx.float32)
+        b=-a if relation=='opposite' else (mx.array([[1/magnitude,-1/magnitude,1/magnitude,-1/magnitude]],mx.float32) if relation=='reciprocal' else a)
+        ref,_,_=oracle(as_np(a)[0],as_np(b)[0])
+        value=as_np(cosine(a,b))
+>       np.testing.assert_allclose(value,[ref],rtol=5e-6,atol=1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=5e-06, atol=1e-35
+E       
+E       nan location mismatch:
+E        ACTUAL: array([nan])
+E        DESIRED: array([1.])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:89: AssertionError
+________________ test_scale_range_and_symmetry[opposite-1e+20] _________________
+
+magnitude = 1e+20, relation = 'opposite'
+
+    @pytest.mark.parametrize('magnitude', [1e-30, 1e-20, 1e-6, 1., 1e20, 1e30])
+    @pytest.mark.parametrize('relation', ['self', 'opposite', 'reciprocal'])
+    def test_scale_range_and_symmetry(magnitude, relation):
+        a=mx.array([[magnitude,-magnitude,magnitude,-magnitude]],mx.float32)
+        b=-a if relation=='opposite' else (mx.array([[1/magnitude,-1/magnitude,1/magnitude,-1/magnitude]],mx.float32) if relation=='reciprocal' else a)
+        ref,_,_=oracle(as_np(a)[0],as_np(b)[0])
+        value=as_np(cosine(a,b))
+>       np.testing.assert_allclose(value,[ref],rtol=5e-6,atol=1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=5e-06, atol=1e-35
+E       
+E       nan location mismatch:
+E        ACTUAL: array([nan])
+E        DESIRED: array([-1.])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:89: AssertionError
+________________ test_scale_range_and_symmetry[opposite-1e+30] _________________
+
+magnitude = 1e+30, relation = 'opposite'
+
+    @pytest.mark.parametrize('magnitude', [1e-30, 1e-20, 1e-6, 1., 1e20, 1e30])
+    @pytest.mark.parametrize('relation', ['self', 'opposite', 'reciprocal'])
+    def test_scale_range_and_symmetry(magnitude, relation):
+        a=mx.array([[magnitude,-magnitude,magnitude,-magnitude]],mx.float32)
+        b=-a if relation=='opposite' else (mx.array([[1/magnitude,-1/magnitude,1/magnitude,-1/magnitude]],mx.float32) if relation=='reciprocal' else a)
+        ref,_,_=oracle(as_np(a)[0],as_np(b)[0])
+        value=as_np(cosine(a,b))
+>       np.testing.assert_allclose(value,[ref],rtol=5e-6,atol=1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=5e-06, atol=1e-35
+E       
+E       nan location mismatch:
+E        ACTUAL: array([nan])
+E        DESIRED: array([-1.])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:89: AssertionError
+_______________ test_scale_range_and_symmetry[reciprocal-1e-30] ________________
+
+magnitude = 1e-30, relation = 'reciprocal'
+
+    @pytest.mark.parametrize('magnitude', [1e-30, 1e-20, 1e-6, 1., 1e20, 1e30])
+    @pytest.mark.parametrize('relation', ['self', 'opposite', 'reciprocal'])
+    def test_scale_range_and_symmetry(magnitude, relation):
+        a=mx.array([[magnitude,-magnitude,magnitude,-magnitude]],mx.float32)
+        b=-a if relation=='opposite' else (mx.array([[1/magnitude,-1/magnitude,1/magnitude,-1/magnitude]],mx.float32) if relation=='reciprocal' else a)
+        ref,_,_=oracle(as_np(a)[0],as_np(b)[0])
+        value=as_np(cosine(a,b))
+>       np.testing.assert_allclose(value,[ref],rtol=5e-6,atol=1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=5e-06, atol=1e-35
+E       
+E       nan location mismatch:
+E        ACTUAL: array([nan])
+E        DESIRED: array([1.])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:89: AssertionError
+_______________ test_scale_range_and_symmetry[reciprocal-1e-20] ________________
+
+magnitude = 1e-20, relation = 'reciprocal'
+
+    @pytest.mark.parametrize('magnitude', [1e-30, 1e-20, 1e-6, 1., 1e20, 1e30])
+    @pytest.mark.parametrize('relation', ['self', 'opposite', 'reciprocal'])
+    def test_scale_range_and_symmetry(magnitude, relation):
+        a=mx.array([[magnitude,-magnitude,magnitude,-magnitude]],mx.float32)
+        b=-a if relation=='opposite' else (mx.array([[1/magnitude,-1/magnitude,1/magnitude,-1/magnitude]],mx.float32) if relation=='reciprocal' else a)
+        ref,_,_=oracle(as_np(a)[0],as_np(b)[0])
+        value=as_np(cosine(a,b))
+>       np.testing.assert_allclose(value,[ref],rtol=5e-6,atol=1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=5e-06, atol=1e-35
+E       
+E       Mismatched elements: 1 / 1 (100%)
+E       Max absolute difference among violations: 1.
+E       Max relative difference among violations: 1.
+E        ACTUAL: array([0.])
+E        DESIRED: array([1.])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:89: AssertionError
+_______________ test_scale_range_and_symmetry[reciprocal-1e+20] ________________
+
+magnitude = 1e+20, relation = 'reciprocal'
+
+    @pytest.mark.parametrize('magnitude', [1e-30, 1e-20, 1e-6, 1., 1e20, 1e30])
+    @pytest.mark.parametrize('relation', ['self', 'opposite', 'reciprocal'])
+    def test_scale_range_and_symmetry(magnitude, relation):
+        a=mx.array([[magnitude,-magnitude,magnitude,-magnitude]],mx.float32)
+        b=-a if relation=='opposite' else (mx.array([[1/magnitude,-1/magnitude,1/magnitude,-1/magnitude]],mx.float32) if relation=='reciprocal' else a)
+        ref,_,_=oracle(as_np(a)[0],as_np(b)[0])
+        value=as_np(cosine(a,b))
+>       np.testing.assert_allclose(value,[ref],rtol=5e-6,atol=1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=5e-06, atol=1e-35
+E       
+E       Mismatched elements: 1 / 1 (100%)
+E       Max absolute difference among violations: 1.
+E       Max relative difference among violations: 1.
+E        ACTUAL: array([0.])
+E        DESIRED: array([1.])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:89: AssertionError
+_______________ test_scale_range_and_symmetry[reciprocal-1e+30] ________________
+
+magnitude = 1e+30, relation = 'reciprocal'
+
+    @pytest.mark.parametrize('magnitude', [1e-30, 1e-20, 1e-6, 1., 1e20, 1e30])
+    @pytest.mark.parametrize('relation', ['self', 'opposite', 'reciprocal'])
+    def test_scale_range_and_symmetry(magnitude, relation):
+        a=mx.array([[magnitude,-magnitude,magnitude,-magnitude]],mx.float32)
+        b=-a if relation=='opposite' else (mx.array([[1/magnitude,-1/magnitude,1/magnitude,-1/magnitude]],mx.float32) if relation=='reciprocal' else a)
+        ref,_,_=oracle(as_np(a)[0],as_np(b)[0])
+        value=as_np(cosine(a,b))
+>       np.testing.assert_allclose(value,[ref],rtol=5e-6,atol=1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=5e-06, atol=1e-35
+E       
+E       nan location mismatch:
+E        ACTUAL: array([nan])
+E        DESIRED: array([1.])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:89: AssertionError
+__________________ test_extreme_scale_gradients[1e-30-1e-30] ___________________
+
+sa = 1e-30, sb = 1e-30
+
+    @pytest.mark.parametrize('sa,sb', [(1e-30,1e-30),(1e-20,1e20),(1e20,1e-20),(1e30,1e30)])
+    def test_extreme_scale_gradients(sa,sb):
+        a=mx.array([[sa,-sa,sa,-sa]],mx.float32)
+        b=mx.array([[sb,sb,-sb,-sb/2]],mx.float32)
+        _,ga,gb=oracle(as_np(a)[0],as_np(b)[0])
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(da),ga[None,:],rtol=1e-5,atol=1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=1e-05, atol=1e-35
+E       
+E       nan location mismatch:
+E        ACTUAL: array([[nan, nan, nan, nan]])
+E        DESIRED: array([[ 1.e-22,  1.e-22, -1.e-22, -5.e-23]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:123: AssertionError
+__________________ test_extreme_scale_gradients[1e-20-1e+20] ___________________
+
+sa = 1e-20, sb = 1e+20
+
+    @pytest.mark.parametrize('sa,sb', [(1e-30,1e-30),(1e-20,1e20),(1e20,1e-20),(1e30,1e30)])
+    def test_extreme_scale_gradients(sa,sb):
+        a=mx.array([[sa,-sa,sa,-sa]],mx.float32)
+        b=mx.array([[sb,sb,-sb,-sb/2]],mx.float32)
+        _,ga,gb=oracle(as_np(a)[0],as_np(b)[0])
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(da),ga[None,:],rtol=1e-5,atol=1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=1e-05, atol=1e-35
+E       
+E       nan location mismatch:
+E        ACTUAL: array([[nan, nan, nan, nan]])
+E        DESIRED: array([[ 3.120189e+19,  2.426813e+19, -2.426813e+19, -1.733438e+19]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:123: AssertionError
+__________________ test_extreme_scale_gradients[1e+20-1e-20] ___________________
+
+sa = 1e+20, sb = 1e-20
+
+    @pytest.mark.parametrize('sa,sb', [(1e-30,1e-30),(1e-20,1e20),(1e20,1e-20),(1e30,1e30)])
+    def test_extreme_scale_gradients(sa,sb):
+        a=mx.array([[sa,-sa,sa,-sa]],mx.float32)
+        b=mx.array([[sb,sb,-sb,-sb/2]],mx.float32)
+        _,ga,gb=oracle(as_np(a)[0],as_np(b)[0])
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(da),ga[None,:],rtol=1e-5,atol=1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=1e-05, atol=1e-35
+E       
+E       Mismatched elements: 4 / 4 (100%)
+E       Max absolute difference among violations: 3.12018854e-21
+E       Max relative difference among violations: 1.
+E        ACTUAL: array([[ 0.,  0.,  0., -0.]])
+E        DESIRED: array([[ 3.120189e-21,  2.426813e-21, -2.426813e-21, -1.733438e-21]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:123: AssertionError
+__________________ test_extreme_scale_gradients[1e+30-1e+30] ___________________
+
+sa = 1e+30, sb = 1e+30
+
+    @pytest.mark.parametrize('sa,sb', [(1e-30,1e-30),(1e-20,1e20),(1e20,1e-20),(1e30,1e30)])
+    def test_extreme_scale_gradients(sa,sb):
+        a=mx.array([[sa,-sa,sa,-sa]],mx.float32)
+        b=mx.array([[sb,sb,-sb,-sb/2]],mx.float32)
+        _,ga,gb=oracle(as_np(a)[0],as_np(b)[0])
+        da,db=mx.grad(lambda x,y: mx.sum(cosine(x,y)),argnums=(0,1))(a,b)
+>       np.testing.assert_allclose(as_np(da),ga[None,:],rtol=1e-5,atol=1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=1e-05, atol=1e-35
+E       
+E       nan location mismatch:
+E        ACTUAL: array([[nan, nan, nan, nan]])
+E        DESIRED: array([[ 3.120189e-31,  2.426813e-31, -2.426813e-31, -1.733438e-31]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:123: AssertionError
+___________________ test_compiled_value_and_gradient[large] ____________________
+
+case = 'large'
+
+    @pytest.mark.parametrize('case',['ordinary','large','zero'])
+    def test_compiled_value_and_gradient(case):
+        scale=1e20 if case=='large' else 1e-5 if case=='zero' else 1.
+        a=mx.array([[0.,0.,0.,0.]]) if case=='zero' else mx.array([[scale,-scale,scale,-scale]])
+        b=mx.array([[scale,scale,-scale,-scale/2]])
+        ref,ga,_=oracle(as_np(a)[0],as_np(b)[0])
+        value=mx.compile(lambda x,y: cosine(x,y))(a,b)
+        derivative=mx.compile(mx.grad(lambda x,y: mx.sum(cosine(x,y))))(a,b)
+>       np.testing.assert_allclose(as_np(value),[ref],rtol=1e-5,atol=1e-7)
+E       AssertionError: 
+E       Not equal to tolerance rtol=1e-05, atol=1e-07
+E       
+E       nan location mismatch:
+E        ACTUAL: array([nan])
+E        DESIRED: array([-0.138675])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:135: AssertionError
+____________________ test_compiled_value_and_gradient[zero] ____________________
+
+case = 'zero'
+
+    @pytest.mark.parametrize('case',['ordinary','large','zero'])
+    def test_compiled_value_and_gradient(case):
+        scale=1e20 if case=='large' else 1e-5 if case=='zero' else 1.
+        a=mx.array([[0.,0.,0.,0.]]) if case=='zero' else mx.array([[scale,-scale,scale,-scale]])
+        b=mx.array([[scale,scale,-scale,-scale/2]])
+        ref,ga,_=oracle(as_np(a)[0],as_np(b)[0])
+        value=mx.compile(lambda x,y: cosine(x,y))(a,b)
+        derivative=mx.compile(mx.grad(lambda x,y: mx.sum(cosine(x,y))))(a,b)
+        np.testing.assert_allclose(as_np(value),[ref],rtol=1e-5,atol=1e-7)
+>       np.testing.assert_allclose(as_np(derivative),ga[None,:],rtol=1e-5,atol=1e-35)
+E       AssertionError: 
+E       Not equal to tolerance rtol=1e-05, atol=1e-35
+E       
+E       nan location mismatch:
+E        ACTUAL: array([[nan, nan, nan, nan]])
+E        DESIRED: array([[ 999.999975,  999.999975, -999.999975, -499.999987]])
+
+software-audits/current-stack-2026-09-07-round4/test_cosine.py:136: AssertionError
+- generated xml file: <WORKSPACE>/software-audits/current-stack-2026-09-07-round4/cosine-before-cpu.xml -
+=========================== short test summary info ============================
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[ordinary-shape0-1-float16-0.005]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[ordinary-shape0-1-bfloat16-0.025]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[ordinary-shape1--1-float16-0.005]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[ordinary-shape1--1-bfloat16-0.025]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[ordinary-shape2-0-float16-0.005]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[ordinary-shape2-0-bfloat16-0.025]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[large-shape0-1-float32-5e-06]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[large-shape0-1-float16-0.005]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[large-shape0-1-bfloat16-0.025]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[large-shape1--1-float32-5e-06]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[large-shape1--1-float16-0.005]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[large-shape1--1-bfloat16-0.025]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[large-shape2-0-float32-5e-06]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[large-shape2-0-float16-0.005]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[large-shape2-0-bfloat16-0.025]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[opposite-shape0-1-float32-5e-06]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[opposite-shape0-1-float16-0.005]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[opposite-shape0-1-bfloat16-0.025]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[opposite-shape1--1-float32-5e-06]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[opposite-shape1--1-float16-0.005]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[opposite-shape1--1-bfloat16-0.025]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[opposite-shape2-0-float32-5e-06]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[opposite-shape2-0-float16-0.005]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[opposite-shape2-0-bfloat16-0.025]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[orthogonal-shape0-1-float32-5e-06]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[orthogonal-shape0-1-float16-0.005]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[orthogonal-shape0-1-bfloat16-0.025]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[orthogonal-shape1--1-float32-5e-06]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[orthogonal-shape1--1-float16-0.005]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[orthogonal-shape1--1-bfloat16-0.025]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[orthogonal-shape2-0-float32-5e-06]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[orthogonal-shape2-0-float16-0.005]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[orthogonal-shape2-0-bfloat16-0.025]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[small-shape0-1-float16-0.005]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[small-shape1--1-float16-0.005]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[small-shape2-0-float16-0.005]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[zero-shape0-1-float32-5e-06]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[zero-shape0-1-float16-0.005]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[zero-shape0-1-bfloat16-0.025]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[zero-shape1--1-float32-5e-06]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[zero-shape1--1-float16-0.005]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[zero-shape1--1-bfloat16-0.025]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[zero-shape2-0-float32-5e-06]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[zero-shape2-0-float16-0.005]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[zero-shape2-0-bfloat16-0.025]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[unequal-shape0-1-float16-0.005]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[unequal-shape1--1-float16-0.005]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_values_gradients_batch_axes[unequal-shape2-0-float16-0.005]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_scale_range_and_symmetry[self-1e+20]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_scale_range_and_symmetry[self-1e+30]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_scale_range_and_symmetry[opposite-1e+20]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_scale_range_and_symmetry[opposite-1e+30]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_scale_range_and_symmetry[reciprocal-1e-30]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_scale_range_and_symmetry[reciprocal-1e-20]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_scale_range_and_symmetry[reciprocal-1e+20]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_scale_range_and_symmetry[reciprocal-1e+30]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_extreme_scale_gradients[1e-30-1e-30]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_extreme_scale_gradients[1e-20-1e+20]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_extreme_scale_gradients[1e+20-1e-20]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_extreme_scale_gradients[1e+30-1e+30]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_compiled_value_and_gradient[large]
+FAILED software-audits/current-stack-2026-09-07-round4/test_cosine.py::test_compiled_value_and_gradient[zero]
+62 failed, 39 passed in 0.66s
