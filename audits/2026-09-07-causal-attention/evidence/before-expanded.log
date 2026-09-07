@@ -1,0 +1,2859 @@
+Running main() from ../subprojects/googletest/googletest/src/gtest_main.cc
+Note: Google Test filter = AttentionNumericalAudit.*:CausalShapes/*:Attention/*
+[==========] Running 42 tests from 4 test suites.
+[----------] Global test environment set-up.
+[----------] 12 tests from AttentionNumericalAudit
+[ RUN      ] AttentionNumericalAudit.SquareControl
+ATTENTION_OUTPUT 2 6
+[       OK ] AttentionNumericalAudit.SquareControl (0 ms)
+[ RUN      ] AttentionNumericalAudit.RectangularFewerQueries
+ATTENTION_OUTPUT 20.66666794 20.66666794
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 18.666667938232422, which exceeds 3e-5, where
+actual[i] evaluates to 20.666667938232422,
+expected[i] evaluates to 2, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 14.666667938232422, which exceeds 3e-5, where
+actual[i] evaluates to 20.666667938232422,
+expected[i] evaluates to 6, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+
+[  FAILED  ] AttentionNumericalAudit.RectangularFewerQueries (1 ms)
+[ RUN      ] AttentionNumericalAudit.RectangularMoreQueries
+ATTENTION_OUTPUT 6 6 6
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 4, which exceeds 3e-5, where
+actual[i] evaluates to 6,
+expected[i] evaluates to 2, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+[  FAILED  ] AttentionNumericalAudit.RectangularMoreQueries (0 ms)
+[ RUN      ] AttentionNumericalAudit.FutureValueHasZeroDerivative
+ATTENTION_OUTPUT 0.3333333433 0.3333333433 0.3333333433
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.6666666567325592, which exceeds 3e-5, where
+actual[i] evaluates to 0.3333333432674408,
+expected[i] evaluates to 1, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.3333333432674408, which exceeds 3e-5, where
+actual[i] evaluates to 0.3333333432674408,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.3333333432674408, which exceeds 3e-5, where
+actual[i] evaluates to 0.3333333432674408,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+[  FAILED  ] AttentionNumericalAudit.FutureValueHasZeroDerivative (0 ms)
+[ RUN      ] AttentionNumericalAudit.LargeFiniteFutureLogitIsExcluded
+ATTENTION_OUTPUT 10 10
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 8, which exceeds 3e-5, where
+actual[i] evaluates to 10,
+expected[i] evaluates to 2, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+[  FAILED  ] AttentionNumericalAudit.LargeFiniteFutureLogitIsExcluded (0 ms)
+[ RUN      ] AttentionNumericalAudit.IncrementalChunksMatchFull
+ATTENTION_OUTPUT 2 20.66666794 20.66666794
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 14.666667938232422, which exceeds 3e-5, where
+actual[i] evaluates to 20.666667938232422,
+expected[i] evaluates to 6, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+
+[  FAILED  ] AttentionNumericalAudit.IncrementalChunksMatchFull (0 ms)
+[ RUN      ] AttentionNumericalAudit.UnmaskedControl
+ATTENTION_OUTPUT 20.66666794 20.66666794
+[       OK ] AttentionNumericalAudit.UnmaskedControl (0 ms)
+[ RUN      ] AttentionNumericalAudit.ProbabilitiesNormalizeOnlyOverAllowedKeys
+ATTENTION_OUTPUT 0.3333333433 0.3333333433 0.3333333433 0.3333333433 0.3333333433 0.3333333433
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.6666666567325592, which exceeds 3e-5, where
+actual[i] evaluates to 0.3333333432674408,
+expected[i] evaluates to 1, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.3333333432674408, which exceeds 3e-5, where
+actual[i] evaluates to 0.3333333432674408,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.3333333432674408, which exceeds 3e-5, where
+actual[i] evaluates to 0.3333333432674408,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.1666666567325592, which exceeds 3e-5, where
+actual[i] evaluates to 0.3333333432674408,
+expected[i] evaluates to 0.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.1666666567325592, which exceeds 3e-5, where
+actual[i] evaluates to 0.3333333432674408,
+expected[i] evaluates to 0.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 4
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.3333333432674408, which exceeds 3e-5, where
+actual[i] evaluates to 0.3333333432674408,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+../test/unittest/layers/unittest_layers_attention.cpp:307: Failure
+Expected equality of these values:
+  p
+    Which is: 0.333333343
+  0
+
+../test/unittest/layers/unittest_layers_attention.cpp:307: Failure
+Expected equality of these values:
+  p
+    Which is: 0.333333343
+  0
+
+../test/unittest/layers/unittest_layers_attention.cpp:307: Failure
+Expected equality of these values:
+  p
+    Which is: 0.333333343
+  0
+
+[  FAILED  ] AttentionNumericalAudit.ProbabilitiesNormalizeOnlyOverAllowedKeys (0 ms)
+[ RUN      ] AttentionNumericalAudit.PrefixUnaffectedByFutureValues
+ATTENTION_OUTPUT 20.66666794 20.66666794
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 50.000001907348633, which exceeds 3e-5, where
+actual[i] evaluates to 20.666667938232422,
+expected[i] evaluates to -29.333333969116211, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 50.000001907348633, which exceeds 3e-5, where
+actual[i] evaluates to 20.666667938232422,
+expected[i] evaluates to -29.333333969116211, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+
+[  FAILED  ] AttentionNumericalAudit.PrefixUnaffectedByFutureValues (0 ms)
+[ RUN      ] AttentionNumericalAudit.BatchedEvaluationMatchesIndependentExamples
+ATTENTION_OUTPUT -0.7188974619 -0.704267025 0.03110256791 -0.2890702486 -0.7536615133 0.4609297514
+ATTENTION_OUTPUT -1.613097922e-08 -9.678587709e-09 -3.226195977e-09 -0.2964544594 -0.2964544594 -0.2964544594
+ATTENTION_OUTPUT -0.6109768748 0.3232439458 0.3685439229 -0.3230468929 0.3505828977 0.06010971963 -0.5659762025 0.3261731565 0.3213463426
+ATTENTION_OUTPUT 0.1271083504 -0.2542167008 0.190662533 -0.05822507292 0.1164501458 -0.08733761311 -0.06888328493 0.137766555 -0.1033249274
+ATTENTION_OUTPUT 0.7350780368 0.1233218014 -0.007057309151 0.1453796476 0.6167554855 -0.305539459
+ATTENTION_OUTPUT 0.02375147305 0.02375147119 -0.9032794237 -0.005648784339 -0.005648780614 1.059973001
+ATTENTION_OUTPUT -0.3010932803 -0.08912396431 -0.5042311549 -0.01722475886 -0.1723940521 -0.1589644551 0.06831799448 -0.2384819686 -0.08680441976
+ATTENTION_OUTPUT 0.5242010355 -0.303327769 0.5356353521 -0.04718918353 0.02251923084 -0.05047106743 -0.4770118594 0.2808085382 -0.4851642549
+[       OK ] AttentionNumericalAudit.BatchedEvaluationMatchesIndependentExamples (0 ms)
+[ RUN      ] AttentionNumericalAudit.NativeForwardFiniteDifferences
+../test/unittest/layers/unittest_layers_attention.cpp:367: Failure
+The difference between target[i] and fd is 0.31396865844726562, which exceeds 2e-4, where
+target[i] evaluates to 0,
+fd evaluates to -0.31396865844726562, and
+2e-4 evaluates to 0.00020000000000000001.
+0:0
+
+../test/unittest/layers/unittest_layers_attention.cpp:367: Failure
+The difference between target[i] and fd is 0.31396865844726562, which exceeds 2e-4, where
+target[i] evaluates to 0,
+fd evaluates to -0.31396865844726562, and
+2e-4 evaluates to 0.00020000000000000001.
+0:1
+
+../test/unittest/layers/unittest_layers_attention.cpp:367: Failure
+The difference between target[i] and fd is 0.16153436899185181, which exceeds 2e-4, where
+target[i] evaluates to 0.098460137844085693,
+fd evaluates to 0.2599945068359375, and
+2e-4 evaluates to 0.00020000000000000001.
+0:2
+
+../test/unittest/layers/unittest_layers_attention.cpp:367: Failure
+The difference between target[i] and fd is 0.16153436899185181, which exceeds 2e-4, where
+target[i] evaluates to 0.098460137844085693,
+fd evaluates to 0.2599945068359375, and
+2e-4 evaluates to 0.00020000000000000001.
+0:3
+
+../test/unittest/layers/unittest_layers_attention.cpp:367: Failure
+The difference between target[i] and fd is 0.50501537322998047, which exceeds 2e-4, where
+target[i] evaluates to -0.56305599212646484,
+fd evaluates to -0.058040618896484375, and
+2e-4 evaluates to 0.00020000000000000001.
+1:0
+
+../test/unittest/layers/unittest_layers_attention.cpp:367: Failure
+The difference between target[i] and fd is 0.037047013640403748, which exceeds 2e-4, where
+target[i] evaluates to -0.13738881051540375,
+fd evaluates to -0.100341796875, and
+2e-4 evaluates to 0.00020000000000000001.
+1:1
+
+../test/unittest/layers/unittest_layers_attention.cpp:367: Failure
+The difference between target[i] and fd is 0.55365276336669922, which exceeds 2e-4, where
+target[i] evaluates to 0.56305599212646484,
+fd evaluates to 0.009403228759765625, and
+2e-4 evaluates to 0.00020000000000000001.
+1:2
+
+../test/unittest/layers/unittest_layers_attention.cpp:367: Failure
+The difference between target[i] and fd is 0.030362509191036224, which exceeds 2e-4, where
+target[i] evaluates to -0.11261119693517685,
+fd evaluates to -0.082248687744140625, and
+2e-4 evaluates to 0.00020000000000000001.
+1:3
+
+../test/unittest/layers/unittest_layers_attention.cpp:367: Failure
+The difference between target[i] and fd is 0.0485992431640625, which exceeds 2e-4, where
+target[i] evaluates to 0,
+fd evaluates to 0.0485992431640625, and
+2e-4 evaluates to 0.00020000000000000001.
+1:4
+
+../test/unittest/layers/unittest_layers_attention.cpp:367: Failure
+The difference between target[i] and fd is 0.067413330078125, which exceeds 2e-4, where
+target[i] evaluates to 0,
+fd evaluates to -0.067413330078125, and
+2e-4 evaluates to 0.00020000000000000001.
+1:5
+
+../test/unittest/layers/unittest_layers_attention.cpp:367: Failure
+The difference between target[i] and fd is 0.14087656140327454, which exceeds 2e-4, where
+target[i] evaluates to 0.082050114870071411,
+fd evaluates to -0.058826446533203125, and
+2e-4 evaluates to 0.00020000000000000001.
+2:0
+
+../test/unittest/layers/unittest_layers_attention.cpp:367: Failure
+The difference between target[i] and fd is 0.015665352344512939, which exceeds 2e-4, where
+target[i] evaluates to -0.032820045948028564,
+fd evaluates to -0.017154693603515625, and
+2e-4 evaluates to 0.00020000000000000001.
+2:1
+
+../test/unittest/layers/unittest_layers_attention.cpp:367: Failure
+The difference between target[i] and fd is 0.10239008069038391, which exceeds 2e-4, where
+target[i] evaluates to -0.082050114870071411,
+fd evaluates to 0.0203399658203125, and
+2e-4 evaluates to 0.00020000000000000001.
+2:2
+
+../test/unittest/layers/unittest_layers_attention.cpp:367: Failure
+The difference between target[i] and fd is 0.032846748828887939, which exceeds 2e-4, where
+target[i] evaluates to 0.032820045948028564,
+fd evaluates to -2.6702880859375e-05, and
+2e-4 evaluates to 0.00020000000000000001.
+2:3
+
+../test/unittest/layers/unittest_layers_attention.cpp:367: Failure
+The difference between target[i] and fd is 0.038463592529296875, which exceeds 2e-4, where
+target[i] evaluates to 0,
+fd evaluates to 0.038463592529296875, and
+2e-4 evaluates to 0.00020000000000000001.
+2:4
+
+../test/unittest/layers/unittest_layers_attention.cpp:367: Failure
+The difference between target[i] and fd is 0.017177581787109375, which exceeds 2e-4, where
+target[i] evaluates to 0,
+fd evaluates to 0.017177581787109375, and
+2e-4 evaluates to 0.00020000000000000001.
+2:5
+
+[  FAILED  ] AttentionNumericalAudit.NativeForwardFiniteDifferences (4 ms)
+[ RUN      ] AttentionNumericalAudit.IncrementalPartitionsMatchReference
+ATTENTION_OUTPUT -2.25 0.5 -1.5 -0.4289978147 -0.1503579021 0.3210021257 -0.3767464161 -0.7461464405 0.3732535541 -0.3693481386 0.04687024653 0.3806518316 -0.03770816326 -0.1743815541 -0.3278052807
+ATTENTION_OUTPUT -2.25 0.5 -1.5 0.005508393049 -0.08362971991 -0.1734670699 -0.00621367991 -0.1159133762 -0.2263048738 0.02236253023 0.0772472918 0.0620232895 -0.03770816326 -0.1743815541 -0.3278052807
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.43450623750686646, which exceeds 3e-5, where
+actual[i] evaluates to 0.0055083930492401123,
+expected[i] evaluates to -0.42899784445762634, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.066728197038173676, which exceeds 3e-5, where
+actual[i] evaluates to -0.083629719913005829,
+expected[i] evaluates to -0.1503579169511795, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 4
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.49446922540664673, which exceeds 3e-5, where
+actual[i] evaluates to -0.17346706986427307,
+expected[i] evaluates to 0.32100215554237366, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.37053276598453522, which exceeds 3e-5, where
+actual[i] evaluates to -0.0062136799097061157,
+expected[i] evaluates to -0.37674644589424133, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 6
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.63023300468921661, which exceeds 3e-5, where
+actual[i] evaluates to -0.11591337621212006,
+expected[i] evaluates to -0.74614638090133667, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 7
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.59955842792987823, which exceeds 3e-5, where
+actual[i] evaluates to -0.22630487382411957,
+expected[i] evaluates to 0.37325355410575867, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 8
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.39171066880226135, which exceeds 3e-5, where
+actual[i] evaluates to 0.02236253023147583,
+expected[i] evaluates to -0.36934813857078552, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 9
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.03037705272436142, which exceeds 3e-5, where
+actual[i] evaluates to 0.077247291803359985,
+expected[i] evaluates to 0.046870239078998566, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 10
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.31862857192754745, which exceeds 3e-5, where
+actual[i] evaluates to 0.062023289501667023,
+expected[i] evaluates to 0.38065186142921448, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 11
+
+ATTENTION_OUTPUT -2.25 0.5 -1.5 -0.4289978147 -0.1503579021 0.3210021257 -0.00621367991 -0.1159133762 -0.2263048738 0.02236253023 0.0772472918 0.0620232895 -0.03770816326 -0.1743815541 -0.3278052807
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.37053276598453522, which exceeds 3e-5, where
+actual[i] evaluates to -0.0062136799097061157,
+expected[i] evaluates to -0.37674644589424133, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 6
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.63023300468921661, which exceeds 3e-5, where
+actual[i] evaluates to -0.11591337621212006,
+expected[i] evaluates to -0.74614638090133667, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 7
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.59955842792987823, which exceeds 3e-5, where
+actual[i] evaluates to -0.22630487382411957,
+expected[i] evaluates to 0.37325355410575867, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 8
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.39171066880226135, which exceeds 3e-5, where
+actual[i] evaluates to 0.02236253023147583,
+expected[i] evaluates to -0.36934813857078552, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 9
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.03037705272436142, which exceeds 3e-5, where
+actual[i] evaluates to 0.077247291803359985,
+expected[i] evaluates to 0.046870239078998566, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 10
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.31862857192754745, which exceeds 3e-5, where
+actual[i] evaluates to 0.062023289501667023,
+expected[i] evaluates to 0.38065186142921448, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 11
+
+ATTENTION_OUTPUT -2.25 0.5 -1.5 -0.4289978147 -0.1503579021 0.3210021257 -0.3767464161 -0.7461464405 0.3732535541 0.02236253023 0.0772472918 0.0620232895 -0.03770816326 -0.1743815541 -0.3278052807
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.39171066880226135, which exceeds 3e-5, where
+actual[i] evaluates to 0.02236253023147583,
+expected[i] evaluates to -0.36934813857078552, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 9
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.03037705272436142, which exceeds 3e-5, where
+actual[i] evaluates to 0.077247291803359985,
+expected[i] evaluates to 0.046870239078998566, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 10
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.31862857192754745, which exceeds 3e-5, where
+actual[i] evaluates to 0.062023289501667023,
+expected[i] evaluates to 0.38065186142921448, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 11
+
+ATTENTION_OUTPUT -2.25 0.5 -1.5 -0.4289978147 -0.1503579021 0.3210021257 -0.3767464161 -0.7461464405 0.3732535541 -0.3693481386 0.04687024653 0.3806518316 -0.03770812601 -0.1743815541 -0.3278052807
+ATTENTION_OUTPUT -2.25 0.5 -1.5 -0.2890702486 -0.7536615133 0.4609297514 -0.3767464161 -0.7461464405 0.3732535541 0.02236253023 0.0772472918 0.0620232895 -0.03770816326 -0.1743815541 -0.3278052807
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.13992759585380554, which exceeds 3e-5, where
+actual[i] evaluates to -0.2890702486038208,
+expected[i] evaluates to -0.42899784445762634, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.60330359637737274, which exceeds 3e-5, where
+actual[i] evaluates to -0.75366151332855225,
+expected[i] evaluates to -0.1503579169511795, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 4
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.13992759585380554, which exceeds 3e-5, where
+actual[i] evaluates to 0.4609297513961792,
+expected[i] evaluates to 0.32100215554237366, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.39171066880226135, which exceeds 3e-5, where
+actual[i] evaluates to 0.02236253023147583,
+expected[i] evaluates to -0.36934813857078552, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 9
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.03037705272436142, which exceeds 3e-5, where
+actual[i] evaluates to 0.077247291803359985,
+expected[i] evaluates to 0.046870239078998566, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 10
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.31862857192754745, which exceeds 3e-5, where
+actual[i] evaluates to 0.062023289501667023,
+expected[i] evaluates to 0.38065186142921448, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 11
+
+ATTENTION_OUTPUT -2.25 0.5 -1.5 -0.4289978147 -0.1503579021 0.3210021257 -0.3767464161 -0.7461464405 0.3732535541 0.02236253023 0.0772472918 0.0620232895 -0.03770816326 -0.1743815541 -0.3278052807
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.39171066880226135, which exceeds 3e-5, where
+actual[i] evaluates to 0.02236253023147583,
+expected[i] evaluates to -0.36934813857078552, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 9
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.03037705272436142, which exceeds 3e-5, where
+actual[i] evaluates to 0.077247291803359985,
+expected[i] evaluates to 0.046870239078998566, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 10
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.31862857192754745, which exceeds 3e-5, where
+actual[i] evaluates to 0.062023289501667023,
+expected[i] evaluates to 0.38065186142921448, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 11
+
+ATTENTION_OUTPUT -2.25 0.5 -1.5 -0.4289978147 -0.1503579021 0.3210021257 -0.3767464161 -0.7461464405 0.3732535541 -0.3693481684 0.04687021673 0.3806518316 -0.03770812601 -0.1743815541 -0.3278052807
+[  FAILED  ] AttentionNumericalAudit.IncrementalPartitionsMatchReference (1 ms)
+[----------] 12 tests from AttentionNumericalAudit (10 ms total)
+
+[----------] 11 tests from Attention/LayerSemantics
+[ RUN      ] Attention/LayerSemantics.createFromAppContext_pn/0
+[       OK ] Attention/LayerSemantics.createFromAppContext_pn/0 (5 ms)
+[ RUN      ] Attention/LayerSemantics.setPropertiesInvalid_01_n/0
+[       OK ] Attention/LayerSemantics.setPropertiesInvalid_01_n/0 (0 ms)
+[ RUN      ] Attention/LayerSemantics.setPropertiesInvalid_02_n/0
+[       OK ] Attention/LayerSemantics.setPropertiesInvalid_02_n/0 (0 ms)
+[ RUN      ] Attention/LayerSemantics.finalizeValidateLayerNode_p/0
+[       OK ] Attention/LayerSemantics.finalizeValidateLayerNode_p/0 (0 ms)
+[ RUN      ] Attention/LayerSemantics.getTypeValidateLayerNode_p/0
+[       OK ] Attention/LayerSemantics.getTypeValidateLayerNode_p/0 (0 ms)
+[ RUN      ] Attention/LayerSemantics.gettersValidateLayerNode_p/0
+[       OK ] Attention/LayerSemantics.gettersValidateLayerNode_p/0 (0 ms)
+[ RUN      ] Attention/LayerSemantics.setBatchValidateLayerNode_p/0
+[       OK ] Attention/LayerSemantics.setBatchValidateLayerNode_p/0 (0 ms)
+[ RUN      ] Attention/LayerSemantics.setProperties_n/0
+[       OK ] Attention/LayerSemantics.setProperties_n/0 (0 ms)
+[ RUN      ] Attention/LayerSemantics.gettersValidate_p/0
+[       OK ] Attention/LayerSemantics.gettersValidate_p/0 (0 ms)
+[ RUN      ] Attention/LayerSemantics.finalizeValidate_p/0
+[       OK ] Attention/LayerSemantics.finalizeValidate_p/0 (0 ms)
+[ RUN      ] Attention/LayerSemantics.setBatchValidate_p/0
+[       OK ] Attention/LayerSemantics.setBatchValidate_p/0 (0 ms)
+[----------] 11 tests from Attention/LayerSemantics (5 ms total)
+
+[----------] 3 tests from Attention/LayerGoldenTest
+[ RUN      ] Attention/LayerGoldenTest.run/0
+[       OK ] Attention/LayerGoldenTest.run/0 (0 ms)
+[ RUN      ] Attention/LayerGoldenTest.run/1
+[       OK ] Attention/LayerGoldenTest.run/1 (0 ms)
+[ RUN      ] Attention/LayerGoldenTest.run/2
+[       OK ] Attention/LayerGoldenTest.run/2 (0 ms)
+[----------] 3 tests from Attention/LayerGoldenTest (1 ms total)
+
+[----------] 16 tests from CausalShapes/AttentionShapes
+[ RUN      ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/0
+ATTENTION_OUTPUT -0.9253802896 -0.6639125943 -0.1753804088
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.3246197104454041, which exceeds 3e-5, where
+actual[i] evaluates to -0.92538028955459595,
+expected[i] evaluates to -2.25, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.1639125943183899, which exceeds 3e-5, where
+actual[i] evaluates to -0.66391259431838989,
+expected[i] evaluates to 0.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.3246195912361145, which exceeds 3e-5, where
+actual[i] evaluates to -0.1753804087638855,
+expected[i] evaluates to -1.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+ATTENTION_OUTPUT -2.93366611e-08 -1.676380634e-08 -4.190951586e-09
+ATTENTION_OUTPUT -0.5951230526 0 0.5951230526 -0.1458411813 0 0.1458411813 -0.5090357065 0 0.5090357065
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.6548769474029541, which exceeds 3e-5, where
+actual[i] evaluates to -0.5951230525970459,
+expected[i] evaluates to -1.25, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.6548769474029541, which exceeds 3e-5, where
+actual[i] evaluates to 0.5951230525970459,
+expected[i] evaluates to 1.25, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.14584118127822876, which exceeds 3e-5, where
+actual[i] evaluates to -0.14584118127822876,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.14584118127822876, which exceeds 3e-5, where
+actual[i] evaluates to 0.14584118127822876,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.50903570652008057, which exceeds 3e-5, where
+actual[i] evaluates to -0.50903570652008057,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 6
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.50903570652008057, which exceeds 3e-5, where
+actual[i] evaluates to 0.50903570652008057,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 8
+
+ATTENTION_OUTPUT -2.235174179e-08 3.725290298e-09 -1.862645149e-08 -2.793967724e-09 4.656612873e-10 -2.328306437e-09 0 0 0
+[  FAILED  ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/0, where GetParam() = (1, 3, 1, false) (0 ms)
+[ RUN      ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/1
+ATTENTION_OUTPUT -0.9253802896 -0.6639125943 -0.1753804088 0.5099499822 0.5395780802 -0.5311905146
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.3246197104454041, which exceeds 3e-5, where
+actual[i] evaluates to -0.92538028955459595,
+expected[i] evaluates to -2.25, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.1639125943183899, which exceeds 3e-5, where
+actual[i] evaluates to -0.66391259431838989,
+expected[i] evaluates to 0.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.3246195912361145, which exceeds 3e-5, where
+actual[i] evaluates to -0.1753804087638855,
+expected[i] evaluates to -1.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.7599499821662903, which exceeds 3e-5, where
+actual[i] evaluates to 0.50994998216629028,
+expected[i] evaluates to -1.25, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.96042191982269287, which exceeds 3e-5, where
+actual[i] evaluates to 0.53957808017730713,
+expected[i] evaluates to 1.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 4
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.03119051456451416, which exceeds 3e-5, where
+actual[i] evaluates to -0.53119051456451416,
+expected[i] evaluates to -0.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+ATTENTION_OUTPUT -2.93366611e-08 -1.676380634e-08 -4.190951586e-09 -0.02510084957 -0.02510084212 1.140000343
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.025100849568843842, which exceeds 3e-5, where
+actual[i] evaluates to -0.025100849568843842,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.025100842118263245, which exceeds 3e-5, where
+actual[i] evaluates to -0.025100842118263245,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 4
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.1400003433227539, which exceeds 3e-5, where
+actual[i] evaluates to 1.1400003433227539,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+ATTENTION_OUTPUT -0.5951230526 0 0.5951230526 -0.1458411813 0 0.1458411813 -0.5090357065 0 0.5090357065 -0.1068225354 0.4272901416 -0.2136450708 -0.09427055717 0.3770822287 -0.1885411143 -0.04890691862 0.1956276745 -0.09781383723
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.6548769474029541, which exceeds 3e-5, where
+actual[i] evaluates to -0.5951230525970459,
+expected[i] evaluates to -1.25, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.6548769474029541, which exceeds 3e-5, where
+actual[i] evaluates to 0.5951230525970459,
+expected[i] evaluates to 1.25, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.14584118127822876, which exceeds 3e-5, where
+actual[i] evaluates to -0.14584118127822876,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.14584118127822876, which exceeds 3e-5, where
+actual[i] evaluates to 0.14584118127822876,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.50903570652008057, which exceeds 3e-5, where
+actual[i] evaluates to -0.50903570652008057,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 6
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.50903570652008057, which exceeds 3e-5, where
+actual[i] evaluates to 0.50903570652008057,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 8
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.14317746460437775, which exceeds 3e-5, where
+actual[i] evaluates to -0.10682253539562225,
+expected[i] evaluates to -0.25, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 9
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.57270985841751099, which exceeds 3e-5, where
+actual[i] evaluates to 0.42729014158248901,
+expected[i] evaluates to 1, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 10
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.28635492920875549, which exceeds 3e-5, where
+actual[i] evaluates to -0.21364507079124451,
+expected[i] evaluates to -0.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 11
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.094270557165145874, which exceeds 3e-5, where
+actual[i] evaluates to -0.094270557165145874,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 12
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.3770822286605835, which exceeds 3e-5, where
+actual[i] evaluates to 0.3770822286605835,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 13
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.18854111433029175, which exceeds 3e-5, where
+actual[i] evaluates to -0.18854111433029175,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 14
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.048906918615102768, which exceeds 3e-5, where
+actual[i] evaluates to -0.048906918615102768,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 15
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.19562767446041107, which exceeds 3e-5, where
+actual[i] evaluates to 0.19562767446041107,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 16
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.097813837230205536, which exceeds 3e-5, where
+actual[i] evaluates to -0.097813837230205536,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 17
+
+ATTENTION_OUTPUT -2.235174179e-08 3.725290298e-09 -1.862645149e-08 -2.793967724e-09 4.656612873e-10 -2.328306437e-09 0 0 0 0.1479293555 -0.295858711 0.2218940258 -0.0108586289 0.0217172578 -0.01628794335 -0.1370707303 0.2741414607 -0.2056061029
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.1479293555021286, which exceeds 3e-5, where
+actual[i] evaluates to 0.1479293555021286,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 9
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.2958587110042572, which exceeds 3e-5, where
+actual[i] evaluates to -0.2958587110042572,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 10
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.2218940258026123, which exceeds 3e-5, where
+actual[i] evaluates to 0.2218940258026123,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 11
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.010858628898859024, which exceeds 3e-5, where
+actual[i] evaluates to -0.010858628898859024,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 12
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.021717257797718048, which exceeds 3e-5, where
+actual[i] evaluates to 0.021717257797718048,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 13
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.016287943348288536, which exceeds 3e-5, where
+actual[i] evaluates to -0.016287943348288536,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 14
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.13707073032855988, which exceeds 3e-5, where
+actual[i] evaluates to -0.13707073032855988,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 15
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.27414146065711975, which exceeds 3e-5, where
+actual[i] evaluates to 0.27414146065711975,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 16
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.20560610294342041, which exceeds 3e-5, where
+actual[i] evaluates to -0.20560610294342041,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 17
+
+[  FAILED  ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/1, where GetParam() = (1, 3, 2, false) (0 ms)
+[ RUN      ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/2
+ATTENTION_OUTPUT -0.9253802896 -0.6639125943 -0.1753803939 -0.2561810315 -0.7562159896 0.4938189387
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.3246197104454041, which exceeds 3e-5, where
+actual[i] evaluates to -0.92538028955459595,
+expected[i] evaluates to -2.25, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.1639125943183899, which exceeds 3e-5, where
+actual[i] evaluates to -0.66391259431838989,
+expected[i] evaluates to 0.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.3246196061372757, which exceeds 3e-5, where
+actual[i] evaluates to -0.1753803938627243,
+expected[i] evaluates to -1.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.12097448110580444, which exceeds 3e-5, where
+actual[i] evaluates to -0.2561810314655304,
+expected[i] evaluates to -0.37715551257133484, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.58734294772148132, which exceeds 3e-5, where
+actual[i] evaluates to -0.75621598958969116,
+expected[i] evaluates to -0.16887304186820984, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 4
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.12097445130348206, which exceeds 3e-5, where
+actual[i] evaluates to 0.49381893873214722,
+expected[i] evaluates to 0.37284448742866516, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+ATTENTION_OUTPUT -2.93366611e-08 -1.676380634e-08 -4.190951586e-09 -0.5169338584 -0.5169338584 -0.516933918
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.56753963232040405, which exceeds 3e-5, where
+actual[i] evaluates to -0.5169338583946228,
+expected[i] evaluates to -1.0844734907150269, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.56753963232040405, which exceeds 3e-5, where
+actual[i] evaluates to -0.5169338583946228,
+expected[i] evaluates to -1.0844734907150269, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 4
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.56753957271575928, which exceeds 3e-5, where
+actual[i] evaluates to -0.51693391799926758,
+expected[i] evaluates to -1.0844734907150269, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+ATTENTION_OUTPUT -0.6740685701 0.3157821 0.4372320175 -0.2367069125 0.3634629548 -0.0358902961 -0.5892244577 0.3207549155 0.3486582637
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.69215679168701172, which exceeds 3e-5, where
+actual[i] evaluates to -0.67406857013702393,
+expected[i] evaluates to -1.3662253618240356, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.14911946654319763, which exceeds 3e-5, where
+actual[i] evaluates to 0.3157820999622345,
+expected[i] evaluates to 0.46490156650543213, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.58031713962554932, which exceeds 3e-5, where
+actual[i] evaluates to 0.43723201751708984,
+expected[i] evaluates to 1.0175491571426392, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.10293230414390564, which exceeds 3e-5, where
+actual[i] evaluates to -0.23670691251754761,
+expected[i] evaluates to -0.13377460837364197, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.17163547873497009, which exceeds 3e-5, where
+actual[i] evaluates to 0.36346295475959778,
+expected[i] evaluates to 0.53509843349456787, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 4
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.23165892064571381, which exceeds 3e-5, where
+actual[i] evaluates to -0.035890296101570129,
+expected[i] evaluates to -0.26754921674728394, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.58922445774078369, which exceeds 3e-5, where
+actual[i] evaluates to -0.58922445774078369,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 6
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.32075491547584534, which exceeds 3e-5, where
+actual[i] evaluates to 0.32075491547584534,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 7
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.34865826368331909, which exceeds 3e-5, where
+actual[i] evaluates to 0.34865826368331909,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 8
+
+ATTENTION_OUTPUT 0.2172249258 -0.4344498813 0.3258373737 -0.1020803675 0.204160735 -0.1531205475 -0.1151445955 0.230289191 -0.1727168858
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.023769170045852661, which exceeds 3e-5, where
+actual[i] evaluates to 0.21722492575645447,
+expected[i] evaluates to 0.24099409580230713, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.047538310289382935, which exceeds 3e-5, where
+actual[i] evaluates to -0.43444988131523132,
+expected[i] evaluates to -0.48198819160461426, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.035653769969940186, which exceeds 3e-5, where
+actual[i] evaluates to 0.32583737373352051,
+expected[i] evaluates to 0.36149114370346069, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.13891372829675674, which exceeds 3e-5, where
+actual[i] evaluates to -0.10208036750555038,
+expected[i] evaluates to -0.24099409580230713, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.27782745659351349, which exceeds 3e-5, where
+actual[i] evaluates to 0.20416073501110077,
+expected[i] evaluates to 0.48198819160461426, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 4
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.20837059617042542, which exceeds 3e-5, where
+actual[i] evaluates to -0.15312054753303528,
+expected[i] evaluates to -0.36149114370346069, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.11514459550380707, which exceeds 3e-5, where
+actual[i] evaluates to -0.11514459550380707,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 6
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.23028919100761414, which exceeds 3e-5, where
+actual[i] evaluates to 0.23028919100761414,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 7
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.17271688580513, which exceeds 3e-5, where
+actual[i] evaluates to -0.17271688580513,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 8
+
+[  FAILED  ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/2, where GetParam() = (2, 3, 1, false) (1 ms)
+[ RUN      ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/3
+ATTENTION_OUTPUT -0.9253802896 -0.6639125943 -0.1753803939 -0.2561810315 -0.7562159896 0.4938189387 0.7810922265 0.02852074802 0.1175705045 -0.2413630038 0.875382483 -0.3843255639
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.3246197104454041, which exceeds 3e-5, where
+actual[i] evaluates to -0.92538028955459595,
+expected[i] evaluates to -2.25, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.1639125943183899, which exceeds 3e-5, where
+actual[i] evaluates to -0.66391259431838989,
+expected[i] evaluates to 0.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.3246196061372757, which exceeds 3e-5, where
+actual[i] evaluates to -0.1753803938627243,
+expected[i] evaluates to -1.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.12097448110580444, which exceeds 3e-5, where
+actual[i] evaluates to -0.2561810314655304,
+expected[i] evaluates to -0.37715551257133484, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.58734294772148132, which exceeds 3e-5, where
+actual[i] evaluates to -0.75621598958969116,
+expected[i] evaluates to -0.16887304186820984, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 4
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.12097445130348206, which exceeds 3e-5, where
+actual[i] evaluates to 0.49381893873214722,
+expected[i] evaluates to 0.37284448742866516, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 2.0310922265052795, which exceeds 3e-5, where
+actual[i] evaluates to 0.78109222650527954,
+expected[i] evaluates to -1.25, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 6
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.4714792519807816, which exceeds 3e-5, where
+actual[i] evaluates to 0.028520748019218445,
+expected[i] evaluates to 1.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 7
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.61757050454616547, which exceeds 3e-5, where
+actual[i] evaluates to 0.11757050454616547,
+expected[i] evaluates to -0.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 8
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.2291865199804306, which exceeds 3e-5, where
+actual[i] evaluates to -0.24136300384998322,
+expected[i] evaluates to -0.47054952383041382, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 9
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.34624236822128296, which exceeds 3e-5, where
+actual[i] evaluates to 0.87538248300552368,
+expected[i] evaluates to 1.2216248512268066, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 10
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.39404958486557007, which exceeds 3e-5, where
+actual[i] evaluates to -0.38432556390762329,
+expected[i] evaluates to -0.77837514877319336, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 11
+
+ATTENTION_OUTPUT -2.93366611e-08 -1.676380634e-08 -4.190951586e-09 -0.5169338584 -0.5169338584 -0.516933918 0.09577291459 0.09577292204 -1.541402578 0.09153668582 0.09153673798 1.541495085
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.56753963232040405, which exceeds 3e-5, where
+actual[i] evaluates to -0.5169338583946228,
+expected[i] evaluates to -1.0844734907150269, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.56753963232040405, which exceeds 3e-5, where
+actual[i] evaluates to -0.5169338583946228,
+expected[i] evaluates to -1.0844734907150269, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 4
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.56753957271575928, which exceeds 3e-5, where
+actual[i] evaluates to -0.51693391799926758,
+expected[i] evaluates to -1.0844734907150269, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.095772914588451385, which exceeds 3e-5, where
+actual[i] evaluates to 0.095772914588451385,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 6
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.095772922039031982, which exceeds 3e-5, where
+actual[i] evaluates to 0.095772922039031982,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 7
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.5414025783538818, which exceeds 3e-5, where
+actual[i] evaluates to -1.5414025783538818,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 8
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.29794909060001373, which exceeds 3e-5, where
+actual[i] evaluates to 0.091536685824394226,
+expected[i] evaluates to 0.38948577642440796, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 9
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.29794903844594955, which exceeds 3e-5, where
+actual[i] evaluates to 0.091536737978458405,
+expected[i] evaluates to 0.38948577642440796, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 10
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.1520093083381653, which exceeds 3e-5, where
+actual[i] evaluates to 1.5414950847625732,
+expected[i] evaluates to 0.38948577642440796, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 11
+
+ATTENTION_OUTPUT -0.6740685701 0.3157821 0.4372320175 -0.2367069125 0.3634629548 -0.0358902961 -0.5892244577 0.3207549155 0.3486582637 -0.459194541 -0.03292317688 -0.6888879538 0.03519551456 -0.1761896014 -0.08619838953 0.1739990264 -0.2908872366 0.02508631349
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.69215679168701172, which exceeds 3e-5, where
+actual[i] evaluates to -0.67406857013702393,
+expected[i] evaluates to -1.3662253618240356, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.14911946654319763, which exceeds 3e-5, where
+actual[i] evaluates to 0.3157820999622345,
+expected[i] evaluates to 0.46490156650543213, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.58031713962554932, which exceeds 3e-5, where
+actual[i] evaluates to 0.43723201751708984,
+expected[i] evaluates to 1.0175491571426392, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.10293230414390564, which exceeds 3e-5, where
+actual[i] evaluates to -0.23670691251754761,
+expected[i] evaluates to -0.13377460837364197, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.17163547873497009, which exceeds 3e-5, where
+actual[i] evaluates to 0.36346295475959778,
+expected[i] evaluates to 0.53509843349456787, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 4
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.23165892064571381, which exceeds 3e-5, where
+actual[i] evaluates to -0.035890296101570129,
+expected[i] evaluates to -0.26754921674728394, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.58922445774078369, which exceeds 3e-5, where
+actual[i] evaluates to -0.58922445774078369,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 6
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.32075491547584534, which exceeds 3e-5, where
+actual[i] evaluates to 0.32075491547584534,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 7
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.34865826368331909, which exceeds 3e-5, where
+actual[i] evaluates to 0.34865826368331909,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 8
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.43189468048512936, which exceeds 3e-5, where
+actual[i] evaluates to -0.45919454097747803,
+expected[i] evaluates to -0.027299860492348671, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 9
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.52275185286998749, which exceeds 3e-5, where
+actual[i] evaluates to -0.032923176884651184,
+expected[i] evaluates to -0.55567502975463867, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 10
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.21726313233375549, which exceeds 3e-5, where
+actual[i] evaluates to -0.68888795375823975,
+expected[i] evaluates to -0.47162482142448425, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 11
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.25789564847946167, which exceeds 3e-5, where
+actual[i] evaluates to 0.035195514559745789,
+expected[i] evaluates to -0.22270013391971588, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 12
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.23186463490128517, which exceeds 3e-5, where
+actual[i] evaluates to -0.1761896014213562,
+expected[i] evaluates to 0.05567503347992897, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 13
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.19217678904533386, which exceeds 3e-5, where
+actual[i] evaluates to -0.086198389530181885,
+expected[i] evaluates to -0.27837517857551575, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 14
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.17399902641773224, which exceeds 3e-5, where
+actual[i] evaluates to 0.17399902641773224,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 15
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.29088723659515381, which exceeds 3e-5, where
+actual[i] evaluates to -0.29088723659515381,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 16
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.025086313486099243, which exceeds 3e-5, where
+actual[i] evaluates to 0.025086313486099243,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 17
+
+ATTENTION_OUTPUT 0.2172249258 -0.4344498813 0.3258373737 -0.1020803675 0.204160735 -0.1531205475 -0.1151445955 0.230289191 -0.1727168858 0.8260887265 -0.4928787351 0.8371130228 -0.1107170284 0.02236930281 -0.1327541173 -0.7153716683 0.4705094099 -0.7043588758
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.023769170045852661, which exceeds 3e-5, where
+actual[i] evaluates to 0.21722492575645447,
+expected[i] evaluates to 0.24099409580230713, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.047538310289382935, which exceeds 3e-5, where
+actual[i] evaluates to -0.43444988131523132,
+expected[i] evaluates to -0.48198819160461426, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.035653769969940186, which exceeds 3e-5, where
+actual[i] evaluates to 0.32583737373352051,
+expected[i] evaluates to 0.36149114370346069, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.13891372829675674, which exceeds 3e-5, where
+actual[i] evaluates to -0.10208036750555038,
+expected[i] evaluates to -0.24099409580230713, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.27782745659351349, which exceeds 3e-5, where
+actual[i] evaluates to 0.20416073501110077,
+expected[i] evaluates to 0.48198819160461426, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 4
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.20837059617042542, which exceeds 3e-5, where
+actual[i] evaluates to -0.15312054753303528,
+expected[i] evaluates to -0.36149114370346069, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.11514459550380707, which exceeds 3e-5, where
+actual[i] evaluates to -0.11514459550380707,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 6
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.23028919100761414, which exceeds 3e-5, where
+actual[i] evaluates to 0.23028919100761414,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 7
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.17271688580513, which exceeds 3e-5, where
+actual[i] evaluates to -0.17271688580513,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 8
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.58266012370586395, which exceeds 3e-5, where
+actual[i] evaluates to 0.82608872652053833,
+expected[i] evaluates to 0.24342860281467438, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 9
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.44419301301240921, which exceeds 3e-5, where
+actual[i] evaluates to -0.49287873506546021,
+expected[i] evaluates to -0.048685722053050995, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 10
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.54499870538711548, which exceeds 3e-5, where
+actual[i] evaluates to 0.83711302280426025,
+expected[i] evaluates to 0.29211431741714478, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 11
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.13271157443523407, which exceeds 3e-5, where
+actual[i] evaluates to -0.11071702837944031,
+expected[i] evaluates to -0.24342860281467438, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 12
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.026316419243812561, which exceeds 3e-5, where
+actual[i] evaluates to 0.022369302809238434,
+expected[i] evaluates to 0.048685722053050995, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 13
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.15936020016670227, which exceeds 3e-5, where
+actual[i] evaluates to -0.1327541172504425,
+expected[i] evaluates to -0.29211431741714478, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 14
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.71537166833877563, which exceeds 3e-5, where
+actual[i] evaluates to -0.71537166833877563,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 15
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.47050940990447998, which exceeds 3e-5, where
+actual[i] evaluates to 0.47050940990447998,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 16
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.70435887575149536, which exceeds 3e-5, where
+actual[i] evaluates to -0.70435887575149536,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 17
+
+[  FAILED  ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/3, where GetParam() = (2, 3, 2, false) (1 ms)
+[ RUN      ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/4
+ATTENTION_OUTPUT -1.561108351 0.2539672554 -0.8111082911 -0.3771554232 -0.1688730419 0.3728445172 -0.6228445768 -0.08112695813 0.1271554828
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.68889164924621582, which exceeds 3e-5, where
+actual[i] evaluates to -1.5611083507537842,
+expected[i] evaluates to -2.25, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.24603274464607239, which exceeds 3e-5, where
+actual[i] evaluates to 0.25396725535392761,
+expected[i] evaluates to 0.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.6888917088508606, which exceeds 3e-5, where
+actual[i] evaluates to -0.8111082911491394,
+expected[i] evaluates to -1.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+ATTENTION_OUTPUT -2.980232239e-08 -1.862645149e-08 -7.450580597e-09 -1.084473372 -1.084473372 -1.084473372 1.486778259 1.486778259 1.486778259
+ATTENTION_OUTPUT -0.7188688517 0.06357774138 1.039065719 -0.03113117814 0.1864222586 0.2109343112
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.24603271484375, which exceeds 3e-5, where
+actual[i] evaluates to -0.71886885166168213,
+expected[i] evaluates to -0.96490156650543213, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.24603271484375, which exceeds 3e-5, where
+actual[i] evaluates to 1.0390657186508179,
+expected[i] evaluates to 1.2850984334945679, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.24603274464607239, which exceeds 3e-5, where
+actual[i] evaluates to -0.031131178140640259,
+expected[i] evaluates to 0.21490156650543213, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.24603274092078209, which exceeds 3e-5, where
+actual[i] evaluates to 0.21093431115150452,
+expected[i] evaluates to -0.035098429769277573, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+ATTENTION_OUTPUT 0.7365868092 -1.142778516 0.6918863058 -0.7365868092 1.142778516 -0.6918863058
+[  FAILED  ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/4, where GetParam() = (3, 2, 1, false) (0 ms)
+[ RUN      ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/5
+ATTENTION_OUTPUT -1.561108351 0.2539672554 -0.8111082911 -0.3771554232 -0.1688730419 0.3728445172 -0.6228445768 -0.08112695813 0.1271554828 -1.003967285 0.8111082911 -0.2539672554 -0.4138996899 -0.8410809636 0.3361003399 -0.3400306702 -1.047914028 0.4099693298
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.68889164924621582, which exceeds 3e-5, where
+actual[i] evaluates to -1.5611083507537842,
+expected[i] evaluates to -2.25, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.24603274464607239, which exceeds 3e-5, where
+actual[i] evaluates to 0.25396725535392761,
+expected[i] evaluates to 0.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.6888917088508606, which exceeds 3e-5, where
+actual[i] evaluates to -0.8111082911491394,
+expected[i] evaluates to -1.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.00396728515625, which exceeds 3e-5, where
+actual[i] evaluates to -1.00396728515625,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 9
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 2.8111082911491394, which exceeds 3e-5, where
+actual[i] evaluates to 0.8111082911491394,
+expected[i] evaluates to -2, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 10
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.0039672553539276, which exceeds 3e-5, where
+actual[i] evaluates to -0.25396725535392761,
+expected[i] evaluates to 0.75, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 11
+
+ATTENTION_OUTPUT -2.980232239e-08 -1.862645149e-08 -7.450580597e-09 -1.084473372 -1.084473372 -1.084473372 1.486778259 1.486778259 1.486778259 0.6558083892 0.6558083892 0.6558083892 1.167958021 1.167958021 1.16795814 -0.8771985769 -0.8771985769 -0.8771985769
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.65580838918685913, which exceeds 3e-5, where
+actual[i] evaluates to 0.65580838918685913,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 9
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.65580838918685913, which exceeds 3e-5, where
+actual[i] evaluates to 0.65580838918685913,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 10
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.65580838918685913, which exceeds 3e-5, where
+actual[i] evaluates to 0.65580838918685913,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 11
+
+ATTENTION_OUTPUT -0.7188688517 0.06357774138 1.039065719 -0.03113117814 0.1864222586 0.2109343112 0.5311492682 0.5213191509 0.1327287704 -0.5311492682 0.4786808491 -0.8827288151
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.24603271484375, which exceeds 3e-5, where
+actual[i] evaluates to -0.71886885166168213,
+expected[i] evaluates to -0.96490156650543213, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.24603271484375, which exceeds 3e-5, where
+actual[i] evaluates to 1.0390657186508179,
+expected[i] evaluates to 1.2850984334945679, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.24603274464607239, which exceeds 3e-5, where
+actual[i] evaluates to -0.031131178140640259,
+expected[i] evaluates to 0.21490156650543213, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.24603274092078209, which exceeds 3e-5, where
+actual[i] evaluates to 0.21093431115150452,
+expected[i] evaluates to -0.035098429769277573, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.80317381024360657, which exceeds 3e-5, where
+actual[i] evaluates to 0.53114926815032959,
+expected[i] evaluates to -0.27202454209327698, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 6
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.20079344511032104, which exceeds 3e-5, where
+actual[i] evaluates to 0.52131915092468262,
+expected[i] evaluates to 0.72211259603500366, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 7
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.0039672404527664, which exceeds 3e-5, where
+actual[i] evaluates to 0.13272877037525177,
+expected[i] evaluates to -0.87123847007751465, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 8
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.80317381024360657, which exceeds 3e-5, where
+actual[i] evaluates to -0.53114926815032959,
+expected[i] evaluates to 0.27202454209327698, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 9
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.20079344511032104, which exceeds 3e-5, where
+actual[i] evaluates to 0.47868084907531738,
+expected[i] evaluates to 0.27788740396499634, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 10
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.0039672926068306, which exceeds 3e-5, where
+actual[i] evaluates to -0.88272881507873535,
+expected[i] evaluates to 0.12123847752809525, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 11
+
+ATTENTION_OUTPUT 0.7365868092 -1.142778516 0.6918863058 -0.7365868092 1.142778516 -0.6918863058 -0.8516705632 1.04643929 -0.9568446875 0.8516705036 -1.04643929 0.9568447471
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.36433801054954529, which exceeds 3e-5, where
+actual[i] evaluates to -0.85167056322097778,
+expected[i] evaluates to -0.4873325526714325, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 6
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.07286757230758667, which exceeds 3e-5, where
+actual[i] evaluates to 1.0464392900466919,
+expected[i] evaluates to 0.97357171773910522, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 7
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.43720555305480957, which exceeds 3e-5, where
+actual[i] evaluates to -0.95684468746185303,
+expected[i] evaluates to -0.51963913440704346, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 8
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.36433795094490051, which exceeds 3e-5, where
+actual[i] evaluates to 0.85167050361633301,
+expected[i] evaluates to 0.4873325526714325, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 9
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.07286757230758667, which exceeds 3e-5, where
+actual[i] evaluates to -1.0464392900466919,
+expected[i] evaluates to -0.97357171773910522, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 10
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.43720561265945435, which exceeds 3e-5, where
+actual[i] evaluates to 0.9568447470664978,
+expected[i] evaluates to 0.51963913440704346, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 11
+
+[  FAILED  ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/5, where GetParam() = (3, 2, 2, false) (0 ms)
+[ RUN      ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/6
+ATTENTION_OUTPUT -2.25 0.5 -1.5 -0.3771554232 -0.1688730419 0.3728445172 -0.4079405069 -0.7432080507 0.3420594931
+ATTENTION_OUTPUT 0 0 0 -1.084473372 -1.084473372 -1.084473372 0.7743117809 0.7743117809 0.7743118405
+ATTENTION_OUTPUT -1.103372931 0.2020490766 1.19278419 0.09459558129 0.3067282438 -0.1153024286 0.2587773204 -0.2587773204 0.1725182086
+ATTENTION_OUTPUT 0.6661554575 -1.048869967 0.6449320316 -0.4782158732 0.798283875 -0.5196390152 -0.1879395694 0.2505860925 -0.1252930462
+[       OK ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/6 (0 ms)
+[ RUN      ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/7
+ATTENTION_OUTPUT -2.25 0.5 -1.5 -0.3771554232 -0.1688730419 0.3728445172 -0.4079405069 -0.7432080507 0.3420594931 -1.25 1.5 -0.5 1.029742002 0.6858063936 -1.314193726 1.124918222 -0.08244792372 -0.02651188523
+ATTENTION_OUTPUT 0 0 0 -1.084473372 -1.084473372 -1.084473372 0.7743117809 0.7743117809 0.7743118405 0 0 0 0.283864677 0.2838646472 0.2838646173 0.2237534523 0.2237534672 -1.308790684
+ATTENTION_OUTPUT -1.103372931 0.2020490766 1.19278419 0.09459558129 0.3067282438 -0.1153024286 0.2587773204 -0.2587773204 0.1725182086 -0.833129704 0.6023712754 -1.212008595 0.400301069 0.614043057 0.1373870671 0.4328286648 -0.2164143324 0.3246214986
+ATTENTION_OUTPUT 0.6661554575 -1.048869967 0.6449320316 -0.4782158732 0.798283875 -0.5196390152 -0.1879395694 0.2505860925 -0.1252930462 0.3672459126 -0.3597968221 0.3292797804 0.08350236714 0.1794975698 0.03131880611 -0.4507482648 0.1802993119 -0.3605986238
+[       OK ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/7 (0 ms)
+[ RUN      ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/8
+ATTENTION_OUTPUT -0.7188974619 -0.704267025 0.03110256046
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.5311025381088257, which exceeds 3e-5, where
+actual[i] evaluates to -0.71889746189117432,
+expected[i] evaluates to -2.25, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.2042670249938965, which exceeds 3e-5, where
+actual[i] evaluates to -0.70426702499389648,
+expected[i] evaluates to 0.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.5311025604605675, which exceeds 3e-5, where
+actual[i] evaluates to 0.031102560460567474,
+expected[i] evaluates to -1.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+ATTENTION_OUTPUT -1.613097922e-08 -9.678587709e-09 -3.226195977e-09
+ATTENTION_OUTPUT -0.5301659107 0 0.5301659107 -0.2354011685 0 0.2354011685 -0.4844329059 0 0.4844329059
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.7198340892791748, which exceeds 3e-5, where
+actual[i] evaluates to -0.5301659107208252,
+expected[i] evaluates to -1.25, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.7198340892791748, which exceeds 3e-5, where
+actual[i] evaluates to 0.5301659107208252,
+expected[i] evaluates to 1.25, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.23540116846561432, which exceeds 3e-5, where
+actual[i] evaluates to -0.23540116846561432,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.23540116846561432, which exceeds 3e-5, where
+actual[i] evaluates to 0.23540116846561432,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.48443290591239929, which exceeds 3e-5, where
+actual[i] evaluates to -0.48443290591239929,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 6
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.48443290591239929, which exceeds 3e-5, where
+actual[i] evaluates to 0.48443290591239929,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 8
+
+ATTENTION_OUTPUT -6.452391954e-09 1.075398659e-09 -5.376993073e-09 0 0 0 -6.452391954e-09 1.075398659e-09 -5.376993073e-09
+[  FAILED  ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/8, where GetParam() = (1, 3, 1, true) (0 ms)
+[ RUN      ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/9
+ATTENTION_OUTPUT -0.7188974619 -0.704267025 0.03110256046 0.5765901804 0.426761508 -0.3947608769
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.5311025381088257, which exceeds 3e-5, where
+actual[i] evaluates to -0.71889746189117432,
+expected[i] evaluates to -2.25, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.2042670249938965, which exceeds 3e-5, where
+actual[i] evaluates to -0.70426702499389648,
+expected[i] evaluates to 0.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.5311025604605675, which exceeds 3e-5, where
+actual[i] evaluates to 0.031102560460567474,
+expected[i] evaluates to -1.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.8265901803970337, which exceeds 3e-5, where
+actual[i] evaluates to 0.57659018039703369,
+expected[i] evaluates to -1.25, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.0732384920120239, which exceeds 3e-5, where
+actual[i] evaluates to 0.42676150798797607,
+expected[i] evaluates to 1.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 4
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.10523912310600281, which exceeds 3e-5, where
+actual[i] evaluates to -0.39476087689399719,
+expected[i] evaluates to -0.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+ATTENTION_OUTPUT -1.613097922e-08 -9.678587709e-09 -3.226195977e-09 -0.06390502304 -0.06390500069 0.7290212512
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.063905023038387299, which exceeds 3e-5, where
+actual[i] evaluates to -0.063905023038387299,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.063905000686645508, which exceeds 3e-5, where
+actual[i] evaluates to -0.063905000686645508,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 4
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.72902125120162964, which exceeds 3e-5, where
+actual[i] evaluates to 0.72902125120162964,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+ATTENTION_OUTPUT -0.5301659107 0 0.5301659107 -0.2354011685 0 0.2354011685 -0.4844329059 0 0.4844329059 -0.09737743437 0.3895097375 -0.1947548687 -0.09059742093 0.3623896837 -0.1811948419 -0.06202513352 0.2481005341 -0.124050267
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.7198340892791748, which exceeds 3e-5, where
+actual[i] evaluates to -0.5301659107208252,
+expected[i] evaluates to -1.25, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.7198340892791748, which exceeds 3e-5, where
+actual[i] evaluates to 0.5301659107208252,
+expected[i] evaluates to 1.25, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.23540116846561432, which exceeds 3e-5, where
+actual[i] evaluates to -0.23540116846561432,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.23540116846561432, which exceeds 3e-5, where
+actual[i] evaluates to 0.23540116846561432,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.48443290591239929, which exceeds 3e-5, where
+actual[i] evaluates to -0.48443290591239929,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 6
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.48443290591239929, which exceeds 3e-5, where
+actual[i] evaluates to 0.48443290591239929,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 8
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.15262256562709808, which exceeds 3e-5, where
+actual[i] evaluates to -0.097377434372901917,
+expected[i] evaluates to -0.25, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 9
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.61049026250839233, which exceeds 3e-5, where
+actual[i] evaluates to 0.38950973749160767,
+expected[i] evaluates to 1, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 10
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.30524513125419617, which exceeds 3e-5, where
+actual[i] evaluates to -0.19475486874580383,
+expected[i] evaluates to -0.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 11
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.090597420930862427, which exceeds 3e-5, where
+actual[i] evaluates to -0.090597420930862427,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 12
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.36238968372344971, which exceeds 3e-5, where
+actual[i] evaluates to 0.36238968372344971,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 13
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.18119484186172485, which exceeds 3e-5, where
+actual[i] evaluates to -0.18119484186172485,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 14
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.062025133520364761, which exceeds 3e-5, where
+actual[i] evaluates to -0.062025133520364761,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 15
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.24810053408145905, which exceeds 3e-5, where
+actual[i] evaluates to 0.24810053408145905,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 16
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.12405026704072952, which exceeds 3e-5, where
+actual[i] evaluates to -0.12405026704072952,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 17
+
+ATTENTION_OUTPUT -6.452391954e-09 1.075398659e-09 -5.376993073e-09 0 0 0 -6.452391954e-09 1.075398659e-09 -5.376993073e-09 0.0889698714 -0.1779397428 0.1334547997 0.004315576982 -0.008631153964 0.00647336524 -0.0932854414 0.1865708828 -0.1399281621
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.088969871401786804, which exceeds 3e-5, where
+actual[i] evaluates to 0.088969871401786804,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 9
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.17793974280357361, which exceeds 3e-5, where
+actual[i] evaluates to -0.17793974280357361,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 10
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.13345479965209961, which exceeds 3e-5, where
+actual[i] evaluates to 0.13345479965209961,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 11
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.0043155769817531109, which exceeds 3e-5, where
+actual[i] evaluates to 0.0043155769817531109,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 12
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.0086311539635062218, which exceeds 3e-5, where
+actual[i] evaluates to -0.0086311539635062218,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 13
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.0064733652397990227, which exceeds 3e-5, where
+actual[i] evaluates to 0.0064733652397990227,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 14
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.093285441398620605, which exceeds 3e-5, where
+actual[i] evaluates to -0.093285441398620605,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 15
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.18657088279724121, which exceeds 3e-5, where
+actual[i] evaluates to 0.18657088279724121,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 16
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.13992816209793091, which exceeds 3e-5, where
+actual[i] evaluates to -0.13992816209793091,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 17
+
+[  FAILED  ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/9, where GetParam() = (1, 3, 2, true) (0 ms)
+[ RUN      ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/10
+ATTENTION_OUTPUT -0.7188974619 -0.704267025 0.03110256791 -0.2890702486 -0.7536615133 0.4609297514
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.5311025381088257, which exceeds 3e-5, where
+actual[i] evaluates to -0.71889746189117432,
+expected[i] evaluates to -2.25, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.2042670249938965, which exceeds 3e-5, where
+actual[i] evaluates to -0.70426702499389648,
+expected[i] evaluates to 0.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.5311025679111481, which exceeds 3e-5, where
+actual[i] evaluates to 0.031102567911148071,
+expected[i] evaluates to -1.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.13992759585380554, which exceeds 3e-5, where
+actual[i] evaluates to -0.2890702486038208,
+expected[i] evaluates to -0.42899784445762634, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.60330359637737274, which exceeds 3e-5, where
+actual[i] evaluates to -0.75366151332855225,
+expected[i] evaluates to -0.1503579169511795, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 4
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.13992759585380554, which exceeds 3e-5, where
+actual[i] evaluates to 0.4609297513961792,
+expected[i] evaluates to 0.32100215554237366, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+ATTENTION_OUTPUT -1.613097922e-08 -9.678587709e-09 -3.226195977e-09 -0.2964544594 -0.2964544594 -0.2964544594
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.33173134922981262, which exceeds 3e-5, where
+actual[i] evaluates to -0.29645445942878723,
+expected[i] evaluates to -0.62818580865859985, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.33173134922981262, which exceeds 3e-5, where
+actual[i] evaluates to -0.29645445942878723,
+expected[i] evaluates to -0.62818580865859985, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 4
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.33173134922981262, which exceeds 3e-5, where
+actual[i] evaluates to -0.29645445942878723,
+expected[i] evaluates to -0.62818580865859985, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+ATTENTION_OUTPUT -0.6109768748 0.3232439458 0.3685439229 -0.3230468929 0.3505828977 0.06010971963 -0.5659762025 0.3261731565 0.3213463426
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.75895148515701294, which exceeds 3e-5, where
+actual[i] evaluates to -0.61097687482833862,
+expected[i] evaluates to -1.3699283599853516, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.15646973252296448, which exceeds 3e-5, where
+actual[i] evaluates to 0.32324394583702087,
+expected[i] evaluates to 0.47971367835998535, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.64159923791885376, which exceeds 3e-5, where
+actual[i] evaluates to 0.36854392290115356,
+expected[i] evaluates to 1.0101431608200073, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.19297531247138977, which exceeds 3e-5, where
+actual[i] evaluates to -0.32304689288139343,
+expected[i] evaluates to -0.13007158041000366, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.16970342397689819, which exceeds 3e-5, where
+actual[i] evaluates to 0.35058289766311646,
+expected[i] evaluates to 0.52028632164001465, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 4
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.32025288045406342, which exceeds 3e-5, where
+actual[i] evaluates to 0.060109719634056091,
+expected[i] evaluates to -0.26014316082000732, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.56597620248794556, which exceeds 3e-5, where
+actual[i] evaluates to -0.56597620248794556,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 6
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.32617315649986267, which exceeds 3e-5, where
+actual[i] evaluates to 0.32617315649986267,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 7
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.32134634256362915, which exceeds 3e-5, where
+actual[i] evaluates to 0.32134634256362915,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 8
+
+ATTENTION_OUTPUT 0.1271083504 -0.2542167008 0.190662533 -0.05822507292 0.1164501458 -0.08733761311 -0.06888328493 0.137766555 -0.1033249274
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.012488499283790588, which exceeds 3e-5, where
+actual[i] evaluates to 0.12710835039615631,
+expected[i] evaluates to 0.1395968496799469, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.024976998567581177, which exceeds 3e-5, where
+actual[i] evaluates to -0.25421670079231262,
+expected[i] evaluates to -0.2791936993598938, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.018732726573944092, which exceeds 3e-5, where
+actual[i] evaluates to 0.19066253304481506,
+expected[i] evaluates to 0.20939525961875916, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.081371776759624481, which exceeds 3e-5, where
+actual[i] evaluates to -0.058225072920322418,
+expected[i] evaluates to -0.1395968496799469, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.16274355351924896, which exceeds 3e-5, where
+actual[i] evaluates to 0.11645014584064484,
+expected[i] evaluates to 0.2791936993598938, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 4
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.12205764651298523, which exceeds 3e-5, where
+actual[i] evaluates to -0.087337613105773926,
+expected[i] evaluates to -0.20939525961875916, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.06888328492641449, which exceeds 3e-5, where
+actual[i] evaluates to -0.06888328492641449,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 6
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.13776655495166779, which exceeds 3e-5, where
+actual[i] evaluates to 0.13776655495166779,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 7
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.10332492738962173, which exceeds 3e-5, where
+actual[i] evaluates to -0.10332492738962173,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 8
+
+[  FAILED  ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/10, where GetParam() = (2, 3, 1, true) (0 ms)
+[ RUN      ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/11
+ATTENTION_OUTPUT -0.7188974619 -0.704267025 0.03110256791 -0.2890702486 -0.7536615133 0.4609297514 0.7350780368 0.1233218014 -0.007057309151 0.1453796476 0.6167554855 -0.305539459
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.5311025381088257, which exceeds 3e-5, where
+actual[i] evaluates to -0.71889746189117432,
+expected[i] evaluates to -2.25, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.2042670249938965, which exceeds 3e-5, where
+actual[i] evaluates to -0.70426702499389648,
+expected[i] evaluates to 0.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.5311025679111481, which exceeds 3e-5, where
+actual[i] evaluates to 0.031102567911148071,
+expected[i] evaluates to -1.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.13992759585380554, which exceeds 3e-5, where
+actual[i] evaluates to -0.2890702486038208,
+expected[i] evaluates to -0.42899784445762634, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.60330359637737274, which exceeds 3e-5, where
+actual[i] evaluates to -0.75366151332855225,
+expected[i] evaluates to -0.1503579169511795, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 4
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.13992759585380554, which exceeds 3e-5, where
+actual[i] evaluates to 0.4609297513961792,
+expected[i] evaluates to 0.32100215554237366, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.9850780367851257, which exceeds 3e-5, where
+actual[i] evaluates to 0.73507803678512573,
+expected[i] evaluates to -1.25, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 6
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.3766781985759735, which exceeds 3e-5, where
+actual[i] evaluates to 0.12332180142402649,
+expected[i] evaluates to 1.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 7
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.4929426908493042, which exceeds 3e-5, where
+actual[i] evaluates to -0.0070573091506958008,
+expected[i] evaluates to -0.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 8
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.25080468505620956, which exceeds 3e-5, where
+actual[i] evaluates to 0.14537964761257172,
+expected[i] evaluates to -0.10542503744363785, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 9
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.47446775436401367, which exceeds 3e-5, where
+actual[i] evaluates to 0.61675548553466797,
+expected[i] evaluates to 1.0912232398986816, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 10
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.60323730111122131, which exceeds 3e-5, where
+actual[i] evaluates to -0.30553945899009705,
+expected[i] evaluates to -0.90877676010131836, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 11
+
+ATTENTION_OUTPUT -1.613097922e-08 -9.678587709e-09 -3.226195977e-09 -0.2964544594 -0.2964544594 -0.2964544594 0.02375147305 0.02375147119 -0.9032794237 -0.005648784339 -0.005648780614 1.059973001
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.33173134922981262, which exceeds 3e-5, where
+actual[i] evaluates to -0.29645445942878723,
+expected[i] evaluates to -0.62818580865859985, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.33173134922981262, which exceeds 3e-5, where
+actual[i] evaluates to -0.29645445942878723,
+expected[i] evaluates to -0.62818580865859985, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 4
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.33173134922981262, which exceeds 3e-5, where
+actual[i] evaluates to -0.29645445942878723,
+expected[i] evaluates to -0.62818580865859985, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.023751473054289818, which exceeds 3e-5, where
+actual[i] evaluates to 0.023751473054289818,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 6
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.023751471191644669, which exceeds 3e-5, where
+actual[i] evaluates to 0.023751471191644669,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 7
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.90327942371368408, which exceeds 3e-5, where
+actual[i] evaluates to -0.90327942371368408,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 8
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.2915390357375145, which exceeds 3e-5, where
+actual[i] evaluates to -0.005648784339427948,
+expected[i] evaluates to 0.28589025139808655, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 9
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.2915390320122242, which exceeds 3e-5, where
+actual[i] evaluates to -0.0056487806141376495,
+expected[i] evaluates to 0.28589025139808655, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 10
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.77408275008201599, which exceeds 3e-5, where
+actual[i] evaluates to 1.0599730014801025,
+expected[i] evaluates to 0.28589025139808655, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 11
+
+ATTENTION_OUTPUT -0.6109768748 0.3232439458 0.3685439229 -0.3230468929 0.3505828977 0.06010971963 -0.5659762025 0.3261731565 0.3213463426 -0.3010932803 -0.08912396431 -0.5042311549 -0.01722475886 -0.1723940521 -0.1589644551 0.06831799448 -0.2384819686 -0.08680441976
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.75895148515701294, which exceeds 3e-5, where
+actual[i] evaluates to -0.61097687482833862,
+expected[i] evaluates to -1.3699283599853516, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.15646973252296448, which exceeds 3e-5, where
+actual[i] evaluates to 0.32324394583702087,
+expected[i] evaluates to 0.47971367835998535, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.64159923791885376, which exceeds 3e-5, where
+actual[i] evaluates to 0.36854392290115356,
+expected[i] evaluates to 1.0101431608200073, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.19297531247138977, which exceeds 3e-5, where
+actual[i] evaluates to -0.32304689288139343,
+expected[i] evaluates to -0.13007158041000366, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.16970342397689819, which exceeds 3e-5, where
+actual[i] evaluates to 0.35058289766311646,
+expected[i] evaluates to 0.52028632164001465, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 4
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.32025288045406342, which exceeds 3e-5, where
+actual[i] evaluates to 0.060109719634056091,
+expected[i] evaluates to -0.26014316082000732, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.56597620248794556, which exceeds 3e-5, where
+actual[i] evaluates to -0.56597620248794556,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 6
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.32617315649986267, which exceeds 3e-5, where
+actual[i] evaluates to 0.32617315649986267,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 7
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.32134634256362915, which exceeds 3e-5, where
+actual[i] evaluates to 0.32134634256362915,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 8
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.37811470031738281, which exceeds 3e-5, where
+actual[i] evaluates to -0.30109328031539917,
+expected[i] evaluates to 0.077021420001983643, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 9
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.49263137578964233, which exceeds 3e-5, where
+actual[i] evaluates to -0.089123964309692383,
+expected[i] evaluates to -0.58175534009933472, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 10
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.16300791501998901, which exceeds 3e-5, where
+actual[i] evaluates to -0.50423115491867065,
+expected[i] evaluates to -0.34122323989868164, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 11
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.30979666113853455, which exceeds 3e-5, where
+actual[i] evaluates to -0.017224758863449097,
+expected[i] evaluates to -0.32702142000198364, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 12
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.25414940714836121, which exceeds 3e-5, where
+actual[i] evaluates to -0.1723940521478653,
+expected[i] evaluates to 0.081755355000495911, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 13
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.24981230497360229, which exceeds 3e-5, where
+actual[i] evaluates to -0.15896445512771606,
+expected[i] evaluates to -0.40877676010131836, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 14
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.068317994475364685, which exceeds 3e-5, where
+actual[i] evaluates to 0.068317994475364685,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 15
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.23848196864128113, which exceeds 3e-5, where
+actual[i] evaluates to -0.23848196864128113,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 16
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.086804419755935669, which exceeds 3e-5, where
+actual[i] evaluates to -0.086804419755935669,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 17
+
+ATTENTION_OUTPUT 0.1271083504 -0.2542167008 0.190662533 -0.05822507292 0.1164501458 -0.08733761311 -0.06888328493 0.137766555 -0.1033249274 0.5242010355 -0.303327769 0.5356353521 -0.04718918353 0.02251923084 -0.05047106743 -0.4770118594 0.2808085382 -0.4851642549
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.012488499283790588, which exceeds 3e-5, where
+actual[i] evaluates to 0.12710835039615631,
+expected[i] evaluates to 0.1395968496799469, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.024976998567581177, which exceeds 3e-5, where
+actual[i] evaluates to -0.25421670079231262,
+expected[i] evaluates to -0.2791936993598938, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.018732726573944092, which exceeds 3e-5, where
+actual[i] evaluates to 0.19066253304481506,
+expected[i] evaluates to 0.20939525961875916, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.081371776759624481, which exceeds 3e-5, where
+actual[i] evaluates to -0.058225072920322418,
+expected[i] evaluates to -0.1395968496799469, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.16274355351924896, which exceeds 3e-5, where
+actual[i] evaluates to 0.11645014584064484,
+expected[i] evaluates to 0.2791936993598938, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 4
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.12205764651298523, which exceeds 3e-5, where
+actual[i] evaluates to -0.087337613105773926,
+expected[i] evaluates to -0.20939525961875916, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.06888328492641449, which exceeds 3e-5, where
+actual[i] evaluates to -0.06888328492641449,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 6
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.13776655495166779, which exceeds 3e-5, where
+actual[i] evaluates to 0.13776655495166779,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 7
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.10332492738962173, which exceeds 3e-5, where
+actual[i] evaluates to -0.10332492738962173,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 8
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.34551963210105896, which exceeds 3e-5, where
+actual[i] evaluates to 0.52420103549957275,
+expected[i] evaluates to 0.17868140339851379, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 9
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.26759148761630058, which exceeds 3e-5, where
+actual[i] evaluates to -0.3033277690410614,
+expected[i] evaluates to -0.035736281424760818, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 10
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.32121767103672028, which exceeds 3e-5, where
+actual[i] evaluates to 0.53563535213470459,
+expected[i] evaluates to 0.21441768109798431, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 11
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.13149221986532211, which exceeds 3e-5, where
+actual[i] evaluates to -0.047189183533191681,
+expected[i] evaluates to -0.17868140339851379, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 12
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.013217050582170486, which exceeds 3e-5, where
+actual[i] evaluates to 0.022519230842590332,
+expected[i] evaluates to 0.035736281424760818, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 13
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.16394661366939545, which exceeds 3e-5, where
+actual[i] evaluates to -0.050471067428588867,
+expected[i] evaluates to -0.21441768109798431, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 14
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.47701185941696167, which exceeds 3e-5, where
+actual[i] evaluates to -0.47701185941696167,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 15
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.28080853819847107, which exceeds 3e-5, where
+actual[i] evaluates to 0.28080853819847107,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 16
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.48516425490379333, which exceeds 3e-5, where
+actual[i] evaluates to -0.48516425490379333,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 17
+
+[  FAILED  ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/11, where GetParam() = (2, 3, 2, true) (0 ms)
+[ RUN      ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/12
+ATTENTION_OUTPUT -1.1737988 0.1156424731 -0.4237989187 -0.4289978147 -0.1503579021 0.3210021257 -0.5710021853 -0.09964209795 0.1789978743
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.0762012004852295, which exceeds 3e-5, where
+actual[i] evaluates to -1.1737987995147705,
+expected[i] evaluates to -2.25, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.38435752689838409, which exceeds 3e-5, where
+actual[i] evaluates to 0.11564247310161591,
+expected[i] evaluates to 0.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.0762010812759399, which exceeds 3e-5, where
+actual[i] evaluates to -0.42379891872406006,
+expected[i] evaluates to -1.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+ATTENTION_OUTPUT -2.473416849e-08 -1.182938458e-08 1.075398881e-09 -0.6281857491 -0.6281857491 -0.6281857491 0.861222446 0.861222446 0.861222446
+ATTENTION_OUTPUT -0.5953561068 0.08949893713 0.88592875 -0.1546438336 0.1605010629 0.3640711904
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.38435757160186768, which exceeds 3e-5, where
+actual[i] evaluates to -0.59535610675811768,
+expected[i] evaluates to -0.97971367835998535, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.38435757160186768, which exceeds 3e-5, where
+actual[i] evaluates to 0.88592875003814697,
+expected[i] evaluates to 1.2702863216400146, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.3843575119972229, which exceeds 3e-5, where
+actual[i] evaluates to -0.15464383363723755,
+expected[i] evaluates to 0.22971367835998535, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.38435751758515835, which exceeds 3e-5, where
+actual[i] evaluates to 0.36407119035720825,
+expected[i] evaluates to -0.020286327227950096, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+ATTENTION_OUTPUT 0.4266709685 -0.6619591713 0.4007779956 -0.4266709983 0.6619592309 -0.4007780254
+[  FAILED  ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/12, where GetParam() = (3, 2, 1, true) (0 ms)
+[ RUN      ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/13
+ATTENTION_OUTPUT -1.1737988 0.1156424731 -0.4237989187 -0.4289978147 -0.1503579021 0.3210021257 -0.5710021853 -0.09964209795 0.1789978743 -0.8656424284 0.4237989187 -0.1156424731 -0.4998546839 -0.6004067659 0.2501452565 -0.4520280957 -0.7343213558 0.2979719043
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.0762012004852295, which exceeds 3e-5, where
+actual[i] evaluates to -1.1737987995147705,
+expected[i] evaluates to -2.25, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.38435752689838409, which exceeds 3e-5, where
+actual[i] evaluates to 0.11564247310161591,
+expected[i] evaluates to 0.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 1.0762010812759399, which exceeds 3e-5, where
+actual[i] evaluates to -0.42379891872406006,
+expected[i] evaluates to -1.5, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.86564242839813232, which exceeds 3e-5, where
+actual[i] evaluates to -0.86564242839813232,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 9
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 2.4237989187240601, which exceeds 3e-5, where
+actual[i] evaluates to 0.42379891872406006,
+expected[i] evaluates to -2, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 10
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.86564247310161591, which exceeds 3e-5, where
+actual[i] evaluates to -0.11564247310161591,
+expected[i] evaluates to 0.75, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 11
+
+ATTENTION_OUTPUT -2.473416849e-08 -1.182938458e-08 1.075398881e-09 -0.6281857491 -0.6281857491 -0.6281857491 0.861222446 0.861222446 0.861222446 0.5100089312 0.5100089908 0.5100089908 0.7306380868 0.7306380868 0.7306380868 -0.5903987885 -0.5903987885 -0.5903987885
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.51000893115997314, which exceeds 3e-5, where
+actual[i] evaluates to 0.51000893115997314,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 9
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.51000899076461792, which exceeds 3e-5, where
+actual[i] evaluates to 0.51000899076461792,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 10
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.51000899076461792, which exceeds 3e-5, where
+actual[i] evaluates to 0.51000899076461792,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 11
+
+ATTENTION_OUTPUT -0.5953561068 0.08949893713 0.88592875 -0.1546438336 0.1605010629 0.3640711904 0.3308915496 0.5078279972 -0.05560339987 -0.3308914602 0.4921719432 -0.6943964958
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.38435757160186768, which exceeds 3e-5, where
+actual[i] evaluates to -0.59535610675811768,
+expected[i] evaluates to -0.97971367835998535, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.38435757160186768, which exceeds 3e-5, where
+actual[i] evaluates to 0.88592875003814697,
+expected[i] evaluates to 1.2702863216400146, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.3843575119972229, which exceeds 3e-5, where
+actual[i] evaluates to -0.15464383363723755,
+expected[i] evaluates to 0.22971367835998535, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 3
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.38435751758515835, which exceeds 3e-5, where
+actual[i] evaluates to 0.36407119035720825,
+expected[i] evaluates to -0.020286327227950096, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 5
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.69251400232315063, which exceeds 3e-5, where
+actual[i] evaluates to 0.33089154958724976,
+expected[i] evaluates to -0.36162245273590088, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 6
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.17312848567962646, which exceeds 3e-5, where
+actual[i] evaluates to 0.5078279972076416,
+expected[i] evaluates to 0.68095648288726807, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 7
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.86564247310161591, which exceeds 3e-5, where
+actual[i] evaluates to -0.055603399872779846,
+expected[i] evaluates to -0.92124587297439575, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 8
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.69251391291618347, which exceeds 3e-5, where
+actual[i] evaluates to -0.33089146018028259,
+expected[i] evaluates to 0.36162245273590088, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 9
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.17312845587730408, which exceeds 3e-5, where
+actual[i] evaluates to 0.49217194318771362,
+expected[i] evaluates to 0.31904348731040955, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 10
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.86564238369464874, which exceeds 3e-5, where
+actual[i] evaluates to -0.6943964958190918,
+expected[i] evaluates to 0.17124588787555695, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 11
+
+ATTENTION_OUTPUT 0.4266709685 -0.6619591713 0.4007779956 -0.4266709983 0.6619592309 -0.4007780254 -0.6113376617 0.6749594808 -0.6835874319 0.6113376617 -0.6749594808 0.6835874915
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.28333833813667297, which exceeds 3e-5, where
+actual[i] evaluates to -0.61133766174316406,
+expected[i] evaluates to -0.32799932360649109, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 6
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.056667685508728027, which exceeds 3e-5, where
+actual[i] evaluates to 0.67495948076248169,
+expected[i] evaluates to 0.61829179525375366, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 7
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.34000596404075623, which exceeds 3e-5, where
+actual[i] evaluates to -0.68358743190765381,
+expected[i] evaluates to -0.34358146786689758, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 8
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.28333833813667297, which exceeds 3e-5, where
+actual[i] evaluates to 0.61133766174316406,
+expected[i] evaluates to 0.32799932360649109, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 9
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.056667685508728027, which exceeds 3e-5, where
+actual[i] evaluates to -0.67495948076248169,
+expected[i] evaluates to -0.61829179525375366, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 10
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.340006023645401, which exceeds 3e-5, where
+actual[i] evaluates to 0.68358749151229858,
+expected[i] evaluates to 0.34358146786689758, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 11
+
+[  FAILED  ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/13, where GetParam() = (3, 2, 2, true) (0 ms)
+[ RUN      ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/14
+ATTENTION_OUTPUT -2.25 0.5 -1.5 -0.4289978147 -0.1503579021 0.3210021257 -0.3767464161 -0.7461464405 0.3732535541
+ATTENTION_OUTPUT 0 0 0 -0.6281857491 -0.6281857491 -0.6281857491 0.4532824159 0.4532824159 0.4532824159
+ATTENTION_OUTPUT -1.112465262 0.2222505212 1.181785226 0.1073142439 0.2829005122 -0.1018859446 0.2551510036 -0.2551510036 0.170100674
+ATTENTION_OUTPUT 0.3830928206 -0.6038550138 0.3717259169 -0.2791407406 0.4652522206 -0.3024245203 -0.1039520726 0.1386027634 -0.06930138171
+[       OK ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/14 (0 ms)
+[ RUN      ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/15
+ATTENTION_OUTPUT -2.25 0.5 -1.5 -0.4289978147 -0.1503579021 0.3210021257 -0.3767464161 -0.7461464405 0.3732535541 -1.25 1.5 -0.5 0.8123565316 0.7634441853 -1.236555934 0.9593734741 0.04112263769 -0.08339437097
+ATTENTION_OUTPUT 0 0 0 -0.6281857491 -0.6281857491 -0.6281857491 0.4532824159 0.4532824159 0.4532824159 0 0 0 0.1746740192 0.1746740043 0.1746739894 0.06906812638 0.06906813383 -0.8688729405
+ATTENTION_OUTPUT -1.112465262 0.2222505212 1.181785226 0.1073142439 0.2829005122 -0.1018859446 0.2551510036 -0.2551510036 0.170100674 -0.7722633481 0.6495758295 -1.181886315 0.3774248064 0.5478435159 0.1357574165 0.3948385119 -0.197419256 0.2961288691
+ATTENTION_OUTPUT 0.3830928206 -0.6038550138 0.3717259169 -0.2791407406 0.4652522206 -0.3024245203 -0.1039520726 0.1386027634 -0.06930138171 0.267180562 -0.2378777266 0.2355787009 0.008684446104 0.127531752 -0.01488669775 -0.2758650184 0.1103460118 -0.2206920236
+[       OK ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/15 (0 ms)
+[----------] 16 tests from CausalShapes/AttentionShapes (7 ms total)
+
+[----------] Global test environment tear-down
+[==========] 42 tests from 4 test suites ran. (25 ms total)
+[  PASSED  ] 21 tests.
+[  FAILED  ] 21 tests, listed below:
+[  FAILED  ] AttentionNumericalAudit.RectangularFewerQueries
+[  FAILED  ] AttentionNumericalAudit.RectangularMoreQueries
+[  FAILED  ] AttentionNumericalAudit.FutureValueHasZeroDerivative
+[  FAILED  ] AttentionNumericalAudit.LargeFiniteFutureLogitIsExcluded
+[  FAILED  ] AttentionNumericalAudit.IncrementalChunksMatchFull
+[  FAILED  ] AttentionNumericalAudit.ProbabilitiesNormalizeOnlyOverAllowedKeys
+[  FAILED  ] AttentionNumericalAudit.PrefixUnaffectedByFutureValues
+[  FAILED  ] AttentionNumericalAudit.NativeForwardFiniteDifferences
+[  FAILED  ] AttentionNumericalAudit.IncrementalPartitionsMatchReference
+[  FAILED  ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/0, where GetParam() = (1, 3, 1, false)
+[  FAILED  ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/1, where GetParam() = (1, 3, 2, false)
+[  FAILED  ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/2, where GetParam() = (2, 3, 1, false)
+[  FAILED  ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/3, where GetParam() = (2, 3, 2, false)
+[  FAILED  ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/4, where GetParam() = (3, 2, 1, false)
+[  FAILED  ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/5, where GetParam() = (3, 2, 2, false)
+[  FAILED  ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/8, where GetParam() = (1, 3, 1, true)
+[  FAILED  ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/9, where GetParam() = (1, 3, 2, true)
+[  FAILED  ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/10, where GetParam() = (2, 3, 1, true)
+[  FAILED  ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/11, where GetParam() = (2, 3, 2, true)
+[  FAILED  ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/12, where GetParam() = (3, 2, 1, true)
+[  FAILED  ] CausalShapes/AttentionShapes.ForwardAndBackwardMatchReference/13, where GetParam() = (3, 2, 2, true)
+
+21 FAILED TESTS

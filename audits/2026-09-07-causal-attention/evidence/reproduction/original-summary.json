@@ -1,0 +1,40 @@
+{
+  "checked_at": "2026-09-07T15:51:20.582853+00:00",
+  "expectation": "original",
+  "records": [
+    {
+      "process": 1,
+      "tests": 4,
+      "failures": 4,
+      "values": [
+        "ATTENTION_OUTPUT 20.66666794 20.66666794",
+        "ATTENTION_OUTPUT 0.3333333433 0.3333333433 0.3333333433",
+        "ATTENTION_OUTPUT 10 10",
+        "ATTENTION_OUTPUT 2 20.66666794 20.66666794"
+      ]
+    },
+    {
+      "process": 2,
+      "tests": 4,
+      "failures": 4,
+      "values": [
+        "ATTENTION_OUTPUT 20.66666794 20.66666794",
+        "ATTENTION_OUTPUT 0.3333333433 0.3333333433 0.3333333433",
+        "ATTENTION_OUTPUT 10 10",
+        "ATTENTION_OUTPUT 2 20.66666794 20.66666794"
+      ]
+    },
+    {
+      "process": 3,
+      "tests": 4,
+      "failures": 4,
+      "values": [
+        "ATTENTION_OUTPUT 20.66666794 20.66666794",
+        "ATTENTION_OUTPUT 0.3333333433 0.3333333433 0.3333333433",
+        "ATTENTION_OUTPUT 10 10",
+        "ATTENTION_OUTPUT 2 20.66666794 20.66666794"
+      ]
+    }
+  ],
+  "repeat_outputs_identical": true
+}

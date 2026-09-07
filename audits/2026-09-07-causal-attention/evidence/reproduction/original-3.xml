@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="4" failures="4" disabled="0" errors="0" time="0." timestamp="2026-09-07T20:51:20.580" name="AllTests">
+  <testsuite name="AttentionNumericalAudit" tests="4" failures="4" disabled="0" skipped="0" errors="0" time="0." timestamp="2026-09-07T20:51:20.580">
+    <testcase name="RectangularFewerQueries" file="../test/unittest/layers/unittest_layers_attention.cpp" line="155" status="run" result="completed" time="0." timestamp="2026-09-07T20:51:20.580" classname="AttentionNumericalAudit">
+      <failure message="../test/unittest/layers/unittest_layers_attention.cpp:147&#x0A;The difference between actual[i] and expected[i] is 18.666667938232422, which exceeds 3e-5, where&#x0A;actual[i] evaluates to 20.666667938232422,&#x0A;expected[i] evaluates to 2, and&#x0A;3e-5 evaluates to 3.0000000000000001e-05.&#x0A;index 0&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_attention.cpp:147
+The difference between actual[i] and expected[i] is 18.666667938232422, which exceeds 3e-5, where
+actual[i] evaluates to 20.666667938232422,
+expected[i] evaluates to 2, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_attention.cpp:147&#x0A;The difference between actual[i] and expected[i] is 14.666667938232422, which exceeds 3e-5, where&#x0A;actual[i] evaluates to 20.666667938232422,&#x0A;expected[i] evaluates to 6, and&#x0A;3e-5 evaluates to 3.0000000000000001e-05.&#x0A;index 1&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_attention.cpp:147
+The difference between actual[i] and expected[i] is 14.666667938232422, which exceeds 3e-5, where
+actual[i] evaluates to 20.666667938232422,
+expected[i] evaluates to 6, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+]]></failure>
+    </testcase>
+    <testcase name="FutureValueHasZeroDerivative" file="../test/unittest/layers/unittest_layers_attention.cpp" line="165" status="run" result="completed" time="0." timestamp="2026-09-07T20:51:20.580" classname="AttentionNumericalAudit">
+      <failure message="../test/unittest/layers/unittest_layers_attention.cpp:147&#x0A;The difference between actual[i] and expected[i] is 0.6666666567325592, which exceeds 3e-5, where&#x0A;actual[i] evaluates to 0.3333333432674408,&#x0A;expected[i] evaluates to 1, and&#x0A;3e-5 evaluates to 3.0000000000000001e-05.&#x0A;index 0&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_attention.cpp:147
+The difference between actual[i] and expected[i] is 0.6666666567325592, which exceeds 3e-5, where
+actual[i] evaluates to 0.3333333432674408,
+expected[i] evaluates to 1, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_attention.cpp:147&#x0A;The difference between actual[i] and expected[i] is 0.3333333432674408, which exceeds 3e-5, where&#x0A;actual[i] evaluates to 0.3333333432674408,&#x0A;expected[i] evaluates to 0, and&#x0A;3e-5 evaluates to 3.0000000000000001e-05.&#x0A;index 1&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_attention.cpp:147
+The difference between actual[i] and expected[i] is 0.3333333432674408, which exceeds 3e-5, where
+actual[i] evaluates to 0.3333333432674408,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_attention.cpp:147&#x0A;The difference between actual[i] and expected[i] is 0.3333333432674408, which exceeds 3e-5, where&#x0A;actual[i] evaluates to 0.3333333432674408,&#x0A;expected[i] evaluates to 0, and&#x0A;3e-5 evaluates to 3.0000000000000001e-05.&#x0A;index 2&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_attention.cpp:147
+The difference between actual[i] and expected[i] is 0.3333333432674408, which exceeds 3e-5, where
+actual[i] evaluates to 0.3333333432674408,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+]]></failure>
+    </testcase>
+    <testcase name="LargeFiniteFutureLogitIsExcluded" file="../test/unittest/layers/unittest_layers_attention.cpp" line="171" status="run" result="completed" time="0." timestamp="2026-09-07T20:51:20.580" classname="AttentionNumericalAudit">
+      <failure message="../test/unittest/layers/unittest_layers_attention.cpp:147&#x0A;The difference between actual[i] and expected[i] is 8, which exceeds 3e-5, where&#x0A;actual[i] evaluates to 10,&#x0A;expected[i] evaluates to 2, and&#x0A;3e-5 evaluates to 3.0000000000000001e-05.&#x0A;index 0&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_attention.cpp:147
+The difference between actual[i] and expected[i] is 8, which exceeds 3e-5, where
+actual[i] evaluates to 10,
+expected[i] evaluates to 2, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+]]></failure>
+    </testcase>
+    <testcase name="IncrementalChunksMatchFull" file="../test/unittest/layers/unittest_layers_attention.cpp" line="176" status="run" result="completed" time="0." timestamp="2026-09-07T20:51:20.580" classname="AttentionNumericalAudit">
+      <failure message="../test/unittest/layers/unittest_layers_attention.cpp:147&#x0A;The difference between actual[i] and expected[i] is 14.666667938232422, which exceeds 3e-5, where&#x0A;actual[i] evaluates to 20.666667938232422,&#x0A;expected[i] evaluates to 6, and&#x0A;3e-5 evaluates to 3.0000000000000001e-05.&#x0A;index 1&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_attention.cpp:147
+The difference between actual[i] and expected[i] is 14.666667938232422, which exceeds 3e-5, where
+actual[i] evaluates to 20.666667938232422,
+expected[i] evaluates to 6, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

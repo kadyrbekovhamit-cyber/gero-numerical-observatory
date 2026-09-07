@@ -1,0 +1,78 @@
+Running main() from ../subprojects/googletest/googletest/src/gtest_main.cc
+Note: Google Test filter = AttentionNumericalAudit.RectangularFewerQueries:AttentionNumericalAudit.FutureValueHasZeroDerivative:AttentionNumericalAudit.LargeFiniteFutureLogitIsExcluded:AttentionNumericalAudit.IncrementalChunksMatchFull
+[==========] Running 4 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 4 tests from AttentionNumericalAudit
+[ RUN      ] AttentionNumericalAudit.RectangularFewerQueries
+ATTENTION_OUTPUT 20.66666794 20.66666794
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 18.666667938232422, which exceeds 3e-5, where
+actual[i] evaluates to 20.666667938232422,
+expected[i] evaluates to 2, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 14.666667938232422, which exceeds 3e-5, where
+actual[i] evaluates to 20.666667938232422,
+expected[i] evaluates to 6, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+
+[  FAILED  ] AttentionNumericalAudit.RectangularFewerQueries (0 ms)
+[ RUN      ] AttentionNumericalAudit.FutureValueHasZeroDerivative
+ATTENTION_OUTPUT 0.3333333433 0.3333333433 0.3333333433
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.6666666567325592, which exceeds 3e-5, where
+actual[i] evaluates to 0.3333333432674408,
+expected[i] evaluates to 1, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.3333333432674408, which exceeds 3e-5, where
+actual[i] evaluates to 0.3333333432674408,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 0.3333333432674408, which exceeds 3e-5, where
+actual[i] evaluates to 0.3333333432674408,
+expected[i] evaluates to 0, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 2
+
+[  FAILED  ] AttentionNumericalAudit.FutureValueHasZeroDerivative (0 ms)
+[ RUN      ] AttentionNumericalAudit.LargeFiniteFutureLogitIsExcluded
+ATTENTION_OUTPUT 10 10
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 8, which exceeds 3e-5, where
+actual[i] evaluates to 10,
+expected[i] evaluates to 2, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 0
+
+[  FAILED  ] AttentionNumericalAudit.LargeFiniteFutureLogitIsExcluded (0 ms)
+[ RUN      ] AttentionNumericalAudit.IncrementalChunksMatchFull
+ATTENTION_OUTPUT 2 20.66666794 20.66666794
+../test/unittest/layers/unittest_layers_attention.cpp:147: Failure
+The difference between actual[i] and expected[i] is 14.666667938232422, which exceeds 3e-5, where
+actual[i] evaluates to 20.666667938232422,
+expected[i] evaluates to 6, and
+3e-5 evaluates to 3.0000000000000001e-05.
+index 1
+
+[  FAILED  ] AttentionNumericalAudit.IncrementalChunksMatchFull (0 ms)
+[----------] 4 tests from AttentionNumericalAudit (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 4 tests, listed below:
+[  FAILED  ] AttentionNumericalAudit.RectangularFewerQueries
+[  FAILED  ] AttentionNumericalAudit.FutureValueHasZeroDerivative
+[  FAILED  ] AttentionNumericalAudit.LargeFiniteFutureLogitIsExcluded
+[  FAILED  ] AttentionNumericalAudit.IncrementalChunksMatchFull
+
+ 4 FAILED TESTS

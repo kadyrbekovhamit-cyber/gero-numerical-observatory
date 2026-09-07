@@ -1,0 +1,6 @@
+ninja: Entering directory `audit-targets/current-stack-2026-09-07/nntrainer/build-audit'
+[1/5] Compiling C++ object nntrainer/libnntrainer.dylib.p/5c5a1feefebb8af9c5e0210c5f7153bd3483f8e0_current-stack-2026-09-07_nntrainer_nntrainer_layers_attention_layer.cpp.o
+[2/5] Linking target nntrainer/libnntrainer.dylib
+[3/5] Generating symbol file nntrainer/libnntrainer.dylib.p/libnntrainer.dylib.symbols
+[4/5] Compiling C++ object test/unittest/layers/unittest_layers.p/unittest_layers_attention.cpp.o
+[5/5] Linking target test/unittest/layers/unittest_layers

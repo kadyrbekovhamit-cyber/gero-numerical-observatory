@@ -1,0 +1,40 @@
+{
+  "checked_at": "2026-09-07T15:52:02.987288+00:00",
+  "expectation": "patched",
+  "records": [
+    {
+      "process": 1,
+      "tests": 4,
+      "failures": 0,
+      "values": [
+        "ATTENTION_OUTPUT 2 6",
+        "ATTENTION_OUTPUT 1 0 0",
+        "ATTENTION_OUTPUT 2 10",
+        "ATTENTION_OUTPUT 2 6 20.66666794"
+      ]
+    },
+    {
+      "process": 2,
+      "tests": 4,
+      "failures": 0,
+      "values": [
+        "ATTENTION_OUTPUT 2 6",
+        "ATTENTION_OUTPUT 1 0 0",
+        "ATTENTION_OUTPUT 2 10",
+        "ATTENTION_OUTPUT 2 6 20.66666794"
+      ]
+    },
+    {
+      "process": 3,
+      "tests": 4,
+      "failures": 0,
+      "values": [
+        "ATTENTION_OUTPUT 2 6",
+        "ATTENTION_OUTPUT 1 0 0",
+        "ATTENTION_OUTPUT 2 10",
+        "ATTENTION_OUTPUT 2 6 20.66666794"
+      ]
+    }
+  ],
+  "repeat_outputs_identical": true
+}

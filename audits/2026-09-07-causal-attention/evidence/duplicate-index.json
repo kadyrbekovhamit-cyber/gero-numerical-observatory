@@ -1,0 +1,1405 @@
+{
+  "checked_at": "2026-09-07T15:49:08.690336+00:00",
+  "queries": [
+    {
+      "query": "repo:nntrainer/nntrainer \"causal\"",
+      "total": 127,
+      "retrieved": 127,
+      "incomplete": false
+    },
+    {
+      "query": "repo:nntrainer/nntrainer \"attention\" \"mask\"",
+      "total": 32,
+      "retrieved": 32,
+      "incomplete": false
+    },
+    {
+      "query": "repo:nntrainer/nntrainer \"attention\" \"incremental\"",
+      "total": 48,
+      "retrieved": 48,
+      "incomplete": false
+    },
+    {
+      "query": "repo:nntrainer/nntrainer \"attention\" \"rectangular\"",
+      "total": 0,
+      "retrieved": 0,
+      "incomplete": false
+    },
+    {
+      "query": "repo:nntrainer/nntrainer \"attention\" \"1e10\"",
+      "total": 0,
+      "retrieved": 0,
+      "incomplete": false
+    },
+    {
+      "query": "repo:nntrainer/nntrainer \"attention\" \"future\"",
+      "total": 41,
+      "retrieved": 41,
+      "incomplete": false
+    },
+    {
+      "query": "repo:nntrainer/nntrainer \"attention\" \"chunk\"",
+      "total": 30,
+      "retrieved": 30,
+      "incomplete": false
+    },
+    {
+      "query": "repo:nntrainer/nntrainer \"causal_mask\"",
+      "total": 0,
+      "retrieved": 0,
+      "incomplete": false
+    },
+    {
+      "query": "repo:nntrainer/nntrainer \"AttentionLayer\"",
+      "total": 3,
+      "retrieved": 3,
+      "incomplete": false
+    },
+    {
+      "query": "repo:nntrainer/nntrainer \"attention\" \"leak\"",
+      "total": 14,
+      "retrieved": 14,
+      "incomplete": false
+    }
+  ],
+  "unique_records": 191,
+  "items": [
+    {
+      "number": 1704,
+      "title": "[layer] Support MoL attention layer forwarding",
+      "url": "https://github.com/nntrainer/nntrainer/pull/1704",
+      "state": "closed",
+      "updated_at": "2021-12-01T09:53:04Z"
+    },
+    {
+      "number": 1713,
+      "title": "Supporting masking in attention",
+      "url": "https://github.com/nntrainer/nntrainer/issues/1713",
+      "state": "closed",
+      "updated_at": "2021-12-03T12:51:58Z"
+    },
+    {
+      "number": 1750,
+      "title": "[layer] Support MoL backwarding",
+      "url": "https://github.com/nntrainer/nntrainer/pull/1750",
+      "state": "closed",
+      "updated_at": "2021-12-03T05:46:01Z"
+    },
+    {
+      "number": 1758,
+      "title": "[layer] Support filter masking in mol attention ",
+      "url": "https://github.com/nntrainer/nntrainer/pull/1758",
+      "state": "closed",
+      "updated_at": "2021-12-03T12:51:58Z"
+    },
+    {
+      "number": 1946,
+      "title": "[conv] support dilation property",
+      "url": "https://github.com/nntrainer/nntrainer/pull/1946",
+      "state": "closed",
+      "updated_at": "2022-07-11T01:13:35Z"
+    },
+    {
+      "number": 1951,
+      "title": "[conv1d] Support causal padding in conv1d @open sesame 07/20 10:37",
+      "url": "https://github.com/nntrainer/nntrainer/pull/1951",
+      "state": "closed",
+      "updated_at": "2022-07-20T08:33:34Z"
+    },
+    {
+      "number": 1956,
+      "title": "[multi head attention] Added multi head attention scaffold @open sesame 8/22 13:32",
+      "url": "https://github.com/nntrainer/nntrainer/pull/1956",
+      "state": "closed",
+      "updated_at": "2022-08-23T01:53:33Z"
+    },
+    {
+      "number": 1960,
+      "title": "[multi head attention] implement finalize @open sesame 8/22 14:00",
+      "url": "https://github.com/nntrainer/nntrainer/pull/1960",
+      "state": "closed",
+      "updated_at": "2022-09-06T05:51:42Z"
+    },
+    {
+      "number": 1963,
+      "title": "[multi_head_attention] implement calcDerivative, calcGradient",
+      "url": "https://github.com/nntrainer/nntrainer/pull/1963",
+      "state": "closed",
+      "updated_at": "2022-09-07T12:15:26Z"
+    },
+    {
+      "number": 1972,
+      "title": "Support transformer",
+      "url": "https://github.com/nntrainer/nntrainer/issues/1972",
+      "state": "closed",
+      "updated_at": "2024-01-19T12:47:51Z"
+    },
+    {
+      "number": 2118,
+      "title": "Support swish activation function on LSTM, Attention layers.",
+      "url": "https://github.com/nntrainer/nntrainer/issues/2118",
+      "state": "closed",
+      "updated_at": "2024-01-19T12:48:05Z"
+    },
+    {
+      "number": 2286,
+      "title": "[ Wait for #2266] enable W16A16 for picoGPT Application",
+      "url": "https://github.com/nntrainer/nntrainer/pull/2286",
+      "state": "closed",
+      "updated_at": "2023-10-17T04:56:51Z"
+    },
+    {
+      "number": 2397,
+      "title": "[ layer ] SIMD function for Rotary embedding incremental forwarding",
+      "url": "https://github.com/nntrainer/nntrainer/pull/2397",
+      "state": "closed",
+      "updated_at": "2024-01-10T07:05:02Z"
+    },
+    {
+      "number": 2407,
+      "title": "Multi-head attention bug: _MASK_NUM determined at build time, not at run time.",
+      "url": "https://github.com/nntrainer/nntrainer/issues/2407",
+      "state": "closed",
+      "updated_at": "2024-01-16T12:57:20Z"
+    },
+    {
+      "number": 2409,
+      "title": "fix: multi-head-attention incorrect macro usage. @open sesame 1/16 17:11",
+      "url": "https://github.com/nntrainer/nntrainer/pull/2409",
+      "state": "closed",
+      "updated_at": "2024-01-16T13:30:14Z"
+    },
+    {
+      "number": 2602,
+      "title": "Running examples on PC issue",
+      "url": "https://github.com/nntrainer/nntrainer/issues/2602",
+      "state": "closed",
+      "updated_at": "2024-05-23T09:41:51Z"
+    },
+    {
+      "number": 3137,
+      "title": "Attention block's time analysis",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3137",
+      "state": "closed",
+      "updated_at": "2025-05-16T02:53:48Z"
+    },
+    {
+      "number": 3221,
+      "title": "[model] update time step",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3221",
+      "state": "closed",
+      "updated_at": "2025-07-02T12:11:58Z"
+    },
+    {
+      "number": 3307,
+      "title": "[Backends] Add backend operations for multi head attention layer",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3307",
+      "state": "closed",
+      "updated_at": "2025-08-08T06:51:56Z"
+    },
+    {
+      "number": 3328,
+      "title": "[onnx] add llama modeling script & onnx exporter",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3328",
+      "state": "closed",
+      "updated_at": "2025-08-10T03:17:35Z"
+    },
+    {
+      "number": 3345,
+      "title": "[CursorTest] [Upon #3344] Optimize qwen-moe layer ",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3345",
+      "state": "closed",
+      "updated_at": "2025-07-31T15:02:16Z"
+    },
+    {
+      "number": 3354,
+      "title": "Build and install causal lm for android",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3354",
+      "state": "closed",
+      "updated_at": "2025-07-31T15:02:21Z"
+    },
+    {
+      "number": 3483,
+      "title": "[CausalLM] bugfix in causallm & mha_core",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3483",
+      "state": "closed",
+      "updated_at": "2025-09-16T05:25:14Z"
+    },
+    {
+      "number": 3517,
+      "title": "[ONNX] Multi token qwen model with attention mask",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3517",
+      "state": "closed",
+      "updated_at": "2025-10-19T02:54:55Z"
+    },
+    {
+      "number": 3587,
+      "title": "[Application] tizen build for causal",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3587",
+      "state": "closed",
+      "updated_at": "2025-12-16T03:05:20Z"
+    },
+    {
+      "number": 3593,
+      "title": "Review pull request for bugs and consistency",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3593",
+      "state": "closed",
+      "updated_at": "2026-03-11T04:29:48Z"
+    },
+    {
+      "number": 3601,
+      "title": "Refactor Unit Tests for OpenCL Kernels",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3601",
+      "state": "closed",
+      "updated_at": "2026-02-04T04:25:17Z"
+    },
+    {
+      "number": 3603,
+      "title": "Fix Windows Build Warnings",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3603",
+      "state": "closed",
+      "updated_at": "2025-12-05T05:19:10Z"
+    },
+    {
+      "number": 3633,
+      "title": "[Unittest] Add Unittest for Code quality & Coverage",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3633",
+      "state": "closed",
+      "updated_at": "2026-04-01T04:24:47Z"
+    },
+    {
+      "number": 3641,
+      "title": "[Wait for #3610] [CausalLM] delete copy from cached layers ",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3641",
+      "state": "closed",
+      "updated_at": "2025-12-31T06:29:05Z"
+    },
+    {
+      "number": 3645,
+      "title": "[Wait for #3640] Feat/gradient checkpointing",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3645",
+      "state": "closed",
+      "updated_at": "2026-07-16T04:30:35Z"
+    },
+    {
+      "number": 3654,
+      "title": "Create `Embedding` like `CausalLM`",
+      "url": "https://github.com/nntrainer/nntrainer/issues/3654",
+      "state": "closed",
+      "updated_at": "2026-02-26T02:10:32Z"
+    },
+    {
+      "number": 3670,
+      "title": "[CausalLM] Add a new class `Transformer` and update `CausalLM` to inherit the class.",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3670",
+      "state": "closed",
+      "updated_at": "2025-12-31T06:27:37Z"
+    },
+    {
+      "number": 3671,
+      "title": "[Wait for #3670][CausalLM] Implement `Qwen3Transformer` to update `Qwen3ForCausalLM`",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3671",
+      "state": "closed",
+      "updated_at": "2025-12-31T07:22:05Z"
+    },
+    {
+      "number": 3678,
+      "title": "[Transformer] add `model_type` to `nntr_cfg` and implement feature to validate the model_type matching",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3678",
+      "state": "closed",
+      "updated_at": "2026-01-06T01:24:00Z"
+    },
+    {
+      "number": 3681,
+      "title": "[Wait for #3678] [Feat/CausalLM] implement Embedding class for dynamic module loading",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3681",
+      "state": "closed",
+      "updated_at": "2026-01-07T07:38:46Z"
+    },
+    {
+      "number": 3689,
+      "title": "[Transformer] process model type with lower case",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3689",
+      "state": "closed",
+      "updated_at": "2026-01-07T07:51:17Z"
+    },
+    {
+      "number": 3690,
+      "title": "[causallm] add Qwen2 model",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3690",
+      "state": "closed",
+      "updated_at": "2026-01-08T00:04:27Z"
+    },
+    {
+      "number": 3694,
+      "title": "[fix] modeltype CUASAL_LM -> CAUSALLM",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3694",
+      "state": "closed",
+      "updated_at": "2026-01-08T06:13:33Z"
+    },
+    {
+      "number": 3704,
+      "title": "[transformer] add EmbeddingGemma",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3704",
+      "state": "closed",
+      "updated_at": "2026-03-11T02:21:09Z"
+    },
+    {
+      "number": 3707,
+      "title": "[DRAFT]Kalm embedding",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3707",
+      "state": "closed",
+      "updated_at": "2026-02-05T02:12:09Z"
+    },
+    {
+      "number": 3711,
+      "title": "[Wait for #3692] [CausalLM] Fix TG speed degradation  @Open sesame 26-01-20",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3711",
+      "state": "closed",
+      "updated_at": "2026-02-03T00:37:14Z"
+    },
+    {
+      "number": 3720,
+      "title": "Causallm/update lmhead out dim",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3720",
+      "state": "closed",
+      "updated_at": "2026-03-04T01:34:51Z"
+    },
+    {
+      "number": 3735,
+      "title": "CUDA MHA implementation with CPU reference and unit tests",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3735",
+      "state": "closed",
+      "updated_at": "2026-04-05T04:13:08Z"
+    },
+    {
+      "number": 3742,
+      "title": "[CausalLM] add `API` for CausalLM",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3742",
+      "state": "closed",
+      "updated_at": "2026-03-31T05:23:35Z"
+    },
+    {
+      "number": 3744,
+      "title": "[CausalLM] Enable `resetInputDimensions`",
+      "url": "https://github.com/nntrainer/nntrainer/issues/3744",
+      "state": "closed",
+      "updated_at": "2026-05-10T04:56:32Z"
+    },
+    {
+      "number": 3751,
+      "title": "[Wait for #3750] support multiple from/to for incremental_inference/forwarding",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3751",
+      "state": "closed",
+      "updated_at": "2026-04-10T04:21:36Z"
+    },
+    {
+      "number": 3752,
+      "title": "[CausalLM] remove bugs and add some detailed comments @open sesame 2026-02-26 14:20",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3752",
+      "state": "closed",
+      "updated_at": "2026-05-19T09:59:12Z"
+    },
+    {
+      "number": 3773,
+      "title": "[causallm] Support deberta_v2 embedding model",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3773",
+      "state": "closed",
+      "updated_at": "2026-05-20T05:35:42Z"
+    },
+    {
+      "number": 3776,
+      "title": "[Draft] [Wait for #3745, CausalLM] Support T5gemma2 causal model",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3776",
+      "state": "closed",
+      "updated_at": "2026-03-18T05:04:16Z"
+    },
+    {
+      "number": 3780,
+      "title": "[Issue] Enhancing `incremental_forwarding` interface",
+      "url": "https://github.com/nntrainer/nntrainer/issues/3780",
+      "state": "closed",
+      "updated_at": "2026-03-06T08:11:46Z"
+    },
+    {
+      "number": 3781,
+      "title": "[transformer] add prefill log to embedding model",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3781",
+      "state": "closed",
+      "updated_at": "2026-04-07T04:38:03Z"
+    },
+    {
+      "number": 3783,
+      "title": "[Issue] Memory leak occurs at `NeuralNetwork::incremental_inference`",
+      "url": "https://github.com/nntrainer/nntrainer/issues/3783",
+      "state": "closed",
+      "updated_at": "2026-06-12T06:04:42Z"
+    },
+    {
+      "number": 3787,
+      "title": "[CausalLM] Fix memory leakage",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3787",
+      "state": "closed",
+      "updated_at": "2026-03-31T06:25:47Z"
+    },
+    {
+      "number": 3789,
+      "title": "[compute_fp16vcache_transposed] fix for FP16 && ANDROID",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3789",
+      "state": "closed",
+      "updated_at": "2026-03-12T11:59:56Z"
+    },
+    {
+      "number": 3792,
+      "title": "[neon] Implement causal_conv1d kernel",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3792",
+      "state": "closed",
+      "updated_at": "2026-08-14T03:32:21Z"
+    },
+    {
+      "number": 3799,
+      "title": "[layers] add skip prefill option",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3799",
+      "state": "closed",
+      "updated_at": "2026-05-08T10:09:06Z"
+    },
+    {
+      "number": 3812,
+      "title": "[GPU Backend] OpenCL Kernel for Flash Attention",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3812",
+      "state": "closed",
+      "updated_at": "2026-05-26T05:33:22Z"
+    },
+    {
+      "number": 3820,
+      "title": "[test] add benchmark framework for x86 CPU backend",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3820",
+      "state": "closed",
+      "updated_at": "2026-07-23T04:44:01Z"
+    },
+    {
+      "number": 3823,
+      "title": "[CausalLM] Causal activation fp16",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3823",
+      "state": "closed",
+      "updated_at": "2026-07-15T04:21:00Z"
+    },
+    {
+      "number": 3824,
+      "title": "[api] bugfix in API",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3824",
+      "state": "closed",
+      "updated_at": "2026-03-31T06:29:26Z"
+    },
+    {
+      "number": 3827,
+      "title": "Causallm/make transformer base",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3827",
+      "state": "closed",
+      "updated_at": "2026-07-11T04:34:53Z"
+    },
+    {
+      "number": 3838,
+      "title": "[Application] enable resetInputDimension in causallm",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3838",
+      "state": "closed",
+      "updated_at": "2026-07-05T05:27:20Z"
+    },
+    {
+      "number": 3840,
+      "title": "[API] split API's structure and internal structure",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3840",
+      "state": "closed",
+      "updated_at": "2026-05-04T07:07:43Z"
+    },
+    {
+      "number": 3846,
+      "title": "[CausalLM] Fix Config Read for new models.",
+      "url": "https://github.com/nntrainer/nntrainer/issues/3846",
+      "state": "closed",
+      "updated_at": "2026-07-14T04:20:42Z"
+    },
+    {
+      "number": 3850,
+      "title": "[CausalLM] move hasRun to transformer",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3850",
+      "state": "closed",
+      "updated_at": "2026-05-19T10:03:25Z"
+    },
+    {
+      "number": 3854,
+      "title": "[CausalLM/API] update test_api app ",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3854",
+      "state": "closed",
+      "updated_at": "2026-05-25T05:52:28Z"
+    },
+    {
+      "number": 3857,
+      "title": "[CausalLM] add chat template feature",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3857",
+      "state": "closed",
+      "updated_at": "2026-05-08T01:55:30Z"
+    },
+    {
+      "number": 3863,
+      "title": "Implement LMHead layer with proper forward and backward pass",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3863",
+      "state": "closed",
+      "updated_at": "2026-07-05T05:27:17Z"
+    },
+    {
+      "number": 3864,
+      "title": "Training pipeline changes for CausalLM",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3864",
+      "state": "closed",
+      "updated_at": "2026-07-10T05:14:55Z"
+    },
+    {
+      "number": 3867,
+      "title": "[api] Support HF-chat template feature",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3867",
+      "state": "closed",
+      "updated_at": "2026-07-07T05:28:11Z"
+    },
+    {
+      "number": 3872,
+      "title": "[Depend on #3867] Fix bugs in multi-turn",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3872",
+      "state": "closed",
+      "updated_at": "2026-04-15T01:44:52Z"
+    },
+    {
+      "number": 3873,
+      "title": "Implement Embedding layer with proper forward and backward pass",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3873",
+      "state": "closed",
+      "updated_at": "2026-07-07T05:28:08Z"
+    },
+    {
+      "number": 3874,
+      "title": "Implement TieWordEmbedding layer with proper forward and backward pass",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3874",
+      "state": "closed",
+      "updated_at": "2026-07-07T05:28:06Z"
+    },
+    {
+      "number": 3881,
+      "title": "[graph] update resetInputDimension",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3881",
+      "state": "closed",
+      "updated_at": "2026-07-10T05:14:51Z"
+    },
+    {
+      "number": 3890,
+      "title": "[CausalLM] Support tiny-bert",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3890",
+      "state": "closed",
+      "updated_at": "2026-05-12T04:54:47Z"
+    },
+    {
+      "number": 3902,
+      "title": "[ Wait 4 #3901] CausalLM: migrate to ml::train::Tensor symbolic graph API",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3902",
+      "state": "closed",
+      "updated_at": "2026-05-19T06:12:08Z"
+    },
+    {
+      "number": 3905,
+      "title": "Enhance/causallm multiturn api",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3905",
+      "state": "closed",
+      "updated_at": "2026-07-09T05:32:48Z"
+    },
+    {
+      "number": 3907,
+      "title": "Multi session inference",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3907",
+      "state": "closed",
+      "updated_at": "2026-07-09T05:32:46Z"
+    },
+    {
+      "number": 3908,
+      "title": "Feature/flash attention opencl",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3908",
+      "state": "closed",
+      "updated_at": "2026-07-09T05:32:44Z"
+    },
+    {
+      "number": 3912,
+      "title": "[DRAFT][CausalLM] Add Qwen3.5 CausalLM",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3912",
+      "state": "closed",
+      "updated_at": "2026-05-15T04:53:36Z"
+    },
+    {
+      "number": 3915,
+      "title": "[Wait for #3904][Validation] Validate and stabilize external KV-cache CausalLM restructuring",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3915",
+      "state": "closed",
+      "updated_at": "2026-05-15T04:53:22Z"
+    },
+    {
+      "number": 3923,
+      "title": "Support Q8_0 Tensor",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3923",
+      "state": "closed",
+      "updated_at": "2026-06-28T05:47:37Z"
+    },
+    {
+      "number": 3924,
+      "title": "[Wait for #3922][CausalLM] Fix UINT16 KV cache handling",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3924",
+      "state": "closed",
+      "updated_at": "2026-05-19T06:00:11Z"
+    },
+    {
+      "number": 3927,
+      "title": "[CausalLM] Introduce `KVCacheOptimizer` backend for configurable KV cache optimization",
+      "url": "https://github.com/nntrainer/nntrainer/issues/3927",
+      "state": "closed",
+      "updated_at": "2026-05-31T06:11:27Z"
+    },
+    {
+      "number": 3932,
+      "title": "[causallm] Fix MHA_Core layer to use actual step size in forwarding",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3932",
+      "state": "closed",
+      "updated_at": "2026-05-19T10:06:57Z"
+    },
+    {
+      "number": 3933,
+      "title": "[Wait for #3919] Add Gemma4 and optimizations",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3933",
+      "state": "closed",
+      "updated_at": "2026-05-29T08:44:30Z"
+    },
+    {
+      "number": 3941,
+      "title": "[Wait 4: 3902]profiler included with visualiser",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3941",
+      "state": "closed",
+      "updated_at": "2026-07-08T04:43:20Z"
+    },
+    {
+      "number": 3942,
+      "title": "[Application/CausalLM] Add V-JEPA 2.1 ViT-B video encoder",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3942",
+      "state": "closed",
+      "updated_at": "2026-06-26T05:40:20Z"
+    },
+    {
+      "number": 3943,
+      "title": "Causal Flash attention",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3943",
+      "state": "closed",
+      "updated_at": "2026-07-08T04:43:19Z"
+    },
+    {
+      "number": 3944,
+      "title": "CausalLM: add LFM2 support",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3944",
+      "state": "closed",
+      "updated_at": "2026-07-14T00:45:01Z"
+    },
+    {
+      "number": 3945,
+      "title": "Add Quick.AI CausalLM application (sanitized for public release)",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3945",
+      "state": "closed",
+      "updated_at": "2026-06-18T04:17:43Z"
+    },
+    {
+      "number": 3946,
+      "title": "CausalLM: add LFM2 support on #3945 base (supersedes #3944)",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3946",
+      "state": "closed",
+      "updated_at": "2026-06-18T04:17:39Z"
+    },
+    {
+      "number": 3947,
+      "title": "causallm: add LFM2 CausalLM model (supersedes #3944)",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3947",
+      "state": "closed",
+      "updated_at": "2026-06-18T04:17:38Z"
+    },
+    {
+      "number": 3954,
+      "title": "Add Gemma4 For CausalLM with RMSNorm and external tensor mapping fixes",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3954",
+      "state": "closed",
+      "updated_at": "2026-06-05T04:54:24Z"
+    },
+    {
+      "number": 3955,
+      "title": "[CausalLM] Add LFM2 run_with_embedding for multimodal support",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3955",
+      "state": "closed",
+      "updated_at": "2026-06-12T06:40:50Z"
+    },
+    {
+      "number": 3961,
+      "title": "[CausalLM] SigLIP2 vision transformer encoder (with flash-attention, Q8_0, mixed-precision support)",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3961",
+      "state": "closed",
+      "updated_at": "2026-06-26T09:02:53Z"
+    },
+    {
+      "number": 3963,
+      "title": "[CausalLM] Sync Quick.AI v0.4.0 into main: CausalLM application, LFM2/Gemma4, Jinja chat templates, RMSNorm/QNN fixes",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3963",
+      "state": "closed",
+      "updated_at": "2026-06-30T10:05:43Z"
+    },
+    {
+      "number": 3964,
+      "title": "[Cleaning for #3960] Fix V-JEPA LFM2 Android/Tizen build and CI failures",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3964",
+      "state": "closed",
+      "updated_at": "2026-06-26T09:03:12Z"
+    },
+    {
+      "number": 3965,
+      "title": "[Wait for #3960,#3961] [CausalLM] Add LFM2-VL multimodal support (SigLIP2 vision + connector + LFM2 LM)",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3965",
+      "state": "closed",
+      "updated_at": "2026-06-26T09:02:36Z"
+    },
+    {
+      "number": 3970,
+      "title": "Profiler included with visualiser",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3970",
+      "state": "closed",
+      "updated_at": "2026-07-19T04:41:25Z"
+    },
+    {
+      "number": 3972,
+      "title": "Support DDTree",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3972",
+      "state": "closed",
+      "updated_at": "2026-06-10T09:39:02Z"
+    },
+    {
+      "number": 3981,
+      "title": "[Application] Add unified CausalLM weight converter",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3981",
+      "state": "closed",
+      "updated_at": "2026-07-20T04:58:17Z"
+    },
+    {
+      "number": 3988,
+      "title": "[Wait 4 #3967] [x86] feat: Enable FP16 attention (kcache/vcache/softmax) on x86 CPU Backend",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3988",
+      "state": "closed",
+      "updated_at": "2026-07-26T04:50:07Z"
+    },
+    {
+      "number": 3989,
+      "title": "[MHACore] Fix sliding-window prefill attention for sequence_len > window",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3989",
+      "state": "closed",
+      "updated_at": "2026-06-18T12:20:25Z"
+    },
+    {
+      "number": 3997,
+      "title": "CausalLM: add LFM2 support",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3997",
+      "state": "closed",
+      "updated_at": "2026-06-19T02:36:44Z"
+    },
+    {
+      "number": 3998,
+      "title": "CausalLM: add LFM2 support",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3998",
+      "state": "closed",
+      "updated_at": "2026-07-14T00:42:41Z"
+    },
+    {
+      "number": 3999,
+      "title": "[Application] Add YOLOv11m model (inference only)",
+      "url": "https://github.com/nntrainer/nntrainer/pull/3999",
+      "state": "closed",
+      "updated_at": "2026-07-10T05:44:30Z"
+    },
+    {
+      "number": 4000,
+      "title": "Add Flash Attention and FP16 Activation",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4000",
+      "state": "closed",
+      "updated_at": "2026-07-15T07:53:09Z"
+    },
+    {
+      "number": 4004,
+      "title": "fix(causallm): hold split multi-byte UTF-8 tokens during streaming",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4004",
+      "state": "closed",
+      "updated_at": "2026-06-26T10:26:30Z"
+    },
+    {
+      "number": 4005,
+      "title": "[CausalLM] Add V-JEPA 2.1 \u2192 LFM2 video-language model",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4005",
+      "state": "closed",
+      "updated_at": "2026-08-12T03:31:23Z"
+    },
+    {
+      "number": 4008,
+      "title": "[CausalLM] Add BERT cross-attention decoder",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4008",
+      "state": "open",
+      "updated_at": "2026-08-27T02:28:55Z"
+    },
+    {
+      "number": 4012,
+      "title": "[CausalLM] Add SmallThinker MoE model (base / slim / cachedslim)",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4012",
+      "state": "closed",
+      "updated_at": "2026-07-30T04:27:46Z"
+    },
+    {
+      "number": 4015,
+      "title": "Add Flash Attention and FP16 Activation",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4015",
+      "state": "closed",
+      "updated_at": "2026-06-26T10:25:16Z"
+    },
+    {
+      "number": 4023,
+      "title": "[CausalLM/layers] implement MHA Core backward pass for LoRA training",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4023",
+      "state": "closed",
+      "updated_at": "2026-08-26T02:41:33Z"
+    },
+    {
+      "number": 4028,
+      "title": "[CausalLM] add Transformer training infrastructure and LoRA model API",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4028",
+      "state": "closed",
+      "updated_at": "2026-08-25T02:33:35Z"
+    },
+    {
+      "number": 4029,
+      "title": "[CausalLM] add LoRA fine-tuning training pipeline for Qwen3",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4029",
+      "state": "closed",
+      "updated_at": "2026-08-25T02:33:33Z"
+    },
+    {
+      "number": 4040,
+      "title": "[nntrainer] Fix is_prefill to recognize multi-token prefill steps",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4040",
+      "state": "closed",
+      "updated_at": "2026-07-04T07:34:52Z"
+    },
+    {
+      "number": 4044,
+      "title": "causallm: add Q4_0-FP16 activation support",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4044",
+      "state": "closed",
+      "updated_at": "2026-07-07T10:25:08Z"
+    },
+    {
+      "number": 4045,
+      "title": "causallm: add GEMM-based flash attention",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4045",
+      "state": "open",
+      "updated_at": "2026-09-02T12:23:31Z"
+    },
+    {
+      "number": 4047,
+      "title": "Relocate QNN model files",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4047",
+      "state": "closed",
+      "updated_at": "2026-08-13T00:58:50Z"
+    },
+    {
+      "number": 4054,
+      "title": "nntrainer: remove incremental_forwarding, unify into forwarding",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4054",
+      "state": "closed",
+      "updated_at": "2026-08-22T02:30:09Z"
+    },
+    {
+      "number": 4063,
+      "title": "causallm: resize graph to actual prompt length via resetInputDimension",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4063",
+      "state": "closed",
+      "updated_at": "2026-08-21T02:39:11Z"
+    },
+    {
+      "number": 4069,
+      "title": "[quick.ai] Rebrand causallm to quick.ai and add common Model class for non-Transformer support",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4069",
+      "state": "closed",
+      "updated_at": "2026-08-18T02:42:33Z"
+    },
+    {
+      "number": 4076,
+      "title": "Move Android app, C API, xgrammar, and QNN app infra into nntrainer (public, no private-model references)",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4076",
+      "state": "closed",
+      "updated_at": "2026-07-20T12:29:47Z"
+    },
+    {
+      "number": 4080,
+      "title": "[DRAFT][Wait for#4073][HTP] Add u8i4 (INT4 weight) HMX kernel and QINT4_HTP end-to-end path",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4080",
+      "state": "closed",
+      "updated_at": "2026-08-18T02:42:22Z"
+    },
+    {
+      "number": 4081,
+      "title": "[HTP] Add Hexagon NPU (HexKL) backend: WH-baked prefill, NPU decode routing",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4081",
+      "state": "closed",
+      "updated_at": "2026-08-13T00:59:01Z"
+    },
+    {
+      "number": 4087,
+      "title": "[Wait 4 #4086] [x86] perf: Remove allocations and TLS indirection from FP32 attention kernels",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4087",
+      "state": "open",
+      "updated_at": "2026-08-29T12:23:20Z"
+    },
+    {
+      "number": 4089,
+      "title": "[CausalLM] Let KVCacheManager own the KV cache write position",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4089",
+      "state": "open",
+      "updated_at": "2026-08-27T11:37:06Z"
+    },
+    {
+      "number": 4090,
+      "title": "Refactor flash-attention kernels: isolate FMLAL, split arch kernels, relocate files",
+      "url": "https://github.com/nntrainer/nntrainer/issues/4090",
+      "state": "open",
+      "updated_at": "2026-07-20T04:34:21Z"
+    },
+    {
+      "number": 4092,
+      "title": "Move CausalLM app, C API, xgrammar, and QNN app infra into nntrainer (public, no private-model references)",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4092",
+      "state": "open",
+      "updated_at": "2026-08-27T02:10:28Z"
+    },
+    {
+      "number": 4109,
+      "title": "[opencl] Rework the OpenCL infrastructure: SVM allocator pool, device probe, in-order queue",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4109",
+      "state": "closed",
+      "updated_at": "2026-08-30T07:46:44Z"
+    },
+    {
+      "number": 4112,
+      "title": "[opencl] Add the GPU attention/RoPE/KV kernels + GLU whole-ops, fix rmsnorm tails",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4112",
+      "state": "closed",
+      "updated_at": "2026-08-30T11:28:53Z"
+    },
+    {
+      "number": 4115,
+      "title": "[layers] Promote the CausalLM LLM layers to core + extract the model registry",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4115",
+      "state": "closed",
+      "updated_at": "2026-08-30T14:42:07Z"
+    },
+    {
+      "number": 4125,
+      "title": "[opencl][cuda] NNTR_DETERMINISTIC: reproducible execution, on by default",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4125",
+      "state": "closed",
+      "updated_at": "2026-08-30T11:28:56Z"
+    },
+    {
+      "number": 4126,
+      "title": "[cuda] M2-B CUDA-graph decode: capture+replay the per-token forward (opt-in)",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4126",
+      "state": "closed",
+      "updated_at": "2026-08-30T13:26:08Z"
+    },
+    {
+      "number": 4142,
+      "title": "[causallm] Report peak private commit alongside peak working set",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4142",
+      "state": "closed",
+      "updated_at": "2026-08-31T00:47:47Z"
+    },
+    {
+      "number": 4144,
+      "title": "[causallm] Clamp the runtime context length to max_position_embeddings",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4144",
+      "state": "closed",
+      "updated_at": "2026-08-31T01:17:45Z"
+    },
+    {
+      "number": 4150,
+      "title": "[CausalLM] GPU-resident RMSNorm + per-layer-slice layer variants (additive registration)",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4150",
+      "state": "closed",
+      "updated_at": "2026-08-30T23:41:02Z"
+    },
+    {
+      "number": 4151,
+      "title": "[GPU/OpenCL] flash attention prefill: distributed psum-exchange reduction (FXA_XRED, Intel Xe2/Xe3 DPAS)",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4151",
+      "state": "closed",
+      "updated_at": "2026-08-30T11:28:46Z"
+    },
+    {
+      "number": 4173,
+      "title": "[docs] Add architecture-refactor rules and the GPU contribution checklist",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4173",
+      "state": "closed",
+      "updated_at": "2026-08-30T02:40:36Z"
+    },
+    {
+      "number": 4184,
+      "title": "[Wait for #4105,4106][Applications] Register custom layers through the Engine facade, not a downcast",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4184",
+      "state": "closed",
+      "updated_at": "2026-07-31T03:11:39Z"
+    },
+    {
+      "number": 4188,
+      "title": "[causallm] Add the Gemma2 model class (Gemma2ForCausalLM)",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4188",
+      "state": "closed",
+      "updated_at": "2026-07-30T11:58:34Z"
+    },
+    {
+      "number": 4189,
+      "title": "[CausalLM] MHACore GPU prefill dispatch (OpenCL flash/two-conv attention)",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4189",
+      "state": "closed",
+      "updated_at": "2026-07-30T11:58:32Z"
+    },
+    {
+      "number": 4192,
+      "title": "[CausalLM] MHACore GPU prefill dispatch (OpenCL flash / two-conv attention) + name every host bounce it can take",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4192",
+      "state": "closed",
+      "updated_at": "2026-07-31T03:00:11Z"
+    },
+    {
+      "number": 4194,
+      "title": "[causallm] Inference correctness: FFN gate/up load order, prompt BOS, FP16 activation overflow, loader fail-loud, q4_0 shape gate, factory int_key, softcap, lmhead_untie",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4194",
+      "state": "closed",
+      "updated_at": "2026-08-31T01:17:41Z"
+    },
+    {
+      "number": 4196,
+      "title": "[causallm] Allocate the KV cache from the SVM pool and make it survive the per-call placeholder fill",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4196",
+      "state": "closed",
+      "updated_at": "2026-07-31T03:00:15Z"
+    },
+    {
+      "number": 4198,
+      "title": "[CausalLM] Chunked forward prefill: cap the activation plane at long context (model + layer block-call contract)",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4198",
+      "state": "closed",
+      "updated_at": "2026-08-31T00:05:14Z"
+    },
+    {
+      "number": 4199,
+      "title": "[CausalLM] Hoist the per-layer sliding window into a getLayerSlidingWindow() hook",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4199",
+      "state": "closed",
+      "updated_at": "2026-07-30T11:58:49Z"
+    },
+    {
+      "number": 4200,
+      "title": "[CausalLM] W-bounded attention gets W-bounded storage: one getLayerSlidingWindow() authority, then the KV ring",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4200",
+      "state": "closed",
+      "updated_at": "2026-07-31T03:00:18Z"
+    },
+    {
+      "number": 4201,
+      "title": "[causallm] Long context: chunked prefill, KV window ring, SVM KV plane, GPU prefill dispatch, engine= resolution, RoPE LUT cap, flash attention opt-in",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4201",
+      "state": "closed",
+      "updated_at": "2026-08-31T00:05:17Z"
+    },
+    {
+      "number": 4202,
+      "title": "[cuda] RoPE + attention device kernels (flash core, split-KV decode, int8-KV)",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4202",
+      "state": "closed",
+      "updated_at": "2026-07-30T08:53:52Z"
+    },
+    {
+      "number": 4203,
+      "title": "[cuda] Grow the element-wise and RMSNorm device kernel sets",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4203",
+      "state": "closed",
+      "updated_at": "2026-07-30T08:53:55Z"
+    },
+    {
+      "number": 4205,
+      "title": "[cuda] Device RoPE / attention / element-wise / RMSNorm kernels and their first consumer: mha_core CUDA dispatch with UVM-routed pools",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4205",
+      "state": "closed",
+      "updated_at": "2026-07-31T03:06:33Z"
+    },
+    {
+      "number": 4206,
+      "title": "[causallm/cuda] On-GPU greedy argmax, coherent logits readback, and load-time cache prewarm",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4206",
+      "state": "closed",
+      "updated_at": "2026-07-30T11:58:45Z"
+    },
+    {
+      "number": 4207,
+      "title": "[cuda] Build both derived weight-cache families at load (CPU-side) + on-GPU argmax, with the silent host-dot fallback named",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4207",
+      "state": "closed",
+      "updated_at": "2026-07-31T03:06:35Z"
+    },
+    {
+      "number": 4208,
+      "title": "[cuda] Device-activation chain completion + re-arm the NNTR_CUDA_DEV_ACT auto-default",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4208",
+      "state": "closed",
+      "updated_at": "2026-07-30T08:56:38Z"
+    },
+    {
+      "number": 4210,
+      "title": "[cuda/attn] Split-KV chunked prefill for global-attention layers \u2014 default ON (32K prefill +61.9%)",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4210",
+      "state": "closed",
+      "updated_at": "2026-07-31T03:06:40Z"
+    },
+    {
+      "number": 4211,
+      "title": "[MERGE LAST] [causallm] Flip use_flash_attention on by default; keep the config hatch live for every model",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4211",
+      "state": "closed",
+      "updated_at": "2026-08-31T01:17:38Z"
+    },
+    {
+      "number": 4212,
+      "title": "[init-latency] Cold start: OpenCL kernel cache + pooled build, loader page advice + giants-first, tokenizer snapshot + async, chat-template overlap, QS4CX single zero-fill, sidecar mmap",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4212",
+      "state": "closed",
+      "updated_at": "2026-08-30T07:17:24Z"
+    },
+    {
+      "number": 4214,
+      "title": "[engine] How a process acquires a backend: conditional context bring-up + register custom layers through the Engine facade",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4214",
+      "state": "closed",
+      "updated_at": "2026-08-30T04:32:23Z"
+    },
+    {
+      "number": 4218,
+      "title": "[Wait for #4215][causallm] Build the tokenizer on a side thread and join it at first use",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4218",
+      "state": "closed",
+      "updated_at": "2026-07-31T02:50:07Z"
+    },
+    {
+      "number": 4220,
+      "title": "[causallm/api] SDK path: one chat-template seam, apply the package template through it, and make load idempotent",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4220",
+      "state": "closed",
+      "updated_at": "2026-08-31T01:17:48Z"
+    },
+    {
+      "number": 4222,
+      "title": "[cuda] Device-resident CUDA lane: RoPE/attention/element-wise/RMSNorm kernels, load-time weight-cache prewarm, device-activation chain, split-KV 32K prefill, pack disk cache, and Engine-wide layer registration",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4222",
+      "state": "closed",
+      "updated_at": "2026-08-30T13:26:27Z"
+    },
+    {
+      "number": 4224,
+      "title": "[opencl] Cut OpenCL cold start: prewarm v8c programs, cache the derived weight pack",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4224",
+      "state": "closed",
+      "updated_at": "2026-08-30T10:23:42Z"
+    },
+    {
+      "number": 4225,
+      "title": "[causallm] Embedding sidecar LUT: mmap the payload read-only (lazy page-in)",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4225",
+      "state": "closed",
+      "updated_at": "2026-08-30T23:41:05Z"
+    },
+    {
+      "number": 4227,
+      "title": "[CausalLM][gpu] Long context on Adreno: keep the KV ring and the image path alive",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4227",
+      "state": "closed",
+      "updated_at": "2026-08-31T00:05:20Z"
+    },
+    {
+      "number": 4228,
+      "title": "[build][android] Build rms_reverse_norm.cpp: transformer.cpp names it unconditionally",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4228",
+      "state": "closed",
+      "updated_at": "2026-08-30T14:41:50Z"
+    },
+    {
+      "number": 4229,
+      "title": "[build][android] nntr_quantize needs the tokenizer TUs it now pulls in",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4229",
+      "state": "closed",
+      "updated_at": "2026-08-30T06:12:07Z"
+    },
+    {
+      "number": 4233,
+      "title": "Fix KV cache inputs being bound to the wrong compiled input slots",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4233",
+      "state": "open",
+      "updated_at": "2026-08-28T00:25:39Z"
+    },
+    {
+      "number": 4238,
+      "title": "[Hexagon cDSP Backend] Full prefill acceleration stack: QKV/FFN batching, KV rpcmem pooling, flash-attn, profiling & graceful fallback",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4238",
+      "state": "open",
+      "updated_at": "2026-08-24T12:46:59Z"
+    },
+    {
+      "number": 4239,
+      "title": "[Graph/Layer] Support dynamic tensor resizing via getLayerDimensions",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4239",
+      "state": "open",
+      "updated_at": "2026-08-27T00:35:21Z"
+    },
+    {
+      "number": 4250,
+      "title": "[causallm] Make num_to_generate optional: absent or <=0 generates until EOS",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4250",
+      "state": "closed",
+      "updated_at": "2026-08-30T14:41:47Z"
+    },
+    {
+      "number": 4272,
+      "title": "[CausalLM] Add backprop for lm_head, tie_word_embedding and mha_core",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4272",
+      "state": "open",
+      "updated_at": "2026-08-27T15:13:12Z"
+    },
+    {
+      "number": 4275,
+      "title": "[CausalLM] Add a LoRA training data pipeline and CLI driver",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4275",
+      "state": "open",
+      "updated_at": "2026-08-27T14:38:33Z"
+    },
+    {
+      "number": 4292,
+      "title": "[draft] Feat/ced w8a8 int8 resident",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4292",
+      "state": "open",
+      "updated_at": "2026-08-27T04:21:16Z"
+    },
+    {
+      "number": 4296,
+      "title": "[CausalLM] add Gemma4 MoE support",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4296",
+      "state": "open",
+      "updated_at": "2026-09-02T12:23:29Z"
+    },
+    {
+      "number": 4298,
+      "title": "[cpu_backend] remove dead declarations from cpu_backend.h",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4298",
+      "state": "open",
+      "updated_at": "2026-09-03T08:22:57Z"
+    },
+    {
+      "number": 4302,
+      "title": "[opencl][ci][cpu_backend][tensor][build/android] Build the GPU sources in a desktop CI job, drop the CLBlast dependency, and fix four standalone defects",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4302",
+      "state": "open",
+      "updated_at": "2026-08-30T04:27:17Z"
+    },
+    {
+      "number": 4303,
+      "title": "[docs] Architecture rules for multi-backend layers, and the environment-flag reference",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4303",
+      "state": "open",
+      "updated_at": "2026-08-30T04:27:19Z"
+    },
+    {
+      "number": 4305,
+      "title": "[tensor][cpu_backend] QS4CX as a first-class data type, with its CPU implementations",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4305",
+      "state": "open",
+      "updated_at": "2026-09-02T12:23:27Z"
+    },
+    {
+      "number": 4308,
+      "title": "[ Wait for #4302, #4304, #4306 ] [opencl][layers] Fix the command queue, then implement the whole-op table on OpenCL",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4308",
+      "state": "open",
+      "updated_at": "2026-09-01T04:20:23Z"
+    },
+    {
+      "number": 4309,
+      "title": "[ Wait for #4308 ] [tensor][opencl] Plan where a tensor lives: a static device-residency plane",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4309",
+      "state": "open",
+      "updated_at": "2026-09-01T04:23:46Z"
+    },
+    {
+      "number": 4310,
+      "title": "[ Wait for #4309 ] [opencl] Quantized GEMM on the GPU: the int8 x int4 kernel, its tensor views and host dispatch",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4310",
+      "state": "open",
+      "updated_at": "2026-09-01T12:20:34Z"
+    },
+    {
+      "number": 4311,
+      "title": "[ Wait for #4310 ] [opencl] Prefill GEMM on Intel XMX/DPAS, and the weight-upload path",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4311",
+      "state": "open",
+      "updated_at": "2026-08-30T12:23:03Z"
+    },
+    {
+      "number": 4312,
+      "title": "[ Wait for #4309, #4311 ] [opencl] GPU attention: flash decode, two-conv prefill, and the sliding-window mask",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4312",
+      "state": "open",
+      "updated_at": "2026-08-30T12:25:58Z"
+    },
+    {
+      "number": 4313,
+      "title": "[ Wait for #4304, #4305, #4306, #4307 ] [cuda] An additive NVIDIA backend: bring-up, Unified-Memory tensors, quantized FC, attention, and graph decode",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4313",
+      "state": "open",
+      "updated_at": "2026-09-01T12:20:35Z"
+    },
+    {
+      "number": 4316,
+      "title": "[ Wait for #4314 ] [Application/CausalLM] Extract a model registry, and run the transformer stack on the GPU",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4316",
+      "state": "open",
+      "updated_at": "2026-09-01T04:40:16Z"
+    },
+    {
+      "number": 4317,
+      "title": "[ Wait for #4312, #4313, #4316 ] [Application/CausalLM] The GPU attention core and the KV-cache manager",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4317",
+      "state": "open",
+      "updated_at": "2026-09-01T04:35:00Z"
+    },
+    {
+      "number": 4319,
+      "title": "[ Wait for #4318 ] [Application/CausalLM][cuda] Long context: a chunked prefill driver, a sliding-window KV ring, and the split-KV decode",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4319",
+      "state": "open",
+      "updated_at": "2026-09-01T08:11:27Z"
+    },
+    {
+      "number": 4320,
+      "title": "[ Wait for #4319 ] [layers][cuda] A 4-bit embedding LUT: per-block sfixed4 manifests and a device-side gather",
+      "url": "https://github.com/nntrainer/nntrainer/pull/4320",
+      "state": "open",
+      "updated_at": "2026-08-31T04:19:48Z"
+    }
+  ]
+}

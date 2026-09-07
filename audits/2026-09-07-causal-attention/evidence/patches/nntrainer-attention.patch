@@ -1,0 +1,69 @@
+diff --git a/nntrainer/layers/attention_layer.cpp b/nntrainer/layers/attention_layer.cpp
+index b32421c..0adfaf8 100644
+--- a/nntrainer/layers/attention_layer.cpp
++++ b/nntrainer/layers/attention_layer.cpp
+@@ -31,6 +31,18 @@ static constexpr size_t SINGLE_INOUT_IDX = 0;
+ 
+ enum AttentionParams { query = 0, value = 1, key = 2, weights };
+ 
++static void applyCausalMask(Tensor &scores, unsigned int query_offset = 0) {
++  for (unsigned int b = 0; b < scores.batch(); ++b) {
++    for (unsigned int c = 0; c < scores.channel(); ++c) {
++      for (unsigned int i = 0; i < scores.height(); ++i) {
++        for (unsigned int j = query_offset + i + 1; j < scores.width(); ++j) {
++          scores.setValue(b, c, i, j, -std::numeric_limits<float>::infinity());
++        }
++      }
++    }
++  }
++}
++
+ void AttentionLayer::finalizeCommon(InitLayerContext &context) {
+   if (context.getNumInputs() < 2 || context.getNumInputs() > 3)
+     throw std::runtime_error("Attention layer needs 2-3 inputs.");
+@@ -95,20 +107,7 @@ void AttentionLayer::forwarding(RunLayerContext &context, bool training) {
+     weights.multiply_i(1 / sqrt((float)key.getDim().width()));
+   }
+   if (std::get<props::CausalMask>(attention_props).get()) {
+-    unsigned int mask_size = weights.getDim().width();
+-    unsigned int mask_dim_height = mask_size;
+-    unsigned int mask_dim_width = mask_size;
+-
+-    Tensor causal_mask(TensorDim{mask_size, mask_size});
+-
+-    causal_mask.setZero();
+-    for (unsigned int i = 0; i < mask_dim_height; ++i) {
+-      for (unsigned int j = i + 1; j < mask_dim_width; ++j) {
+-        causal_mask.setValue(0, 0, i, j, -1e10);
+-      }
+-    }
+-
+-    weights.add_i(causal_mask);
++    applyCausalMask(weights);
+   }
+ 
+   sm.run_fn(weights, weights);       /** softmax */
+@@ -156,21 +155,8 @@ void AttentionLayer::incremental_forwarding(RunLayerContext &context,
+     weights_step.multiply_i(1 / sqrt((float)key.getDim().width()));
+   }
+ 
+-  if (std::get<props::CausalMask>(attention_props).get() && !from) {
+-    unsigned int mask_size = weights_step.getDim().width();
+-    unsigned int mask_dim_height = mask_size;
+-    unsigned int mask_dim_width = mask_size;
+-
+-    Tensor causal_mask(TensorDim{mask_size, mask_size});
+-
+-    causal_mask.setZero();
+-    for (unsigned int i = 0; i < mask_dim_height; ++i) {
+-      for (unsigned int j = i + 1; j < mask_dim_width; ++j) {
+-        causal_mask.setValue(0, 0, i, j, -1e10);
+-      }
+-    }
+-
+-    weights_step.add_i(causal_mask);
++  if (std::get<props::CausalMask>(attention_props).get()) {
++    applyCausalMask(weights_step, from);
+   }
+ 
+   sm.run_fn(weights_step, weights_step);            /** softmax */

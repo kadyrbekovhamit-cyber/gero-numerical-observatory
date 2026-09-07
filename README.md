@@ -4,6 +4,16 @@ A reproducible CPU benchmark for mathematical contracts in ONNX graphs. It runs 
 
 [71-second video](https://www.youtube.com/shorts/KTLC9_FomBs) · [Interactive reports](https://www.gero.uz/stability/) · [Publication and limits](https://www.gero.uz/research/articles/onnx-numerical-observatory-reproduced-snapshot.html) · [Measured snapshot](benchmarks/2026-09-06/latest.json) · [Reverification](benchmarks/2026-09-06/reverification.json)
 
+## Causal attention audit, 7 September 2026
+
+Native nntrainer causal attention includes future values in tested rectangular
+and later incremental cases. A local repair passes 42 tests; 21 failed before.
+The evidence includes source pins, native logs, finite differences, independent
+batch checks, duplicate review and isolated patches.
+
+[Reproduce the attention audit](audits/2026-09-07-causal-attention/README.md) ·
+[Publication record](docs/ATTENTION_PUBLICATION_STATUS.md)
+
 ## Cosine and LayerNorm audit, 7 September 2026
 
 Two reproduced implementation reports: finite-input cosine NaNs in MLX and an

@@ -1,0 +1,26 @@
+{
+  "collected_at": "2026-09-07T15:53:29.845272+00:00",
+  "python": "3.12.14",
+  "platform": "macOS-15.5-arm64-arm-64bit",
+  "machine": "arm64",
+  "packages": {
+    "mlx": "0.32.2",
+    "mlx-metal": "0.32.2",
+    "numpy": "2.2.6",
+    "mpmath": "1.3.0",
+    "pytest": "8.4.1",
+    "bloom": "0.0.0",
+    "litellm": "1.100.0",
+    "meson": "1.12.0",
+    "ninja": "1.13.2",
+    "cmake": "4.4.3",
+    "clang-format": "14.0.6"
+  },
+  "mlx_core": "Official PyPI 0.32.2 macOS arm64 wheels; pinned current-main Python losses loaded explicitly",
+  "nntrainer": "Real C++ library, pinned main, CPU FP32, BLAS disabled, 1 thread",
+  "bloom": "Pinned Python source; deterministic fixtures; transport/IO mocked; no model API calls",
+  "cpu": "Apple M4 (sysctl machdep.cpu.brand_string)",
+  "scope": "nntrainer native CPU FP32 NCHW attention; no model APIs",
+  "source_sha": "a7ea056e79ab8e14447ea305c1b634e233343258",
+  "build_note": "Reused build includes earlier isolated loss, activation and LayerNorm repairs. Attention baseline matched pinned source exactly."
+}

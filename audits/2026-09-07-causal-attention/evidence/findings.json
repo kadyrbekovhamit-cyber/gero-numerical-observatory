@@ -1,0 +1,110 @@
+{
+  "id": "nntrainer-attention-causal-mask-2026-09-07",
+  "fingerprint": "3d1bd968727d493ea5e79e643d986cdd1eb4e77ad527ba0590229954f8eb7c06",
+  "status": "locally_reproduced_with_tested_patch",
+  "source_sha": "a7ea056e79ab8e14447ea305c1b634e233343258",
+  "implementation_reports": 1,
+  "mechanisms": [
+    "ignored rectangular mask broadcasting error",
+    "finite mask penalty does not exclude future logits",
+    "later incremental blocks omit causal masking"
+  ],
+  "minimum": {
+    "q": [
+      0,
+      0
+    ],
+    "k": [
+      0,
+      0,
+      0
+    ],
+    "v": [
+      2,
+      10,
+      50
+    ],
+    "q_shape": [
+      1,
+      1,
+      2,
+      1
+    ],
+    "kv_shape": [
+      1,
+      1,
+      3,
+      1
+    ],
+    "observed": [
+      20.666667938232422,
+      20.666667938232422
+    ],
+    "expected": [
+      2,
+      6
+    ],
+    "observed_dv": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "expected_dv": [
+      1,
+      0,
+      0
+    ]
+  },
+  "invariants": [
+    "future-value independence",
+    "zero probability outside causal support",
+    "probability range and normalization on allowed keys",
+    "full versus incremental partition equivalence",
+    "independent batch evaluation equivalence",
+    "forward/backward reference and finite-difference agreement"
+  ],
+  "tests": {
+    "before": {
+      "tests": 42,
+      "failures": 21,
+      "errors": 0,
+      "disabled": 0,
+      "passed": 21
+    },
+    "after": {
+      "tests": 42,
+      "failures": 0,
+      "errors": 0,
+      "disabled": 0,
+      "passed": 42
+    }
+  },
+  "fresh_process_reproductions": {
+    "processes_per_version": 3,
+    "key_cases": 4,
+    "outputs_identical_within_version": true
+  },
+  "duplicate_review": {
+    "queries": 10,
+    "unique_public_records": 191,
+    "conclusion": "No exact match identified in the recorded public search"
+  },
+  "patch": "patches/nntrainer-attention.patch",
+  "tests_patch": "patches/nntrainer-tests.patch",
+  "maintainer_notification": "draft_prepared_not_sent",
+  "upstream_acceptance": false,
+  "version_regression_proven": false,
+  "limits": [
+    "Native FP32 CPU, NCHW, channel=1; full batches 1 and 2",
+    "Incremental cases use batch=1; general incremental batch support excluded",
+    "No FP16/GPU, other OS, performance or model-level validation",
+    "Reused build with unrelated previous repairs; isolated attention patch checked",
+    "No complete clean repository build or upstream CI claim"
+  ],
+  "excluded": [
+    "QuantizeLinear",
+    "MLX NVFP4 #3912",
+    "previous loss/cosine/LayerNorm cases"
+  ],
+  "checked_at": "2026-09-07T15:55:53.683299+00:00"
+}

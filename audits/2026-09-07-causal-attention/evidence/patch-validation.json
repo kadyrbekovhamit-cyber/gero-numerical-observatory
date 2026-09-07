@@ -1,0 +1,16 @@
+[
+  {
+    "patch": "nntrainer-attention.patch",
+    "clean_pinned_apply": true,
+    "identical_to_tested": true,
+    "sha256": "fe42cd6a6c0953c5b2e4a7c3700e521f0ee17342e7c55c32181df3624036f9a5",
+    "patch_output": "patching file 'nntrainer/layers/attention_layer.cpp'"
+  },
+  {
+    "patch": "nntrainer-tests.patch",
+    "clean_pinned_apply": true,
+    "identical_to_tested": true,
+    "sha256": "2ec7144ae740de66de729de08dc16339608e93e57df31e3b01ee5598503c4015",
+    "patch_output": "patching file 'test/unittest/layers/unittest_layers_attention.cpp'"
+  }
+]
