@@ -1,0 +1,15 @@
+diff --git a/nntrainer/layers/acti_func.h b/nntrainer/layers/acti_func.h
+index 58cc5a0..da7e3c6 100644
+--- a/nntrainer/layers/acti_func.h
++++ b/nntrainer/layers/acti_func.h
+@@ -378,7 +378,9 @@ public:
+    */
+   template <typename T = float> static T softplus(T x) {
+     /** TODO: Change beta to be a property */
+-    return static_cast<T>(log(1 + exp(beta * x)) / beta);
++    const double scaled = double(beta) * double(x);
++    return static_cast<T>(
++      (std::max(scaled, 0.0) + std::log1p(std::exp(-std::abs(scaled)))) / beta);
+   }
+ 
+   /**

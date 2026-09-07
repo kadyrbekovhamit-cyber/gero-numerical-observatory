@@ -1,0 +1,58 @@
+diff --git a/test/unittest/unittest_nntrainer_activations.cpp b/test/unittest/unittest_nntrainer_activations.cpp
+index 7d82f9a..580c00e 100644
+--- a/test/unittest/unittest_nntrainer_activations.cpp
++++ b/test/unittest/unittest_nntrainer_activations.cpp
+@@ -21,6 +21,7 @@
+  * @author      Parichay Kapoor <pk.kapoor@samsung.com>
+  * @bug         No known bugs
+  */
++#include <cmath>
+ #include <gtest/gtest.h>
+ 
+ #include <activation_layer.h>
+@@ -29,6 +30,45 @@
+ #include <nntrainer_log.h>
+ #include <nntrainer_test_util.h>
+ 
++TEST(nntrainer_activation_stability, softplus_representable_positive_tail) {
++  for (float x : {0.0f, 1.0f, 20.0f, 1000.0f}) {
++    SCOPED_TRACE(x);
++    const float actual = nntrainer::ActiFunc::softplus<float>(x);
++    const double expected =
++      x > 40 ? double(x) : std::log1p(std::exp(double(x)));
++    EXPECT_NEAR(actual, expected, 1e-6 * std::max(1.0, expected));
++    if (x == 1000.0f)
++      RecordProperty("softplus_1000", std::to_string(actual));
++  }
++}
++
++TEST(nntrainer_activation_stability, softplus_preserves_small_positive_tail) {
++  const float actual = nntrainer::ActiFunc::softplus<float>(-40.0f);
++  const double expected = std::exp(-40.0);
++  EXPECT_GT(actual, 0.0f);
++  EXPECT_NEAR(actual / expected, 1.0, 1e-6);
++}
++
++TEST(nntrainer_activation_stability, softplus_forward_backward_agree) {
++  const float plus = nntrainer::ActiFunc::softplus<float>(1001.0f);
++  const float minus = nntrainer::ActiFunc::softplus<float>(999.0f);
++  const float finite_difference = (plus - minus) / 2.0f;
++  const float backward = nntrainer::ActiFunc::softplusPrime<float>(1000.0f);
++  EXPECT_NEAR(finite_difference, backward, 1e-6);
++}
++
++TEST(nntrainer_activation_stability, softplus_tensor_dispatch_is_finite) {
++  nntrainer::ActiFunc activation(nntrainer::ActivationType::ACT_SOFTPLUS,
++                                 false);
++  nntrainer::Tensor input(1, 1, 1, 2);
++  nntrainer::Tensor output(1, 1, 1, 2);
++  input.getData()[0] = 1000.0f;
++  input.getData()[1] = -40.0f;
++  activation.run_fn(input, output);
++  EXPECT_FLOAT_EQ(output.getData()[0], 1000.0f);
++  EXPECT_GT(output.getData()[1], 0.0f);
++}
++
+ TEST(nntrainer_activation, softmax_01_p) {
+   int batch = 3;
+   int channel = 1;

@@ -4,6 +4,15 @@ A reproducible CPU benchmark for mathematical contracts in ONNX graphs. It runs 
 
 [71-second video](https://www.youtube.com/shorts/KTLC9_FomBs) · [Interactive reports](https://www.gero.uz/stability/) · [Publication and limits](https://www.gero.uz/research/articles/onnx-numerical-observatory-reproduced-snapshot.html) · [Measured snapshot](benchmarks/2026-09-06/latest.json) · [Reverification](benchmarks/2026-09-06/reverification.json)
 
+## Activation stability audit, 7 September 2026
+
+Source-pinned ELU/SELU, GELU and Softplus observations, with local patch proposals,
+CPU/Metal verification and an explicit prior-art search boundary. This separate
+audit does not alter the ONNX benchmark counts or claim upstream confirmation.
+
+[Reproduce the activation audit](audits/2026-09-07-activations/README.md) ·
+[Read the technical note](https://www.gero.uz/research/articles/finite-inputs-nonfinite-activations-mlx-nntrainer.html)
+
 ## Small-sample validation note
 
 The repository also contains a standalone, standard-library calculation for a

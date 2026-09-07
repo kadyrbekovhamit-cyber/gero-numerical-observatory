@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-09-07T04:44:45.112779+00:00",
+  "sources": [
+    {
+      "project": "mlx",
+      "commit": "ce916dbbcaa88e433b6fd1e60a17f766d49c27fe",
+      "remote": "https://github.com/ml-explore/mlx.git"
+    },
+    {
+      "project": "nntrainer",
+      "commit": "a7ea056e79ab8e14447ea305c1b634e233343258",
+      "remote": "https://github.com/nntrainer/nntrainer.git"
+    }
+  ],
+  "scope": "Activation audit; older loss patches excluded from this release"
+}

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="26" failures="4" disabled="2" errors="0" time="0.002" timestamp="2026-09-07T10:25:41.429" name="AllTests">
+  <testsuite name="nntrainer_activation_stability" tests="4" failures="4" disabled="0" skipped="0" errors="0" time="0." timestamp="2026-09-07T10:25:41.429">
+    <testcase name="softplus_representable_positive_tail" file="../test/unittest/unittest_nntrainer_activations.cpp" line="33" status="run" result="completed" time="0." timestamp="2026-09-07T10:25:41.429" classname="nntrainer_activation_stability">
+      <failure message="../test/unittest/unittest_nntrainer_activations.cpp:39&#x0A;The difference between actual and expected is inf, which exceeds 1e-6 * std::max(1.0, expected), where&#x0A;actual evaluates to inf,&#x0A;expected evaluates to 1000, and&#x0A;1e-6 * std::max(1.0, expected) evaluates to 0.001.&#x0A;Google Test trace:&#x0A;../test/unittest/unittest_nntrainer_activations.cpp:35: 1000&#x0A;" type=""><![CDATA[../test/unittest/unittest_nntrainer_activations.cpp:39
+The difference between actual and expected is inf, which exceeds 1e-6 * std::max(1.0, expected), where
+actual evaluates to inf,
+expected evaluates to 1000, and
+1e-6 * std::max(1.0, expected) evaluates to 0.001.
+Google Test trace:
+../test/unittest/unittest_nntrainer_activations.cpp:35: 1000
+]]></failure>
+      <properties>
+        <property name="softplus_1000" value="inf"/>
+      </properties>
+    </testcase>
+    <testcase name="softplus_preserves_small_positive_tail" file="../test/unittest/unittest_nntrainer_activations.cpp" line="45" status="run" result="completed" time="0." timestamp="2026-09-07T10:25:41.430" classname="nntrainer_activation_stability">
+      <failure message="../test/unittest/unittest_nntrainer_activations.cpp:48&#x0A;Expected: (actual) &gt; (0.0f), actual: 0 vs 0&#x0A;" type=""><![CDATA[../test/unittest/unittest_nntrainer_activations.cpp:48
+Expected: (actual) > (0.0f), actual: 0 vs 0
+]]></failure>
+      <failure message="../test/unittest/unittest_nntrainer_activations.cpp:49&#x0A;The difference between actual / expected and 1.0 is 1, which exceeds 1e-6, where&#x0A;actual / expected evaluates to 0,&#x0A;1.0 evaluates to 1, and&#x0A;1e-6 evaluates to 9.9999999999999995e-07.&#x0A;" type=""><![CDATA[../test/unittest/unittest_nntrainer_activations.cpp:49
+The difference between actual / expected and 1.0 is 1, which exceeds 1e-6, where
+actual / expected evaluates to 0,
+1.0 evaluates to 1, and
+1e-6 evaluates to 9.9999999999999995e-07.
+]]></failure>
+    </testcase>
+    <testcase name="softplus_forward_backward_agree" file="../test/unittest/unittest_nntrainer_activations.cpp" line="52" status="run" result="completed" time="0." timestamp="2026-09-07T10:25:41.430" classname="nntrainer_activation_stability">
+      <failure message="../test/unittest/unittest_nntrainer_activations.cpp:57&#x0A;The difference between finite_difference and backward is nan, which exceeds 1e-6, where&#x0A;finite_difference evaluates to nan,&#x0A;backward evaluates to 1, and&#x0A;1e-6 evaluates to 9.9999999999999995e-07.&#x0A;" type=""><![CDATA[../test/unittest/unittest_nntrainer_activations.cpp:57
+The difference between finite_difference and backward is nan, which exceeds 1e-6, where
+finite_difference evaluates to nan,
+backward evaluates to 1, and
+1e-6 evaluates to 9.9999999999999995e-07.
+]]></failure>
+    </testcase>
+    <testcase name="softplus_tensor_dispatch_is_finite" file="../test/unittest/unittest_nntrainer_activations.cpp" line="60" status="run" result="completed" time="0." timestamp="2026-09-07T10:25:41.430" classname="nntrainer_activation_stability">
+      <failure message="../test/unittest/unittest_nntrainer_activations.cpp:68&#x0A;Expected equality of these values:&#x0A;  output.getData()[0]&#x0A;    Which is: inf&#x0A;  1000.0f&#x0A;    Which is: 1000&#x0A;" type=""><![CDATA[../test/unittest/unittest_nntrainer_activations.cpp:68
+Expected equality of these values:
+  output.getData()[0]
+    Which is: inf
+  1000.0f
+    Which is: 1000
+]]></failure>
+      <failure message="../test/unittest/unittest_nntrainer_activations.cpp:69&#x0A;Expected: (output.getData()[1]) &gt; (0.0f), actual: 0 vs 0&#x0A;" type=""><![CDATA[../test/unittest/unittest_nntrainer_activations.cpp:69
+Expected: (output.getData()[1]) > (0.0f), actual: 0 vs 0
+]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="nntrainer_activation" tests="22" failures="0" disabled="2" skipped="0" errors="0" time="0.002" timestamp="2026-09-07T10:25:41.430">
+    <testcase name="softmax_01_p" file="../test/unittest/unittest_nntrainer_activations.cpp" line="72" status="run" result="completed" time="0." timestamp="2026-09-07T10:25:41.430" classname="nntrainer_activation" />
+    <testcase name="softmax_02_n" file="../test/unittest/unittest_nntrainer_activations.cpp" line="96" status="run" result="completed" time="0." timestamp="2026-09-07T10:25:41.430" classname="nntrainer_activation" />
+    <testcase name="softmax_prime_01_p" file="../test/unittest/unittest_nntrainer_activations.cpp" line="111" status="run" result="completed" time="0." timestamp="2026-09-07T10:25:41.431" classname="nntrainer_activation" />
+    <testcase name="softmax_prime_02_n" file="../test/unittest/unittest_nntrainer_activations.cpp" line="140" status="run" result="completed" time="0." timestamp="2026-09-07T10:25:41.431" classname="nntrainer_activation" />
+    <testcase name="softplus_01_p" file="../test/unittest/unittest_nntrainer_activations.cpp" line="165" status="run" result="completed" time="0." timestamp="2026-09-07T10:25:41.431" classname="nntrainer_activation" />
+    <testcase name="softplusPrime_01_p" file="../test/unittest/unittest_nntrainer_activations.cpp" line="193" status="run" result="completed" time="0." timestamp="2026-09-07T10:25:41.431" classname="nntrainer_activation" />
+    <testcase name="sigmoid_01_p" file="../test/unittest/unittest_nntrainer_activations.cpp" line="221" status="run" result="completed" time="0." timestamp="2026-09-07T10:25:41.431" classname="nntrainer_activation" />
+    <testcase name="DISABLED_sigmoidPrime_01_p" file="../test/unittest/unittest_nntrainer_activations.cpp" line="250" status="notrun" result="suppressed" time="0." timestamp="1970-01-01T06:00:00.000" classname="nntrainer_activation" />
+    <testcase name="tanhFloat_01_p" file="../test/unittest/unittest_nntrainer_activations.cpp" line="283" status="run" result="completed" time="0." timestamp="2026-09-07T10:25:41.431" classname="nntrainer_activation" />
+    <testcase name="DISABLED_tanhFloatPrime_01_p" file="../test/unittest/unittest_nntrainer_activations.cpp" line="314" status="notrun" result="suppressed" time="0." timestamp="1970-01-01T06:00:00.000" classname="nntrainer_activation" />
+    <testcase name="relu_01_p" file="../test/unittest/unittest_nntrainer_activations.cpp" line="344" status="run" result="completed" time="0." timestamp="2026-09-07T10:25:41.431" classname="nntrainer_activation" />
+    <testcase name="reluPrime_01_p" file="../test/unittest/unittest_nntrainer_activations.cpp" line="370" status="run" result="completed" time="0." timestamp="2026-09-07T10:25:41.431" classname="nntrainer_activation" />
+    <testcase name="swish_01_p" file="../test/unittest/unittest_nntrainer_activations.cpp" line="398" status="run" result="completed" time="0." timestamp="2026-09-07T10:25:41.431" classname="nntrainer_activation" />
+    <testcase name="swishPrime_01_p" file="../test/unittest/unittest_nntrainer_activations.cpp" line="427" status="run" result="completed" time="0." timestamp="2026-09-07T10:25:41.431" classname="nntrainer_activation" />
+    <testcase name="gelu_01_p" file="../test/unittest/unittest_nntrainer_activations.cpp" line="458" status="run" result="completed" time="0." timestamp="2026-09-07T10:25:41.432" classname="nntrainer_activation" />
+    <testcase name="geluPrime_01_p" file="../test/unittest/unittest_nntrainer_activations.cpp" line="485" status="run" result="completed" time="0." timestamp="2026-09-07T10:25:41.432" classname="nntrainer_activation" />
+    <testcase name="elu_01_p" file="../test/unittest/unittest_nntrainer_activations.cpp" line="516" status="run" result="completed" time="0." timestamp="2026-09-07T10:25:41.432" classname="nntrainer_activation" />
+    <testcase name="eluPrime_01_p" file="../test/unittest/unittest_nntrainer_activations.cpp" line="543" status="run" result="completed" time="0." timestamp="2026-09-07T10:25:41.432" classname="nntrainer_activation" />
+    <testcase name="selu_01_p" file="../test/unittest/unittest_nntrainer_activations.cpp" line="568" status="run" result="completed" time="0." timestamp="2026-09-07T10:25:41.432" classname="nntrainer_activation" />
+    <testcase name="seluPrime_01_p" file="../test/unittest/unittest_nntrainer_activations.cpp" line="595" status="run" result="completed" time="0." timestamp="2026-09-07T10:25:41.432" classname="nntrainer_activation" />
+    <testcase name="mish_01_p" file="../test/unittest/unittest_nntrainer_activations.cpp" line="621" status="run" result="completed" time="0." timestamp="2026-09-07T10:25:41.432" classname="nntrainer_activation" />
+    <testcase name="mishPrime_01_p" file="../test/unittest/unittest_nntrainer_activations.cpp" line="648" status="run" result="completed" time="0." timestamp="2026-09-07T10:25:41.432" classname="nntrainer_activation" />
+  </testsuite>
+</testsuites>

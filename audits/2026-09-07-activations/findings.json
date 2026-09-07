@@ -1,0 +1,91 @@
+{
+  "checked_at": "2026-09-07T05:32:46.493266+00:00",
+  "classification": "locally_reproduced_observations_with_proposed_repairs",
+  "families": [
+    {
+      "id": "mlx-elu-selu-inactive-exponential-gradient",
+      "original": {
+        "x": 100,
+        "value": 100,
+        "gradient": "NaN"
+      },
+      "patched": {
+        "value": 100,
+        "gradient": 1
+      },
+      "dtype": [
+        "float16",
+        "float32"
+      ],
+      "devices": [
+        "CPU",
+        "Metal"
+      ]
+    },
+    {
+      "id": "mlx-gelu-family-intermediate-overflow",
+      "exact": {
+        "x": 40000,
+        "dtype": "float16",
+        "original": "+Infinity",
+        "patched": 40000
+      },
+      "approximate": {
+        "x": 40000,
+        "dtype": "float16",
+        "original_gradient": "NaN",
+        "patched_gradient": 1
+      },
+      "additional_coverage": "Very large finite float32 inputs; see tests",
+      "devices": [
+        "CPU",
+        "Metal"
+      ]
+    },
+    {
+      "id": "nntrainer-softplus-exp-overflow-and-cancellation",
+      "positive_tail": {
+        "x": 1000,
+        "original": "+Infinity",
+        "patched": 1000
+      },
+      "negative_tail": {
+        "x": -40,
+        "original": 0,
+        "patched_approx": 4.248354e-18
+      },
+      "dtype": [
+        "float32"
+      ],
+      "devices": [
+        "CPU"
+      ]
+    }
+  ],
+  "validation": {
+    "mlx_cpu_original": {
+      "failed": 10,
+      "passed": 16
+    },
+    "mlx_cpu_patched": {
+      "failed": 0,
+      "passed": 26
+    },
+    "mlx_metal_patched": {
+      "failed": 0,
+      "passed": 26
+    },
+    "nntrainer_original": {
+      "failed": 4,
+      "passed": 20,
+      "disabled": 2
+    },
+    "nntrainer_patched": {
+      "failed": 0,
+      "passed": 24,
+      "disabled": 2
+    }
+  },
+  "duplicate_review": "No matching public report identified within saved searches; no claim of absolute priority or maintainer confirmation",
+  "excluded": "Bloom known PR #56; QuantizeLinear; previous loss-function cases"
+}

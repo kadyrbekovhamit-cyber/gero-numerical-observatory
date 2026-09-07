@@ -1,0 +1,205 @@
+source: HEAD device: cpu
+FFFFFFFFFF................                                               [100%]
+=================================== FAILURES ===================================
+___________ test_positive_elu_has_linear_derivative[elu-1.0-dtype0] ____________
+
+dtype = mlx.core.float16, name = 'elu', alpha = 1.0
+
+    @pytest.mark.parametrize('dtype', [mx.float16, mx.float32])
+    @pytest.mark.parametrize('name, alpha', [('elu', 1.0), ('elu', 1.7), ('selu', None)])
+    def test_positive_elu_has_linear_derivative(dtype, name, alpha):
+        x = mx.array([12., 100., 1000.], dtype=dtype)
+        fn = (lambda v: act.elu(v, alpha)) if name == 'elu' else act.selu
+        gradient = mx.grad(lambda v: fn(v).astype(mx.float32).sum())(x)
+        expected = np.ones(3) * (1.0507 if name == 'selu' else 1)
+>       np.testing.assert_allclose(np.array(gradient), expected, rtol=1e-3, atol=1e-6)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.001, atol=1e-06
+E       
+E       nan location mismatch:
+E        ACTUAL: array([nan, nan, nan], dtype=float16)
+E        DESIRED: array([1., 1., 1.])
+
+test_mlx_activations.py:25: AssertionError
+___________ test_positive_elu_has_linear_derivative[elu-1.0-dtype1] ____________
+
+dtype = mlx.core.float32, name = 'elu', alpha = 1.0
+
+    @pytest.mark.parametrize('dtype', [mx.float16, mx.float32])
+    @pytest.mark.parametrize('name, alpha', [('elu', 1.0), ('elu', 1.7), ('selu', None)])
+    def test_positive_elu_has_linear_derivative(dtype, name, alpha):
+        x = mx.array([12., 100., 1000.], dtype=dtype)
+        fn = (lambda v: act.elu(v, alpha)) if name == 'elu' else act.selu
+        gradient = mx.grad(lambda v: fn(v).astype(mx.float32).sum())(x)
+        expected = np.ones(3) * (1.0507 if name == 'selu' else 1)
+>       np.testing.assert_allclose(np.array(gradient), expected, rtol=1e-3, atol=1e-6)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.001, atol=1e-06
+E       
+E       nan location mismatch:
+E        ACTUAL: array([ 1., nan, nan], dtype=float32)
+E        DESIRED: array([1., 1., 1.])
+
+test_mlx_activations.py:25: AssertionError
+___________ test_positive_elu_has_linear_derivative[elu-1.7-dtype0] ____________
+
+dtype = mlx.core.float16, name = 'elu', alpha = 1.7
+
+    @pytest.mark.parametrize('dtype', [mx.float16, mx.float32])
+    @pytest.mark.parametrize('name, alpha', [('elu', 1.0), ('elu', 1.7), ('selu', None)])
+    def test_positive_elu_has_linear_derivative(dtype, name, alpha):
+        x = mx.array([12., 100., 1000.], dtype=dtype)
+        fn = (lambda v: act.elu(v, alpha)) if name == 'elu' else act.selu
+        gradient = mx.grad(lambda v: fn(v).astype(mx.float32).sum())(x)
+        expected = np.ones(3) * (1.0507 if name == 'selu' else 1)
+>       np.testing.assert_allclose(np.array(gradient), expected, rtol=1e-3, atol=1e-6)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.001, atol=1e-06
+E       
+E       nan location mismatch:
+E        ACTUAL: array([nan, nan, nan], dtype=float16)
+E        DESIRED: array([1., 1., 1.])
+
+test_mlx_activations.py:25: AssertionError
+___________ test_positive_elu_has_linear_derivative[elu-1.7-dtype1] ____________
+
+dtype = mlx.core.float32, name = 'elu', alpha = 1.7
+
+    @pytest.mark.parametrize('dtype', [mx.float16, mx.float32])
+    @pytest.mark.parametrize('name, alpha', [('elu', 1.0), ('elu', 1.7), ('selu', None)])
+    def test_positive_elu_has_linear_derivative(dtype, name, alpha):
+        x = mx.array([12., 100., 1000.], dtype=dtype)
+        fn = (lambda v: act.elu(v, alpha)) if name == 'elu' else act.selu
+        gradient = mx.grad(lambda v: fn(v).astype(mx.float32).sum())(x)
+        expected = np.ones(3) * (1.0507 if name == 'selu' else 1)
+>       np.testing.assert_allclose(np.array(gradient), expected, rtol=1e-3, atol=1e-6)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.001, atol=1e-06
+E       
+E       nan location mismatch:
+E        ACTUAL: array([ 1., nan, nan], dtype=float32)
+E        DESIRED: array([1., 1., 1.])
+
+test_mlx_activations.py:25: AssertionError
+__________ test_positive_elu_has_linear_derivative[selu-None-dtype0] ___________
+
+dtype = mlx.core.float16, name = 'selu', alpha = None
+
+    @pytest.mark.parametrize('dtype', [mx.float16, mx.float32])
+    @pytest.mark.parametrize('name, alpha', [('elu', 1.0), ('elu', 1.7), ('selu', None)])
+    def test_positive_elu_has_linear_derivative(dtype, name, alpha):
+        x = mx.array([12., 100., 1000.], dtype=dtype)
+        fn = (lambda v: act.elu(v, alpha)) if name == 'elu' else act.selu
+        gradient = mx.grad(lambda v: fn(v).astype(mx.float32).sum())(x)
+        expected = np.ones(3) * (1.0507 if name == 'selu' else 1)
+>       np.testing.assert_allclose(np.array(gradient), expected, rtol=1e-3, atol=1e-6)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.001, atol=1e-06
+E       
+E       nan location mismatch:
+E        ACTUAL: array([nan, nan, nan], dtype=float16)
+E        DESIRED: array([1.0507, 1.0507, 1.0507])
+
+test_mlx_activations.py:25: AssertionError
+__________ test_positive_elu_has_linear_derivative[selu-None-dtype1] ___________
+
+dtype = mlx.core.float32, name = 'selu', alpha = None
+
+    @pytest.mark.parametrize('dtype', [mx.float16, mx.float32])
+    @pytest.mark.parametrize('name, alpha', [('elu', 1.0), ('elu', 1.7), ('selu', None)])
+    def test_positive_elu_has_linear_derivative(dtype, name, alpha):
+        x = mx.array([12., 100., 1000.], dtype=dtype)
+        fn = (lambda v: act.elu(v, alpha)) if name == 'elu' else act.selu
+        gradient = mx.grad(lambda v: fn(v).astype(mx.float32).sum())(x)
+        expected = np.ones(3) * (1.0507 if name == 'selu' else 1)
+>       np.testing.assert_allclose(np.array(gradient), expected, rtol=1e-3, atol=1e-6)
+E       AssertionError: 
+E       Not equal to tolerance rtol=0.001, atol=1e-06
+E       
+E       nan location mismatch:
+E        ACTUAL: array([1.0507,    nan,    nan], dtype=float32)
+E        DESIRED: array([1.0507, 1.0507, 1.0507])
+
+test_mlx_activations.py:25: AssertionError
+__________ test_gelu_preserves_representable_positive_values[dtype0] ___________
+
+dtype = mlx.core.float16
+
+    @pytest.mark.parametrize('dtype', [mx.float16, mx.float32])
+    def test_gelu_preserves_representable_positive_values(dtype):
+        values = [32752., 40000., 65504.] if dtype == mx.float16 else [1e38, 2e38, 3e38]
+        x = mx.array(values, dtype=dtype)
+>       np.testing.assert_array_equal(np.array(act.gelu(x)), np.array(x))
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       +inf location mismatch:
+E        ACTUAL: array([32752.,    inf,    inf], dtype=float16)
+E        DESIRED: array([32752., 40000., 65504.], dtype=float16)
+
+test_mlx_activations.py:32: AssertionError
+__________ test_gelu_preserves_representable_positive_values[dtype1] ___________
+
+dtype = mlx.core.float32
+
+    @pytest.mark.parametrize('dtype', [mx.float16, mx.float32])
+    def test_gelu_preserves_representable_positive_values(dtype):
+        values = [32752., 40000., 65504.] if dtype == mx.float16 else [1e38, 2e38, 3e38]
+        x = mx.array(values, dtype=dtype)
+>       np.testing.assert_array_equal(np.array(act.gelu(x)), np.array(x))
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       +inf location mismatch:
+E        ACTUAL: array([1.e+38,    inf,    inf], dtype=float32)
+E        DESIRED: array([1.e+38, 2.e+38, 3.e+38], dtype=float32)
+
+test_mlx_activations.py:32: AssertionError
+______________ test_gelu_approx_large_gradient_is_finite[dtype0] _______________
+
+dtype = mlx.core.float16
+
+    @pytest.mark.parametrize('dtype', [mx.float16, mx.float32])
+    def test_gelu_approx_large_gradient_is_finite(dtype):
+        values = [-65504., -40000., 40000., 65504.] if dtype == mx.float16 else [-3e38, -1e20, 1e20, 3e38]
+        x = mx.array(values, dtype=dtype)
+        gradient = mx.grad(lambda v: act.gelu_approx(v).astype(mx.float32).sum())(x)
+>       np.testing.assert_array_equal(np.array(gradient), [0., 0., 1., 1.])
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       nan location mismatch:
+E        ACTUAL: array([nan, nan, nan, nan], dtype=float16)
+E        DESIRED: array([0., 0., 1., 1.])
+
+test_mlx_activations.py:39: AssertionError
+______________ test_gelu_approx_large_gradient_is_finite[dtype1] _______________
+
+dtype = mlx.core.float32
+
+    @pytest.mark.parametrize('dtype', [mx.float16, mx.float32])
+    def test_gelu_approx_large_gradient_is_finite(dtype):
+        values = [-65504., -40000., 40000., 65504.] if dtype == mx.float16 else [-3e38, -1e20, 1e20, 3e38]
+        x = mx.array(values, dtype=dtype)
+        gradient = mx.grad(lambda v: act.gelu_approx(v).astype(mx.float32).sum())(x)
+>       np.testing.assert_array_equal(np.array(gradient), [0., 0., 1., 1.])
+E       AssertionError: 
+E       Arrays are not equal
+E       
+E       nan location mismatch:
+E        ACTUAL: array([nan, nan, nan, nan], dtype=float32)
+E        DESIRED: array([0., 0., 1., 1.])
+
+test_mlx_activations.py:39: AssertionError
+=========================== short test summary info ============================
+FAILED test_mlx_activations.py::test_positive_elu_has_linear_derivative[elu-1.0-dtype0]
+FAILED test_mlx_activations.py::test_positive_elu_has_linear_derivative[elu-1.0-dtype1]
+FAILED test_mlx_activations.py::test_positive_elu_has_linear_derivative[elu-1.7-dtype0]
+FAILED test_mlx_activations.py::test_positive_elu_has_linear_derivative[elu-1.7-dtype1]
+FAILED test_mlx_activations.py::test_positive_elu_has_linear_derivative[selu-None-dtype0]
+FAILED test_mlx_activations.py::test_positive_elu_has_linear_derivative[selu-None-dtype1]
+FAILED test_mlx_activations.py::test_gelu_preserves_representable_positive_values[dtype0]
+FAILED test_mlx_activations.py::test_gelu_preserves_representable_positive_values[dtype1]
+FAILED test_mlx_activations.py::test_gelu_approx_large_gradient_is_finite[dtype0]
+FAILED test_mlx_activations.py::test_gelu_approx_large_gradient_is_finite[dtype1]
+10 failed, 16 passed in 2.50s

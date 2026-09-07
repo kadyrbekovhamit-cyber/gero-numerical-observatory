@@ -1,0 +1,103 @@
+[==========] Running 24 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 4 tests from nntrainer_activation_stability
+[ RUN      ] nntrainer_activation_stability.softplus_representable_positive_tail
+../test/unittest/unittest_nntrainer_activations.cpp:39: Failure
+The difference between actual and expected is inf, which exceeds 1e-6 * std::max(1.0, expected), where
+actual evaluates to inf,
+expected evaluates to 1000, and
+1e-6 * std::max(1.0, expected) evaluates to 0.001.
+Google Test trace:
+../test/unittest/unittest_nntrainer_activations.cpp:35: 1000
+
+[  FAILED  ] nntrainer_activation_stability.softplus_representable_positive_tail (0 ms)
+[ RUN      ] nntrainer_activation_stability.softplus_preserves_small_positive_tail
+../test/unittest/unittest_nntrainer_activations.cpp:48: Failure
+Expected: (actual) > (0.0f), actual: 0 vs 0
+
+../test/unittest/unittest_nntrainer_activations.cpp:49: Failure
+The difference between actual / expected and 1.0 is 1, which exceeds 1e-6, where
+actual / expected evaluates to 0,
+1.0 evaluates to 1, and
+1e-6 evaluates to 9.9999999999999995e-07.
+
+[  FAILED  ] nntrainer_activation_stability.softplus_preserves_small_positive_tail (0 ms)
+[ RUN      ] nntrainer_activation_stability.softplus_forward_backward_agree
+../test/unittest/unittest_nntrainer_activations.cpp:57: Failure
+The difference between finite_difference and backward is nan, which exceeds 1e-6, where
+finite_difference evaluates to nan,
+backward evaluates to 1, and
+1e-6 evaluates to 9.9999999999999995e-07.
+
+[  FAILED  ] nntrainer_activation_stability.softplus_forward_backward_agree (0 ms)
+[ RUN      ] nntrainer_activation_stability.softplus_tensor_dispatch_is_finite
+../test/unittest/unittest_nntrainer_activations.cpp:68: Failure
+Expected equality of these values:
+  output.getData()[0]
+    Which is: inf
+  1000.0f
+    Which is: 1000
+
+../test/unittest/unittest_nntrainer_activations.cpp:69: Failure
+Expected: (output.getData()[1]) > (0.0f), actual: 0 vs 0
+
+[  FAILED  ] nntrainer_activation_stability.softplus_tensor_dispatch_is_finite (0 ms)
+[----------] 4 tests from nntrainer_activation_stability (0 ms total)
+
+[----------] 20 tests from nntrainer_activation
+[ RUN      ] nntrainer_activation.softmax_01_p
+[       OK ] nntrainer_activation.softmax_01_p (0 ms)
+[ RUN      ] nntrainer_activation.softmax_02_n
+[       OK ] nntrainer_activation.softmax_02_n (0 ms)
+[ RUN      ] nntrainer_activation.softmax_prime_01_p
+[       OK ] nntrainer_activation.softmax_prime_01_p (0 ms)
+[ RUN      ] nntrainer_activation.softmax_prime_02_n
+[       OK ] nntrainer_activation.softmax_prime_02_n (0 ms)
+[ RUN      ] nntrainer_activation.softplus_01_p
+[       OK ] nntrainer_activation.softplus_01_p (0 ms)
+[ RUN      ] nntrainer_activation.softplusPrime_01_p
+[       OK ] nntrainer_activation.softplusPrime_01_p (0 ms)
+[ RUN      ] nntrainer_activation.sigmoid_01_p
+[       OK ] nntrainer_activation.sigmoid_01_p (0 ms)
+[ DISABLED ] nntrainer_activation.DISABLED_sigmoidPrime_01_p
+[ RUN      ] nntrainer_activation.tanhFloat_01_p
+[       OK ] nntrainer_activation.tanhFloat_01_p (0 ms)
+[ DISABLED ] nntrainer_activation.DISABLED_tanhFloatPrime_01_p
+[ RUN      ] nntrainer_activation.relu_01_p
+[       OK ] nntrainer_activation.relu_01_p (0 ms)
+[ RUN      ] nntrainer_activation.reluPrime_01_p
+[       OK ] nntrainer_activation.reluPrime_01_p (0 ms)
+[ RUN      ] nntrainer_activation.swish_01_p
+[       OK ] nntrainer_activation.swish_01_p (0 ms)
+[ RUN      ] nntrainer_activation.swishPrime_01_p
+[       OK ] nntrainer_activation.swishPrime_01_p (0 ms)
+[ RUN      ] nntrainer_activation.gelu_01_p
+[       OK ] nntrainer_activation.gelu_01_p (0 ms)
+[ RUN      ] nntrainer_activation.geluPrime_01_p
+[       OK ] nntrainer_activation.geluPrime_01_p (0 ms)
+[ RUN      ] nntrainer_activation.elu_01_p
+[       OK ] nntrainer_activation.elu_01_p (0 ms)
+[ RUN      ] nntrainer_activation.eluPrime_01_p
+[       OK ] nntrainer_activation.eluPrime_01_p (0 ms)
+[ RUN      ] nntrainer_activation.selu_01_p
+[       OK ] nntrainer_activation.selu_01_p (0 ms)
+[ RUN      ] nntrainer_activation.seluPrime_01_p
+[       OK ] nntrainer_activation.seluPrime_01_p (0 ms)
+[ RUN      ] nntrainer_activation.mish_01_p
+[       OK ] nntrainer_activation.mish_01_p (0 ms)
+[ RUN      ] nntrainer_activation.mishPrime_01_p
+[       OK ] nntrainer_activation.mishPrime_01_p (0 ms)
+[----------] 20 tests from nntrainer_activation (2 ms total)
+
+[----------] Global test environment tear-down
+[==========] 24 tests from 2 test suites ran. (2 ms total)
+[  PASSED  ] 20 tests.
+[  FAILED  ] 4 tests, listed below:
+[  FAILED  ] nntrainer_activation_stability.softplus_representable_positive_tail
+[  FAILED  ] nntrainer_activation_stability.softplus_preserves_small_positive_tail
+[  FAILED  ] nntrainer_activation_stability.softplus_forward_backward_agree
+[  FAILED  ] nntrainer_activation_stability.softplus_tensor_dispatch_is_finite
+
+ 4 FAILED TESTS
+  YOU HAVE 2 DISABLED TESTS
+
