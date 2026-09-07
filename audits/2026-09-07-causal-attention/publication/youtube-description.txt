@@ -1,0 +1,29 @@
+Can causal attention read future values? This 48-second native nntrainer experiment shows a reproducible failure, a local repair and the tests behind it.
+
+With zero logits, two queries and V=[2,10,50], the original AttentionLayer returns [20.66666794,20.66666794] instead of the upper-left causal target [2,6]. Changing a future value also changes earlier outputs.
+
+Three related mechanisms in one implementation report: a rectangular mask-shape mismatch with an ignored error, a finite masking penalty that can be overcome, and missing masking on later incremental blocks.
+
+The proposed patch overwrites forbidden logits with negative infinity and uses the actual dimensions and absolute query offset. Selected native suite: 21 failures before, 42 passes after (28 new + 14 existing tests). Key cases repeat in three fresh processes per version.
+
+UPSTREAM REPORT AND PATCH DISCUSSION
+https://github.com/nntrainer/nntrainer/issues/4333
+
+ARTICLE AND DOWNLOAD
+https://www.gero.uz/research/articles/when-causal-attention-sees-the-future.html
+
+PINNED TESTS, PATCHES, BUILD INSTRUCTIONS AND LOGS
+https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/dbd6a98d7c4213d1df26252d4b5cc053c18c05d3/audits/2026-09-07-causal-attention
+
+LINKEDIN DISCUSSION
+https://www.linkedin.com/feed/update/urn:li:share:7502761599108182016/
+
+Scope: nntrainer commit a7ea056e79ab8e14447ea305c1b634e233343258, native CPU FP32 NCHW channel 1, macOS M4. Full tests cover batch 1/2; incremental tests cover batch 1. The reused build includes unrelated earlier repairs, with an exact pinned attention baseline. No full clean repository rebuild, GPU/FP16, other OS, performance or model-level impact was tested. Rectangular alignment is explicitly raised for maintainer review. No claim about a particular Samsung device.
+
+Ten recorded searches covered 191 public issues/PRs; no exact match was identified within that scope. Maintainer confirmation and patch acceptance are pending. QuantizeLinear and earlier reports are excluded.
+
+Maintaining attention kernels or numerical ML tests? Independent reproduction and contact are welcome. Please compare evidence in the upstream issue.
+
+AI assistance disclosure: synthetic narration using the local Samantha voice; original mathematical diagrams. The research, patch proposal and editorial materials were prepared with AI assistance. The evidence is recorded native execution, not chatbot answers. No sponsorship or affiliate links.
+
+#MachineLearning #NumericalStability #AttentionMechanism #SoftwareTesting #OpenSource

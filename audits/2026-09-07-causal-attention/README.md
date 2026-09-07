@@ -30,3 +30,10 @@ Validation is native FP32 CPU NCHW, channel=1, macOS arm64; incremental cases us
 batch=1. General incremental batch support, FP16/GPU, other OSes, performance,
 model impact, full clean builds and upstream CI are not established. No claims
 about specific Samsung devices or a version-to-version regression are made.
+
+## Published report and discussion
+
+- [Upstream report #4333](https://github.com/nntrainer/nntrainer/issues/4333) — awaiting maintainer review.
+- [GERO technical note](https://www.gero.uz/research/articles/when-causal-attention-sees-the-future.html)
+- [LinkedIn discussion](https://www.linkedin.com/feed/update/urn:li:share:7502761599108182016/)
+- [48-second YouTube explanation](https://www.youtube.com/shorts/7q9ka3ePYPM)

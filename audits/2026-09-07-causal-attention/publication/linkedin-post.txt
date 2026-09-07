@@ -1,0 +1,30 @@
+Causal attention should not read the future. A three-value test shows where that contract fails.
+
+In nntrainer’s native AttentionLayer, with causal_mask=true, zero logits, two queries and V=[2, 10, 50], the original output is [20.66666794, 20.66666794]. Under the layer’s upper-left causal convention, the target is [2, 6]. Changing the final value also changes earlier outputs.
+
+One implementation report, three related mechanisms:
+• A square mask cannot be added to rectangular scores; the error is ignored.
+• A finite −1e10 penalty can be overcome by large finite logits.
+• Later incremental blocks skip causal masking.
+
+The proposed repair directly sets forbidden scores to −infinity, uses actual score dimensions and accounts for the absolute query offset.
+
+Recorded native CPU FP32 validation:
+• Before: 21 failed / 21 passed.
+• After the local patch: 42 passed — 28 new and 14 existing tests.
+• Key cases reproduced in three fresh processes per version.
+• Tests check outputs, gradients, future-value independence, probability masks and chunk/full equivalence.
+
+The report and patches are now with the maintainers:
+https://github.com/nntrainer/nntrainer/issues/4333
+
+Pinned evidence, build instructions and logs:
+https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/dbd6a98d7c4213d1df26252d4b5cc053c18c05d3/audits/2026-09-07-causal-attention
+
+Ten recorded searches covered 191 public issues/PRs; no exact match was identified in that scope. Maintainer review is pending. Incremental tests cover batch 1; model-level impact and other platforms were not measured. This is not a claim about particular Samsung devices.
+
+I’d welcome contact with nntrainer maintainers, attention-kernel engineers and numerical-computing researchers. Independent reproduction and feedback on rectangular alignment and incremental semantics would be especially useful. The issue above is the place to compare results.
+
+Prepared with AI assistance; conclusions are grounded in retained native executions.
+
+#MachineLearning #AttentionMechanism #NumericalStability #OpenSource #SoftwareTesting #AIInfrastructure #nntrainer

@@ -1,0 +1,111 @@
+[
+  {
+    "id": "Hook",
+    "title": "Can attention\nsee the future?",
+    "source": "S1 / S2 · NATIVE REPRODUCTION",
+    "cues": [
+      [
+        "Causal attention must not read future values.",
+        "Causal attention must not read future values."
+      ],
+      [
+        "This nntrainer test shows that it does.",
+        "This N N trainer test shows that it does."
+      ]
+    ]
+  },
+  {
+    "id": "Example",
+    "title": "Two queries.\nThree values.",
+    "source": "S2 · ZERO LOGITS · UPPER-LEFT MASK",
+    "cues": [
+      [
+        "With zero logits and values 2, 10, 50,",
+        "With zero logits and values two, ten, fifty,"
+      ],
+      [
+        "the outputs should be 2 and 6.",
+        "the outputs should be two and six."
+      ],
+      [
+        "Both are about 20.67 instead.",
+        "Both are about twenty point six seven instead."
+      ]
+    ]
+  },
+  {
+    "id": "Invariant",
+    "title": "Future values.\nZero influence.",
+    "source": "S2 · VALUE PERTURBATION TEST",
+    "cues": [
+      [
+        "Changing the final value changes earlier outputs.",
+        "Changing the final value changes earlier outputs."
+      ],
+      [
+        "A causal mask must prevent that.",
+        "A causal mask must prevent that."
+      ]
+    ]
+  },
+  {
+    "id": "Mechanisms",
+    "title": "One report.\nThree mechanisms.",
+    "source": "S1 / S2 · ATTENTIONLAYER",
+    "cues": [
+      [
+        "A square mask fails on rectangular scores.",
+        "A square mask fails on rectangular scores."
+      ],
+      [
+        "A finite penalty and later chunks also leak future values.",
+        "A finite penalty and later chunks also leak future values."
+      ]
+    ]
+  },
+  {
+    "id": "Repair",
+    "title": "Exclude future\nscores directly.",
+    "source": "S2 · PROPOSED LOCAL PATCH",
+    "cues": [
+      [
+        "The patch sets forbidden scores to negative infinity",
+        "The patch sets forbidden scores to negative infinity"
+      ],
+      [
+        "and respects the query offset.",
+        "and respects the query offset."
+      ]
+    ]
+  },
+  {
+    "id": "Validation",
+    "title": "21 failures.\nThen 42 passes.",
+    "source": "S2 · 28 NEW + 14 EXISTING TESTS",
+    "cues": [
+      [
+        "Twenty-one tests fail before the patch. All forty-two pass after.",
+        "Twenty-one tests fail before the patch. All forty-two pass after."
+      ],
+      [
+        "Native CPU, float32. Key cases repeat in three fresh processes.",
+        "Native C P U, float thirty-two. Key cases repeat in three fresh processes."
+      ]
+    ]
+  },
+  {
+    "id": "Scope",
+    "title": "Reported.\nOpen for review.",
+    "source": "S3 · NNTRAINER ISSUE #4333",
+    "cues": [
+      [
+        "Reported upstream. Maintainer review is pending.",
+        "Reported upstream. Maintainer review is pending."
+      ],
+      [
+        "Attention engineers: reproduce it at gero.uz.",
+        "Attention engineers, reproduce it at gero dot U Z."
+      ]
+    ]
+  }
+]

@@ -1,0 +1,59 @@
+1
+00:00:00,200 --> 00:00:02,833
+Causal attention must not read future values.
+
+2
+00:00:03,000 --> 00:00:05,233
+This nntrainer test shows that it does.
+
+3
+00:00:05,800 --> 00:00:09,033
+With zero logits and values 2, 10, 50,
+
+4
+00:00:09,200 --> 00:00:10,967
+the outputs should be 2 and 6.
+
+5
+00:00:11,133 --> 00:00:13,467
+Both are about 20.67 instead.
+
+6
+00:00:14,033 --> 00:00:16,900
+Changing the final value changes earlier outputs.
+
+7
+00:00:17,067 --> 00:00:18,867
+A causal mask must prevent that.
+
+8
+00:00:19,433 --> 00:00:22,000
+A square mask fails on rectangular scores.
+
+9
+00:00:22,167 --> 00:00:25,700
+A finite penalty and later chunks also leak future values.
+
+10
+00:00:26,267 --> 00:00:28,933
+The patch sets forbidden scores to negative infinity
+
+11
+00:00:29,100 --> 00:00:30,600
+and respects the query offset.
+
+12
+00:00:31,167 --> 00:00:35,067
+Twenty-one tests fail before the patch. All forty-two pass after.
+
+13
+00:00:35,233 --> 00:00:40,300
+Native CPU, float32. Key cases repeat in three fresh processes.
+
+14
+00:00:40,867 --> 00:00:43,733
+Reported upstream. Maintainer review is pending.
+
+15
+00:00:43,900 --> 00:00:47,267
+Attention engineers: reproduce it at gero.uz.

@@ -1,0 +1,54 @@
+{
+  "github": {
+    "commit": "dbd6a98d7c4213d1df26252d4b5cc053c18c05d3",
+    "url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/dbd6a98d7c4213d1df26252d4b5cc053c18c05d3/audits/2026-09-07-causal-attention"
+  },
+  "authorization": "Explicit user request: send upstream, GitHub, LinkedIn, gero.uz and YouTube.",
+  "upstream": {
+    "url": "https://github.com/nntrainer/nntrainer/issues/4333",
+    "number": 4333,
+    "state": "OPEN",
+    "body_verified": true
+  },
+  "linkedin": {
+    "url": "https://www.linkedin.com/feed/update/urn:li:share:7502761599108182016/",
+    "audience": "Anyone",
+    "editor_text_verified": true,
+    "hashtags_verified": true
+  },
+  "gero": {
+    "url": "https://www.gero.uz/research/articles/when-causal-attention-sees-the-future.html",
+    "deployment": "dpl_EfYrB8MEqA9jdcuuX5UvgAtVDmjG",
+    "archive_sha256_verified": "f100ce28cd9d86dca67eca7b29dd365f246edd40add1e7f4bfa80dffab0b7554"
+  },
+  "youtube": {
+    "url": "https://www.youtube.com/shorts/7q9ka3ePYPM",
+    "title": "Can Causal Attention See the Future? | nntrainer Bug & Tested Patch",
+    "visibility": "public",
+    "publication_confirmed": true,
+    "duration_seconds": 47.68,
+    "language": "English (United States)",
+    "captions": "15 uploaded English timed cues",
+    "ai_disclosure": true,
+    "youtube_checks": "No issues found",
+    "hashtags": [
+      "MachineLearning",
+      "NumericalStability",
+      "AttentionMechanism",
+      "SoftwareTesting",
+      "OpenSource"
+    ],
+    "tags": [
+      "causal attention",
+      "nntrainer",
+      "attention mask",
+      "numerical stability",
+      "machine learning",
+      "regression testing",
+      "AI infrastructure",
+      "open source",
+      "GERO"
+    ],
+    "external_link_limitation": "YouTube says one-time channel verification is needed for clickable external links; URLs are included as text."
+  }
+}
