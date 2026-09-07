@@ -11,7 +11,9 @@ in MLX and nntrainer, and asymmetric logaddexp derivatives in MLX. Tested local
 patches, source pins, before/after logs and duplicate-search evidence are included.
 
 [Reproduce the audit](audits/2026-09-07-losses-autodiff/README.md) ·
-[Read the technical note](https://www.gero.uz/research/articles/when-small-losses-and-gradients-disappear.html)
+[Read the technical note](https://www.gero.uz/research/articles/when-small-losses-and-gradients-disappear.html) ·
+[Watch the 50-second Short](https://www.youtube.com/shorts/fcOZBV1P6mA) ·
+[Publication record](docs/LOSSES_AUTODIFF_PUBLICATION_STATUS.md)
 
 ## Activation stability audit, 7 September 2026
 
