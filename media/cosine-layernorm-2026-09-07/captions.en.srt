@@ -1,0 +1,59 @@
+1
+00:00:00,200 --> 00:00:02,067
+Can a vector fail to match itself?
+
+2
+00:00:02,233 --> 00:00:05,167
+Two reproducible defects in MLX and nntrainer.
+
+3
+00:00:05,733 --> 00:00:10,800
+MLX cosine similarity returns NaN for this finite FP16 vector.
+
+4
+00:00:10,967 --> 00:00:13,567
+Compared with itself, the result should be 1.
+
+5
+00:00:14,133 --> 00:00:17,233
+nntrainer LayerNorm returns a zero input gradient.
+
+6
+00:00:17,400 --> 00:00:20,067
+Unequal gamma weights require a nonzero answer.
+
+7
+00:00:20,233 --> 00:00:21,833
+Finite differences confirm it.
+
+8
+00:00:22,400 --> 00:00:26,333
+For cosine: scale before squaring and guard zero-norm derivatives.
+
+9
+00:00:26,500 --> 00:00:29,867
+For LayerNorm: apply gamma before averaging gradients.
+
+10
+00:00:30,433 --> 00:00:35,333
+After local patches: 101 cosine tests pass on CPU and Metal.
+
+11
+00:00:35,500 --> 00:00:38,500
+All 42 nntrainer CPU tests pass.
+
+12
+00:00:39,067 --> 00:00:41,933
+Three fresh processes reproduce the key examples.
+
+13
+00:00:42,100 --> 00:00:44,967
+Recorded duplicate searches found no exact match.
+
+14
+00:00:45,533 --> 00:00:48,967
+Maintainer confirmation and model-level impact remain unproven.
+
+15
+00:00:49,133 --> 00:00:51,967
+Inspect the tests and patches at gero.uz.

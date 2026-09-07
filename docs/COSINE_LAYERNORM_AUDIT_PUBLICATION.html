@@ -83,7 +83,9 @@ dx = r * (g - mean(g) - d*mean(g*d)/v)</code></pre>
 <h2>Duplicate review and exclusions</h2>
 <p>No exact cosine match was identified in the retained public searches. The nntrainer review used nine queries covering 94 distinct public issues and pull requests, including closed entries. The nearest LayerNorm work concerns <a href="https://github.com/nntrainer/nntrainer/issues/3785">FP16 forward NaNs</a> and inference paths in <a href="https://github.com/nntrainer/nntrainer/pull/4096">PR #4096</a> and <a href="https://github.com/nntrainer/nntrainer/pull/4304">PR #4304</a>; the inspected changes do not repair this backward computation.</p>
 <p>This is a bounded novelty review. Private reports, unindexed material and every comment or unpublished branch are not covered. Known NVFP4 shape/tail behavior associated with <a href="https://github.com/ml-explore/mlx/pull/3912">MLX PR #3912</a> is excluded. QuantizeLinear and earlier loss/activation findings are not new cases in this release.</p>
-<!-- PUBLICATION_CROSSLINKS -->
+<h2>Watch and discuss</h2>
+<p><a href="https://www.youtube.com/shorts/XpXZUXWnrW8">Watch the 52-second YouTube explanation →</a> · <a href="https://www.linkedin.com/feed/update/urn:li:share:7502701332026441728/">Read the LinkedIn post →</a></p>
+<p>The vertical 1080p video includes English narration, uploaded English captions and original mathematical diagrams. The synthetic voice is disclosed. The tests and patches below are the primary evidence.</p>
 <h2>Download and reproduce</h2>
 <p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/audits/2026-09-07-cosine-layernorm">Open both reproducible GitHub packages →</a></p>
 <ul><li><a href="../data/cosine-audit-2026-09-07.zip" download>MLX cosine: tests, patch, logs and checksums</a><br>SHA-256: <code>09149a442b9592e0ddc3e7c2665cdc85fc3a54ecf720b6cb3b0eb288bb544c8d</code></li>

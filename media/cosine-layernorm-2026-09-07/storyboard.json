@@ -1,0 +1,111 @@
+[
+  {
+    "id": "Hook",
+    "title": "Same vector.\nWrong answer.",
+    "source": "S1 / S3",
+    "cues": [
+      [
+        "Can a vector fail to match itself?",
+        "Can a vector fail to match itself?"
+      ],
+      [
+        "Two reproducible defects in MLX and nntrainer.",
+        "Two reproducible defects in M L X and N N trainer."
+      ]
+    ]
+  },
+  {
+    "id": "Cosine",
+    "title": "Similarity\nbecomes NaN.",
+    "source": "S1 / S3",
+    "cues": [
+      [
+        "MLX cosine similarity returns NaN for this finite FP16 vector.",
+        "M L X cosine similarity returns not a number for this finite F P sixteen vector."
+      ],
+      [
+        "Compared with itself, the result should be 1.",
+        "Compared with itself, the result should be one."
+      ]
+    ]
+  },
+  {
+    "id": "LayerNorm",
+    "title": "Zero gradient.\nWrong result.",
+    "source": "S2 / S4",
+    "cues": [
+      [
+        "nntrainer LayerNorm returns a zero input gradient.",
+        "N N trainer layer norm returns a zero input gradient."
+      ],
+      [
+        "Unequal gamma weights require a nonzero answer.",
+        "Unequal gamma weights require a nonzero answer."
+      ],
+      [
+        "Finite differences confirm it.",
+        "Finite differences confirm it."
+      ]
+    ]
+  },
+  {
+    "id": "Repairs",
+    "title": "Two fixes.\nTwo contracts.",
+    "source": "S3 / S4",
+    "cues": [
+      [
+        "For cosine: scale before squaring and guard zero-norm derivatives.",
+        "For cosine, scale before squaring and guard zero norm derivatives."
+      ],
+      [
+        "For LayerNorm: apply gamma before averaging gradients.",
+        "For layer norm, apply gamma before averaging gradients."
+      ]
+    ]
+  },
+  {
+    "id": "Validation",
+    "title": "Repairs tested.\nEvidence saved.",
+    "source": "S3 / S4 · RECORDED LOCAL RUNS",
+    "cues": [
+      [
+        "After local patches: 101 cosine tests pass on CPU and Metal.",
+        "After local patches, one hundred one cosine tests pass on C P U and Metal."
+      ],
+      [
+        "All 42 nntrainer CPU tests pass.",
+        "All forty-two N N trainer C P U tests pass."
+      ]
+    ]
+  },
+  {
+    "id": "Evidence",
+    "title": "Reproduce.\nCheck the record.",
+    "source": "S3 / S4",
+    "cues": [
+      [
+        "Three fresh processes reproduce the key examples.",
+        "Three fresh processes reproduce the key examples."
+      ],
+      [
+        "Recorded duplicate searches found no exact match.",
+        "Recorded duplicate searches found no exact match."
+      ]
+    ]
+  },
+  {
+    "id": "Scope",
+    "title": "Local patches.\nOpen for review.",
+    "source": "S1–S4 · LINKS IN DESCRIPTION",
+    "cues": [
+      [
+        "Maintainer confirmation and model-level impact remain unproven.",
+        "Maintainer confirmation and model level impact remain unproven."
+      ],
+      [
+        "Inspect the tests and patches at gero.uz.",
+        "Inspect the tests and patches at gero dot U Z."
+      ]
+    ]
+  }
+]

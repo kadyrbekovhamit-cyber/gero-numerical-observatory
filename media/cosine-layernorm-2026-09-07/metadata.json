@@ -1,0 +1,19 @@
+{
+  "title": "NaN Similarity, Zero Gradient | MLX & nntrainer Audit",
+  "description": "Can a vector fail to match itself? Two source-pinned numerical experiments reproduce implementation defects in MLX cosine similarity and nntrainer LayerNorm.\n\n\u2022 MLX, FP16: cosine(x,x) with x=[1000,-1000,1000,-1000] returns NaN instead of 1. A separate zero-vector case has a NaN gradient despite a finite epsilon-regularized derivative.\n\u2022 nntrainer LayerNorm, FP32 CPU: x=[-1,0,1,2], gamma=[1,2,4,8], dy=[1,1,1,1], beta=0, epsilon=1e-5, axis=3. The original input gradient is zero; its target is about [0.626,-0.537,-0.805,0.716]. Finite differences of the actual forward confirm it.\n\nAfter local patches: 101 cosine tests pass on CPU and Metal; 42 nntrainer CPU tests pass. CPU baselines had 62 and 20 failures respectively. Key examples repeat in three fresh processes per audit.\n\nTechnical note and downloads:\nhttps://www.gero.uz/research/articles/cosine-and-layernorm-contract-failures.html\n\nTests, logs, source pins, duplicate searches and patches:\nhttps://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f2f712ec6d0ab90b7517f9cf847e4b1e6ef7666c/audits/2026-09-07-cosine-layernorm\n\nPrimary implementation sources:\nhttps://github.com/ml-explore/mlx/blob/ce916dbbcaa88e433b6fd1e60a17f766d49c27fe/python/mlx/nn/losses.py\nhttps://github.com/nntrainer/nntrainer/blob/a7ea056e79ab8e14447ea305c1b634e233343258/nntrainer/layers/layer_normalization_layer.cpp\n\nScope: MLX Python source patch with official MLX/Metal 0.32.2; nntrainer native FP32 CPU on macOS arm64. No exact duplicate identified within recorded public searches. Maintainer confirmation, global novelty, version regression, performance and model-level impact are not established. No claim about particular Apple or Samsung devices. Known NVFP4 behavior and QuantizeLinear are excluded.\n\nNarration uses a synthetic voice. Research and editorial review by Technology Product / GERO Research, with AI assistance. Original mathematical diagrams; no third-party footage, music, sponsorship or affiliate links.\n\n#MachineLearning #NumericalStability #SoftwareTesting #MLX",
+  "language": "English (United States)",
+  "category": "Science & Technology",
+  "visibility": "public",
+  "made_for_kids": false,
+  "synthetic_content": true,
+  "tags": [
+    "MLX",
+    "nntrainer",
+    "LayerNorm",
+    "cosine similarity",
+    "numerical stability",
+    "machine learning",
+    "software testing",
+    "GERO"
+  ]
+}

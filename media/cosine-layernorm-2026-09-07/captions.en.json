@@ -1,0 +1,107 @@
+[
+  {
+    "text": "Can a vector fail to match itself?",
+    "startMs": 200.0,
+    "endMs": 2066.666666666667,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": "Two reproducible defects in MLX and nntrainer.",
+    "startMs": 2233.3333333333335,
+    "endMs": 5166.666666666667,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": "MLX cosine similarity returns NaN for this finite FP16 vector.",
+    "startMs": 5733.333333333333,
+    "endMs": 10800.0,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": "Compared with itself, the result should be 1.",
+    "startMs": 10966.666666666666,
+    "endMs": 13566.666666666666,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": "nntrainer LayerNorm returns a zero input gradient.",
+    "startMs": 14133.333333333332,
+    "endMs": 17233.333333333336,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": "Unequal gamma weights require a nonzero answer.",
+    "startMs": 17400.0,
+    "endMs": 20066.666666666668,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": "Finite differences confirm it.",
+    "startMs": 20233.333333333336,
+    "endMs": 21833.333333333332,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": "For cosine: scale before squaring and guard zero-norm derivatives.",
+    "startMs": 22400.0,
+    "endMs": 26333.333333333332,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": "For LayerNorm: apply gamma before averaging gradients.",
+    "startMs": 26500.0,
+    "endMs": 29866.666666666668,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": "After local patches: 101 cosine tests pass on CPU and Metal.",
+    "startMs": 30433.333333333332,
+    "endMs": 35333.333333333336,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": "All 42 nntrainer CPU tests pass.",
+    "startMs": 35500.0,
+    "endMs": 38500.0,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": "Three fresh processes reproduce the key examples.",
+    "startMs": 39066.66666666667,
+    "endMs": 41933.33333333333,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": "Recorded duplicate searches found no exact match.",
+    "startMs": 42100.0,
+    "endMs": 44966.66666666667,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": "Maintainer confirmation and model-level impact remain unproven.",
+    "startMs": 45533.33333333333,
+    "endMs": 48966.66666666667,
+    "timestampMs": null,
+    "confidence": null
+  },
+  {
+    "text": "Inspect the tests and patches at gero.uz.",
+    "startMs": 49133.333333333336,
+    "endMs": 51966.66666666667,
+    "timestampMs": null,
+    "confidence": null
+  }
+]

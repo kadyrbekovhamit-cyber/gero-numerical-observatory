@@ -13,7 +13,8 @@ No exact duplicate identified in the recorded searches; no upstream acceptance
 or model-impact claim.
 
 [Reproduce both cases](audits/2026-09-07-cosine-layernorm/README.md) ·
-[Read the technical note](https://www.gero.uz/research/articles/cosine-and-layernorm-contract-failures.html)
+[Read the technical note](https://www.gero.uz/research/articles/cosine-and-layernorm-contract-failures.html) ·
+[YouTube](https://www.youtube.com/shorts/XpXZUXWnrW8) · [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7502701332026441728/)
 
 ## Losses and autodiff audit, 7 September 2026
 

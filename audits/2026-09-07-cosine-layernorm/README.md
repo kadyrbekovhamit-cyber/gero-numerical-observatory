@@ -14,7 +14,8 @@ duplicate was identified in the saved public searches. Maintainer confirmation,
 global novelty, version regression, performance and model-level impact are not
 established. No claims about particular Apple or Samsung devices are made.
 
-[Read the technical note](https://www.gero.uz/research/articles/cosine-and-layernorm-contract-failures.html)
+[Read the technical note](https://www.gero.uz/research/articles/cosine-and-layernorm-contract-failures.html) ·
+[YouTube](https://www.youtube.com/shorts/XpXZUXWnrW8) · [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7502701332026441728/)
 
 The subdirectories and their SHA256SUMS preserve the research packages unchanged.
 Their pre-publication status statements describe the completed search rounds;
