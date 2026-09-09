@@ -4,6 +4,17 @@ A reproducible CPU benchmark for mathematical contracts in ONNX graphs. It runs 
 
 [71-second video](https://www.youtube.com/shorts/KTLC9_FomBs) · [Interactive reports](https://www.gero.uz/stability/) · [Publication and limits](https://www.gero.uz/research/articles/onnx-numerical-observatory-reproduced-snapshot.html) · [Measured snapshot](benchmarks/2026-09-06/latest.json) · [Reverification](benchmarks/2026-09-06/reverification.json)
 
+## MLX Muon convolution scaling, 9 September 2026
+
+Equivalent 1×1 convolution and linear weights produce equal outputs, losses
+and gradients, yet the tested convolution update is half the size. Scaling
+uses the wrong dimensions after reshape. A minimal local reorder changes
+the focused selection from 12/31 to 31/31 passes. CPU FP32; one defect,
+without established full-model effects or maintainer acceptance.
+
+[Read and reproduce](audits/2026-09-09-mlx-muon-convolution-scaling/) ·
+[GERO article](https://www.gero.uz/research/articles/mlx-muon-convolution-scaling.html)
+
 ## MLX Gaussian NLL stability, 9 September 2026
 
 Finite FP16 loss with a variance gradient of the wrong sign, plus spurious

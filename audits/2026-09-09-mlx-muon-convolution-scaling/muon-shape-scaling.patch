@@ -1,0 +1,15 @@
+--- a/python/mlx/optimizers/optimizers.py
++++ b/python/mlx/optimizers/optimizers.py
+@@ -952,10 +952,10 @@
+ 
+             update = self._zeropower_via_newtonschulz5(update, steps=self.ns_steps)
+ 
++            lr *= max(1, update.shape[-2] / update.shape[-1]) ** 0.5
++
+             if reshape_needed:
+                 update = mx.reshape(update, original_shape)
+-
+-            lr *= max(1, update.shape[-2] / update.shape[-1]) ** 0.5
+ 
+         return parameter - lr * update
+ 

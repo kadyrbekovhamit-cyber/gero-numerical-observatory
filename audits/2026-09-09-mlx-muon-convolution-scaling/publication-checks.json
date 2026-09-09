@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-09",
+  "original_manifest_matched": 20,
+  "probe_exit_code": 0,
+  "regression_exit_code": 0,
+  "before": {
+    "tests": 31,
+    "passed": 12,
+    "failures": 19,
+    "errors": 0
+  },
+  "after": {
+    "tests": 31,
+    "passed": 31,
+    "failures": 0,
+    "errors": 0
+  },
+  "sequential_cpu_execution": true,
+  "public_scripts_byte_identical_to_rerun": true,
+  "log_transform": "Remove absolute workstation directory prefixes; no test result changes."
+}

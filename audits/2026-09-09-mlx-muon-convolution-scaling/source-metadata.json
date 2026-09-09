@@ -1,0 +1,20 @@
+{
+  "revision": "24c699ecee2f7c8b2040de8da1c8382c8bcf31c7",
+  "files": {
+    "python/mlx/optimizers/optimizers.py": {
+      "local": "upstream-optimizers.py",
+      "sha256": "25a57fe00ff9ae1fe836cd504506e16d0e9d890112daed05cef0e2bcb95f7714",
+      "git_blob_sha": "3966f961f5f29fc98f442edeab3461d2c56f5106"
+    },
+    "python/tests/test_optimizers.py": {
+      "local": "upstream-test_optimizers.py",
+      "sha256": "b1e1231156c1730b2da0caa2b2119a1e57e66bdc39e1643db7e924c5502e3c81",
+      "git_blob_sha": "c7caf5b9540c5d75d20d8065222a7eeb5cb73397"
+    },
+    "AGENTS.md": {
+      "local": "upstream-AGENTS.md",
+      "sha256": "5639bca30e983f0f25f7e65559152dd6ab65140155b78b21aa3b83c43ded31c7",
+      "git_blob_sha": "969236055007943976cf084a87730644ed20c59f"
+    }
+  }
+}

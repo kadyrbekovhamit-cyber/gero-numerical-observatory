@@ -1,0 +1,226 @@
+test_analytic_normalization_0 (__main__.build_suite.<locals>.Checks.test_analytic_normalization_0) ... FAIL
+test_analytic_normalization_1 (__main__.build_suite.<locals>.Checks.test_analytic_normalization_1) ... FAIL
+test_analytic_normalization_2 (__main__.build_suite.<locals>.Checks.test_analytic_normalization_2) ... ok
+test_analytic_normalization_3 (__main__.build_suite.<locals>.Checks.test_analytic_normalization_3) ... ok
+test_real_conv_linear_0 (__main__.build_suite.<locals>.Checks.test_real_conv_linear_0) ... FAIL
+test_real_conv_linear_1 (__main__.build_suite.<locals>.Checks.test_real_conv_linear_1) ... FAIL
+test_reshape_0_config_0 (__main__.build_suite.<locals>.Checks.test_reshape_0_config_0) ... FAIL
+test_reshape_0_config_1 (__main__.build_suite.<locals>.Checks.test_reshape_0_config_1) ... FAIL
+test_reshape_0_config_2 (__main__.build_suite.<locals>.Checks.test_reshape_0_config_2) ... FAIL
+test_reshape_1_config_0 (__main__.build_suite.<locals>.Checks.test_reshape_1_config_0) ... FAIL
+test_reshape_1_config_1 (__main__.build_suite.<locals>.Checks.test_reshape_1_config_1) ... FAIL
+test_reshape_1_config_2 (__main__.build_suite.<locals>.Checks.test_reshape_1_config_2) ... FAIL
+test_reshape_2_config_0 (__main__.build_suite.<locals>.Checks.test_reshape_2_config_0) ... ok
+test_reshape_2_config_1 (__main__.build_suite.<locals>.Checks.test_reshape_2_config_1) ... ok
+test_reshape_2_config_2 (__main__.build_suite.<locals>.Checks.test_reshape_2_config_2) ... ok
+test_reshape_3_config_0 (__main__.build_suite.<locals>.Checks.test_reshape_3_config_0) ... FAIL
+test_reshape_3_config_1 (__main__.build_suite.<locals>.Checks.test_reshape_3_config_1) ... FAIL
+test_reshape_3_config_2 (__main__.build_suite.<locals>.Checks.test_reshape_3_config_2) ... FAIL
+test_reshape_4_config_0 (__main__.build_suite.<locals>.Checks.test_reshape_4_config_0) ... FAIL
+test_reshape_4_config_1 (__main__.build_suite.<locals>.Checks.test_reshape_4_config_1) ... FAIL
+test_reshape_4_config_2 (__main__.build_suite.<locals>.Checks.test_reshape_4_config_2) ... FAIL
+test_reshape_5_config_0 (__main__.build_suite.<locals>.Checks.test_reshape_5_config_0) ... FAIL
+test_reshape_5_config_1 (__main__.build_suite.<locals>.Checks.test_reshape_5_config_1) ... FAIL
+test_reshape_5_config_2 (__main__.build_suite.<locals>.Checks.test_reshape_5_config_2) ... FAIL
+test_reshape_6_config_0 (__main__.build_suite.<locals>.Checks.test_reshape_6_config_0) ... ok
+test_reshape_6_config_1 (__main__.build_suite.<locals>.Checks.test_reshape_6_config_1) ... ok
+test_reshape_6_config_2 (__main__.build_suite.<locals>.Checks.test_reshape_6_config_2) ... ok
+test_reshape_7_config_0 (__main__.build_suite.<locals>.Checks.test_reshape_7_config_0) ... ok
+test_reshape_7_config_1 (__main__.build_suite.<locals>.Checks.test_reshape_7_config_1) ... ok
+test_reshape_7_config_2 (__main__.build_suite.<locals>.Checks.test_reshape_7_config_2) ... ok
+test_upstream_muon_unchanged (__main__.build_suite.<locals>.Checks.test_upstream_muon_unchanged) ... ok
+
+======================================================================
+FAIL: test_analytic_normalization_0 (__main__.build_suite.<locals>.Checks.test_analytic_normalization_0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "regression.py", line 85, in test
+    close(self, actual, expected, 'independent analytic zero-iteration normalization')
+  File "regression.py", line 33, in close
+    test.assertTrue(mx.allclose(actual, expected, atol=2e-6, rtol=2e-5).item(), f"{label}: max error {difference}")
+AssertionError: False is not true : independent analytic zero-iteration normalization: max error 0.004136701580137014
+
+======================================================================
+FAIL: test_analytic_normalization_1 (__main__.build_suite.<locals>.Checks.test_analytic_normalization_1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "regression.py", line 85, in test
+    close(self, actual, expected, 'independent analytic zero-iteration normalization')
+  File "regression.py", line 33, in close
+    test.assertTrue(mx.allclose(actual, expected, atol=2e-6, rtol=2e-5).item(), f"{label}: max error {difference}")
+AssertionError: False is not true : independent analytic zero-iteration normalization: max error 0.004136701580137014
+
+======================================================================
+FAIL: test_real_conv_linear_0 (__main__.build_suite.<locals>.Checks.test_real_conv_linear_0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "regression.py", line 106, in test
+    close(self,u2,u4.reshape(8,2),'equivalent function, same gradient, same update')
+  File "regression.py", line 33, in close
+    test.assertTrue(mx.allclose(actual, expected, atol=2e-6, rtol=2e-5).item(), f"{label}: max error {difference}")
+AssertionError: False is not true : equivalent function, same gradient, same update: max error 0.005442783236503601
+
+======================================================================
+FAIL: test_real_conv_linear_1 (__main__.build_suite.<locals>.Checks.test_real_conv_linear_1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "regression.py", line 106, in test
+    close(self,u2,u4.reshape(8,2),'equivalent function, same gradient, same update')
+  File "regression.py", line 33, in close
+    test.assertTrue(mx.allclose(actual, expected, atol=2e-6, rtol=2e-5).item(), f"{label}: max error {difference}")
+AssertionError: False is not true : equivalent function, same gradient, same update: max error 0.005442790687084198
+
+======================================================================
+FAIL: test_reshape_0_config_0 (__main__.build_suite.<locals>.Checks.test_reshape_0_config_0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "regression.py", line 63, in test
+    close(self, next_s.reshape(flat), next_m, f"shape={shape}, step={step}")
+  File "regression.py", line 33, in close
+    test.assertTrue(mx.allclose(actual, expected, atol=2e-6, rtol=2e-5).item(), f"{label}: max error {difference}")
+AssertionError: False is not true : shape=(8, 1, 1, 2), step=0: max error 0.005331858992576599
+
+======================================================================
+FAIL: test_reshape_0_config_1 (__main__.build_suite.<locals>.Checks.test_reshape_0_config_1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "regression.py", line 63, in test
+    close(self, next_s.reshape(flat), next_m, f"shape={shape}, step={step}")
+  File "regression.py", line 33, in close
+    test.assertTrue(mx.allclose(actual, expected, atol=2e-6, rtol=2e-5).item(), f"{label}: max error {difference}")
+AssertionError: False is not true : shape=(8, 1, 1, 2), step=0: max error 0.005331873893737793
+
+======================================================================
+FAIL: test_reshape_0_config_2 (__main__.build_suite.<locals>.Checks.test_reshape_0_config_2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "regression.py", line 63, in test
+    close(self, next_s.reshape(flat), next_m, f"shape={shape}, step={step}")
+  File "regression.py", line 33, in close
+    test.assertTrue(mx.allclose(actual, expected, atol=2e-6, rtol=2e-5).item(), f"{label}: max error {difference}")
+AssertionError: False is not true : shape=(8, 1, 1, 2), step=0: max error 0.0053474754095077515
+
+======================================================================
+FAIL: test_reshape_1_config_0 (__main__.build_suite.<locals>.Checks.test_reshape_1_config_0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "regression.py", line 63, in test
+    close(self, next_s.reshape(flat), next_m, f"shape={shape}, step={step}")
+  File "regression.py", line 33, in close
+    test.assertTrue(mx.allclose(actual, expected, atol=2e-6, rtol=2e-5).item(), f"{label}: max error {difference}")
+AssertionError: False is not true : shape=(1, 1, 8, 2), step=0: max error 0.002710878849029541
+
+======================================================================
+FAIL: test_reshape_1_config_1 (__main__.build_suite.<locals>.Checks.test_reshape_1_config_1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "regression.py", line 63, in test
+    close(self, next_s.reshape(flat), next_m, f"shape={shape}, step={step}")
+  File "regression.py", line 33, in close
+    test.assertTrue(mx.allclose(actual, expected, atol=2e-6, rtol=2e-5).item(), f"{label}: max error {difference}")
+AssertionError: False is not true : shape=(1, 1, 8, 2), step=0: max error 0.002710878849029541
+
+======================================================================
+FAIL: test_reshape_1_config_2 (__main__.build_suite.<locals>.Checks.test_reshape_1_config_2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "regression.py", line 63, in test
+    close(self, next_s.reshape(flat), next_m, f"shape={shape}, step={step}")
+  File "regression.py", line 33, in close
+    test.assertTrue(mx.allclose(actual, expected, atol=2e-6, rtol=2e-5).item(), f"{label}: max error {difference}")
+AssertionError: False is not true : shape=(1, 1, 8, 2), step=0: max error 0.002733558416366577
+
+======================================================================
+FAIL: test_reshape_3_config_0 (__main__.build_suite.<locals>.Checks.test_reshape_3_config_0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "regression.py", line 63, in test
+    close(self, next_s.reshape(flat), next_m, f"shape={shape}, step={step}")
+  File "regression.py", line 33, in close
+    test.assertTrue(mx.allclose(actual, expected, atol=2e-6, rtol=2e-5).item(), f"{label}: max error {difference}")
+AssertionError: False is not true : shape=(8, 1, 2), step=0: max error 0.005331858992576599
+
+======================================================================
+FAIL: test_reshape_3_config_1 (__main__.build_suite.<locals>.Checks.test_reshape_3_config_1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "regression.py", line 63, in test
+    close(self, next_s.reshape(flat), next_m, f"shape={shape}, step={step}")
+  File "regression.py", line 33, in close
+    test.assertTrue(mx.allclose(actual, expected, atol=2e-6, rtol=2e-5).item(), f"{label}: max error {difference}")
+AssertionError: False is not true : shape=(8, 1, 2), step=0: max error 0.005331873893737793
+
+======================================================================
+FAIL: test_reshape_3_config_2 (__main__.build_suite.<locals>.Checks.test_reshape_3_config_2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "regression.py", line 63, in test
+    close(self, next_s.reshape(flat), next_m, f"shape={shape}, step={step}")
+  File "regression.py", line 33, in close
+    test.assertTrue(mx.allclose(actual, expected, atol=2e-6, rtol=2e-5).item(), f"{label}: max error {difference}")
+AssertionError: False is not true : shape=(8, 1, 2), step=0: max error 0.0053474754095077515
+
+======================================================================
+FAIL: test_reshape_4_config_0 (__main__.build_suite.<locals>.Checks.test_reshape_4_config_0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "regression.py", line 63, in test
+    close(self, next_s.reshape(flat), next_m, f"shape={shape}, step={step}")
+  File "regression.py", line 33, in close
+    test.assertTrue(mx.allclose(actual, expected, atol=2e-6, rtol=2e-5).item(), f"{label}: max error {difference}")
+AssertionError: False is not true : shape=(2, 8, 2), step=0: max error 0.003768123686313629
+
+======================================================================
+FAIL: test_reshape_4_config_1 (__main__.build_suite.<locals>.Checks.test_reshape_4_config_1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "regression.py", line 63, in test
+    close(self, next_s.reshape(flat), next_m, f"shape={shape}, step={step}")
+  File "regression.py", line 33, in close
+    test.assertTrue(mx.allclose(actual, expected, atol=2e-6, rtol=2e-5).item(), f"{label}: max error {difference}")
+AssertionError: False is not true : shape=(2, 8, 2), step=0: max error 0.003768131136894226
+
+======================================================================
+FAIL: test_reshape_4_config_2 (__main__.build_suite.<locals>.Checks.test_reshape_4_config_2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "regression.py", line 63, in test
+    close(self, next_s.reshape(flat), next_m, f"shape={shape}, step={step}")
+  File "regression.py", line 33, in close
+    test.assertTrue(mx.allclose(actual, expected, atol=2e-6, rtol=2e-5).item(), f"{label}: max error {difference}")
+AssertionError: False is not true : shape=(2, 8, 2), step=0: max error 0.003758043050765991
+
+======================================================================
+FAIL: test_reshape_5_config_0 (__main__.build_suite.<locals>.Checks.test_reshape_5_config_0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "regression.py", line 63, in test
+    close(self, next_s.reshape(flat), next_m, f"shape={shape}, step={step}")
+  File "regression.py", line 33, in close
+    test.assertTrue(mx.allclose(actual, expected, atol=2e-6, rtol=2e-5).item(), f"{label}: max error {difference}")
+AssertionError: False is not true : shape=(2, 1, 1, 8, 2), step=0: max error 0.003768123686313629
+
+======================================================================
+FAIL: test_reshape_5_config_1 (__main__.build_suite.<locals>.Checks.test_reshape_5_config_1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "regression.py", line 63, in test
+    close(self, next_s.reshape(flat), next_m, f"shape={shape}, step={step}")
+  File "regression.py", line 33, in close
+    test.assertTrue(mx.allclose(actual, expected, atol=2e-6, rtol=2e-5).item(), f"{label}: max error {difference}")
+AssertionError: False is not true : shape=(2, 1, 1, 8, 2), step=0: max error 0.003768131136894226
+
+======================================================================
+FAIL: test_reshape_5_config_2 (__main__.build_suite.<locals>.Checks.test_reshape_5_config_2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "regression.py", line 63, in test
+    close(self, next_s.reshape(flat), next_m, f"shape={shape}, step={step}")
+  File "regression.py", line 33, in close
+    test.assertTrue(mx.allclose(actual, expected, atol=2e-6, rtol=2e-5).item(), f"{label}: max error {difference}")
+AssertionError: False is not true : shape=(2, 1, 1, 8, 2), step=0: max error 0.003758043050765991
+
+----------------------------------------------------------------------
+Ran 31 tests in 0.032s
+
+FAILED (failures=19)
