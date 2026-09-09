@@ -1,0 +1,24 @@
+1806: std::vector<array> Divide::vjp(
+1807:     const std::vector<array>& primals,
+1808:     const std::vector<array>& cotangents,
+1809:     const std::vector<int>& argnums,
+1810:     const std::vector<array>&) {
+1811:   std::vector<array> vjps;
+1812:   array denominator_bar = conjugate(primals[1], stream());
+1813:   for (auto arg : argnums) {
+1814:     if (arg == 0) {
+1815:       vjps.push_back(divide(cotangents[0], denominator_bar, stream()));
+1816:     } else {
+1817:       vjps.push_back(negative(
+1818:           divide(
+1819:               multiply(
+1820:                   cotangents[0], conjugate(primals[0], stream()), stream()),
+1821:               square(denominator_bar, stream()),
+1822:               stream()),
+1823:           stream()));
+1824:     }
+1825:   }
+1826:   return vjps;
+1827: }
+1828: 
+1829: std::vector<array> DivMod::vjp(

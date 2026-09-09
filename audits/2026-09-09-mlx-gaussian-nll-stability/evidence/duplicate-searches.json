@@ -1,0 +1,46 @@
+[
+  {
+    "query": "repo:ml-explore/mlx gaussian_nll_loss",
+    "total_count": 2,
+    "incomplete_results": false,
+    "items": [
+      {
+        "number": 3715,
+        "title": "Fix gaussian_nll_loss documented default reduction (none -> mean)",
+        "url": "https://github.com/ml-explore/mlx/pull/3715"
+      },
+      {
+        "number": 3561,
+        "title": "Fix doubled-word typos in docstrings",
+        "url": "https://github.com/ml-explore/mlx/pull/3561"
+      }
+    ]
+  },
+  {
+    "query": "repo:ml-explore/mlx gradient overflow",
+    "total_count": 4,
+    "incomplete_results": false,
+    "items": [
+      {
+        "number": 3772,
+        "title": "Add mx.while_loop (scan like)",
+        "url": "https://github.com/ml-explore/mlx/pull/3772"
+      },
+      {
+        "number": 2995,
+        "title": "[Metal] Add Flash Attention VJP for training",
+        "url": "https://github.com/ml-explore/mlx/pull/2995"
+      },
+      {
+        "number": 1764,
+        "title": "Limit grad recursion depth by not recursing through non-grad inputs",
+        "url": "https://github.com/ml-explore/mlx/pull/1764"
+      },
+      {
+        "number": 1406,
+        "title": "[BUG] Memory overflow when lora fine-tuning meta-llama/Meta-Llama-3.1-8B-Instruct",
+        "url": "https://github.com/ml-explore/mlx/issues/1406"
+      }
+    ]
+  }
+]

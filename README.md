@@ -4,6 +4,16 @@ A reproducible CPU benchmark for mathematical contracts in ONNX graphs. It runs 
 
 [71-second video](https://www.youtube.com/shorts/KTLC9_FomBs) · [Interactive reports](https://www.gero.uz/stability/) · [Publication and limits](https://www.gero.uz/research/articles/onnx-numerical-observatory-reproduced-snapshot.html) · [Measured snapshot](benchmarks/2026-09-06/latest.json) · [Reverification](benchmarks/2026-09-06/reverification.json)
 
+## MLX Gaussian NLL stability, 9 September 2026
+
+Finite FP16 loss with a variance gradient of the wrong sign, plus spurious
+Inf/NaN from intermediate squares. Native CPU reproduction, Decimal and
+forward finite-difference references, 12 bounded regression methods and an
+explicit counterexample to the proposed mitigation. Novelty and model-level
+impact are unestablished.
+
+[Read and reproduce](audits/2026-09-09-mlx-gaussian-nll-stability/)
+
 ## nntrainer Dropout routing audit, 9 September 2026
 
 With two independent inputs and zero drop rate, the tested C++ layer sends

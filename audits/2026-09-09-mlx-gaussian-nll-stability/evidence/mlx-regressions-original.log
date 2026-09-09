@@ -1,0 +1,95 @@
+test_01_fp16_large_residual_finite_loss (__main__.GaussianReview.test_01_fp16_large_residual_finite_loss) ... FAIL
+test_02_fp16_large_residual_variance_gradient (__main__.GaussianReview.test_02_fp16_large_residual_variance_gradient) ... FAIL
+test_03_fp16_finite_loss_gradient_sign (__main__.GaussianReview.test_03_fp16_finite_loss_gradient_sign) ... FAIL
+test_04_fp16_small_variance_nonzero_residual (__main__.GaussianReview.test_04_fp16_small_variance_nonzero_residual) ... FAIL
+test_05_fp16_small_variance_zero_residual (__main__.GaussianReview.test_05_fp16_small_variance_zero_residual) ... FAIL
+test_06_fp16_below_epsilon_constant_branch (__main__.GaussianReview.test_06_fp16_below_epsilon_constant_branch) ... FAIL
+test_07_fp32_large_residual (__main__.GaussianReview.test_07_fp32_large_residual) ... FAIL
+test_08_fp32_finite_loss_gradient_sign (__main__.GaussianReview.test_08_fp32_finite_loss_gradient_sign) ... FAIL
+test_09_benign_controls (__main__.GaussianReview.test_09_benign_controls) ... ok
+test_10_mean_and_target_gradient_symmetry (__main__.GaussianReview.test_10_mean_and_target_gradient_symmetry) ... ok
+test_11_full_constant_and_reductions (__main__.GaussianReview.test_11_full_constant_and_reductions) ... ok
+test_12_shape_validation (__main__.GaussianReview.test_12_shape_validation) ... ok
+
+======================================================================
+FAIL: test_01_fp16_large_residual_finite_loss (__main__.GaussianReview.test_01_fp16_large_residual_finite_loss)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<local-audit>/test_mlx_regressions.py", line 43, in test_01_fp16_large_residual_finite_loss
+    self.compare(300,0,300,mx.float16,('loss',))
+  File "<local-audit>/test_mlx_regressions.py", line 38, in compare
+    self.assertTrue(math.isfinite(actual[key]),(key,actual,ref))
+AssertionError: False is not true : ('loss', {'loss': inf, 'dx': 1.0, 'dy': -1.0, 'dv': nan}, {'loss': 152.8518912373281, 'dx': 1.0, 'dy': -1.0, 'dv': -0.49833333333333335})
+
+======================================================================
+FAIL: test_02_fp16_large_residual_variance_gradient (__main__.GaussianReview.test_02_fp16_large_residual_variance_gradient)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<local-audit>/test_mlx_regressions.py", line 45, in test_02_fp16_large_residual_variance_gradient
+    self.compare(300,0,300,mx.float16,('dv',))
+  File "<local-audit>/test_mlx_regressions.py", line 38, in compare
+    self.assertTrue(math.isfinite(actual[key]),(key,actual,ref))
+AssertionError: False is not true : ('dv', {'loss': inf, 'dx': 1.0, 'dy': -1.0, 'dv': nan}, {'loss': 152.8518912373281, 'dx': 1.0, 'dy': -1.0, 'dv': -0.49833333333333335})
+
+======================================================================
+FAIL: test_03_fp16_finite_loss_gradient_sign (__main__.GaussianReview.test_03_fp16_finite_loss_gradient_sign)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<local-audit>/test_mlx_regressions.py", line 47, in test_03_fp16_finite_loss_gradient_sign
+    self.compare(20,0,300,mx.float16)
+  File "<local-audit>/test_mlx_regressions.py", line 39, in compare
+    self.assertTrue(math.isclose(actual[key],ref[key],rel_tol=0.002,abs_tol=1e-30),
+AssertionError: False is not true : ('dv', 0.001667022705078125, -0.0005555555555555556)
+
+======================================================================
+FAIL: test_04_fp16_small_variance_nonzero_residual (__main__.GaussianReview.test_04_fp16_small_variance_nonzero_residual)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<local-audit>/test_mlx_regressions.py", line 49, in test_04_fp16_small_variance_nonzero_residual
+    self.compare(.02,0,.0001,mx.float16)
+  File "<local-audit>/test_mlx_regressions.py", line 38, in compare
+    self.assertTrue(math.isfinite(actual[key]),(key,actual,ref))
+AssertionError: False is not true : ('dv', {'loss': -2.60546875, 'dx': 200.0, 'dy': -200.0, 'dv': -inf}, {'loss': -2.604564605133658, 'dx': 200.00953516090584, 'dy': -200.00953516090584, 'dv': -15002.736636639624})
+
+======================================================================
+FAIL: test_05_fp16_small_variance_zero_residual (__main__.GaussianReview.test_05_fp16_small_variance_zero_residual)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<local-audit>/test_mlx_regressions.py", line 51, in test_05_fp16_small_variance_zero_residual
+    self.compare(0,0,.0001,mx.float16)
+  File "<local-audit>/test_mlx_regressions.py", line 38, in compare
+    self.assertTrue(math.isfinite(actual[key]),(key,actual,ref))
+AssertionError: False is not true : ('dv', {'loss': -4.60546875, 'dx': -0.0, 'dy': 0.0, 'dv': nan}, {'loss': -4.605087223205768, 'dx': 0.0, 'dy': 0.0, 'dv': 4999.170441001192})
+
+======================================================================
+FAIL: test_06_fp16_below_epsilon_constant_branch (__main__.GaussianReview.test_06_fp16_below_epsilon_constant_branch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<local-audit>/test_mlx_regressions.py", line 55, in test_06_fp16_below_epsilon_constant_branch
+    self.assertEqual(g.item(),0.)
+AssertionError: nan != 0.0
+
+======================================================================
+FAIL: test_07_fp32_large_residual (__main__.GaussianReview.test_07_fp32_large_residual)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<local-audit>/test_mlx_regressions.py", line 57, in test_07_fp32_large_residual
+    self.compare(1e20,0,1e20,mx.float32)
+  File "<local-audit>/test_mlx_regressions.py", line 38, in compare
+    self.assertTrue(math.isfinite(actual[key]),(key,actual,ref))
+AssertionError: False is not true : ('loss', {'loss': inf, 'dx': 1.0, 'dy': -1.0, 'dv': nan}, {'loss': 5.000000100204387e+19, 'dx': 1.0, 'dy': -1.0, 'dv': -0.5})
+
+======================================================================
+FAIL: test_08_fp32_finite_loss_gradient_sign (__main__.GaussianReview.test_08_fp32_finite_loss_gradient_sign)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<local-audit>/test_mlx_regressions.py", line 59, in test_08_fp32_finite_loss_gradient_sign
+    self.compare(2e10,0,1e20,mx.float32)
+  File "<local-audit>/test_mlx_regressions.py", line 39, in compare
+    self.assertTrue(math.isclose(actual[key],ref[key],rel_tol=0.002,abs_tol=1e-30),
+AssertionError: False is not true : ('dv', 4.999999841327613e-21, -1.4999999298569316e-20)
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.011s
+
+FAILED (failures=8)

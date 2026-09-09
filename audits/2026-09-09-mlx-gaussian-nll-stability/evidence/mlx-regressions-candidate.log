@@ -1,0 +1,17 @@
+test_01_fp16_large_residual_finite_loss (__main__.GaussianReview.test_01_fp16_large_residual_finite_loss) ... ok
+test_02_fp16_large_residual_variance_gradient (__main__.GaussianReview.test_02_fp16_large_residual_variance_gradient) ... ok
+test_03_fp16_finite_loss_gradient_sign (__main__.GaussianReview.test_03_fp16_finite_loss_gradient_sign) ... ok
+test_04_fp16_small_variance_nonzero_residual (__main__.GaussianReview.test_04_fp16_small_variance_nonzero_residual) ... ok
+test_05_fp16_small_variance_zero_residual (__main__.GaussianReview.test_05_fp16_small_variance_zero_residual) ... ok
+test_06_fp16_below_epsilon_constant_branch (__main__.GaussianReview.test_06_fp16_below_epsilon_constant_branch) ... ok
+test_07_fp32_large_residual (__main__.GaussianReview.test_07_fp32_large_residual) ... ok
+test_08_fp32_finite_loss_gradient_sign (__main__.GaussianReview.test_08_fp32_finite_loss_gradient_sign) ... ok
+test_09_benign_controls (__main__.GaussianReview.test_09_benign_controls) ... ok
+test_10_mean_and_target_gradient_symmetry (__main__.GaussianReview.test_10_mean_and_target_gradient_symmetry) ... ok
+test_11_full_constant_and_reductions (__main__.GaussianReview.test_11_full_constant_and_reductions) ... ok
+test_12_shape_validation (__main__.GaussianReview.test_12_shape_validation) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.003s
+
+OK

@@ -1,0 +1,23 @@
+{
+  "original_local_sha256": {
+    "mlx-review-results.json": "ced52b31f2dcd615d2147bdb3bd42c43a5dafedf8587f9c897242cf35c18dac0",
+    "mlx-regressions-original.json": "fb1f1f2c5bc3182d57cae875b1e84ad37661e78b997861cce065281108e65fbd",
+    "mlx-regressions-candidate.json": "f10fc9b6669317a0f6728ee007a1abfe2f1e733d3ac855daf5528bba02291858",
+    "mlx-regressions-original.log": "6482839eb6e41d00667e961d78a9f1c339b441e2468284dcc8c8bb8cc0c33515",
+    "mlx-regressions-candidate.log": "ed16eea12248dc4ae5d50910db88c4cf8786eb0fcafb61aa093792870c801e9f",
+    "minimal_mlx_repro.log": "87e1550098a69598e27c26c9c5471a7b3e66bdc4d3cd6b0a2e6fb0c0beb5f0e6",
+    "divide-vjp-pinned.cpp.txt": "14a239b4a00112e355f3893ca86ecc97f0229372e1ab1b78ee1a18205f86f93d",
+    "upsample-matrix-results.jsonl": "72ee6b9752d1d71b14a7559abbe83cbb914feb4cb8aaf3506dcfe2f6bef66261",
+    "upsample-original18.log": "b89e8528473d7a573e89f66c4583b07599fa72d1e18418accf9d2eee97a0e5f8",
+    "review_upsample.cpp": "eab8b5abd05e3ba454c7438f9ba3d89c728c09eafe65f2bb094e1d58bc8fa133",
+    "minimal_mlx_repro.py": "b0cf8dd540f33b6e3d3f6d9fc0fa6323e416f19eb596cc7a255c21305bcd09f0",
+    "gaussian_candidate.py": "653b003c84607fbee18bf64eb0906c151f17fa324f881f976702ac66fc4432a2",
+    "test_mlx_regressions.py": "70e91a1ddfa21284fae2e98db6bccf547b33e1fe2fa2890f5d06bf7e1698ed3c",
+    "pinned-losses.py": "10b5439bf1a9ebbb6e5f0dc115efc01a17bf1edac0e746ba564a09ada15be849",
+    "publication-candidate.log": "86b2d0df11c2c5a0ab63e1c5b09d140728092284f07700337d3039e1f35e2f27",
+    "publication-original.log": "fb9464348ae0b33829bc1ab73f5f0a5ae4adaf4c203f32680c61af6cd6c16cbf",
+    "publication-minimal.log": "87e1550098a69598e27c26c9c5471a7b3e66bdc4d3cd6b0a2e6fb0c0beb5f0e6"
+  },
+  "public_transform": "Replace workstation absolute paths only; preserve numerical values and runtime details. Portable extended probe uses MLX_REPO.",
+  "source_pin": "ce916dbbcaa88e433b6fd1e60a17f766d49c27fe"
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "name": "minimal",
+    "returncode": 0,
+    "expected": 0,
+    "matches": true
+  },
+  {
+    "name": "original",
+    "returncode": 1,
+    "expected": 1,
+    "matches": true
+  },
+  {
+    "name": "candidate",
+    "returncode": 0,
+    "expected": 0,
+    "matches": true
+  }
+]

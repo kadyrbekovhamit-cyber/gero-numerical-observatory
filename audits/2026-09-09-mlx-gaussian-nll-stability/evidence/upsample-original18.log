@@ -1,0 +1,52 @@
+Running main() from ../subprojects/googletest/googletest/src/gtest_main.cc
+Note: Google Test filter = UpsampleCPU/*:Upsample2D/*
+[==========] Running 18 tests from 3 test suites.
+[----------] Global test environment set-up.
+[----------] 11 tests from Upsample2D/LayerSemantics
+[ RUN      ] Upsample2D/LayerSemantics.createFromAppContext_pn/0
+[       OK ] Upsample2D/LayerSemantics.createFromAppContext_pn/0 (3 ms)
+[ RUN      ] Upsample2D/LayerSemantics.setPropertiesInvalid_01_n/0
+[       OK ] Upsample2D/LayerSemantics.setPropertiesInvalid_01_n/0 (1 ms)
+[ RUN      ] Upsample2D/LayerSemantics.setPropertiesInvalid_02_n/0
+[       OK ] Upsample2D/LayerSemantics.setPropertiesInvalid_02_n/0 (0 ms)
+[ RUN      ] Upsample2D/LayerSemantics.finalizeValidateLayerNode_p/0
+[       OK ] Upsample2D/LayerSemantics.finalizeValidateLayerNode_p/0 (0 ms)
+[ RUN      ] Upsample2D/LayerSemantics.getTypeValidateLayerNode_p/0
+[       OK ] Upsample2D/LayerSemantics.getTypeValidateLayerNode_p/0 (0 ms)
+[ RUN      ] Upsample2D/LayerSemantics.gettersValidateLayerNode_p/0
+[       OK ] Upsample2D/LayerSemantics.gettersValidateLayerNode_p/0 (0 ms)
+[ RUN      ] Upsample2D/LayerSemantics.setBatchValidateLayerNode_p/0
+[       OK ] Upsample2D/LayerSemantics.setBatchValidateLayerNode_p/0 (0 ms)
+[ RUN      ] Upsample2D/LayerSemantics.setProperties_n/0
+[       OK ] Upsample2D/LayerSemantics.setProperties_n/0 (0 ms)
+[ RUN      ] Upsample2D/LayerSemantics.gettersValidate_p/0
+[       OK ] Upsample2D/LayerSemantics.gettersValidate_p/0 (0 ms)
+[ RUN      ] Upsample2D/LayerSemantics.finalizeValidate_p/0
+[       OK ] Upsample2D/LayerSemantics.finalizeValidate_p/0 (0 ms)
+[ RUN      ] Upsample2D/LayerSemantics.setBatchValidate_p/0
+[       OK ] Upsample2D/LayerSemantics.setBatchValidate_p/0 (0 ms)
+[----------] 11 tests from Upsample2D/LayerSemantics (5 ms total)
+
+[----------] 5 tests from Upsample2D/LayerGoldenTest
+[ RUN      ] Upsample2D/LayerGoldenTest.run/0
+[       OK ] Upsample2D/LayerGoldenTest.run/0 (0 ms)
+[ RUN      ] Upsample2D/LayerGoldenTest.run/1
+[       OK ] Upsample2D/LayerGoldenTest.run/1 (0 ms)
+[ RUN      ] Upsample2D/LayerGoldenTest.run/2
+[       OK ] Upsample2D/LayerGoldenTest.run/2 (0 ms)
+[ RUN      ] Upsample2D/LayerGoldenTest.run/3
+[       OK ] Upsample2D/LayerGoldenTest.run/3 (0 ms)
+[ RUN      ] Upsample2D/LayerGoldenTest.run/4
+[       OK ] Upsample2D/LayerGoldenTest.run/4 (0 ms)
+[----------] 5 tests from Upsample2D/LayerGoldenTest (1 ms total)
+
+[----------] 2 tests from UpsampleCPU/UpsampleAdjointAudit
+[ RUN      ] UpsampleCPU/UpsampleAdjointAudit.RuntimeForwardAndBackwardAreAdjoints/0
+[       OK ] UpsampleCPU/UpsampleAdjointAudit.RuntimeForwardAndBackwardAreAdjoints/0 (0 ms)
+[ RUN      ] UpsampleCPU/UpsampleAdjointAudit.RuntimeForwardAndBackwardAreAdjoints/1
+[       OK ] UpsampleCPU/UpsampleAdjointAudit.RuntimeForwardAndBackwardAreAdjoints/1 (0 ms)
+[----------] 2 tests from UpsampleCPU/UpsampleAdjointAudit (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 18 tests from 3 test suites ran. (6 ms total)
+[  PASSED  ] 18 tests.

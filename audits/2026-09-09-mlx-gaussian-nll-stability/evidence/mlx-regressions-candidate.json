@@ -1,0 +1,9 @@
+{
+  "variant": "candidate",
+  "tests": 12,
+  "failures": 0,
+  "errors": 0,
+  "passed": 12,
+  "failed_tests": [],
+  "scope": "12 bounded tests; excludes extreme FP32 counterexample at mean=variance=3e38. Candidate widens the FP16 loss to FP32 and is not universally stable."
+}

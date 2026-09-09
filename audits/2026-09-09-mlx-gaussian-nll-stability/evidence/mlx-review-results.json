@@ -1,0 +1,1051 @@
+{
+  "provenance": {
+    "pinned_revision": "ce916dbbcaa88e433b6fd1e60a17f766d49c27fe",
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "executable": "<audit-venv>/bin/python",
+    "platform": "macOS-15.5-arm64-arm-64bit",
+    "mlx_version": "0.32.2",
+    "default_device": "Device(cpu, 0)",
+    "source_sha256": "10b5439bf1a9ebbb6e5f0dc115efc01a17bf1edac0e746ba564a09ada15be849",
+    "native_core_path": "<audit-venv>/lib/python3.12/site-packages/mlx/core.cpython-312-darwin.so",
+    "native_core_sha256": "d23be938c270d7e1e28da8ba2d9d7344519632756f062b74007d7ad857022af8",
+    "native_record_checks": [
+      {
+        "distribution": "mlx",
+        "version": "0.32.2",
+        "record_hash_matches": true
+      }
+    ],
+    "gaussian_ast_equal_to_installed": true,
+    "scope": "Native installed core on CPU; pinned Python source and separately installed public API. No rebuild, Metal kernels or model training."
+  },
+  "gaussian": [
+    {
+      "case": "control",
+      "dtype": "float16",
+      "rounded_inputs": [
+        2.0,
+        0.0,
+        4.0
+      ],
+      "effective_eps": 1.0132789611816406e-06,
+      "reference": {
+        "loss": 1.1931471805599454,
+        "dx": 0.5,
+        "dy": -0.5,
+        "dv": 0.0,
+        "loss_decimal": "1.1931471805599453094172321214581765680755001343602552541206800094933936219696947",
+        "dv_decimal": "0"
+      },
+      "intermediates": {
+        "residual": 2.0,
+        "square_residual": 4.0,
+        "square_variance": 16.0
+      },
+      "variants": {
+        "pinned": {
+          "loss": 1.193359375,
+          "dx": 0.5,
+          "dy": -0.5,
+          "dv": 0.0,
+          "loss_dtype": "mlx.core.float16"
+        },
+        "installed": {
+          "loss": 1.193359375,
+          "dx": 0.5,
+          "dy": -0.5,
+          "dv": 0.0,
+          "loss_dtype": "mlx.core.float16"
+        },
+        "normalized_diagnostic": {
+          "loss": 1.193359375,
+          "dx": 0.5,
+          "dy": -0.5,
+          "dv": 0.0,
+          "loss_dtype": "mlx.core.float16"
+        },
+        "ratio_first_diagnostic": {
+          "loss": 1.193359375,
+          "dx": 0.5,
+          "dy": -0.5,
+          "dv": 0.0,
+          "loss_dtype": "mlx.core.float16"
+        },
+        "promote_fp32_only": {
+          "loss": 1.1931471824645996,
+          "dx": 0.5,
+          "dy": -0.5,
+          "dv": 0.0,
+          "loss_dtype": "mlx.core.float32"
+        },
+        "promote_and_normalize": {
+          "loss": 1.1931471824645996,
+          "dx": 0.5,
+          "dy": -0.5,
+          "dv": 0.0,
+          "loss_dtype": "mlx.core.float32"
+        }
+      }
+    },
+    {
+      "case": "reported_overflow",
+      "dtype": "float16",
+      "rounded_inputs": [
+        300.0,
+        0.0,
+        300.0
+      ],
+      "effective_eps": 1.0132789611816406e-06,
+      "reference": {
+        "loss": 152.8518912373281,
+        "dx": 1.0,
+        "dy": -1.0,
+        "dv": -0.49833333333333335,
+        "loss_decimal": "152.85189123732810052971561407314562705992484676754014770190067506778631975628666",
+        "dv_decimal": "-0.49833333333333333333333333333333333333333333333333333333333333333333333333333333"
+      },
+      "intermediates": {
+        "residual": 300.0,
+        "square_residual": "+Inf",
+        "square_variance": "+Inf"
+      },
+      "variants": {
+        "pinned": {
+          "loss": "+Inf",
+          "dx": 1.0,
+          "dy": -1.0,
+          "dv": "NaN",
+          "loss_dtype": "mlx.core.float16"
+        },
+        "installed": {
+          "loss": "+Inf",
+          "dx": 1.0,
+          "dy": -1.0,
+          "dv": "NaN",
+          "loss_dtype": "mlx.core.float16"
+        },
+        "normalized_diagnostic": {
+          "loss": 152.75,
+          "dx": 0.9990234375,
+          "dy": -0.9990234375,
+          "dv": -0.497314453125,
+          "loss_dtype": "mlx.core.float16"
+        },
+        "ratio_first_diagnostic": {
+          "loss": 152.875,
+          "dx": 1.0,
+          "dy": -1.0,
+          "dv": 0.001667022705078125,
+          "loss_dtype": "mlx.core.float16"
+        },
+        "promote_fp32_only": {
+          "loss": 152.85189819335938,
+          "dx": 1.0,
+          "dy": -1.0,
+          "dv": -0.498291015625,
+          "loss_dtype": "mlx.core.float32"
+        },
+        "promote_and_normalize": {
+          "loss": 152.8518829345703,
+          "dx": 1.0,
+          "dy": -1.0,
+          "dv": -0.498291015625,
+          "loss_dtype": "mlx.core.float32"
+        }
+      }
+    },
+    {
+      "case": "finite_loss_wrong_sign",
+      "dtype": "float16",
+      "rounded_inputs": [
+        20.0,
+        0.0,
+        300.0
+      ],
+      "effective_eps": 1.0132789611816406e-06,
+      "reference": {
+        "loss": 3.518557903994767,
+        "dx": 0.06666666666666667,
+        "dy": -0.06666666666666667,
+        "dv": -0.0005555555555555556,
+        "loss_decimal": "3.5185579039947671963822807398122937265915134342068143685673417344529864229533236",
+        "dv_decimal": "-0.00055555555555555555555555555555555555555555555555555555555555555555555555555555556"
+      },
+      "intermediates": {
+        "residual": 20.0,
+        "square_residual": 400.0,
+        "square_variance": "+Inf"
+      },
+      "variants": {
+        "pinned": {
+          "loss": 3.517578125,
+          "dx": 0.066650390625,
+          "dy": -0.066650390625,
+          "dv": 0.001667022705078125,
+          "loss_dtype": "mlx.core.float16"
+        },
+        "installed": {
+          "loss": 3.517578125,
+          "dx": 0.066650390625,
+          "dy": -0.066650390625,
+          "dv": 0.001667022705078125,
+          "loss_dtype": "mlx.core.float16"
+        },
+        "normalized_diagnostic": {
+          "loss": 3.517578125,
+          "dx": 0.06658935546875,
+          "dy": -0.06658935546875,
+          "dv": -0.0005512237548828125,
+          "loss_dtype": "mlx.core.float16"
+        },
+        "ratio_first_diagnostic": {
+          "loss": 3.517578125,
+          "dx": 0.066650390625,
+          "dy": -0.066650390625,
+          "dv": 0.001667022705078125,
+          "loss_dtype": "mlx.core.float16"
+        },
+        "promote_fp32_only": {
+          "loss": 3.5185580253601074,
+          "dx": 0.066650390625,
+          "dy": -0.066650390625,
+          "dv": -0.0005555152893066406,
+          "loss_dtype": "mlx.core.float32"
+        },
+        "promote_and_normalize": {
+          "loss": 3.5185580253601074,
+          "dx": 0.066650390625,
+          "dy": -0.066650390625,
+          "dv": -0.0005555152893066406,
+          "loss_dtype": "mlx.core.float32"
+        }
+      }
+    },
+    {
+      "case": "finite_loss_wrong_magnitude",
+      "dtype": "float16",
+      "rounded_inputs": [
+        10.0,
+        0.0,
+        300.0
+      ],
+      "effective_eps": 1.0132789611816406e-06,
+      "reference": {
+        "loss": 3.018557903994767,
+        "dx": 0.03333333333333333,
+        "dy": -0.03333333333333333,
+        "dv": 0.0011111111111111111,
+        "loss_decimal": "3.0185579039947671963822807398122937265915134342068143685673417344529864229533236",
+        "dv_decimal": "0.0011111111111111111111111111111111111111111111111111111111111111111111111111111111"
+      },
+      "intermediates": {
+        "residual": 10.0,
+        "square_residual": 100.0,
+        "square_variance": "+Inf"
+      },
+      "variants": {
+        "pinned": {
+          "loss": 3.017578125,
+          "dx": 0.0333251953125,
+          "dy": -0.0333251953125,
+          "dv": 0.001667022705078125,
+          "loss_dtype": "mlx.core.float16"
+        },
+        "installed": {
+          "loss": 3.017578125,
+          "dx": 0.0333251953125,
+          "dy": -0.0333251953125,
+          "dv": 0.001667022705078125,
+          "loss_dtype": "mlx.core.float16"
+        },
+        "normalized_diagnostic": {
+          "loss": 3.017578125,
+          "dx": 0.033294677734375,
+          "dy": -0.033294677734375,
+          "dv": 0.0011119842529296875,
+          "loss_dtype": "mlx.core.float16"
+        },
+        "ratio_first_diagnostic": {
+          "loss": 3.017578125,
+          "dx": 0.0333251953125,
+          "dy": -0.0333251953125,
+          "dv": 0.001667022705078125,
+          "loss_dtype": "mlx.core.float16"
+        },
+        "promote_fp32_only": {
+          "loss": 3.0185580253601074,
+          "dx": 0.0333251953125,
+          "dy": -0.0333251953125,
+          "dv": 0.0011110305786132812,
+          "loss_dtype": "mlx.core.float32"
+        },
+        "promote_and_normalize": {
+          "loss": 3.0185580253601074,
+          "dx": 0.0333251953125,
+          "dy": -0.0333251953125,
+          "dv": 0.0011110305786132812,
+          "loss_dtype": "mlx.core.float32"
+        }
+      }
+    },
+    {
+      "case": "small_variance",
+      "dtype": "float16",
+      "rounded_inputs": [
+        0.0200042724609375,
+        0.0,
+        0.00010001659393310547
+      ],
+      "effective_eps": 1.0132789611816406e-06,
+      "reference": {
+        "loss": -2.604564605133658,
+        "dx": 200.00953516090584,
+        "dy": -200.00953516090584,
+        "dv": -15002.736636639624,
+        "loss_decimal": "-2.6045646051336583153448378292795875056093626219561512054034611522798788996283768",
+        "dv_decimal": "-15002.736636639622912230207651142670839483407939243182118447950835392039731731260"
+      },
+      "intermediates": {
+        "residual": 0.0200042724609375,
+        "square_residual": 0.0004000663757324219,
+        "square_variance": 0.0
+      },
+      "variants": {
+        "pinned": {
+          "loss": -2.60546875,
+          "dx": 200.0,
+          "dy": -200.0,
+          "dv": "-Inf",
+          "loss_dtype": "mlx.core.float16"
+        },
+        "installed": {
+          "loss": -2.60546875,
+          "dx": 200.0,
+          "dy": -200.0,
+          "dv": "-Inf",
+          "loss_dtype": "mlx.core.float16"
+        },
+        "normalized_diagnostic": {
+          "loss": -2.60546875,
+          "dx": 200.0,
+          "dy": -200.0,
+          "dv": -15000.0,
+          "loss_dtype": "mlx.core.float16"
+        },
+        "ratio_first_diagnostic": {
+          "loss": -2.60546875,
+          "dx": 200.0,
+          "dy": -200.0,
+          "dv": "-Inf",
+          "loss_dtype": "mlx.core.float16"
+        },
+        "promote_fp32_only": {
+          "loss": -2.604564666748047,
+          "dx": 200.0,
+          "dy": -200.0,
+          "dv": -15000.0,
+          "loss_dtype": "mlx.core.float32"
+        },
+        "promote_and_normalize": {
+          "loss": -2.604564666748047,
+          "dx": 200.0,
+          "dy": -200.0,
+          "dv": -15000.0,
+          "loss_dtype": "mlx.core.float32"
+        }
+      }
+    },
+    {
+      "case": "zero_residual_small_variance",
+      "dtype": "float16",
+      "rounded_inputs": [
+        0.0,
+        0.0,
+        0.00010001659393310547
+      ],
+      "effective_eps": 1.0132789611816406e-06,
+      "reference": {
+        "loss": -4.605087223205768,
+        "dx": 0.0,
+        "dy": 0.0,
+        "dv": 4999.170441001192,
+        "loss_decimal": "-4.6050872232057679696952549925692180181242613108715266523641286135432877196522148",
+        "dv_decimal": "4999.1704410011918951132300357568533969010727056019070321811680572109654350417163"
+      },
+      "intermediates": {
+        "residual": 0.0,
+        "square_residual": 0.0,
+        "square_variance": 0.0
+      },
+      "variants": {
+        "pinned": {
+          "loss": -4.60546875,
+          "dx": -0.0,
+          "dy": 0.0,
+          "dv": "NaN",
+          "loss_dtype": "mlx.core.float16"
+        },
+        "installed": {
+          "loss": -4.60546875,
+          "dx": -0.0,
+          "dy": 0.0,
+          "dv": "NaN",
+          "loss_dtype": "mlx.core.float16"
+        },
+        "normalized_diagnostic": {
+          "loss": -4.60546875,
+          "dx": 0.0,
+          "dy": -0.0,
+          "dv": 5000.0,
+          "loss_dtype": "mlx.core.float16"
+        },
+        "ratio_first_diagnostic": {
+          "loss": -4.60546875,
+          "dx": 0.0,
+          "dy": -0.0,
+          "dv": "NaN",
+          "loss_dtype": "mlx.core.float16"
+        },
+        "promote_fp32_only": {
+          "loss": -4.6050872802734375,
+          "dx": -0.0,
+          "dy": 0.0,
+          "dv": 5000.0,
+          "loss_dtype": "mlx.core.float32"
+        },
+        "promote_and_normalize": {
+          "loss": -4.6050872802734375,
+          "dx": 0.0,
+          "dy": -0.0,
+          "dv": 5000.0,
+          "loss_dtype": "mlx.core.float32"
+        }
+      }
+    },
+    {
+      "case": "below_eps",
+      "dtype": "float16",
+      "rounded_inputs": [
+        0.0,
+        0.0,
+        1.1920928955078125e-07
+      ],
+      "effective_eps": 1.0132789611816406e-06,
+      "reference": {
+        "loss": -6.901159494691235,
+        "dx": 0.0,
+        "dy": 0.0,
+        "dv": 0.0,
+        "loss_decimal": "-6.901159494691235672882018148561555549111900106030190655799541244979577175735871",
+        "dv_decimal": "0"
+      },
+      "intermediates": {
+        "residual": 0.0,
+        "square_residual": 0.0,
+        "square_variance": 0.0
+      },
+      "variants": {
+        "pinned": {
+          "loss": -6.90234375,
+          "dx": "NaN",
+          "dy": "NaN",
+          "dv": "NaN",
+          "loss_dtype": "mlx.core.float16"
+        },
+        "installed": {
+          "loss": -6.90234375,
+          "dx": "NaN",
+          "dy": "NaN",
+          "dv": "NaN",
+          "loss_dtype": "mlx.core.float16"
+        },
+        "normalized_diagnostic": {
+          "loss": -6.90234375,
+          "dx": 0.0,
+          "dy": -0.0,
+          "dv": "NaN",
+          "loss_dtype": "mlx.core.float16"
+        },
+        "ratio_first_diagnostic": {
+          "loss": -6.90234375,
+          "dx": 0.0,
+          "dy": -0.0,
+          "dv": "NaN",
+          "loss_dtype": "mlx.core.float16"
+        },
+        "promote_fp32_only": {
+          "loss": -6.907755374908447,
+          "dx": -0.0,
+          "dy": 0.0,
+          "dv": 0.0,
+          "loss_dtype": "mlx.core.float32"
+        },
+        "promote_and_normalize": {
+          "loss": -6.907755374908447,
+          "dx": 0.0,
+          "dy": -0.0,
+          "dv": 0.0,
+          "loss_dtype": "mlx.core.float32"
+        }
+      }
+    },
+    {
+      "case": "boundary_255",
+      "dtype": "float16",
+      "rounded_inputs": [
+        255.0,
+        0.0,
+        300.0
+      ],
+      "effective_eps": 1.0132789611816406e-06,
+      "reference": {
+        "loss": 111.2268912373281,
+        "dx": 0.85,
+        "dy": -0.85,
+        "dv": -0.3595833333333333,
+        "loss_decimal": "111.22689123732810052971561407314562705992484676754014770190067506778631975628666",
+        "dv_decimal": "-0.35958333333333333333333333333333333333333333333333333333333333333333333333333333"
+      },
+      "intermediates": {
+        "residual": 255.0,
+        "square_residual": 65024.0,
+        "square_variance": "+Inf"
+      },
+      "variants": {
+        "pinned": {
+          "loss": 111.25,
+          "dx": 0.85009765625,
+          "dy": -0.85009765625,
+          "dv": 0.001667022705078125,
+          "loss_dtype": "mlx.core.float16"
+        },
+        "installed": {
+          "loss": 111.25,
+          "dx": 0.85009765625,
+          "dy": -0.85009765625,
+          "dv": 0.001667022705078125,
+          "loss_dtype": "mlx.core.float16"
+        },
+        "normalized_diagnostic": {
+          "loss": 111.1875,
+          "dx": 0.849609375,
+          "dy": -0.849609375,
+          "dv": -0.35888671875,
+          "loss_dtype": "mlx.core.float16"
+        },
+        "ratio_first_diagnostic": {
+          "loss": 111.25,
+          "dx": 0.85009765625,
+          "dy": -0.85009765625,
+          "dv": 0.001667022705078125,
+          "loss_dtype": "mlx.core.float16"
+        },
+        "promote_fp32_only": {
+          "loss": 111.22689056396484,
+          "dx": 0.85009765625,
+          "dy": -0.85009765625,
+          "dv": -0.359619140625,
+          "loss_dtype": "mlx.core.float32"
+        },
+        "promote_and_normalize": {
+          "loss": 111.22688293457031,
+          "dx": 0.85009765625,
+          "dy": -0.85009765625,
+          "dv": -0.359619140625,
+          "loss_dtype": "mlx.core.float32"
+        }
+      }
+    },
+    {
+      "case": "boundary_256",
+      "dtype": "float16",
+      "rounded_inputs": [
+        256.0,
+        0.0,
+        300.0
+      ],
+      "effective_eps": 1.0132789611816406e-06,
+      "reference": {
+        "loss": 112.07855790399476,
+        "dx": 0.8533333333333334,
+        "dy": -0.8533333333333334,
+        "dv": -0.3624222222222222,
+        "loss_decimal": "112.07855790399476719638228073981229372659151343420681436856734173445298642295332",
+        "dv_decimal": "-0.36242222222222222222222222222222222222222222222222222222222222222222222222222222"
+      },
+      "intermediates": {
+        "residual": 256.0,
+        "square_residual": "+Inf",
+        "square_variance": "+Inf"
+      },
+      "variants": {
+        "pinned": {
+          "loss": "+Inf",
+          "dx": 0.853515625,
+          "dy": -0.853515625,
+          "dv": "NaN",
+          "loss_dtype": "mlx.core.float16"
+        },
+        "installed": {
+          "loss": "+Inf",
+          "dx": 0.853515625,
+          "dy": -0.853515625,
+          "dv": "NaN",
+          "loss_dtype": "mlx.core.float16"
+        },
+        "normalized_diagnostic": {
+          "loss": 112.0,
+          "dx": 0.8525390625,
+          "dy": -0.8525390625,
+          "dv": -0.361572265625,
+          "loss_dtype": "mlx.core.float16"
+        },
+        "ratio_first_diagnostic": {
+          "loss": 112.125,
+          "dx": 0.853515625,
+          "dy": -0.853515625,
+          "dv": 0.001667022705078125,
+          "loss_dtype": "mlx.core.float16"
+        },
+        "promote_fp32_only": {
+          "loss": 112.07855987548828,
+          "dx": 0.853515625,
+          "dy": -0.853515625,
+          "dv": -0.3623046875,
+          "loss_dtype": "mlx.core.float32"
+        },
+        "promote_and_normalize": {
+          "loss": 112.07853698730469,
+          "dx": 0.853515625,
+          "dy": -0.853515625,
+          "dv": -0.3623046875,
+          "loss_dtype": "mlx.core.float32"
+        }
+      }
+    },
+    {
+      "case": "unrepresentable_loss_control",
+      "dtype": "float16",
+      "rounded_inputs": [
+        400.0,
+        0.0,
+        1.0
+      ],
+      "effective_eps": 1.0132789611816406e-06,
+      "reference": {
+        "loss": 80000.0,
+        "dx": 400.0,
+        "dy": -400.0,
+        "dv": -79999.5,
+        "loss_decimal": "80000",
+        "dv_decimal": "-79999.5"
+      },
+      "intermediates": {
+        "residual": 400.0,
+        "square_residual": "+Inf",
+        "square_variance": 1.0
+      },
+      "variants": {
+        "pinned": {
+          "loss": "+Inf",
+          "dx": 400.0,
+          "dy": -400.0,
+          "dv": "-Inf",
+          "loss_dtype": "mlx.core.float16"
+        },
+        "installed": {
+          "loss": "+Inf",
+          "dx": 400.0,
+          "dy": -400.0,
+          "dv": "-Inf",
+          "loss_dtype": "mlx.core.float16"
+        },
+        "normalized_diagnostic": {
+          "loss": "+Inf",
+          "dx": 400.0,
+          "dy": -400.0,
+          "dv": "-Inf",
+          "loss_dtype": "mlx.core.float16"
+        },
+        "ratio_first_diagnostic": {
+          "loss": "+Inf",
+          "dx": 400.0,
+          "dy": -400.0,
+          "dv": "-Inf",
+          "loss_dtype": "mlx.core.float16"
+        },
+        "promote_fp32_only": {
+          "loss": 80000.0,
+          "dx": 400.0,
+          "dy": -400.0,
+          "dv": "-Inf",
+          "loss_dtype": "mlx.core.float32"
+        },
+        "promote_and_normalize": {
+          "loss": 80000.0,
+          "dx": 400.0,
+          "dy": -400.0,
+          "dv": "-Inf",
+          "loss_dtype": "mlx.core.float32"
+        }
+      }
+    },
+    {
+      "case": "control",
+      "dtype": "float32",
+      "rounded_inputs": [
+        2.0,
+        0.0,
+        4.0
+      ],
+      "effective_eps": 9.999999974752427e-07,
+      "reference": {
+        "loss": 1.1931471805599454,
+        "dx": 0.5,
+        "dy": -0.5,
+        "dv": 0.0,
+        "loss_decimal": "1.1931471805599453094172321214581765680755001343602552541206800094933936219696947",
+        "dv_decimal": "0"
+      },
+      "intermediates": {
+        "residual": 2.0,
+        "square_residual": 4.0,
+        "square_variance": 16.0
+      },
+      "variants": {
+        "pinned": {
+          "loss": 1.1931471824645996,
+          "dx": 0.5,
+          "dy": -0.5,
+          "dv": 0.0,
+          "loss_dtype": "mlx.core.float32"
+        },
+        "installed": {
+          "loss": 1.1931471824645996,
+          "dx": 0.5,
+          "dy": -0.5,
+          "dv": 0.0,
+          "loss_dtype": "mlx.core.float32"
+        },
+        "normalized_diagnostic": {
+          "loss": 1.1931471824645996,
+          "dx": 0.5,
+          "dy": -0.5,
+          "dv": 0.0,
+          "loss_dtype": "mlx.core.float32"
+        },
+        "ratio_first_diagnostic": {
+          "loss": 1.1931471824645996,
+          "dx": 0.5,
+          "dy": -0.5,
+          "dv": 0.0,
+          "loss_dtype": "mlx.core.float32"
+        },
+        "promote_fp32_only": {
+          "loss": 1.1931471824645996,
+          "dx": 0.5,
+          "dy": -0.5,
+          "dv": 0.0,
+          "loss_dtype": "mlx.core.float32"
+        },
+        "promote_and_normalize": {
+          "loss": 1.1931471824645996,
+          "dx": 0.5,
+          "dy": -0.5,
+          "dv": 0.0,
+          "loss_dtype": "mlx.core.float32"
+        }
+      }
+    },
+    {
+      "case": "reported_overflow",
+      "dtype": "float32",
+      "rounded_inputs": [
+        1.0000000200408773e+20,
+        0.0,
+        1.0000000200408773e+20
+      ],
+      "effective_eps": 9.999999974752427e-07,
+      "reference": {
+        "loss": 5.000000100204387e+19,
+        "dx": 1.0,
+        "dy": -1.0,
+        "dv": -0.5,
+        "loss_decimal": "50000001002043867159.025850939960895411130724721882182660610213961965677582913425",
+        "dv_decimal": "-0.49999999999999999999500000010020438470541621691602563674036502377935739967792226"
+      },
+      "intermediates": {
+        "residual": 1.0000000200408773e+20,
+        "square_residual": "+Inf",
+        "square_variance": "+Inf"
+      },
+      "variants": {
+        "pinned": {
+          "loss": "+Inf",
+          "dx": 1.0,
+          "dy": -1.0,
+          "dv": "NaN",
+          "loss_dtype": "mlx.core.float32"
+        },
+        "installed": {
+          "loss": "+Inf",
+          "dx": 1.0,
+          "dy": -1.0,
+          "dv": "NaN",
+          "loss_dtype": "mlx.core.float32"
+        },
+        "normalized_diagnostic": {
+          "loss": 5.000000100204387e+19,
+          "dx": 1.0,
+          "dy": -1.0,
+          "dv": -0.5,
+          "loss_dtype": "mlx.core.float32"
+        },
+        "ratio_first_diagnostic": {
+          "loss": 5.000000100204387e+19,
+          "dx": 1.0,
+          "dy": -1.0,
+          "dv": "NaN",
+          "loss_dtype": "mlx.core.float32"
+        },
+        "promote_fp32_only": {
+          "loss": "+Inf",
+          "dx": 1.0,
+          "dy": -1.0,
+          "dv": "NaN",
+          "loss_dtype": "mlx.core.float32"
+        },
+        "promote_and_normalize": {
+          "loss": 5.000000100204387e+19,
+          "dx": 1.0,
+          "dy": -1.0,
+          "dv": -0.5,
+          "loss_dtype": "mlx.core.float32"
+        }
+      }
+    },
+    {
+      "case": "finite_loss_wrong_sign",
+      "dtype": "float32",
+      "rounded_inputs": [
+        20000000000.0,
+        0.0,
+        1.0000000200408773e+20
+      ],
+      "effective_eps": 9.999999974752427e-07,
+      "reference": {
+        "loss": 25.025850899879142,
+        "dx": 1.9999999599182462e-10,
+        "dy": -1.9999999599182462e-10,
+        "dv": -1.4999999298569316e-20,
+        "loss_decimal": "25.025850899879141528964237955471927964464204450222717711744517656127812534025189",
+        "dv_decimal": "-1.4999999298569315094821452940661708396241956480037387672485376001781724489528349E-20"
+      },
+      "intermediates": {
+        "residual": 20000000000.0,
+        "square_residual": 4.0000000801635094e+20,
+        "square_variance": "+Inf"
+      },
+      "variants": {
+        "pinned": {
+          "loss": 25.025850296020508,
+          "dx": 1.9999998879249858e-10,
+          "dy": -1.9999998879249858e-10,
+          "dv": 4.999999841327613e-21,
+          "loss_dtype": "mlx.core.float32"
+        },
+        "installed": {
+          "loss": 25.025850296020508,
+          "dx": 1.9999998879249858e-10,
+          "dy": -1.9999998879249858e-10,
+          "dv": 4.999999841327613e-21,
+          "loss_dtype": "mlx.core.float32"
+        },
+        "normalized_diagnostic": {
+          "loss": 25.025850296020508,
+          "dx": 2.000000026702864e-10,
+          "dy": -2.000000026702864e-10,
+          "dv": -1.5000001139569972e-20,
+          "loss_dtype": "mlx.core.float32"
+        },
+        "ratio_first_diagnostic": {
+          "loss": 25.025850296020508,
+          "dx": 2.000000026702864e-10,
+          "dy": -2.000000026702864e-10,
+          "dv": 4.999999841327613e-21,
+          "loss_dtype": "mlx.core.float32"
+        },
+        "promote_fp32_only": {
+          "loss": 25.025850296020508,
+          "dx": 1.9999998879249858e-10,
+          "dy": -1.9999998879249858e-10,
+          "dv": 4.999999841327613e-21,
+          "loss_dtype": "mlx.core.float32"
+        },
+        "promote_and_normalize": {
+          "loss": 25.025850296020508,
+          "dx": 2.000000026702864e-10,
+          "dy": -2.000000026702864e-10,
+          "dv": -1.5000001139569972e-20,
+          "loss_dtype": "mlx.core.float32"
+        }
+      }
+    },
+    {
+      "case": "extreme_normalization_limit",
+      "dtype": "float32",
+      "rounded_inputs": [
+        3.0000000054977558e+38,
+        0.0,
+        3.0000000054977558e+38
+      ],
+      "effective_eps": 9.999999974752427e-07,
+      "reference": {
+        "loss": 1.5000000027488779e+38,
+        "dx": 1.0,
+        "dy": -1.0,
+        "dv": -0.5,
+        "loss_decimal": "150000000274887787888901997140572635180.29842291213721546749620807195346356810424",
+        "dv_decimal": "-0.49999999999999999999999999999999999999833333333638764208205718546511911861320189"
+      },
+      "intermediates": {
+        "residual": 3.0000000054977558e+38,
+        "square_residual": "+Inf",
+        "square_variance": "+Inf"
+      },
+      "variants": {
+        "pinned": {
+          "loss": "+Inf",
+          "dx": 0.9999999403953552,
+          "dy": -0.9999999403953552,
+          "dv": "NaN",
+          "loss_dtype": "mlx.core.float32"
+        },
+        "installed": {
+          "loss": "+Inf",
+          "dx": 0.9999999403953552,
+          "dy": -0.9999999403953552,
+          "dv": "NaN",
+          "loss_dtype": "mlx.core.float32"
+        },
+        "normalized_diagnostic": {
+          "loss": 1.5000001041609259e+38,
+          "dx": 1.0000001192092896,
+          "dy": -1.0000001192092896,
+          "dv": "-Inf",
+          "loss_dtype": "mlx.core.float32"
+        },
+        "ratio_first_diagnostic": {
+          "loss": 1.5000000027488779e+38,
+          "dx": 1.0,
+          "dy": -1.0,
+          "dv": "NaN",
+          "loss_dtype": "mlx.core.float32"
+        },
+        "promote_fp32_only": {
+          "loss": "+Inf",
+          "dx": 0.9999999403953552,
+          "dy": -0.9999999403953552,
+          "dv": "NaN",
+          "loss_dtype": "mlx.core.float32"
+        },
+        "promote_and_normalize": {
+          "loss": 1.5000001041609259e+38,
+          "dx": 1.0000001192092896,
+          "dy": -1.0000001192092896,
+          "dv": "-Inf",
+          "loss_dtype": "mlx.core.float32"
+        }
+      }
+    }
+  ],
+  "primitive_divide": [
+    {
+      "dtype": "float16",
+      "inputs": [
+        300.0,
+        300.0
+      ],
+      "value": 1.0,
+      "denominator_gradient": -0.0,
+      "reference_denominator_gradient": -0.0033333333333333335,
+      "denominator_square": "+Inf"
+    },
+    {
+      "dtype": "float16",
+      "inputs": [
+        0.00010001659393310547,
+        0.00010001659393310547
+      ],
+      "value": 1.0,
+      "denominator_gradient": "-Inf",
+      "reference_denominator_gradient": -9998.340882002383,
+      "denominator_square": 0.0
+    },
+    {
+      "dtype": "float16",
+      "inputs": [
+        2.0,
+        4.0
+      ],
+      "value": 0.5,
+      "denominator_gradient": -0.125,
+      "reference_denominator_gradient": -0.125,
+      "denominator_square": 16.0
+    },
+    {
+      "dtype": "float32",
+      "inputs": [
+        1.0000000200408773e+20,
+        1.0000000200408773e+20
+      ],
+      "value": 1.0,
+      "denominator_gradient": -0.0,
+      "reference_denominator_gradient": -9.99999979959123e-21,
+      "denominator_square": "+Inf"
+    }
+  ],
+  "native_forward_finite_differences": [
+    {
+      "step": 2.0,
+      "plus": 3.517578125,
+      "minus": 3.51953125,
+      "native_forward_slope": -0.00048828125
+    },
+    {
+      "step": 8.0,
+      "plus": 3.515625,
+      "minus": 3.5234375,
+      "native_forward_slope": -0.00048828125
+    },
+    {
+      "step": 16.0,
+      "plus": 3.509765625,
+      "minus": 3.52734375,
+      "native_forward_slope": -0.00054931640625
+    },
+    {
+      "step": 32.0,
+      "plus": 3.50390625,
+      "minus": 3.541015625,
+      "native_forward_slope": -0.000579833984375
+    }
+  ],
+  "local_variance_steps": [
+    {
+      "variance": 300.0,
+      "native_loss": 3.517578125,
+      "reference_loss": 3.518557903994767
+    },
+    {
+      "variance": 298.0,
+      "native_loss": 3.51953125,
+      "reference_loss": 3.5196876828500177
+    },
+    {
+      "variance": 302.0,
+      "native_loss": 3.517578125,
+      "reference_loss": 3.5174651643165737
+    }
+  ]
+}

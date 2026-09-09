@@ -1,0 +1,18 @@
+{
+  "variant": "original",
+  "tests": 12,
+  "failures": 8,
+  "errors": 0,
+  "passed": 4,
+  "failed_tests": [
+    "__main__.GaussianReview.test_01_fp16_large_residual_finite_loss",
+    "__main__.GaussianReview.test_02_fp16_large_residual_variance_gradient",
+    "__main__.GaussianReview.test_03_fp16_finite_loss_gradient_sign",
+    "__main__.GaussianReview.test_04_fp16_small_variance_nonzero_residual",
+    "__main__.GaussianReview.test_05_fp16_small_variance_zero_residual",
+    "__main__.GaussianReview.test_06_fp16_below_epsilon_constant_branch",
+    "__main__.GaussianReview.test_07_fp32_large_residual",
+    "__main__.GaussianReview.test_08_fp32_finite_loss_gradient_sign"
+  ],
+  "scope": "12 bounded tests; excludes extreme FP32 counterexample at mean=variance=3e38. Candidate widens the FP16 loss to FP32 and is not universally stable."
+}
