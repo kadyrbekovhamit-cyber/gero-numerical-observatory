@@ -9,6 +9,10 @@ full SHA `a7ea056e79ab8e14447ea305c1b634e233343258`. The GitHub API returned
 the same SHA for `main` during verification. Environment: macOS arm64, CPU,
 FP32, NCHW.
 
+[GERO article](https://www.gero.uz/research/articles/nntrainer-average-pool-asymmetric-padding.html) ·
+[YouTube Short](https://www.youtube.com/shorts/TbRvf5eZgWQ) ·
+[LinkedIn discussion](https://www.linkedin.com/feed/update/urn:li:share:7503300049058271232/)
+
 ## Minimal counterexample
 
 Input `[[1,2],[3,4]]`, shape `[1,1,2,2]`, kernel `2x2`, stride `1x1`,

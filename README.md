@@ -75,7 +75,10 @@ discovery or established novelty.
 [Evidence package](audits/2026-09-09-nntrainer-average-pool-padding/) ·
 [Reproduction instructions](audits/2026-09-09-nntrainer-average-pool-padding/BUILD.md) ·
 [Source patch](audits/2026-09-09-nntrainer-average-pool-padding/patches/source.patch) ·
-[Public-history review](audits/2026-09-09-nntrainer-average-pool-padding/DUPLICATES.md)
+[Public-history review](audits/2026-09-09-nntrainer-average-pool-padding/DUPLICATES.md) ·
+[GERO article](https://www.gero.uz/research/articles/nntrainer-average-pool-asymmetric-padding.html) ·
+[YouTube](https://www.youtube.com/shorts/TbRvf5eZgWQ) ·
+[LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503300049058271232/)
 
 ## Published snapshot, 6 September 2026
 
