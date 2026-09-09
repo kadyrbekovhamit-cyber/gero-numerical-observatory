@@ -1,0 +1,25 @@
+{
+  "before": {
+    "cases": 57,
+    "passed_cases": 13,
+    "failed_cases": 44,
+    "checks": 311,
+    "failures": 172
+  },
+  "after": {
+    "cases": 57,
+    "passed_cases": 57,
+    "failed_cases": 0,
+    "checks": 311,
+    "failures": 0
+  },
+  "date": "2026-09-09",
+  "device": "CPU",
+  "dtype": "float32",
+  "patch_applies_to_pinned_source": true,
+  "applied_patch_matches_saved_source": true,
+  "production_performance_validated": false,
+  "complex_dtype_validated": false,
+  "full_main_build": false,
+  "thread_limits": 1
+}

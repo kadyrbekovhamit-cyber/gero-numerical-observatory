@@ -1,0 +1,10 @@
+{
+  "pinned_revision": "24c699ecee2f7c8b2040de8da1c8382c8bcf31c7",
+  "baseline_revision": "ce916dbbcaa88e433b6fd1e60a17f766d49c27fe",
+  "Scan_vjp_matches_pinned_source": true,
+  "archive": "${MLX_CPU_BUILD}/mlx-build/libmlx.a",
+  "archive_sha256": "7826e14e2d1ee526a16352829d460ae39c048e331c339be0b6f8d67d74e68a06",
+  "source_sha256": "6a045372433d91ec0ec00caf134ad5010fe34d8c0ae7a114496f632b24f74f09",
+  "source_retrieval": "Copied from the exact upstream snapshot fetched and hashed in the preceding audit on 2026-09-09.",
+  "build": "New pristine/patched primitives.cpp linked ahead of reused CPU archive; not a full clean build of main."
+}

@@ -1,0 +1,88 @@
+--- a/mlx/primitives.cpp
++++ b/mlx/primitives.cpp
+@@ -4324,52 +4324,41 @@
+ 
+     return {subtract(output_pos, output_neg, stream())};
+   } else if (reduce_type_ == Scan::Prod) {
+-    auto in = primals[0];
+-    // Find the location of the first 0 and set it to 1:
+-    // - A: Exclusive cumprod
+-    // - B: Inclusive cumprod
+-    // - Find the location that is 0 in A and not zero B
+-    // Compute the gradient by:
+-    // - Compute the regular gradient for everything before the first zero
+-    // - Set the first zero to 1 and redo the computation, use this for the
+-    //   gradient of the first zero
+-    // - Everything after the first zero has a gradient of 0
+-
+-    // Get inclusive and exclusive cum prods
+-    auto cprod_exclusive = cumprod(in, axis_, reverse_, !inclusive_, stream());
+-    auto cprod_inclusive = outputs[0];
+-    if (!inclusive_) {
+-      std::swap(cprod_exclusive, cprod_inclusive);
+-    }
+-
+-    // Make the mask for the first zero
+-    auto z = array(0, in.dtype());
+-    auto eq_zero = equal(cprod_inclusive, z, stream());
+-    auto first_zero =
+-        logical_and(eq_zero, not_equal(cprod_exclusive, z, stream()), stream());
+-
+-    auto to_partial_grad = [this, &cotangents](const array& arr) {
+-      return cumsum(
+-          multiply(arr, cotangents[0], stream()),
+-          axis_,
+-          !reverse_,
+-          inclusive_,
+-          stream());
++    auto s = stream();
++    auto in = conjugate(primals[0], s);
++    auto cotan = cotangents[0];
++    int axis = axis_ < 0 ? axis_ + in.ndim() : axis_;
++    int n = in.shape(axis);
++    if (n < 2) {
++      return {inclusive_ ? cotan : zeros_like(in, s)};
++    }
++
++    auto shift = [&](const array& a, int distance) {
++      Shape start(a.ndim(), 0);
++      Shape stop = a.shape();
++      Shape padding_shape = a.shape();
++      padding_shape[axis] = distance;
++      if (reverse_) {
++        stop[axis] -= distance;
++      } else {
++        start[axis] = distance;
++      }
++      auto part = slice(a, start, stop, s);
++      auto padding = zeros(padding_shape, a.dtype(), s);
++      return reverse_ ? concatenate({padding, part}, axis, s)
++                      : concatenate({part, padding}, axis, s);
+     };
+ 
+-    auto cprod_with_one = cumprod(
+-        where(first_zero, array(1, in.dtype()), in, stream()),
+-        axis_,
+-        reverse_,
+-        inclusive_,
+-        stream());
+-    auto grad_with_one = to_partial_grad(cprod_with_one);
+-    auto grad = divide(to_partial_grad(outputs[0]), in, stream());
+-    return {where(
+-        first_zero,
+-        grad_with_one,
+-        where(eq_zero, z, grad, stream()),
+-        stream())};
++    // Compose affine suffix recurrences without division or tests on input zeros.
++    auto a = shift(in, 1);
++    auto b = inclusive_ ? cotan : shift(cotan, 1);
++    for (int64_t distance = 1; distance < n; distance *= 2) {
++      b = add(b, multiply(a, shift(b, distance), s), s);
++      if (2 * distance < n) {
++        a = multiply(a, shift(a, distance), s);
++      }
++    }
++    return {multiply(cumprod(in, axis, reverse_, false, s), b, s)};
+   } else {
+     // Cumulative max/min: route each position's cotangent to the input element
+     // that holds the running extreme there, breaking ties toward the latest

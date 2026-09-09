@@ -4,6 +4,13 @@ A reproducible CPU benchmark for mathematical contracts in ONNX graphs. It runs 
 
 [71-second video](https://www.youtube.com/shorts/KTLC9_FomBs) · [Interactive reports](https://www.gero.uz/stability/) · [Publication and limits](https://www.gero.uz/research/articles/onnx-numerical-observatory-reproduced-snapshot.html) · [Measured snapshot](benchmarks/2026-09-06/latest.json) · [Reverification](benchmarks/2026-09-06/reverification.json)
 
+## MLX cumprod: NaN Hessians at zero
+
+A smooth polynomial has a correct first gradient but a non-finite Hessian.
+Actual CPU reproduction; division-free O(N log N) prototype passes 57 scenarios
+and 311 checks. Prior first-order fix credited; partial native rebuild and
+performance limitations explicit. [Report, C++ tests and patch](audits/2026-09-09-mlx-cumprod-hessian/README.md).
+
 ## MLX complex autodiff, 9 September 2026
 
 The real loss `Re(cos(i*x))` receives a gradient of the wrong sign, causing

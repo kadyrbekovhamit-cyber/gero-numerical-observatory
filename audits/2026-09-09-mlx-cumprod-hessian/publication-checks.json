@@ -1,0 +1,18 @@
+{
+  "input_manifest_entries": 31,
+  "all_input_hashes_match": true,
+  "fresh_wheel_probe_exit": 0,
+  "fresh_native_runner_exit": 0,
+  "original_scenarios_failed": 44,
+  "patched_scenarios_failed": 0,
+  "scenarios": 57,
+  "numerical_checks": 311,
+  "original_checks_failed": 172,
+  "patched_checks_failed": 0,
+  "patch_identical_to_input": true,
+  "patch_applies_to_pinned_main": true,
+  "patched_snapshot_byte_match": true,
+  "runner_changes": "Only filesystem references: self-contained pinned snapshot and environment-configured source/build directories.",
+  "public_probe_changes": "Unrelated scout cases removed; six cumprod cases and calculations unchanged.",
+  "path_redaction": "Local absolute command/archive paths replaced with placeholders in publication metadata."
+}
