@@ -1,0 +1,72 @@
+FAIL right_repeat_unsorted/K=32/N=32/transpose=0/bits=4/group=32/strided=0/ds max_error=17.375
+FAIL right_repeat_unsorted/K=32/N=32/transpose=0/bits=4/group=32/strided=0/db max_error=0.59375
+FAIL right_repeat_unsorted/K=32/N=32/transpose=0/bits=4/group=32/strided=0/only_1 max_error=17.375
+FAIL right_repeat_unsorted/K=32/N=32/transpose=0/bits=4/group=32/strided=0/only_2 max_error=0.59375
+FAIL right_repeat_unsorted/K=32/N=32/transpose=0/bits=4/group=32/strided=0/negative_ds max_error=17.375
+FAIL right_repeat_unsorted/K=32/N=32/transpose=0/bits=4/group=32/strided=0/negative_db max_error=0.59375
+FAIL right_repeat_unsorted/K=32/N=64/transpose=0/bits=4/group=32/strided=0/joint exception=[broadcast_shapes] Shapes (3,64,1,32) and (3,32,2,32) cannot be broadcast.
+FAIL right_repeat_unsorted/K=32/N=64/transpose=0/bits=4/group=32/strided=0/only_1 exception=[broadcast_shapes] Shapes (3,64,1,32) and (3,32,2,32) cannot be broadcast.
+FAIL right_repeat_unsorted/K=32/N=64/transpose=0/bits=4/group=32/strided=0/only_2 max_error=1.04688
+FAIL right_repeat_unsorted/K=32/N=64/transpose=0/bits=4/group=32/strided=0/zero_negative exception=[broadcast_shapes] Shapes (3,64,1,32) and (3,32,2,32) cannot be broadcast.
+FAIL right_repeat_unsorted/K=64/N=32/transpose=0/bits=4/group=32/strided=0/joint exception=[broadcast_shapes] Shapes (3,32,2,32) and (3,64,1,32) cannot be broadcast.
+FAIL right_repeat_unsorted/K=64/N=32/transpose=0/bits=4/group=32/strided=0/only_1 exception=[broadcast_shapes] Shapes (3,32,2,32) and (3,64,1,32) cannot be broadcast.
+FAIL right_repeat_unsorted/K=64/N=32/transpose=0/bits=4/group=32/strided=0/only_2 max_error=1.04688
+FAIL right_repeat_unsorted/K=64/N=32/transpose=0/bits=4/group=32/strided=0/zero_negative exception=[broadcast_shapes] Shapes (3,32,2,32) and (3,64,1,32) cannot be broadcast.
+FAIL right_repeat_sorted/K=32/N=32/transpose=0/bits=4/group=32/strided=0/ds max_error=17.375
+FAIL right_repeat_sorted/K=32/N=32/transpose=0/bits=4/group=32/strided=0/db max_error=0.59375
+FAIL right_repeat_sorted/K=32/N=32/transpose=0/bits=4/group=32/strided=0/only_1 max_error=17.375
+FAIL right_repeat_sorted/K=32/N=32/transpose=0/bits=4/group=32/strided=0/only_2 max_error=0.59375
+FAIL right_repeat_sorted/K=32/N=32/transpose=0/bits=4/group=32/strided=0/negative_ds max_error=17.375
+FAIL right_repeat_sorted/K=32/N=32/transpose=0/bits=4/group=32/strided=0/negative_db max_error=0.59375
+FAIL right_repeat_sorted/K=32/N=64/transpose=0/bits=4/group=32/strided=0/joint exception=[broadcast_shapes] Shapes (3,64,1,32) and (3,32,2,32) cannot be broadcast.
+FAIL right_repeat_sorted/K=32/N=64/transpose=0/bits=4/group=32/strided=0/only_1 exception=[broadcast_shapes] Shapes (3,64,1,32) and (3,32,2,32) cannot be broadcast.
+FAIL right_repeat_sorted/K=32/N=64/transpose=0/bits=4/group=32/strided=0/only_2 max_error=1.04688
+FAIL right_repeat_sorted/K=32/N=64/transpose=0/bits=4/group=32/strided=0/zero_negative exception=[broadcast_shapes] Shapes (3,64,1,32) and (3,32,2,32) cannot be broadcast.
+FAIL right_repeat_sorted/K=64/N=32/transpose=0/bits=4/group=32/strided=0/joint exception=[broadcast_shapes] Shapes (3,32,2,32) and (3,64,1,32) cannot be broadcast.
+FAIL right_repeat_sorted/K=64/N=32/transpose=0/bits=4/group=32/strided=0/only_1 exception=[broadcast_shapes] Shapes (3,32,2,32) and (3,64,1,32) cannot be broadcast.
+FAIL right_repeat_sorted/K=64/N=32/transpose=0/bits=4/group=32/strided=0/only_2 max_error=1.04688
+FAIL right_repeat_sorted/K=64/N=32/transpose=0/bits=4/group=32/strided=0/zero_negative exception=[broadcast_shapes] Shapes (3,32,2,32) and (3,64,1,32) cannot be broadcast.
+FAIL both_explicit/K=32/N=32/transpose=0/bits=4/group=32/strided=0/ds max_error=15.8125
+FAIL both_explicit/K=32/N=32/transpose=0/bits=4/group=32/strided=0/db max_error=0.6875
+FAIL both_explicit/K=32/N=32/transpose=0/bits=4/group=32/strided=0/only_1 max_error=15.8125
+FAIL both_explicit/K=32/N=32/transpose=0/bits=4/group=32/strided=0/only_2 max_error=0.6875
+FAIL both_explicit/K=32/N=32/transpose=0/bits=4/group=32/strided=0/negative_ds max_error=15.8125
+FAIL both_explicit/K=32/N=32/transpose=0/bits=4/group=32/strided=0/negative_db max_error=0.6875
+FAIL both_explicit/K=32/N=64/transpose=0/bits=4/group=32/strided=0/joint exception=[broadcast_shapes] Shapes (3,64,1,32) and (3,32,2,32) cannot be broadcast.
+FAIL both_explicit/K=32/N=64/transpose=0/bits=4/group=32/strided=0/only_1 exception=[broadcast_shapes] Shapes (3,64,1,32) and (3,32,2,32) cannot be broadcast.
+FAIL both_explicit/K=32/N=64/transpose=0/bits=4/group=32/strided=0/only_2 max_error=0.75
+FAIL both_explicit/K=32/N=64/transpose=0/bits=4/group=32/strided=0/zero_negative exception=[broadcast_shapes] Shapes (3,64,1,32) and (3,32,2,32) cannot be broadcast.
+FAIL both_explicit/K=64/N=32/transpose=0/bits=4/group=32/strided=0/joint exception=[broadcast_shapes] Shapes (3,32,2,32) and (3,64,1,32) cannot be broadcast.
+FAIL both_explicit/K=64/N=32/transpose=0/bits=4/group=32/strided=0/only_1 exception=[broadcast_shapes] Shapes (3,32,2,32) and (3,64,1,32) cannot be broadcast.
+FAIL both_explicit/K=64/N=32/transpose=0/bits=4/group=32/strided=0/only_2 max_error=1.15625
+FAIL both_explicit/K=64/N=32/transpose=0/bits=4/group=32/strided=0/zero_negative exception=[broadcast_shapes] Shapes (3,32,2,32) and (3,64,1,32) cannot be broadcast.
+FAIL left_broadcast/K=32/N=32/transpose=0/bits=4/group=32/strided=0/ds max_error=21.0469
+FAIL left_broadcast/K=32/N=32/transpose=0/bits=4/group=32/strided=0/db max_error=0.71875
+FAIL left_broadcast/K=32/N=32/transpose=0/bits=4/group=32/strided=0/only_1 max_error=21.0469
+FAIL left_broadcast/K=32/N=32/transpose=0/bits=4/group=32/strided=0/only_2 max_error=0.71875
+FAIL left_broadcast/K=32/N=32/transpose=0/bits=4/group=32/strided=0/negative_ds max_error=21.0469
+FAIL left_broadcast/K=32/N=32/transpose=0/bits=4/group=32/strided=0/negative_db max_error=0.71875
+FAIL left_broadcast/K=32/N=64/transpose=0/bits=4/group=32/strided=0/joint exception=[broadcast_shapes] Shapes (3,64,1,32) and (3,32,2,32) cannot be broadcast.
+FAIL left_broadcast/K=32/N=64/transpose=0/bits=4/group=32/strided=0/only_1 exception=[broadcast_shapes] Shapes (3,64,1,32) and (3,32,2,32) cannot be broadcast.
+FAIL left_broadcast/K=32/N=64/transpose=0/bits=4/group=32/strided=0/only_2 max_error=0.9375
+FAIL left_broadcast/K=32/N=64/transpose=0/bits=4/group=32/strided=0/zero_negative exception=[broadcast_shapes] Shapes (3,64,1,32) and (3,32,2,32) cannot be broadcast.
+FAIL left_broadcast/K=64/N=32/transpose=0/bits=4/group=32/strided=0/joint exception=[broadcast_shapes] Shapes (3,32,2,32) and (3,64,1,32) cannot be broadcast.
+FAIL left_broadcast/K=64/N=32/transpose=0/bits=4/group=32/strided=0/only_1 exception=[broadcast_shapes] Shapes (3,32,2,32) and (3,64,1,32) cannot be broadcast.
+FAIL left_broadcast/K=64/N=32/transpose=0/bits=4/group=32/strided=0/only_2 max_error=1.01562
+FAIL left_broadcast/K=64/N=32/transpose=0/bits=4/group=32/strided=0/zero_negative exception=[broadcast_shapes] Shapes (3,32,2,32) and (3,64,1,32) cannot be broadcast.
+FAIL right_repeat_unsorted/K=64/N=64/transpose=0/bits=8/group=64/strided=0/ds max_error=167.609
+FAIL right_repeat_unsorted/K=64/N=64/transpose=0/bits=8/group=64/strided=0/db max_error=0.859375
+FAIL right_repeat_unsorted/K=64/N=64/transpose=0/bits=8/group=64/strided=0/only_1 max_error=167.609
+FAIL right_repeat_unsorted/K=64/N=64/transpose=0/bits=8/group=64/strided=0/only_2 max_error=0.859375
+FAIL right_repeat_unsorted/K=64/N=64/transpose=0/bits=8/group=64/strided=0/negative_ds max_error=167.609
+FAIL right_repeat_unsorted/K=64/N=64/transpose=0/bits=8/group=64/strided=0/negative_db max_error=0.859375
+FAIL right_repeat_sorted/K=64/N=64/transpose=0/bits=8/group=32/strided=1/ds max_error=131.75
+FAIL right_repeat_sorted/K=64/N=64/transpose=0/bits=8/group=32/strided=1/db max_error=0.59375
+FAIL right_repeat_sorted/K=64/N=64/transpose=0/bits=8/group=32/strided=1/only_1 max_error=131.75
+FAIL right_repeat_sorted/K=64/N=64/transpose=0/bits=8/group=32/strided=1/only_2 max_error=0.59375
+FAIL right_repeat_sorted/K=64/N=64/transpose=0/bits=8/group=32/strided=1/negative_ds max_error=131.75
+FAIL right_repeat_sorted/K=64/N=64/transpose=0/bits=8/group=32/strided=1/negative_db max_error=0.59375
+FAIL loss/gradient max_error=31
+FAIL loss/after_step max_error=15.0156
+EVIDENCE initial_loss=16 next_loss=16.9531
+SUMMARY scenarios=205 failed_scenarios=57 checks=315 failures=70

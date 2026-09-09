@@ -1,0 +1,219 @@
+{
+  "passed": 53,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "wheel_version",
+      "passed": true
+    },
+    {
+      "name": "CPU_device",
+      "passed": true
+    },
+    {
+      "name": "silent_scale_error",
+      "passed": true
+    },
+    {
+      "name": "silent_bias_error",
+      "passed": true
+    },
+    {
+      "name": "expected_gradient",
+      "passed": true
+    },
+    {
+      "name": "forward_finite_difference_scales",
+      "passed": true
+    },
+    {
+      "name": "forward_finite_difference_biases",
+      "passed": true
+    },
+    {
+      "name": "loss_initial",
+      "passed": true
+    },
+    {
+      "name": "wrong_step_ascends",
+      "passed": true
+    },
+    {
+      "name": "correct_step_descends",
+      "passed": true
+    },
+    {
+      "name": "rectangular_wrong_bias_shape",
+      "passed": true
+    },
+    {
+      "name": "rectangular_scale_exception",
+      "passed": true
+    },
+    {
+      "name": "before_summary",
+      "passed": true
+    },
+    {
+      "name": "after_summary",
+      "passed": true
+    },
+    {
+      "name": "after_no_failures",
+      "passed": true
+    },
+    {
+      "name": "before_failure_count",
+      "passed": true
+    },
+    {
+      "name": "transpose_true_controls",
+      "passed": true
+    },
+    {
+      "name": "forward_controls",
+      "passed": true
+    },
+    {
+      "name": "x_gradient_controls",
+      "passed": true
+    },
+    {
+      "name": "no_indices_controls",
+      "passed": true
+    },
+    {
+      "name": "command_compile-test",
+      "passed": true
+    },
+    {
+      "name": "command_compile-before",
+      "passed": true
+    },
+    {
+      "name": "command_link-before",
+      "passed": true
+    },
+    {
+      "name": "command_run-before",
+      "passed": true
+    },
+    {
+      "name": "command_compile-after",
+      "passed": true
+    },
+    {
+      "name": "command_link-after",
+      "passed": true
+    },
+    {
+      "name": "command_run-after",
+      "passed": true
+    },
+    {
+      "name": "source_downloads_succeeded",
+      "passed": true
+    },
+    {
+      "name": "source_hash_mlx/primitives.cpp",
+      "passed": true
+    },
+    {
+      "name": "source_hash_mlx/ops.cpp",
+      "passed": true
+    },
+    {
+      "name": "source_hash_python/tests/test_quantized.py",
+      "passed": true
+    },
+    {
+      "name": "archive_hash",
+      "passed": true
+    },
+    {
+      "name": "patch_applies_without_mutation",
+      "passed": true
+    },
+    {
+      "name": "one_source_patch",
+      "passed": true
+    },
+    {
+      "name": "orientation_guard_in_patch",
+      "passed": true
+    },
+    {
+      "name": "no_unrelated_sorted_change",
+      "passed": true
+    },
+    {
+      "name": "local_link_reproduce.py",
+      "passed": true
+    },
+    {
+      "name": "local_link_wheel-reproduction.json",
+      "passed": true
+    },
+    {
+      "name": "local_link_probe.py",
+      "passed": true
+    },
+    {
+      "name": "local_link_probe-results.json",
+      "passed": true
+    },
+    {
+      "name": "local_link_native_regression.cpp",
+      "passed": true
+    },
+    {
+      "name": "local_link_run-before.log",
+      "passed": true
+    },
+    {
+      "name": "local_link_run-after.log",
+      "passed": true
+    },
+    {
+      "name": "local_link_gather-qmm-transpose-vjp.patch",
+      "passed": true
+    },
+    {
+      "name": "local_link_native_regression.cpp",
+      "passed": true
+    },
+    {
+      "name": "local_link_build-results.json",
+      "passed": true
+    },
+    {
+      "name": "local_link_artifact-validation.json",
+      "passed": true
+    },
+    {
+      "name": "local_link_GatherQMM-baseline-to-upstream.diff",
+      "passed": true
+    },
+    {
+      "name": "local_link_BUILD.md",
+      "passed": true
+    },
+    {
+      "name": "local_link_source-metadata.json",
+      "passed": true
+    },
+    {
+      "name": "local_link_SHA256SUMS.json",
+      "passed": true
+    },
+    {
+      "name": "local_link_duplicate-search.json",
+      "passed": true
+    },
+    {
+      "name": "local_link_MLX-LICENSE.txt",
+      "passed": true
+    }
+  ],
+  "scope": "Saved evidence, hashes, controls and dry-run applicability; no rerun or theorem certification."
+}

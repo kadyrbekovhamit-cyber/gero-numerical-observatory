@@ -240,3 +240,5 @@ GitHub Actions runs the tester and discovery benchmark on Linux and macOS and up
 The static dashboard supports filters, search, sorting, pagination, shareable state, precise downloads and benchmark views. It uses synthetic data only. [Architecture](docs/ARCHITECTURE.md), [product design](docs/PRODUCT.md) and [original validation notes](docs/VALIDATION.md) document the intended service and bounded prototype. The latter records the initial local validation; the publication record above adds the full rerun, archive replays and Decimal check.
 
 Primary specifications: [ReferenceEvaluator](https://onnx.ai/onnx/api/reference.html), [LayerNormalization](https://onnx.ai/onnx/operators/onnx__LayerNormalization.html), [LogSoftmax](https://onnx.ai/onnx/operators/onnx__LogSoftmax.html), [ORT optimization settings](https://onnxruntime.ai/docs/performance/model-optimizations/graph-optimizations.html).
+
+- [MLX gather_qmm: missing transpose in scale/bias gradients](audits/2026-09-09-mlx-gather-qmm-transpose-vjp/) — fresh CPU reproduction, exact loss example and C++ repair; 205 scenarios / 379 checks.

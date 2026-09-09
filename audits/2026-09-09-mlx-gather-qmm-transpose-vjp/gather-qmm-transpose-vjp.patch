@@ -1,0 +1,32 @@
+--- a/mlx/primitives.cpp
++++ b/mlx/primitives.cpp
+@@ -3802,18 +3802,18 @@
+         auto shape = w.shape();
+         shape.pop_back();
+         shape.pop_back();
+-        dsb = unflatten(
+-            gather_mm_grad(
+-                x,
+-                cotan,
+-                lhs_indices,
+-                rhs_indices,
+-                sorted,
+-                std::move(shape),
+-                stream()),
+-            -1,
+-            {-1, group_size_},
++        auto dw = gather_mm_grad(
++            x,
++            cotan,
++            lhs_indices,
++            rhs_indices,
++            sorted,
++            std::move(shape),
+             stream());
++        if (!transpose_) {
++          dw = swapaxes(dw, -1, -2, stream());
++        }
++        dsb = unflatten(dw, -1, {-1, group_size_}, stream());
+       }
+       if (arg == 3) {
+         vjps.push_back(sum(*dsb, -1, false, stream()));
