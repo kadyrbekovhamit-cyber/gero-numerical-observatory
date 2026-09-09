@@ -1,0 +1,207 @@
+{
+  "version": "0.32.2",
+  "device": "Device(cpu, 0)",
+  "quantized": [
+    {
+      "side": "left",
+      "sorted_indices": false,
+      "output_first": [
+        192.0,
+        320.0
+      ],
+      "gradient_first": [
+        [
+          256.0,
+          0.0
+        ],
+        [
+          64.0,
+          64.0
+        ],
+        [
+          64.0,
+          64.0
+        ]
+      ],
+      "expected_gradient_first": [
+        [
+          256.0,
+          0.0
+        ],
+        [
+          64.0,
+          64.0
+        ],
+        [
+          64.0,
+          64.0
+        ]
+      ],
+      "max_errors": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "side": "left",
+      "sorted_indices": true,
+      "output_first": [
+        192.0,
+        320.0
+      ],
+      "gradient_first": [
+        [
+          96.0,
+          160.0
+        ],
+        [
+          64.0,
+          224.0
+        ],
+        [
+          64.0,
+          224.0
+        ]
+      ],
+      "expected_gradient_first": [
+        [
+          256.0,
+          0.0
+        ],
+        [
+          64.0,
+          64.0
+        ],
+        [
+          64.0,
+          64.0
+        ]
+      ],
+      "max_errors": [
+        160.0,
+        160.0,
+        160.0
+      ]
+    },
+    {
+      "side": "right",
+      "sorted_indices": false,
+      "output_first": [
+        192.0,
+        672.0
+      ],
+      "gradient_first": [
+        [
+          96.0,
+          96.0
+        ],
+        [
+          288.0,
+          0.0
+        ],
+        [
+          288.0,
+          0.0
+        ]
+      ],
+      "expected_gradient_first": [
+        [
+          96.0,
+          96.0
+        ],
+        [
+          288.0,
+          0.0
+        ],
+        [
+          288.0,
+          0.0
+        ]
+      ],
+      "max_errors": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "side": "right",
+      "sorted_indices": true,
+      "output_first": [
+        192.0,
+        672.0
+      ],
+      "gradient_first": [
+        [
+          96.0,
+          96.0
+        ],
+        [
+          288.0,
+          0.0
+        ],
+        [
+          288.0,
+          0.0
+        ]
+      ],
+      "expected_gradient_first": [
+        [
+          96.0,
+          96.0
+        ],
+        [
+          288.0,
+          0.0
+        ],
+        [
+          288.0,
+          0.0
+        ]
+      ],
+      "max_errors": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "loss_step": [
+    {
+      "sorted_indices": false,
+      "loss": 8.0,
+      "gradient": [
+        8.0,
+        0.0
+      ],
+      "finite_differences": [
+        8.0,
+        0.0
+      ],
+      "updated_a": [
+        1.75,
+        7.0
+      ],
+      "new_loss": 6.125
+    },
+    {
+      "sorted_indices": true,
+      "loss": 8.0,
+      "gradient": [
+        -12.0,
+        20.0
+      ],
+      "finite_differences": [
+        8.0,
+        0.0
+      ],
+      "updated_a": [
+        2.375,
+        6.375
+      ],
+      "new_loss": 11.28125
+    }
+  ],
+  "cpu_seconds": 0.005964000000000004
+}

@@ -1,0 +1,106 @@
+{
+  "device": "Device(cpu, 0)",
+  "cases": [
+    {
+      "tail": [
+        101.0,
+        202.0
+      ],
+      "sorted_indices": false,
+      "visible_input": [
+        [
+          [
+            2.0
+          ]
+        ]
+      ],
+      "loss": 30.0,
+      "actual_db": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "expected_db": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    {
+      "tail": [
+        101.0,
+        202.0
+      ],
+      "sorted_indices": true,
+      "visible_input": [
+        [
+          [
+            2.0
+          ]
+        ]
+      ],
+      "loss": 30.0,
+      "actual_db": [
+        2.0,
+        101.0,
+        202.0
+      ],
+      "expected_db": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    {
+      "tail": [
+        -31.0,
+        47.0
+      ],
+      "sorted_indices": false,
+      "visible_input": [
+        [
+          [
+            2.0
+          ]
+        ]
+      ],
+      "loss": 30.0,
+      "actual_db": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "expected_db": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    {
+      "tail": [
+        -31.0,
+        47.0
+      ],
+      "sorted_indices": true,
+      "visible_input": [
+        [
+          [
+            2.0
+          ]
+        ]
+      ],
+      "loss": 30.0,
+      "actual_db": [
+        2.0,
+        -31.0,
+        47.0
+      ],
+      "expected_db": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    }
+  ],
+  "scope": "Only synthetic backing arrays in this process; no real data or cross-process testing."
+}

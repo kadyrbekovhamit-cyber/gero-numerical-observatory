@@ -1,5 +1,7 @@
 # GERO Numerical Observatory
 
+- [MLX sorted gather VJP preconditions](audits/2026-09-09-mlx-gather-vjp-preconditions) — repeated selections and broadcast gradients, 69 scenarios / 626 checks, bounded C++ repair and explicit CPU limits.
+
 - [MLX Hadamard adjoint](audits/2026-09-09-mlx-hadamard-adjoint) — explicit matrix reference, 64 scenarios / 624 checks, measured energy updates and a local C++ patch.
 
 - [MLX power: fixed-exponent derivatives at zero](audits/2026-09-09-mlx-power-zero-derivatives) — official wheel and C++ reproduction, 41 scenarios / 396 checks, targeted patch and test-name collision.

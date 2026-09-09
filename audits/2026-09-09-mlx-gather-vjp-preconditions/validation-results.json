@@ -1,0 +1,186 @@
+{
+  "passed": 45,
+  "total": 45,
+  "checks": [
+    {
+      "name": "syntax/probe_quantized_and_loss.py",
+      "passed": true
+    },
+    {
+      "name": "syntax/build_and_test.py",
+      "passed": true
+    },
+    {
+      "name": "syntax/fetch_public_sources.py",
+      "passed": true
+    },
+    {
+      "name": "syntax/validate_artifacts.py",
+      "passed": true
+    },
+    {
+      "name": "syntax/probe.py",
+      "passed": true
+    },
+    {
+      "name": "syntax/upstream-python_tests_test_quantized.py",
+      "passed": true
+    },
+    {
+      "name": "syntax/upstream-python_tests_test_blas.py",
+      "passed": true
+    },
+    {
+      "name": "syntax/probe_broadcast_tail.py",
+      "passed": true
+    },
+    {
+      "name": "wheel_version",
+      "passed": true
+    },
+    {
+      "name": "wheel_cpu",
+      "passed": true
+    },
+    {
+      "name": "wheel/left/False",
+      "passed": true
+    },
+    {
+      "name": "wheel/left/True",
+      "passed": true
+    },
+    {
+      "name": "wheel/right/False",
+      "passed": true
+    },
+    {
+      "name": "wheel/right/True",
+      "passed": true
+    },
+    {
+      "name": "qmm/left/False",
+      "passed": true
+    },
+    {
+      "name": "qmm/left/True",
+      "passed": true
+    },
+    {
+      "name": "qmm/right/False",
+      "passed": true
+    },
+    {
+      "name": "qmm/right/True",
+      "passed": true
+    },
+    {
+      "name": "finite_differences/False",
+      "passed": true
+    },
+    {
+      "name": "step/False",
+      "passed": true
+    },
+    {
+      "name": "finite_differences/True",
+      "passed": true
+    },
+    {
+      "name": "step/True",
+      "passed": true
+    },
+    {
+      "name": "view/0",
+      "passed": true
+    },
+    {
+      "name": "view/1",
+      "passed": true
+    },
+    {
+      "name": "view/2",
+      "passed": true
+    },
+    {
+      "name": "view/3",
+      "passed": true
+    },
+    {
+      "name": "native/before",
+      "passed": true
+    },
+    {
+      "name": "native/before/no_exceptions",
+      "passed": true
+    },
+    {
+      "name": "native/after",
+      "passed": true
+    },
+    {
+      "name": "native/after/no_exceptions",
+      "passed": true
+    },
+    {
+      "name": "hash/mlx/primitives.cpp",
+      "passed": true
+    },
+    {
+      "name": "hash/mlx/ops.cpp",
+      "passed": true
+    },
+    {
+      "name": "hash/python/tests/test_blas.py",
+      "passed": true
+    },
+    {
+      "name": "hash/python/tests/test_quantized.py",
+      "passed": true
+    },
+    {
+      "name": "hash/mlx/backend/cpu/masked_mm.cpp",
+      "passed": true
+    },
+    {
+      "name": "public_search/repo:ml-explore/mlx gather_mm gradient",
+      "passed": true
+    },
+    {
+      "name": "public_search/repo:ml-explore/mlx gather_mm vjp",
+      "passed": true
+    },
+    {
+      "name": "public_search/repo:ml-explore/mlx \"left_sorted\"",
+      "passed": true
+    },
+    {
+      "name": "public_search/repo:ml-explore/mlx \"lhs_indices\" \"sorted\"",
+      "passed": true
+    },
+    {
+      "name": "public_search/repo:ml-explore/mlx gather_qmm gradient",
+      "passed": true
+    },
+    {
+      "name": "public_search/repo:ml-explore/mlx \"segmented_mm\" \"bounds\"",
+      "passed": true
+    },
+    {
+      "name": "public_search/repo:ml-explore/mlx \"gather_mm\" \"broadcast\"",
+      "passed": true
+    },
+    {
+      "name": "patch/applies_to_pinned_main",
+      "passed": true
+    },
+    {
+      "name": "patch/apply_success",
+      "passed": true
+    },
+    {
+      "name": "patch/matches_generated_source",
+      "passed": true
+    }
+  ]
+}

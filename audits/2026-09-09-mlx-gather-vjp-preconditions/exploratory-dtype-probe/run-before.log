@@ -1,0 +1,129 @@
+FAIL mm/left_repeat/sorted=0/dtype=9/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/left_repeat/sorted=0/dtype=12/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL qmm/left_repeat/sorted=0/bits=4/dtype=9 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/left_repeat/sorted=1/dtype=10/strided=0/da error=0.296875
+FAIL mm/left_repeat/sorted=1/dtype=10/strided=0/db error=0.546875
+FAIL mm/left_repeat/sorted=1/dtype=10/strided=0/only_da error=0.296875
+FAIL mm/left_repeat/sorted=1/dtype=10/strided=0/only_db error=0.546875
+FAIL mm/left_repeat/sorted=1/dtype=10/strided=0/negative_da error=0.296875
+FAIL mm/left_repeat/sorted=1/dtype=10/strided=0/negative_db error=0.546875
+FAIL mm/left_repeat/sorted=1/dtype=9/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/left_repeat/sorted=1/dtype=12/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/left_repeat/sorted=1/dtype=10/strided=1/da error=0.296875
+FAIL mm/left_repeat/sorted=1/dtype=10/strided=1/db error=0.546875
+FAIL mm/left_repeat/sorted=1/dtype=10/strided=1/only_da error=0.296875
+FAIL mm/left_repeat/sorted=1/dtype=10/strided=1/only_db error=0.546875
+FAIL mm/left_repeat/sorted=1/dtype=10/strided=1/negative_da error=0.296875
+FAIL mm/left_repeat/sorted=1/dtype=10/strided=1/negative_db error=0.546875
+FAIL qmm/left_repeat/sorted=1/bits=4/dtype=10/dx error=1.51562
+FAIL qmm/left_repeat/sorted=1/bits=4/dtype=10/ds error=6.46875
+FAIL qmm/left_repeat/sorted=1/bits=4/dtype=10/db error=0.234375
+FAIL qmm/left_repeat/sorted=1/bits=4/dtype=10/only_0 error=1.51562
+FAIL qmm/left_repeat/sorted=1/bits=4/dtype=10/only_1 error=6.46875
+FAIL qmm/left_repeat/sorted=1/bits=4/dtype=10/only_2 error=0.234375
+FAIL qmm/left_repeat/sorted=1/bits=8/dtype=10/dx error=2.64062
+FAIL qmm/left_repeat/sorted=1/bits=8/dtype=10/ds error=7.03125
+FAIL qmm/left_repeat/sorted=1/bits=8/dtype=10/db error=0.234375
+FAIL qmm/left_repeat/sorted=1/bits=8/dtype=10/only_0 error=2.64062
+FAIL qmm/left_repeat/sorted=1/bits=8/dtype=10/only_1 error=7.03125
+FAIL qmm/left_repeat/sorted=1/bits=8/dtype=10/only_2 error=0.234375
+FAIL qmm/left_repeat/sorted=1/bits=4/dtype=9/dx error=1.51562
+FAIL qmm/left_repeat/sorted=1/bits=4/dtype=9/ds error=6.46875
+FAIL qmm/left_repeat/sorted=1/bits=4/dtype=9/db error=0.234375
+FAIL qmm/left_repeat/sorted=1/bits=4/dtype=9/only_0 error=1.51562
+FAIL qmm/left_repeat/sorted=1/bits=4/dtype=9/only_1 error=6.46875
+FAIL qmm/left_repeat/sorted=1/bits=4/dtype=9/only_2 error=0.234375
+FAIL mm/left_subset/sorted=0/dtype=9/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/left_subset/sorted=0/dtype=12/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL qmm/left_subset/sorted=0/bits=4/dtype=9 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/left_subset/sorted=1/dtype=10/strided=0/db error=0.328125
+FAIL mm/left_subset/sorted=1/dtype=10/strided=0/only_db error=0.328125
+FAIL mm/left_subset/sorted=1/dtype=10/strided=0/negative_db error=0.328125
+FAIL mm/left_subset/sorted=1/dtype=9/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/left_subset/sorted=1/dtype=12/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/left_subset/sorted=1/dtype=10/strided=1/db error=0.328125
+FAIL mm/left_subset/sorted=1/dtype=10/strided=1/only_db error=0.328125
+FAIL mm/left_subset/sorted=1/dtype=10/strided=1/negative_db error=0.328125
+FAIL qmm/left_subset/sorted=1/bits=4/dtype=10/ds error=6.79688
+FAIL qmm/left_subset/sorted=1/bits=4/dtype=10/db error=0.234375
+FAIL qmm/left_subset/sorted=1/bits=4/dtype=10/only_1 error=6.79688
+FAIL qmm/left_subset/sorted=1/bits=4/dtype=10/only_2 error=0.234375
+FAIL qmm/left_subset/sorted=1/bits=8/dtype=10/ds error=15.4688
+FAIL qmm/left_subset/sorted=1/bits=8/dtype=10/db error=0.234375
+FAIL qmm/left_subset/sorted=1/bits=8/dtype=10/only_1 error=15.4688
+FAIL qmm/left_subset/sorted=1/bits=8/dtype=10/only_2 error=0.234375
+FAIL qmm/left_subset/sorted=1/bits=4/dtype=9/ds error=6.79688
+FAIL qmm/left_subset/sorted=1/bits=4/dtype=9/db error=0.234375
+FAIL qmm/left_subset/sorted=1/bits=4/dtype=9/only_1 error=6.79688
+FAIL qmm/left_subset/sorted=1/bits=4/dtype=9/only_2 error=0.234375
+FAIL mm/left_identity/sorted=0/dtype=9/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/left_identity/sorted=0/dtype=12/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL qmm/left_identity/sorted=0/bits=4/dtype=9 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/left_identity/sorted=1/dtype=9/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/left_identity/sorted=1/dtype=12/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/left_scalar_broadcast/sorted=0/dtype=9/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/left_scalar_broadcast/sorted=0/dtype=12/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL qmm/left_scalar_broadcast/sorted=0/bits=4/dtype=9 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/left_scalar_broadcast/sorted=1/dtype=10/strided=0/db error=7.98412e+35
+FAIL mm/left_scalar_broadcast/sorted=1/dtype=10/strided=0/only_db error=7.98412e+35
+FAIL mm/left_scalar_broadcast/sorted=1/dtype=10/strided=0/negative_db error=7.98412e+35
+FAIL mm/left_scalar_broadcast/sorted=1/dtype=9/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/left_scalar_broadcast/sorted=1/dtype=12/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/left_scalar_broadcast/sorted=1/dtype=10/strided=1/db error=0.59375
+FAIL mm/left_scalar_broadcast/sorted=1/dtype=10/strided=1/only_db error=3.74256e+35
+FAIL mm/left_scalar_broadcast/sorted=1/dtype=10/strided=1/negative_db error=0.4375
+FAIL qmm/left_scalar_broadcast/sorted=1/bits=4/dtype=10/ds error=10.2656
+FAIL qmm/left_scalar_broadcast/sorted=1/bits=4/dtype=10/db error=0.234375
+FAIL qmm/left_scalar_broadcast/sorted=1/bits=4/dtype=10/only_1 error=10.2656
+FAIL qmm/left_scalar_broadcast/sorted=1/bits=4/dtype=10/only_2 error=0.234375
+FAIL qmm/left_scalar_broadcast/sorted=1/bits=8/dtype=10/ds error=6.32812
+FAIL qmm/left_scalar_broadcast/sorted=1/bits=8/dtype=10/db error=0.234375
+FAIL qmm/left_scalar_broadcast/sorted=1/bits=8/dtype=10/only_1 error=6.32812
+FAIL qmm/left_scalar_broadcast/sorted=1/bits=8/dtype=10/only_2 error=0.234375
+FAIL qmm/left_scalar_broadcast/sorted=1/bits=4/dtype=9/ds error=10.2656
+FAIL qmm/left_scalar_broadcast/sorted=1/bits=4/dtype=9/db error=0.234375
+FAIL qmm/left_scalar_broadcast/sorted=1/bits=4/dtype=9/only_1 error=10.2656
+FAIL qmm/left_scalar_broadcast/sorted=1/bits=4/dtype=9/only_2 error=0.234375
+FAIL mm/right_repeat/sorted=0/dtype=9/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/right_repeat/sorted=0/dtype=12/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL qmm/right_repeat/sorted=0/bits=4/dtype=9 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/right_repeat/sorted=1/dtype=9/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/right_repeat/sorted=1/dtype=12/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/right_left_broadcast/sorted=0/dtype=9/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/right_left_broadcast/sorted=0/dtype=12/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL qmm/right_left_broadcast/sorted=0/bits=4/dtype=9 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/right_left_broadcast/sorted=1/dtype=10/strided=0/db error=2.60016e+35
+FAIL mm/right_left_broadcast/sorted=1/dtype=10/strided=0/only_db error=2.60016e+35
+FAIL mm/right_left_broadcast/sorted=1/dtype=10/strided=0/negative_db error=2.60016e+35
+FAIL mm/right_left_broadcast/sorted=1/dtype=9/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/right_left_broadcast/sorted=1/dtype=12/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/right_left_broadcast/sorted=1/dtype=10/strided=1/db error=2.60918e+35
+FAIL mm/right_left_broadcast/sorted=1/dtype=10/strided=1/only_db error=2.60918e+35
+FAIL mm/right_left_broadcast/sorted=1/dtype=10/strided=1/negative_db error=0.734375
+FAIL qmm/right_left_broadcast/sorted=1/bits=4/dtype=10/ds error=29.3563
+FAIL qmm/right_left_broadcast/sorted=1/bits=4/dtype=10/db error=2.50258
+FAIL qmm/right_left_broadcast/sorted=1/bits=4/dtype=10/only_1 error=29.3563
+FAIL qmm/right_left_broadcast/sorted=1/bits=4/dtype=10/only_2 error=2.50258
+FAIL qmm/right_left_broadcast/sorted=1/bits=8/dtype=10/ds error=37954.4
+FAIL qmm/right_left_broadcast/sorted=1/bits=8/dtype=10/db error=955.576
+FAIL qmm/right_left_broadcast/sorted=1/bits=8/dtype=10/only_1 error=37954.4
+FAIL qmm/right_left_broadcast/sorted=1/bits=8/dtype=10/only_2 error=955.576
+FAIL qmm/right_left_broadcast/sorted=1/bits=4/dtype=9/ds error=inf
+FAIL qmm/right_left_broadcast/sorted=1/bits=4/dtype=9/db error=43935.7
+FAIL qmm/right_left_broadcast/sorted=1/bits=4/dtype=9/only_1 error=inf
+FAIL qmm/right_left_broadcast/sorted=1/bits=4/dtype=9/only_2 error=43935.7
+FAIL mm/both_explicit/sorted=0/dtype=9/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/both_explicit/sorted=0/dtype=12/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL qmm/both_explicit/sorted=0/bits=4/dtype=9 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/both_explicit/sorted=1/dtype=9/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/both_explicit/sorted=1/dtype=12/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL qmm/both_explicit/sorted=1/bits=4/dtype=9 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/right_scalar_broadcast/sorted=0/dtype=9/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/right_scalar_broadcast/sorted=0/dtype=12/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL qmm/right_scalar_broadcast/sorted=0/bits=4/dtype=9 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/right_scalar_broadcast/sorted=1/dtype=9/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL mm/right_scalar_broadcast/sorted=1/dtype=12/strided=0 exception=[GatherMM::eval] Currently only supports float32.
+FAIL loss/gradient error=20
+FAIL loss/step error=5.15625
+FAIL loss/hessian_sum error=10
+SUMMARY scenarios=113 failed_scenarios=62 checks=743 failures=128

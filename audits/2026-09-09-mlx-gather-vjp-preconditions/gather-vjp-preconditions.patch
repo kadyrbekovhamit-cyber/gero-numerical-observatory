@@ -1,0 +1,24 @@
+--- a/mlx/primitives.cpp
++++ b/mlx/primitives.cpp
+@@ -3741,8 +3741,9 @@
+   int K = x.shape(-1);
+   int first_index_arg = primals.size() - 2;
+ 
+-  bool sorted = left_sorted_ || right_sorted_;
+   bool no_broadcast = rhs_indices.size() * M * K == x.size();
++  // The segmented VJP requires implicit left indices without broadcasting.
++  bool sorted = right_sorted_ && no_broadcast;
+   std::optional<array> dsb = std::nullopt;
+ 
+   for (auto arg : argnums) {
+@@ -6083,8 +6084,9 @@
+   int M = cotan.shape(-2);
+   int K = primals[0].shape(-1);
+ 
+-  bool sorted = left_sorted_ || right_sorted_;
+   bool no_broadcast = rhs_indices.size() * M * K == primals[0].size();
++  // The segmented VJP requires implicit left indices without broadcasting.
++  bool sorted = right_sorted_ && no_broadcast;
+ 
+   for (auto arg : argnums) {
+     if (arg == 0) {
