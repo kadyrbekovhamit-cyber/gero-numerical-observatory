@@ -4,6 +4,18 @@ A reproducible CPU benchmark for mathematical contracts in ONNX graphs. It runs 
 
 [71-second video](https://www.youtube.com/shorts/KTLC9_FomBs) · [Interactive reports](https://www.gero.uz/stability/) · [Publication and limits](https://www.gero.uz/research/articles/onnx-numerical-observatory-reproduced-snapshot.html) · [Measured snapshot](benchmarks/2026-09-06/latest.json) · [Reverification](benchmarks/2026-09-06/reverification.json)
 
+## MLX complex autodiff, 9 September 2026
+
+The real loss `Re(cos(i*x))` receives a gradient of the wrong sign, causing
+the measured descent step to increase the loss. Seven VJPs omit complex
+conjugation; arccosh also has a branch-sign error in JVP. A partial native
+C++ rebuild changes the result from 46/131 to 131/131 passing scenarios.
+The conjugation class has prior public reports; novelty and model effects
+are unestablished.
+
+[Report, patch and native reproduction](audits/2026-09-09-mlx-complex-autodiff/) ·
+[GERO article](https://www.gero.uz/research/articles/mlx-complex-autodiff-reversed-gradient.html)
+
 ## MLX Muon convolution scaling, 9 September 2026
 
 Equivalent 1×1 convolution and linear weights produce equal outputs, losses

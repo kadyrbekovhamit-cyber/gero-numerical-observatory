@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-09",
+  "input_hashes_matched": 35,
+  "wheel_probe_exit": 0,
+  "native_runner_exit": 0,
+  "before": {
+    "cases": 131,
+    "failed_cases": 85,
+    "assertions": 622,
+    "failed_assertions": 176
+  },
+  "after": {
+    "cases": 131,
+    "failed_cases": 0,
+    "assertions": 622,
+    "failed_assertions": 0
+  },
+  "patch_byte_identical_to_input": true,
+  "patch_applies_to_inspected_main": true,
+  "log_path_redaction": "Absolute workspace paths in command metadata are replaced by named environment placeholders.",
+  "runner_change": "Only REPO and BUILD directory definitions changed to MLX_SOURCE_ROOT and MLX_CPU_BUILD environment variables before rerun."
+}

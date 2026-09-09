@@ -1,0 +1,91 @@
+--- a/mlx/primitives.cpp
++++ b/mlx/primitives.cpp
+@@ -390,7 +390,9 @@
+     const std::vector<array>& cotangents,
+     const std::vector<int>& argnums,
+     const std::vector<array>&) {
+-  return jvp(primals, cotangents, argnums);
++  return {conjugate(
++      jvp(primals, {conjugate(cotangents[0], stream())}, argnums)[0],
++      stream())};
+ }
+ 
+ std::vector<array> ArcCos::jvp(
+@@ -418,7 +420,9 @@
+     const std::vector<array>& cotangents,
+     const std::vector<int>& argnums,
+     const std::vector<array>&) {
+-  return jvp(primals, cotangents, argnums);
++  return {conjugate(
++      jvp(primals, {conjugate(cotangents[0], stream())}, argnums)[0],
++      stream())};
+ }
+ 
+ std::vector<array> ArcCosh::jvp(
+@@ -428,6 +432,11 @@
+   assert(primals.size() == 1);
+   assert(argnums.size() == 1);
+   array one = array(1., primals[0].dtype());
++  if (primals[0].dtype() == complex64) {
++    auto left = sqrt(subtract(primals[0], one, stream()), stream());
++    auto right = sqrt(add(primals[0], one, stream()), stream());
++    return {divide(tangents[0], multiply(left, right, stream()), stream())};
++  }
+   array t = subtract(square(primals[0], stream()), one, stream());
+   return {multiply(tangents[0], rsqrt(t, stream()), stream())};
+ }
+@@ -445,7 +454,9 @@
+     const std::vector<array>& cotangents,
+     const std::vector<int>& argnums,
+     const std::vector<array>&) {
+-  return jvp(primals, cotangents, argnums);
++  return {conjugate(
++      jvp(primals, {conjugate(cotangents[0], stream())}, argnums)[0],
++      stream())};
+ }
+ 
+ std::vector<array> ArcSin::jvp(
+@@ -472,7 +483,9 @@
+     const std::vector<array>& cotangents,
+     const std::vector<int>& argnums,
+     const std::vector<array>&) {
+-  return jvp(primals, cotangents, argnums);
++  return {conjugate(
++      jvp(primals, {conjugate(cotangents[0], stream())}, argnums)[0],
++      stream())};
+ }
+ 
+ std::vector<array> ArcSinh::jvp(
+@@ -499,7 +512,9 @@
+     const std::vector<array>& cotangents,
+     const std::vector<int>& argnums,
+     const std::vector<array>&) {
+-  return jvp(primals, cotangents, argnums);
++  return {conjugate(
++      jvp(primals, {conjugate(cotangents[0], stream())}, argnums)[0],
++      stream())};
+ }
+ 
+ std::vector<array> ArcTan::jvp(
+@@ -587,7 +602,9 @@
+     const std::vector<array>& cotangents,
+     const std::vector<int>& argnums,
+     const std::vector<array>&) {
+-  return jvp(primals, cotangents, argnums);
++  return {conjugate(
++      jvp(primals, {conjugate(cotangents[0], stream())}, argnums)[0],
++      stream())};
+ }
+ 
+ std::vector<array> ArcTanh::jvp(
+@@ -1693,7 +1710,9 @@
+     const std::vector<array>& cotangents,
+     const std::vector<int>& argnums,
+     const std::vector<array>&) {
+-  return {jvp(primals, cotangents, argnums)};
++  return {conjugate(
++      jvp(primals, {conjugate(cotangents[0], stream())}, argnums)[0],
++      stream())};
+ }
+ 
+ std::vector<array> Cos::jvp(

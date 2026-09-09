@@ -1,0 +1,8 @@
+{
+  "baseline_revision": "ce916dbbcaa88e433b6fd1e60a17f766d49c27fe",
+  "current_source_revision": "24c699ecee2f7c8b2040de8da1c8382c8bcf31c7",
+  "tested_vjp_jvp_bodies_equal_current": true,
+  "archive": "${MLX_CPU_BUILD}/mlx-build/libmlx.a",
+  "archive_sha256": "7826e14e2d1ee526a16352829d460ae39c048e331c339be0b6f8d67d74e68a06",
+  "build_kind": "Pristine baseline or patched primitives.cpp linked before an existing CPU-only archive; no fresh full build of current main."
+}

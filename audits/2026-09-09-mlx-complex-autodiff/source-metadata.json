@@ -1,0 +1,33 @@
+{
+  "revision": "24c699ecee2f7c8b2040de8da1c8382c8bcf31c7",
+  "committer_date": "2026-09-09T01:22:20Z",
+  "files": [
+    {
+      "path": "mlx/primitives.cpp",
+      "local": "upstream-primitives.cpp",
+      "url": "https://raw.githubusercontent.com/ml-explore/mlx/24c699ecee2f7c8b2040de8da1c8382c8bcf31c7/mlx/primitives.cpp",
+      "sha256": "6a045372433d91ec0ec00caf134ad5010fe34d8c0ae7a114496f632b24f74f09"
+    },
+    {
+      "path": "mlx/ops.cpp",
+      "local": "upstream-ops.cpp",
+      "url": "https://raw.githubusercontent.com/ml-explore/mlx/24c699ecee2f7c8b2040de8da1c8382c8bcf31c7/mlx/ops.cpp",
+      "sha256": "7cf1107972ae6d8e3e663efa14a881f46091504822b5e7df69588111bead35bc"
+    },
+    {
+      "path": "python/tests/test_autograd.py",
+      "local": "upstream-test_autograd.py",
+      "url": "https://raw.githubusercontent.com/ml-explore/mlx/24c699ecee2f7c8b2040de8da1c8382c8bcf31c7/python/tests/test_autograd.py",
+      "sha256": "a615fc5a754b72e0d09dce55984014044ff360e09cf79005abf345c71ac13c90"
+    },
+    {
+      "path": "AGENTS.md",
+      "local": "upstream-AGENTS.md",
+      "url": "https://raw.githubusercontent.com/ml-explore/mlx/24c699ecee2f7c8b2040de8da1c8382c8bcf31c7/AGENTS.md",
+      "sha256": "5639bca30e983f0f25f7e65559152dd6ab65140155b78b21aa3b83c43ded31c7"
+    }
+  ],
+  "retrieval_notes": [
+    "Initial GitHub contents API request for primitives.cpp timed out after 20 seconds. Retried read-only via raw.githubusercontent.com."
+  ]
+}

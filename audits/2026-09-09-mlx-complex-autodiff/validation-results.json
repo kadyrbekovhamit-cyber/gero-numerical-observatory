@@ -1,0 +1,27 @@
+{
+  "before": {
+    "cases": 131,
+    "failed_cases": 85,
+    "assertions": 622,
+    "failed_assertions": 176,
+    "passed_cases": 46,
+    "failure_kinds": {
+      "adjoint": 84,
+      "jvp": 6,
+      "real_chain_descent": 1,
+      "real_chain_gradient": 1,
+      "vjp": 84
+    }
+  },
+  "after": {
+    "cases": 131,
+    "failed_cases": 0,
+    "assertions": 622,
+    "failed_assertions": 0,
+    "passed_cases": 131,
+    "failure_kinds": {}
+  },
+  "patch_applies_to_pinned_main": true,
+  "patched_main_matches_generated_copy": true,
+  "compiler": "Apple clang version 17.0.0 (clang-1700.0.13.5)\nTarget: arm64-apple-darwin24.5.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin\n"
+}
