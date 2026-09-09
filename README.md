@@ -58,6 +58,25 @@ needed to push that bound below 5%, and 299 to push it below 1%.
 [Run the calculation](tools/zero_failure_bounds.py) ·
 [Read the public GERO note](https://www.gero.uz/research/articles/zero-observed-false-positives-small-sample.html)
 
+## nntrainer average-pooling audit, 9 September 2026
+
+A separate native C++ audit reproduces a backward-pass error in Samsung
+nntrainer average pooling when `padding=same` is distributed asymmetrically.
+For input `[1, 2; 3, 4]`, a 2×2 window, stride 1 and unit output gradients,
+the tested source returns `[0.25, 0.25, 0.25, 0.25]`; the layer's own forward
+Jacobian and central finite differences require
+`[0.25, 0.75, 0.75, 2.25]`.
+
+The focused matrix has 8 failures out of 58 tests before the two-line repair
+and 58/58 passes after it. A 2021 upstream pull request already contained the
+correct bottom/right loop bounds, so this repository does **not** claim first
+discovery or established novelty.
+
+[Evidence package](audits/2026-09-09-nntrainer-average-pool-padding/) ·
+[Reproduction instructions](audits/2026-09-09-nntrainer-average-pool-padding/BUILD.md) ·
+[Source patch](audits/2026-09-09-nntrainer-average-pool-padding/patches/source.patch) ·
+[Public-history review](audits/2026-09-09-nntrainer-average-pool-padding/DUPLICATES.md)
+
 ## Published snapshot, 6 September 2026
 
 | Measure | Result |

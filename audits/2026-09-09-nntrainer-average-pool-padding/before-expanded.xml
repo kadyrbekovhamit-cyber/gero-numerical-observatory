@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="58" failures="8" disabled="0" errors="0" time="0.015" timestamp="2026-09-09T08:24:15.441" name="AllTests">
+  <testsuite name="PoolingPaddingAudit" tests="2" failures="2" disabled="0" skipped="0" errors="0" time="0.001" timestamp="2026-09-09T08:24:15.441">
+    <testcase name="SameEvenKernelConservesIncomingGradient" file="../test/unittest/layers/unittest_layers_pooling2d.cpp" line="75" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.441" classname="PoolingPaddingAudit">
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:88&#x0A;Expected equality of these values:&#x0A;  result.dx[i]&#x0A;    Which is: 0.25&#x0A;  expected[i]&#x0A;    Which is: 0.75&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:88
+Expected equality of these values:
+  result.dx[i]
+    Which is: 0.25
+  expected[i]
+    Which is: 0.75
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:88&#x0A;Expected equality of these values:&#x0A;  result.dx[i]&#x0A;    Which is: 0.25&#x0A;  expected[i]&#x0A;    Which is: 0.75&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:88
+Expected equality of these values:
+  result.dx[i]
+    Which is: 0.25
+  expected[i]
+    Which is: 0.75
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:88&#x0A;Expected equality of these values:&#x0A;  result.dx[i]&#x0A;    Which is: 0.25&#x0A;  expected[i]&#x0A;    Which is: 2.25&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:88
+Expected equality of these values:
+  result.dx[i]
+    Which is: 0.25
+  expected[i]
+    Which is: 2.25
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:90&#x0A;Expected equality of these values:&#x0A;  std::accumulate(result.dx.begin(), result.dx.end(), 0.0f)&#x0A;    Which is: 1&#x0A;  4.0f&#x0A;    Which is: 4&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:90
+Expected equality of these values:
+  std::accumulate(result.dx.begin(), result.dx.end(), 0.0f)
+    Which is: 1
+  4.0f
+    Which is: 4
+]]></failure>
+    </testcase>
+    <testcase name="SameEvenKernelMatchesRuntimeFiniteDifferences" file="../test/unittest/layers/unittest_layers_pooling2d.cpp" line="93" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.442" classname="PoolingPaddingAudit">
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:109&#x0A;The difference between result.dx[i] and numeric is 1, which exceeds 1e-5, where&#x0A;result.dx[i] evaluates to 0.25,&#x0A;numeric evaluates to -0.75, and&#x0A;1e-5 evaluates to 1.0000000000000001e-05.&#x0A;input index 1&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:109
+The difference between result.dx[i] and numeric is 1, which exceeds 1e-5, where
+result.dx[i] evaluates to 0.25,
+numeric evaluates to -0.75, and
+1e-5 evaluates to 1.0000000000000001e-05.
+input index 1
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:109&#x0A;The difference between result.dx[i] and numeric is 1.5, which exceeds 1e-5, where&#x0A;result.dx[i] evaluates to 0.25,&#x0A;numeric evaluates to 1.75, and&#x0A;1e-5 evaluates to 1.0000000000000001e-05.&#x0A;input index 2&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:109
+The difference between result.dx[i] and numeric is 1.5, which exceeds 1e-5, where
+result.dx[i] evaluates to 0.25,
+numeric evaluates to 1.75, and
+1e-5 evaluates to 1.0000000000000001e-05.
+input index 2
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:109&#x0A;The difference between result.dx[i] and numeric is 4.5, which exceeds 1e-5, where&#x0A;result.dx[i] evaluates to 0.25,&#x0A;numeric evaluates to 4.75, and&#x0A;1e-5 evaluates to 1.0000000000000001e-05.&#x0A;input index 3&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:109
+The difference between result.dx[i] and numeric is 4.5, which exceeds 1e-5, where
+result.dx[i] evaluates to 0.25,
+numeric evaluates to 4.75, and
+1e-5 evaluates to 1.0000000000000001e-05.
+input index 3
+]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Pooling2DMax/LayerSemantics" tests="44" failures="0" disabled="0" skipped="0" errors="0" time="0.011" timestamp="2026-09-09T08:24:15.442">
+    <testcase name="createFromAppContext_pn/0" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=max&quot;, &quot;pool_size=1,1&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="27" status="run" result="completed" time="0.008" timestamp="2026-09-09T08:24:15.442" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="createFromAppContext_pn/1" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=average&quot;, &quot;pool_size=1,1&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="27" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.451" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="createFromAppContext_pn/2" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=global_max&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="27" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.451" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="createFromAppContext_pn/3" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=global_average&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="27" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.451" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="setPropertiesInvalid_01_n/0" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=max&quot;, &quot;pool_size=1,1&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="44" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.451" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="setPropertiesInvalid_01_n/1" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=average&quot;, &quot;pool_size=1,1&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="44" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.452" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="setPropertiesInvalid_01_n/2" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=global_max&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="44" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.452" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="setPropertiesInvalid_01_n/3" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=global_average&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="44" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.452" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="setPropertiesInvalid_02_n/0" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=max&quot;, &quot;pool_size=1,1&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="50" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.452" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="setPropertiesInvalid_02_n/1" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=average&quot;, &quot;pool_size=1,1&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="50" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.452" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="setPropertiesInvalid_02_n/2" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=global_max&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="50" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.452" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="setPropertiesInvalid_02_n/3" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=global_average&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="50" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.452" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="finalizeValidateLayerNode_p/0" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 00-80 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=max&quot;, &quot;pool_size=1,1&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="56" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="finalizeValidateLayerNode_p/1" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 00-80 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=average&quot;, &quot;pool_size=1,1&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="56" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="finalizeValidateLayerNode_p/2" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 00-80 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=global_max&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="56" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="finalizeValidateLayerNode_p/3" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 00-80 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=global_average&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="56" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="getTypeValidateLayerNode_p/0" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=max&quot;, &quot;pool_size=1,1&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="86" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="getTypeValidateLayerNode_p/1" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=average&quot;, &quot;pool_size=1,1&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="86" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="getTypeValidateLayerNode_p/2" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=global_max&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="86" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="getTypeValidateLayerNode_p/3" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=global_average&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="86" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="gettersValidateLayerNode_p/0" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=max&quot;, &quot;pool_size=1,1&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="94" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="gettersValidateLayerNode_p/1" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=average&quot;, &quot;pool_size=1,1&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="94" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="gettersValidateLayerNode_p/2" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=global_max&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="94" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="gettersValidateLayerNode_p/3" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=global_average&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="94" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="setBatchValidateLayerNode_p/0" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=max&quot;, &quot;pool_size=1,1&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="102" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="setBatchValidateLayerNode_p/1" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=average&quot;, &quot;pool_size=1,1&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="102" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="setBatchValidateLayerNode_p/2" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=global_max&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="102" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="setBatchValidateLayerNode_p/3" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=global_average&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="102" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="setProperties_n/0" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=max&quot;, &quot;pool_size=1,1&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="23" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="setProperties_n/1" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=average&quot;, &quot;pool_size=1,1&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="23" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="setProperties_n/2" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=global_max&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="23" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="setProperties_n/3" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=global_average&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="23" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="gettersValidate_p/0" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=max&quot;, &quot;pool_size=1,1&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="32" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="gettersValidate_p/1" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=average&quot;, &quot;pool_size=1,1&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="32" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="gettersValidate_p/2" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=global_max&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="32" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="gettersValidate_p/3" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=global_average&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="32" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="finalizeValidate_p/0" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=max&quot;, &quot;pool_size=1,1&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="42" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="finalizeValidate_p/1" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=average&quot;, &quot;pool_size=1,1&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="42" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="finalizeValidate_p/2" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=global_max&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="42" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="finalizeValidate_p/3" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=global_average&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="42" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="setBatchValidate_p/0" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=max&quot;, &quot;pool_size=1,1&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="67" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="setBatchValidate_p/1" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=average&quot;, &quot;pool_size=1,1&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="67" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="setBatchValidate_p/2" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=global_max&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="67" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+    <testcase name="setBatchValidate_p/3" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pooling=global_average&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="67" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerSemantics" />
+  </testsuite>
+  <testsuite name="Pooling2DMax/LayerPropertySemantics" tests="2" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2026-09-09T08:24:15.453">
+    <testcase name="setPropertiesInvalid_n/0" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pool_size=&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="39" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerPropertySemantics" />
+    <testcase name="setPropertiesValidInvalidOnly_n/0" value_param="(32-byte object &lt;F0-C6 A9-00 01-00 00-00 C8-A3 9B-00 01-00 00-00 00-00 00-00 00-00 00-00 80-0A 07-00 00-60 00-00&gt;, &quot;pooling2d&quot;, { &quot;pool_size=&quot; }, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="28" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.453" classname="Pooling2DMax/LayerPropertySemantics" />
+  </testsuite>
+  <testsuite name="PaddingCases/PoolingPaddingMatrix" tests="10" failures="6" disabled="0" skipped="0" errors="0" time="0.002" timestamp="2026-09-09T08:24:15.454">
+    <testcase name="MatchesIndependentWindowJacobian/BothSame" value_param="120-byte object &lt;42-6F 74-68 53-61 6D-65 00-C8 A8-00 01-00 00-00 E0-9F 60-EF 01-00 00-08 61-76 65-72 61-67 65-00 A0-19 56-01 00-60 00-00 01-00 00-00 00-00 00-07 73-61 6D-65 00-00 00-00 00-C0 B7-00 01-00 00-00 80-C0 B7-00 01-00 00-04 01-00 00-00 01-00 00-00 02-00 00-00 02-00 00-00 02-00 00-00 02-00 00-00 01-00 00-00 01-00 00-00 00-00 00-00 01-00 00-00 00-00 00-00 01-00 00-00&gt;" file="../test/unittest/layers/unittest_layers_pooling2d.cpp" line="124" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.454" classname="PaddingCases/PoolingPaddingMatrix">
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 0.5, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -0.625,&#x0A;expected_dx[i] evaluates to -1.125, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 1&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 0.5, which exceeds 2e-6, where
+result.dx[i] evaluates to -0.625,
+expected_dx[i] evaluates to -1.125, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 1
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 0.25, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -0.625,&#x0A;expected_dx[i] evaluates to -0.375, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 2&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 0.25, which exceeds 2e-6, where
+result.dx[i] evaluates to -0.625,
+expected_dx[i] evaluates to -0.375, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 2
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 1.75, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -0.625,&#x0A;expected_dx[i] evaluates to 1.125, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 3&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 1.75, which exceeds 2e-6, where
+result.dx[i] evaluates to -0.625,
+expected_dx[i] evaluates to 1.125, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 3
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:196&#x0A;The difference between std::accumulate(result.dx.begin(), result.dx.end(), 0.0) and std::accumulate(dy.begin(), dy.end(), 0.0) is 1.5, which exceeds 2e-5, where&#x0A;std::accumulate(result.dx.begin(), result.dx.end(), 0.0) evaluates to -2.5,&#x0A;std::accumulate(dy.begin(), dy.end(), 0.0) evaluates to -1, and&#x0A;2e-5 evaluates to 2.0000000000000002e-05.&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:196
+The difference between std::accumulate(result.dx.begin(), result.dx.end(), 0.0) and std::accumulate(dy.begin(), dy.end(), 0.0) is 1.5, which exceeds 2e-5, where
+std::accumulate(result.dx.begin(), result.dx.end(), 0.0) evaluates to -2.5,
+std::accumulate(dy.begin(), dy.end(), 0.0) evaluates to -1, and
+2e-5 evaluates to 2.0000000000000002e-05.
+]]></failure>
+    </testcase>
+    <testcase name="MatchesIndependentWindowJacobian/BottomOnly" value_param="120-byte object &lt;42-6F 74-74 6F-6D 4F-6E 6C-79 00-00 00-00 00-00 00-00 00-00 00-00 00-0A 61-76 65-72 61-67 65-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-07 30-2C 31-2C 30-2C 30-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-07 01-00 00-00 01-00 00-00 02-00 00-00 03-00 00-00 02-00 00-00 03-00 00-00 01-00 00-00 01-00 00-00 00-00 00-00 01-00 00-00 00-00 00-00 00-00 00-00&gt;" file="../test/unittest/layers/unittest_layers_pooling2d.cpp" line="124" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.454" classname="PaddingCases/PoolingPaddingMatrix">
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 0.3333333432674408, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -0.4166666567325592,&#x0A;expected_dx[i] evaluates to -0.75, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 3&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 0.3333333432674408, which exceeds 2e-6, where
+result.dx[i] evaluates to -0.4166666567325592,
+expected_dx[i] evaluates to -0.75, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 3
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 0.3333333432674408, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -0.4166666567325592,&#x0A;expected_dx[i] evaluates to -0.75, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 4&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 0.3333333432674408, which exceeds 2e-6, where
+result.dx[i] evaluates to -0.4166666567325592,
+expected_dx[i] evaluates to -0.75, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 4
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 0.3333333432674408, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -0.4166666567325592,&#x0A;expected_dx[i] evaluates to -0.75, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 5&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 0.3333333432674408, which exceeds 2e-6, where
+result.dx[i] evaluates to -0.4166666567325592,
+expected_dx[i] evaluates to -0.75, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 5
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:196&#x0A;The difference between std::accumulate(result.dx.begin(), result.dx.end(), 0.0) and std::accumulate(dy.begin(), dy.end(), 0.0) is 1.0000000596046448, which exceeds 2e-5, where&#x0A;std::accumulate(result.dx.begin(), result.dx.end(), 0.0) evaluates to -2.4999999403953552,&#x0A;std::accumulate(dy.begin(), dy.end(), 0.0) evaluates to -3.5, and&#x0A;2e-5 evaluates to 2.0000000000000002e-05.&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:196
+The difference between std::accumulate(result.dx.begin(), result.dx.end(), 0.0) and std::accumulate(dy.begin(), dy.end(), 0.0) is 1.0000000596046448, which exceeds 2e-5, where
+std::accumulate(result.dx.begin(), result.dx.end(), 0.0) evaluates to -2.4999999403953552,
+std::accumulate(dy.begin(), dy.end(), 0.0) evaluates to -3.5, and
+2e-5 evaluates to 2.0000000000000002e-05.
+]]></failure>
+    </testcase>
+    <testcase name="MatchesIndependentWindowJacobian/RightOnly" value_param="120-byte object &lt;52-69 67-68 74-4F 6E-6C 79-00 00-00 00-00 00-00 00-00 00-00 00-00 00-09 61-76 65-72 61-67 65-00 00-00 00-00 00-00 00-00 F0-C6 A9-00 01-00 00-07 30-2C 30-2C 30-2C 31-00 88-EC F4-4B 01-00 00-00 28-1A 4C-6F 01-00 00-07 01-00 00-00 01-00 00-00 03-00 00-00 02-00 00-00 03-00 00-00 02-00 00-00 01-00 00-00 01-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 01-00 00-00&gt;" file="../test/unittest/layers/unittest_layers_pooling2d.cpp" line="124" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.454" classname="PaddingCases/PoolingPaddingMatrix">
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 0.3333333432674408, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -0.4166666567325592,&#x0A;expected_dx[i] evaluates to -0.75, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 1&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 0.3333333432674408, which exceeds 2e-6, where
+result.dx[i] evaluates to -0.4166666567325592,
+expected_dx[i] evaluates to -0.75, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 1
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 0.3333333432674408, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -0.4166666567325592,&#x0A;expected_dx[i] evaluates to -0.75, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 3&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 0.3333333432674408, which exceeds 2e-6, where
+result.dx[i] evaluates to -0.4166666567325592,
+expected_dx[i] evaluates to -0.75, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 3
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 0.3333333432674408, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -0.4166666567325592,&#x0A;expected_dx[i] evaluates to -0.75, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 5&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 0.3333333432674408, which exceeds 2e-6, where
+result.dx[i] evaluates to -0.4166666567325592,
+expected_dx[i] evaluates to -0.75, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 5
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:196&#x0A;The difference between std::accumulate(result.dx.begin(), result.dx.end(), 0.0) and std::accumulate(dy.begin(), dy.end(), 0.0) is 1.0000000596046448, which exceeds 2e-5, where&#x0A;std::accumulate(result.dx.begin(), result.dx.end(), 0.0) evaluates to -2.4999999403953552,&#x0A;std::accumulate(dy.begin(), dy.end(), 0.0) evaluates to -3.5, and&#x0A;2e-5 evaluates to 2.0000000000000002e-05.&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:196
+The difference between std::accumulate(result.dx.begin(), result.dx.end(), 0.0) and std::accumulate(dy.begin(), dy.end(), 0.0) is 1.0000000596046448, which exceeds 2e-5, where
+std::accumulate(result.dx.begin(), result.dx.end(), 0.0) evaluates to -2.4999999403953552,
+std::accumulate(dy.begin(), dy.end(), 0.0) evaluates to -3.5, and
+2e-5 evaluates to 2.0000000000000002e-05.
+]]></failure>
+    </testcase>
+    <testcase name="MatchesIndependentWindowJacobian/StrideTwo" value_param="120-byte object &lt;53-74 72-69 64-65 54-77 6F-00 A9-00 01-00 00-00 AC-BD 9D-00 01-00 00-09 61-76 65-72 61-67 65-00 90-19 4C-6F 01-00 00-00 00-00 00-00 00-00 00-07 73-61 6D-65 00-00 00-00 00-00 00-00 00-00 00-00 69-C8 A8-00 01-00 00-04 01-00 00-00 01-00 00-00 03-00 00-00 05-00 00-00 02-00 00-00 02-00 00-00 02-00 00-00 02-00 00-00 00-00 00-00 01-00 00-00 00-00 00-00 01-00 00-00&gt;" file="../test/unittest/layers/unittest_layers_pooling2d.cpp" line="124" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.454" classname="PaddingCases/PoolingPaddingMatrix">
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 0.25, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to 0,&#x0A;expected_dx[i] evaluates to 0.25, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 4&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 0.25, which exceeds 2e-6, where
+result.dx[i] evaluates to 0,
+expected_dx[i] evaluates to 0.25, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 4
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 0.25, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to 0,&#x0A;expected_dx[i] evaluates to 0.25, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 9&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 0.25, which exceeds 2e-6, where
+result.dx[i] evaluates to 0,
+expected_dx[i] evaluates to 0.25, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 9
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 1, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to 0,&#x0A;expected_dx[i] evaluates to 1, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 10&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 1, which exceeds 2e-6, where
+result.dx[i] evaluates to 0,
+expected_dx[i] evaluates to 1, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 10
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 1, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to 0,&#x0A;expected_dx[i] evaluates to 1, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 11&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 1, which exceeds 2e-6, where
+result.dx[i] evaluates to 0,
+expected_dx[i] evaluates to 1, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 11
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 1, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to 0,&#x0A;expected_dx[i] evaluates to -1, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 12&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 1, which exceeds 2e-6, where
+result.dx[i] evaluates to 0,
+expected_dx[i] evaluates to -1, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 12
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 1, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to 0,&#x0A;expected_dx[i] evaluates to -1, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 13&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 1, which exceeds 2e-6, where
+result.dx[i] evaluates to 0,
+expected_dx[i] evaluates to -1, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 13
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 0.5, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to 0,&#x0A;expected_dx[i] evaluates to -0.5, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 14&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 0.5, which exceeds 2e-6, where
+result.dx[i] evaluates to 0,
+expected_dx[i] evaluates to -0.5, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 14
+]]></failure>
+    </testcase>
+    <testcase name="MatchesIndependentWindowJacobian/BatchChannels" value_param="120-byte object &lt;42-61 74-63 68-43 68-61 6E-6E 65-6C 73-00 00-00 00-00 00-00 00-00 00-0D 61-76 65-72 61-67 65-00 F0-C9 A8-00 01-00 00-00 0F-CD A8-00 01-00 00-07 73-61 6D-65 00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-04 02-00 00-00 02-00 00-00 02-00 00-00 02-00 00-00 02-00 00-00 02-00 00-00 01-00 00-00 01-00 00-00 00-00 00-00 01-00 00-00 00-00 00-00 01-00 00-00&gt;" file="../test/unittest/layers/unittest_layers_pooling2d.cpp" line="124" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.454" classname="PaddingCases/PoolingPaddingMatrix">
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 0.5, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -0.625,&#x0A;expected_dx[i] evaluates to -1.125, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 1&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 0.5, which exceeds 2e-6, where
+result.dx[i] evaluates to -0.625,
+expected_dx[i] evaluates to -1.125, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 1
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 0.25, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -0.625,&#x0A;expected_dx[i] evaluates to -0.375, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 2&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 0.25, which exceeds 2e-6, where
+result.dx[i] evaluates to -0.625,
+expected_dx[i] evaluates to -0.375, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 2
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 1.75, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -0.625,&#x0A;expected_dx[i] evaluates to 1.125, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 3&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 1.75, which exceeds 2e-6, where
+result.dx[i] evaluates to -0.625,
+expected_dx[i] evaluates to 1.125, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 3
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 0.5, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -1,&#x0A;expected_dx[i] evaluates to -0.5, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 4&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 0.5, which exceeds 2e-6, where
+result.dx[i] evaluates to -1,
+expected_dx[i] evaluates to -0.5, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 4
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 0.25, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -1,&#x0A;expected_dx[i] evaluates to -0.75, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 5&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 0.25, which exceeds 2e-6, where
+result.dx[i] evaluates to -1,
+expected_dx[i] evaluates to -0.75, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 5
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 1, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -1,&#x0A;expected_dx[i] evaluates to 0, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 6&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 1, which exceeds 2e-6, where
+result.dx[i] evaluates to -1,
+expected_dx[i] evaluates to 0, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 6
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 3.25, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -1,&#x0A;expected_dx[i] evaluates to 2.25, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 7&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 3.25, which exceeds 2e-6, where
+result.dx[i] evaluates to -1,
+expected_dx[i] evaluates to 2.25, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 7
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 0.375, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -0.75,&#x0A;expected_dx[i] evaluates to -0.375, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 8&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 0.375, which exceeds 2e-6, where
+result.dx[i] evaluates to -0.75,
+expected_dx[i] evaluates to -0.375, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 8
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 0.375, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -0.75,&#x0A;expected_dx[i] evaluates to -0.375, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 9&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 0.375, which exceeds 2e-6, where
+result.dx[i] evaluates to -0.75,
+expected_dx[i] evaluates to -0.375, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 9
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 1.125, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -0.75,&#x0A;expected_dx[i] evaluates to 0.375, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 10&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 1.125, which exceeds 2e-6, where
+result.dx[i] evaluates to -0.75,
+expected_dx[i] evaluates to 0.375, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 10
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 1.375, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -0.75,&#x0A;expected_dx[i] evaluates to -2.125, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 11&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 1.375, which exceeds 2e-6, where
+result.dx[i] evaluates to -0.75,
+expected_dx[i] evaluates to -2.125, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 11
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 0.75, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -1,&#x0A;expected_dx[i] evaluates to -0.25, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 12&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 0.75, which exceeds 2e-6, where
+result.dx[i] evaluates to -1,
+expected_dx[i] evaluates to -0.25, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 12
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 1, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -1,&#x0A;expected_dx[i] evaluates to 0, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 13&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 1, which exceeds 2e-6, where
+result.dx[i] evaluates to -1,
+expected_dx[i] evaluates to 0, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 13
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 1.75, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -1,&#x0A;expected_dx[i] evaluates to 0.75, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 14&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 1.75, which exceeds 2e-6, where
+result.dx[i] evaluates to -1,
+expected_dx[i] evaluates to 0.75, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 14
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:196&#x0A;The difference between std::accumulate(result.dx.begin(), result.dx.end(), 0.0) and std::accumulate(dy.begin(), dy.end(), 0.0) is 10.5, which exceeds 2e-5, where&#x0A;std::accumulate(result.dx.begin(), result.dx.end(), 0.0) evaluates to -13.5,&#x0A;std::accumulate(dy.begin(), dy.end(), 0.0) evaluates to -3, and&#x0A;2e-5 evaluates to 2.0000000000000002e-05.&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:196
+The difference between std::accumulate(result.dx.begin(), result.dx.end(), 0.0) and std::accumulate(dy.begin(), dy.end(), 0.0) is 10.5, which exceeds 2e-5, where
+std::accumulate(result.dx.begin(), result.dx.end(), 0.0) evaluates to -13.5,
+std::accumulate(dy.begin(), dy.end(), 0.0) evaluates to -3, and
+2e-5 evaluates to 2.0000000000000002e-05.
+]]></failure>
+    </testcase>
+    <testcase name="MatchesIndependentWindowJacobian/ExplicitBottomRight" value_param="120-byte object &lt;45-78 70-6C 69-63 69-74 42-6F 74-74 6F-6D 52-69 67-68 74-00 01-00 00-13 61-76 65-72 61-67 65-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-07 30-2C 31-2C 30-2C 32-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-07 01-00 00-00 01-00 00-00 03-00 00-00 04-00 00-00 03-00 00-00 03-00 00-00 01-00 00-00 01-00 00-00 00-00 00-00 01-00 00-00 00-00 00-00 02-00 00-00&gt;" file="../test/unittest/layers/unittest_layers_pooling2d.cpp" line="124" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.455" classname="PaddingCases/PoolingPaddingMatrix">
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 0.083333339956071617, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -0.3888888955116272,&#x0A;expected_dx[i] evaluates to -0.30555555555555558, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 2&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 0.083333339956071617, which exceeds 2e-6, where
+result.dx[i] evaluates to -0.3888888955116272,
+expected_dx[i] evaluates to -0.30555555555555558, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 2
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 0.75000000082784224, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -0.1111111119389534,&#x0A;expected_dx[i] evaluates to 0.63888888888888884, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 3&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 0.75000000082784224, which exceeds 2e-6, where
+result.dx[i] evaluates to -0.1111111119389534,
+expected_dx[i] evaluates to 0.63888888888888884, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 3
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 0.33333332008785677, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -0.27777779102325439,&#x0A;expected_dx[i] evaluates to -0.61111111111111116, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 4&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 0.33333332008785677, which exceeds 2e-6, where
+result.dx[i] evaluates to -0.27777779102325439,
+expected_dx[i] evaluates to -0.61111111111111116, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 4
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 0.41666666004392838, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -0.3888888955116272,&#x0A;expected_dx[i] evaluates to -0.80555555555555558, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 5&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 0.41666666004392838, which exceeds 2e-6, where
+result.dx[i] evaluates to -0.3888888955116272,
+expected_dx[i] evaluates to -0.80555555555555558, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 5
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 0.083333326710595013, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -0.3888888955116272,&#x0A;expected_dx[i] evaluates to -0.47222222222222221, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 6&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 0.083333326710595013, which exceeds 2e-6, where
+result.dx[i] evaluates to -0.3888888955116272,
+expected_dx[i] evaluates to -0.47222222222222221, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 6
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 2.1666666674945088, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -0.1111111119389534,&#x0A;expected_dx[i] evaluates to 2.0555555555555554, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 7&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 2.1666666674945088, which exceeds 2e-6, where
+result.dx[i] evaluates to -0.1111111119389534,
+expected_dx[i] evaluates to 2.0555555555555554, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 7
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 0.33333332008785677, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -0.27777779102325439,&#x0A;expected_dx[i] evaluates to -0.61111111111111116, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 8&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 0.33333332008785677, which exceeds 2e-6, where
+result.dx[i] evaluates to -0.27777779102325439,
+expected_dx[i] evaluates to -0.61111111111111116, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 8
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 0.41666666004392838, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -0.3888888955116272,&#x0A;expected_dx[i] evaluates to -0.80555555555555558, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 9&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 0.41666666004392838, which exceeds 2e-6, where
+result.dx[i] evaluates to -0.3888888955116272,
+expected_dx[i] evaluates to -0.80555555555555558, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 9
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 0.083333326710595013, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -0.3888888955116272,&#x0A;expected_dx[i] evaluates to -0.47222222222222221, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 10&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 0.083333326710595013, which exceeds 2e-6, where
+result.dx[i] evaluates to -0.3888888955116272,
+expected_dx[i] evaluates to -0.47222222222222221, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 10
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:181&#x0A;The difference between result.dx[i] and expected_dx[i] is 2.1666666674945088, which exceeds 2e-6, where&#x0A;result.dx[i] evaluates to -0.1111111119389534,&#x0A;expected_dx[i] evaluates to 2.0555555555555554, and&#x0A;2e-6 evaluates to 1.9999999999999999e-06.&#x0A;dx 11&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:181
+The difference between result.dx[i] and expected_dx[i] is 2.1666666674945088, which exceeds 2e-6, where
+result.dx[i] evaluates to -0.1111111119389534,
+expected_dx[i] evaluates to 2.0555555555555554, and
+2e-6 evaluates to 1.9999999999999999e-06.
+dx 11
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:196&#x0A;The difference between std::accumulate(result.dx.begin(), result.dx.end(), 0.0) and std::accumulate(dy.begin(), dy.end(), 0.0) is 3.5000000819563866, which exceeds 2e-5, where&#x0A;std::accumulate(result.dx.begin(), result.dx.end(), 0.0) evaluates to -3.5000000819563866,&#x0A;std::accumulate(dy.begin(), dy.end(), 0.0) evaluates to 0, and&#x0A;2e-5 evaluates to 2.0000000000000002e-05.&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:196
+The difference between std::accumulate(result.dx.begin(), result.dx.end(), 0.0) and std::accumulate(dy.begin(), dy.end(), 0.0) is 3.5000000819563866, which exceeds 2e-5, where
+std::accumulate(result.dx.begin(), result.dx.end(), 0.0) evaluates to -3.5000000819563866,
+std::accumulate(dy.begin(), dy.end(), 0.0) evaluates to 0, and
+2e-5 evaluates to 2.0000000000000002e-05.
+]]></failure>
+    </testcase>
+    <testcase name="MatchesIndependentWindowJacobian/SymmetricControl" value_param="120-byte object &lt;53-79 6D-6D 65-74 72-69 63-43 6F-6E 74-72 6F-6C 00-00 00-00 00-00 00-10 61-76 65-72 61-67 65-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-07 31-2C 31-2C 31-2C 31-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-07 01-00 00-00 01-00 00-00 03-00 00-00 03-00 00-00 03-00 00-00 03-00 00-00 01-00 00-00 01-00 00-00 01-00 00-00 01-00 00-00 01-00 00-00 01-00 00-00&gt;" file="../test/unittest/layers/unittest_layers_pooling2d.cpp" line="124" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.455" classname="PaddingCases/PoolingPaddingMatrix" />
+    <testcase name="MatchesIndependentWindowJacobian/ValidControl" value_param="120-byte object &lt;56-61 6C-69 64-43 6F-6E 74-72 6F-6C 00-00 00-00 F8-18 4C-6F 01-00 00-0C 61-76 65-72 61-67 65-00 C8-17 4C-6F 01-00 00-00 00-00 00-00 00-00 00-07 76-61 6C-69 64-00 00-00 AC-BD 9D-00 01-00 00-00 B0-E9 00-4D 01-00 00-05 02-00 00-00 02-00 00-00 04-00 00-00 05-00 00-00 02-00 00-00 03-00 00-00 01-00 00-00 02-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00&gt;" file="../test/unittest/layers/unittest_layers_pooling2d.cpp" line="124" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.455" classname="PaddingCases/PoolingPaddingMatrix" />
+    <testcase name="MatchesIndependentWindowJacobian/GlobalAverageControl" value_param="120-byte object &lt;47-6C 6F-62 61-6C 41-76 65-72 61-67 65-43 6F-6E 74-72 6F-6C 00-00 00-14 67-6C 6F-62 61-6C 5F-61 76-65 72-61 67-65 00-00 80-25 77-00 00-60 00-0E 76-61 6C-69 64-00 00-00 E8-1E 4C-6F 01-00 00-00 90-17 4C-6F 01-00 00-05 02-00 00-00 02-00 00-00 03-00 00-00 04-00 00-00 03-00 00-00 04-00 00-00 01-00 00-00 01-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00 00-00&gt;" file="../test/unittest/layers/unittest_layers_pooling2d.cpp" line="124" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.456" classname="PaddingCases/PoolingPaddingMatrix" />
+    <testcase name="MatchesIndependentWindowJacobian/MaxSameControl" value_param="120-byte object &lt;4D-61 78-53 61-6D 65-43 6F-6E 74-72 6F-6C 00-00 54-E7 2F-81 01-00 00-0E 6D-61 78-00 01-00 00-00 20-F1 00-4D 01-00 00-00 00-F2 00-4D 01-00 00-03 73-61 6D-65 00-00 00-00 00-0A 01-4D 01-00 00-00 00-0E 00-00 00-00 00-04 01-00 00-00 02-00 00-00 02-00 00-00 02-00 00-00 02-00 00-00 02-00 00-00 01-00 00-00 01-00 00-00 00-00 00-00 01-00 00-00 00-00 00-00 01-00 00-00&gt;" file="../test/unittest/layers/unittest_layers_pooling2d.cpp" line="124" status="run" result="completed" time="0." timestamp="2026-09-09T08:24:15.456" classname="PaddingCases/PoolingPaddingMatrix" />
+  </testsuite>
+</testsuites>

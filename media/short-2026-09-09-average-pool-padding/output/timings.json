@@ -1,0 +1,52 @@
+[
+  {
+    "start": 0.0,
+    "end": 7.366666666666666,
+    "label": "A NATIVE C++ COUNTEREXAMPLE",
+    "title": "Forward right.\nBackward wrong.",
+    "speech": "Can average pooling be right in forward and wrong in backward? In Samsung's N N trainer, one asymmetric SAME-padding case did exactly that.",
+    "caption": "AveragePool \u00b7 padding=same\nFP32 \u00b7 NCHW \u00b7 CPU",
+    "source": "S1\u2013S2",
+    "kind": "hook"
+  },
+  {
+    "start": 7.366666666666666,
+    "end": 15.466666666666665,
+    "label": "THE FORWARD PASS",
+    "title": "2.5  3\n3.5  4",
+    "speech": "For input one, two, three, four, the forward result was correct: two point five, three, three point five, four.",
+    "caption": "input [[1,2],[3,4]]\nwindow 2\u00d72 \u00b7 stride 1",
+    "source": "S2\u2013S3",
+    "kind": "forward"
+  },
+  {
+    "start": 15.466666666666665,
+    "end": 26.966666666666665,
+    "label": "THE TRANSPOSE JACOBIAN",
+    "title": "75% of the\ngradient sum lost",
+    "speech": "But with unit output gradients, nntrainer returned four quarters. The Jacobian and finite differences require zero point two five, zero point seven five, zero point seven five, two point two five.",
+    "caption": "observed sum: 1\nrequired sum: 4",
+    "source": "S2\u2013S3",
+    "kind": "gradient"
+  },
+  {
+    "start": 26.966666666666665,
+    "end": 34.233333333333334,
+    "label": "TWO BOUNDS, ONE REPAIR",
+    "title": "top,left\nTO bottom,right",
+    "speech": "The backward loop used top and left padding in its end bounds. Replacing them with bottom and right made all fifty-eight focused tests pass.",
+    "caption": "before: 50/58 pass\nafter: 58/58 pass",
+    "source": "S1\u2013S3",
+    "kind": "repair"
+  },
+  {
+    "start": 34.233333333333334,
+    "end": 43.06666666666667,
+    "label": "THE NOVELTY BOUNDARY",
+    "title": "Confirmed now.\nNot claimed first.",
+    "speech": "A 2021 pull request already contained the correct boundaries, so I am not claiming first discovery. The complete reproducer and limits are linked.",
+    "caption": "PR #1360 disclosed\nEvidence: GitHub + gero.uz",
+    "source": "S2\u2013S4",
+    "kind": "boundary"
+  }
+]

@@ -1,0 +1,55 @@
+{
+  "original": {
+    "tests": 58,
+    "failures": 8,
+    "runtime_seconds": 0.015,
+    "failed_tests": [
+      "PoolingPaddingAudit.SameEvenKernelConservesIncomingGradient",
+      "PoolingPaddingAudit.SameEvenKernelMatchesRuntimeFiniteDifferences",
+      "PaddingCases/PoolingPaddingMatrix.MatchesIndependentWindowJacobian/BothSame",
+      "PaddingCases/PoolingPaddingMatrix.MatchesIndependentWindowJacobian/BottomOnly",
+      "PaddingCases/PoolingPaddingMatrix.MatchesIndependentWindowJacobian/RightOnly",
+      "PaddingCases/PoolingPaddingMatrix.MatchesIndependentWindowJacobian/StrideTwo",
+      "PaddingCases/PoolingPaddingMatrix.MatchesIndependentWindowJacobian/BatchChannels",
+      "PaddingCases/PoolingPaddingMatrix.MatchesIndependentWindowJacobian/ExplicitBottomRight"
+    ]
+  },
+  "patched": {
+    "tests": 58,
+    "failures": 0,
+    "runtime_seconds": 0.04,
+    "failed_tests": []
+  },
+  "manual_example": {
+    "x": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "dy": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "forward": [
+      2.5,
+      3,
+      3.5,
+      4
+    ],
+    "original_dx": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "reference_and_patched_dx": [
+      0.25,
+      0.75,
+      0.75,
+      2.25
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+1
+00:00:00,000 --> 00:00:03,635
+Can average pooling be right in forward
+and wrong in backward? In
+
+2
+00:00:03,635 --> 00:00:06,664
+Samsung's N N trainer, one asymmetric
+SAME-padding case did exactly
+
+3
+00:00:06,664 --> 00:00:06,967
+that.
+
+4
+00:00:07,367 --> 00:00:12,230
+For input one, two, three, four, the
+forward result was correct: two
+
+5
+00:00:12,230 --> 00:00:15,067
+point five, three, three point five, four.
+
+6
+00:00:15,467 --> 00:00:19,047
+But with unit output gradients, nntrainer
+returned four quarters. The
+
+7
+00:00:19,047 --> 00:00:22,628
+Jacobian and finite differences require
+zero point two five, zero
+
+8
+00:00:22,628 --> 00:00:26,567
+point seven five, zero point seven five,
+two point two five.
+
+9
+00:00:26,967 --> 00:00:30,400
+The backward loop used top and left
+padding in its end bounds.
+
+10
+00:00:30,400 --> 00:00:33,261
+Replacing them with bottom and right made
+all fifty-eight focused
+
+11
+00:00:33,261 --> 00:00:33,833
+tests pass.
+
+12
+00:00:34,233 --> 00:00:38,633
+A 2021 pull request already contained the
+correct boundaries, so I am
+
+13
+00:00:38,633 --> 00:00:42,300
+not claiming first discovery. The complete
+reproducer and limits are
+
+14
+00:00:42,300 --> 00:00:42,667
+linked.

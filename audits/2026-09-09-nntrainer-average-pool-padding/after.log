@@ -1,0 +1,136 @@
+Running main() from ../subprojects/googletest/googletest/src/gtest_main.cc
+Note: Google Test filter = PoolingPaddingAudit.*:PaddingCases/*:Pooling2DMax/*
+[==========] Running 58 tests from 4 test suites.
+[----------] Global test environment set-up.
+[----------] 2 tests from PoolingPaddingAudit
+[ RUN      ] PoolingPaddingAudit.SameEvenKernelConservesIncomingGradient
+POOL_AUDIT_DX 0.25 0.75 0.75 2.25
+[       OK ] PoolingPaddingAudit.SameEvenKernelConservesIncomingGradient (0 ms)
+[ RUN      ] PoolingPaddingAudit.SameEvenKernelMatchesRuntimeFiniteDifferences
+[       OK ] PoolingPaddingAudit.SameEvenKernelMatchesRuntimeFiniteDifferences (0 ms)
+[----------] 2 tests from PoolingPaddingAudit (0 ms total)
+
+[----------] 44 tests from Pooling2DMax/LayerSemantics
+[ RUN      ] Pooling2DMax/LayerSemantics.createFromAppContext_pn/0
+[       OK ] Pooling2DMax/LayerSemantics.createFromAppContext_pn/0 (34 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.createFromAppContext_pn/1
+[       OK ] Pooling2DMax/LayerSemantics.createFromAppContext_pn/1 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.createFromAppContext_pn/2
+[       OK ] Pooling2DMax/LayerSemantics.createFromAppContext_pn/2 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.createFromAppContext_pn/3
+[       OK ] Pooling2DMax/LayerSemantics.createFromAppContext_pn/3 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.setPropertiesInvalid_01_n/0
+[       OK ] Pooling2DMax/LayerSemantics.setPropertiesInvalid_01_n/0 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.setPropertiesInvalid_01_n/1
+[       OK ] Pooling2DMax/LayerSemantics.setPropertiesInvalid_01_n/1 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.setPropertiesInvalid_01_n/2
+[       OK ] Pooling2DMax/LayerSemantics.setPropertiesInvalid_01_n/2 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.setPropertiesInvalid_01_n/3
+[       OK ] Pooling2DMax/LayerSemantics.setPropertiesInvalid_01_n/3 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.setPropertiesInvalid_02_n/0
+[       OK ] Pooling2DMax/LayerSemantics.setPropertiesInvalid_02_n/0 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.setPropertiesInvalid_02_n/1
+[       OK ] Pooling2DMax/LayerSemantics.setPropertiesInvalid_02_n/1 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.setPropertiesInvalid_02_n/2
+[       OK ] Pooling2DMax/LayerSemantics.setPropertiesInvalid_02_n/2 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.setPropertiesInvalid_02_n/3
+[       OK ] Pooling2DMax/LayerSemantics.setPropertiesInvalid_02_n/3 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.finalizeValidateLayerNode_p/0
+[       OK ] Pooling2DMax/LayerSemantics.finalizeValidateLayerNode_p/0 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.finalizeValidateLayerNode_p/1
+[       OK ] Pooling2DMax/LayerSemantics.finalizeValidateLayerNode_p/1 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.finalizeValidateLayerNode_p/2
+[       OK ] Pooling2DMax/LayerSemantics.finalizeValidateLayerNode_p/2 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.finalizeValidateLayerNode_p/3
+[       OK ] Pooling2DMax/LayerSemantics.finalizeValidateLayerNode_p/3 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.getTypeValidateLayerNode_p/0
+[       OK ] Pooling2DMax/LayerSemantics.getTypeValidateLayerNode_p/0 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.getTypeValidateLayerNode_p/1
+[       OK ] Pooling2DMax/LayerSemantics.getTypeValidateLayerNode_p/1 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.getTypeValidateLayerNode_p/2
+[       OK ] Pooling2DMax/LayerSemantics.getTypeValidateLayerNode_p/2 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.getTypeValidateLayerNode_p/3
+[       OK ] Pooling2DMax/LayerSemantics.getTypeValidateLayerNode_p/3 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.gettersValidateLayerNode_p/0
+[       OK ] Pooling2DMax/LayerSemantics.gettersValidateLayerNode_p/0 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.gettersValidateLayerNode_p/1
+[       OK ] Pooling2DMax/LayerSemantics.gettersValidateLayerNode_p/1 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.gettersValidateLayerNode_p/2
+[       OK ] Pooling2DMax/LayerSemantics.gettersValidateLayerNode_p/2 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.gettersValidateLayerNode_p/3
+[       OK ] Pooling2DMax/LayerSemantics.gettersValidateLayerNode_p/3 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.setBatchValidateLayerNode_p/0
+[       OK ] Pooling2DMax/LayerSemantics.setBatchValidateLayerNode_p/0 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.setBatchValidateLayerNode_p/1
+[       OK ] Pooling2DMax/LayerSemantics.setBatchValidateLayerNode_p/1 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.setBatchValidateLayerNode_p/2
+[       OK ] Pooling2DMax/LayerSemantics.setBatchValidateLayerNode_p/2 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.setBatchValidateLayerNode_p/3
+[       OK ] Pooling2DMax/LayerSemantics.setBatchValidateLayerNode_p/3 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.setProperties_n/0
+[       OK ] Pooling2DMax/LayerSemantics.setProperties_n/0 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.setProperties_n/1
+[       OK ] Pooling2DMax/LayerSemantics.setProperties_n/1 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.setProperties_n/2
+[       OK ] Pooling2DMax/LayerSemantics.setProperties_n/2 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.setProperties_n/3
+[       OK ] Pooling2DMax/LayerSemantics.setProperties_n/3 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.gettersValidate_p/0
+[       OK ] Pooling2DMax/LayerSemantics.gettersValidate_p/0 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.gettersValidate_p/1
+[       OK ] Pooling2DMax/LayerSemantics.gettersValidate_p/1 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.gettersValidate_p/2
+[       OK ] Pooling2DMax/LayerSemantics.gettersValidate_p/2 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.gettersValidate_p/3
+[       OK ] Pooling2DMax/LayerSemantics.gettersValidate_p/3 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.finalizeValidate_p/0
+[       OK ] Pooling2DMax/LayerSemantics.finalizeValidate_p/0 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.finalizeValidate_p/1
+[       OK ] Pooling2DMax/LayerSemantics.finalizeValidate_p/1 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.finalizeValidate_p/2
+[       OK ] Pooling2DMax/LayerSemantics.finalizeValidate_p/2 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.finalizeValidate_p/3
+[       OK ] Pooling2DMax/LayerSemantics.finalizeValidate_p/3 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.setBatchValidate_p/0
+[       OK ] Pooling2DMax/LayerSemantics.setBatchValidate_p/0 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.setBatchValidate_p/1
+[       OK ] Pooling2DMax/LayerSemantics.setBatchValidate_p/1 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.setBatchValidate_p/2
+[       OK ] Pooling2DMax/LayerSemantics.setBatchValidate_p/2 (0 ms)
+[ RUN      ] Pooling2DMax/LayerSemantics.setBatchValidate_p/3
+[       OK ] Pooling2DMax/LayerSemantics.setBatchValidate_p/3 (0 ms)
+[----------] 44 tests from Pooling2DMax/LayerSemantics (36 ms total)
+
+[----------] 2 tests from Pooling2DMax/LayerPropertySemantics
+[ RUN      ] Pooling2DMax/LayerPropertySemantics.setPropertiesInvalid_n/0
+[       OK ] Pooling2DMax/LayerPropertySemantics.setPropertiesInvalid_n/0 (0 ms)
+[ RUN      ] Pooling2DMax/LayerPropertySemantics.setPropertiesValidInvalidOnly_n/0
+[       OK ] Pooling2DMax/LayerPropertySemantics.setPropertiesValidInvalidOnly_n/0 (0 ms)
+[----------] 2 tests from Pooling2DMax/LayerPropertySemantics (0 ms total)
+
+[----------] 10 tests from PaddingCases/PoolingPaddingMatrix
+[ RUN      ] PaddingCases/PoolingPaddingMatrix.MatchesIndependentWindowJacobian/BothSame
+[       OK ] PaddingCases/PoolingPaddingMatrix.MatchesIndependentWindowJacobian/BothSame (0 ms)
+[ RUN      ] PaddingCases/PoolingPaddingMatrix.MatchesIndependentWindowJacobian/BottomOnly
+[       OK ] PaddingCases/PoolingPaddingMatrix.MatchesIndependentWindowJacobian/BottomOnly (0 ms)
+[ RUN      ] PaddingCases/PoolingPaddingMatrix.MatchesIndependentWindowJacobian/RightOnly
+[       OK ] PaddingCases/PoolingPaddingMatrix.MatchesIndependentWindowJacobian/RightOnly (0 ms)
+[ RUN      ] PaddingCases/PoolingPaddingMatrix.MatchesIndependentWindowJacobian/StrideTwo
+[       OK ] PaddingCases/PoolingPaddingMatrix.MatchesIndependentWindowJacobian/StrideTwo (0 ms)
+[ RUN      ] PaddingCases/PoolingPaddingMatrix.MatchesIndependentWindowJacobian/BatchChannels
+[       OK ] PaddingCases/PoolingPaddingMatrix.MatchesIndependentWindowJacobian/BatchChannels (0 ms)
+[ RUN      ] PaddingCases/PoolingPaddingMatrix.MatchesIndependentWindowJacobian/ExplicitBottomRight
+[       OK ] PaddingCases/PoolingPaddingMatrix.MatchesIndependentWindowJacobian/ExplicitBottomRight (0 ms)
+[ RUN      ] PaddingCases/PoolingPaddingMatrix.MatchesIndependentWindowJacobian/SymmetricControl
+[       OK ] PaddingCases/PoolingPaddingMatrix.MatchesIndependentWindowJacobian/SymmetricControl (0 ms)
+[ RUN      ] PaddingCases/PoolingPaddingMatrix.MatchesIndependentWindowJacobian/ValidControl
+[       OK ] PaddingCases/PoolingPaddingMatrix.MatchesIndependentWindowJacobian/ValidControl (0 ms)
+[ RUN      ] PaddingCases/PoolingPaddingMatrix.MatchesIndependentWindowJacobian/GlobalAverageControl
+[       OK ] PaddingCases/PoolingPaddingMatrix.MatchesIndependentWindowJacobian/GlobalAverageControl (0 ms)
+[ RUN      ] PaddingCases/PoolingPaddingMatrix.MatchesIndependentWindowJacobian/MaxSameControl
+[       OK ] PaddingCases/PoolingPaddingMatrix.MatchesIndependentWindowJacobian/MaxSameControl (0 ms)
+[----------] 10 tests from PaddingCases/PoolingPaddingMatrix (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 58 tests from 4 test suites ran. (40 ms total)
+[  PASSED  ] 58 tests.

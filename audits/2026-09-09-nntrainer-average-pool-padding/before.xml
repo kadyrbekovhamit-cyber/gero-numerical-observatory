@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="2" failures="2" disabled="0" errors="0" time="0.001" timestamp="2026-09-09T08:22:41.122" name="AllTests">
+  <testsuite name="PoolingPaddingAudit" tests="2" failures="2" disabled="0" skipped="0" errors="0" time="0.001" timestamp="2026-09-09T08:22:41.122">
+    <testcase name="SameEvenKernelConservesIncomingGradient" file="../test/unittest/layers/unittest_layers_pooling2d.cpp" line="75" status="run" result="completed" time="0.001" timestamp="2026-09-09T08:22:41.122" classname="PoolingPaddingAudit">
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:88&#x0A;Expected equality of these values:&#x0A;  result.dx[i]&#x0A;    Which is: 0.25&#x0A;  expected[i]&#x0A;    Which is: 0.75&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:88
+Expected equality of these values:
+  result.dx[i]
+    Which is: 0.25
+  expected[i]
+    Which is: 0.75
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:88&#x0A;Expected equality of these values:&#x0A;  result.dx[i]&#x0A;    Which is: 0.25&#x0A;  expected[i]&#x0A;    Which is: 0.75&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:88
+Expected equality of these values:
+  result.dx[i]
+    Which is: 0.25
+  expected[i]
+    Which is: 0.75
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:88&#x0A;Expected equality of these values:&#x0A;  result.dx[i]&#x0A;    Which is: 0.25&#x0A;  expected[i]&#x0A;    Which is: 2.25&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:88
+Expected equality of these values:
+  result.dx[i]
+    Which is: 0.25
+  expected[i]
+    Which is: 2.25
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:90&#x0A;Expected equality of these values:&#x0A;  std::accumulate(result.dx.begin(), result.dx.end(), 0.0f)&#x0A;    Which is: 1&#x0A;  4.0f&#x0A;    Which is: 4&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:90
+Expected equality of these values:
+  std::accumulate(result.dx.begin(), result.dx.end(), 0.0f)
+    Which is: 1
+  4.0f
+    Which is: 4
+]]></failure>
+    </testcase>
+    <testcase name="SameEvenKernelMatchesRuntimeFiniteDifferences" file="../test/unittest/layers/unittest_layers_pooling2d.cpp" line="93" status="run" result="completed" time="0." timestamp="2026-09-09T08:22:41.123" classname="PoolingPaddingAudit">
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:109&#x0A;The difference between result.dx[i] and numeric is 1, which exceeds 1e-5, where&#x0A;result.dx[i] evaluates to 0.25,&#x0A;numeric evaluates to -0.75, and&#x0A;1e-5 evaluates to 1.0000000000000001e-05.&#x0A;input index 1&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:109
+The difference between result.dx[i] and numeric is 1, which exceeds 1e-5, where
+result.dx[i] evaluates to 0.25,
+numeric evaluates to -0.75, and
+1e-5 evaluates to 1.0000000000000001e-05.
+input index 1
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:109&#x0A;The difference between result.dx[i] and numeric is 1.5, which exceeds 1e-5, where&#x0A;result.dx[i] evaluates to 0.25,&#x0A;numeric evaluates to 1.75, and&#x0A;1e-5 evaluates to 1.0000000000000001e-05.&#x0A;input index 2&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:109
+The difference between result.dx[i] and numeric is 1.5, which exceeds 1e-5, where
+result.dx[i] evaluates to 0.25,
+numeric evaluates to 1.75, and
+1e-5 evaluates to 1.0000000000000001e-05.
+input index 2
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_pooling2d.cpp:109&#x0A;The difference between result.dx[i] and numeric is 4.5, which exceeds 1e-5, where&#x0A;result.dx[i] evaluates to 0.25,&#x0A;numeric evaluates to 4.75, and&#x0A;1e-5 evaluates to 1.0000000000000001e-05.&#x0A;input index 3&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_pooling2d.cpp:109
+The difference between result.dx[i] and numeric is 4.5, which exceeds 1e-5, where
+result.dx[i] evaluates to 0.25,
+numeric evaluates to 4.75, and
+1e-5 evaluates to 1.0000000000000001e-05.
+input index 3
+]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

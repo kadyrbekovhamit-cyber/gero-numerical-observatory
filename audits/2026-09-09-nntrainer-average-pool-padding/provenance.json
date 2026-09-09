@@ -1,0 +1,23 @@
+{
+  "checked_at": "2026-09-09T03:24:50.821784+00:00",
+  "repo": "https://github.com/nntrainer/nntrainer",
+  "commit": "a7ea056e79ab8e14447ea305c1b634e233343258",
+  "source": "nntrainer/layers/pooling2d_layer.cpp",
+  "source_sha256_before": "df75b2d0411fa56042a891f0be877e65f012356fb0c805497685c21aac60acc3",
+  "before_source_equals_pinned_commit": true,
+  "platform": "macOS-15.5-arm64-arm-64bit",
+  "build_options": {
+    "nntr-num-threads": 1,
+    "enable-blas": false,
+    "enable-fp16": false,
+    "thread-backend": "none"
+  },
+  "build_jobs": 1,
+  "prior_unrelated_changes": true,
+  "source_sha256_after": "a3d2f3143ae3bf34a38248ff828767fcfe5c80e693fee021cac0a092e792776f",
+  "test_sha256_after": "86e825a7724f17b3f5dd136eae01c621d1601337d43beb4ae3669cbbe6361a07",
+  "public_main_sha_at_check": "a7ea056e79ab8e14447ea305c1b634e233343258",
+  "public_main_matches_pinned_commit": true,
+  "public_check_timestamp": "2026-09-09T03:25:55.400045+00:00",
+  "fresh_full_build_performed": false
+}
