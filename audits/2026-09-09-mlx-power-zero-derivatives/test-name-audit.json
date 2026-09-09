@@ -1,0 +1,32 @@
+{
+  "upstream-test_autograd.py": [
+    {
+      "class": "TestAutograd",
+      "methods": {
+        "test_power_grad": [
+          699,
+          734
+        ]
+      }
+    }
+  ],
+  "patched-test_autograd.py": [
+    {
+      "class": "TestAutograd",
+      "methods": {
+        "test_power_grad_base": [
+          699
+        ],
+        "test_power_fixed_integer_higher_grad_at_zero": [
+          712
+        ],
+        "test_power_mixed_grad_at_zero_exponent": [
+          721
+        ],
+        "test_power_grad": [
+          750
+        ]
+      }
+    }
+  ]
+}

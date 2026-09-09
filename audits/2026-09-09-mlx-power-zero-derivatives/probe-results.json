@@ -1,0 +1,182 @@
+{
+  "version": "0.32.2",
+  "device": "Device(cpu, 0)",
+  "cases": [
+    {
+      "exponent": 0,
+      "input": 0.0,
+      "derivatives": [
+        {
+          "order": 0,
+          "actual": 1.0,
+          "expected": 1.0
+        },
+        {
+          "order": 1,
+          "actual": "nan",
+          "expected": 0.0
+        },
+        {
+          "order": 2,
+          "actual": "nan",
+          "expected": 0.0
+        },
+        {
+          "order": 3,
+          "actual": "nan",
+          "expected": 0.0
+        },
+        {
+          "order": 4,
+          "actual": "nan",
+          "expected": 0.0
+        }
+      ]
+    },
+    {
+      "exponent": 1,
+      "input": 0.0,
+      "derivatives": [
+        {
+          "order": 0,
+          "actual": 0.0,
+          "expected": 0.0
+        },
+        {
+          "order": 1,
+          "actual": 1.0,
+          "expected": 1.0
+        },
+        {
+          "order": 2,
+          "actual": "nan",
+          "expected": 0.0
+        },
+        {
+          "order": 3,
+          "actual": "nan",
+          "expected": 0.0
+        },
+        {
+          "order": 4,
+          "actual": "nan",
+          "expected": 0.0
+        }
+      ]
+    },
+    {
+      "exponent": 2,
+      "input": 0.0,
+      "derivatives": [
+        {
+          "order": 0,
+          "actual": 0.0,
+          "expected": 0.0
+        },
+        {
+          "order": 1,
+          "actual": 0.0,
+          "expected": 0.0
+        },
+        {
+          "order": 2,
+          "actual": 2.0,
+          "expected": 2.0
+        },
+        {
+          "order": 3,
+          "actual": "nan",
+          "expected": 0.0
+        },
+        {
+          "order": 4,
+          "actual": "nan",
+          "expected": 0.0
+        }
+      ]
+    },
+    {
+      "exponent": 3,
+      "input": 0.0,
+      "derivatives": [
+        {
+          "order": 0,
+          "actual": 0.0,
+          "expected": 0.0
+        },
+        {
+          "order": 1,
+          "actual": 0.0,
+          "expected": 0.0
+        },
+        {
+          "order": 2,
+          "actual": 0.0,
+          "expected": 0.0
+        },
+        {
+          "order": 3,
+          "actual": 6.0,
+          "expected": 6.0
+        },
+        {
+          "order": 4,
+          "actual": "nan",
+          "expected": 0.0
+        }
+      ]
+    }
+  ],
+  "polynomial_example": {
+    "model": 1.0,
+    "model_gradient": "nan",
+    "expected_model_gradient": 2.0,
+    "direct_gradient": 2.0,
+    "model_finite_difference": 2.0,
+    "loss": 4.5,
+    "loss_gradient": "nan",
+    "expected_loss_gradient": -6.0,
+    "step_size": 0.125,
+    "loss_after_step": "nan",
+    "loss_after_reference_step": 0.017578125
+  },
+  "mixed_controls": [
+    {
+      "base": 0.5,
+      "exponent": 0.0,
+      "mixed_derivative": 2.0,
+      "expected": 2.0
+    },
+    {
+      "base": 0.5,
+      "exponent": 1.0,
+      "mixed_derivative": 0.3068528175354004,
+      "expected": 0.3068528194400547
+    },
+    {
+      "base": 0.5,
+      "exponent": 2.5,
+      "mixed_derivative": -0.25910791754722595,
+      "expected": -0.25910794907456824
+    },
+    {
+      "base": 2.0,
+      "exponent": 0.0,
+      "mixed_derivative": 0.5,
+      "expected": 0.5
+    },
+    {
+      "base": 2.0,
+      "exponent": 1.0,
+      "mixed_derivative": 1.6931471824645996,
+      "expected": 1.6931471805599454
+    },
+    {
+      "base": 2.0,
+      "exponent": 2.5,
+      "mixed_derivative": 7.729717254638672,
+      "expected": 7.729717842088927
+    }
+  ],
+  "cpu_seconds": 0.005919000000000001
+}

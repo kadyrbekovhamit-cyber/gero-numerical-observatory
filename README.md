@@ -1,5 +1,7 @@
 # GERO Numerical Observatory
 
+- [MLX power: fixed-exponent derivatives at zero](audits/2026-09-09-mlx-power-zero-derivatives) — official wheel and C++ reproduction, 41 scenarios / 396 checks, targeted patch and test-name collision.
+
 A reproducible CPU benchmark for mathematical contracts in ONNX graphs. It runs identical models in **ONNX Runtime** and the official **ONNX ReferenceEvaluator**, checks invariants, preserves artifacts and exports a filterable static dashboard.
 
 [71-second video](https://www.youtube.com/shorts/KTLC9_FomBs) · [Interactive reports](https://www.gero.uz/stability/) · [Publication and limits](https://www.gero.uz/research/articles/onnx-numerical-observatory-reproduced-snapshot.html) · [Measured snapshot](benchmarks/2026-09-06/latest.json) · [Reverification](benchmarks/2026-09-06/reverification.json)

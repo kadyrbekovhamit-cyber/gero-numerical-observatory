@@ -1,0 +1,23 @@
+{
+  "repository": "ml-explore/mlx",
+  "revision": "24c699ecee2f7c8b2040de8da1c8382c8bcf31c7",
+  "checked_at": "2026-09-09T11:54:13.510857+00:00",
+  "files": {
+    "upstream-primitives.cpp": {
+      "path": "mlx/primitives.cpp",
+      "sha256": "6a045372433d91ec0ec00caf134ad5010fe34d8c0ae7a114496f632b24f74f09"
+    },
+    "upstream-test_autograd.py": {
+      "path": "python/tests/test_autograd.py",
+      "sha256": "a615fc5a754b72e0d09dce55984014044ff360e09cf79005abf345c71ac13c90"
+    }
+  },
+  "baseline_revision": "ce916dbbcaa88e433b6fd1e60a17f766d49c27fe",
+  "Power_methods_match_current_source": {
+    "vjp": true,
+    "jvp": true
+  },
+  "archive": "${MLX_CPU_BUILD}/mlx-build/libmlx.a",
+  "archive_sha256": "7826e14e2d1ee526a16352829d460ae39c048e331c339be0b6f8d67d74e68a06",
+  "build": "Pristine/patched primitives.cpp linked ahead of reused CPU-only libmlx.a; not a full clean current-main build. Python test additions are syntax checked only."
+}

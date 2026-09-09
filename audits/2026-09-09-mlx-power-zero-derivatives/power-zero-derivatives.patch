@@ -1,0 +1,59 @@
+--- a/mlx/primitives.cpp
++++ b/mlx/primitives.cpp
+@@ -3452,9 +3452,21 @@
+   std::vector<array> vjps;
+   for (auto arg : argnums) {
+     if (arg == 0) {
++      const auto dtype = primals[0].dtype();
++      auto safe_base = primals[0];
++      if (dtype != complex64) {
++        safe_base = where(
++            logical_and(
++                equal(primals[0], array(0, dtype), stream()),
++                equal(primals[1], array(0, dtype), stream()),
++                stream()),
++            array(1, dtype),
++            primals[0],
++            stream());
++      }
+       vjps.push_back(multiply(
+           power(
+-              primals[0],
++              safe_base,
+               subtract(primals[1], array(1, primals[0].dtype()), stream()),
+               stream()),
+           primals[1],
+--- a/python/tests/test_autograd.py
++++ b/python/tests/test_autograd.py
+@@ -696,7 +696,7 @@
+             out = mx.grad(fun)(mx.array(1.0, t), mx.array(1.0, t))
+             self.assertEqual(out.dtype, t)
+ 
+-    def test_power_grad(self):
++    def test_power_grad_base(self):
+         x = mx.array(0.0)
+         g = mx.grad(lambda x: x**2)(x)
+         self.assertEqual(g.item(), 0.0)
+@@ -708,6 +708,22 @@
+         x = mx.array(2.0)
+         g = mx.grad(lambda x: x**2)(x)
+         self.assertAlmostEqual(g.item(), 4.0)
++
++    def test_power_fixed_integer_higher_grad_at_zero(self):
++        for n in range(4):
++            def fn(x, n=n):
++                return mx.power(x, float(n))
++
++            for _ in range(n + 1):
++                fn = mx.grad(fn)
++            self.assertEqual(fn(mx.array(0.0)).item(), 0.0)
++
++    def test_power_mixed_grad_at_zero_exponent(self):
++        def first_base(a, b):
++            return mx.grad(lambda x: mx.power(x, b))(a)
++
++        mixed = mx.grad(lambda b: first_base(mx.array(2.0), b))
++        self.assertEqual(mixed(mx.array(0.0)).item(), 0.5)
+ 
+     def test_eval_in_grad(self):
+         arr = mx.array([1.0])

@@ -1,0 +1,283 @@
+{
+  "fresh_wheel_rerun": true,
+  "fresh_native_rebuild_and_runs": true,
+  "input_hashes_passed": 32,
+  "artifact_checks": {
+    "passed": true,
+    "checks": 52,
+    "results": [
+      {
+        "name": "hash upstream-primitives.cpp",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "hash upstream-test_autograd.py",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "Power_VJP_JVP_current_match",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "patch_applies",
+        "passed": true,
+        "details": ""
+      },
+      {
+        "name": "patch_applied",
+        "passed": true,
+        "details": ""
+      },
+      {
+        "name": "applied_bytes mlx/primitives.cpp",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "applied_bytes python/tests/test_autograd.py",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "before native_summary",
+        "passed": true,
+        "details": [
+          41,
+          29,
+          12,
+          396,
+          42
+        ]
+      },
+      {
+        "name": "before no_exceptions",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "before actual_loss_evidence",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "after native_summary",
+        "passed": true,
+        "details": [
+          41,
+          41,
+          0,
+          396,
+          0
+        ]
+      },
+      {
+        "name": "after no_exceptions",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "after actual_loss_evidence",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "mixed_controls_pass_before",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "compile-test exit",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "compile-before exit",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "link-before exit",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "run-before exit",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "compile-after exit",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "link-after exit",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "run-after exit",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "official_wheel_cpu",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "wheel_polynomial_0",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "wheel_polynomial_1",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "wheel_polynomial_2",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "wheel_polynomial_3",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "wheel_model_counterexample",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "wheel_loss_counterexample",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "wheel_mixed_controls",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "original_shadowed_test",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "patched_power_names_unique",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "renamed_original_and_new_tests_present",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "real_path_guard_only",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "complete_query repo:ml-explore/mlx power gradient zero",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "complete_query repo:ml-explore/mlx \"power\" \"NaN\"",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "complete_query repo:ml-explore/mlx \"power\" \"higher\"",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "complete_query repo:ml-explore/mlx \"test_power_grad\"",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "history_requests_succeeded",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "README.md link probe.py",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "README.md link probe-results.json",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "README.md link power-zero-derivatives.patch",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "README.md link test-name-audit.json",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "README.md link native_regression.cpp",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "README.md link run-before.log",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "README.md link run-after.log",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "README.md link source-metadata.json",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "README.md link build-results.json",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "README.md link DUPLICATES.md",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "README.md link validation-results.json",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "README.md link SHA256SUMS.json",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "DUPLICATES.md link duplicate-search.json",
+        "passed": true,
+        "details": null
+      },
+      {
+        "name": "DUPLICATES.md link related-history.json",
+        "passed": true,
+        "details": null
+      }
+    ]
+  }
+}
