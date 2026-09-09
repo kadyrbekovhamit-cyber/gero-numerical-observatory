@@ -1,0 +1,40 @@
+--- a/mlx/primitives.cpp
++++ b/mlx/primitives.cpp
+@@ -10,6 +10,7 @@
+ #include <sstream>
+ #include <stdexcept>
+ 
++#include "mlx/backend/common/hadamard.h"
+ #include "mlx/backend/common/utils.h"
+ #include "mlx/fft.h"
+ #include "mlx/linalg.h"
+@@ -6299,7 +6300,28 @@
+     const std::vector<array>&) {
+   assert(primals.size() == 1);
+   assert(argnums.size() == 1);
+-  return jvp(primals, cotangents, argnums);
++  auto [n, m] = decompose_hadamard(cotangents[0].shape(-1));
++  if (m == 1 || m == 12) {
++    return jvp(primals, cotangents, argnums);
++  }
++
++  std::vector<float> entries;
++  entries.reserve(m * m);
++  auto matrix_text = hadamard_matrices().at(m);
++  for (char c : matrix_text) {
++    if (c == '+' || c == '-') {
++      entries.push_back(c == '+' ? 1.0f : -1.0f);
++    }
++  }
++  auto matrix = astype(
++      array(entries.data(), {m, m}, float32), cotangents[0].dtype(), stream());
++  auto blocks = unflatten(cotangents[0], -1, {m, n}, stream());
++  auto transposed = matmul(swapaxes(blocks, -1, -2, stream()), matrix, stream());
++  transposed = swapaxes(transposed, -1, -2, stream());
++  return {reshape(
++      hadamard_transform(transposed, scale_, stream()),
++      cotangents[0].shape(),
++      stream())};
+ }
+ 
+ std::vector<array> Hadamard::jvp(

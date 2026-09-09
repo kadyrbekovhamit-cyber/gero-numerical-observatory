@@ -1,0 +1,186 @@
+{
+  "passed": 45,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "python_syntax/build_and_test.py",
+      "passed": true
+    },
+    {
+      "check": "python_syntax/upstream-python_tests_test_ops.py",
+      "passed": true
+    },
+    {
+      "check": "python_syntax/validate_artifacts.py",
+      "passed": true
+    },
+    {
+      "check": "python_syntax/probe.py",
+      "passed": true
+    },
+    {
+      "check": "python_syntax/run_e0.py",
+      "passed": true
+    },
+    {
+      "check": "native_summary/before",
+      "passed": true
+    },
+    {
+      "check": "native_failure_rows/before",
+      "passed": true
+    },
+    {
+      "check": "native_summary/after",
+      "passed": true
+    },
+    {
+      "check": "native_failure_rows/after",
+      "passed": true
+    },
+    {
+      "check": "build_exit_codes",
+      "passed": true
+    },
+    {
+      "check": "build_sequential_steps",
+      "passed": true
+    },
+    {
+      "check": "compiler_diagnostics/compile-test",
+      "passed": true
+    },
+    {
+      "check": "compiler_diagnostics/compile-before",
+      "passed": true
+    },
+    {
+      "check": "compiler_diagnostics/compile-after",
+      "passed": true
+    },
+    {
+      "check": "same_Hadamard_vjp",
+      "passed": true
+    },
+    {
+      "check": "same_Hadamard_jvp",
+      "passed": true
+    },
+    {
+      "check": "patch_preserves_jvp",
+      "passed": true
+    },
+    {
+      "check": "patch_changes_vjp",
+      "passed": true
+    },
+    {
+      "check": "patch_applies_to_pinned_main",
+      "passed": true
+    },
+    {
+      "check": "patch_matches_saved_result",
+      "passed": true
+    },
+    {
+      "check": "integer_orthogonality/12",
+      "passed": true
+    },
+    {
+      "check": "matrix_asymmetry/12",
+      "passed": true
+    },
+    {
+      "check": "exact_energy_gradient/12",
+      "passed": true
+    },
+    {
+      "check": "integer_orthogonality/20",
+      "passed": true
+    },
+    {
+      "check": "matrix_asymmetry/20",
+      "passed": true
+    },
+    {
+      "check": "exact_energy_gradient/20",
+      "passed": true
+    },
+    {
+      "check": "integer_orthogonality/28",
+      "passed": true
+    },
+    {
+      "check": "matrix_asymmetry/28",
+      "passed": true
+    },
+    {
+      "check": "exact_energy_gradient/28",
+      "passed": true
+    },
+    {
+      "check": "official_wheel_version",
+      "passed": true
+    },
+    {
+      "check": "official_wheel_CPU",
+      "passed": true
+    },
+    {
+      "check": "symmetric_control/4",
+      "passed": true
+    },
+    {
+      "check": "symmetric_control/12",
+      "passed": true
+    },
+    {
+      "check": "wrong_sign_reproduced/20",
+      "passed": true
+    },
+    {
+      "check": "loss_increases/20",
+      "passed": true
+    },
+    {
+      "check": "wrong_sign_reproduced/28",
+      "passed": true
+    },
+    {
+      "check": "loss_increases/28",
+      "passed": true
+    },
+    {
+      "check": "wrong_sign_reproduced/40",
+      "passed": true
+    },
+    {
+      "check": "loss_increases/40",
+      "passed": true
+    },
+    {
+      "check": "wrong_sign_reproduced/56",
+      "passed": true
+    },
+    {
+      "check": "loss_increases/56",
+      "passed": true
+    },
+    {
+      "check": "complete_search/repo:ml-explore/mlx hadamard gradient",
+      "passed": true
+    },
+    {
+      "check": "complete_search/repo:ml-explore/mlx hadamard vjp",
+      "passed": true
+    },
+    {
+      "check": "complete_search/repo:ml-explore/mlx hadamard transpose",
+      "passed": true
+    },
+    {
+      "check": "complete_search/repo:ml-explore/mlx hadamard",
+      "passed": true
+    }
+  ]
+}

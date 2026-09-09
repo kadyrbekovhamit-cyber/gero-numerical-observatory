@@ -1,0 +1,69 @@
+[
+  {
+    "label": "compile-e0",
+    "command": [
+      "/usr/bin/c++",
+      "-DACCELERATE_NEW_LAPACK",
+      "-DFMT_HEADER_ONLY=1",
+      "-DMLX_STATIC",
+      "-DMLX_USE_ACCELERATE",
+      "-I${MLX_CPU_BUILD}/_deps/json-src/single_include/nlohmann",
+      "-I${MLX_SOURCE_ROOT}",
+      "-I${MLX_CPU_BUILD}/_deps/fmt-src/include",
+      "-F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks",
+      "-O0",
+      "-DNDEBUG",
+      "-std=gnu++20",
+      "-fPIC",
+      "-fvisibility=hidden",
+      "-fvisibility-inlines-hidden",
+      "-o",
+      "${AUDIT_ROOT}/e0_step.o",
+      "-c",
+      "${AUDIT_ROOT}/e0_step.cpp"
+    ],
+    "returncode": 0
+  },
+  {
+    "label": "link-e0-before",
+    "command": [
+      "/usr/bin/c++",
+      "${AUDIT_ROOT}/e0_step.o",
+      "${AUDIT_ROOT}/before.o",
+      "${MLX_CPU_BUILD}/mlx-build/libmlx.a",
+      "-framework",
+      "Accelerate",
+      "-o",
+      "${AUDIT_ROOT}/e0-before"
+    ],
+    "returncode": 0
+  },
+  {
+    "label": "run-e0-before",
+    "command": [
+      "${AUDIT_ROOT}/e0-before"
+    ],
+    "returncode": 1
+  },
+  {
+    "label": "link-e0-after",
+    "command": [
+      "/usr/bin/c++",
+      "${AUDIT_ROOT}/e0_step.o",
+      "${AUDIT_ROOT}/after.o",
+      "${MLX_CPU_BUILD}/mlx-build/libmlx.a",
+      "-framework",
+      "Accelerate",
+      "-o",
+      "${AUDIT_ROOT}/e0-after"
+    ],
+    "returncode": 0
+  },
+  {
+    "label": "run-e0-after",
+    "command": [
+      "${AUDIT_ROOT}/e0-after"
+    ],
+    "returncode": 0
+  }
+]

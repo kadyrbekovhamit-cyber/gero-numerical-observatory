@@ -1,0 +1,38 @@
+{
+  "upstream_revision": "24c699ecee2f7c8b2040de8da1c8382c8bcf31c7",
+  "fetched_utc": "2026-09-09T12:19:17.810822+00:00",
+  "files": {
+    "mlx/backend/common/hadamard.h": {
+      "blob_sha": "ba5c4e41e62ce90aa6ee9572c72098ecf228e106",
+      "sha256": "9fe5c5c7a386cc74266ed031dc95a106f330d8b6e2f76dc20137c546c01ddfb7",
+      "local_file": "upstream-mlx_backend_common_hadamard.h",
+      "url": "https://github.com/ml-explore/mlx/blob/24c699ecee2f7c8b2040de8da1c8382c8bcf31c7/mlx/backend/common/hadamard.h"
+    },
+    "mlx/backend/cpu/hadamard.cpp": {
+      "blob_sha": "bf7e1dc261643028d0e9d501907b57d02aae4013",
+      "sha256": "93d940f7f66b6492a943c30e1ec44995fcb5aa5ac3ed1840ce4e8d783fef4779",
+      "local_file": "upstream-mlx_backend_cpu_hadamard.cpp",
+      "url": "https://github.com/ml-explore/mlx/blob/24c699ecee2f7c8b2040de8da1c8382c8bcf31c7/mlx/backend/cpu/hadamard.cpp"
+    },
+    "python/tests/test_ops.py": {
+      "blob_sha": "d5568610e874e8410ecbd36efb5685d1b08b3316",
+      "sha256": "ada0a6f851bc8d91f6c6471dad753022c884ce71493c6e21da44d35c8ce8b446",
+      "local_file": "upstream-python_tests_test_ops.py",
+      "url": "https://github.com/ml-explore/mlx/blob/24c699ecee2f7c8b2040de8da1c8382c8bcf31c7/python/tests/test_ops.py"
+    },
+    "mlx/primitives.cpp": {
+      "blob_sha": "f046670eefa87cd1d54e70aea36338006bc0ec31",
+      "local_file": "upstream-primitives.cpp",
+      "url": "https://github.com/ml-explore/mlx/blob/24c699ecee2f7c8b2040de8da1c8382c8bcf31c7/mlx/primitives.cpp"
+    }
+  },
+  "baseline_revision": "ce916dbbcaa88e433b6fd1e60a17f766d49c27fe",
+  "Hadamard_methods_match_current_source": {
+    "vjp": true,
+    "jvp": true
+  },
+  "constant_matrices_match_current": true,
+  "archive": "${MLX_CPU_BUILD}/mlx-build/libmlx.a",
+  "archive_sha256": "7826e14e2d1ee526a16352829d460ae39c048e331c339be0b6f8d67d74e68a06",
+  "build": "Pristine/patched primitives.cpp linked ahead of reused CPU-only libmlx.a; not a full clean current-main build."
+}
