@@ -1,0 +1,93 @@
+--- a/mlx/primitives.cpp
++++ b/mlx/primitives.cpp
+@@ -4482,6 +4482,21 @@
+   const array& updates = primals.back();
+   const std::vector<array> indices(primals.begin() + 1, primals.end() - 1);
+ 
++  std::optional<array> update_winners;
++  std::optional<array> update_counts;
++  if (reduce_type_ == Scatter::Max || reduce_type_ == Scatter::Min) {
++    auto slice_sizes = Shape(
++        updates.shape().end() - values.ndim(), updates.shape().end());
++    update_winners = equal(
++        updates, gather(result, indices, axes_, slice_sizes, stream()), stream());
++    update_counts = scatter_add(
++        zeros(result.shape(), uint32, stream()),
++        indices,
++        astype(*update_winners, uint32, stream()),
++        axes_,
++        stream());
++  }
++
+   std::vector<array> vjps;
+   for (auto num : argnums) {
+     // Gradient wrt to the input array
+@@ -4503,7 +4518,10 @@
+         case Scatter::Max:
+         case Scatter::Min: {
+           vjps.push_back(where(
+-              equal(result, values, stream()),
++              logical_and(
++                  equal(result, values, stream()),
++                  equal(*update_counts, array(0, uint32), stream()),
++                  stream()),
+               cotangents[0],
+               array(0, cotangents[0].dtype()),
+               stream()));
+@@ -4528,16 +4546,20 @@
+         }
+         case Scatter::Max:
+         case Scatter::Min: {
+-          auto slice_sizes = cotangents[0].shape();
+-          for (auto ax : axes_) {
+-            slice_sizes[ax] = 1;
+-          }
++          auto slice_sizes = Shape(
++              updates.shape().end() - values.ndim(), updates.shape().end());
+           auto gathered_cotan =
+               gather(cotangents[0], indices, axes_, slice_sizes, stream());
+-          auto gathered_result =
+-              gather(result, indices, axes_, slice_sizes, stream());
+-          vjps.push_back(
+-              multiply(gathered_cotan, gathered_result == updates, stream()));
++          auto counts = gather(
++              maximum(*update_counts, array(1, uint32), stream()),
++              indices,
++              axes_,
++              slice_sizes,
++              stream());
++          vjps.push_back(multiply(
++              divide(gathered_cotan, counts, stream()),
++              *update_winners,
++              stream()));
+           break;
+         }
+         default: {
+@@ -5138,13 +5160,23 @@
+           vjps.push_back(cotan);
+           break;
+         case SliceUpdate::Max:
+-        case SliceUpdate::Min:
+-          vjps.push_back(where(
+-              equal(result, values, stream()),
++        case SliceUpdate::Min: {
++          auto sliced_values =
++              slice(values, start_indices_, end_indices_, strides_, stream());
++          auto source_wins = reduce_type_ == SliceUpdate::Max
++              ? greater(sliced_values, updates, stream())
++              : less(sliced_values, updates, stream());
++          auto sliced_cotan =
++              slice(cotan, start_indices_, end_indices_, strides_, stream());
++          vjps.push_back(slice_update(
+               cotan,
+-              array(0, cotan.dtype()),
++              multiply(sliced_cotan, source_wins, stream()),
++              start_indices_,
++              end_indices_,
++              strides_,
+               stream()));
+           break;
++        }
+         case SliceUpdate::Prod:
+           vjps.push_back(array(
+               cotan.shape(),

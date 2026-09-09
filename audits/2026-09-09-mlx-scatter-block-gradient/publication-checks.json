@@ -1,0 +1,22 @@
+{
+  "input_manifest_entries": 38,
+  "all_input_hashes_match": true,
+  "native_rebuilt_and_rerun": true,
+  "fresh_wheel_probe": false,
+  "strict_blocks": {
+    "scenarios": 2,
+    "checks": 26,
+    "baseline_failures": 12,
+    "minimal_patch_failures": 0
+  },
+  "extended_selection": {
+    "scenarios": 40,
+    "checks": 388,
+    "baseline_failures": 176,
+    "extended_patch_failures": 0
+  },
+  "input_validation_checks": 57,
+  "input_validation_passed": true,
+  "build": "Partial translation-unit rebuild on compatible native base; not clean full main build.",
+  "public_runner_changes": "Filesystem references only, baseline pinned snapshot, environment-configured source/build directories."
+}

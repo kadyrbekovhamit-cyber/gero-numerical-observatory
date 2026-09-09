@@ -1,0 +1,15 @@
+--- a/mlx/primitives.cpp
++++ b/mlx/primitives.cpp
+@@ -4528,10 +4528,8 @@
+         }
+         case Scatter::Max:
+         case Scatter::Min: {
+-          auto slice_sizes = cotangents[0].shape();
+-          for (auto ax : axes_) {
+-            slice_sizes[ax] = 1;
+-          }
++          auto slice_sizes = Shape(
++              updates.shape().end() - values.ndim(), updates.shape().end());
+           auto gathered_cotan =
+               gather(cotangents[0], indices, axes_, slice_sizes, stream());
+           auto gathered_result =

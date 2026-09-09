@@ -4,6 +4,13 @@ A reproducible CPU benchmark for mathematical contracts in ONNX graphs. It runs 
 
 [71-second video](https://www.youtube.com/shorts/KTLC9_FomBs) · [Interactive reports](https://www.gero.uz/stability/) · [Publication and limits](https://www.gero.uz/research/articles/onnx-numerical-observatory-reproduced-snapshot.html) · [Measured snapshot](benchmarks/2026-09-06/latest.json) · [Reverification](benchmarks/2026-09-06/reverification.json)
 
+## MLX scatter extrema: lost gradients in block updates
+
+A strict, in-bounds C++ block update loses a winning gradient. Independent
+finite differences confirm the reference; a minimal extent correction passes
+26 targeted checks. Historical ties are treated separately. [Report, tests and
+patches](audits/2026-09-09-mlx-scatter-block-gradient/README.md).
+
 ## MLX cumprod: NaN Hessians at zero
 
 A smooth polynomial has a correct first gradient but a non-finite Hessian.

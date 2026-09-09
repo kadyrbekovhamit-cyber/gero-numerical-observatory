@@ -1,0 +1,283 @@
+{
+  "version": "0.32.2",
+  "device": "Device(cpu, 0)",
+  "cases": [
+    {
+      "name": "maximum_ordinary_identity",
+      "input": 2.0,
+      "forward": 2.0,
+      "gradient": 1.0,
+      "expected_gradient": 1.0,
+      "directional_finite_difference": 1.0,
+      "second": 0.0,
+      "expected_second": 0.0
+    },
+    {
+      "name": "maximum_scatter_shared_1",
+      "input": 2.0,
+      "forward": 2.0,
+      "gradient": 2.0,
+      "expected_gradient": 1.0,
+      "directional_finite_difference": 1.0,
+      "second": 0.0,
+      "expected_second": 0.0
+    },
+    {
+      "name": "maximum_scatter_shared_square_1",
+      "input": 2.0,
+      "forward": 2.0,
+      "gradient": 4.0,
+      "expected_gradient": 2.0,
+      "directional_finite_difference": 2.0,
+      "second": 4.0,
+      "expected_second": 1.0
+    },
+    {
+      "name": "maximum_scatter_shared_2",
+      "input": 2.0,
+      "forward": 2.0,
+      "gradient": 3.0,
+      "expected_gradient": 1.0,
+      "directional_finite_difference": 1.0,
+      "second": 0.0,
+      "expected_second": 0.0
+    },
+    {
+      "name": "maximum_scatter_shared_square_2",
+      "input": 2.0,
+      "forward": 2.0,
+      "gradient": 6.0,
+      "expected_gradient": 2.0,
+      "directional_finite_difference": 2.0,
+      "second": 9.0,
+      "expected_second": 1.0
+    },
+    {
+      "name": "maximum_scatter_shared_4",
+      "input": 2.0,
+      "forward": 2.0,
+      "gradient": 5.0,
+      "expected_gradient": 1.0,
+      "directional_finite_difference": 1.0,
+      "second": 0.0,
+      "expected_second": 0.0
+    },
+    {
+      "name": "maximum_scatter_shared_square_4",
+      "input": 2.0,
+      "forward": 2.0,
+      "gradient": 10.0,
+      "expected_gradient": 2.0,
+      "directional_finite_difference": 2.0,
+      "second": 25.0,
+      "expected_second": 1.0
+    },
+    {
+      "name": "maximum_slice_identity",
+      "input": 2.0,
+      "forward": 2.0,
+      "gradient": 1.0,
+      "expected_gradient": 1.0,
+      "directional_finite_difference": 1.0,
+      "second": 0.0,
+      "expected_second": 0.0
+    },
+    {
+      "name": "maximum_partial_slice_translation",
+      "input": 2.0,
+      "forward": 6.0,
+      "gradient": 4.0,
+      "expected_gradient": 3.0,
+      "directional_finite_difference": 3.0,
+      "second": 0.0,
+      "expected_second": 0.0
+    },
+    {
+      "name": "maximum_vjp_sum",
+      "source": [
+        1.0,
+        5.0,
+        0.0
+      ],
+      "updates": [
+        1.0,
+        1.0,
+        4.0,
+        0.0
+      ],
+      "indices": [
+        0,
+        0,
+        1,
+        2
+      ],
+      "cotangent": [
+        2.0,
+        -3.0,
+        4.0
+      ],
+      "source_gradient": [
+        2.0,
+        -3.0,
+        4.0
+      ],
+      "update_gradient": [
+        2.0,
+        2.0,
+        -0.0,
+        4.0
+      ],
+      "total_gradient": 11.0,
+      "expected_total": 3.0
+    },
+    {
+      "name": "maximum_common_shift",
+      "input": 0.0,
+      "forward": -13.0,
+      "gradient": 11.0,
+      "expected_gradient": 3.0,
+      "directional_finite_difference": 3.0,
+      "second": 0.0,
+      "expected_second": 0.0
+    },
+    {
+      "name": "minimum_ordinary_identity",
+      "input": 2.0,
+      "forward": 2.0,
+      "gradient": 1.0,
+      "expected_gradient": 1.0,
+      "directional_finite_difference": 1.0,
+      "second": 0.0,
+      "expected_second": 0.0
+    },
+    {
+      "name": "minimum_scatter_shared_1",
+      "input": 2.0,
+      "forward": 2.0,
+      "gradient": 2.0,
+      "expected_gradient": 1.0,
+      "directional_finite_difference": 1.0,
+      "second": 0.0,
+      "expected_second": 0.0
+    },
+    {
+      "name": "minimum_scatter_shared_square_1",
+      "input": 2.0,
+      "forward": 2.0,
+      "gradient": 4.0,
+      "expected_gradient": 2.0,
+      "directional_finite_difference": 2.0,
+      "second": 4.0,
+      "expected_second": 1.0
+    },
+    {
+      "name": "minimum_scatter_shared_2",
+      "input": 2.0,
+      "forward": 2.0,
+      "gradient": 3.0,
+      "expected_gradient": 1.0,
+      "directional_finite_difference": 1.0,
+      "second": 0.0,
+      "expected_second": 0.0
+    },
+    {
+      "name": "minimum_scatter_shared_square_2",
+      "input": 2.0,
+      "forward": 2.0,
+      "gradient": 6.0,
+      "expected_gradient": 2.0,
+      "directional_finite_difference": 2.0,
+      "second": 9.0,
+      "expected_second": 1.0
+    },
+    {
+      "name": "minimum_scatter_shared_4",
+      "input": 2.0,
+      "forward": 2.0,
+      "gradient": 5.0,
+      "expected_gradient": 1.0,
+      "directional_finite_difference": 1.0,
+      "second": 0.0,
+      "expected_second": 0.0
+    },
+    {
+      "name": "minimum_scatter_shared_square_4",
+      "input": 2.0,
+      "forward": 2.0,
+      "gradient": 10.0,
+      "expected_gradient": 2.0,
+      "directional_finite_difference": 2.0,
+      "second": 25.0,
+      "expected_second": 1.0
+    },
+    {
+      "name": "minimum_slice_identity",
+      "input": 2.0,
+      "forward": 2.0,
+      "gradient": 1.0,
+      "expected_gradient": 1.0,
+      "directional_finite_difference": 1.0,
+      "second": 0.0,
+      "expected_second": 0.0
+    },
+    {
+      "name": "minimum_partial_slice_translation",
+      "input": 2.0,
+      "forward": 6.0,
+      "gradient": 4.0,
+      "expected_gradient": 3.0,
+      "directional_finite_difference": 3.0,
+      "second": 0.0,
+      "expected_second": 0.0
+    },
+    {
+      "name": "minimum_vjp_sum",
+      "source": [
+        1.0,
+        5.0,
+        0.0
+      ],
+      "updates": [
+        1.0,
+        1.0,
+        4.0,
+        0.0
+      ],
+      "indices": [
+        0,
+        0,
+        1,
+        2
+      ],
+      "cotangent": [
+        2.0,
+        -3.0,
+        4.0
+      ],
+      "source_gradient": [
+        2.0,
+        0.0,
+        4.0
+      ],
+      "update_gradient": [
+        2.0,
+        2.0,
+        -3.0,
+        4.0
+      ],
+      "total_gradient": 11.0,
+      "expected_total": 3.0
+    },
+    {
+      "name": "minimum_common_shift",
+      "input": 0.0,
+      "forward": -10.0,
+      "gradient": 11.0,
+      "expected_gradient": 3.0,
+      "directional_finite_difference": 3.0,
+      "second": 0.0,
+      "expected_second": 0.0
+    }
+  ],
+  "cpu_seconds": 0.008745000000000003
+}
