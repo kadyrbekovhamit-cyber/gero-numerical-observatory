@@ -4,6 +4,12 @@ A reproducible CPU benchmark for mathematical contracts in ONNX graphs. It runs 
 
 [71-second video](https://www.youtube.com/shorts/KTLC9_FomBs) · [Interactive reports](https://www.gero.uz/stability/) · [Publication and limits](https://www.gero.uz/research/articles/onnx-numerical-observatory-reproduced-snapshot.html) · [Measured snapshot](benchmarks/2026-09-06/latest.json) · [Reverification](benchmarks/2026-09-06/reverification.json)
 
+## MLX masked assignment: gradients cross batch examples
+
+A fixed-mask `vmap` assigns a gradient to an unused source element. Actual
+forward finite differences and an explicit-loop control agree; a local C++
+patch passes 19 scenarios and 255 checks. [Report, tests and patch](audits/2026-09-09-mlx-masked-scatter-batch-vjp/README.md).
+
 ## MLX scatter extrema: lost gradients in block updates
 
 A strict, in-bounds C++ block update loses a winning gradient. Independent

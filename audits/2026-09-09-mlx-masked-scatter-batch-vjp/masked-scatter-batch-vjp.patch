@@ -1,0 +1,46 @@
+--- a/mlx/primitives.cpp
++++ b/mlx/primitives.cpp
+@@ -4764,22 +4764,29 @@
+     if (arg == 0) {
+       vjps.push_back(where(mask_b, zeros_like(cotan, s), cotan, s));
+     } else if (arg == 2) {
+-      const array mask_flat = flatten(mask_b, s);
+-      const array cotan_flat = flatten(cotan, s);
+-
+-      const array idx_src =
+-          cumsum(astype(mask_flat, int32, s), 0, false, false, s);
+-      const array cotan_src =
+-          where(mask_flat, cotan_flat, array(0, cotan_flat.dtype()), s);
+-
+-      array gsrc_flat =
+-          zeros({static_cast<int>(src.size())}, cotan_src.dtype(), s);
+-      if (src.size() > 0) {
+-        const array cotan_updates =
+-            reshape(cotan_src, {static_cast<int>(idx_src.size()), 1}, s);
+-        gsrc_flat = scatter_add(gsrc_flat, idx_src, cotan_updates, 0, s);
++      if (src.size() == 0 || mask_b.size() == 0) {
++        vjps.push_back(zeros_like(src, s));
++        continue;
+       }
+ 
++      const auto batches = src.shape(0);
++      const auto source_batch_size = src.size() / batches;
++      const auto mask_rows = reshape(mask_b, {batches, -1}, s);
++      auto idx_src = cumsum(astype(mask_rows, int64, s), 1, false, false, s);
++      idx_src = where(mask_rows, idx_src, array(0, int64), s);
++      const auto offsets = multiply(
++          reshape(arange(batches, int64, s), {batches, 1}, s),
++          array(static_cast<int64_t>(source_batch_size)),
++          s);
++      idx_src = flatten(add(idx_src, offsets, s), s);
++      const auto cotan_src = flatten(
++          where(mask_b, cotan, array(0, cotan.dtype()), s), s);
++      auto gsrc_flat = scatter_add(
++          zeros({static_cast<int>(src.size())}, cotan.dtype(), s),
++          idx_src,
++          reshape(cotan_src, {static_cast<int>(idx_src.size()), 1}, s),
++          0,
++          s);
+       vjps.push_back(reshape(gsrc_flat, src.shape(), s));
+     } else {
+       throw std::invalid_argument(

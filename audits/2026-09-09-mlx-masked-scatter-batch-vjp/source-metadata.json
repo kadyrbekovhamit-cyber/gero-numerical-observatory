@@ -1,0 +1,40 @@
+{
+  "repository": "ml-explore/mlx",
+  "revision": "24c699ecee2f7c8b2040de8da1c8382c8bcf31c7",
+  "checked_at": "2026-09-09T11:34:05.149024+00:00",
+  "files": {
+    "upstream-primitives.cpp": {
+      "path": "mlx/primitives.cpp",
+      "sha256": "6a045372433d91ec0ec00caf134ad5010fe34d8c0ae7a114496f632b24f74f09"
+    },
+    "upstream-ops.cpp": {
+      "path": "mlx/ops.cpp",
+      "sha256": "7cf1107972ae6d8e3e663efa14a881f46091504822b5e7df69588111bead35bc"
+    },
+    "upstream-indexing.cpp": {
+      "path": "mlx/backend/cpu/indexing.cpp",
+      "sha256": "fe22d9220ca145910d6c339e8a8b69df36bd2c1e5e22b20612291c47eb8325a4"
+    }
+  },
+  "baseline_revision": "ce916dbbcaa88e433b6fd1e60a17f766d49c27fe",
+  "MaskedScatter_vjp_matches_current_source": true,
+  "archive": "${MLX_CPU_BUILD}/mlx-build/libmlx.a",
+  "archive_sha256": "7826e14e2d1ee526a16352829d460ae39c048e331c339be0b6f8d67d74e68a06",
+  "build": "Pristine/patched primitives.cpp separately compiled and linked ahead of reused CPU-only libmlx.a; not a full clean main build.",
+  "related_methods_match_current_source": {
+    "std::vector<array> MaskedScatter::vjp(": true,
+    "std::vector<array> MaskedScatter::jvp(": true,
+    "std::pair<std::vector<array>, std::vector<int>> MaskedScatter::vmap(": true,
+    "array masked_scatter(": true,
+    "void masked_scatter_impl(": true,
+    "void MaskedScatter::eval_cpu(": true
+  },
+  "publication_rechecked_methods": {
+    "std::vector<array> MaskedScatter::vjp(": true,
+    "std::vector<array> MaskedScatter::jvp(": true,
+    "std::pair<std::vector<array>, std::vector<int>> MaskedScatter::vmap(": true,
+    "array masked_scatter(": true,
+    "void masked_scatter_impl(": true,
+    "void MaskedScatter::eval_cpu(": true
+  }
+}

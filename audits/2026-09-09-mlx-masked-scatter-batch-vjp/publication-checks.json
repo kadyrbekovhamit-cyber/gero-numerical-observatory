@@ -1,0 +1,19 @@
+{
+  "original_artifact_hashes": 31,
+  "all_match": true,
+  "fresh_native_runs": true,
+  "fresh_wheel_probe": true,
+  "artifact_checks_passed": 49,
+  "scenarios": 19,
+  "checks": 255,
+  "baseline_failed_checks": 72,
+  "patched_failed_checks": 0,
+  "six_methods_recompared": {
+    "std::vector<array> MaskedScatter::vjp(": true,
+    "std::vector<array> MaskedScatter::jvp(": true,
+    "std::pair<std::vector<array>, std::vector<int>> MaskedScatter::vmap(": true,
+    "array masked_scatter(": true,
+    "void masked_scatter_impl(": true,
+    "void MaskedScatter::eval_cpu(": true
+  }
+}
