@@ -1,0 +1,43 @@
+1
+00:00:00,000 --> 00:00:01,958
+Dropout can copy inputs correctly...
+
+2
+00:00:02,200 --> 00:00:04,404
+...and still send a gradient to the wrong place.
+
+3
+00:00:04,667 --> 00:00:08,534
+At zero drop rate, each input must receive its own output gradient.
+
+4
+00:00:08,767 --> 00:00:13,170
+The gradients are [1,2,3] and [10,20,30].
+
+5
+00:00:13,400 --> 00:00:16,571
+The original overwrites the first and leaves the second at zero.
+
+6
+00:00:16,833 --> 00:00:18,705
+The loop keeps writing to input zero.
+
+7
+00:00:18,967 --> 00:00:21,759
+Using the current input index repairs the tested route.
+
+8
+00:00:22,000 --> 00:00:24,124
+Finite differences confirm the derivative.
+
+9
+00:00:24,367 --> 00:00:27,981
+Three added tests fail before; all 19 tests pass after.
+
+10
+00:00:28,233 --> 00:00:31,169
+Full-model and Samsung-device effects were not tested.
+
+11
+00:00:31,400 --> 00:00:33,876
+Read the code and evidence at gero.uz.

@@ -68,3 +68,7 @@ native executions; the finite-difference reference is algorithmically
 independent, not an external laboratory review.
 
 Tags: #MachineLearning #SoftwareTesting #Autodiff #NumericalComputing #nntrainer
+
+## Public case study
+
+[GERO article and short video](https://www.gero.uz/research/articles/nntrainer-dropout-gradient-routing.html) · [LinkedIn post](https://www.linkedin.com/feed/update/urn:li:share:7503307332915888129/) · [Publication record](../../publications/2026-09-09-nntrainer-dropout/)

@@ -1,0 +1,30 @@
+Dropout at a zero drop rate should preserve each input's gradient.
+
+In a local audit of nntrainer's C++ DropOutLayer, we tested two independent inputs with output gradients [1,2,3] and [10,20,30]. Forward returned both inputs correctly. Backward returned [10,20,30] for the first input and [0,0,0] for the second, using separate zero-initialized gradient buffers.
+
+The cause was one destination index: a loop over input i kept writing to input 0. Changing that index to i repaired the tested behavior.
+
+Evidence:
+• Central finite differences of the actual forward pass confirmed the derivatives.
+• A three-input saved-mask test also reproduced the routing error.
+• All 15 existing Dropout tests passed before the fix.
+• Three of four added tests failed before it; all 19 tests passed after it.
+• The final patched 19-test selection passed again before publication.
+
+This is a CPU FP32 layer-level result at nntrainer a7ea056. Full-network training, in-place graph allocation and Samsung-device effects were not tested. Measurements use an existing configured build, not a fresh clean build.
+
+The index already appears in a public 2021 patch; first discovery is not claimed. The proposed local fix has not been accepted upstream.
+
+Technical article:
+https://www.gero.uz/research/articles/nntrainer-dropout-gradient-routing.html
+
+C++ reproduction, patch, tests and logs:
+https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa16b7ccfbff9358b3484226fa45c838ad0457a0/audits/2026-09-09-nntrainer-dropout-routing
+
+For ML runtime teams, this suggests a useful regression check: assign distinct output gradients to independent inputs and verify each destination.
+
+I welcome independent reproduction and conversations about scoped numerical-correctness audits.
+
+Prepared with AI assistance. Numerical claims come from retained native executions and an independent mathematical reference, not a third-party review.
+
+#MachineLearning #SoftwareTesting #Autodiff #NumericalComputing #nntrainer
