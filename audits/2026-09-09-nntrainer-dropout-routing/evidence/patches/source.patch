@@ -1,0 +1,22 @@
+diff --git a/nntrainer/layers/dropout.cpp b/nntrainer/layers/dropout.cpp
+index b90a130..9be61c5 100644
+--- a/nntrainer/layers/dropout.cpp
++++ b/nntrainer/layers/dropout.cpp
+@@ -20,8 +20,6 @@
+ 
+ namespace nntrainer {
+ 
+-static constexpr size_t SINGLE_INOUT_IDX = 0;
+-
+ void DropOutLayer::finalize(InitLayerContext &context) {
+   auto const &input_dims = context.getInputDimensions();
+   context.setOutputDimensions(input_dims);
+@@ -64,7 +62,7 @@ void DropOutLayer::calcDerivative(RunLayerContext &context) {
+ 
+   for (unsigned int i = 0; i < context.getNumInputs(); ++i) {
+     const Tensor &derivative_ = context.getIncomingDerivative(i);
+-    Tensor &ret_ = context.getOutgoingDerivative(SINGLE_INOUT_IDX);
++    Tensor &ret_ = context.getOutgoingDerivative(i);
+ 
+     /** @todo make this in-place */
+     if (rate_ > epsilon) {

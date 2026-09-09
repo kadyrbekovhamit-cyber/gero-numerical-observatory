@@ -1,0 +1,32 @@
+{
+  "number": 1640,
+  "endpoint": "repos/nntrainer/nntrainer/pulls/1640/files?per_page=100",
+  "returncode": 0,
+  "returned_file_count": 7,
+  "files": [
+    {
+      "sha": "d9ad07b61d58817fba520b283712f9fc07bca1d5",
+      "filename": "nntrainer/layers/dropout.cpp",
+      "status": "modified",
+      "additions": 16,
+      "deletions": 15,
+      "changes": 31,
+      "blob_url": "https://github.com/nntrainer/nntrainer/blob/cc0777051bd917b616fc692f0d73cbfe7eebc0e6/nntrainer%2Flayers%2Fdropout.cpp",
+      "raw_url": "https://github.com/nntrainer/nntrainer/raw/cc0777051bd917b616fc692f0d73cbfe7eebc0e6/nntrainer%2Flayers%2Fdropout.cpp",
+      "contents_url": "https://api.github.com/repos/nntrainer/nntrainer/contents/nntrainer%2Flayers%2Fdropout.cpp?ref=cc0777051bd917b616fc692f0d73cbfe7eebc0e6",
+      "patch": "@@ -39,16 +39,16 @@ void DropOutLayer::forwarding(RunLayerContext &context, bool training) {\n   // buffer. So if the training is false, the output is the same with input. In\n   // other words, there is nothing happen during inference.\n \n-  if (training && rate_ > epsilon) {\n-    for (unsigned int i = 0; i < context.getNumInputs(); ++i) {\n-      Tensor &input_ = context.getInput(i);\n-      Tensor &output_ = context.getOutput(i);\n-      Tensor &mask_ = context.getTensor(mask_idx[i]);\n+  for (unsigned int i = 0; i < context.getNumInputs(); ++i) {\n+    Tensor &input_ = context.getInput(i);\n+    Tensor &output_ = context.getOutput(i);\n \n+    /** @todo make this in-place */\n+    if (training && rate_ > epsilon) {\n+      Tensor &mask_ = context.getTensor(mask_idx[i]);\n       mask_ = input_.dropout_mask(rate_);\n-      input_.multiply_i(mask_);\n-\n-      /** @todo: remove below once in_place support is ready from manager */\n+      input_.multiply(mask_, output_);\n+    } else {\n       output_.fill(input_);\n     }\n   }\n@@ -57,15 +57,16 @@ void DropOutLayer::forwarding(RunLayerContext &context, bool training) {\n void DropOutLayer::calcDerivative(RunLayerContext &context) {\n   // Assume it is in-place calculation\n   auto &rate_ = std::get<props::DropOutRate>(dropout_rate).get();\n-  if (rate_ > epsilon) {\n-    for (unsigned int i = 0; i < context.getNumInputs(); ++i) {\n-      Tensor &derivative_ = context.getIncomingDerivative(i);\n-      Tensor &ret_ = context.getOutgoingDerivative(SINGLE_INOUT_IDX);\n-      Tensor &mask_ = context.getTensor(mask_idx[i]);\n \n-      derivative_.multiply_i(mask_);\n+  for (unsigned int i = 0; i < context.getNumInputs(); ++i) {\n+    Tensor &derivative_ = context.getIncomingDerivative(i);\n+    Tensor &ret_ = context.getOutgoingDerivative(SINGLE_INOUT_IDX);\n \n-      /** @todo: remove below once in_place support is ready from manager */\n+    /** @todo make this in-place */\n+    if (rate_ > epsilon) {\n+      Tensor &mask_ = context.getTensor(mask_idx[i]);\n+      derivative_.multiply(mask_, ret_);\n+    } else {\n       ret_.fill(derivative_);\n     }\n   }"
+    },
+    {
+      "sha": "3a3880130208b4f6890fd00140d69277c1ff215a",
+      "filename": "test/unittest/layers/unittest_layers_dropout.cpp",
+      "status": "added",
+      "additions": 55,
+      "deletions": 0,
+      "changes": 55,
+      "blob_url": "https://github.com/nntrainer/nntrainer/blob/cc0777051bd917b616fc692f0d73cbfe7eebc0e6/test%2Funittest%2Flayers%2Funittest_layers_dropout.cpp",
+      "raw_url": "https://github.com/nntrainer/nntrainer/raw/cc0777051bd917b616fc692f0d73cbfe7eebc0e6/test%2Funittest%2Flayers%2Funittest_layers_dropout.cpp",
+      "contents_url": "https://api.github.com/repos/nntrainer/nntrainer/contents/test%2Funittest%2Flayers%2Funittest_layers_dropout.cpp?ref=cc0777051bd917b616fc692f0d73cbfe7eebc0e6",
+      "patch": "@@ -0,0 +1,55 @@\n+// SPDX-License-Identifier: Apache-2.0\n+/**\n+ * Copyright (C) 2021 Parichay Kapoor <pk.kapoor@samsung.com>\n+ *\n+ * @file unittest_layers_dropout.cpp\n+ * @date 15 October 2021\n+ * @brief Dropout Layer Test\n+ * @see\thttps://github.com/nnstreamer/nntrainer\n+ * @author Parichay Kapoor <pk.kapoor@samsung.com>\n+ * @bug No known bugs except for NYI items\n+ */\n+#include <tuple>\n+\n+#include <gtest/gtest.h>\n+\n+#include <dropout.h>\n+#include <layers_common_tests.h>\n+\n+auto semantic_dropout =\n+  LayerSemanticsParamType(nntrainer::createLayer<nntrainer::DropOutLayer>,\n+                          nntrainer::DropOutLayer::type, {}, 0, false, 1);\n+\n+INSTANTIATE_TEST_CASE_P(Dropout, LayerSemantics,\n+                        ::testing::Values(semantic_dropout));\n+\n+auto dropout_inference_option =\n+  LayerGoldenTestParamOptions::SKIP_CALC_GRAD |\n+  LayerGoldenTestParamOptions::SKIP_CALC_DERIV |\n+  LayerGoldenTestParamOptions::FORWARD_MODE_INFERENCE;\n+\n+auto dropout_20_training = LayerGoldenTestParamType(\n+  nntrainer::createLayer<nntrainer::DropOutLayer>, {\"dropout_rate=0.2\"},\n+  \"2:3:2:3\", \"dropout_20_training.nnlayergolden\",\n+  LayerGoldenTestParamOptions::DEFAULT |\n+    LayerGoldenTestParamOptions::DROPOUT_MATCH_60_PERCENT);\n+\n+auto dropout_20_inference = LayerGoldenTestParamType(\n+  nntrainer::createLayer<nntrainer::DropOutLayer>, {\"dropout_rate=0.2\"},\n+  \"2:3:2:3\", \"dropout_20_inference.nnlayergolden\", dropout_inference_option);\n+\n+auto dropout_0_training = LayerGoldenTestParamType(\n+  nntrainer::createLayer<nntrainer::DropOutLayer>, {\"dropout_rate=0.0\"},\n+  \"2:3:2:3\", \"dropout_0_training.nnlayergolden\",\n+  LayerGoldenTestParamOptions::DEFAULT);\n+\n+auto dropout_100_training = LayerGoldenTestParamType(\n+  nntrainer::createLayer<nntrainer::DropOutLayer>, {\"dropout_rate=1.0\"},\n+  \"2:3:2:3\", \"dropout_100_training.nnlayergolden\",\n+  LayerGoldenTestParamOptions::DEFAULT);\n+\n+INSTANTIATE_TEST_CASE_P(Dropout, LayerGoldenTest,\n+                        ::testing::Values(dropout_20_training,\n+                                          dropout_0_training,\n+                                          dropout_100_training,\n+                                          dropout_20_inference));"
+    }
+  ]
+}

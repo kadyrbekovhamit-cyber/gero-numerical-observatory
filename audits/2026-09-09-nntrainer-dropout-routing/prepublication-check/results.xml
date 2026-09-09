@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="4" failures="0" disabled="0" errors="0" time="0." timestamp="2026-09-09T09:10:07.878" name="AllTests">
+  <testsuite name="DropoutRoutingAudit" tests="4" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2026-09-09T09:10:07.878">
+    <testcase name="ZeroRateSingleInputControl" file="../test/unittest/layers/unittest_layers_dropout.cpp" line="172" status="run" result="completed" time="0." timestamp="2026-09-09T09:10:07.878" classname="DropoutRoutingAudit" />
+    <testcase name="ZeroRateRoutesEachIncomingGradientToItsInput" file="../test/unittest/layers/unittest_layers_dropout.cpp" line="179" status="run" result="completed" time="0." timestamp="2026-09-09T09:10:07.879" classname="DropoutRoutingAudit" />
+    <testcase name="ZeroRateMatchesRuntimeFiniteDifferences" file="../test/unittest/layers/unittest_layers_dropout.cpp" line="192" status="run" result="completed" time="0." timestamp="2026-09-09T09:10:07.879" classname="DropoutRoutingAudit" />
+    <testcase name="ReplayUsesEachInputsOwnGradientAndMask" file="../test/unittest/layers/unittest_layers_dropout.cpp" line="214" status="run" result="completed" time="0." timestamp="2026-09-09T09:10:07.879" classname="DropoutRoutingAudit" />
+  </testsuite>
+</testsuites>

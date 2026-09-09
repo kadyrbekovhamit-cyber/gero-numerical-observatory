@@ -1,0 +1,12 @@
+{
+  "expect": "patched",
+  "tests": 4,
+  "failed_tests": [],
+  "returncode": 0,
+  "matches_expected": true,
+  "command": [
+    "/Users/khamit/Documents/math/audit-targets/current-stack-2026-09-07/nntrainer/build-audit/test/unittest/layers/unittest_layers",
+    "--gtest_filter=DropoutRoutingAudit.*",
+    "--gtest_output=xml:/Users/khamit/Documents/math/software-audits/nntrainer-dropout-routing-2026-09-09/driver-verification/results.xml"
+  ]
+}

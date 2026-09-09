@@ -1,0 +1,20 @@
+Running main() from ../subprojects/googletest/googletest/src/gtest_main.cc
+Note: Google Test filter = DropoutRoutingAudit.*
+[==========] Running 4 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 4 tests from DropoutRoutingAudit
+[ RUN      ] DropoutRoutingAudit.ZeroRateSingleInputControl
+[       OK ] DropoutRoutingAudit.ZeroRateSingleInputControl (1 ms)
+[ RUN      ] DropoutRoutingAudit.ZeroRateRoutesEachIncomingGradientToItsInput
+DROPOUT_AUDIT_DX[0] 1 2 3
+DROPOUT_AUDIT_DX[1] 10 20 30
+[       OK ] DropoutRoutingAudit.ZeroRateRoutesEachIncomingGradientToItsInput (0 ms)
+[ RUN      ] DropoutRoutingAudit.ZeroRateMatchesRuntimeFiniteDifferences
+[       OK ] DropoutRoutingAudit.ZeroRateMatchesRuntimeFiniteDifferences (0 ms)
+[ RUN      ] DropoutRoutingAudit.ReplayUsesEachInputsOwnGradientAndMask
+[       OK ] DropoutRoutingAudit.ReplayUsesEachInputsOwnGradientAndMask (0 ms)
+[----------] 4 tests from DropoutRoutingAudit (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 1 test suite ran. (1 ms total)
+[  PASSED  ] 4 tests.

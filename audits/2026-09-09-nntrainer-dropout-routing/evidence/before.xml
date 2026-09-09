@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="19" failures="3" disabled="0" errors="0" time="0.016" timestamp="2026-09-09T08:42:11.164" name="AllTests">
+  <testsuite name="DropoutRoutingAudit" tests="4" failures="3" disabled="0" skipped="0" errors="0" time="0.001" timestamp="2026-09-09T08:42:11.164">
+    <testcase name="ZeroRateSingleInputControl" file="../test/unittest/layers/unittest_layers_dropout.cpp" line="171" status="run" result="completed" time="0." timestamp="2026-09-09T08:42:11.164" classname="DropoutRoutingAudit" />
+    <testcase name="ZeroRateRoutesEachIncomingGradientToItsInput" file="../test/unittest/layers/unittest_layers_dropout.cpp" line="178" status="run" result="completed" time="0." timestamp="2026-09-09T08:42:11.165" classname="DropoutRoutingAudit">
+      <failure message="../test/unittest/layers/unittest_layers_dropout.cpp:187&#x0A;Expected equality of these values:&#x0A;  result.dx[i]&#x0A;    Which is: { 10, 20, 30 }&#x0A;  dy[i]&#x0A;    Which is: { 1, 2, 3 }&#x0A;input 0&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_dropout.cpp:187
+Expected equality of these values:
+  result.dx[i]
+    Which is: { 10, 20, 30 }
+  dy[i]
+    Which is: { 1, 2, 3 }
+input 0
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_dropout.cpp:187&#x0A;Expected equality of these values:&#x0A;  result.dx[i]&#x0A;    Which is: { 0, 0, 0 }&#x0A;  dy[i]&#x0A;    Which is: { 10, 20, 30 }&#x0A;input 1&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_dropout.cpp:187
+Expected equality of these values:
+  result.dx[i]
+    Which is: { 0, 0, 0 }
+  dy[i]
+    Which is: { 10, 20, 30 }
+input 1
+]]></failure>
+    </testcase>
+    <testcase name="ZeroRateMatchesRuntimeFiniteDifferences" file="../test/unittest/layers/unittest_layers_dropout.cpp" line="191" status="run" result="completed" time="0." timestamp="2026-09-09T08:42:11.165" classname="DropoutRoutingAudit">
+      <failure message="../test/unittest/layers/unittest_layers_dropout.cpp:207&#x0A;The difference between result.dx[i][j] and numeric is 5, which exceeds 1e-6, where&#x0A;result.dx[i][j] evaluates to -4,&#x0A;numeric evaluates to 1, and&#x0A;1e-6 evaluates to 9.9999999999999995e-07.&#x0A;input 0 coordinate 0&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_dropout.cpp:207
+The difference between result.dx[i][j] and numeric is 5, which exceeds 1e-6, where
+result.dx[i][j] evaluates to -4,
+numeric evaluates to 1, and
+1e-6 evaluates to 9.9999999999999995e-07.
+input 0 coordinate 0
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_dropout.cpp:207&#x0A;The difference between result.dx[i][j] and numeric is 7, which exceeds 1e-6, where&#x0A;result.dx[i][j] evaluates to 5,&#x0A;numeric evaluates to -2, and&#x0A;1e-6 evaluates to 9.9999999999999995e-07.&#x0A;input 0 coordinate 1&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_dropout.cpp:207
+The difference between result.dx[i][j] and numeric is 7, which exceeds 1e-6, where
+result.dx[i][j] evaluates to 5,
+numeric evaluates to -2, and
+1e-6 evaluates to 9.9999999999999995e-07.
+input 0 coordinate 1
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_dropout.cpp:207&#x0A;The difference between result.dx[i][j] and numeric is 9, which exceeds 1e-6, where&#x0A;result.dx[i][j] evaluates to -6,&#x0A;numeric evaluates to 3, and&#x0A;1e-6 evaluates to 9.9999999999999995e-07.&#x0A;input 0 coordinate 2&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_dropout.cpp:207
+The difference between result.dx[i][j] and numeric is 9, which exceeds 1e-6, where
+result.dx[i][j] evaluates to -6,
+numeric evaluates to 3, and
+1e-6 evaluates to 9.9999999999999995e-07.
+input 0 coordinate 2
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_dropout.cpp:207&#x0A;The difference between result.dx[i][j] and numeric is 4, which exceeds 1e-6, where&#x0A;result.dx[i][j] evaluates to 0,&#x0A;numeric evaluates to -4, and&#x0A;1e-6 evaluates to 9.9999999999999995e-07.&#x0A;input 1 coordinate 0&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_dropout.cpp:207
+The difference between result.dx[i][j] and numeric is 4, which exceeds 1e-6, where
+result.dx[i][j] evaluates to 0,
+numeric evaluates to -4, and
+1e-6 evaluates to 9.9999999999999995e-07.
+input 1 coordinate 0
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_dropout.cpp:207&#x0A;The difference between result.dx[i][j] and numeric is 5, which exceeds 1e-6, where&#x0A;result.dx[i][j] evaluates to 0,&#x0A;numeric evaluates to 5, and&#x0A;1e-6 evaluates to 9.9999999999999995e-07.&#x0A;input 1 coordinate 1&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_dropout.cpp:207
+The difference between result.dx[i][j] and numeric is 5, which exceeds 1e-6, where
+result.dx[i][j] evaluates to 0,
+numeric evaluates to 5, and
+1e-6 evaluates to 9.9999999999999995e-07.
+input 1 coordinate 1
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_dropout.cpp:207&#x0A;The difference between result.dx[i][j] and numeric is 6, which exceeds 1e-6, where&#x0A;result.dx[i][j] evaluates to 0,&#x0A;numeric evaluates to -6, and&#x0A;1e-6 evaluates to 9.9999999999999995e-07.&#x0A;input 1 coordinate 2&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_dropout.cpp:207
+The difference between result.dx[i][j] and numeric is 6, which exceeds 1e-6, where
+result.dx[i][j] evaluates to 0,
+numeric evaluates to -6, and
+1e-6 evaluates to 9.9999999999999995e-07.
+input 1 coordinate 2
+]]></failure>
+    </testcase>
+    <testcase name="ReplayUsesEachInputsOwnGradientAndMask" file="../test/unittest/layers/unittest_layers_dropout.cpp" line="213" status="run" result="completed" time="0." timestamp="2026-09-09T08:42:11.165" classname="DropoutRoutingAudit">
+      <failure message="../test/unittest/layers/unittest_layers_dropout.cpp:221&#x0A;Expected equality of these values:&#x0A;  result.dx[i][j]&#x0A;    Which is: -14&#x0A;  dy[i][j] * masks[i][j]&#x0A;    Which is: 2&#x0A;input 0 coordinate 0&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_dropout.cpp:221
+Expected equality of these values:
+  result.dx[i][j]
+    Which is: -14
+  dy[i][j] * masks[i][j]
+    Which is: 2
+input 0 coordinate 0
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_dropout.cpp:221&#x0A;Expected equality of these values:&#x0A;  result.dx[i][j]&#x0A;    Which is: 16&#x0A;  dy[i][j] * masks[i][j]&#x0A;    Which is: -0&#x0A;input 0 coordinate 1&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_dropout.cpp:221
+Expected equality of these values:
+  result.dx[i][j]
+    Which is: 16
+  dy[i][j] * masks[i][j]
+    Which is: -0
+input 0 coordinate 1
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_dropout.cpp:221&#x0A;Expected equality of these values:&#x0A;  result.dx[i][j]&#x0A;    Which is: 0&#x0A;  dy[i][j] * masks[i][j]&#x0A;    Which is: 6&#x0A;input 0 coordinate 2&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_dropout.cpp:221
+Expected equality of these values:
+  result.dx[i][j]
+    Which is: 0
+  dy[i][j] * masks[i][j]
+    Which is: 6
+input 0 coordinate 2
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_dropout.cpp:221&#x0A;Expected equality of these values:&#x0A;  result.dx[i][j]&#x0A;    Which is: 0&#x0A;  dy[i][j] * masks[i][j]&#x0A;    Which is: 10&#x0A;input 1 coordinate 1&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_dropout.cpp:221
+Expected equality of these values:
+  result.dx[i][j]
+    Which is: 0
+  dy[i][j] * masks[i][j]
+    Which is: 10
+input 1 coordinate 1
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_dropout.cpp:221&#x0A;Expected equality of these values:&#x0A;  result.dx[i][j]&#x0A;    Which is: 0&#x0A;  dy[i][j] * masks[i][j]&#x0A;    Which is: -12&#x0A;input 1 coordinate 2&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_dropout.cpp:221
+Expected equality of these values:
+  result.dx[i][j]
+    Which is: 0
+  dy[i][j] * masks[i][j]
+    Which is: -12
+input 1 coordinate 2
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_dropout.cpp:221&#x0A;Expected equality of these values:&#x0A;  result.dx[i][j]&#x0A;    Which is: 0&#x0A;  dy[i][j] * masks[i][j]&#x0A;    Which is: -14&#x0A;input 2 coordinate 0&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_dropout.cpp:221
+Expected equality of these values:
+  result.dx[i][j]
+    Which is: 0
+  dy[i][j] * masks[i][j]
+    Which is: -14
+input 2 coordinate 0
+]]></failure>
+      <failure message="../test/unittest/layers/unittest_layers_dropout.cpp:221&#x0A;Expected equality of these values:&#x0A;  result.dx[i][j]&#x0A;    Which is: 0&#x0A;  dy[i][j] * masks[i][j]&#x0A;    Which is: 16&#x0A;input 2 coordinate 1&#x0A;" type=""><![CDATA[../test/unittest/layers/unittest_layers_dropout.cpp:221
+Expected equality of these values:
+  result.dx[i][j]
+    Which is: 0
+  dy[i][j] * masks[i][j]
+    Which is: 16
+input 2 coordinate 1
+]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Dropout/LayerSemantics" tests="11" failures="0" disabled="0" skipped="0" errors="0" time="0.012" timestamp="2026-09-09T08:42:11.165">
+    <testcase name="createFromAppContext_pn/0" value_param="(32-byte object &lt;18-C7 32-04 01-00 00-00 08-71 28-04 01-00 00-00 00-00 00-00 00-00 00-00 E0-4A 4D-01 00-60 00-00&gt;, &quot;dropout&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="27" status="run" result="completed" time="0.011" timestamp="2026-09-09T08:42:11.165" classname="Dropout/LayerSemantics" />
+    <testcase name="setPropertiesInvalid_01_n/0" value_param="(32-byte object &lt;18-C7 32-04 01-00 00-00 08-71 28-04 01-00 00-00 00-00 00-00 00-00 00-00 E0-4A 4D-01 00-60 00-00&gt;, &quot;dropout&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="44" status="run" result="completed" time="0." timestamp="2026-09-09T08:42:11.176" classname="Dropout/LayerSemantics" />
+    <testcase name="setPropertiesInvalid_02_n/0" value_param="(32-byte object &lt;18-C7 32-04 01-00 00-00 08-71 28-04 01-00 00-00 00-00 00-00 00-00 00-00 E0-4A 4D-01 00-60 00-00&gt;, &quot;dropout&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="50" status="run" result="completed" time="0." timestamp="2026-09-09T08:42:11.177" classname="Dropout/LayerSemantics" />
+    <testcase name="finalizeValidateLayerNode_p/0" value_param="(32-byte object &lt;18-C7 32-04 01-00 00-00 08-71 28-04 01-00 00-00 00-00 00-00 00-00 00-00 00-C0 4D-01 00-60 00-00&gt;, &quot;dropout&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="56" status="run" result="completed" time="0." timestamp="2026-09-09T08:42:11.177" classname="Dropout/LayerSemantics" />
+    <testcase name="getTypeValidateLayerNode_p/0" value_param="(32-byte object &lt;18-C7 32-04 01-00 00-00 08-71 28-04 01-00 00-00 00-00 00-00 00-00 00-00 00-80 4D-01 00-60 00-00&gt;, &quot;dropout&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="86" status="run" result="completed" time="0." timestamp="2026-09-09T08:42:11.178" classname="Dropout/LayerSemantics" />
+    <testcase name="gettersValidateLayerNode_p/0" value_param="(32-byte object &lt;18-C7 32-04 01-00 00-00 08-71 28-04 01-00 00-00 00-00 00-00 00-00 00-00 00-C0 4D-01 00-60 00-00&gt;, &quot;dropout&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="94" status="run" result="completed" time="0." timestamp="2026-09-09T08:42:11.178" classname="Dropout/LayerSemantics" />
+    <testcase name="setBatchValidateLayerNode_p/0" value_param="(32-byte object &lt;18-C7 32-04 01-00 00-00 08-71 28-04 01-00 00-00 00-00 00-00 00-00 00-00 00-40 4C-01 00-60 00-00&gt;, &quot;dropout&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_dependent_common_tests.cpp" line="102" status="run" result="completed" time="0." timestamp="2026-09-09T08:42:11.178" classname="Dropout/LayerSemantics" />
+    <testcase name="setProperties_n/0" value_param="(32-byte object &lt;18-C7 32-04 01-00 00-00 08-71 28-04 01-00 00-00 00-00 00-00 00-00 00-00 00-C0 4C-01 00-60 00-00&gt;, &quot;dropout&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="23" status="run" result="completed" time="0." timestamp="2026-09-09T08:42:11.178" classname="Dropout/LayerSemantics" />
+    <testcase name="gettersValidate_p/0" value_param="(32-byte object &lt;18-C7 32-04 01-00 00-00 08-71 28-04 01-00 00-00 00-00 00-00 00-00 00-00 00-40 4C-01 00-60 00-00&gt;, &quot;dropout&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="32" status="run" result="completed" time="0." timestamp="2026-09-09T08:42:11.178" classname="Dropout/LayerSemantics" />
+    <testcase name="finalizeValidate_p/0" value_param="(32-byte object &lt;18-C7 32-04 01-00 00-00 08-71 28-04 01-00 00-00 00-00 00-00 00-00 00-00 00-40 4C-01 00-60 00-00&gt;, &quot;dropout&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="42" status="run" result="completed" time="0." timestamp="2026-09-09T08:42:11.178" classname="Dropout/LayerSemantics" />
+    <testcase name="setBatchValidate_p/0" value_param="(32-byte object &lt;18-C7 32-04 01-00 00-00 08-71 28-04 01-00 00-00 00-00 00-00 00-00 00-00 00-40 4C-01 00-60 00-00&gt;, &quot;dropout&quot;, {}, 1, false, 1)" file="../test/unittest/layers/layers_standalone_common_tests.cpp" line="67" status="run" result="completed" time="0." timestamp="2026-09-09T08:42:11.178" classname="Dropout/LayerSemantics" />
+  </testsuite>
+  <testsuite name="Dropout/LayerGoldenTest" tests="4" failures="0" disabled="0" skipped="0" errors="0" time="0.002" timestamp="2026-09-09T08:42:11.178">
+    <testcase name="run/0" value_param="(32-byte object &lt;18-C7 32-04 01-00 00-00 08-71 28-04 01-00 00-00 00-00 00-00 00-00 00-00 20-12 1F-00 00-60 00-00&gt;, { &quot;dropout_rate=0.2&quot; }, 0x10431f1bf pointing to &quot;2:3:2:3&quot;, 0x10431f1c7 pointing to &quot;dropout_20_training.nnlayergolden&quot;, 8, &quot;nchw&quot;, &quot;fp32&quot;, &quot;fp32&quot;)" file="../test/unittest/layers/layers_golden_tests.cpp" line="416" status="run" result="completed" time="0.001" timestamp="2026-09-09T08:42:11.178" classname="Dropout/LayerGoldenTest" />
+    <testcase name="run/1" value_param="(32-byte object &lt;18-C7 32-04 01-00 00-00 08-71 28-04 01-00 00-00 00-00 00-00 00-00 00-00 20-12 1F-00 00-60 00-00&gt;, { &quot;dropout_rate=0.0&quot; }, 0x10431f1bf pointing to &quot;2:3:2:3&quot;, 0x10431f21d pointing to &quot;dropout_0_training.nnlayergolden&quot;, 0, &quot;nchw&quot;, &quot;fp32&quot;, &quot;fp32&quot;)" file="../test/unittest/layers/layers_golden_tests.cpp" line="416" status="run" result="completed" time="0." timestamp="2026-09-09T08:42:11.179" classname="Dropout/LayerGoldenTest" />
+    <testcase name="run/2" value_param="(32-byte object &lt;18-C7 32-04 01-00 00-00 08-71 28-04 01-00 00-00 00-00 00-00 00-00 00-00 20-12 1F-00 00-60 00-00&gt;, { &quot;dropout_rate=1.0&quot; }, 0x10431f1bf pointing to &quot;2:3:2:3&quot;, 0x10431f24f pointing to &quot;dropout_100_training.nnlayergolden&quot;, 0, &quot;nchw&quot;, &quot;fp32&quot;, &quot;fp32&quot;)" file="../test/unittest/layers/layers_golden_tests.cpp" line="416" status="run" result="completed" time="0." timestamp="2026-09-09T08:42:11.179" classname="Dropout/LayerGoldenTest" />
+    <testcase name="run/3" value_param="(32-byte object &lt;18-C7 32-04 01-00 00-00 08-71 28-04 01-00 00-00 00-00 00-00 00-00 00-00 A0-8A 1D-00 00-60 00-00&gt;, { &quot;dropout_rate=0.2&quot; }, 0x10431f1bf pointing to &quot;2:3:2:3&quot;, 0x10431f1e9 pointing to &quot;dropout_20_inference.nnlayergolden&quot;, 7, &quot;nchw&quot;, &quot;fp32&quot;, &quot;fp32&quot;)" file="../test/unittest/layers/layers_golden_tests.cpp" line="416" status="run" result="completed" time="0." timestamp="2026-09-09T08:42:11.180" classname="Dropout/LayerGoldenTest" />
+  </testsuite>
+</testsuites>

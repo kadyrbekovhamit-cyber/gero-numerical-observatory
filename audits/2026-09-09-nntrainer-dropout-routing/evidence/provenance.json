@@ -1,0 +1,7 @@
+{
+  "commit": "a7ea056e79ab8e14447ea305c1b634e233343258",
+  "baseline_source_matches_HEAD": true,
+  "source_sha256": "e35ffa743e077210a6d19b95edfa912a010df44fd4476ada413596df78f3e3dc",
+  "working_tree_before_source_fix": " M nntrainer/layers/acti_func.h\n M nntrainer/layers/attention_layer.cpp\n M nntrainer/layers/layer_normalization_layer.cpp\n M nntrainer/layers/loss/cross_entropy_sigmoid_loss_layer.cpp\n M nntrainer/layers/loss/cross_entropy_softmax_loss_layer.cpp\n M nntrainer/layers/pooling2d_layer.cpp\n M test/unittest/layers/unittest_layers_attention.cpp\n M test/unittest/layers/unittest_layers_dropout.cpp\n M test/unittest/layers/unittest_layers_layer_normalization.cpp\n M test/unittest/layers/unittest_layers_loss.cpp\n M test/unittest/layers/unittest_layers_pooling2d.cpp\n M test/unittest/unittest_nntrainer_activations.cpp\n?? subprojects/.wraplock\n",
+  "limitations": "Existing configured CPU FP32 Darwin build with unrelated local repairs; one Ninja job; no whole-network or platform matrix validation."
+}

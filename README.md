@@ -4,6 +4,17 @@ A reproducible CPU benchmark for mathematical contracts in ONNX graphs. It runs 
 
 [71-second video](https://www.youtube.com/shorts/KTLC9_FomBs) · [Interactive reports](https://www.gero.uz/stability/) · [Publication and limits](https://www.gero.uz/research/articles/onnx-numerical-observatory-reproduced-snapshot.html) · [Measured snapshot](benchmarks/2026-09-06/latest.json) · [Reverification](benchmarks/2026-09-06/reverification.json)
 
+## nntrainer Dropout routing audit, 9 September 2026
+
+With two independent inputs and zero drop rate, the tested C++ layer sends
+both gradients to input zero. A local index repair changes the measured
+selection from 16/19 to 19/19 passing tests. Finite differences of the real
+forward pass independently check the derivative. CPU FP32 layer-level
+scope only; no full-model/device impact or original-discovery claim.
+
+[Read and reproduce](audits/2026-09-09-nntrainer-dropout-routing/) ·
+[Developer report](audits/2026-09-09-nntrainer-dropout-routing/REPORT.md)
+
 ## Causal attention audit, 7 September 2026
 
 Native nntrainer causal attention includes future values in tested rectangular

@@ -1,0 +1,56 @@
+Running main() from ../subprojects/googletest/googletest/src/gtest_main.cc
+Note: Google Test filter = DropoutRoutingAudit.*:Dropout/*
+[==========] Running 19 tests from 3 test suites.
+[----------] Global test environment set-up.
+[----------] 4 tests from DropoutRoutingAudit
+[ RUN      ] DropoutRoutingAudit.ZeroRateSingleInputControl
+[       OK ] DropoutRoutingAudit.ZeroRateSingleInputControl (0 ms)
+[ RUN      ] DropoutRoutingAudit.ZeroRateRoutesEachIncomingGradientToItsInput
+DROPOUT_AUDIT_DX[0] 1 2 3
+DROPOUT_AUDIT_DX[1] 10 20 30
+[       OK ] DropoutRoutingAudit.ZeroRateRoutesEachIncomingGradientToItsInput (0 ms)
+[ RUN      ] DropoutRoutingAudit.ZeroRateMatchesRuntimeFiniteDifferences
+[       OK ] DropoutRoutingAudit.ZeroRateMatchesRuntimeFiniteDifferences (0 ms)
+[ RUN      ] DropoutRoutingAudit.ReplayUsesEachInputsOwnGradientAndMask
+[       OK ] DropoutRoutingAudit.ReplayUsesEachInputsOwnGradientAndMask (0 ms)
+[----------] 4 tests from DropoutRoutingAudit (1 ms total)
+
+[----------] 11 tests from Dropout/LayerSemantics
+[ RUN      ] Dropout/LayerSemantics.createFromAppContext_pn/0
+[       OK ] Dropout/LayerSemantics.createFromAppContext_pn/0 (2 ms)
+[ RUN      ] Dropout/LayerSemantics.setPropertiesInvalid_01_n/0
+[       OK ] Dropout/LayerSemantics.setPropertiesInvalid_01_n/0 (1 ms)
+[ RUN      ] Dropout/LayerSemantics.setPropertiesInvalid_02_n/0
+[       OK ] Dropout/LayerSemantics.setPropertiesInvalid_02_n/0 (0 ms)
+[ RUN      ] Dropout/LayerSemantics.finalizeValidateLayerNode_p/0
+[       OK ] Dropout/LayerSemantics.finalizeValidateLayerNode_p/0 (0 ms)
+[ RUN      ] Dropout/LayerSemantics.getTypeValidateLayerNode_p/0
+[       OK ] Dropout/LayerSemantics.getTypeValidateLayerNode_p/0 (0 ms)
+[ RUN      ] Dropout/LayerSemantics.gettersValidateLayerNode_p/0
+[       OK ] Dropout/LayerSemantics.gettersValidateLayerNode_p/0 (0 ms)
+[ RUN      ] Dropout/LayerSemantics.setBatchValidateLayerNode_p/0
+[       OK ] Dropout/LayerSemantics.setBatchValidateLayerNode_p/0 (0 ms)
+[ RUN      ] Dropout/LayerSemantics.setProperties_n/0
+[       OK ] Dropout/LayerSemantics.setProperties_n/0 (0 ms)
+[ RUN      ] Dropout/LayerSemantics.gettersValidate_p/0
+[       OK ] Dropout/LayerSemantics.gettersValidate_p/0 (0 ms)
+[ RUN      ] Dropout/LayerSemantics.finalizeValidate_p/0
+[       OK ] Dropout/LayerSemantics.finalizeValidate_p/0 (0 ms)
+[ RUN      ] Dropout/LayerSemantics.setBatchValidate_p/0
+[       OK ] Dropout/LayerSemantics.setBatchValidate_p/0 (0 ms)
+[----------] 11 tests from Dropout/LayerSemantics (3 ms total)
+
+[----------] 4 tests from Dropout/LayerGoldenTest
+[ RUN      ] Dropout/LayerGoldenTest.run/0
+[       OK ] Dropout/LayerGoldenTest.run/0 (0 ms)
+[ RUN      ] Dropout/LayerGoldenTest.run/1
+[       OK ] Dropout/LayerGoldenTest.run/1 (0 ms)
+[ RUN      ] Dropout/LayerGoldenTest.run/2
+[       OK ] Dropout/LayerGoldenTest.run/2 (0 ms)
+[ RUN      ] Dropout/LayerGoldenTest.run/3
+[       OK ] Dropout/LayerGoldenTest.run/3 (0 ms)
+[----------] 4 tests from Dropout/LayerGoldenTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 19 tests from 3 test suites ran. (6 ms total)
+[  PASSED  ] 19 tests.

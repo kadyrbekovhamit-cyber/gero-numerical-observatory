@@ -1,0 +1,7 @@
+{
+  "enable-test": true,
+  "nntr-num-threads": 1,
+  "enable-blas": false,
+  "enable-fp16": false,
+  "thread-backend": "none"
+}

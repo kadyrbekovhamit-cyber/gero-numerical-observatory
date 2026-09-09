@@ -1,0 +1,20 @@
+{
+  "before": {
+    "tests": 19,
+    "failures": 3,
+    "disabled": 0,
+    "errors": 0,
+    "failed_tests": [
+      "DropoutRoutingAudit.ZeroRateRoutesEachIncomingGradientToItsInput",
+      "DropoutRoutingAudit.ZeroRateMatchesRuntimeFiniteDifferences",
+      "DropoutRoutingAudit.ReplayUsesEachInputsOwnGradientAndMask"
+    ]
+  },
+  "after": {
+    "tests": 19,
+    "failures": 0,
+    "disabled": 0,
+    "errors": 0,
+    "failed_tests": []
+  }
+}
