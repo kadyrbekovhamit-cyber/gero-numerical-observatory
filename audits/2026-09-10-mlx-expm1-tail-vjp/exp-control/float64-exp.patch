@@ -1,0 +1,15 @@
+--- a/mlx/backend/cpu/simd/math.h
++++ b/mlx/backend/cpu/simd/math.h
+@@ -28,6 +28,12 @@
+ Simd<T, N> exp(Simd<T, N> in) {
+   if constexpr (is_complex<T>) {
+     return Simd<T, 1>{std::exp(in.value)};
++  } else if constexpr (std::is_same_v<T, double>) {
++    Simd<T, N> out;
++    for (int i = 0; i < N; ++i) {
++      out[i] = std::exp(in[i]);
++    }
++    return out;
+   } else {
+     Simd<float, N> x_init = in;
+     auto x = x_init * 1.442695f; // multiply with log_2(e)

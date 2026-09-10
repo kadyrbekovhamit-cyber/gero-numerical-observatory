@@ -1,0 +1,24 @@
+{
+  "baseline_revision": "ce916dbbcaa88e433b6fd1e60a17f766d49c27fe",
+  "upstream_expm1_vjp_identical": true,
+  "upstream_expm1_jvp_identical": true,
+  "dependencies": [
+    {
+      "path": "<ORIGINAL_WORKSPACE>/software-audits/current-stack-2026-09-07-round3/build-native/mlx-build/libmlx.a",
+      "sha256": "7826e14e2d1ee526a16352829d460ae39c048e331c339be0b6f8d67d74e68a06"
+    },
+    {
+      "path": "<ORIGINAL_WORKSPACE>/software-audits/mlx-logcumsumexp-hessian-2026-09-10/before.o",
+      "sha256": "fe564bdff67b9f70f26fe428968aa069503b772f395bbf4f91abf920982d7e29"
+    },
+    {
+      "path": "<ORIGINAL_WORKSPACE>/software-audits/mlx-float64-exp-narrowing-2026-09-10/before.o",
+      "sha256": "356c88db9af3ef5944ff9ba199ac1996ecd7f84bdabc6aa36d0b2f282e83905c"
+    },
+    {
+      "path": "<ORIGINAL_WORKSPACE>/software-audits/mlx-float64-exp-narrowing-2026-09-10/after.o",
+      "sha256": "61d0ddd4169a6b91f5ea71f7764c5bad4fb84117604516be381307d9919fc43b"
+    }
+  ],
+  "scope": "Primitives and unary TU overrides before a prebuilt CPU archive; not a full current-main build."
+}

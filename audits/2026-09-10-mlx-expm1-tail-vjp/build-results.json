@@ -1,0 +1,160 @@
+[
+  {
+    "label": "compile-test",
+    "command": [
+      "/usr/bin/c++",
+      "-DACCELERATE_NEW_LAPACK",
+      "-DFMT_HEADER_ONLY=1",
+      "-DMLX_STATIC",
+      "-DMLX_USE_ACCELERATE",
+      "-I<ORIGINAL_WORKSPACE>/software-audits/current-stack-2026-09-07-round3/build-native/_deps/json-src/single_include/nlohmann",
+      "-I<ORIGINAL_WORKSPACE>/audit-targets/current-stack-2026-09-07/mlx",
+      "-I<ORIGINAL_WORKSPACE>/software-audits/current-stack-2026-09-07-round3/build-native/_deps/fmt-src/include",
+      "-F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks",
+      "-O0",
+      "-DNDEBUG",
+      "-std=gnu++20",
+      "-fPIC",
+      "-fvisibility=hidden",
+      "-fvisibility-inlines-hidden",
+      "-o",
+      "<ORIGINAL_WORKSPACE>/software-audits/mlx-expm1-tail-vjp-2026-09-10/test.o",
+      "-c",
+      "<ORIGINAL_WORKSPACE>/software-audits/mlx-expm1-tail-vjp-2026-09-10/native_regression.cpp"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.758958959,
+    "cpu_seconds": 0.662497
+  },
+  {
+    "label": "compile-patch",
+    "command": [
+      "/usr/bin/c++",
+      "-DACCELERATE_NEW_LAPACK",
+      "-DFMT_HEADER_ONLY=1",
+      "-DMLX_STATIC",
+      "-DMLX_USE_ACCELERATE",
+      "-I<ORIGINAL_WORKSPACE>/software-audits/current-stack-2026-09-07-round3/build-native/_deps/json-src/single_include/nlohmann",
+      "-I<ORIGINAL_WORKSPACE>/audit-targets/current-stack-2026-09-07/mlx",
+      "-I<ORIGINAL_WORKSPACE>/software-audits/current-stack-2026-09-07-round3/build-native/_deps/fmt-src/include",
+      "-F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks",
+      "-O0",
+      "-DNDEBUG",
+      "-std=gnu++20",
+      "-fPIC",
+      "-fvisibility=hidden",
+      "-fvisibility-inlines-hidden",
+      "-o",
+      "<ORIGINAL_WORKSPACE>/software-audits/mlx-expm1-tail-vjp-2026-09-10/after.o",
+      "-c",
+      "<ORIGINAL_WORKSPACE>/software-audits/mlx-expm1-tail-vjp-2026-09-10/patched-baseline-primitives.cpp"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.987542958,
+    "cpu_seconds": 0.9720869999999999
+  },
+  {
+    "label": "link-before",
+    "command": [
+      "/usr/bin/c++",
+      "<ORIGINAL_WORKSPACE>/software-audits/mlx-expm1-tail-vjp-2026-09-10/test.o",
+      "<ORIGINAL_WORKSPACE>/software-audits/mlx-logcumsumexp-hessian-2026-09-10/before.o",
+      "<ORIGINAL_WORKSPACE>/software-audits/mlx-float64-exp-narrowing-2026-09-10/before.o",
+      "<ORIGINAL_WORKSPACE>/software-audits/current-stack-2026-09-07-round3/build-native/mlx-build/libmlx.a",
+      "-framework",
+      "Accelerate",
+      "-o",
+      "<ORIGINAL_WORKSPACE>/software-audits/mlx-expm1-tail-vjp-2026-09-10/native-before"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.1784460000000001,
+    "cpu_seconds": 0.20118400000000006
+  },
+  {
+    "label": "run-before",
+    "command": [
+      "<ORIGINAL_WORKSPACE>/software-audits/mlx-expm1-tail-vjp-2026-09-10/native-before"
+    ],
+    "returncode": 1,
+    "wall_seconds": 1.301917459,
+    "cpu_seconds": 0.027966000000000157
+  },
+  {
+    "label": "link-vjp-only",
+    "command": [
+      "/usr/bin/c++",
+      "<ORIGINAL_WORKSPACE>/software-audits/mlx-expm1-tail-vjp-2026-09-10/test.o",
+      "<ORIGINAL_WORKSPACE>/software-audits/mlx-expm1-tail-vjp-2026-09-10/after.o",
+      "<ORIGINAL_WORKSPACE>/software-audits/mlx-float64-exp-narrowing-2026-09-10/before.o",
+      "<ORIGINAL_WORKSPACE>/software-audits/current-stack-2026-09-07-round3/build-native/mlx-build/libmlx.a",
+      "-framework",
+      "Accelerate",
+      "-o",
+      "<ORIGINAL_WORKSPACE>/software-audits/mlx-expm1-tail-vjp-2026-09-10/native-vjp-only"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.13404191700000023,
+    "cpu_seconds": 0.2092159999999999
+  },
+  {
+    "label": "run-vjp-only",
+    "command": [
+      "<ORIGINAL_WORKSPACE>/software-audits/mlx-expm1-tail-vjp-2026-09-10/native-vjp-only"
+    ],
+    "returncode": 1,
+    "wall_seconds": 0.29584770800000015,
+    "cpu_seconds": 0.03018399999999971
+  },
+  {
+    "label": "link-exp-only",
+    "command": [
+      "/usr/bin/c++",
+      "<ORIGINAL_WORKSPACE>/software-audits/mlx-expm1-tail-vjp-2026-09-10/test.o",
+      "<ORIGINAL_WORKSPACE>/software-audits/mlx-logcumsumexp-hessian-2026-09-10/before.o",
+      "<ORIGINAL_WORKSPACE>/software-audits/mlx-float64-exp-narrowing-2026-09-10/after.o",
+      "<ORIGINAL_WORKSPACE>/software-audits/current-stack-2026-09-07-round3/build-native/mlx-build/libmlx.a",
+      "-framework",
+      "Accelerate",
+      "-o",
+      "<ORIGINAL_WORKSPACE>/software-audits/mlx-expm1-tail-vjp-2026-09-10/native-exp-only"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.15959070899999972,
+    "cpu_seconds": 0.18253000000000014
+  },
+  {
+    "label": "run-exp-only",
+    "command": [
+      "<ORIGINAL_WORKSPACE>/software-audits/mlx-expm1-tail-vjp-2026-09-10/native-exp-only"
+    ],
+    "returncode": 1,
+    "wall_seconds": 0.29533954200000023,
+    "cpu_seconds": 0.033349999999999935
+  },
+  {
+    "label": "link-combined",
+    "command": [
+      "/usr/bin/c++",
+      "<ORIGINAL_WORKSPACE>/software-audits/mlx-expm1-tail-vjp-2026-09-10/test.o",
+      "<ORIGINAL_WORKSPACE>/software-audits/mlx-expm1-tail-vjp-2026-09-10/after.o",
+      "<ORIGINAL_WORKSPACE>/software-audits/mlx-float64-exp-narrowing-2026-09-10/after.o",
+      "<ORIGINAL_WORKSPACE>/software-audits/current-stack-2026-09-07-round3/build-native/mlx-build/libmlx.a",
+      "-framework",
+      "Accelerate",
+      "-o",
+      "<ORIGINAL_WORKSPACE>/software-audits/mlx-expm1-tail-vjp-2026-09-10/native-combined"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.09940420800000016,
+    "cpu_seconds": 0.18533
+  },
+  {
+    "label": "run-combined",
+    "command": [
+      "<ORIGINAL_WORKSPACE>/software-audits/mlx-expm1-tail-vjp-2026-09-10/native-combined"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.26559129200000076,
+    "cpu_seconds": 0.011459999999999915
+  }
+]

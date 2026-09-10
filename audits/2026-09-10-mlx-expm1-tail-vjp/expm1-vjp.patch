@@ -1,0 +1,16 @@
+--- a/mlx/primitives.cpp
++++ b/mlx/primitives.cpp
+@@ -2059,11 +2059,8 @@
+     const std::vector<array>& primals,
+     const std::vector<array>& cotangents,
+     const std::vector<int>& argnums,
+-    const std::vector<array>& outputs) {
+-  return {multiply(
+-      cotangents[0],
+-      add(outputs[0], array(1.0f, outputs[0].dtype()), stream()),
+-      stream())};
++    const std::vector<array>&) {
++  return {multiply(cotangents[0], exp(primals[0], stream()), stream())};
+ }
+ 
+ std::vector<array> Expm1::jvp(

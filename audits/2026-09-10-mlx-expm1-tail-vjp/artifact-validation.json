@@ -1,0 +1,215 @@
+{
+  "checks": 52,
+  "failures": 0,
+  "results": [
+    {
+      "check": "count:before",
+      "passed": true
+    },
+    {
+      "check": "publication-rerun-identical:before",
+      "passed": true
+    },
+    {
+      "check": "count:vjp-only",
+      "passed": true
+    },
+    {
+      "check": "publication-rerun-identical:vjp-only",
+      "passed": true
+    },
+    {
+      "check": "count:exp-only",
+      "passed": true
+    },
+    {
+      "check": "publication-rerun-identical:exp-only",
+      "passed": true
+    },
+    {
+      "check": "count:combined",
+      "passed": true
+    },
+    {
+      "check": "publication-rerun-identical:combined",
+      "passed": true
+    },
+    {
+      "check": "native-archive-sha256",
+      "passed": true
+    },
+    {
+      "check": "source:mlx/primitives.cpp",
+      "passed": true
+    },
+    {
+      "check": "source:mlx/ops.cpp",
+      "passed": true
+    },
+    {
+      "check": "source:python/tests/test_autograd.py",
+      "passed": true
+    },
+    {
+      "check": "source:python/tests/test_double.py",
+      "passed": true
+    },
+    {
+      "check": "patch:expm1-vjp.patch",
+      "passed": true
+    },
+    {
+      "check": "patch:exp-control/float64-exp.patch",
+      "passed": true
+    },
+    {
+      "check": "python-syntax:build_and_test.py",
+      "passed": true
+    },
+    {
+      "check": "python-syntax:upstream-python_tests_test_double.py",
+      "passed": true
+    },
+    {
+      "check": "python-syntax:validate_artifacts.py",
+      "passed": true
+    },
+    {
+      "check": "python-syntax:probe.py",
+      "passed": true
+    },
+    {
+      "check": "python-syntax:upstream-python_tests_test_autograd.py",
+      "passed": true
+    },
+    {
+      "check": "link:README.md:REPORT_RU.md",
+      "passed": true
+    },
+    {
+      "check": "link:README.md:BUILD.md",
+      "passed": true
+    },
+    {
+      "check": "link:README.md:probe.py",
+      "passed": true
+    },
+    {
+      "check": "link:README.md:native_regression.cpp",
+      "passed": true
+    },
+    {
+      "check": "link:README.md:expm1-vjp.patch",
+      "passed": true
+    },
+    {
+      "check": "link:README.md:wheel-reproduction.json",
+      "passed": true
+    },
+    {
+      "check": "link:README.md:expm1-vjp.patch",
+      "passed": true
+    },
+    {
+      "check": "link:README.md:exp-control/README.md",
+      "passed": true
+    },
+    {
+      "check": "link:README.md:run-before.json",
+      "passed": true
+    },
+    {
+      "check": "link:README.md:run-vjp-only.json",
+      "passed": true
+    },
+    {
+      "check": "link:README.md:run-exp-only.json",
+      "passed": true
+    },
+    {
+      "check": "link:README.md:run-combined.json",
+      "passed": true
+    },
+    {
+      "check": "link:README.md:publication-duplicate-search.json",
+      "passed": true
+    },
+    {
+      "check": "link:README.md:source-metadata.json",
+      "passed": true
+    },
+    {
+      "check": "link:README.md:native-source-metadata.json",
+      "passed": true
+    },
+    {
+      "check": "link:README.md:publication-rerun.json",
+      "passed": true
+    },
+    {
+      "check": "link:README.md:artifact-validation.json",
+      "passed": true
+    },
+    {
+      "check": "link:REPORT_RU.md:probe.py",
+      "passed": true
+    },
+    {
+      "check": "link:REPORT_RU.md:wheel-reproduction.json",
+      "passed": true
+    },
+    {
+      "check": "link:REPORT_RU.md:expm1-vjp.patch",
+      "passed": true
+    },
+    {
+      "check": "link:REPORT_RU.md:exp-control/README.md",
+      "passed": true
+    },
+    {
+      "check": "link:REPORT_RU.md:native_regression.cpp",
+      "passed": true
+    },
+    {
+      "check": "link:REPORT_RU.md:run-before.json",
+      "passed": true
+    },
+    {
+      "check": "link:REPORT_RU.md:run-vjp-only.json",
+      "passed": true
+    },
+    {
+      "check": "link:REPORT_RU.md:run-exp-only.json",
+      "passed": true
+    },
+    {
+      "check": "link:REPORT_RU.md:run-combined.json",
+      "passed": true
+    },
+    {
+      "check": "link:REPORT_RU.md:build_and_test.py",
+      "passed": true
+    },
+    {
+      "check": "link:REPORT_RU.md:build-results.json",
+      "passed": true
+    },
+    {
+      "check": "link:REPORT_RU.md:BUILD.md",
+      "passed": true
+    },
+    {
+      "check": "link:REPORT_RU.md:source-metadata.json",
+      "passed": true
+    },
+    {
+      "check": "link:REPORT_RU.md:native-source-metadata.json",
+      "passed": true
+    },
+    {
+      "check": "link:REPORT_RU.md:duplicate-search.json",
+      "passed": true
+    }
+  ],
+  "purpose": "Artifact and publication-rerun consistency checks; numerical runs are recorded separately."
+}

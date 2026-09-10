@@ -1,0 +1,97 @@
+{
+  "version": "0.32.2",
+  "device": "Device(cpu, 0)",
+  "cases": [
+    {
+      "dtype": "mlx.core.float32",
+      "input": -20.0,
+      "output": -1.0,
+      "jvp": 2.061153470123145e-09,
+      "vjp": 0.0,
+      "expected": 2.061153622438558e-09
+    },
+    {
+      "dtype": "mlx.core.float32",
+      "input": -18.0,
+      "output": -1.0,
+      "jvp": 1.5229991490173234e-08,
+      "vjp": 0.0,
+      "expected": 1.522997974471263e-08
+    },
+    {
+      "dtype": "mlx.core.float32",
+      "input": -10.0,
+      "output": -0.9999545812606812,
+      "jvp": 4.539993096841499e-05,
+      "vjp": 4.5418739318847656e-05,
+      "expected": 4.5399929762484854e-05
+    },
+    {
+      "dtype": "mlx.core.float32",
+      "input": 0.0,
+      "output": 0.0,
+      "jvp": 1.0,
+      "vjp": 1.0,
+      "expected": 1.0
+    },
+    {
+      "dtype": "mlx.core.float32",
+      "input": 1.0,
+      "output": 1.718281865119934,
+      "jvp": 2.7182817459106445,
+      "vjp": 2.7182817459106445,
+      "expected": 2.718281828459045
+    },
+    {
+      "dtype": "mlx.core.float64",
+      "input": -40.0,
+      "output": -1.0,
+      "jvp": 4.2483537175483534e-18,
+      "vjp": 0.0,
+      "expected": 4.248354255291589e-18
+    },
+    {
+      "dtype": "mlx.core.float64",
+      "input": -20.0,
+      "output": -0.9999999979388464,
+      "jvp": 2.061153470123145e-09,
+      "vjp": 2.0611535811454473e-09,
+      "expected": 2.061153622438558e-09
+    },
+    {
+      "dtype": "mlx.core.float64",
+      "input": -1.0,
+      "output": -0.6321205588285577,
+      "jvp": 0.3678794503211975,
+      "vjp": 0.36787944117144233,
+      "expected": 0.36787944117144233
+    },
+    {
+      "dtype": "mlx.core.float64",
+      "input": 0.0,
+      "output": 0.0,
+      "jvp": 1.0,
+      "vjp": 1.0,
+      "expected": 1.0
+    },
+    {
+      "dtype": "mlx.core.float64",
+      "input": 1.0,
+      "output": 1.7182818284590453,
+      "jvp": 2.7182817459106445,
+      "vjp": 2.7182818284590455,
+      "expected": 2.718281828459045
+    }
+  ],
+  "scaled": {
+    "input": -20.0,
+    "jvp": 0.20611535012722015,
+    "vjp": 0.0,
+    "expected": 0.2061153622438558
+  },
+  "complex": {
+    "status": "unsupported, excluded from audit",
+    "message": "[expm1] Not supported for complex64."
+  },
+  "cpu_seconds": 0.007224000000000008
+}

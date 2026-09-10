@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite this versioned evidence package."
+type: dataset
+title: "MLX expm1: reverse-mode derivatives disappear in the negative tail"
+authors:
+  - family-names: Kadirbekov
+    given-names: Xamit
+date-released: '2026-09-10'
+version: '1.0.0'
+url: 'https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/audits/2026-09-10-mlx-expm1-tail-vjp/'

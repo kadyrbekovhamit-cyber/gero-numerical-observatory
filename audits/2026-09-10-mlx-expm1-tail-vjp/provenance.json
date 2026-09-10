@@ -1,0 +1,117 @@
+{
+  "date": "2026-09-10",
+  "author": "Xamit Kadirbekov",
+  "editing": "Home-directory prefixes replaced by <ORIGINAL_WORKSPACE>. Unfinished scouts removed from expm1 wheel data; their numerical results are not part of this audit. Original result counts unchanged. Probe scouts removed from the executable; the portable native builder replaces the original machine-specific builder. Probe scouts removed from the executable; the portable native builder replaces the original machine-specific builder.",
+  "source_files": [
+    {
+      "file": "native_regression.cpp",
+      "original_sha256": "cf17e22a3302eb89850b2c0bacac51807eca88ca7e8155f0a8671839d7a4848d",
+      "publication_sha256": "cf17e22a3302eb89850b2c0bacac51807eca88ca7e8155f0a8671839d7a4848d"
+    },
+    {
+      "file": "baseline-primitives.cpp",
+      "original_sha256": "fa11ff592720a7898b4d3ba3e57d01355f58a8c6f6d1132a2711cd4ef2edeaba",
+      "publication_sha256": "fa11ff592720a7898b4d3ba3e57d01355f58a8c6f6d1132a2711cd4ef2edeaba"
+    },
+    {
+      "file": "patched-baseline-primitives.cpp",
+      "original_sha256": "580f5f3a242f5d949ed8505fd800d8fd760f25d35a125f4bda3d34477ee7805f",
+      "publication_sha256": "580f5f3a242f5d949ed8505fd800d8fd760f25d35a125f4bda3d34477ee7805f"
+    },
+    {
+      "file": "source-metadata.json",
+      "original_sha256": "9ba4c4ce33bbaf4292e08ee988cb028d1313b9e7fa8499a70f79a50a6e62425e",
+      "publication_sha256": "9ba4c4ce33bbaf4292e08ee988cb028d1313b9e7fa8499a70f79a50a6e62425e"
+    },
+    {
+      "file": "native-source-metadata.json",
+      "original_sha256": "04e3b4513e42627c42848b23e327cbd06a9e48be1a097e640e24d20859adb695",
+      "publication_sha256": "7df3a47c7c5f4b4616a4f3e5dd2ecaacaf41d58cbdfeb9197978370de6f6041c"
+    },
+    {
+      "file": "wheel-reproduction.json",
+      "original_sha256": "612553c010e65b77166a3883291d48be53f351b0df53ca50386183e0685a5148",
+      "publication_sha256": "04af37deb5a1418758ba5bdd68f7d73009df4129f9b001beaebc250ebd974566"
+    },
+    {
+      "file": "duplicate-search.json",
+      "original_sha256": "2cf1fe17bfbcdefe416b73893f2e4450306990777a5dd27b0842e010c556008b",
+      "publication_sha256": "2cf1fe17bfbcdefe416b73893f2e4450306990777a5dd27b0842e010c556008b"
+    },
+    {
+      "file": "build-results.json",
+      "original_sha256": "6cf5eaf449f6024e9626acdb6025ba1eb0a34d4c707fc24616ce1b4279df8f29",
+      "publication_sha256": "ba0a1c26a290560416bfc02c80263f3d30932959dbf1f0b573dd9844f7e0c530"
+    },
+    {
+      "file": "upstream-mlx_ops.cpp",
+      "original_sha256": "7cf1107972ae6d8e3e663efa14a881f46091504822b5e7df69588111bead35bc",
+      "publication_sha256": "7cf1107972ae6d8e3e663efa14a881f46091504822b5e7df69588111bead35bc"
+    },
+    {
+      "file": "upstream-python_tests_test_double.py",
+      "original_sha256": "92446d81bf37cd6d2c60f1108f8ae7cd3dc9be73677eb79bfbede6f4de2c8cfd",
+      "publication_sha256": "92446d81bf37cd6d2c60f1108f8ae7cd3dc9be73677eb79bfbede6f4de2c8cfd"
+    },
+    {
+      "file": "upstream-mlx_primitives.cpp",
+      "original_sha256": "6a045372433d91ec0ec00caf134ad5010fe34d8c0ae7a114496f632b24f74f09",
+      "publication_sha256": "6a045372433d91ec0ec00caf134ad5010fe34d8c0ae7a114496f632b24f74f09"
+    },
+    {
+      "file": "upstream-python_tests_test_autograd.py",
+      "original_sha256": "a615fc5a754b72e0d09dce55984014044ff360e09cf79005abf345c71ac13c90",
+      "publication_sha256": "a615fc5a754b72e0d09dce55984014044ff360e09cf79005abf345c71ac13c90"
+    },
+    {
+      "file": "run-exp-only.json",
+      "original_sha256": "eb208e68c101b54d56f4ff422a83644c27359adb48a71e472f685475d73cee6a",
+      "publication_sha256": "eb208e68c101b54d56f4ff422a83644c27359adb48a71e472f685475d73cee6a"
+    },
+    {
+      "file": "run-combined.json",
+      "original_sha256": "0785642ccf1e6f1b29ba92377dddbc48ea59e6be4a892c1ee4e5eb6a466e055f",
+      "publication_sha256": "0785642ccf1e6f1b29ba92377dddbc48ea59e6be4a892c1ee4e5eb6a466e055f"
+    },
+    {
+      "file": "run-vjp-only.json",
+      "original_sha256": "286531a9d05aa06f092d602f305a4f501c3e665f10177998e57869a695500510",
+      "publication_sha256": "286531a9d05aa06f092d602f305a4f501c3e665f10177998e57869a695500510"
+    },
+    {
+      "file": "run-before.json",
+      "original_sha256": "2d44130f85da780e89cd639dedd6ff68429356eb9dcb9e4792df1fbf68df4bfe",
+      "publication_sha256": "2d44130f85da780e89cd639dedd6ff68429356eb9dcb9e4792df1fbf68df4bfe"
+    },
+    {
+      "file": "run-combined.log",
+      "original_sha256": "ab1d30f3bdffc0242e4a1e89fe0dafb6302b012eae6578e722c597f6542eff50",
+      "publication_sha256": "ab1d30f3bdffc0242e4a1e89fe0dafb6302b012eae6578e722c597f6542eff50"
+    },
+    {
+      "file": "run-vjp-only.log",
+      "original_sha256": "f0bff64d894bc68b64ba25590b2ca7f996c1726d0e2cb1a62051b46921583159",
+      "publication_sha256": "f0bff64d894bc68b64ba25590b2ca7f996c1726d0e2cb1a62051b46921583159"
+    },
+    {
+      "file": "run-before.log",
+      "original_sha256": "8ad0112cb4fb3ecf6af0ca300d9e4616b03faf9145cb99127ea4b80650a60194",
+      "publication_sha256": "8ad0112cb4fb3ecf6af0ca300d9e4616b03faf9145cb99127ea4b80650a60194"
+    },
+    {
+      "file": "run-exp-only.log",
+      "original_sha256": "bdcd202e573e5ad2c161efa8620ed719a6da97fda512f3cec1fd5b5c26484b02",
+      "publication_sha256": "bdcd202e573e5ad2c161efa8620ed719a6da97fda512f3cec1fd5b5c26484b02"
+    },
+    {
+      "file": "probe.py",
+      "original_sha256": "4370601cf09a8b7c239feb2fe93a665b1375db0ec37b9644ac009f20e32f6019",
+      "publication_sha256": "129cf09533b0c820cf952e48e37a260ed5de8f0dd91918579febd1e782d313fc"
+    },
+    {
+      "file": "expm1-vjp.patch",
+      "original_sha256": "8f02152c79b9f6798e37d6b8e8e320ab1e46d526666e031fe8298ca9c5f39998",
+      "publication_sha256": "8f02152c79b9f6798e37d6b8e8e320ab1e46d526666e031fe8298ca9c5f39998"
+    }
+  ]
+}
