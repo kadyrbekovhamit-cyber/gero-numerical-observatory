@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="With transpose=False, affine gather_qmm miscomputes scale and bias gradients. A local C++ orientation repair passes 205 scenarios and 379 checks; the measured quadratic update then lowers the loss." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="A Missing Transpose in MLX Quantized Gradients" />
+    <meta property="og:description" content="With transpose=False, affine gather_qmm miscomputes scale and bias gradients. A local C++ orientation repair passes 205 scenarios and 379 checks; the measured quadratic update then lowers the loss." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/mlx-gather-qmm-transpose-gradients.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-mlx-qmm-transpose.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="A Missing Transpose in MLX Quantized Gradients" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="A Missing Transpose in MLX Quantized Gradients" />
+    <meta name="twitter:description" content="With transpose=False, affine gather_qmm miscomputes scale and bias gradients. A local C++ orientation repair passes 205 scenarios and 379 checks; the measured quadratic update then lowers the loss." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-mlx-qmm-transpose.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/mlx-gather-qmm-transpose-gradients.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <link rel="stylesheet" href="../../assets/ux.css" />
+    <meta name="keywords" content="MLX, gather_qmm, transpose, scale gradients, bias gradients, autodiff" />
+    <title>A Missing Transpose in MLX Quantized Gradients — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "A Missing Transpose in MLX Quantized Gradients", "description": "With transpose=False, affine gather_qmm miscomputes scale and bias gradients. A local C++ orientation repair passes 205 scenarios and 379 checks; the measured quadratic update then lowers the loss.", "datePublished": "2026-09-09", "dateModified": "2026-09-09", "url": "https://www.gero.uz/research/articles/mlx-gather-qmm-transpose-gradients.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <style>
+      .audit-table{overflow-x:auto;margin:1.5rem 0}.audit-table table{width:100%;min-width:620px;border-collapse:collapse}.audit-table th,.audit-table td{padding:14px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #d4d9d5;font-size:14px}.article-prose code{overflow-wrap:anywhere}.article-prose pre{overflow-x:auto}.video-frame{position:relative;aspect-ratio:9/16;max-width:390px;margin:2rem auto;background:#111;border-radius:18px;overflow:hidden;box-shadow:0 18px 50px rgba(14,24,20,.18)}.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    </style>
+  </head>
+  <body class="research-body">
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home"><span class="brand-mark" aria-hidden="true">G</span><span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span></a>
+      <nav aria-label="Main navigation"><a href="../../index.html#method">Method</a><a href="../../index.html#lab">Live lab</a><a class="nav-active" href="../../research/">Research</a></nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    <main><article class="article-shell">
+<a class="back-link" href="../">← Research index</a>
+<header class="article-header"><div class="article-kicker"><span>NUMERICAL CASE STUDY</span><span>9 September 2026</span></div>
+<h1>A Missing Transpose in MLX Quantized Gradients</h1><p class="article-dek">Scale and bias gradients must follow the physical weight orientation, even when a square matrix hides the dimensional mismatch.</p>
+<div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54"><div><strong>Xamit Kadirbekov</strong><span>Reproducible numerical experiments · GERO Research</span></div></div>
+<div class="topic-row"><span>MLX 0.32.2</span><span>Quantized gradients</span><span>FP32 CPU</span></div></header>
+<div class="evidence-banner"><strong>STATUS · LOCALLY REPRODUCED</strong><span>Original: 70 failure records, including exceptions, across 57 scenarios. Local C++ repair: 205 scenarios and 379 checks pass. Partial native rebuild. GPU, full-model effects and novelty remain unestablished.</span></div>
+<div class="article-prose"><p>For affine gather_qmm with transpose=False, the scale/bias VJP reduces a matrix in the wrong orientation. A small synthetic update increases the quadratic loss from 16 to 16.953125; the locally corrected step lowers it to 1.9375. This orientation defect is separate from the previously published sorted-index precondition problem.</p>
+<img src="../../assets/og-mlx-qmm-transpose.png" width="1200" height="630" style="width:100%;height:auto;border-radius:16px" alt="MLX non-transposed gathered quantized multiplication: quadratic loss 16 becomes 16.953125 with the original gradient or 1.9375 with the patched gradient. Local FP32 CPU repair passes 205 scenarios and 379 checks.">
+<h2>The short explanation</h2>
+<video controls playsinline preload="metadata" poster="../media/mlx-qmm-transpose-poster.png" width="1080" height="1920" style="display:block;width:100%;max-width:390px;height:auto;margin:24px auto;border-radius:18px" aria-label="MLX quantized scale and bias gradients, English explanation"><source src="../media/mlx-qmm-transpose-short.mp4" type="video/mp4"><track kind="captions" src="../media/mlx-qmm-transpose-short.en.vtt" srclang="en" label="English">Your browser does not support embedded video.</video>
+<p><a href="https://www.youtube.com/shorts/NL34D-9kVFM">Watch the English YouTube Short →</a></p><p class="muted">Original diagrams and synthetic narration by fictional Alex Vector using the macOS Daniel voice. AI-assisted preparation. <a href="../data/mlx-qmm-transpose-video-source-2026-09-09.zip">Remotion project and source ledger →</a></p>
+<h2>Minimal example</h2>
+<p>Use one 32×32 physical weight matrix. Every 4-bit code is 1, every scale is 1 and every bias is 0; group size is 32. Thus every dequantized weight is exactly 1. There is no quantization approximation in this example.</p>
+<pre><code>import mlx.core as mx
+mx.set_default_device(mx.cpu)
+x = mx.array([1.] + [0.] * 31).reshape(1, 1, 32)
+w = mx.full((1, 32, 4), 0x11111111, dtype=mx.uint32)
+s = mx.ones((1, 32, 1))
+b = mx.zeros((1, 32, 1))
+ids = mx.array([0], dtype=mx.uint32)
+f = lambda s, b: mx.gather_qmm(
+    x, w, s, b, rhs_indices=ids,
+    transpose=False, group_size=32, bits=4)
+y, (ds, db) = mx.vjp(f, [s, b], [mx.ones((1, 1, 32))])
+print(ds.reshape(-1).tolist())  # [1,1,...,1]; expected [32,0,...,0]
+print(db.reshape(-1).tolist())  # [1,1,...,1]; expected [32,0,...,0]</code></pre>
+<p>Each output is the dot product of <code>x=[1,0,...,0]</code> with one weight column. Only physical row 0 contributes. Its group scale and group bias each affect all 32 outputs; the remaining rows contribute nothing.</p>
+<div class="audit-table"><table><thead><tr><th>Quantity for the output sum</th><th>Independent reference</th><th>Official MLX 0.32.2 CPU</th></tr></thead><tbody><tr><td>Forward</td><td>32 ones</td><td>Correct</td></tr><tr><td>Input gradient</td><td>32 in every coordinate</td><td>Correct</td></tr><tr><td>Scale gradient</td><td><code>[32,0,...,0]</code></td><td><code>[1,1,...,1]</code></td></tr><tr><td>Bias gradient</td><td><code>[32,0,...,0]</code></td><td><code>[1,1,...,1]</code></td></tr><tr><td>Scale finite differences, coordinates 0 and 1</td><td><code>[32,0]</code></td><td><code>[32,0]</code></td></tr><tr><td>Bias finite differences, coordinates 0 and 1</td><td><code>[32,0]</code></td><td><code>[32,0]</code></td></tr></tbody></table></div>
+<p>Finite differences evaluate the actual forward operation with step <code>1/1024</code>. Inputs are finite FP32 tensors with compatible dimensions and in-range unsigned indices. An explicit <code>rhs_indices=[0]</code> reaches the gathered path; omitting both index arrays instead exercises the ordinary <code>quantized_matmul</code> fallback, which passes the tested controls.</p>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/51c7376912975293e508613245a933bd7018ff3b/audits/2026-09-09-mlx-gather-qmm-transpose-vjp/reproduce.py">Executable reproduction</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/51c7376912975293e508613245a933bd7018ff3b/audits/2026-09-09-mlx-gather-qmm-transpose-vjp/wheel-reproduction.json">Fresh wheel results</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/51c7376912975293e508613245a933bd7018ff3b/audits/2026-09-09-mlx-gather-qmm-transpose-vjp/probe.py">Earlier comparison probe</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/51c7376912975293e508613245a933bd7018ff3b/audits/2026-09-09-mlx-gather-qmm-transpose-vjp/probe-results.json">Recorded comparison results</a></p>
+<h2>An actual update increases the loss</h2>
+<p>Keep <code>x</code>, the codes and scales fixed. Set the target to <code>[2,0,...,0]</code> and train only the group biases:</p>
+<pre><code>L(b) = 0.5 * sum_j (y_j(b) - target_j)^2
+y_j(b) = 1 + b[0] for all j
+L(b) = 0.5 * ((b[0]-1)^2 + 31*(b[0]+1)^2)
+dL/db[0] = 32*b[0] + 30
+dL/db[k] = 0 for k != 0</code></pre>
+<p>At zero biases, the loss is 16 and the correct gradient is <code>[30,0,...,0]</code>. The original implementation returns <code>[-1,1,...,1]</code>.</p>
+<p>For the identical learning rate <code>1/32</code>:</p>
+<div class="audit-table"><table><thead><tr><th>Update</th><th>New first bias</th><th>Actual loss after update</th></tr></thead><tbody><tr><td>Original MLX gradient</td><td><code>1/32</code></td><td><code>16.953125</code></td></tr><tr><td>Independent exact gradient</td><td><code>-30/32</code></td><td><code>1.9375</code></td></tr><tr><td>Locally patched C++ gradient</td><td><code>-30/32</code></td><td><code>1.9375</code></td></tr></tbody></table></div>
+<p>For the wrong update, every output becomes <code>33/32</code>, so the loss is <code>(31² + 31*33²)/(2*32²) = 16.953125</code>. For the correct update, every output becomes <code>1/16</code>, giving <code>(31² + 31)/(2*16²) = 1.9375</code>.</p>
+<p>Both native variants execute the actual forward operation after the update. The suite also compares the gradient with its explicit reference and checks forward finite differences at two bias coordinates. This is a small synthetic optimization example; no production-model training or financial impact was measured.</p>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/51c7376912975293e508613245a933bd7018ff3b/audits/2026-09-09-mlx-gather-qmm-transpose-vjp/native_regression.cpp">Native loss experiment</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/51c7376912975293e508613245a933bd7018ff3b/audits/2026-09-09-mlx-gather-qmm-transpose-vjp/run-before.log">Original log</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/51c7376912975293e508613245a933bd7018ff3b/audits/2026-09-09-mlx-gather-qmm-transpose-vjp/run-after.log">Patched log</a></p>
+<h2>Rectangular weights expose the shape error</h2>
+<p>For a physical 32×64 weight matrix with group size 32, the bias parameter has shape <code>(1,32,2)</code>. On the official wheel:</p>
+<ul><li>The isolated bias VJP returns <code>(1,64,1)</code> instead.</li><li>The isolated scale VJP raises a broadcasting exception between <code>(1,64,1,32)</code> and <code>(1,32,2,32)</code>.</li></ul>
+<p>The wrong orientation can stay hidden when both matrix dimensions are equal. Rectangular tests expose the dimensional mismatch before some numeric comparisons can run.</p>
+<h2>Mathematical cause and proposed repair</h2>
+<p>The <a href="https://ml-explore.github.io/mlx/build/html/python/_autosummary/mlx.core.gather_qmm.html">official operation contract</a> defines the non-transposed operation as <code>X @ W</code>. For physical weight row <code>k</code>, column <code>j</code>, expert <code>e</code> and column group <code>g(j)</code>:</p>
+<pre><code>W_e[k,j] = scales_e[k,g(j)] * codes_e[k,j] + biases_e[k,g(j)]
+R_e = sum over q with rhs[q]=e of transpose(X_lhs[q]) * G_q
+db_e[k,g] = sum over j in group g of R_e[k,j]
+ds_e[k,g] = sum over j in group g of R_e[k,j] * codes_e[k,j]</code></pre>
+<p>Here <code>G</code> is the output cotangent. Repeated selections must accumulate. Packed integer codes are fixed; this audit does not differentiate integer parameters.</p>
+<p>The shared <a href="https://github.com/ml-explore/mlx/blob/24c699ecee2f7c8b2040de8da1c8382c8bcf31c7/mlx/primitives.cpp#L121">gather_mm_grad helper</a> supplies the opposite orientation, <code>GᵀX</code>. <a href="https://github.com/ml-explore/mlx/blob/24c699ecee2f7c8b2040de8da1c8382c8bcf31c7/mlx/primitives.cpp#L3802">GatherQMM::vjp</a> immediately splits its last dimension into quantization groups. For <code>transpose=False</code>, it first needs to restore the physical weight orientation.</p>
+<p>The proposed change is:</p>
+<pre><code>auto dw = gather_mm_grad(/* existing arguments */);
+if (!transpose_) {
+  dw = swapaxes(dw, -1, -2, stream());
+}
+dsb = unflatten(dw, -1, {-1, group_size_}, stream());</code></pre>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/51c7376912975293e508613245a933bd7018ff3b/audits/2026-09-09-mlx-gather-qmm-transpose-vjp/gather-qmm-transpose-vjp.patch">Complete patch</a></p>
+<p>This patch changes only that orientation step. It does <strong>not</strong> include the previously published <a href="https://www.gero.uz/research/articles/mlx-gather-vjp-preconditions.html">sorted-index/broadcast optimization-precondition repair</a>. The minimal new counterexample uses the ordinary unsorted backward path, so it does not depend on enabling the sorted optimization. The two reports describe distinct causes; this patch is not claimed to fix all gathered-gradient cases.</p>
+<h2>Actual validation results</h2>
+<p>The native harness uses independent double-precision scalar loops over unpacked integer codes to compute forward values and gradients. Its reference does not call MLX autodiff. Comparisons require the expected shape and finite values, with numerical tolerance <code>3e-5*(1+abs(reference))</code>.</p>
+<p>The suite contains 34 tensor configurations, six execution scenarios per configuration, and one separate quadratic-update scenario:</p>
+<ul><li><code>transpose=True</code> and <code>False</code>; <code>(K,N)</code> of <code>(32,32)</code>, <code>(32,64)</code>, <code>(64,32)</code> and selected <code>(64,64)</code> controls.</li><li>Affine 4-bit/8-bit codes, group sizes 32/64 and FP32 parameters.</li><li>Repeated right indices, two explicit index arrays, left broadcasting with the sorted optimization disabled, and right-sorted calls under the required mapping conditions.</li><li>Contiguous and selected strided inputs/cotangents; forward, joint and isolated input/scale/bias VJPs; zero and negative cotangents.</li><li>No-index fallback controls and actual-forward finite differences in the quadratic example.</li></ul>
+<div class="audit-table"><table><thead><tr><th>Native variant</th><th>Scenarios attempted</th><th>Failed scenarios</th><th>Comparisons reached</th><th>Failure records, including exceptions</th></tr></thead><tbody><tr><td>Original compatible base</td><td><code>205</code></td><td><code>57</code></td><td><code>315</code></td><td><code>70</code></td></tr><tr><td>Local orientation patch</td><td><code>205</code></td><td><code>0</code></td><td><code>379</code></td><td><code>0</code></td></tr></tbody></table></div>
+<p>The comparison counts differ because exceptions stop some original scenarios before later assertions. The 70 failure records are manifestations of one orientation defect, not 70 separate discoveries. In this bounded suite, forward, isolated input gradients, <code>transpose=True</code> and the no-index fallback pass before the repair too.</p>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/51c7376912975293e508613245a933bd7018ff3b/audits/2026-09-09-mlx-gather-qmm-transpose-vjp/native_regression.cpp">C++ harness</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/51c7376912975293e508613245a933bd7018ff3b/audits/2026-09-09-mlx-gather-qmm-transpose-vjp/build-results.json">Commands, exit codes and timings</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/51c7376912975293e508613245a933bd7018ff3b/audits/2026-09-09-mlx-gather-qmm-transpose-vjp/artifact-validation.json">Artifact validation</a></p>
+<h2>Versions and reproduction boundary</h2>
+<ul><li>Official installed wheel: MLX <code>0.32.2</code>, CPU.</li><li>Native source base: <code>ce916dbbcaa88e433b6fd1e60a17f766d49c27fe</code>.</li><li>Inspected main: <code>24c699ecee2f7c8b2040de8da1c8382c8bcf31c7</code>.</li><li>Apple clang 17.0.0, C++20, macOS arm64. Changed/test translation units compile at <code>-O0</code> and link ahead of an existing CPU archive.</li><li>CPU archive SHA-256: <code>7826e14e2d1ee526a16352829d460ae39c048e331c339be0b6f8d67d74e68a06</code>.</li></ul>
+<p>Main adds global-scale support and index handling in GatherQMM. The relevant affine reduction block is unchanged; the <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/51c7376912975293e508613245a933bd7018ff3b/audits/2026-09-09-mlx-gather-qmm-transpose-vjp/GatherQMM-baseline-to-upstream.diff">complete method comparison</a> records the differences. Execution used the compatible base, while current-main conclusions come from pinned source inspection and patch-application checks. <strong>A clean full-main build and the complete upstream test suite were not run.</strong></p>
+<p>Publication verification freshly repeated the small wheel reproduction and native before/after builds and runs. The earlier broad wheel comparison is retained as prior evidence and was not rerun for publication. All computations were sequential on CPU with numerical thread environment variables set to one. The wheel import required visibility of the Metal device outside the sandbox, but the probes explicitly selected CPU for computation.</p>
+<pre><code>python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+.venv/bin/python reproduce.py
+
+export MLX_SOURCE_ROOT=/absolute/path/to/mlx-at-ce916db
+export MLX_CPU_BUILD=/absolute/path/to/cpu-build
+python3 build_and_test.py
+python3 validate_artifacts.py</code></pre>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/51c7376912975293e508613245a933bd7018ff3b/audits/2026-09-09-mlx-gather-qmm-transpose-vjp/BUILD.md">BUILD.md</a> describes the compatible archive setup. Public command records use descriptive path placeholders; new executions record their actual paths. <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/51c7376912975293e508613245a933bd7018ff3b/audits/2026-09-09-mlx-gather-qmm-transpose-vjp/source-metadata.json">Versions and source hashes</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/51c7376912975293e508613245a933bd7018ff3b/audits/2026-09-09-mlx-gather-qmm-transpose-vjp/SHA256SUMS.json">Public package checksums</a>.</p>
+<h2>Prior work and remaining limits</h2>
+<p>Four recorded GitHub API searches succeeded; a fifth returned HTTP 403. <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/51c7376912975293e508613245a933bd7018ff3b/audits/2026-09-09-mlx-gather-qmm-transpose-vjp/duplicate-search.json">Raw queries and responses</a> are retained. Related <a href="https://github.com/ml-explore/mlx/pull/4392">PR #4392</a> and <a href="https://github.com/ml-explore/mlx/pull/4051">PR #4051</a> address non-transposed forward GPU dispatch/kernel behavior. They do not supply this missing orientation step in the pinned common affine VJP block. The existing <a href="https://github.com/ml-explore/mlx/blob/24c699ecee2f7c8b2040de8da1c8382c8bcf31c7/python/tests/test_quantized.py#L1716">test_gather_qmm_grad</a> uses <code>transpose=True</code>.</p>
+<p>No exact matching report was identified in the inspected public material. This limited search does not establish priority or rule out private reports. The shallow local history does not establish when the defect was introduced.</p>
+<p>Confirmed execution scope is CPU/FP32 affine VJP for the listed finite shapes and inputs. Metal/CUDA, other dtypes, non-affine modes, full models, performance and combined behavior with the separate sorted-path patch remain untested here. Passing this suite is not a proof over all possible states. No security impact, reward eligibility or upstream acceptance is claimed.</p>
+<p>Prepared with AI assistance. Numerical claims are backed by actual local execution, independent algebra and finite differences. Independent GERO Research; no Apple endorsement. Included MLX code retains its <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/51c7376912975293e508613245a933bd7018ff3b/audits/2026-09-09-mlx-gather-qmm-transpose-vjp/MLX-LICENSE.txt">MIT license</a>.</p><p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/51c7376912975293e508613245a933bd7018ff3b/audits/2026-09-09-mlx-gather-qmm-transpose-vjp">Full English report, tests and patch →</a><br><a href="../data/mlx-qmm-transpose-audit-2026-09-09.zip">Download the evidence ZIP</a><br><code>SHA-256: ff4601e42376a3f5f7e316cafa59cf0b7ddd7fe49c091ba8fe6d3d83d22f05ee</code></p><p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/51c7376912975293e508613245a933bd7018ff3b/audits/2026-09-09-mlx-gather-qmm-transpose-vjp/SOURCES.md">Source ledger</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/51c7376912975293e508613245a933bd7018ff3b/audits/2026-09-09-mlx-gather-qmm-transpose-vjp/SHA256SUMS.json">File checksums</a></p><p>#MLX #Autodiff #Quantization #NumericalComputing #SoftwareTesting</p></div></article></main>    <footer><div class="shell footer-grid"><div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div><p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p><a href="../../feed.xml">RSS</a></div></footer>
+  </body>
+</html>

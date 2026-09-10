@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="MLX returns NaN second derivatives for a smooth cumulative-product polynomial at zero. A division-free C++ prototype passes 57 local scenarios, with an explicit O(N log N) cost." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="A Smooth Polynomial, a NaN Hessian: MLX cumprod at Zero" />
+    <meta property="og:description" content="MLX returns NaN second derivatives for a smooth cumulative-product polynomial at zero. A division-free C++ prototype passes 57 local scenarios, with an explicit O(N log N) cost." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/mlx-cumprod-hessian-at-zero.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-mlx-cumprod.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="A Smooth Polynomial, a NaN Hessian: MLX cumprod at Zero" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="A Smooth Polynomial, a NaN Hessian: MLX cumprod at Zero" />
+    <meta name="twitter:description" content="MLX returns NaN second derivatives for a smooth cumulative-product polynomial at zero. A division-free C++ prototype passes 57 local scenarios, with an explicit O(N log N) cost." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-mlx-cumprod.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/mlx-cumprod-hessian-at-zero.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <link rel="stylesheet" href="../../assets/ux.css" />
+    <meta name="keywords" content="MLX, cumprod, Hessian, higher derivatives, numerical computing, regression tests" />
+    <title>A Smooth Polynomial, a NaN Hessian: MLX cumprod at Zero — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "A Smooth Polynomial, a NaN Hessian: MLX cumprod at Zero", "description": "MLX returns NaN second derivatives for a smooth cumulative-product polynomial at zero. A division-free C++ prototype passes 57 local scenarios, with an explicit O(N log N) cost.", "datePublished": "2026-09-09", "dateModified": "2026-09-09", "url": "https://www.gero.uz/research/articles/mlx-cumprod-hessian-at-zero.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <style>
+      .audit-table{overflow-x:auto;margin:1.5rem 0}.audit-table table{width:100%;min-width:620px;border-collapse:collapse}.audit-table th,.audit-table td{padding:14px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #d4d9d5;font-size:14px}.article-prose code{overflow-wrap:anywhere}.article-prose pre{overflow-x:auto}.video-frame{position:relative;aspect-ratio:9/16;max-width:390px;margin:2rem auto;background:#111;border-radius:18px;overflow:hidden;box-shadow:0 18px 50px rgba(14,24,20,.18)}.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    </style>
+  </head>
+  <body class="research-body">
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home"><span class="brand-mark" aria-hidden="true">G</span><span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span></a>
+      <nav aria-label="Main navigation"><a href="../../index.html#method">Method</a><a href="../../index.html#lab">Live lab</a><a class="nav-active" href="../../research/">Research</a></nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    <main><article class="article-shell">
+<a class="back-link" href="../">← Research index</a>
+<header class="article-header"><div class="article-kicker"><span>NUMERICAL CASE STUDY</span><span>9 September 2026</span></div>
+<h1>A Smooth Polynomial, a NaN Hessian: MLX cumprod at Zero</h1><p class="article-dek">The first gradient is correct. Differentiating it again breaks an ordinary polynomial.</p>
+<div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54"><div><strong>Xamit Kadirbekov</strong><span>Reproducible numerical experiments · GERO Research</span></div></div>
+<div class="topic-row"><span>MLX 0.32.2</span><span>Higher derivatives</span><span>CPU float32</span></div></header>
+<div class="evidence-banner"><strong>STATUS · LOCALLY REPRODUCED</strong><span>Original: 44 of 57 scenarios fail. Division-free C++ prototype: all 57 scenarios and 311 checks pass. The prototype costs O(N log N) scalar work; production suitability remains untested.</span></div>
+<div class="article-prose">
+<p>The sum of the cumulative products of three real inputs is <code>F(a,b,c)=a+ab+abc</code>. It is smooth everywhere, including zero. At <code>[0,2,3]</code>, MLX 0.32.2 gives the correct first gradient, <code>[9,0,0]</code>, but repeated reverse-mode differentiation returns NaNs in the Hessian.</p>
+<p>The same MLX wheel correctly differentiates the explicitly written polynomial. Central finite differences of its actual first gradient also recover the exact Hessian. These independent references identify a problem in the autodiff graph of <code>cumprod</code>.</p>
+<img src="../../assets/og-mlx-cumprod.png" width="1200" height="630" style="width:100%;height:auto;border-radius:16px" alt="MLX cumprod at [0,2,3]: correct first gradient [9,0,0], but the first Hessian column contains NaN instead of [0,4,2]. The division-free prototype passes 57 scenarios and 311 checks, at O(N log N) scalar work.">
+<h2>The 49-second explanation</h2>
+<video controls playsinline preload="metadata" poster="../media/mlx-cumprod-poster.png" width="1080" height="1920" style="display:block;width:100%;max-width:390px;height:auto;margin:24px auto;border-radius:18px" aria-label="MLX cumprod: a smooth polynomial and a NaN Hessian, English narrated explanation">
+<source src="../media/mlx-cumprod-short.mp4" type="video/mp4"><track kind="captions" src="../media/mlx-cumprod-short.en.vtt" srclang="en" label="English">Your browser does not support embedded video. <a href="../media/mlx-cumprod-short.mp4">Download the video</a>.</video>
+<p class="muted">Original diagrams and synthetic narration by the fictional Alex Vector using the macOS Daniel voice. AI-assisted preparation. <a href="../data/mlx-cumprod-video-source-2026-09-09.zip">Remotion project, narration and source ledger →</a></p>
+<h2>A finite reference, a non-finite result</h2>
+<pre><code>F(a,b,c) = a + ab + abc
+gradient = [1+b+bc, a+ac, ab]
+Hessian = [[0, 1+c, b],
+           [1+c, 0, a],
+           [b, a, 0]]
+
+At [0,2,3]:
+MLX                   Exact
+[[NaN, 4, 2],         [[0, 4, 2],
+ [NaN, 0, 0],          [4, 0, 0],
+ [NaN, 0, 0]]          [2, 0, 0]]</code></pre>
+<p>Even a one-element inclusive scan fails a native check: <code>cumprod([x])</code> is the identity, with second derivative zero, but the original returns NaN at zero. These are small, deterministic CPU cases; no full-model effect is inferred.</p>
+<h2>Why the first-order repair is insufficient</h2>
+<p>The Prod branch of <code>Scan::vjp</code> in the <a href="https://github.com/ml-explore/mlx/blob/24c699ecee2f7c8b2040de8da1c8382c8bcf31c7/mlx/primitives.cpp">pinned source</a> divides by the input. Special handling of the first zero and masking give the right first derivative in the example. Differentiating that backward graph again still encounters zero division.</p>
+<p><a href="https://github.com/ml-explore/mlx/pull/1167">PR #1167, Stable cumprod grad at 0</a>, merged on 31 May 2024, already addressed first gradients. Its added tests cover zeros and scan modes, but do not differentiate the resulting gradients again. This report credits that work and investigates higher-order behavior beyond its inspected test coverage. Novelty of the present finding is not established.</p>
+<h2>A division-free recurrence</h2>
+<p>For a real forward inclusive scan with incoming cotangents <code>cᵢ</code>, the polynomial derivative can be expressed as:</p>
+<pre><code>Pᵢ = product(xₖ for k &lt; i)
+Bₙ₋₁ = cₙ₋₁
+Bᵢ = cᵢ + xᵢ₊₁ Bᵢ₊₁
+∂L/∂xᵢ = Pᵢ Bᵢ</code></pre>
+<p>Expanding the recurrence gives the sum of product-monomial derivatives without dividing by an input. Exclusive mode shifts the cotangents and pads with zero; reverse mode changes the direction. The prefix product is an exclusive cumprod.</p>
+<p>The prototype composes affine transformations over distances 1,2,4,…, doubling the covered suffix on each round. It changes only the Prod branch of <code>Scan::vjp</code>. The patch applies cleanly to the inspected main and produces the saved candidate byte-for-byte.</p>
+<p><strong>The tradeoff is O(N log N) scalar work and O(log N) array-operation rounds.</strong> N is the scan-axis length. A work-efficient associative scan, memory use and large-array performance need further investigation. Passing this small selection does not make the prototype production-ready.</p>
+<h2>Actual native results</h2>
+<div class="audit-table" role="region" aria-label="Native before and after results" tabindex="0"><table><thead><tr><th>CPU float32 implementation</th><th>Scenarios passing</th><th>Checks failing</th></tr></thead><tbody>
+<tr><td>Original</td><td>13 / 57</td><td>172 / 311</td></tr>
+<tr><td>Division-free prototype</td><td>57 / 57</td><td>0 / 311</td></tr></tbody></table></div>
+<p>The native reference enumerates monomials and their derivatives in double precision without autodiff. Checks cover forward values, gradients and Hessian rows; scan direction, inclusive/exclusive modes, several zero placements, nonzero controls, lengths 0,1,3,5,8 and two-dimensional axes 1 and −2. Additional cases check mixed third/fourth derivatives and finite differences of the first gradient.</p>
+<p>Weights cycle through <code>[1,−0.5,2]</code> in the native weighted-sum cases; the simple Python example uses unit weights. Main tolerance is <code>2e−5*(1+abs(reference))</code>; finite differences use step <code>1/256</code> and tolerance <code>1e−3*(1+abs(reference))</code>. One vector comparison counts as one check. The 44 failed scenarios are manifestations of one defect.</p>
+<h2>Build provenance and limitations</h2>
+<p>The wheel is MLX 0.32.2, CPU float32. The source pin is <code>24c699ecee2f7c8b2040de8da1c8382c8bcf31c7</code>. Native before/after runs separately compile pristine/patched <code>primitives.cpp</code> on compatible base <code>ce916dbbcaa88e433b6fd1e60a17f766d49c27fe</code>, then link ahead of an existing CPU-only static archive. The entire Scan::vjp method matches the inspected main byte-for-byte.</p>
+<p><strong>This is a partial native rebuild, not a clean complete build of main.</strong> Apple clang 17.0.0, C++20, macOS 15.5 arm64 and Python 3.12.14 were used. Compilation and tests ran sequentially with thread environment limits set to one. Source/archive hashes, compiler flags and actual logs are retained.</p>
+<p>Not tested: Metal/CUDA, complex dtype, FP16/BF16, compiled graphs, large arrays, extreme magnitudes and full-model training. The prototype does not implement a cumprod JVP. Passing a finite selection is not a proof for all inputs or derivative orders. Maintainer acceptance, performance suitability and originality remain unestablished.</p>
+<h2>Reproduction and sources</h2>
+<ul><li><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/bb80fd03fdacd58b30476ebaa0c07954e3448d61/audits/2026-09-09-mlx-cumprod-hessian">Immutable report, source snapshots, Python probe and C++ harness</a></li><li><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/bb80fd03fdacd58b30476ebaa0c07954e3448d61/audits/2026-09-09-mlx-cumprod-hessian/cumprod-polynomial-vjp.patch">Prototype patch</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/bb80fd03fdacd58b30476ebaa0c07954e3448d61/audits/2026-09-09-mlx-cumprod-hessian/run-before.log">Before log</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/bb80fd03fdacd58b30476ebaa0c07954e3448d61/audits/2026-09-09-mlx-cumprod-hessian/run-after.log">After log</a></li><li><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/bb80fd03fdacd58b30476ebaa0c07954e3448d61/audits/2026-09-09-mlx-cumprod-hessian/BUILD.md">Build setup and its validation boundary</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/bb80fd03fdacd58b30476ebaa0c07954e3448d61/audits/2026-09-09-mlx-cumprod-hessian/SOURCES.md">Source ledger and prior work</a></li></ul>
+<pre><code># On a compatible Mac, from the extracted report directory:
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python probe.py
+
+# With a compatible CPU static build of the recorded base:
+export MLX_SOURCE_ROOT=/absolute/path/to/mlx-at-ce916db
+export MLX_CPU_BUILD=/absolute/path/to/cpu-build
+.venv/bin/python build_and_test.py</code></pre>
+<p><a href="../data/mlx-cumprod-audit-2026-09-09.zip" download>Download the evidence package (ZIP) →</a><br>SHA-256: <code>ca73b0f8ac26a83b9d77329af1796a3f78143edb8c0d942e44be95d43881b96b</code></p>
+<p>Prepared with AI assistance; numerical evidence comes from actual local executions and independent mathematical references. Independent reproduction and scoped numerical-correctness reviews are welcome: <a href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20MLX%20cumprod%20review">contact GERO</a>. This work is not affiliated with or endorsed by Apple.</p>
+<p class="muted">#MachineLearning #MLX #Autodiff #NumericalComputing #SoftwareTesting</p>
+</div></article></main>
+    <footer><div class="shell footer-grid"><div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div><p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p><a href="../../feed.xml">RSS</a></div></footer>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Valid sorted-index calls produce incorrect gather_mm and affine gather_qmm gradients. A bounded local FP32 CPU repair passes 69 scenarios and 626 checks; quantized FP16 fallback remains a limitation." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Sorted Indices, Wrong Gradients: MLX Gather" />
+    <meta property="og:description" content="Valid sorted-index calls produce incorrect gather_mm and affine gather_qmm gradients. A bounded local FP32 CPU repair passes 69 scenarios and 626 checks; quantized FP16 fallback remains a limitation." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/mlx-gather-vjp-preconditions.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-mlx-gather.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Sorted Indices, Wrong Gradients: MLX Gather" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sorted Indices, Wrong Gradients: MLX Gather" />
+    <meta name="twitter:description" content="Valid sorted-index calls produce incorrect gather_mm and affine gather_qmm gradients. A bounded local FP32 CPU repair passes 69 scenarios and 626 checks; quantized FP16 fallback remains a limitation." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-mlx-gather.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/mlx-gather-vjp-preconditions.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <link rel="stylesheet" href="../../assets/ux.css" />
+    <meta name="keywords" content="MLX, gather_mm, gather_qmm, gradients, autodiff, regression tests" />
+    <title>Sorted Indices, Wrong Gradients: MLX Gather — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Sorted Indices, Wrong Gradients: MLX Gather", "description": "Valid sorted-index calls produce incorrect gather_mm and affine gather_qmm gradients. A bounded local FP32 CPU repair passes 69 scenarios and 626 checks; quantized FP16 fallback remains a limitation.", "datePublished": "2026-09-09", "dateModified": "2026-09-09", "url": "https://www.gero.uz/research/articles/mlx-gather-vjp-preconditions.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <style>
+      .audit-table{overflow-x:auto;margin:1.5rem 0}.audit-table table{width:100%;min-width:620px;border-collapse:collapse}.audit-table th,.audit-table td{padding:14px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #d4d9d5;font-size:14px}.article-prose code{overflow-wrap:anywhere}.article-prose pre{overflow-x:auto}.video-frame{position:relative;aspect-ratio:9/16;max-width:390px;margin:2rem auto;background:#111;border-radius:18px;overflow:hidden;box-shadow:0 18px 50px rgba(14,24,20,.18)}.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    </style>
+  </head>
+  <body class="research-body">
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home"><span class="brand-mark" aria-hidden="true">G</span><span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span></a>
+      <nav aria-label="Main navigation"><a href="../../index.html#method">Method</a><a href="../../index.html#lab">Live lab</a><a class="nav-active" href="../../research/">Research</a></nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    <main><article class="article-shell">
+<a class="back-link" href="../">← Research index</a>
+<header class="article-header"><div class="article-kicker"><span>NUMERICAL CASE STUDY</span><span>9 September 2026</span></div>
+<h1>Sorted Indices, Wrong Gradients: MLX Gather</h1><p class="article-dek">Correct forward results can conceal a wrong reverse derivative when an optimization's preconditions are too broad.</p>
+<div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54"><div><strong>Xamit Kadirbekov</strong><span>Reproducible numerical experiments · GERO Research</span></div></div>
+<div class="topic-row"><span>MLX 0.32.2</span><span>Gather gradients</span><span>FP32 CPU</span></div></header>
+<div class="evidence-banner"><strong>STATUS · LOCALLY REPRODUCED</strong><span>Original: 71 failed checks in 19 scenarios. Local C++ repair: all 69 scenarios and 626 checks pass. Partial native rebuild; some FP16 calls hit an unsupported fallback after repair. Novelty and maintainer acceptance are unestablished.</span></div>
+<div class="article-prose"><p>Repeated left indices route gradients to an unused input. Left broadcasting can make a gradient depend on an explicitly initialized synthetic backing tail beyond the logical slice. This report establishes numerical defects in the tested local CPU paths; it does not establish cross-user memory access or full-model impact.</p>
+<img src="../../assets/og-mlx-gather.png" width="1200" height="630" style="width:100%;height:auto;border-radius:16px" alt="MLX sorted gather gradient is [3, 5] instead of [8, 0]. Local FP32 CPU patch passes 69 scenarios and 626 checks, with FP16 fallback still a limitation.">
+<h2>The short explanation</h2>
+<video controls playsinline preload="metadata" poster="../media/mlx-gather-poster.png" width="1080" height="1920" style="display:block;width:100%;max-width:390px;height:auto;margin:24px auto;border-radius:18px" aria-label="MLX sorted gather gradients, English explanation"><source src="../media/mlx-gather-short.mp4" type="video/mp4"><track kind="captions" src="../media/mlx-gather-short.en.vtt" srclang="en" label="English">Your browser does not support embedded video.</video>
+<p><a href="https://www.youtube.com/shorts/N9tGyMM3BTc">Watch the English YouTube Short →</a></p><p class="muted">Original diagrams and synthetic narration by fictional Alex Vector using the macOS Daniel voice. AI-assisted preparation. <a href="../data/mlx-gather-video-source-2026-09-09.zip">Remotion project and source ledger →</a></p>
+<h2>Minimal example</h2>
+<pre><code>import mlx.core as mx
+mx.set_default_device(mx.cpu)
+a = mx.array([2., 7.]).reshape(2, 1, 1)
+b = mx.array([3., 5.]).reshape(2, 1, 1)
+ids = mx.array([0, 0], dtype=mx.uint32)
+f = lambda a, b: mx.gather_mm(
+    a, b, lhs_indices=ids, sorted_indices=True)
+y, (da, db) = mx.vjp(f, [a, b], [mx.ones((2, 1, 1))])
+print(y[0].reshape(-1).tolist())  # [6, 10]: correct forward
+print(da.reshape(-1).tolist())    # [3, 5]; expected [8, 0]
+print(db.reshape(-1).tolist())    # [2, 7]; expected [2, 2]</code></pre>
+<p>The two outputs are <code>Y=[3a0, 5a0]</code>. For their sum, differentiation gives <code>dA=[8,0]</code> and <code>dB=[a0,a0]=[2,2]</code>. The second left matrix is not selected at all. Its nonzero gradient is not an ordinary rounding discrepancy.</p>
+<p>The <a href="https://ml-explore.github.io/mlx/build/html/python/_autosummary/mlx.core.gather_mm.html">official gather_mm contract</a> permits the sorted optimization flag when one supplied index array is sorted; it does not require uniqueness. The <a href="https://ml-explore.github.io/mlx/build/html/python/_autosummary/mlx.core.gather_qmm.html">gather_qmm documentation</a> describes the corresponding quantized operation. The central examples use in-range unsigned indices, compatible finite FP32 arrays and a single nondecreasing index array. Disabling <code>sorted_indices</code> gives the expected gradients in these reproductions.</p>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/813089bfd12ad2e8d0b6a54a0bbd266fcc965a63/audits/2026-09-09-mlx-gather-vjp-preconditions/probe.py">Executable probe</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/813089bfd12ad2e8d0b6a54a0bbd266fcc965a63/audits/2026-09-09-mlx-gather-vjp-preconditions/probe-results.json">Fresh wheel results</a></p>
+<h2>A measured step increases the loss</h2>
+<p>Keep <code>B</code> fixed and use the smooth quadratic loss:</p>
+<pre><code>Y0 = 3 a0,  Y1 = 5 a0
+L(A) = 0.5 (Y0 - Y1)^2 = 2 a0^2
+gradient = [4 a0, 0]
+at A=[2,7]: L=8 and gradient=[8,0]</code></pre>
+<p>The original sorted path returns <code>[-12,20]</code>. At learning rate <code>1/32</code>:</p>
+<div class="audit-table"><table><thead><tr><th>Variant</th><th>Gradient</th><th>Updated A</th><th>Actual loss after update</th></tr></thead><tbody><tr><td>Original sorted path</td><td><code>[-12,20]</code></td><td><code>[2.375,6.375]</code></td><td><code>11.28125</code></td></tr><tr><td>Correct / patched path</td><td><code>[8,0]</code></td><td><code>[1.75,7]</code></td><td><code>6.125</code></td></tr></tbody></table></div>
+<p>Both losses come from evaluating the actual forward operation after the update. The native suite also checks the loss, both gradient coordinates, finite differences and the summed Hessian rows <code>[4,0]</code>. Central differences with step <code>1/1024</code> give exactly <code>[8,0]</code> in this small FP32 example. There is no nonsmooth tie or subgradient convention involved.</p>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/813089bfd12ad2e8d0b6a54a0bbd266fcc965a63/audits/2026-09-09-mlx-gather-vjp-preconditions/probe_quantized_and_loss.py">Wheel loss and quantized probe</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/813089bfd12ad2e8d0b6a54a0bbd266fcc965a63/audits/2026-09-09-mlx-gather-vjp-preconditions/quantized-and-loss-results.json">Measured numbers</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/813089bfd12ad2e8d0b6a54a0bbd266fcc965a63/audits/2026-09-09-mlx-gather-vjp-preconditions/native_regression.cpp">Native loss test</a></p>
+<h2>The quantized case has an exact weight reference</h2>
+<p>In the minimal affine <code>gather_qmm</code> example, each packed 4-bit code is 1, the scales are 1, and the two biases are 2 and 4. The dequantized 32×32 matrices therefore contain exactly 3 and 5. There is no quantization approximation in these particular reference weights.</p>
+<p>With two left input vectors containing 2 and 7, left indices <code>[0,0]</code>, and unit output cotangents:</p>
+<div class="audit-table"><table><thead><tr><th>Gradient, first coordinate of each batch</th><th>Expected</th><th>Original sorted path</th></tr></thead><tbody><tr><td>Input <code>dX</code></td><td><code>[256,0]</code></td><td><code>[96,160]</code></td></tr><tr><td>Scale <code>dS</code></td><td><code>[64,64]</code></td><td><code>[64,224]</code></td></tr><tr><td>Bias <code>dBias</code></td><td><code>[64,64]</code></td><td><code>[64,224]</code></td></tr></tbody></table></div>
+<p>The reference is ordinary scalar differentiation of <code>code*scale+bias</code>. The native suite additionally uses varied exact integer codes with 4-bit and 8-bit packing, independent double-precision scalar loops, and separate as well as joint input/scale/bias VJPs. Packed integer codes are held fixed; no derivative with respect to those integer codes is claimed.</p>
+<h2>A logical slice depends on its synthetic backing tail</h2>
+<pre><code>backing = mx.array([2., 101., 202.]).reshape(3, 1, 1)
+mx.eval(backing)
+a = backing[:1]  # the logical input contains only 2
+b = mx.array([3., 5., 7.]).reshape(3, 1, 1)
+ids = mx.array([0, 1, 2], dtype=mx.uint32)
+f = lambda b: mx.gather_mm(
+    a, b, rhs_indices=ids, sorted_indices=True).sum()
+print(f(b).item())                      # 30: correct
+print(mx.grad(f)(b).reshape(-1).tolist()) # [2,101,202], expected [2,2,2]</code></pre>
+<p>Changing only the backing tail to <code>[-31,47]</code> changes the gradient to <code>[2,-31,47]</code>, while the visible input and forward result remain unchanged. With the sorted flag disabled, both tails give <code>[2,2,2]</code>. After the local C++ patch, both tails also pass with the flag enabled.</p>
+<p><strong>This test uses an explicitly allocated, initialized synthetic array within one process.</strong> It establishes a dependence on values outside the logical slice. It does not establish access outside the allocated buffer, another user&#x27;s data, another process, or a remotely exploitable condition. No such impact is claimed.</p>
+<p>The saved <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/813089bfd12ad2e8d0b6a54a0bbd266fcc965a63/audits/2026-09-09-mlx-gather-vjp-preconditions/upstream-mlx_backend_cpu_masked_mm.cpp">CPU implementation</a> advances through segments supplied by the backward path. In this case, the optimization creates segments incompatible with the broadcast left operand&#x27;s logical row count.</p>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/813089bfd12ad2e8d0b6a54a0bbd266fcc965a63/audits/2026-09-09-mlx-gather-vjp-preconditions/probe_broadcast_tail.py">Controlled synthetic probe</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/813089bfd12ad2e8d0b6a54a0bbd266fcc965a63/audits/2026-09-09-mlx-gather-vjp-preconditions/broadcast-tail-results.json">Fresh results</a></p>
+<h2>Cause and proposed repair</h2>
+<p>For matrix-level gathers, the required reverse rule is:</p>
+<pre><code>Yq = A[iq] B[jq]
+dA[l] = sum over q with iq=l of Gq transpose(B[jq])
+dB[l] = sum over q with jq=l of transpose(A[iq]) Gq</code></pre>
+<p>The derivatives must accumulate repeated selections and respect broadcasting. At pinned main, <a href="https://github.com/ml-explore/mlx/blob/24c699ecee2f7c8b2040de8da1c8382c8bcf31c7/mlx/primitives.cpp#L6080">GatherMM::vjp</a> and <a href="https://github.com/ml-explore/mlx/blob/24c699ecee2f7c8b2040de8da1c8382c8bcf31c7/mlx/primitives.cpp#L3730">GatherQMM::vjp</a> enable the optimized path with:</p>
+<pre><code>bool sorted = left_sorted_ || right_sorted_;</code></pre>
+<p>That segmented path assumes the left rows already correspond to output rows. With repeated left indices, equal element counts do not establish that correspondence. With broadcasting, the original left operand can contain fewer logical rows than the segments assume. The shared <code>gather_mm_grad</code> helper does not apply the missing left selection or expand the broadcast operand.</p>
+<p>The local patch instead gates this optimization after the existing shape comparison:</p>
+<pre><code>bool sorted = right_sorted_ &amp;&amp; no_broadcast;</code></pre>
+<p>Other cases use the existing gather/scatter formulas. The ordinary right-sorted, non-broadcast fast path is retained. This changes the precondition in two VJP methods; it does not introduce a new kernel.</p>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/813089bfd12ad2e8d0b6a54a0bbd266fcc965a63/audits/2026-09-09-mlx-gather-vjp-preconditions/gather-vjp-preconditions.patch">Proposed C++ patch</a></p>
+<p><strong>This is a bounded repair proposal.</strong> CPU <code>GatherMM</code> supports FP32 in the inspected backend. Some FP16 quantized cases can reach an unsupported CPU fallback after this change. The retained exploratory run contains 46 exceptions and is not counted as repaired numerical behavior. GPU execution and performance remain untested; review is needed before adopting the patch in production.</p>
+<h2>Actual validation results</h2>
+<div class="audit-table"><table><thead><tr><th>Native variant</th><th>Scenarios passed</th><th>Checks passed</th><th>Failed checks</th></tr></thead><tbody><tr><td>Original compatible base</td><td><code>50/69</code></td><td><code>555/626</code></td><td><code>71</code></td></tr><tr><td>Local patch on that base</td><td><code>69/69</code></td><td><code>626/626</code></td><td><code>0</code></td></tr></tbody></table></div>
+<p>The primary suite covers FP32 left/right indices, repeated and omitted selections, identity selection, broadcasting, strided matrices, separate and joint VJPs, zero cotangents, negative cotangents for ordinary matrix multiplication, affine 4/8-bit packed weights, actual-forward finite differences, a second derivative, and two initialized synthetic backing tails. Both-explicit-index calls provide additional controls; the central contract counterexamples supply one sorted array.</p>
+<p>Reference outputs and gradients are computed by independent scalar loops in double. The primary comparison uses <code>3e-5*(1+abs(reference))</code> together with exact shape checks and finite-value checks. The small integer examples above are exact enough to separate the defect from tolerance choices.</p>
+<p>Fresh publication verification repeated all three CPU wheel probes and the native build/run sequence. All <strong>38 original artifact hashes</strong> matched before copying; the artifact validator passed <strong>45/45</strong> checks. The 71 failed checks are manifestations of the shared precondition problem, not 71 independent findings.</p>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/813089bfd12ad2e8d0b6a54a0bbd266fcc965a63/audits/2026-09-09-mlx-gather-vjp-preconditions/run-before.log">Baseline log</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/813089bfd12ad2e8d0b6a54a0bbd266fcc965a63/audits/2026-09-09-mlx-gather-vjp-preconditions/run-after.log">Patched log</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/813089bfd12ad2e8d0b6a54a0bbd266fcc965a63/audits/2026-09-09-mlx-gather-vjp-preconditions/build-results.json">Build commands and exit codes</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/813089bfd12ad2e8d0b6a54a0bbd266fcc965a63/audits/2026-09-09-mlx-gather-vjp-preconditions/validation-results.json">Artifact validation</a></p>
+<h2>Versions and reproduction boundary</h2>
+<ul><li>Official wheel: MLX <code>0.32.2</code>, CPU.</li><li>Inspected main: <code>24c699ecee2f7c8b2040de8da1c8382c8bcf31c7</code>.</li><li>Native compatible base: <code>ce916dbbcaa88e433b6fd1e60a17f766d49c27fe</code>.</li><li><code>GatherMM::vjp</code> and the shared <code>gather_mm_grad</code> body match between the two source versions.</li><li><code>GatherQMM::vjp</code> differs: main adds global-scale handling and argument-index checks. The faulty condition and relevant affine paths remain. <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/813089bfd12ad2e8d0b6a54a0bbd266fcc965a63/audits/2026-09-09-mlx-gather-vjp-preconditions/GatherQMM-baseline-to-upstream.diff">Complete method comparison</a>.</li><li>Apple clang 17.0.0, C++20, macOS arm64; sequential <code>-O0</code> translation-unit builds linked ahead of an existing CPU-only archive.</li><li>Reused archive SHA-256: <code>7826e14e2d1ee526a16352829d460ae39c048e331c339be0b6f8d67d74e68a06</code>.</li></ul>
+<p>The proposed patch applies to the saved main source; a separate application check verifies that. Actual native execution used pristine/patched translation units from the compatible base with the reused archive. <strong>This is not a full clean build of current main.</strong> The original checkout and installed wheel were not modified. Computational thread environment variables were set to one.</p>
+<pre><code>python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+.venv/bin/python probe.py
+.venv/bin/python probe_quantized_and_loss.py
+.venv/bin/python probe_broadcast_tail.py
+
+export MLX_SOURCE_ROOT=/absolute/path/to/mlx-at-ce916db
+export MLX_CPU_BUILD=/absolute/path/to/cpu-build
+python3 build_and_test.py
+python3 validate_artifacts.py</code></pre>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/813089bfd12ad2e8d0b6a54a0bbd266fcc965a63/audits/2026-09-09-mlx-gather-vjp-preconditions/BUILD.md">BUILD.md</a> describes the required local archive and compilation database. The public command records replace private absolute paths with descriptive variables; executing the runner writes actual commands for the new environment. <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/813089bfd12ad2e8d0b6a54a0bbd266fcc965a63/audits/2026-09-09-mlx-gather-vjp-preconditions/source-metadata.json">Source versions and hashes</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/813089bfd12ad2e8d0b6a54a0bbd266fcc965a63/audits/2026-09-09-mlx-gather-vjp-preconditions/SHA256SUMS.json">Package checksums</a>.</p>
+<h2>Prior work and limits</h2>
+<p>Seven recorded GitHub queries did not identify an exact matching counterexample. That bounded search does not establish priority. <a href="https://github.com/ml-explore/mlx/pull/2335">PR #2335</a> introduced an MoE backward optimization; the recorded discussion does not contain these examples. <a href="https://github.com/ml-explore/mlx/issues/4253">Issue #4253</a> and <a href="https://github.com/ml-explore/mlx/pull/4261">PR #4261</a> concern a strided-input forward problem. Here, forward is correct and backward fails even on a contiguous FP32 example.</p>
+<p>The inspected <code>test_gather_mm_sorted_vjp</code> and <code>test_gather_qmm_grad</code> exercise right-sorted calls without left broadcasting. That control passes in the new harness too. Raw search results and related discussions are retained in the package.</p>
+<p>Only the listed finite inputs, shapes and affine modes were tested. Metal/CUDA, non-affine quantization, quantized backward with <code>transpose=False</code>, large-model training, performance and the full upstream test suite remain outside the executed scope. Passing these tests is not a proof over all states. Maintainer acceptance, security impact and reward eligibility are unestablished.</p>
+<p>Prepared with AI assistance. Measurements come from actual code execution, independent algebra and finite differences. Independent GERO Research; no Apple endorsement. Included MLX code retains its <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/813089bfd12ad2e8d0b6a54a0bbd266fcc965a63/audits/2026-09-09-mlx-gather-vjp-preconditions/MLX-LICENSE.txt">MIT license</a>.</p><p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/813089bfd12ad2e8d0b6a54a0bbd266fcc965a63/audits/2026-09-09-mlx-gather-vjp-preconditions">Full English report, tests and patch →</a><br><a href="../data/mlx-gather-audit-2026-09-09.zip">Download the evidence ZIP</a><br><code>SHA-256: 5f1083d4a7946b9e2fb9a7d9c533fe8e6d172e44348b214745e01ce721681184</code></p><p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/813089bfd12ad2e8d0b6a54a0bbd266fcc965a63/audits/2026-09-09-mlx-gather-vjp-preconditions/SOURCES.md">Source ledger</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/813089bfd12ad2e8d0b6a54a0bbd266fcc965a63/audits/2026-09-09-mlx-gather-vjp-preconditions/SHA256SUMS.json">File checksums</a></p><p>#MLX #Autodiff #NumericalComputing #MachineLearning #SoftwareTesting</p></div></article></main>    <footer><div class="shell footer-grid"><div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div><p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p><a href="../../feed.xml">RSS</a></div></footer>
+  </body>
+</html>

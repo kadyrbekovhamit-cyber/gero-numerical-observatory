@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Six claims, zero arithmetic errors, five failures. Every one failed above the arithmetic layer: wrong quantity, prior art, or a fabricated citation." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="A Retraction Log: Six Collatz Claims and What Killed Them" />
+    <meta property="og:description" content="Six claims, zero arithmetic errors, five failures. Every one failed above the arithmetic layer: wrong quantity, prior art, or a fabricated citation." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/collatz-retraction-log.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="A Retraction Log: Six Collatz Claims and What Killed Them" />
+    <meta name="twitter:description" content="Six claims, zero arithmetic errors, five failures. Every one failed above the arithmetic layer: wrong quantity, prior art, or a fabricated citation." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/collatz-retraction-log.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>A Retraction Log: Six Collatz Claims and What Killed Them — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "A Retraction Log: Six Collatz Claims and What Killed Them", "description": "Six claims, zero arithmetic errors, five failures. Every one failed above the arithmetic layer: wrong quantity, prior art, or a fabricated citation.", "datePublished": "2026-09-02", "dateModified": "2026-09-02", "url": "https://www.gero.uz/research/articles/collatz-retraction-log.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+  </head>
+  <body class="research-body">
+    
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    
+    <main>
+      <article class="article-shell">
+        <a class="back-link" href="../">← Research index</a>
+        <header class="article-header">
+          <div class="article-kicker"><span>ORIGINAL RESEARCH</span><span>2 September 2026</span></div>
+          <h1>A Retraction Log: Six Collatz Claims and What Killed Them</h1>
+          <p class="article-dek">Six claims, zero arithmetic errors, five failures. Every one failed above the arithmetic layer: wrong quantity, prior art, or a fabricated citation.</p>
+          <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54" /><div><strong>Xamit Kadirbekov</strong><span>Author · GERO Research</span></div></div>
+          <div class="topic-row"><span>Collatz</span><span>Retraction</span><span>Prior art</span></div>
+        </header>
+        <div class="evidence-banner"><strong>STATUS · AUTHOR'S ANALYSIS</strong><span>Arguments and proposals are distinguished from the linked laboratories' reported results.</span></div>
+        <div class="article-prose"><p>Most write-ups report what survived. This one reports what did not, because the failure pattern turned out to be more useful than the results.</p>
+<p>Over several weeks an AI system and I worked on structural questions around the Collatz map — not the conjecture itself, but measurable sub-problems: bounds on a surplus statistic, exact certificates for a graph-theoretic quantity, and termination arguments for rewriting systems. Six claims reached the point where they looked publishable. One survived.</p>
+<h2>What Survived</h2>
+<p>At level 3⁸ a quantity had been established only by a mixed-integer program, which returns a number without a checkable witness. We constructed ninety pairwise disjoint cycles explicitly, which converts the bound from a solver output into a certificate anyone can verify by inspection. That is the whole of the surviving result, and it is a small one.</p>
+<h2>What Did Not, And Why</h2>
+<p>The five failures split into three kinds, and the kinds matter more than the count.</p>
+<p>Already published, in a form we did not recognise. A bound we derived on a rewriting system turned out to be weaker than an existing published result by a factor of 27.9. A branching rule we treated as a discovery is standard in reverse-tree constructions. A family of words we characterised had been published by Rozier in 2019. In a later run the system began re-deriving a statement that is Theorem 1 of an existing paper.</p>
+<p>None of these were computational errors. Every number was correct. They failed on attribution, which numerical verification cannot detect.</p>
+<p>Wrong quantity, right arithmetic. One claim held that a sieve stabilised at density one eighth. The measure formula was verified and it was correct — but it measured the projection of the survivor set, not the survivor density, which we had ourselves computed earlier as tending to zero. A correct computation of the wrong object survived internal review because internal review checked the computation.</p>
+<p>Fabricated sources. Two AI-generated novelty analyses supplied in support of these claims contained invented DOIs. Checked through Crossref, one returned 404 and another resolved to an unrelated paper on recursive least squares. One text introduced a technical term with zero occurrences anywhere in the literature. The prose around them was fluent and specific.</p>
+<h2>The Measurement That Settled A Disagreement</h2>
+<p>One episode is worth isolating. Two independent expert agents disagreed about the limiting value of a surplus ratio: one asserted 9.99, the other 8.29. Both produced arguments. Neither argument was checkable at the length they were written.</p>
+<p>The disagreement was settled by direct computation of the quantity, which returned 9.99 at the predicted critical density. That is the cheap resolution and it should have been the first move rather than the third.</p>
+<h2>What The Log Says About Assurance</h2>
+<p>Six claims. Zero arithmetic errors. Five failures.</p>
+<p>Every failure was a failure of the layer above arithmetic: is this the quantity we meant, has someone already proved it, does this citation exist. Those are the three questions an assurance layer has to answer, and none of them is answered by running the computation again.</p>
+<p>The retrieval failures are the most instructive. The paper that killed the largest claim in a neighbouring project had no DOI, was absent from Crossref and OpenAlex, and sat in a Russian archive that returns 403 to a plain HTTP request. A literature check that queries only the standard indexes will report &quot;no prior art&quot; with complete confidence and be wrong.</p>
+<h2>Current Status</h2>
+<p>There is no publishable Collatz result here. The ninety-cycle certificate is a footnote-sized contribution to an existing argument, not a paper. The surplus measurements are reproducible but do not bear on the conjecture.</p>
+<p>We are reporting this because a research programme that only publishes its successes provides no information about its own reliability. The ratio that matters is not how many claims a system produces. It is how many survive an adversarial check, and what kind of check killed the rest.</p></div>
+      </article>
+    </main>
+    
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

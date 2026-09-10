@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A 104-logit gap makes the reference loss infinite while the mathematical result and ONNX Runtime output remain finite." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="ONNX reference LogSoftmax and cross-entropy return infinity for finite representable results" />
+    <meta property="og:description" content="A 104-logit gap makes the reference loss infinite while the mathematical result and ONNX Runtime output remain finite." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/onnx-reference-logsoftmax-underflow.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ONNX reference LogSoftmax and cross-entropy return infinity for finite representable results" />
+    <meta name="twitter:description" content="A 104-logit gap makes the reference loss infinite while the mathematical result and ONNX Runtime output remain finite." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/onnx-reference-logsoftmax-underflow.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>ONNX reference LogSoftmax and cross-entropy return infinity for finite representable results — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "ONNX reference LogSoftmax and cross-entropy return infinity for finite representable results", "description": "A 104-logit gap makes the reference loss infinite while the mathematical result and ONNX Runtime output remain finite.", "datePublished": "2026-09-06", "dateModified": "2026-09-07", "url": "https://www.gero.uz/research/articles/onnx-reference-logsoftmax-underflow.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+  </head>
+  <body class="research-body">
+    
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    
+    <main>
+      <article class="article-shell audit-article">
+        <a class="back-link" href="../">← Research index</a>
+        <header class="article-header">
+          <div class="article-kicker"><span>INDEPENDENT NUMERICAL AUDIT</span><span>6 September 2026</span></div>
+          <h1>ONNX reference LogSoftmax and cross-entropy return infinity for finite representable results</h1>
+          <p class="article-dek">A 104-logit gap makes the reference loss infinite while the mathematical result and ONNX Runtime output remain finite.</p>
+          <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54" /><div><strong>Xamit Kadirbekov</strong><span>Independent verification · GERO Research</span></div></div>
+          <div class="topic-row"><span>Numerical audit</span><span>ONNX</span><span>LogSoftmax</span></div>
+        </header>
+        <div class="evidence-banner"><strong>STATUS · VERIFIED ORDINARY CORRECTNESS DEFECT</strong><span>Reproduced on ONNX 1.22.0. Correction PR #8423 remains open; its status was checked on September 7, 2026.</span></div>
+        <div class="brief-source">
+          <span>UPSTREAM RECORD</span>
+          <a href="https://github.com/onnx/onnx/pull/8423" rel="noopener noreferrer">onnx/onnx#8423 ↗</a>
+        </div>
+        <div class="article-prose"><h2>Claim under test</h2>
+<p><code>LogSoftmax</code> is defined as the logarithm of the softmax values. In real arithmetic, for any nonempty finite input vector the result is finite: with <code>m = max(x)</code>,</p>
+<pre><code class="language-text">LogSoftmax(x)_i = (x_i - m) - log( sum_j exp(x_j - m) )</code></pre>
+<p>Every term on the right is finite in real arithmetic, and the sum is at least <code>1</code>. Direct log-space evaluation avoids first materializing a probability that can underflow to zero. The examples below have outputs within the float32 finite range. This is not a guarantee for all finite machine inputs: extreme opposite-sign logits can overflow even the shifted subtraction.</p>
+<h2>Observed behavior</h2>
+<p>The reference implementation evaluates the composition instead: it computes <code>softmax(x)</code> first and then takes the logarithm of the result. Once an entry of the softmax underflows to zero, <code>log(0)</code> yields <code>-inf</code>.</p>
+<p>The standard attention-masking idiom is enough to trigger it:</p>
+<pre><code class="language-text">input                : [2.0, 1.0, -1e9, 3.0]
+mpmath (60 dp)       : [-1.407606, -2.407606, -1000000003.407606, -0.407606]
+ONNX ReferenceEval   : [-1.4076059, -2.4076059, -inf,             -0.4076060]
+ONNX Runtime CPU     : [-1.4076059, -2.4076059, -1.0e9,           -0.4076059]</code></pre>
+<p>Accuracy is already lost well before the value becomes infinite. Sweeping the gap between the largest logit and a second one, in <code>float32</code>:</p>
+<pre><code class="language-text">gap  100 : reference -99.98309   exact -100
+gap  103 : reference -103.27893   exact -103
+gap  104 : reference -inf         exact -104
+gap 1000 : reference -inf         exact -1000</code></pre>
+<p>The same code path is used by the classification loss. With four classes, the target class suppressed by the given gap, and <code>reduction=&quot;none&quot;</code>:</p>
+<pre><code class="language-text">gap   50 : reference   50.0   runtime   50.0   exact   50.0
+gap  104 : reference    inf   runtime  104.0   exact  104.0
+gap 1000 : reference    inf   runtime 1000.0   exact 1000.0</code></pre>
+<p>This audit establishes an incorrect forward loss in the reference evaluator. It does not make a claim about gradients: <code>ReferenceEvaluator</code> is a forward evaluator, and automatic-differentiation systems may implement the derivative through a separate stable path.</p>
+<h2>Expected behavior</h2>
+<p>The stable form above. ONNX Runtime returns finite approximations; the analytical expression was evaluated independently with <code>mpmath</code> at 50–60 decimal digits.</p>
+<h2>Reproduction</h2>
+<pre><code class="language-python">import numpy as np, onnxruntime as ort
+from onnx import TensorProto, helper
+from onnx.reference import ReferenceEvaluator
+
+x = np.array([[2.0, 1.0, -1e9, 3.0]], np.float32)
+g = helper.make_graph(
+    [helper.make_node(&quot;LogSoftmax&quot;, [&quot;x&quot;], [&quot;y&quot;], axis=-1)], &quot;g&quot;,
+    [helper.make_tensor_value_info(&quot;x&quot;, TensorProto.FLOAT, [1, 4])],
+    [helper.make_tensor_value_info(&quot;y&quot;, TensorProto.FLOAT, [1, 4])])
+m = helper.make_model(g, opset_imports=[helper.make_opsetid(&quot;&quot;, 23)], ir_version=12)
+
+ref = ReferenceEvaluator(m).run(None, {&quot;x&quot;: x})[0]
+options = ort.SessionOptions()
+options.intra_op_num_threads = 1
+options.inter_op_num_threads = 1
+options.execution_mode = ort.ExecutionMode.ORT_SEQUENTIAL
+ort_out = ort.InferenceSession(
+    m.SerializeToString(), sess_options=options,
+    providers=[&quot;CPUExecutionProvider&quot;]).run(None, {&quot;x&quot;: x})[0]
+
+assert np.isfinite(ref).all(), (ref, ort_out)   # fails: reference contains -inf</code></pre>
+<h2>Mathematical certificate</h2>
+<p>For the counterexample the exact third component is <code>-1000000003 - log(1 + exp(-1) + exp(-2) + exp(-1000000003))</code>, which is finite and approximately <code>-1000000003.407606</code>. The mathematical result lies within the finite float32 range. Returning <code>-inf</code> for this component is therefore wrong independently of any tolerance.</p>
+<p>The threshold is the underflow point of <code>exp</code> in the working dtype:</p>
+<pre><code class="language-text">float32 : finite up to a gap of 103, -inf from 104
+float64 : finite up to a gap of 745, -inf from 746</code></pre>
+<p>Between roughly <code>-87</code> and <code>-104</code> in <code>float32</code> the exponential is subnormal, so the reference is finite but already inaccurate — the error at gap <code>103</code> is <code>0.28</code>, in a quantity that is a log-probability.</p>
+<h2>Impact</h2>
+<p>The reference evaluator is a useful comparison baseline for ONNX backends and for testing operator implementations. A backend that evaluates <code>LogSoftmax</code> stably, as ONNX Runtime does in this test, disagrees with the reference on these inputs, so a correct finite result can appear inconsistent with the reference. A finite sentinel such as <code>-1e9</code>, representative of additive attention masks, is sufficient to trigger the mismatch.</p>
+<p>This is a numerical-correctness defect in a reference implementation. It is not a security finding, and it is not a defect in ONNX Runtime, which returns the correct values in every case tested here.</p>
+<h2>Proposed correction</h2>
+<p>Evaluate in log space rather than composing:</p>
+<pre><code class="language-python">class LogSoftmax(Softmax):
+    def _run(self, X):
+        axis = self.axis
+        tmp = X - X.max(axis=axis, keepdims=1)
+        Y = tmp - np.log(np.exp(tmp).sum(axis=axis, keepdims=1))
+        return (Y.astype(X.dtype),)</code></pre>
+<p><code>SoftmaxCrossEntropyLoss</code> should consume the same log-space result instead of recomputing <code>np.log(p)</code>.</p>
+<h2>Verification</h2>
+<ul><li>Reproduced on <code>onnx</code> 1.22.0 with <code>onnxruntime</code> 1.29.0, macOS ARM64.</li><li>Rechecked on 2026-09-07 with NumPy 2.5.2, mpmath 1.3.0 and one CPU worker; both the reference underflow and the finite ONNX Runtime results persisted.</li><li><code>onnx/reference/ops/op_log_softmax.py:13-14</code> composes <code>Softmax</code> then <code>np.log</code>; <code>onnx/reference/ops/op_softmax_cross_entropy_loss.py:22-26</code> repeats the same composition under a comment reading <code># compute log_softmax</code>.</li><li>Current <code>main</code> at commit <code>6e96797f0e5b</code> (2026-09-05) carries byte-identical code for both files.</li><li>Control: <code>QLinearMatMul</code> matched an exact integer oracle and the runtime with zero difference; <code>GroupNormalization</code> and <code>InstanceNormalization</code> agreed with the runtime to <code>2.4e-07</code>; <code>Attention</code> with <code>is_causal=1</code> and with an additive mask satisfied the structural masking invariants exactly.</li><li>Targeted issue and pull-request searches over open and closed items, in four phrasings, found no duplicate.</li></ul>
+<h2>Boundary</h2>
+<p>Reachable whenever the spread of the logits exceeds the dtype&#x27;s exponential underflow point. It does not affect ONNX Runtime users, only consumers of the reference implementation — conformance suites, backend authors comparing against it, and code that imports <code>onnx.reference</code> directly.</p>
+<h2>Upstream status</h2>
+<p>Correction and two focused regression tests were submitted upstream as <a href="https://github.com/onnx/onnx/pull/8423" rel="noopener noreferrer">ONNX pull request #8423</a>.</p>
+<p>Checked on 2026-09-07: the PR remains open and unmerged, with a human approval. A bot&#x27;s suggested dtype-promotion issue was not reproduced in 72 focused combinations on NumPy 2.5.2 using the current PR source. This check covers float16/32/64, two input ranks, weighted and unweighted loss, optional ignored targets and all three reductions; it does not establish behavior on other NumPy versions or array implementations.</p>
+<h2>Correction log</h2>
+<p>2026-09-07: corrected the written expression for the masked component and distinguished real-arithmetic finiteness from machine representability. The previous expression used incorrect exponential terms. The input, measured outputs and conclusion about reference underflow are unchanged. The mpmath calculation is labelled a high-precision approximation, not an exact oracle.</p>
+<p>Public communication: <a href="https://www.gero.uz/research/articles/onnx-reference-logsoftmax-underflow.html" rel="noopener noreferrer">GERO article</a>, <a href="https://youtu.be/ZmYE-fxxLrw" rel="noopener noreferrer">video</a>, and <a href="https://www.linkedin.com/feed/update/urn:li:share:7502407745753546752/" rel="noopener noreferrer">LinkedIn post</a>.</p></div>
+      </article>
+    </main>
+    
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

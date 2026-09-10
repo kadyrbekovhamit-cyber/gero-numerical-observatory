@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A five-line counterexample shows reciprocal multiplication changing a result that direct complex division preserves, with a separate integer-power phase-error finding." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="When Reciprocal Multiplication Changes the Answer: Two Swift Numerics Contract Tests" />
+    <meta property="og:description" content="A five-line counterexample shows reciprocal multiplication changing a result that direct complex division preserves, with a separate integer-power phase-error finding." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/swift-numerics-complex-reciprocal-contract.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="When Reciprocal Multiplication Changes the Answer: Two Swift Numerics Contract Tests" />
+    <meta name="twitter:description" content="A five-line counterexample shows reciprocal multiplication changing a result that direct complex division preserves, with a separate integer-power phase-error finding." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/swift-numerics-complex-reciprocal-contract.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>When Reciprocal Multiplication Changes the Answer: Two Swift Numerics Contract Tests — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "When Reciprocal Multiplication Changes the Answer: Two Swift Numerics Contract Tests", "description": "A five-line counterexample shows reciprocal multiplication changing a result that direct complex division preserves, with a separate integer-power phase-error finding.", "datePublished": "2026-09-05", "dateModified": "2026-09-05", "url": "https://www.gero.uz/research/articles/swift-numerics-complex-reciprocal-contract.html", "author": [{"@type": "Person", "name": "Xamit Kadirbekov"}], "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+  </head>
+  <body class="research-body">
+    
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    
+    <main>
+      <article class="article-shell">
+        <a class="back-link" href="../">← Research index</a>
+        <header class="article-header">
+          <div class="article-kicker"><span>ORIGINAL RESEARCH</span><span>5 September 2026</span></div>
+          <h1>When Reciprocal Multiplication Changes the Answer: Two Swift Numerics Contract Tests</h1>
+          <p class="article-dek">A five-line counterexample shows reciprocal multiplication changing a result that direct complex division preserves, with a separate integer-power phase-error finding.</p>
+          <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Khamit Kadyrbekov" width="54" height="54" /><div><strong>Xamit Kadirbekov</strong><span>Authors · GERO Research</span></div></div>
+          <div class="topic-row"><span>Floating point</span><span>Swift Numerics</span><span>API contracts</span></div>
+        </header>
+        <div class="evidence-banner"><strong>STATUS · AUTHOR&#x27;S ANALYSIS</strong><span>Arguments and proposals are distinguished from the linked laboratories&#x27; reported results.</span></div>
+        
+        <div class="article-prose"><p>The documentation makes an unusually strong statement about complex reciprocals: when `reciprocal` is non-nil, replacing direct division with multiplication by that reciprocal cannot change the result. It says the two computations are “always equivalent.”</p>
+<p>A five-line counterexample changes the answer.</p>
+<pre><code>import ComplexModule
+
+typealias C = Complex&lt;Double&gt;
+let a = C(1e300, 0)
+let b = C(1e300, 1e200)
+
+print(a / b)
+print(a * b.reciprocal!)</code></pre>
+<p>On Apple Swift 6.1.2, arm64 macOS, against the current Swift Numerics `main` commit, the results are:</p>
+<pre><code>a / b          = (0.9999999999999999, -1e-100)
+a * reciprocal = (0.9999999999999999, 0.0)</code></pre>
+<p>The reciprocal is non-nil, but the two computations are not equal.</p>
+<h2>Why the component disappears</h2>
+<p>The denominator contains two very different scales: `1e300` and `1e200`. Its reciprocal has a real component near `1e-300`; the mathematically required imaginary component is near `-1e-400`, below the binary64 subnormal range, so it rounds to zero.</p>
+<p>Multiplying that stored reciprocal by the numerator cannot recover the missing component.</p>
+<p>Direct division is different. Swift Numerics detects the badly scaled denominator and uses a rescaled division path. That path preserves the small ratio long enough to return the finite imaginary component `-1e-100`.</p>
+<p>This is precisely the situation in which hoisting a reciprocal changes a result that direct division can still represent.</p>
+<h2>A deterministic stress test</h2>
+<p>I then generated two million deterministic complex input pairs. Every generated real and imaginary input component was a finite, normal `Double`. I retained cases in which `denominator.reciprocal` was non-nil and both candidate results were finite.</p>
+<p>Among 1,850,381 eligible cases:</p>
+<ul><li>129,170 direct-division and reciprocal-multiplication results differed;</li><li>the mismatch rate was 6.98072% under this stress distribution.</li></ul>
+<p>That percentage needs a boundary. The generator samples binary64 exponent fields approximately uniformly, deliberately overrepresenting extreme scale separation. It is an adversarial numerical stress test, not an estimate of how often typical application data will fail.</p>
+<p>The fixed five-line example—not the percentage—is the minimal contract counterexample.</p>
+<h2>A second finding: integer powers through logarithms</h2>
+<p>The same source review exposed a separate accuracy limitation in `Complex.pow(_: Int)`.</p>
+<p>Swift Numerics distinguishes the integer overload from general real or complex exponentiation. The API documentation defines its edge cases through repeated multiplication or division. The `Complex` implementation nevertheless evaluates the integer power through:</p>
+<pre><code>exp(log(z) * n)</code></pre>
+<p>That route introduces and then amplifies phase error even for inputs whose exact powers are trivial.</p>
+<p>For example:</p>
+<pre><code>pow(-1 + 0i, 31)
+observed = (-1.0, 7.349118756157295e-15)
+expected = (-1.0, 0.0)</code></pre>
+<p>The complex-norm error is about 33.1 times `Double.ulpOfOne`.</p>
+<p>At a much larger—but still exactly representable—integer exponent:</p>
+<pre><code>n = 4,503,599,627,370,495
+observed = (-0.16016429413387553, 0.9870903701711397)
+expected = (-1.0, 0.0)
+norm error = 1.296021377806805</code></pre>
+<p>The exponent is below `2^53`, so conversion from `Int` to `Double` is exact. This example is not explained by the source TODO that mentions rounding an integer during conversion. The dominant mechanism is phase-error amplification caused by using `log` and `exp` for an integer power.</p>
+<p>This second result should be labelled carefully. It is an accuracy and algorithm-selection finding; I am not claiming that `Complex.pow` publishes a universal ULP bound.</p>
+<h2>The bounded conclusion</h2>
+<p>The reciprocal case is the stronger contract result:</p>
+<ul><li>the public documentation permits a non-nil reciprocal;</li><li>the example receives a non-nil reciprocal;</li><li>direct division preserves a finite component;</li><li>reciprocal multiplication loses it;</li><li>therefore the documented equivalence does not hold for all permitted values.</li></ul>
+<p>The integer-power case is a separate quality result showing that the current transcendental implementation can be very far from an exactly known integer power.</p>
+<p>Neither finding is a security claim. Both are reproducible software-engineering results against a pinned public commit.</p>
+<h2>Reproduce it</h2>
+<p>The complete Swift package, fixed examples, deterministic generator, recorded output and interpretation boundary are public:</p>
+<p class="source-link"><a href="https://github.com/kadyrbekovhamit-cyber/swift-numerics-complex-contract-audit" rel="noopener noreferrer">github.com</a></p>
+<p>Tested against Swift Numerics commit `899af71c0256d0ad181e3b7eb3453c1065d928a5`, the current `main` commit on 5 September 2026.</p>
+<p>Independent reproduction and analysis by Xamit Kadirbekov / GERO. No affiliation with Apple or the Swift Numerics maintainers is claimed.</p></div>
+      </article>
+    </main>
+    
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

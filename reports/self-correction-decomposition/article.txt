@@ -1,0 +1,27 @@
+← Research index
+FRONTIER LAB WATCHReviewed 2 September 2026
+Self-correction is two problems, not one
+Google Research separates finding a mistake from repairing it; GERO turns that distinction into separate evidence contracts.
+Xamit KadirbekovIndependent analysis · Source: Google Research
+Self-correctionError localizationEvaluation
+STATUS · SOURCE REPORT + GERO ANALYSISThis brief has not independently reproduced the laboratory's experiment.
+PRIMARY SOURCE · 11 January 2024
+Can large language models identify and correct their mistakes? ↗
+What the laboratory reports
+Google Research studies mistake finding separately from mistake correction.
+The work treats feedback quality and repair ability as distinct capabilities rather than one self-correction score.
+This decomposition exposes where a system fails: detecting an error, localizing it or producing a valid repair.
+The mathematical problem
+Detection, localization and repair have different loss functions. Collapsing them into a single accuracy number hides conditional failure rates, especially the probability that a wrong diagnosis leads to a persuasive but invalid repair.
+GERO's proposed response
+Create separate graph events for contradiction detection, faulty-node localization and dependency-safe repair.
+Require a new certificate after repair; never inherit the original verdict automatically.
+Track transition metrics such as invalid-to-valid, valid-to-invalid and unresolved-to-falsely-verified.
+A falsifiable experiment
+Inject labelled defects at different depths of a claim graph.
+Score detection, localization and repair independently.
+Test whether the repaired conclusion survives the same attacks as a clean reference solution.
+Boundary
+A model's ability to critique text does not demonstrate that its proposed correction is valid. The repaired artifact needs fresh verification.
+Read the primary source
+This article is an original analytical summary, not a republication. Read Can large language models identify and correct their mistakes? for the laboratory's complete claims, methods and context.

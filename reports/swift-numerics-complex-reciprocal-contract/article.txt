@@ -1,0 +1,62 @@
+← Research index
+ORIGINAL RESEARCH5 September 2026
+When Reciprocal Multiplication Changes the Answer: Two Swift Numerics Contract Tests
+A five-line counterexample shows reciprocal multiplication changing a result that direct complex division preserves, with a separate integer-power phase-error finding.
+Xamit KadirbekovAuthors · GERO Research
+Floating pointSwift NumericsAPI contracts
+STATUS · AUTHOR'S ANALYSISArguments and proposals are distinguished from the linked laboratories' reported results.
+The documentation makes an unusually strong statement about complex reciprocals: when `reciprocal` is non-nil, replacing direct division with multiplication by that reciprocal cannot change the result. It says the two computations are “always equivalent.”
+A five-line counterexample changes the answer.
+import ComplexModule
+typealias C = Complex<Double>
+let a = C(1e300, 0)
+let b = C(1e300, 1e200)
+print(a / b)
+print(a * b.reciprocal!)
+On Apple Swift 6.1.2, arm64 macOS, against the current Swift Numerics `main` commit, the results are:
+a / b          = (0.9999999999999999, -1e-100)
+a * reciprocal = (0.9999999999999999, 0.0)
+The reciprocal is non-nil, but the two computations are not equal.
+Why the component disappears
+The denominator contains two very different scales: `1e300` and `1e200`. Its reciprocal has a real component near `1e-300`; the mathematically required imaginary component is near `-1e-400`, below the binary64 subnormal range, so it rounds to zero.
+Multiplying that stored reciprocal by the numerator cannot recover the missing component.
+Direct division is different. Swift Numerics detects the badly scaled denominator and uses a rescaled division path. That path preserves the small ratio long enough to return the finite imaginary component `-1e-100`.
+This is precisely the situation in which hoisting a reciprocal changes a result that direct division can still represent.
+A deterministic stress test
+I then generated two million deterministic complex input pairs. Every generated real and imaginary input component was a finite, normal `Double`. I retained cases in which `denominator.reciprocal` was non-nil and both candidate results were finite.
+Among 1,850,381 eligible cases:
+129,170 direct-division and reciprocal-multiplication results differed;
+the mismatch rate was 6.98072% under this stress distribution.
+That percentage needs a boundary. The generator samples binary64 exponent fields approximately uniformly, deliberately overrepresenting extreme scale separation. It is an adversarial numerical stress test, not an estimate of how often typical application data will fail.
+The fixed five-line example—not the percentage—is the minimal contract counterexample.
+A second finding: integer powers through logarithms
+The same source review exposed a separate accuracy limitation in `Complex.pow(_: Int)`.
+Swift Numerics distinguishes the integer overload from general real or complex exponentiation. The API documentation defines its edge cases through repeated multiplication or division. The `Complex` implementation nevertheless evaluates the integer power through:
+exp(log(z) * n)
+That route introduces and then amplifies phase error even for inputs whose exact powers are trivial.
+For example:
+pow(-1 + 0i, 31)
+observed = (-1.0, 7.349118756157295e-15)
+expected = (-1.0, 0.0)
+The complex-norm error is about 33.1 times `Double.ulpOfOne`.
+At a much larger—but still exactly representable—integer exponent:
+n = 4,503,599,627,370,495
+observed = (-0.16016429413387553, 0.9870903701711397)
+expected = (-1.0, 0.0)
+norm error = 1.296021377806805
+The exponent is below `2^53`, so conversion from `Int` to `Double` is exact. This example is not explained by the source TODO that mentions rounding an integer during conversion. The dominant mechanism is phase-error amplification caused by using `log` and `exp` for an integer power.
+This second result should be labelled carefully. It is an accuracy and algorithm-selection finding; I am not claiming that `Complex.pow` publishes a universal ULP bound.
+The bounded conclusion
+The reciprocal case is the stronger contract result:
+the public documentation permits a non-nil reciprocal;
+the example receives a non-nil reciprocal;
+direct division preserves a finite component;
+reciprocal multiplication loses it;
+therefore the documented equivalence does not hold for all permitted values.
+The integer-power case is a separate quality result showing that the current transcendental implementation can be very far from an exactly known integer power.
+Neither finding is a security claim. Both are reproducible software-engineering results against a pinned public commit.
+Reproduce it
+The complete Swift package, fixed examples, deterministic generator, recorded output and interpretation boundary are public:
+github.com
+Tested against Swift Numerics commit `899af71c0256d0ad181e3b7eb3453c1065d928a5`, the current `main` commit on 5 September 2026.
+Independent reproduction and analysis by Xamit Kadirbekov / GERO. No affiliation with Apple or the Swift Numerics maintainers is claimed.

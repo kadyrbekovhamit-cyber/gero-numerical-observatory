@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A real loss increases after a gradient-descent step in MLX. Native tests isolate missing complex conjugation and an arccosh branch error; the local C++ patch passes 131 scenarios." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="A Real Loss, a Reversed Gradient: Complex Autodiff in MLX" />
+    <meta property="og:description" content="A real loss increases after a gradient-descent step in MLX. Native tests isolate missing complex conjugation and an arccosh branch error; the local C++ patch passes 131 scenarios." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/mlx-complex-autodiff-reversed-gradient.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-mlx-complex.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="A Real Loss, a Reversed Gradient: Complex Autodiff in MLX" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="A Real Loss, a Reversed Gradient: Complex Autodiff in MLX" />
+    <meta name="twitter:description" content="A real loss increases after a gradient-descent step in MLX. Native tests isolate missing complex conjugation and an arccosh branch error; the local C++ patch passes 131 scenarios." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-mlx-complex.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/mlx-complex-autodiff-reversed-gradient.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <link rel="stylesheet" href="../../assets/ux.css" />
+    <meta name="keywords" content="MLX, complex autodiff, VJP, arccosh, conjugation, regression tests" />
+    <title>A Real Loss, a Reversed Gradient: Complex Autodiff in MLX — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "A Real Loss, a Reversed Gradient: Complex Autodiff in MLX", "description": "A real loss increases after a gradient-descent step in MLX. Native tests isolate missing complex conjugation and an arccosh branch error; the local C++ patch passes 131 scenarios.", "datePublished": "2026-09-09", "dateModified": "2026-09-09", "url": "https://www.gero.uz/research/articles/mlx-complex-autodiff-reversed-gradient.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <style>
+      .audit-table{overflow-x:auto;margin:1.5rem 0}.audit-table table{width:100%;min-width:620px;border-collapse:collapse}.audit-table th,.audit-table td{padding:14px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #d4d9d5;font-size:14px}.article-prose code{overflow-wrap:anywhere}.article-prose pre{overflow-x:auto}.video-frame{position:relative;aspect-ratio:9/16;max-width:390px;margin:2rem auto;background:#111;border-radius:18px;overflow:hidden;box-shadow:0 18px 50px rgba(14,24,20,.18)}.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    </style>
+  </head>
+  <body class="research-body">
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home"><span class="brand-mark" aria-hidden="true">G</span><span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span></a>
+      <nav aria-label="Main navigation"><a href="../../index.html#method">Method</a><a href="../../index.html#lab">Live lab</a><a class="nav-active" href="../../research/">Research</a></nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    <main><article class="article-shell">
+<a class="back-link" href="../">← Research index</a>
+<header class="article-header"><div class="article-kicker"><span>NUMERICAL CASE STUDY</span><span>9 September 2026</span></div>
+<h1>A Real Loss, a Reversed Gradient: Complex Autodiff in MLX</h1><p class="article-dek">A real objective turns a subtle complex-derivative rule into a visible wrong-way update.</p>
+<div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54"><div><strong>Xamit Kadirbekov</strong><span>Reproducible numerical experiments · GERO Research</span></div></div>
+<div class="topic-row"><span>MLX 0.32.2</span><span>Complex autodiff</span><span>CPU</span></div></header>
+<div class="evidence-banner"><strong>STATUS · LOCALLY REPRODUCED</strong><span>Two mechanisms. Original: 85 failed scenarios out of 131. Local C++ patch: 131/131 pass. The conjugation class is known; first discovery and full-model impact are not claimed.</span></div>
+<div class="article-prose">
+<p>At <code>x=1</code>, the real loss <code>L(x)=Re(cos(i*x))=cosh(x)</code> has derivative <code>+sinh(1)</code>. MLX 0.32.2 returns a negative derivative. A gradient-descent step with learning rate 0.01 raises the loss from 1.54308 to 1.55700. After the local C++ repair, it falls to 1.52938.</p>
+<p>The parameter and objective are real. This example therefore distinguishes an incorrect update from a difference in how complex gradients are named. It is a synthetic scalar experiment, not a full-model training measurement.</p>
+<img src="../../assets/og-mlx-complex.png" width="1200" height="630" style="width:100%;height:auto;border-radius:16px" alt="MLX complex autodiff: expected derivative plus 1.1752, observed minus 1.1752. Original loss rises from 1.54308 to 1.55700; after the local patch it falls to 1.52938. 131 scenarios pass after the patch; 85 failed before.">
+<h2>The 45-second explanation</h2>
+<video controls playsinline preload="metadata" poster="../media/mlx-complex-poster.png" width="1080" height="1920" style="display:block;width:100%;max-width:390px;height:auto;margin:24px auto;border-radius:18px" aria-label="MLX complex autodiff: a real loss and a reversed gradient, English narrated explanation">
+<source src="../media/mlx-complex-short.mp4" type="video/mp4"><track kind="captions" src="../media/mlx-complex-short.en.vtt" srclang="en" label="English">Your browser does not support embedded video. <a href="../media/mlx-complex-short.mp4">Download the video</a>.</video>
+<p class="muted">Original explanatory diagrams; synthetic narration by the fictional Alex Vector using the macOS Daniel voice. AI-assisted preparation. <a href="../data/mlx-complex-video-source-2026-09-09.zip">Remotion source, script and source ledger →</a></p>
+<h2>1. A backward rule needs conjugation</h2>
+<p>For a holomorphic scalar function away from branch cuts and singularities, and the real inner product <code>Re(conj(a)*b)</code>, the forward derivative is <code>JVP(z,t)=f′(z)*t</code>. Its adjoint is <code>VJP(z,c)=conj(f′(z))*c</code>.</p>
+<p>Seven implementations in the <a href="https://github.com/ml-explore/mlx/blob/24c699ecee2f7c8b2040de8da1c8382c8bcf31c7/mlx/primitives.cpp">pinned source</a> delegate their backward rule to the unmodified forward rule: <code>cos</code>, <code>arcsin</code>, <code>arccos</code>, <code>arctan</code>, <code>arcsinh</code>, <code>arccosh</code> and <code>arctanh</code>. This omits the conjugate. Existing <code>exp</code>, <code>log</code> and <code>sin</code> rules are controls in the test selection.</p>
+<p>The patch follows the existing conjugate-input/conjugate-output pattern. Seven affected functions are instances of one known class, not seven independent discovery claims.</p>
+<h2>2. Principal square roots do not distribute</h2>
+<p>Complex <code>arccosh</code> has a separate derivative issue. The code uses <code>1/sqrt(z*z−1)</code>. The principal-branch derivative, away from the cut, is <code>1/(sqrt(z−1)*sqrt(z+1))</code>. These expressions can have opposite signs.</p>
+<pre><code>z = −0.25 + 0.5i
+tangent = 0.5 + 0.25i
+
+Original JVP:  −0.17871645 + 0.47494581i
+Analytic JVP:  +0.17871646 − 0.47494581i
+Patched JVP:   +0.17871648 − 0.47494581i</code></pre>
+<p>A JVP does not require conjugation; repairing the backward rule alone cannot fix this sign error. The candidate computes the two square roots separately for complex64 and preserves the previous real-input path. Finite differences of the actual forward agree with the analytic reference at the tested points.</p>
+<h2>Measured before and after</h2>
+<div class="audit-table" role="region" aria-label="Original and patched native results" tabindex="0"><table><thead><tr><th>Measurement</th><th>Original</th><th>Patched</th></tr></thead><tbody>
+<tr><td>Real-loss derivative at x=1</td><td>−1.1752011776</td><td>+1.1752011776</td></tr>
+<tr><td>Loss after step from 1.5430806875</td><td>1.5569984913</td><td>1.5293759108</td></tr>
+<tr><td>Scenarios passing</td><td>46 / 131</td><td>131 / 131</td></tr>
+<tr><td>Numerical assertions passing</td><td>446 / 622</td><td>622 / 622</td></tr></tbody></table></div>
+<p>The selection comprises 120 complex scenarios (ten functions, four points ±0.25±0.5i and three cotangents), ten real-input controls and the real-loss example. Checks compare forward, JVP, VJP, the adjoint relation and finite differences. The original fails 84 VJP assertions, 84 adjoint assertions, six arccosh JVP assertions and two real-loss assertions.</p>
+<p>Tolerance is <code>3e−6 + 3e−5*abs(reference)</code>; central finite differences use <code>h=2^-10</code> and absolute tolerance <code>3e−4</code>. The references specify the mathematics independently of the patched implementation. Passing this finite selection does not prove correctness for all inputs.</p>
+<h2>What was actually rebuilt</h2>
+<p>The wheel probe uses MLX 0.32.2 on CPU, complex64/float32. The inspected main is <code>24c699ecee2f7c8b2040de8da1c8382c8bcf31c7</code>. Native before/after executions compile the relevant C++ translation unit on compatible base <code>ce916dbbcaa88e433b6fd1e60a17f766d49c27fe</code> and link it against an existing CPU-only static archive.</p>
+<p><strong>This is a partial native rebuild, not a clean build of current main.</strong> All 20 tested JVP/VJP method bodies are byte-identical between the base and inspected main. The patch also applies cleanly to main. The archive hash, compiler flags, raw logs and source snapshots are retained. The compiler is Apple clang 17.0.0, C++20, on macOS 15.5 arm64. Compilation and experiments ran sequentially with thread environment limits set to one.</p>
+<h2>Prior work and limits</h2>
+<p><a href="https://github.com/ml-explore/mlx/pull/3766">MLX #3766 by obchain</a> already addresses missing conjugation in other unary functions; the inspected source history contains its change. This report adds tested functions and a separately motivated arccosh branch repair. The originality of the complete selection and maintainer acceptance remain unestablished.</p>
+<p>The test does not cover full models, the complete upstream suite, GPU/CUDA, FP16/BF16, branch-cut boundaries, extreme magnitudes or all possible complex inputs. No Apple-device impact is inferred. API availability for the prior PR differed from cached web pages, so no current PR status is inferred from a cached badge.</p>
+<h2>Reproduce and inspect the evidence</h2>
+<ul><li><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/b696781d366e528ccc6853bc8033b1169db6368b/audits/2026-09-09-mlx-complex-autodiff">Immutable report, scripts, source snapshots and patch</a></li><li><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/b696781d366e528ccc6853bc8033b1169db6368b/audits/2026-09-09-mlx-complex-autodiff/native_regression.cpp">Native C++ regression harness</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/b696781d366e528ccc6853bc8033b1169db6368b/audits/2026-09-09-mlx-complex-autodiff/complex-derivatives.patch">Candidate patch</a></li><li><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/b696781d366e528ccc6853bc8033b1169db6368b/audits/2026-09-09-mlx-complex-autodiff/run-before.log">Original log</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/b696781d366e528ccc6853bc8033b1169db6368b/audits/2026-09-09-mlx-complex-autodiff/run-after.log">Patched log</a></li><li><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/b696781d366e528ccc6853bc8033b1169db6368b/audits/2026-09-09-mlx-complex-autodiff/BUILD.md">Build setup and reproduction boundary</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/b696781d366e528ccc6853bc8033b1169db6368b/audits/2026-09-09-mlx-complex-autodiff/SOURCES.md">Primary sources and prior-art ledger</a></li></ul>
+<pre><code># Compatible Mac, from the extracted evidence directory
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python probe.py
+
+# With a compatible CPU build of the recorded base:
+export MLX_SOURCE_ROOT=/absolute/path/to/mlx-at-ce916db
+export MLX_CPU_BUILD=/absolute/path/to/cpu-build
+.venv/bin/python build_and_test.py</code></pre>
+<p><a href="../data/mlx-complex-audit-2026-09-09.zip" download>Download the evidence package (ZIP) →</a><br>SHA-256: <code>438c61bfacd0872b78115b4cfc096f8e6eaa0377f8f4e717b67430cbcb80c2df</code></p>
+<p>Independent reproduction and scoped numerical-correctness reviews are welcome: <a href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20MLX%20numerical%20review">contact GERO</a>. Prepared with AI assistance. Numerical claims come from actual local runs and separately specified references; this is not a third-party audit or an Apple-endorsed report.</p>
+<p class="muted">#MachineLearning #MLX #Autodiff #ComplexNumbers #SoftwareTesting</p>
+</div></article></main>
+    <footer><div class="shell footer-grid"><div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div><p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p><a href="../../feed.xml">RSS</a></div></footer>
+  </body>
+</html>

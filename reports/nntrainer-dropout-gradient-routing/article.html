@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A native C++ nntrainer case study: zero-rate Dropout forwards correctly but misroutes multiple input gradients. Finite differences, a local patch and 19 passing tests." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="When Dropout Sends Two Gradients to One Input" />
+    <meta property="og:description" content="A native C++ nntrainer case study: zero-rate Dropout forwards correctly but misroutes multiple input gradients. Finite differences, a local patch and 19 passing tests." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/nntrainer-dropout-gradient-routing.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-dropout.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="When Dropout Sends Two Gradients to One Input" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="When Dropout Sends Two Gradients to One Input" />
+    <meta name="twitter:description" content="A native C++ nntrainer case study: zero-rate Dropout forwards correctly but misroutes multiple input gradients. Finite differences, a local patch and 19 passing tests." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-dropout.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/nntrainer-dropout-gradient-routing.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <link rel="stylesheet" href="../../assets/ux.css" />
+    <meta name="keywords" content="nntrainer, Dropout, autodiff, gradient routing, software testing, numerical computing" />
+    <title>When Dropout Sends Two Gradients to One Input — GERO Research</title>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"When Dropout Sends Two Gradients to One Input","description":"A native C++ nntrainer case study: zero-rate Dropout forwards correctly but misroutes multiple input gradients. Finite differences, a local patch and 19 passing tests.","datePublished":"2026-09-09","dateModified":"2026-09-09","url":"https://www.gero.uz/research/articles/nntrainer-dropout-gradient-routing.html","author":{"@type":"Person","name":"Xamit Kadirbekov"},"publisher":{"@type":"Organization","name":"GERO Research"}}</script>
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <style>
+      .audit-table{overflow-x:auto;margin:1.5rem 0}.audit-table table{width:100%;min-width:620px;border-collapse:collapse}.audit-table th,.audit-table td{padding:14px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #d4d9d5;font-size:14px}.article-prose code{overflow-wrap:anywhere}.article-prose pre{overflow-x:auto}.video-frame{position:relative;aspect-ratio:9/16;max-width:390px;margin:2rem auto;background:#111;border-radius:18px;overflow:hidden;box-shadow:0 18px 50px rgba(14,24,20,.18)}.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    </style>
+  </head>
+  <body class="research-body">
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home"><span class="brand-mark" aria-hidden="true">G</span><span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span></a>
+      <nav aria-label="Main navigation"><a href="../../index.html#method">Method</a><a href="../../index.html#lab">Live lab</a><a class="nav-active" href="../../research/">Research</a></nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    <main><article class="article-shell">
+<a class="back-link" href="../">← Research index</a>
+<header class="article-header"><div class="article-kicker"><span>TECHNICAL CASE STUDY</span><span>9 September 2026</span></div>
+<h1>When Dropout Sends Two Gradients to One Input</h1>
+<p class="article-dek">Forward can preserve both inputs while backward writes both gradients to the same destination. A six-number native example makes the mismatch visible.</p>
+<div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54"><div><strong>Xamit Kadirbekov</strong><span>Reproducible numerical experiments · GERO Research</span></div></div>
+<div class="topic-row"><span>Dropout</span><span>Autodiff</span><span>Native C++ tests</span></div></header>
+<div class="evidence-banner"><strong>STATUS · LOCALLY REPRODUCED AND REPAIRED</strong><span>CPU FP32 layer-level result. Effects on complete models and Samsung devices are not established. Publication of this case study does not mean upstream acceptance.</span></div>
+<div class="article-prose">
+<p>A zero drop rate gives a simple contract: each output should equal its corresponding input, and each input should receive its own output gradient. We tested that correspondence in the actual nntrainer C++ <code>DropOutLayer</code> at commit <code>a7ea056e79ab8e14447ea305c1b634e233343258</code>.</p>
+<p>The layer's initialization accepts multiple input dimensions and its forward path processes them. The observed mismatch is in the backward destination selection.</p>
+<h2>A six-number example</h2>
+<p>Use two inputs, <code>[1,2,3]</code> and <code>[4,5,6]</code>, each shaped <code>[1,1,1,3]</code>, with <code>dropout_rate=0</code>. Forward returns both tensors unchanged. Supply deliberately different output gradients:</p>
+<div class="audit-table" role="region" aria-label="Expected and measured input gradients" tabindex="0"><table><thead><tr><th>Input</th><th>Incoming output gradient</th><th>Original input gradient</th><th>Correct / patched</th></tr></thead><tbody>
+<tr><td>0</td><td>[1,2,3]</td><td>[10,20,30]</td><td>[1,2,3]</td></tr>
+<tr><td>1</td><td>[10,20,30]</td><td>[0,0,0]</td><td>[10,20,30]</td></tr>
+</tbody></table></div>
+<p>Input-gradient buffers were separately allocated and initialized to zero. Thus the second row identifies an unwritten destination. Input values and the incoming gradients remained unchanged.</p>
+<h2>The derivative and the destination</h2>
+<p>For a fixed saved mask, this layer applies <code>y_i = x_i × mask_i</code>. Its backward operator must route <code>dy_i × mask_i</code> to <code>dx_i</code>. At zero rate that reduces to <code>dx_i = dy_i</code>.</p>
+<p>The source loops over input index <code>i</code>, but requests <code>getOutgoingDerivative(SINGLE_INOUT_IDX)</code>, where the constant equals zero. Later iterations overwrite the first gradient; other gradient destinations are not written.</p>
+<pre><code>// Destination inside the loop over input i
+// Original:
+context.getOutgoingDerivative(SINGLE_INOUT_IDX)
+// Proposed local repair:
+context.getOutgoingDerivative(i)</code></pre>
+<p>The source patch also removes the now-unused constant. <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa16b7ccfbff9358b3484226fa45c838ad0457a0/audits/2026-09-09-nntrainer-dropout-routing/evidence/patches/source.patch">Inspect the isolated patch →</a></p>
+<h2>Independent mathematical checks, native execution</h2>
+<p>Central finite differences of the actual forward pass confirm the derivative for every coordinate of both inputs. This uses a mixed signed objective and step <code>1/32</code>. It is an algorithmically independent reference, not a third-party laboratory review.</p>
+<p>A separate three-input case uses the existing <code>reStoreData(true)</code> replay path with different saved masks and rate 0.5. It checks the masked backward branch deterministically; it is not a statistical evaluation of random mask generation.</p>
+<div class="audit-table" role="region" aria-label="Measured test results" tabindex="0"><table><thead><tr><th>Selected tests</th><th>Original source</th><th>Local repair</th></tr></thead><tbody>
+<tr><td>15 pre-existing Dropout tests</td><td>15 passed</td><td>15 passed</td></tr>
+<tr><td>4 added tests</td><td>1 passed, 3 failed</td><td>4 passed</td></tr>
+<tr><td>Total</td><td>16/19 passed</td><td>19/19 passed</td></tr>
+</tbody></table></div>
+<p>The added cases cover a single-input control, two-input routing, native-forward finite differences and three-input saved-mask replay. The control passes before and after. Before publication, both the deterministic four-test driver and the final 19-test selection were run again successfully using the retained patched binary.</p>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa16b7ccfbff9358b3484226fa45c838ad0457a0/audits/2026-09-09-nntrainer-dropout-routing/evidence/before.log">Original log →</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa16b7ccfbff9358b3484226fa45c838ad0457a0/audits/2026-09-09-nntrainer-dropout-routing/prepublication-check/full-runtime-authorized.log">Publication-day 19-test log →</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa16b7ccfbff9358b3484226fa45c838ad0457a0/audits/2026-09-09-nntrainer-dropout-routing/evidence/patches/tests.patch">Regression tests →</a></p>
+<h2>Where the conclusion stops</h2>
+<p>The measured environment is macOS 15.5 arm64, CPU FP32, using an existing configured build with earlier unrelated repairs. The baseline Dropout source matched the pinned revision byte-for-byte, and the published patches change only Dropout source and tests. A fresh clean build and cross-platform matrix were not performed.</p>
+<p>Full-network training, in-place graph allocation, FP16, GPU and other platforms were not evaluated. The result establishes a layer-level correctness defect in the tested configuration; it does not establish effects on complete models or particular Samsung devices, or a security vulnerability.</p>
+<p>The constant-zero destination already appears in <a href="https://github.com/nntrainer/nntrainer/pull/1640">a public patch from 2021</a>. This work supplies a reproduction and local repair and does not claim first discovery. <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa16b7ccfbff9358b3484226fa45c838ad0457a0/audits/2026-09-09-nntrainer-dropout-routing/evidence/DUPLICATES.md">The retained duplicate review</a> describes its bounded search. A published patch is not an accepted upstream fix.</p>
+<h2>Reproduce and review</h2>
+<p>The engineering check is concrete: assign deliberately different output gradients to independent inputs and inspect each destination. Correct single-input tests cannot exercise this routing.</p>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa16b7ccfbff9358b3484226fa45c838ad0457a0/audits/2026-09-09-nntrainer-dropout-routing">Open the immutable GitHub evidence package →</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa16b7ccfbff9358b3484226fa45c838ad0457a0/audits/2026-09-09-nntrainer-dropout-routing/BUILD.md">Self-contained build recipe →</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa16b7ccfbff9358b3484226fa45c838ad0457a0/audits/2026-09-09-nntrainer-dropout-routing/REPORT.md">Developer-facing report →</a></p>
+<p><a href="../data/dropout-audit-2026-09-09.zip" download>Download the complete case study, patches and logs (ZIP) →</a><br>SHA-256: <code>9b6e3875435ff4cc215ad585224cff3a44f2b9aba7dce058adc86f9d8789100b</code></p>
+<p>Independent reproduction is welcome. For scoped numerical-correctness work, <a href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20Dropout%20audit">contact GERO</a>. Research and editorial materials were prepared with AI assistance; numerical claims come from retained native executions.</p>
+<h2>Watch the 34-second case study</h2>
+<video controls playsinline preload="metadata" poster="../../assets/og-dropout.png" style="display:block;max-width:390px;width:100%;margin:1.5rem auto;border-radius:18px" aria-label="nntrainer Dropout gradient routing: English technical short">
+<source src="../data/nntrainer-dropout-gradient-routing-short.mp4" type="video/mp4"><track kind="captions" src="../data/dropout-captions.en.vtt" srclang="en" label="English">Your browser does not support embedded video.</video>
+<p><a href="../data/nntrainer-dropout-gradient-routing-short.mp4" download>Download the English short →</a> · <a href="../data/dropout-captions.en.srt" download>English subtitles (SRT) →</a>. Original diagrams and synthetic English narration; the same layer-level limitations apply.</p>
+<!-- YOUTUBE_PUBLICATION_LINK -->
+<h2>Primary sources</h2><ul><li><a href="https://github.com/nntrainer/nntrainer/blob/a7ea056e79ab8e14447ea305c1b634e233343258/nntrainer/layers/dropout.cpp">DropOutLayer at the audited commit</a></li><li><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa16b7ccfbff9358b3484226fa45c838ad0457a0/audits/2026-09-09-nntrainer-dropout-routing/SOURCES.md">Source ledger and measured evidence</a></li></ul>
+<p class="muted">#MachineLearning #SoftwareTesting #Autodiff #NumericalComputing #OpenSource #nntrainer</p>
+</div></article></main>
+    <footer><div class="shell footer-grid"><div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div><p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p><a href="../../feed.xml">RSS</a></div></footer>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Inputs of equal rank with smaller non-gather index dimensions are mathematically well-defined and accepted by ONNX Runtime, but the reference oracle requires exact shape equality." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="ONNX ReferenceEvaluator rejects valid GatherElements subshapes" />
+    <meta property="og:description" content="Inputs of equal rank with smaller non-gather index dimensions are mathematically well-defined and accepted by ONNX Runtime, but the reference oracle requires exact shape equality." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/onnx-reference-gatherelements-rejects-subshapes.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ONNX ReferenceEvaluator rejects valid GatherElements subshapes" />
+    <meta name="twitter:description" content="Inputs of equal rank with smaller non-gather index dimensions are mathematically well-defined and accepted by ONNX Runtime, but the reference oracle requires exact shape equality." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/onnx-reference-gatherelements-rejects-subshapes.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>ONNX ReferenceEvaluator rejects valid GatherElements subshapes — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "ONNX ReferenceEvaluator rejects valid GatherElements subshapes", "description": "Inputs of equal rank with smaller non-gather index dimensions are mathematically well-defined and accepted by ONNX Runtime, but the reference oracle requires exact shape equality.", "datePublished": "2026-09-09", "dateModified": "2026-09-09", "url": "https://www.gero.uz/research/articles/onnx-reference-gatherelements-rejects-subshapes.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+  </head>
+  <body class="research-body">
+    
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    
+    <main>
+      <article class="article-shell audit-article">
+        <a class="back-link" href="../">← Research index</a>
+        <header class="article-header">
+          <div class="article-kicker"><span>INDEPENDENT NUMERICAL AUDIT</span><span>9 September 2026</span></div>
+          <h1>ONNX ReferenceEvaluator rejects valid GatherElements subshapes</h1>
+          <p class="article-dek">Inputs of equal rank with smaller non-gather index dimensions are mathematically well-defined and accepted by ONNX Runtime, but the reference oracle requires exact shape equality.</p>
+          <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54" /><div><strong>Xamit Kadirbekov</strong><span>Independent verification · GERO Research</span></div></div>
+          <div class="topic-row"><span>Numerical audit</span><span>ONNX</span><span>Tensor indexing</span></div>
+        </header>
+        <div class="evidence-banner"><strong>STATUS · VERIFIED ORDINARY CORRECTNESS DEFECT</strong><span>Reproduced on ONNX 1.22.0 and current main; correction PR #8444 passed 454 reference-evaluator tests and 36 differential shape/axis cases.</span></div>
+        <div class="brief-source">
+          <span>UPSTREAM RECORD</span>
+          <a href="https://github.com/onnx/onnx/pull/8444" rel="noopener noreferrer">onnx/onnx#8444 ↗</a>
+        </div>
+        <div class="article-prose"><h2>Finding</h2>
+<p><code>GatherElements</code> requires <code>data</code> and <code>indices</code> to have equal rank, and defines the output shape as the shape of <code>indices</code>. Coordinates on each non-gather axis range over the corresponding index domain; those dimensions may therefore be smaller than the data dimensions.</p>
+<p>The released ReferenceEvaluator imposes a stricter condition: every non-gather dimension must equal the corresponding data dimension. It rejects valid subshape inputs before performing any gather.</p>
+<h2>Minimal counterexample</h2>
+<pre><code class="language-text">data = [[10, 11, 12],
+        [20, 21, 22]]              shape (2, 3)
+indices = [[2, 0]]                 shape (1, 2)
+axis = 1
+
+ReferenceEvaluator: ValueError requiring equal non-axis dimensions
+direct indexing:    [[12, 10]]
+ONNX Runtime:       [[12, 10]]</code></pre>
+<p>The first output row refers only to the first data row, so the smaller leading dimension is well-defined and accepted by ONNX Runtime.</p>
+<h2>Verification</h2>
+<ul><li>Reproduced with ONNX <code>1.22.0</code>, ONNX Runtime <code>1.29.0</code>, NumPy <code>2.5.2</code>, Python 3.12 and the CPU execution provider.</li><li>Confirmed unchanged on ONNX <code>main</code> commit <code>c71cbb485c97aa2cb257626a5ac5b0f205c49a22</code>.</li><li>Three regression cases cover axes 0, 1 and -1 in two and three dimensions.</li><li>Thirty-six differential cases cover equal and smaller non-axis dimensions, positive and negative axes, and positive and negative indices; all corrected outputs match ONNX Runtime exactly.</li><li>The complete reference-evaluator test module passed: 454 tests, 4 skipped.</li><li>Restoring the released implementation makes all three new tests fail with the original shape-equality exception.</li><li>Ruff format/check and <code>git diff --check</code> pass.</li><li>Searches of ONNX issues and pull requests found no matching report.</li></ul>
+<h2>Correction</h2>
+<p>Restrict data to the coordinate extent of the index domain on non-gather axes, then apply <code>numpy.take_along_axis</code>. This directly models the operator equations, preserves equal-shape behavior, and supports positive and negative indices.</p>
+<p>The correction and regression tests are submitted in <a href="https://github.com/onnx/onnx/pull/8444" rel="noopener noreferrer">ONNX PR #8444</a>. The public reproducer is in <a href="https://github.com/kadyrbekovhamit-cyber/gero-onnx-gatherelements-subshape-audit" rel="noopener noreferrer">gero-onnx-gatherelements-subshape-audit</a>.</p>
+<h2>Boundary</h2>
+<p>This is a reference-implementation correctness defect, not a security issue. It affects validation of otherwise valid <code>GatherElements</code> models. ONNX Runtime produces the specified output for the counterexample.</p></div>
+      </article>
+    </main>
+    
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+← Research index
+TECHNICAL NOTE7 September 2026
+When Causal Attention Sees the Future
+Changing a future value should not change an earlier causal-attention output. A small native experiment shows this invariant failing in nntrainer, then passing with a local repair.
+Xamit KadirbekovReproducible numerical experiments · GERO Research
+Causal attentionMaskingNative regression tests
+STATUS · REPORTED UPSTREAMLocally reproduced on native CPU FP32. nntrainer issue #4333 contains the report and proposed patch. Maintainer confirmation and upstream acceptance are pending.
+Causal attention restricts which keys a query may use. Under the upper-triangular mask convention implemented by this layer, query position i may attend only to keys j ≤ i. This gives a stronger check than approximate numerical agreement: a forbidden future value must have no influence on an earlier output.
+This report tests the actual nntrainer::AttentionLayer at commit a7ea056e79ab8e14447ea305c1b634e233343258. It covers one implementation report with three related failure mechanisms, rather than treating shapes, repeated runs or test failures as separate discoveries.
+A two-query counterexample
+causal_mask = true
+scaled_dot_product = false
+Q: shape [1, 1, 2, 1], values [0, 0]
+K: shape [1, 1, 3, 1], values [0, 0, 0]
+V: shape [1, 1, 3, 1], values [2, 10, 50]
+QuantityOriginal implementationCausal target / local patch
+Output[20.66666794, 20.66666794][2, 6]
+Derivative of first output with respect to V[⅓, ⅓, ⅓][1, 0, 0]
+Change only future V₂ from 50 to −100Earlier outputs changeEarlier outputs remain [2, 6]
+With zero logits, the original code averages all three values: (2 + 10 + 50) / 3. The causal target instead reads only the first value at query zero, and averages the first two at query one. These are exact mathematical targets; this is not an ordinary floating-point tolerance difference.
+The rectangular example extends the layer’s existing upper-left triangular convention. If a different rectangular alignment is intended, its contract should be explicit; rejecting an unsupported shape would also be preferable to silently returning unmasked attention.
+Three ways the mask loses its meaning
+Rectangular score matrices. The implementation allocates an Nk × Nk mask for an Nq × Nk score tensor. The in-place addition fails for the tested rectangular shapes, and the caller ignores its return code.
+A finite penalty can be overcome. Adding −1e10 is not equivalent to excluding a position. For Q=[1,1], K=[0,2e10] and V=[2,10], all inputs are finite. The original square case returns [10,10], while causal attention requires [2,10].
+Later incremental blocks. The incremental path applies its mask only when from == 0. With Q=K=[0,0,0] and V=[2,10,50], full forwarding gives [2,6,20.6667]. Splitting into blocks [0,1) and [1,3) gives [2,20.6667,20.6667] before the patch.
+A local repair that preserves the causal contract
+The proposed helper uses the actual score dimensions and directly overwrites forbidden entries with negative infinity before Softmax. For incremental blocks it also uses the absolute query offset from. It does not add a parameter or a dependency.
+for each local query i and key j:
+if j > query_offset + i:
+scores[..., i, j] = -infinity
+This prevents arbitrarily large finite forbidden logits from surviving an additive penalty. The tested cases have at least one allowed key per query. General all-masked-row semantics and broader incremental batching require their own contracts and are outside this patch.
+Inspect the implementation patch → · Inspect the native regression tests →
+What was tested
+Selected native suiteOriginalAfter local patch
+28 new tests + 14 existing attention tests21 failed / 21 passed42 passed
+Four minimal tests in fresh processes3 repetitions, stable output3 repetitions, stable output
+The suite compares outputs and gradients dQ, dK and dV with an FP64 reference across 16 shape/scaling combinations. It checks native-forward finite differences, future-value perturbation invariance, independent batch execution, and eight partitions of a five-token sequence. Setting V to the identity exposes attention probabilities directly: values stay in [0,1], rows sum to one, and forbidden entries are exactly zero after the patch.
+General reference comparisons use absolute tolerance 3e−5. Finite differences use step 1/256 and absolute tolerance 2e−4. The host was macOS 15.5 arm64 on Apple M4, with native CPU FP32, NCHW, channel 1. Full forwarding covers batch sizes 1 and 2; incremental tests cover batch size 1 only.
+The reused native build contains earlier unrelated loss, activation and LayerNorm repairs. The attention baseline itself exactly matches the pinned source, and the attention patch is isolated. A clean full-repository rebuild, other operating systems, FP16/GPU, performance, end-to-end model impact and upstream CI were not tested. This is not a claim about a particular Samsung device.
+Duplicate review and upstream status
+Ten recorded queries covered 191 distinct public issues and pull requests, including closed entries. No exact match was found within those searches. A refresh before submission found no new causal-attention issue. This does not establish absolute novelty or cover private reports.
+The nearest records include the masking feature request #1713, dtype-specific masking in MultiHeadAttentionLayer (#2409), and broader incremental API work (#3780). The saved review explains the differences. QuantizeLinear and earlier published findings are excluded from this report.
+The report is filed as nntrainer #4333 → It includes a runnable test patch and an implementation patch. Local passing tests demonstrate the proposed repair within the stated coverage; they do not imply that maintainers have accepted it.
+Reproduce and contribute
+Open the pinned evidence package → · Native reproduction instructions →
+Download tests, patches, logs and checksums (ZIP) →
+SHA-256: f100ce28cd9d86dca67eca7b29dd365f246edd40add1e7f4bfa80dffab0b7554
+The immutable archive captures the research state before submission. Publication status is recorded separately. Experiments, repair proposals and editorial materials were prepared with AI assistance.
+Maintaining attention kernels, ML runtimes or numerical test suites? Independent reproduction is welcome, especially a review of rectangular alignment and incremental-block semantics. Please contribute evidence to the upstream discussion or contact GERO.
+Discuss this report
+Join the LinkedIn discussion →
+Watch the 48-second YouTube explanation →
+Portrait 1080p, English narration and uploaded English subtitles. Synthetic narration is disclosed. The tests and native execution logs remain the primary evidence.
+Primary sources
+AttentionLayer source at the audited commit
+Recorded duplicate review and nearby work
+Machine-readable validation results

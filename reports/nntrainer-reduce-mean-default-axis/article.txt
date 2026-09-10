@@ -1,0 +1,58 @@
+← Research index
+INDEPENDENT NUMERICAL AUDIT6 September 2026
+ReduceMean Without an Axis Could Not Initialize
+An omitted reduction axis throws during initialization; a batch-two regression exposes the broken default and verifies a 23-test local correction.
+Xamit KadirbekovAuthors · GERO Research
+Tensor semanticsDefault parametersRuntime audit
+STATUS · REPRODUCED INITIALIZATION DEFECTThe no-axis initialization failure was reproduced on the tested source; a local correction passes 23 focused tests. No security or deployed-product impact is claimed.
+An optional parameter is only optional if the code path without it actually works.
+In Samsung's open-source nntrainer project, `ReduceMeanLayer` documents a clear default: when no reduction axis is supplied, reduce every tensor dimension except batch. The forward path says the same thing in executable form by averaging over dimensions 1, 2 and 3.
+At the tested commit, that default path could not reach the forward calculation.
+The Contract
+For an input tensor with shape:
+{batch=2, channel=1, height=1, width=2}
+omitting `axis` should preserve the batch and reduce the other dimensions:
+expected output shape: {2, 1, 1, 1}
+This is not an inferred preference. It is stated in the source comment and mirrored by the implementation of `forwarding()`.
+The Failure
+A focused test creates a real `ReduceMeanLayer` with no properties and calls its production `finalize()` method. On the unmodified source it fails with:
+Cannot get property, property is empty
+No output specification is created.
+The Control-Flow Defect
+The original initialization logic performs two incompatible actions:
+if (reduce_axis.empty()) {
+out_dim = TensorDim({1, 1, 1, 1});
+}
+out_dim.setTensorDim(reduce_axis.get(), 1);
+First, the empty branch replaces the entire output shape with ones, including the batch dimension. Then execution continues and reads the empty property unconditionally. The shared property getter correctly rejects that read by throwing `std::invalid_argument`.
+The exception is the observable failure. The batch collapse is a second defect in the same branch, but the throw prevents it from becoming a returned output shape in this revision.
+The Minimal Correction
+The corrected control flow preserves the copied input batch dimension, reduces dimensions 1–3, and only calls `get()` when the property exists:
+if (reduce_axis.empty()) {
+out_dim.setTensorDim(1, 1);
+out_dim.setTensorDim(2, 1);
+out_dim.setTensorDim(3, 1);
+} else {
+out_dim.setTensorDim(reduce_axis.get(), 1);
+}
+No new algorithm or API is required. The repair makes initialization agree with the existing forward path.
+The Verification
+Before the correction:
+new default-axis test: 0/1 passed
+failure: empty property exception
+After the correction:
+new default-axis regression:          1/1 passed
+existing ReduceMean semantic tests: 22/22 passed
+total focused tests:                23/23 passed
+The new test uses batch size two deliberately. A batch of one would not expose whether initialization preserved the batch dimension.
+Why This Small Case Matters
+Reduction operators sit at the intersection of tensor shape algebra, API defaults and runtime memory planning. A fixed-value test with an explicit axis exercises the arithmetic but can miss the default branch entirely. The stronger test begins from the invariant:
+omitted axis ⇒ reduce non-batch dimensions and preserve batch
+That invariant immediately suggests three checks: the optional property must not be read when empty; the output shape must retain batch; and initialization must agree with the axes used by forwarding.
+Evidence Boundary
+This is a reproduced initialization/finalization defect in the no-`axis` path. It is not presented as a security vulnerability, a demonstrated failure in a released Samsung product, or silent numerical corruption during forwarding.
+Upstream report:
+github.com
+Tested source:
+github.com
+The lesson is broader than one layer: test the algebra promised by defaults, not only the arithmetic exercised by explicit parameters.

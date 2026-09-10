@@ -1,0 +1,99 @@
+← Research index
+ORIGINAL RESEARCH5 September 2026
+How Numerical Contracts Break: Five Cases in Swift Numerics and nntrainer
+Five bounded audit cases show how documented equivalence, exact identities, input preservation and parameter propagation expose failures that fixed expected values can miss.
+Xamit KadirbekovAuthors · GERO Research
+Numerical contractsSoftware testingOpen source
+STATUS · AUTHOR'S ANALYSISArguments and proposals are distinguished from the linked laboratories' reported results.
+A numerical library can pass its tests and still violate a documented equivalence, return a complex value in the wrong quadrant, mutate its own inputs, or bypass a shared gradient-scaling mechanism.
+In an independent audit of Swift Numerics and nntrainer, I looked beyond isolated expected numbers. I tested exact mathematical relations, repeated-call consistency, input preservation, parameter propagation, and agreement between public documentation and runtime behavior.
+The result is a set of five compact cases. The first is an accuracy observation rather than a confirmed defect. The other four are open upstream reports with reproducible counterexamples.
+This is not a security assessment or a general judgment on either project. It is a practical demonstration of contract-based numerical testing.
+Audit method
+The workflow varied by case, but followed the same structure:
+1. Identify a documented property, mathematical identity, or pipeline contract.
+2. Build a minimal reproducer.
+3. Compare against an independent oracle or an exact internal relation.
+4. Locate the responsible source branch.
+5. Test a bounded repair with focused regression checks.
+6. Report the result upstream with explicit scope and limitations.
+Case 1 — One ULP in Double.root
+The initial observation was:
+Double.root(3125, 5)
+The mathematical fifth root of 3125 is exactly 5, while the runtime result is one unit in the last place above it:
+5.000000000000001
+This result alone does not establish a library defect. Xiaodi Wu correctly noted that the behavior is not unique to `root` or to Swift Numerics: it can arise from composing approximate floating-point operations.
+The useful conclusion is narrower. The case exposes a boundary of observed accuracy and shows why surprising rounding must be separated from violations of exact contracts.
+Discussion:
+github.com
+Case 2 — Complex.reciprocal and a documented equivalence
+The public documentation says that, when `reciprocal` returns a value rather than `nil`, direct division is always equivalent to multiplication by that value.
+A counterexample is:
+let a = Complex<Double>(1e300, 0)
+let b = Complex<Double>(1e300, 1e200)
+print(a / b)
+print(a * b.reciprocal!)
+The two paths return:
+a / b           = (0.9999999999999999, -1e-100)
+a * reciprocal  = (0.9999999999999999,  0.0)
+The imaginary component of the reciprocal underflows to zero. Direct division uses scaling and preserves its contribution.
+This is not a demand that arbitrary algebraically equivalent floating-point expressions be bitwise identical. It is a counterexample to a specific statement in the public API documentation.
+Report:
+github.com
+Case 3 — The wrong quadrant in Complex.cosh and Complex.sinh
+The more serious Swift Numerics case appears in a branch designed to avoid overflow:
+let z = Complex<Double>(-40, 0.5)
+print(Complex.cosh(z))
+print(Complex.sinh(z))
+Observed:
+cosh(z) =  1.032850027510405e17 + 5.642485416641618e16 i
+sinh(z) = -1.032850027510405e17 - 5.642485416641618e16 i
+The imaginary signs should be the opposite. Exact identities determine the expected quadrants:
+cosh(-x + iy) = conjugate(cosh(x + iy))
+sinh(-x + iy) = -conjugate(sinh(x + iy))
+These checks do not depend on another library or on a tolerance near the last bit. An 80-decimal-digit `mpmath` evaluation independently confirms the expected signs.
+The cause is in the large-`abs(x)` fast paths. In `cosh`, the sign of the negative real input is not applied to the imaginary component. In `sinh`, it is applied to both components even though it should affect only the real one. The error then propagates to `Complex.cos` and `Complex.sin`.
+This is a wrong-quadrant result, not a last-bit discrepancy. Existing near-overflow tests contain the same incorrect sign expectations.
+Report:
+github.com
+Case 4 — KLD backward mutates its label
+In nntrainer's Kullback–Leibler divergence layer, the derivative path negates the label in place:
+label.multiply_i(-1.0f);
+label.divide(predicted, deriv);
+For P = 0.25 and Q = 0.5, the expected derivative is -0.5. Two consecutive backward calls produce:
+before backward:  label = +0.25
+first backward:   gradient = -0.5, label = -0.25
+second backward:  gradient = +0.5, label = +0.25
+The gradient alternates because the computation mutates its input state.
+A bounded local repair writes the negative value directly into the output tensor while leaving `label` unchanged. The focused regression check passes after that change.
+Report:
+github.com
+Case 5 — Four loss layers bypass loss_scale
+nntrainer has a shared dynamic loss-scaling mechanism, but four implemented loss layers do not call the existing helper:
+sigmoid cross-entropy;
+softmax cross-entropy;
+KLD;
+constant-derivative loss.
+With `loss_scale = 8`, a derivative of -0.5 should become -4.0. In the affected layers it remains -0.5.
+Adding the existing call:
+LossLayer::applyLossScale(context, ret_derivative);
+makes all four focused counterexamples and 71 focused regression tests pass. The KLD layer uses the output name `deriv`, but the helper call is the same.
+I do not claim a fully green project build: 104 unrelated golden tests could not run correctly because their runtime data was absent from the tested checkout.
+Report:
+github.com
+What the cases have in common
+There is no demonstrated single root cause across these cases. What unifies them is the detection method: test properties and contracts in addition to fixed expected numbers.
+The most productive checks were:
+exact mathematical relations between outputs;
+preservation of input data;
+repeatability under identical calls;
+propagation of control parameters through the full pipeline;
+agreement between public documentation and runtime behavior.
+One unexpected last digit is not automatically a defect. A wrong component sign, mutation of an input tensor, omission of `loss_scale`, or a direct counterexample to a documented equivalence is a different class of evidence.
+The practical conclusion is simple: numerical systems should be tested not only with examples, but also with properties that must hold for entire families of inputs. Those checks can expose failures that ordinary example-based tests miss.
+As of 5 September 2026, the four reports presented here as defects — #346, #347, #4328, and #4329 — remain open and have no maintainer comments.
+Executable Swift audit materials:
+github.com
+Root-accuracy audit materials:
+github.com
+Independent reproduction and analysis by Xamit Kadirbekov / GERO. No affiliation with Apple, Swift Numerics, Samsung, or the nntrainer maintainers is claimed.

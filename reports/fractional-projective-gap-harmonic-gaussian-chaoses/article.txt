@@ -1,0 +1,26 @@
+← Research index
+PREPRINT4 September 2026
+Fractional Projective-Gap Inequalities for Harmonic Gaussian Chaoses
+Permanent archive: Zenodo · DOI 10.5281/zenodo.22309754.
+An author preprint proving fractional projective-gap inequalities in the complete second chaos, all split-product degrees and the first fully mixed harmonic cubic case.
+Khamit Kadyrbekov · Daniyal KadirbekovAuthors · GERO Research
+Wiener chaosSpherical harmonicsExact certificate
+STATUS · SUBMITTED PREPRINTSubmitted to the European Journal of Mathematics on 4 September 2026. This author manuscript has not yet been peer reviewed.
+Read the preprint (PDF)Download the LaTeX sourceDownload the exact certificate
+This page releases the authors' submitted manuscript and its exact verification artifact for public reading and criticism. The manuscript was submitted to the European Journal of Mathematics on 4 September 2026. It has not yet been peer reviewed or accepted, and its claims should be treated as provisional until independent review is complete.
+The Question
+Let F be a normalized element of the M-th Gaussian Wiener chaos and let Z = |DF|²/M be its normalized carré-du-champ. The paper studies the sign of the fractional projective defect
+K_r(F) = E[(F² − Z) Z^r],  r > 0.
+Equality of the first moments E[F²] = E[Z] = 1 does not determine this sign because the fractional weight changes the two size-biased laws differently.
+What Is Proved
+For every nonzero element of the second chaos, every r > 0 and every shift τ ≥ 0, the shifted defect E[(F² − Z)(Z + τ)^r] is strictly positive.
+The same shifted inequality holds in every degree for products of mutually orthogonal Gaussian linear forms.
+At r = 3/20, the inequality holds for every homogeneous harmonic cubic in three variables.
+The mixed cubic theorem is reduced to a signed resolvent family and closed by an exact rational Bernstein certificate. The supplied verifier regenerates the spherical moments and checks every leaf of the certificate without floating-point inequalities.
+What Is Not Proved
+The paper does not prove the inequality for arbitrary chaos order, arbitrary spherical harmonic or every dimension. It does not solve the full nonlinear Kondrat'ev program. It closes the complete quadratic family, an all-degree split-product family and the first fully mixed cubic family. The universal projective gap and the independent nonlinear compactness and no-return theorems remain open.
+Reproducibility
+The public package contains the author PDF, LaTeX source and exact certificate. The verifier is intended to be run with one computational thread and aborts on any failed identity, positivity assertion, incomplete leaf or unexpected subdivision depth. Its expected terminal output and SHA-256 digest are included in the supplementary README.
+Authorship And Ai Disclosure
+Khamit Kadyrbekov conceived the project, developed the analytic arguments and drafted the manuscript. Daniyal Kadirbekov contributed software implementation, exact-arithmetic verification and review of the computational certificate. Both authors reviewed and approved the submitted manuscript.
+OpenAI Codex and Anthropic Claude assisted exploratory derivations, source discovery and bibliographic cross-checking, generation and review of symbolic-verification code, and English-language editing. No AI system is an author. The human authors reviewed the cited sources, mathematical arguments, code and final text and take responsibility for them.

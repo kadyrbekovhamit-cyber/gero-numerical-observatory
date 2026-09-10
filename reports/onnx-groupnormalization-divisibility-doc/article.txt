@@ -1,0 +1,35 @@
+← Research index
+INDEPENDENT NUMERICAL AUDIT7 September 2026
+ONNX GroupNormalization reverses channel/group divisibility in its documentation
+The summaries of versions 18 and 21 contradict the num_groups attribute and the operator's own four-channel, two-group example.
+Xamit KadirbekovIndependent verification · GERO Research
+Documentation auditONNXNormalization
+STATUS · VERIFIED DOCUMENTATION CONTRADICTIONTwelve small CPU models checked both schema versions; correction PR #8440 includes regenerated operator documentation.
+UPSTREAM RECORD
+onnx/onnx#8440 ↗
+Claim under test
+Group Normalization partitions each instance's channels into equal groups. Let C be the positive number of channels and G the positive number of groups. If each group has k channels, then C = G * k, with positive integer k. The necessary and sufficient divisibility condition is C % G == 0.
+The official ONNX operator page states the reverse condition in the summaries of versions 18 and 21. On that same page, the description of the num_groups attribute gives the correct condition, and the example uses four channels divided into two groups.
+Minimal contradiction
+Two integer examples distinguish the conditions without numerical tolerances:
+C=4, G=2: C % G = 0, G % C = 2; valid: two groups of two channels.
+C=2, G=4: C % G = 2, G % C = 0; invalid: half a channel per group.
+The summary rejects the valid example and admits the invalid one. This is an internal documentation contradiction, independently of any runtime experiment.
+Runtime controls
+On 2026-09-07 the local reproducer exercised both schema versions with ONNX 1.22.0, ONNX Runtime 1.29.0 and NumPy 2.5.2 on macOS ARM64 / Python 3.12. Each input has shape (1, C, 2, 2) and contains consecutive float32 integers. Scale is one, bias is zero and epsilon is 1e-5.
+Version 18 uses scale and bias of shape (G,); version 21 uses (C,). For each version, the following checks passed:
+C=4, G=2: accepted; independent float64 calculation matched.
+C=6, G=3: accepted; independent float64 calculation matched.
+C=4, G=1: accepted; independent float64 calculation matched.
+C=4, G=4: accepted; independent float64 calculation matched.
+C=2, G=4: rejected at reshape.
+C=5, G=2: rejected at reshape.
+All eight valid outputs were finite and agreed with a separate calculation of the group mean, population variance and normalization at rtol=atol=1e-6. The four invalid models were rejected. The inputs require only a few dozen elements; ONNX Runtime, BLAS and OpenMP were limited to one worker, and all cases ran sequentially on the CPU.
+The public reproduction repository contains the original version 21 example. The extended version 18/21 check and its captured output are currently local additions, pending publication.
+Correction
+Both summaries should say that the number of channels is divisible by num_groups. This leaves the attribute's existing rule intact.
+A two-hunk local patch corrects the version 21 and version 18 strings in `onnx/defs/doc_strings.cc`. The patch passed git apply --check against the reviewed commit. No ONNX source build was required for these documentation and runtime checks.
+Upstream status
+ONNX issue #8422 was filed on 2026-09-06. The source correction and regenerated operator documentation were submitted as ONNX PR #8440 on 2026-09-09. The ONNX extension was rebuilt before running the official documentation generator; clang-format --dry-run --Werror and git diff --check passed.
+Boundary
+This finding concerns the direction of a documentation condition. The tested runtime enforces the expected grouping requirement. These examples do not establish a runtime numerical defect, production-model impact or a security vulnerability. Zero-sized tensors and zero or negative group counts are outside this audit's positive-integer scope.

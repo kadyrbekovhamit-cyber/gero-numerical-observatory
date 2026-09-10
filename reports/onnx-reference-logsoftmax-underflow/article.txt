@@ -1,0 +1,84 @@
+← Research index
+INDEPENDENT NUMERICAL AUDIT6 September 2026
+ONNX reference LogSoftmax and cross-entropy return infinity for finite representable results
+A 104-logit gap makes the reference loss infinite while the mathematical result and ONNX Runtime output remain finite.
+Xamit KadirbekovIndependent verification · GERO Research
+Numerical auditONNXLogSoftmax
+STATUS · VERIFIED ORDINARY CORRECTNESS DEFECTReproduced on ONNX 1.22.0. Correction PR #8423 remains open; its status was checked on September 7, 2026.
+UPSTREAM RECORD
+onnx/onnx#8423 ↗
+Claim under test
+LogSoftmax is defined as the logarithm of the softmax values. In real arithmetic, for any nonempty finite input vector the result is finite: with m = max(x),
+LogSoftmax(x)_i = (x_i - m) - log( sum_j exp(x_j - m) )
+Every term on the right is finite in real arithmetic, and the sum is at least 1. Direct log-space evaluation avoids first materializing a probability that can underflow to zero. The examples below have outputs within the float32 finite range. This is not a guarantee for all finite machine inputs: extreme opposite-sign logits can overflow even the shifted subtraction.
+Observed behavior
+The reference implementation evaluates the composition instead: it computes softmax(x) first and then takes the logarithm of the result. Once an entry of the softmax underflows to zero, log(0) yields -inf.
+The standard attention-masking idiom is enough to trigger it:
+input                : [2.0, 1.0, -1e9, 3.0]
+mpmath (60 dp)       : [-1.407606, -2.407606, -1000000003.407606, -0.407606]
+ONNX ReferenceEval   : [-1.4076059, -2.4076059, -inf,             -0.4076060]
+ONNX Runtime CPU     : [-1.4076059, -2.4076059, -1.0e9,           -0.4076059]
+Accuracy is already lost well before the value becomes infinite. Sweeping the gap between the largest logit and a second one, in float32:
+gap  100 : reference -99.98309   exact -100
+gap  103 : reference -103.27893   exact -103
+gap  104 : reference -inf         exact -104
+gap 1000 : reference -inf         exact -1000
+The same code path is used by the classification loss. With four classes, the target class suppressed by the given gap, and reduction="none":
+gap   50 : reference   50.0   runtime   50.0   exact   50.0
+gap  104 : reference    inf   runtime  104.0   exact  104.0
+gap 1000 : reference    inf   runtime 1000.0   exact 1000.0
+This audit establishes an incorrect forward loss in the reference evaluator. It does not make a claim about gradients: ReferenceEvaluator is a forward evaluator, and automatic-differentiation systems may implement the derivative through a separate stable path.
+Expected behavior
+The stable form above. ONNX Runtime returns finite approximations; the analytical expression was evaluated independently with mpmath at 50–60 decimal digits.
+Reproduction
+import numpy as np, onnxruntime as ort
+from onnx import TensorProto, helper
+from onnx.reference import ReferenceEvaluator
+x = np.array([[2.0, 1.0, -1e9, 3.0]], np.float32)
+g = helper.make_graph(
+[helper.make_node("LogSoftmax", ["x"], ["y"], axis=-1)], "g",
+[helper.make_tensor_value_info("x", TensorProto.FLOAT, [1, 4])],
+[helper.make_tensor_value_info("y", TensorProto.FLOAT, [1, 4])])
+m = helper.make_model(g, opset_imports=[helper.make_opsetid("", 23)], ir_version=12)
+ref = ReferenceEvaluator(m).run(None, {"x": x})[0]
+options = ort.SessionOptions()
+options.intra_op_num_threads = 1
+options.inter_op_num_threads = 1
+options.execution_mode = ort.ExecutionMode.ORT_SEQUENTIAL
+ort_out = ort.InferenceSession(
+m.SerializeToString(), sess_options=options,
+providers=["CPUExecutionProvider"]).run(None, {"x": x})[0]
+assert np.isfinite(ref).all(), (ref, ort_out)   # fails: reference contains -inf
+Mathematical certificate
+For the counterexample the exact third component is -1000000003 - log(1 + exp(-1) + exp(-2) + exp(-1000000003)), which is finite and approximately -1000000003.407606. The mathematical result lies within the finite float32 range. Returning -inf for this component is therefore wrong independently of any tolerance.
+The threshold is the underflow point of exp in the working dtype:
+float32 : finite up to a gap of 103, -inf from 104
+float64 : finite up to a gap of 745, -inf from 746
+Between roughly -87 and -104 in float32 the exponential is subnormal, so the reference is finite but already inaccurate — the error at gap 103 is 0.28, in a quantity that is a log-probability.
+Impact
+The reference evaluator is a useful comparison baseline for ONNX backends and for testing operator implementations. A backend that evaluates LogSoftmax stably, as ONNX Runtime does in this test, disagrees with the reference on these inputs, so a correct finite result can appear inconsistent with the reference. A finite sentinel such as -1e9, representative of additive attention masks, is sufficient to trigger the mismatch.
+This is a numerical-correctness defect in a reference implementation. It is not a security finding, and it is not a defect in ONNX Runtime, which returns the correct values in every case tested here.
+Proposed correction
+Evaluate in log space rather than composing:
+class LogSoftmax(Softmax):
+def _run(self, X):
+axis = self.axis
+tmp = X - X.max(axis=axis, keepdims=1)
+Y = tmp - np.log(np.exp(tmp).sum(axis=axis, keepdims=1))
+return (Y.astype(X.dtype),)
+SoftmaxCrossEntropyLoss should consume the same log-space result instead of recomputing np.log(p).
+Verification
+Reproduced on onnx 1.22.0 with onnxruntime 1.29.0, macOS ARM64.
+Rechecked on 2026-09-07 with NumPy 2.5.2, mpmath 1.3.0 and one CPU worker; both the reference underflow and the finite ONNX Runtime results persisted.
+onnx/reference/ops/op_log_softmax.py:13-14 composes Softmax then np.log; onnx/reference/ops/op_softmax_cross_entropy_loss.py:22-26 repeats the same composition under a comment reading # compute log_softmax.
+Current main at commit 6e96797f0e5b (2026-09-05) carries byte-identical code for both files.
+Control: QLinearMatMul matched an exact integer oracle and the runtime with zero difference; GroupNormalization and InstanceNormalization agreed with the runtime to 2.4e-07; Attention with is_causal=1 and with an additive mask satisfied the structural masking invariants exactly.
+Targeted issue and pull-request searches over open and closed items, in four phrasings, found no duplicate.
+Boundary
+Reachable whenever the spread of the logits exceeds the dtype's exponential underflow point. It does not affect ONNX Runtime users, only consumers of the reference implementation — conformance suites, backend authors comparing against it, and code that imports onnx.reference directly.
+Upstream status
+Correction and two focused regression tests were submitted upstream as ONNX pull request #8423.
+Checked on 2026-09-07: the PR remains open and unmerged, with a human approval. A bot's suggested dtype-promotion issue was not reproduced in 72 focused combinations on NumPy 2.5.2 using the current PR source. This check covers float16/32/64, two input ranks, weighted and unweighted loss, optional ignored targets and all three reductions; it does not establish behavior on other NumPy versions or array implementations.
+Correction log
+2026-09-07: corrected the written expression for the masked component and distinguished real-arithmetic finiteness from machine representability. The previous expression used incorrect exponential terms. The input, measured outputs and conclusion about reference underflow are unchanged. The mpmath calculation is labelled a high-precision approximation, not an exact oracle.
+Public communication: GERO article, video, and LinkedIn post.

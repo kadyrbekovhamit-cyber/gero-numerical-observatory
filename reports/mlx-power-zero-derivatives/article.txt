@@ -1,0 +1,72 @@
+← Research index
+NUMERICAL CASE STUDY9 September 2026
+A Constant, a Polynomial, a NaN: MLX power Derivatives at Zero
+A constant has zero derivative. A singular intermediate in its backward formula says otherwise.
+Xamit KadirbekovReproducible numerical experiments · GERO Research
+MLX 0.32.2Power derivatives at zeroCPU float32
+STATUS · LOCALLY REPRODUCEDOriginal: 42 failed checks out of 396. Local C++ patch: all 41 scenarios and 396 checks pass. This is a remaining case in a known error family; novelty is unestablished.
+At zero, power(x,0) returns one, yet its first derivative is NaN instead of zero. Repeated differentiation reaches the same failure for positive integer powers. Even the polynomial 1 + 2x + 3x², represented with an array of exponents, receives a NaN first gradient instead of 2.
+The official MLX 0.32.2 wheel and actual native C++ code were rerun for publication. A direct polynomial expression, independent algebra and finite differences of the actual forward agree on the expected derivative. The evidence package contains executable tests, source pins, a proposed patch and before/after logs.
+The 63-second explanation
+Your browser does not support embedded video. Download the video.
+Watch the English Short on YouTube →
+Original diagrams and synthetic narration by the fictional Alex Vector using the macOS Daniel voice. AI-assisted preparation. Remotion project, narration and source ledger →
+Fixed exponents: ordinary smooth functions
+import mlx.core as mx
+mx.set_default_device(mx.cpu)
+x = mx.array(0.0)
+mx.grad(lambda t: mx.power(t, 0.0))(x)
+# Original: NaN; expected: 0
+mx.grad(mx.grad(lambda t: mx.power(t, 1.0)))(x)
+# Original: NaN; expected: 0
+The claim concerns real, fixed nonnegative integer exponents, finite CPU float32 inputs and differentiation with respect to the base. Under MLX’s forward convention for exponent zero, these functions are polynomials. No joint differentiability claim is made for varying both base and exponent at (0,0).
+For f(x)=xⁿ, derivative order k≤n gives n!/(n−k)! × xⁿ⁻ᵏ; every higher derivative is identically zero. The square’s first and second derivatives at zero are currently correct. Its third derivative reaches the NaN case. The cube’s fourth derivative does too.
+The polynomial example
+exponents = mx.array([0., 1., 2.])
+coefficients = mx.array([1., 2., 3.])
+model = lambda x: (coefficients * mx.power(x, exponents)).sum()
+loss = lambda x: 0.5 * (model(x) - 4.) ** 2
+At zero, the model value is 1 and its derivative is 2. Central differences with step 1/1024 give exactly 2. Writing 1+2*x+3*x*x directly in the same wheel also gives 2. The exponent-array version instead gives NaN.
+QuantityOriginalPatched C++
+Model derivative at zeroNaN2
+Initial loss4.54.5
+Loss derivativeNaN−6
+Loss after step size 0.125NaN0.017578125
+The corrected step gives x=0.75, model value 4.1875 and loss 0.5×0.1875²=0.017578125. The native test reevaluates the actual forward after both updates. This is a small synthetic example; no effect on a complete training pipeline has been established.
+Zero times infinity in the derivative
+In pinned Power::vjp, the base derivative contains b × power(a,b−1). At a=0,b=0 it evaluates 0×Inf. Repeated differentiation of positive integer powers eventually reaches this helper case.
+The proposed patch replaces the auxiliary base only when the base and exponent are both real zero:
+safe_base = 1 if a == 0 and b == 0 else a
+base_derivative = b * power(safe_base, b - 1)
+This avoids creating the singular intermediate. The forward and complex paths are unchanged. JVP delegates to the VJP helper and receives the same correction. The guard is deliberately narrow: for positive a, the mixed derivative at b=0 is 1/a. Replacing the base whenever the exponent is zero could break that result. Positive-base mixed-derivative controls pass before and after this patch.
+The guard adds elementwise work. Performance has not been benchmarked, and this is not a general solution for every singular or overflowing power expression.
+A separate test-discovery gap
+At the pinned revision, TestAutograd defines test_power_grad twice, at lines 699 and 734 of test_autograd.py. The later definition replaces the earlier method, hiding its three historical assertions.
+The patch renames the earlier method and adds two regression methods. AST parsing confirms syntax and unique names. The Python additions were not run against a newly built patched wheel. Equivalent numerical cases were executed in C++. This collision is a coverage issue; it is not evidence that the collision caused this numerical defect.
+Execution evidence and version boundary
+Native resultOriginalPatched
+Scenarios passed29/4141/41
+Checks passed354/396396/396
+Failed checks420
+The suite covers fixed integer powers through fifth derivatives, positive-base mixed derivatives, JVP/VJP, broadcasting and actual-forward finite differences. The 42 failures reflect one numerical mechanism, not 42 independent discoveries. Passing these cases does not prove correctness over all inputs.
+Inspected main: 24c699ecee2f7c8b2040de8da1c8382c8bcf31c7.
+Compatible native base: ce916dbbcaa88e433b6fd1e60a17f766d49c27fe. Power VJP and JVP were confirmed identical between these revisions.
+Apple clang 17.0.0, C++20, macOS arm64, CPU float32, computational thread environment variables set to one.
+All 32 input artifact hashes matched; the fresh wheel and native runs completed; the artifact validator passed 52 checks.
+The native run uses a partial rebuild on a compatible base, linked against a reused CPU-only MLX archive. It is not a clean full build of current main. Required archive and source hashes are recorded in the public package.
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+.venv/bin/python probe.py
+export MLX_SOURCE_ROOT=/absolute/path/to/mlx-at-ce916db
+export MLX_CPU_BUILD=/absolute/path/to/cpu-build
+python3 build_and_test.py
+Build instructions · C++ harness · Original log · Patched log.
+Prior work and remaining limits
+Issue #504 and PR #505, merged in January 2024, fixed a NaN first derivative of a square at zero. That correction introduced the current base-derivative formula. This report documents a remaining zero-exponent case and its higher-order consequences; it does not claim that the old square-first-derivative failure persists.
+Four recorded repository searches did not identify an exact matching report among returned results. They do not establish novelty or maintainer acceptance. GPU, FP16/BF16, compiled execution, general complex powers, exponent derivatives at zero/zero, singular fractional powers and extreme scales were not validated.
+Prepared with AI assistance; measurements come from actual local execution, algebra and finite differences. Independent GERO Research, without Apple endorsement. Included MLX source retains its MIT license.
+Full English report, tests and patch →
+Download the evidence ZIP
+SHA-256: 16d76684e67b688b6afd3126ab0e77630540a2c7cf001e6ba23b8339f207e2f7
+Source ledger · File checksums
+#MLX #Autodiff #MachineLearning #NumericalComputing #SoftwareTesting

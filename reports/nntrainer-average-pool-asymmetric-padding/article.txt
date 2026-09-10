@@ -1,0 +1,54 @@
+← Research index
+INDEPENDENT NUMERICAL AUDIT9 September 2026
+When SAME Padding Makes Average-Pooling Backward Skip Windows
+The forward pass is correct. The backward pass visits only one of four output windows and retains one quarter of the required gradient sum.
+Xamit KadirbekovReproducible numerical experiments · GERO Research
+Average poolingAutodiffNative regression tests
+STATUS · REPRODUCED TRAINING-CORRECTNESS DEFECTReproduced in native CPU FP32 on nntrainer commit a7ea056. A minimal two-line local repair changes 8 failures out of 58 to 58 passes. No released-product or security impact is claimed.
+A forward value can look completely healthy while its derivative implements a different operator. Average pooling with asymmetric SAME padding supplies a compact example.
+This audit exercises the real nntrainer::Pooling2DLayer in Samsung's open-source nntrainer project. It compares backward with two independent oracles: a hand-constructed window-membership Jacobian and central finite differences of the layer's own native C++ forward.
+The smallest counterexample
+input:          [[1, 2],
+[3, 4]]
+kernel:         2 x 2
+stride:         1 x 1
+pooling:        average
+padding:        same
+upstream grad:  [1, 1, 1, 1]
+SAME padding resolves to top=0, bottom=1, left=0, right=1. The four output windows contain 4, 2, 2 and 1 valid elements. nntrainer's forward correctly excludes padded positions from each averaging divisor.
+QuantityCurrent sourceCorrect / local repair
+Forward[2.5, 3, 3.5, 4][2.5, 3, 3.5, 4]
+Input gradient[0.25, 0.25, 0.25, 0.25][0.25, 0.75, 0.75, 2.25]
+Gradient sum14
+Backward visits only the first output window. The maximum absolute error is 2, and three quarters of the gradient sum are lost. This is not a floating-point tolerance dispute.
+The forward pass is its own independent oracle
+To avoid importing another framework's padding convention, the second check differentiates nntrainer's own forward numerically. With mixed upstream gradient [1,-2,3,4], central finite differences produce:
+[0.25, -0.75, 1.75, 4.75]
+The current backward again returns four values of 0.25. The analytic backward therefore disagrees with the Jacobian of the exact forward code under test.
+Two loop bounds select the wrong padding sides
+The forward loop extends through bottom and right padding. Backward instead ends its traversal using top and left:
+height - pool_height + top
+width  - pool_width  + left
+For the asymmetric case, both top and left are zero while bottom and right are one. Replacing the two end bounds with bottom and right makes backward visit the same output-window grid as forward. The local repair does not change the forward algorithm or averaging convention.
+Verification matrix
+Selected native suitePassedFailed
+Current pooling source508
+After the two-line repair580
+The selection includes 12 new tests and 46 existing pooling semantic/property tests. Reproducing cases cover even-kernel SAME padding, bottom-only and right-only padding, stride 2, multiple batches and channels, and explicit bottom/right padding. Symmetric padding, valid padding, global average pooling and max pooling with SAME act as passing controls.
+The matrix also checks zero upstream gradients, linearity, gradient sums and input immutability. Linearity alone is insufficient: an incorrect transposed operator can still be linear. That is why the independent Jacobian and finite-difference checks are decisive.
+History changes the novelty claim
+An old nntrainer PR #1360 already contained the correct bottom/right backward bounds. This publication therefore does not claim first discovery or established novelty. The defect is reproduced in the stated current source, while the recorded public search found no exact report containing this reproduction.
+The distinction matters: confirming a present defect and establishing priority are different research questions.
+Evidence boundary
+The tested environment was macOS arm64, native CPU, FP32, NCHW and one runtime thread. FP16, NHWC, other platforms, performance and end-to-end model impact were not tested. The result does not establish a defect in a released Samsung product, a security vulnerability, upstream acceptance or eligibility for a reward.
+Open the complete evidence package → It includes the native regression, source and test patches, before/after logs and XML, finite-difference results, provenance, duplicate review and SHA-256 manifest.
+Inspect the tested upstream source →
+Watch the 43-second reproduction
+Portrait 1080p, English narration and uploaded English subtitles. The narration uses a synthetic voice for the fictional digital narrator Alex Vector; no real-person voice cloning, stock footage or music is used. The native tests and execution logs remain the primary evidence.
+Primary records
+GERO evidence package and reproduction instructions
+Pooling2DLayer at the audited commit
+Historical nntrainer PR #1360
+YouTube Short
+LinkedIn discussion
+Experiments, repair proposals and editorial materials were prepared with AI assistance and reviewed against preserved native evidence.

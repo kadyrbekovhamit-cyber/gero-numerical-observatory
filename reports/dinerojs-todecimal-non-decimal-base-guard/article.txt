@@ -1,0 +1,68 @@
+← Research index
+INDEPENDENT NUMERICAL AUDIT6 September 2026
+Dinero.js toDecimal accepts non-decimal bases and returns plausible wrong strings
+Scalar base 240 is accepted and formatted as 1.10 for the exact value 250/240, while the equivalent multi-base currency [20, 12] is correctly rejected.
+Xamit KadirbekovIndependent verification · GERO Research
+Numerical auditDinero.jsCurrency formatting
+STATUS · VERIFIED ORDINARY CORRECTNESS DEFECTReproduced on Dinero.js 2.0.2 and current main; the finding concerns custom currency definitions, not bundled ISO currencies.
+UPSTREAM RECORD
+Public reproducer on GitHub ↗
+Finding
+toDecimal is documented to work only with single-based decimal currencies, and it enforces that with an assertion. The assertion tests base % 10 == 0, which means every non-zero multiple of ten — 20, 30, 60, 100, 240, … — passes the guard. Bases such as 20, 60, and 240 are not decimal bases at all. The function nevertheless formats their remainders as decimal digits and can return a well-formed but numerically wrong string instead of raising Currency is not decimal.
+base: 100 is a useful boundary rather than a clean example of the same classification. It is a power of ten and can represent a decimal subdivision, but the formatter still uses padStart(scale) instead of accounting for the two decimal digits contributed by each base-100 scale step. Consequently some amounts are accidentally right (250 -> "2.50") while others are wrong (105 -> "1.5", exact 1.05).
+The faulty line is packages/dinero.js/src/core/api/toDecimal.ts:39:
+const isBaseTen = equalFn(calculator.modulo(base, ten), zero);
+Minimal counterexample
+Pre-decimal sterling, 240 pence to the pound. This is the exact currency shape used by the project's own test suite at packages/dinero.js/src/api/__tests__/haveSameCurrency.test.ts:63.
+const GBP = { code: 'GBP', base: 240, exponent: 1 };
+toDecimal(dinero({ amount: 250, currency: GBP }));
+Observed:
+toUnits   = [1,10]
+toDecimal = "1.10"
+Exact value: 250 / 240 = 1.0416666666666667. The correct behaviour is to throw [Dinero.js] Currency is not decimal., exactly as the same call does for MGA (base 5) or for the base 6 currency used in the project's own docs/guides/formatting-non-decimal-currencies.md.
+The diagnostic is stronger when the same currency is expressed in the two representations that the library itself treats as equivalent:
+const scalar = dinero({
+amount: 250,
+currency: { code: 'GBP', base: 240, exponent: 1 },
+});
+const multi = dinero({
+amount: 250,
+currency: { code: 'GBP', base: [20, 12], exponent: 1 },
+});
+haveSameCurrency([scalar, multi]); // true
+toDecimal(scalar);                 // "1.10" (wrong)
+toDecimal(multi);                  // throws Currency is not decimal. (correct)
+This is not needed to establish the defect—the published toDecimal contract already does that—but it shows that the permissive scalar guard accepts an encoding of the same non-decimal currency that the multi-base guard rejects.
+Further values, all from the published 2.0.2:
+base=20  amount=25   toUnits=[1,5]   toDecimal="1.5"    exact=1.25
+base=20  amount=39   toUnits=[1,19]  toDecimal="1.19"   exact=1.95
+base=60  amount=90   toUnits=[1,30]  toDecimal="1.30"   exact=1.5
+base=100 amount=105  toUnits=[1,5]   toDecimal="1.5"    exact=1.05
+base=100 amount=250  toUnits=[2,50]  toDecimal="2.50"   exact=2.5 (accidental match)
+base=5   amount=7    toUnits=[1,2]   toDecimal=THREW    exact=1.4
+base=6   amount=7    toUnits=[1,1]   toDecimal=THREW    exact=1.1666666666666667
+toUnits decomposes every one of these correctly. The defect is confined to the guard in toDecimal and to the decimal string it then produces.
+Reproducer
+import { dinero, toDecimal, toUnits } from 'dinero.js';
+const GBP = { code: 'GBP', base: 240, exponent: 1 };
+const d = dinero({ amount: 250, currency: GBP });
+console.log(toUnits(d));    // [ 1, 10 ]
+console.log(toDecimal(d));  // "1.10"   -- expected: throw "Currency is not decimal."
+console.log(250 / 240);     // 1.0416666666666667
+Verification
+Reproduced on Node 25.9.0, macOS 15.5 (arm64), against the published npm release dinero.js@2.0.2.
+Reproduced against current main, commit 76b969e519dc44675d4af898d25629995d0b16f2, by bundling packages/dinero.js/src/index.ts with esbuild and running the same inputs. Identical output.
+Independent oracle: exact rational arithmetic. 250/240 and 25/20 are exact binary-representable values; there is no floating-point ambiguity and no tie.
+Documented claim under test, docs/api/formatting/to-decimal.md: *"You can only use this function with Dinero objects that are single-based and use a decimal currency."* The library implements that restriction as an assertion; the assertion is what is wrong.
+Boundary scan of single bases 2..120: toDecimal accepts exactly 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120. Non-power-of-ten members of that set are not decimal bases and can return a wrong decimal string. Base 100 is decimal but exposes the separate width error described above. All other bases, and all array (multi-base) currencies, are rejected.
+Duplicate search over open and closed issues and pull requests (toDecimal+non-decimal, toDecimal+base, isBaseTen, Currency+is+not+decimal, non-decimal+currency, base+240, custom+currency+base) found no report of this guard. Related but distinct closed items: #309 (non-decimal currency support), #751 and #759 (toDecimal and exponent-zero currencies), #756 (toUnits leading zeros).
+Proposed correction
+There are two defensible repairs, depending on the intended public contract. If toDecimal supports only the canonical Dinero representation with base exactly 10, make the existing predicate match its name:
+-    const isBaseTen = equalFn(calculator.modulo(base, ten), zero);
++    const isBaseTen = equalFn(base, ten);
+After this change, base: 240, base: 20, base: 60 and base: 100 all throw [Dinero.js] Currency is not decimal., while base: 10 is unaffected. The project's full test suite still passes: 74 files, 848 tests, before and after.
+If single scalar bases such as 100 are intended to be valid decimal representations, the complete repair is broader: accept only powers of ten and pad the fractional remainder to log10(base) * scale digits. A regression test must then include both base: 100, amount: 105 -> "1.05" and rejection of base: 20, base: 60, and base: 240. The current predicate implements neither contract correctly.
+Boundary
+This is an ordinary correctness defect in a public library method. It affects only user-defined currencies: no ISO 4217 currency shipped in dinero.js/currencies has a single base that is a multiple of ten other than 10 (MGA and MRU use base 5 and are correctly rejected). It is reachable through a documented feature — the library documents custom currencies with arbitrary bases and ships a guide on non-decimal currencies — and the currency shape in the counterexample is one the project's own tests use. The failure mode is a silently wrong decimal string rather than an exception, so a caller that persists or displays toDecimal output records a wrong amount without any signal. No production system was tested.
+Upstream status
+Correction submitted as dinerojs/dinero.js#891 on 9 September 2026. The change adds regression coverage for number, bigint and Big.js calculators. The full project run passed 851 tests across 74 files; type tests, lint and formatting also passed. CodeRabbit reported no actionable finding and assessed the merge risk as minimal. The remaining Vercel failure requires authorization from the upstream project owner and is unrelated to the code.

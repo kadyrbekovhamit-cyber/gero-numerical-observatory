@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A strict C++ scatter_max/min block update loses a winning gradient. Independent finite differences confirm the reference; a minimal extent correction passes 26 targeted checks." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="A Missing Gradient in MLX Block Updates" />
+    <meta property="og:description" content="A strict C++ scatter_max/min block update loses a winning gradient. Independent finite differences confirm the reference; a minimal extent correction passes 26 targeted checks." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/mlx-scatter-block-gradient.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-mlx-scatter.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="A Missing Gradient in MLX Block Updates" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="A Missing Gradient in MLX Block Updates" />
+    <meta name="twitter:description" content="A strict C++ scatter_max/min block update loses a winning gradient. Independent finite differences confirm the reference; a minimal extent correction passes 26 targeted checks." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-mlx-scatter.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/mlx-scatter-block-gradient.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <link rel="stylesheet" href="../../assets/ux.css" />
+    <meta name="keywords" content="MLX, scatter_max, scatter_min, block updates, autodiff, regression tests" />
+    <title>A Missing Gradient in MLX Block Updates — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "A Missing Gradient in MLX Block Updates", "description": "A strict C++ scatter_max/min block update loses a winning gradient. Independent finite differences confirm the reference; a minimal extent correction passes 26 targeted checks.", "datePublished": "2026-09-09", "dateModified": "2026-09-09", "url": "https://www.gero.uz/research/articles/mlx-scatter-block-gradient.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <style>
+      .audit-table{overflow-x:auto;margin:1.5rem 0}.audit-table table{width:100%;min-width:620px;border-collapse:collapse}.audit-table th,.audit-table td{padding:14px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #d4d9d5;font-size:14px}.article-prose code{overflow-wrap:anywhere}.article-prose pre{overflow-x:auto}.video-frame{position:relative;aspect-ratio:9/16;max-width:390px;margin:2rem auto;background:#111;border-radius:18px;overflow:hidden;box-shadow:0 18px 50px rgba(14,24,20,.18)}.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    </style>
+  </head>
+  <body class="research-body">
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home"><span class="brand-mark" aria-hidden="true">G</span><span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span></a>
+      <nav aria-label="Main navigation"><a href="../../index.html#method">Method</a><a href="../../index.html#lab">Live lab</a><a class="nav-active" href="../../research/">Research</a></nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    <main><article class="article-shell">
+<a class="back-link" href="../">← Research index</a>
+<header class="article-header"><div class="article-kicker"><span>NUMERICAL CASE STUDY</span><span>9 September 2026</span></div>
+<h1>A Missing Gradient in MLX Block Updates</h1><p class="article-dek">The forward maximum is correct. A winning block element loses its gradient.</p>
+<div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54"><div><strong>Xamit Kadirbekov</strong><span>Reproducible numerical experiments · GERO Research</span></div></div>
+<div class="topic-row"><span>MLX C++ API</span><span>Block updates</span><span>CPU float32</span></div></header>
+<div class="evidence-banner"><strong>STATUS · LOCALLY REPRODUCED</strong><span>Strict, in-bounds blocks: baseline fails 12 of 26 targeted checks. Minimal extent correction: all 26 pass. Historical behavior at equal values is treated separately.</span></div>
+<div class="article-prose">
+<p>A four-element example exposes a gradient-routing error in <code>scatter_max</code> and <code>scatter_min</code>. The updates overlap, but all competing winners are strictly distinct. The result is locally linear, so no convention about a derivative at a tie is needed.</p>
+<p>The <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient">public evidence package</a> includes exact inputs, a C++ harness, two separate patches and before/after logs. The original C++ translation unit and both patch variants were rebuilt and rerun for publication.</p>
+<img src="../../assets/og-mlx-scatter.png" width="1200" height="630" style="width:100%;height:auto;border-radius:16px" alt="Strict MLX block scatter example: actual update gradient [2,0,-3,0], exact and finite-difference gradient [2,0,-3,4]. Minimal block-extent patch passes 26 targeted checks; baseline fails 12. CPU float32, partial native rebuild.">
+<h2>The 52-second explanation</h2>
+<video controls playsinline preload="metadata" poster="../media/mlx-scatter-poster.png" width="1080" height="1920" style="display:block;width:100%;max-width:390px;height:auto;margin:24px auto;border-radius:18px" aria-label="A missing gradient in MLX block updates, English narrated explanation">
+<source src="../media/mlx-scatter-short.mp4" type="video/mp4"><track kind="captions" src="../media/mlx-scatter-short.en.vtt" srclang="en" label="English">Your browser does not support embedded video. <a href="../media/mlx-scatter-short.mp4">Download the video</a>.</video>
+<p><a href="https://www.youtube.com/shorts/h059SpE_5xI">Watch the English Short on YouTube →</a></p>
+<p class="muted">Original diagrams and synthetic narration by the fictional Alex Vector using the macOS Daniel voice. AI-assisted preparation. <a href="../data/mlx-scatter-video-source-2026-09-09.zip">Remotion project, narration and source ledger →</a></p>
+<h2>Two blocks, one missing contribution</h2>
+<pre><code>source = [0, 0, 0, 0]
+indices = [0, 1], axis = 0
+updates = [[3, 4], [5, 6]]
+cotangent = [2, -3, 4, 2]
+
+scatter_max = [3, 5, 6, 0]
+source gradient = [0, 0, 0, 2]  # correct
+
+updates gradient:
+expected = [[2, 0], [-3, 4]]
+actual   = [[2, 0], [-3, 0]]</code></pre>
+<p>The first block updates positions 0 and 1, the second positions 1 and 2. Five beats four at the overlap. Every block lies inside the source. Locally, the weighted loss is <code>L = 2u₀₀ − 3u₁₀ + 4u₁₁ + 2s₃</code>. Its update gradient must therefore be <code>[2,0,−3,4]</code>.</p>
+<p>Coordinate central differences of the actual C++ forward operation, with step <code>1/256</code>, confirm that vector. Negating the updates and using <code>scatter_min</code> gives the same missing derivative. A common shift of every input should change the loss by <code>5t</code>; the original backward instead gives a derivative of 1. <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient/run-before-strict.log">Baseline evidence →</a></p>
+<h2>The backward gather assumes the wrong extent</h2>
+<p>The <a href="https://ml-explore.github.io/mlx/build/html/cpp/ops.html">C++ scatter contract</a> supports slice updates. The max/min branch in <code>Scatter::vjp</code> nevertheless forces gather length one on indexed axes:</p>
+<pre><code>auto slice_sizes = cotangents[0].shape();
+for (auto ax : axes_) {
+  slice_sizes[ax] = 1;
+}</code></pre>
+<p>The example needs an indexed extent of two. Gathering only block starts and broadcasting those values across the update tensor loses the final winning contribution. The minimal repair reads the trailing update dimensions corresponding to the source rank:</p>
+<pre><code>auto slice_sizes = Shape(
+    updates.shape().end() - values.ndim(), updates.shape().end());</code></pre>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient/scatter-block-extent-only.patch">The minimal patch</a> adds no new array operations and leaves equality handling unchanged. Performance and full-suite compatibility were not measured.</p>
+<h2>What passed, and which patch was tested</h2>
+<div class="audit-table"><table><thead><tr><th>Native variant</th><th>Scenarios passed</th><th>Checks</th><th>Failed checks</th></tr></thead><tbody>
+<tr><td>Original, strict blocks</td><td>0/2</td><td>26</td><td>12</td></tr>
+<tr><td>Minimal extent patch, strict blocks</td><td>2/2</td><td>26</td><td>0</td></tr>
+<tr><td>Original, extended selection</td><td>10/40</td><td>388</td><td>176</td></tr>
+<tr><td>Extended extent-and-tie patch</td><td>40/40</td><td>388</td><td>0</td></tr>
+</tbody></table></div>
+<p>These are targeted checks, not the complete MLX suite. One vector comparison counts as one check. Some extended checks require a proposed new policy at ties. The 40/40 result belongs to the extended patch; it must not be attributed to the minimal correction. The 176 failures are not 176 independent defects.</p>
+<p>The harness checks forward values, gradients for each argument and both together, cotangent linearity, shared shifts, selected second derivatives and finite differences. Independent coordinate differences are used only for strict block cases. <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient/native_regression.cpp">Inspect the tests →</a></p>
+<h2>Equal values have a separate history</h2>
+<p>On MLX 0.32.2, a scalar copied into the source and four identical scatter updates produces a smooth identity <code>f(x)=x</code>, but the computed derivative is 5. A squared-loss composition similarly duplicates first and second derivatives. Ordinary binary max/min controls return the expected derivative.</p>
+<p>This behavior is <strong>not claimed as a new unknown finding</strong>. <a href="https://github.com/ml-explore/mlx/pull/431">PR #431</a>, merged in January 2024, already tested propagation to both a tied source and update. Its author <a href="https://github.com/ml-explore/mlx/pull/431#issuecomment-1886993971">explicitly asked about that choice</a>.</p>
+<p>The separate <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient/scatter-extrema-vjp.patch">experimental patch</a> prioritizes winning updates over an equal source and divides the cotangent among tied winning updates. This is one valid policy, not the only possible convention. It changes historical behavior and adds winner-count arrays and scatter/gather work. It needs maintainer compatibility review and performance measurement.</p>
+<h2>Version pins and reproducibility</h2>
+<ul><li>Inspected source: <code>24c699ecee2f7c8b2040de8da1c8382c8bcf31c7</code>, rechecked before publication.</li><li>Compatible native base: <code>ce916dbbcaa88e433b6fd1e60a17f766d49c27fe</code>. Both audited VJP methods are byte-identical to the inspected source.</li><li>Apple clang 17.0.0, C++20, CPU float32. Original and patched translation units link ahead of a reused CPU-only archive.</li><li>All 38 input artifact hashes matched. The C++ builds and runs were repeated. The official wheel equality probe is retained from the original audit and was not rerun for publication.</li></ul>
+<p><strong>This is a partial native rebuild on a compatible base, not a clean build of current main.</strong> The strict block example is demonstrated through the C++ API; that exact layout was not independently reproduced through Python <code>.at</code>.</p>
+<pre><code>export MLX_SOURCE_ROOT=/absolute/path/to/mlx-at-ce916db
+export MLX_CPU_BUILD=/absolute/path/to/cpu-build
+python3 build_and_test.py
+./native-before --strict-blocks       # expected failure
+./native-block-only --strict-blocks   # expected pass</code></pre>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient/BUILD.md">Build setup and its validation boundary</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient/build-results.json">Actual commands</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient/source-metadata.json">Source and archive hashes</a>.</p>
+<h2>Limits, disclosure and evidence</h2>
+<p>GPU, other dtypes, non-finite inputs, every compiled/vectorized path, very large arrays and full-model effects were not validated. No device harm, security impact, maintainer acceptance or reward eligibility is asserted. The limited public search found no exact strict-block duplicate; novelty remains unestablished.</p>
+<p>Prepared with AI assistance. Numerical results come from actual local execution, explicit algebra and finite differences. This is independent GERO Research work, not an Apple-endorsed audit. Included MLX source retains its MIT license.</p>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient">Full English report, tests and patches →</a><br><a href="../data/mlx-scatter-audit-2026-09-09.zip">Download the evidence ZIP</a><br><code>SHA-256: 8afaafb0f726b3818b0ea5af8e37685f68c7091fb78fb83551f16df975b53773</code></p>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient/SOURCES.md">Source ledger</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient/SHA256SUMS.json">File checksums</a></p>
+<p>#MLX #Autodiff #NumericalComputing #SoftwareTesting #OpenSource</p>
+</div></article></main>
+    <footer><div class="shell footer-grid"><div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div><p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p><a href="../../feed.xml">RSS</a></div></footer>
+  </body>
+</html>

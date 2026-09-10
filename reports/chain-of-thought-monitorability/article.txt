@@ -1,0 +1,27 @@
+← Research index
+FRONTIER LAB WATCHReviewed 2 September 2026
+Monitoring reasoning is a stability problem
+OpenAI's monitorability evaluations raise a systems question: will a useful safety signal remain informative after training, scaling and distribution shift?
+Xamit KadirbekovIndependent analysis · Source: OpenAI
+Chain-of-thoughtMonitoringStability
+STATUS · SOURCE REPORT + GERO ANALYSISThis brief has not independently reproduced the laboratory's experiment.
+PRIMARY SOURCE · 18 December 2025
+Evaluating chain-of-thought monitorability ↗
+What the laboratory reports
+OpenAI introduces a suite of evaluations for how well monitors can detect properties of model reasoning.
+The report describes current frontier reasoning as fairly but not perfectly monitorable.
+It warns that monitorability could be fragile under future changes in training and scaling and frames it as one layer in defense in depth.
+The mathematical problem
+A monitor is a detector coupled to a changing generator. We need sensitivity, specificity and calibration across a family of model and environment perturbations, plus a stability margin before monitor outputs can control release decisions.
+GERO's proposed response
+Define monitorability as a versioned evidence contract, not a permanent model property.
+Stress the monitor under paraphrase, tool changes, optimization pressure and shifted task distributions.
+Fuse monitor evidence with mechanistic and deterministic checks while preserving disagreement.
+A falsifiable experiment
+Freeze a hidden hazard set and evaluate successive model checkpoints.
+Estimate worst-group detection and calibration rather than only the mean score.
+Trigger abstention when the measured stability margin falls below the deployment threshold.
+Boundary
+No chain-of-thought monitor can certify hazards that are absent from its evaluation distribution or unobservable in its input channel.
+Read the primary source
+This article is an original analytical summary, not a republication. Read Evaluating chain-of-thought monitorability for the laboratory's complete claims, methods and context.

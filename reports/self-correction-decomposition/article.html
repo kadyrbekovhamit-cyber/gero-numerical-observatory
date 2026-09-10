@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Google Research separates finding a mistake from repairing it; GERO turns that distinction into separate evidence contracts." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Self-correction is two problems, not one" />
+    <meta property="og:description" content="Google Research separates finding a mistake from repairing it; GERO turns that distinction into separate evidence contracts." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/self-correction-decomposition.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Self-correction is two problems, not one" />
+    <meta name="twitter:description" content="Google Research separates finding a mistake from repairing it; GERO turns that distinction into separate evidence contracts." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/self-correction-decomposition.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>Self-correction is two problems, not one — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "AnalysisNewsArticle", "headline": "Self-correction is two problems, not one", "description": "Google Research separates finding a mistake from repairing it; GERO turns that distinction into separate evidence contracts.", "datePublished": "2026-09-02", "dateModified": "2026-09-02", "url": "https://www.gero.uz/research/articles/self-correction-decomposition.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+  </head>
+  <body class="research-body">
+    
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    
+    <main>
+      <article class="article-shell brief-article">
+        <a class="back-link" href="../">← Research index</a>
+        <header class="article-header">
+          <div class="article-kicker"><span>FRONTIER LAB WATCH</span><span>Reviewed 2 September 2026</span></div>
+          <h1>Self-correction is two problems, not one</h1>
+          <p class="article-dek">Google Research separates finding a mistake from repairing it; GERO turns that distinction into separate evidence contracts.</p>
+          <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54" /><div><strong>Xamit Kadirbekov</strong><span>Independent analysis · Source: Google Research</span></div></div>
+          <div class="topic-row"><span>Self-correction</span><span>Error localization</span><span>Evaluation</span></div>
+        </header>
+        <div class="evidence-banner source-report"><strong>STATUS · SOURCE REPORT + GERO ANALYSIS</strong><span>This brief has not independently reproduced the laboratory's experiment.</span></div>
+        <div class="brief-source">
+          <span>PRIMARY SOURCE · 11 January 2024</span>
+          <a href="https://research.google/blog/can-large-language-models-identify-and-correct-their-mistakes/" rel="noopener noreferrer">Can large language models identify and correct their mistakes? ↗</a>
+        </div>
+        <div class="article-prose">
+          <h2>What the laboratory reports</h2>
+          <ul><li>Google Research studies mistake finding separately from mistake correction.</li><li>The work treats feedback quality and repair ability as distinct capabilities rather than one self-correction score.</li><li>This decomposition exposes where a system fails: detecting an error, localizing it or producing a valid repair.</li></ul>
+          <h2>The mathematical problem</h2>
+          <p>Detection, localization and repair have different loss functions. Collapsing them into a single accuracy number hides conditional failure rates, especially the probability that a wrong diagnosis leads to a persuasive but invalid repair.</p>
+          <h2>GERO's proposed response</h2>
+          <ul><li>Create separate graph events for contradiction detection, faulty-node localization and dependency-safe repair.</li><li>Require a new certificate after repair; never inherit the original verdict automatically.</li><li>Track transition metrics such as invalid-to-valid, valid-to-invalid and unresolved-to-falsely-verified.</li></ul>
+          <h2>A falsifiable experiment</h2>
+          <ul><li>Inject labelled defects at different depths of a claim graph.</li><li>Score detection, localization and repair independently.</li><li>Test whether the repaired conclusion survives the same attacks as a clean reference solution.</li></ul>
+          <aside class="boundary-box"><strong>Boundary</strong><p>A model&#x27;s ability to critique text does not demonstrate that its proposed correction is valid. The repaired artifact needs fresh verification.</p></aside>
+          <h2>Read the primary source</h2>
+          <p>This article is an original analytical summary, not a republication. Read <a href="https://research.google/blog/can-large-language-models-identify-and-correct-their-mistakes/" rel="noopener noreferrer">Can large language models identify and correct their mistakes?</a> for the laboratory's complete claims, methods and context.</p>
+        </div>
+      </article>
+    </main>
+    
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

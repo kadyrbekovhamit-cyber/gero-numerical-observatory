@@ -1,0 +1,67 @@
+← Research index
+NUMERICAL CASE STUDY9 September 2026
+An Unused Value Gets a Gradient: MLX Masked Assignment
+The forward operation reads each example separately. Its reverse derivative crosses a batch boundary.
+Xamit KadirbekovReproducible numerical experiments · GERO Research
+MLX 0.32.2Boolean assignment · vmapCPU float32
+STATUS · LOCALLY REPRODUCEDOriginal: 72 failed checks out of 255. Local C++ patch: all 19 scenarios and 255 checks pass. Novelty and maintainer acceptance are unestablished.
+An input that the forward operation never reads should have zero derivative. In this MLX example, an unused source value receives a gradient of 20. Boolean assignment inside vmap produces the correct forward values but mixes source-gradient positions between batch examples.
+The official MLX 0.32.2 Python wheel and a partial native C++ rebuild were rerun for publication. An explicit per-example loop, independent algebra and coordinate finite differences of the actual forward agree on the expected derivative. The evidence package contains exact inputs, source pins, executable tests, a proposed patch and actual execution logs.
+The 55-second explanation
+Your browser does not support embedded video. Download the video.
+Watch the English Short on YouTube →
+Original diagrams and synthetic narration by the fictional Alex Vector using the macOS Daniel voice. AI-assisted preparation. Remotion project, narration and source ledger →
+Two examples, two unused values
+destination = zeros((2, 4))
+mask = [[True, False, True, False],
+[False, True, False, True]]
+source = [[10, 20, 99],
+[30, 40, 88]]
+cotangent = [[1, 2, 3, 4],
+[10, 20, 30, 40]]
+forward = [[10, 0, 20, 0], [0, 30, 0, 40]]
+expected source gradient = [[1, 3, 0], [20, 40, 0]]
+actual source gradient   = [[1, 3, 20], [40, 0, 0]]
+Each row consumes two values from its own three-element source. Values 99 and 88 are unused. These are valid inputs: the documented assignment contract permits an update source with at least as many elements as the mask selects.
+For the fixed mask, the weighted loss is the linear function L = s₀₀ + 3s₀₁ + 20s₁₀ + 40s₁₁. Its derivative is exactly [1,3,0,20,40,0]. Central differences with step 1/256 reproduce this derivative. There is no nondifferentiable selection boundary because the mask is fixed.
+The forward/reverse adjoint identity also fails. A perturbation of the unused value s₀₂ has zero forward directional derivative, but the returned reverse gradient has inner product 20 with the same perturbation: 0 ≠ 20.
+A measured step goes in the wrong direction
+A separate synthetic linear-loss experiment changes the cotangent at position [1,1] to −20. The initial loss is 1070. Its correct derivative is g=[1,3,0,−20,40,0]; the original implementation returns h=[1,3,−20,40,0,0].
+step size = 1/8
+g · h = -790       g · g = 2010
+L(source - h/8) = 1070 + 790/8  = 1168.75
+L(source - g/8) = 1070 - 2010/8 = 818.75
+The test evaluates the actual forward again after both updates; the observed losses match these algebraic results. This is a small synthetic linear objective. It does not establish a training failure in a complete model.
+A global counter replaces a per-example counter
+In the inspected MaskedScatter::vjp, flattening the whole mask and applying one cumulative sum loses the separation between examples. Let b be the batch row, K its source length, and p the zero-based ordinal of a true entry within that row. The source address must be b × K + p. The original derivative instead uses the total number of true entries in all preceding rows, plus p.
+Those addresses agree when all preceding source rows are fully consumed. They diverge when a row has unused source values. Forward execution starts each row from that row’s own source; backward must use the same boundaries.
+The proposed C++ repair forms a prefix count within each batch row and adds the row’s source offset. It uses 64-bit index arithmetic, masks false positions and handles empty inputs before division. It changes the reverse derivative only; forward, JVP and vmap implementations remain unchanged. Runtime and memory performance have not been benchmarked.
+Actual validation results
+CheckOriginalPatched
+Native scenarios passed8/1919/19
+Native checks passed183/255255/255
+Unused source element derivative200
+Synthetic loss after step1168.75818.75
+The official Python wheel reproduction was also repeated. The 72 failed checks describe manifestations of one implementation defect; they are not 72 separate findings. Passing this targeted suite is not proof of correctness over every possible state.
+Version pins and reproduction boundary
+Inspected main: 24c699ecee2f7c8b2040de8da1c8382c8bcf31c7.
+Compatible native base: ce916dbbcaa88e433b6fd1e60a17f766d49c27fe. Six related functions were re-extracted and confirmed identical to the inspected main.
+Apple clang 17.0.0, C++20, macOS arm64, CPU float32. Original and patched translation units were linked ahead of a reused CPU-only MLX archive.
+All 31 supplied artifact hashes matched. Publication verification then repeated the wheel probe, native compilation and native before/after executions.
+Native validation is a partial rebuild on a compatible base, not a clean full build of current main. The public build instructions preserve this distinction and list the required source and archive hashes.
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+.venv/bin/python probe.py
+export MLX_SOURCE_ROOT=/absolute/path/to/mlx-at-ce916db
+export MLX_CPU_BUILD=/absolute/path/to/cpu-build
+python3 build_and_test.py
+Complete build instructions · C++ harness · Original log · Patched log.
+Prior work and limitations
+The original implementation contains the global-counter pattern. Earlier work includes shape handling, a flaky vmap test and a different JVP correction. The limited search did not establish whether this exact reverse-derivative defect has already been reported. Novelty and maintainer acceptance remain unestablished.
+GPU, compiled execution paths, other dtypes, every shape and full-model effects were not tested. No device harm, security impact or reward eligibility is asserted. Included MLX source retains its MIT license.
+Prepared with AI assistance. Evidence consists of actual execution, independent algebra and finite differences. This is independent GERO Research work, without Apple endorsement.
+Full English report, tests and patch →
+Download the evidence ZIP
+SHA-256: 1449d82f1b1ba6ad69c7c6c4e8156ff7c7d03900d35c4be7554c94fe6baa351f
+Source ledger · File checksums
+#MLX #Autodiff #MachineLearning #NumericalComputing #SoftwareTesting

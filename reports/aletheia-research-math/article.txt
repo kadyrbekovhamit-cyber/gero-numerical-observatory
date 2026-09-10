@@ -1,0 +1,27 @@
+← Research index
+FRONTIER LAB WATCHReviewed 2 September 2026
+Research mathematics is a generator–verifier–reviser control loop
+Google DeepMind's Aletheia separates research mathematics from bounded contests and makes revision and failure admission part of the system.
+Xamit KadirbekovIndependent analysis · Source: Google DeepMind
+Research mathematicsVerificationControl
+STATUS · SOURCE REPORT + GERO ANALYSISThis brief has not independently reproduced the laboratory's experiment.
+PRIMARY SOURCE · 11 February 2026
+Accelerating mathematical and scientific discovery with Gemini Deep Think ↗
+What the laboratory reports
+DeepMind distinguishes research mathematics from bounded competition problems because it requires literature, long dependencies and specialist judgment.
+It describes data scarcity in advanced domains as a cause of superficial understanding and hallucinations.
+Aletheia uses generator, verifier and reviser roles, incorporates search, and can admit failure.
+The mathematical problem
+The loop is a partially observed control process with costly actions. At every step the system must choose whether to generate, retrieve, verify, revise, escalate or stop while controlling residual error and compute cost.
+GERO's proposed response
+Represent each candidate as a claim graph with unresolved frontier nodes.
+Use a Bellman-style policy to spend verification compute where it most reduces decision risk.
+Make abstention a terminal state with an evidence record, not a conversational failure.
+A falsifiable experiment
+Compare fixed verification budgets with risk-adaptive routing.
+Measure false acceptance, expert minutes and compute per resolved dependency.
+Audit whether retrieval supports the exact theorem conditions used in the proof.
+Boundary
+A multi-agent loop is not independent by design. Its assurance depends on diversity of evidence and explicit control of correlated errors.
+Read the primary source
+This article is an original analytical summary, not a republication. Read Accelerating mathematical and scientific discovery with Gemini Deep Think for the laboratory's complete claims, methods and context.

@@ -1,0 +1,51 @@
+{
+  "title": "Finite Loss, Wrong Gradient: Gaussian NLL in MLX",
+  "authors": [
+    "Xamit Kadirbekov"
+  ],
+  "publication_date": "2026-09-09",
+  "gero": "https://www.gero.uz/research/articles/mlx-gaussian-nll-gradient-stability.html",
+  "github": [
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/26e6469fbde42107f6d54377b5b14dc17fbb76e9/audits/2026-09-09-mlx-gaussian-nll-stability/evidence/mlx-review-results.json",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/26e6469fbde42107f6d54377b5b14dc17fbb76e9/audits/2026-09-09-mlx-gaussian-nll-stability/gaussian_candidate.py",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/26e6469fbde42107f6d54377b5b14dc17fbb76e9/audits/2026-09-09-mlx-gaussian-nll-stability/test_mlx_regressions.py",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/26e6469fbde42107f6d54377b5b14dc17fbb76e9/audits/2026-09-09-mlx-gaussian-nll-stability/evidence/publication-rerun.json",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/26e6469fbde42107f6d54377b5b14dc17fbb76e9/audits/2026-09-09-mlx-gaussian-nll-stability",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/26e6469fbde42107f6d54377b5b14dc17fbb76e9/audits/2026-09-09-mlx-gaussian-nll-stability/SOURCES.md"
+  ],
+  "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-gaussian-nll-gradient-stability",
+  "zenodo": [],
+  "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+  "linkedin": [
+    "https://www.linkedin.com/feed/update/urn:li:activity:7503366760390090752/"
+  ],
+  "source_article_sha256": "f5fe4d081a99ef9f357506a4fe6d63f0500798c047b2b2d50e9a9f31e3ffeb7a",
+  "archival_packaging_date": "2026-09-10",
+  "original_source_links": [
+    "https://www.gero.uz/research/articles/mlx-gaussian-nll-gradient-stability.html",
+    "https://www.gero.uz/feed.xml",
+    "https://www.gero.uz/styles.css",
+    "https://www.gero.uz/research/research.css",
+    "https://www.gero.uz/assets/ux.css",
+    "https://www.gero.uz/_vercel/insights/script.js",
+    "https://www.gero.uz/index.html",
+    "https://www.gero.uz/index.html#method",
+    "https://www.gero.uz/index.html#lab",
+    "https://www.gero.uz/research/",
+    "mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact",
+    "https://www.gero.uz/assets/xamit-kadirbekov.jpg",
+    "https://www.gero.uz/assets/og-mlx-gaussian.png",
+    "https://ml-explore.github.io/mlx/build/html/python/nn/_autosummary_functions/mlx.nn.losses.gaussian_nll_loss.html",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/26e6469fbde42107f6d54377b5b14dc17fbb76e9/audits/2026-09-09-mlx-gaussian-nll-stability/evidence/mlx-review-results.json",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/26e6469fbde42107f6d54377b5b14dc17fbb76e9/audits/2026-09-09-mlx-gaussian-nll-stability/gaussian_candidate.py",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/26e6469fbde42107f6d54377b5b14dc17fbb76e9/audits/2026-09-09-mlx-gaussian-nll-stability/test_mlx_regressions.py",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/26e6469fbde42107f6d54377b5b14dc17fbb76e9/audits/2026-09-09-mlx-gaussian-nll-stability/evidence/publication-rerun.json",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/26e6469fbde42107f6d54377b5b14dc17fbb76e9/audits/2026-09-09-mlx-gaussian-nll-stability",
+    "https://github.com/ml-explore/mlx/blob/ce916dbbcaa88e433b6fd1e60a17f766d49c27fe/python/mlx/nn/losses.py#L330",
+    "https://github.com/ml-explore/mlx/blob/ce916dbbcaa88e433b6fd1e60a17f766d49c27fe/mlx/primitives.cpp#L1806",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/26e6469fbde42107f6d54377b5b14dc17fbb76e9/audits/2026-09-09-mlx-gaussian-nll-stability/SOURCES.md",
+    "https://www.gero.uz/research/data/mlx-gaussian-nll-audit-2026-09-09.zip",
+    "mailto:kadyrbekovhamit@gmail.com?subject=GERO%20MLX%20numerical%20review",
+    "https://www.gero.uz/research/editorial.html"
+  ]
+}

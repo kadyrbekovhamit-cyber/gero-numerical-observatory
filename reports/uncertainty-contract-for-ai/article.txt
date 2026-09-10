@@ -1,0 +1,80 @@
+← Research index
+ORIGINAL RESEARCH2 September 2026
+The Most Important AI Feature Is Not an Answer. It Is a Boundary.
+Why scope, evidence, calibration, falsification, escalation and traceability should be a single contract around every high-consequence AI answer.
+Xamit KadirbekovAuthor · GERO Research
+UncertaintyCalibrationAI products
+STATUS · AUTHOR'S ANALYSISArguments and proposals are distinguished from the linked laboratories' reported results.
+After designing and shipping more than 28 AI products across health, law, education, energy, forecasting, biotech, finance and public services, I keep encountering the same failure in different clothes.
+The system knows how to produce an answer. It does not know how to communicate the boundary of that answer.
+In a legal product, the boundary separates a real precedent from a plausible invented citation. In a research setting, it separates a checked lemma from a plausible step nobody verified. In infrastructure, it separates a sourced CAPEX estimate from a number created by an unstated assumption. In forecasting, it separates a calibrated scenario from confident storytelling.
+This is not mainly a user-interface problem. It is a mathematical and architectural problem.
+The Lesson From Frontier Research
+OpenAI’s First Proof experiment illustrates the issue clearly. The team initially considered one model-generated research proof likely correct. After expert and community analysis, it concluded that the attempt was wrong. OpenAI explicitly called for a more rigorous evaluation framework.
+Google DeepMind made abstention a deliberate feature of its Aletheia mathematics agent. The agent can generate, verify and revise a candidate solution — but it can also admit failure rather than force a result.
+Both examples point to the same design principle:
+An advanced AI system needs a defined right to stop, defer, qualify or escalate.
+I call the technical expression of that principle an uncertainty contract.
+What Is An Uncertainty Contract?
+An uncertainty contract specifies what the system may claim, what evidence is required, which failure costs matter, and when the system must abstain or hand the task to another tool or person.
+For evidence E and an unknown true state Y, the system chooses among actions such as ACCEPT, REJECT and DEFER. The rational action is not simply the class with the highest model probability. It is the action with the lowest expected loss:
+a*(E) = arg min E[L(a, Y) | E],
+where the available actions include deferral.
+This matters because the cost of a false acceptance can be radically different from the cost of a false rejection.
+Missing a weak commercial lead is inconvenient. Approving a fabricated legal precedent, an unproved lemma presented as established, incorrect tax result or false engineering constraint can be much worse. The decision threshold must therefore depend on the domain, evidence and downstream action — not only on model confidence.
+The Six Parts Of The Contract
+1. Scope
+What exact decision is the system allowed to make?
+A proof assistant may propose a decomposition and locate the load-bearing step. That does not authorize it to certify the result. A tax assistant may categorize a transaction probabilistically, while the tax calculation itself should remain deterministic.
+2. Evidence
+What artifact must support the answer?
+A legal claim needs a real case and relevant passage. An engineering figure needs an input, formula and source. A mathematical claim needs a proof dependency or reproducible check. A forecast needs assumptions, a model and calibration history.
+3. Calibration
+Does 70% confidence correspond to approximately 70 correct results on comparable cases?
+Accuracy alone does not answer this. Reliability diagrams, Brier scores, stratification by problem type and out-of-distribution tests are more informative about whether confidence means anything operationally.
+4. Falsification
+What attempts were made to break the result?
+The system should search for counterexamples, boundary cases, conflicting sources, hidden assumptions and alternative explanations before releasing a high-consequence conclusion.
+5. Escalation
+Who or what receives the case when automated evidence is insufficient?
+The destination may be a deterministic engine, a formal solver, a different model family, an expert, a dispatcher, a physician or a compliance officer. “Ask a human” is not a workflow until the responsible human and transmitted evidence are specified.
+6. Trace
+Can another person reproduce why the system acted?
+The record should include the input, assumptions, model and tool versions, retrieved sources, calculations, failed checks and final decision status.
+Five Products, One Underlying Architecture
+This principle emerged from products that look unrelated on the surface.
+Precedent searches real US case law and uses a separate anti-hallucination auditor. The boundary is simple: no legal authority without a retrievable source.
+DataCenter Feasibility Lab builds a pre-feasibility model from 58 inputs. Every figure should be traced to a source, calculated from declared assumptions or marked UNKNOWN.
+NuBank matches nanobodies, oligonucleotides, phages and small molecules against a biological target. The product is designed around an explicit can/cannot verdict rather than an eloquent but ambiguous recommendation.
+ATLAS Oracle combines more than 35 computational methods with calibration and an honesty gate. Its purpose is not to predict the future with theatrical certainty, but to make conditional “what-if” reasoning inspectable.
+GENESIS explores self-improving AI. Its central safeguard is a held-out evaluation harness: a system must not be allowed to define the exam, answer it and grade itself using the same evidence.
+The vertical changes. The reliability pattern remains:
+claim → evidence contract → independent checks → bounded decision → escalation or certificate.
+From Vertical Products To A Reusable Runtime
+These lessons are converging in GERO — a research assurance runtime for AI-generated mathematical and technical claims.
+GERO is intended to compile an answer into a dependency graph, attach evidence requirements to its necessary claims, route those claims to heterogeneous verifiers, attack the result, propagate failures through the graph and return a bounded status with a replayable certificate.
+The goal is not to guarantee that a probabilistic model will never be wrong. The goal is to prevent the system from making a stronger claim than its evidence supports.
+This creates four useful output states:
+VERIFIED — required evidence is present;
+CONDITIONALLY VERIFIED — valid only under named assumptions;
+CONTRADICTED — a reproducible failure exists;
+INSUFFICIENT EVIDENCE — the system must defer or escalate.
+“I do not know” becomes a structured engineering result, not a conversational apology.
+The Product Question Every Ai Team Should Ask
+Most teams ask: How often does the model answer correctly?
+The more important deployment question is:
+When the model is wrong, does the system know enough about its boundary to prevent the wrong answer from becoming an action?
+That question links frontier mathematical reasoning with everyday AI products. The stakes change across a school dashboard, legal search engine, proof checker, tax system or infrastructure model. The need for an uncertainty contract does not.
+The next generation of AI products will not win only by knowing more.
+They will win by making the boundary between known, inferred, contradicted and unresolved impossible to ignore.
+Product links
+Portfolio: kadyrbekovhamit-cyber.github.io
+Precedent: precedent-omega-two.vercel.app
+DataCenter Feasibility Lab: data-center-feasibility-lab.vercel.app
+NuBank: nubank.uz
+ATLAS Oracle: atlas-oracle.vercel.app
+Research sources
+OpenAI — Our First Proof submissions:
+openai.com
+Google DeepMind — Accelerating Mathematical and Scientific Discovery with Gemini Deep Think:
+deepmind.google

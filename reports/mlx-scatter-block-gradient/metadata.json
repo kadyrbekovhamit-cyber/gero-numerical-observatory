@@ -1,0 +1,63 @@
+{
+  "title": "A Missing Gradient in MLX Block Updates",
+  "authors": [
+    "Xamit Kadirbekov"
+  ],
+  "publication_date": "2026-09-09",
+  "gero": "https://www.gero.uz/research/articles/mlx-scatter-block-gradient.html",
+  "github": [
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient/run-before-strict.log",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient/scatter-block-extent-only.patch",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient/native_regression.cpp",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient/scatter-extrema-vjp.patch",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient/BUILD.md",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient/build-results.json",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient/source-metadata.json",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient/SOURCES.md",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient/SHA256SUMS.json"
+  ],
+  "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-scatter-block-gradient",
+  "zenodo": [],
+  "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+  "linkedin": [
+    "https://www.linkedin.com/feed/update/urn:li:activity:7503418719625392128/"
+  ],
+  "source_article_sha256": "ae51540f3743be74a895d30aaee79b162c9b5d62b010845202ae49e3e293cda9",
+  "archival_packaging_date": "2026-09-10",
+  "original_source_links": [
+    "https://www.gero.uz/research/articles/mlx-scatter-block-gradient.html",
+    "https://www.gero.uz/feed.xml",
+    "https://www.gero.uz/styles.css",
+    "https://www.gero.uz/research/research.css",
+    "https://www.gero.uz/assets/ux.css",
+    "https://www.gero.uz/_vercel/insights/script.js",
+    "https://www.gero.uz/index.html",
+    "https://www.gero.uz/index.html#method",
+    "https://www.gero.uz/index.html#lab",
+    "https://www.gero.uz/research/",
+    "mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact",
+    "https://www.gero.uz/assets/xamit-kadirbekov.jpg",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient",
+    "https://www.gero.uz/assets/og-mlx-scatter.png",
+    "https://www.gero.uz/research/media/mlx-scatter-poster.png",
+    "https://www.gero.uz/research/media/mlx-scatter-short.mp4",
+    "https://www.gero.uz/research/media/mlx-scatter-short.en.vtt",
+    "https://www.youtube.com/shorts/h059SpE_5xI",
+    "https://www.gero.uz/research/data/mlx-scatter-video-source-2026-09-09.zip",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient/run-before-strict.log",
+    "https://ml-explore.github.io/mlx/build/html/cpp/ops.html",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient/scatter-block-extent-only.patch",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient/native_regression.cpp",
+    "https://github.com/ml-explore/mlx/pull/431",
+    "https://github.com/ml-explore/mlx/pull/431#issuecomment-1886993971",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient/scatter-extrema-vjp.patch",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient/BUILD.md",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient/build-results.json",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient/source-metadata.json",
+    "https://www.gero.uz/research/data/mlx-scatter-audit-2026-09-09.zip",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient/SOURCES.md",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/f190b59e4e4e22286de071a410709eaf3ef95a3c/audits/2026-09-09-mlx-scatter-block-gradient/SHA256SUMS.json",
+    "https://www.gero.uz/research/editorial.html"
+  ]
+}

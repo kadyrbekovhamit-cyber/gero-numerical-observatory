@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Five compact case studies show how chain rules, shape semantics, special values and execution parity expose silent failures in production AI software." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="What Simple Mathematical Invariants Reveal About AI Software" />
+    <meta property="og:description" content="Five compact case studies show how chain rules, shape semantics, special values and execution parity expose silent failures in production AI software." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/mathematical-invariants-across-ai-stacks.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="What Simple Mathematical Invariants Reveal About AI Software" />
+    <meta name="twitter:description" content="Five compact case studies show how chain rules, shape semantics, special values and execution parity expose silent failures in production AI software." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/mathematical-invariants-across-ai-stacks.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>What Simple Mathematical Invariants Reveal About AI Software — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "What Simple Mathematical Invariants Reveal About AI Software", "description": "Five compact case studies show how chain rules, shape semantics, special values and execution parity expose silent failures in production AI software.", "datePublished": "2026-09-04", "dateModified": "2026-09-04", "url": "https://www.gero.uz/research/articles/mathematical-invariants-across-ai-stacks.html", "author": [{"@type": "Person", "name": "Xamit Kadirbekov"}], "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+  </head>
+  <body class="research-body">
+    
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    
+    <main>
+      <article class="article-shell">
+        <a class="back-link" href="../">← Research index</a>
+        <header class="article-header">
+          <div class="article-kicker"><span>ORIGINAL RESEARCH</span><span>4 September 2026</span></div>
+          <h1>What Simple Mathematical Invariants Reveal About AI Software</h1>
+          <p class="article-dek">Five compact case studies show how chain rules, shape semantics, special values and execution parity expose silent failures in production AI software.</p>
+          <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Khamit Kadyrbekov" width="54" height="54" /><div><strong>Xamit Kadirbekov</strong><span>Authors · GERO Research</span></div></div>
+          <div class="topic-row"><span>Numerical reliability</span><span>Autodiff</span><span>Reproduction</span></div>
+        </header>
+        <div class="evidence-banner"><strong>STATUS · AUTHOR&#x27;S ANALYSIS</strong><span>Arguments and proposals are distinguished from the linked laboratories&#x27; reported results.</span></div>
+        
+        <div class="article-prose"><p>AI software failures are often discussed as if they require an enormous benchmark or a frontier model to discover. Some do. But many begin with a much smaller question:</p>
+<p>What property must remain true, regardless of implementation?</p>
+<p>A derivative must obey the chain rule. An operation that does not mix channels must preserve the symmetry of identical channels. Compiling a program should not silently change whether the program is accepted. A vectorized map should preserve the shape implied by the unvectorized operation.</p>
+<p>Over the last several days I applied this invariant-first approach to current numerical and machine-learning libraries. The result is not a leaderboard and not a claim that one framework is &quot;bad.&quot; It is a set of small, replayable case studies showing why mathematical contracts are useful assurance tools for AI R&amp;D.</p>
+<p>Every case below is classified by evidence. Where another researcher filed the original report, that attribution is explicit. Independent reproduction is not rediscovery.</p>
+<h2>1. Apple MLX: a one-element slice changes the mathematics of grad and vmap</h2>
+<p>GitHub user mentria-ai reported that a strided slice selecting exactly one element can produce an incorrect gradient and an incorrect vectorized shape in MLX.</p>
+<p>I independently reproduced the report on official MLX 0.32.2, CPU backend, macOS ARM64. A plain slice had shape `(1, 3)`, while `vmap` returned `(4, 2, 3)` instead of `(4, 1, 3)`. In the gradient example, the expected second row `[100, 101, 102]` became `[101, 103, 105]`. A negative-stride case lost a nonzero gradient entirely.</p>
+<p>The useful invariant is not &quot;compare MLX with another library.&quot; It is internal: vectorization must preserve the per-example slice semantics, and reverse-mode differentiation must scatter cotangents into exactly the selected positions.</p>
+<p>Primary report:</p>
+<p class="source-link"><a href="https://github.com/ml-explore/mlx/issues/4444" rel="noopener noreferrer">github.com</a></p>
+<h2>2. Samsung nntrainer: five unary layers violate the chain rule</h2>
+<p>This was the strongest new cluster in the audit.</p>
+<p>I invoked the actual `calcDerivative` implementations for five nntrainer layers through their real runtime context. The incoming gradient was deliberately chosen to be different from one so that a missing chain-rule factor could not hide.</p>
+<p>The observed results were:</p>
+<ul><li>`sqrt`, with `x=4` and incoming gradient `g=3`: expected `0.75`, observed `0.5`.</li><li>`negative`, with `g=3`: expected `-3`, observed `3`.</li><li>`sin`, with `x=0.5` and `g=2`: expected `1.7551651`, observed `0.87758255`.</li><li>`cos`, with `x=0.5` and `g=2`: expected `-0.9588511`, observed `+0.47942555`.</li><li>`tan`, with `x=0.5` and `g=2`: expected `2.5968928`, observed `0.87758255`.</li></ul>
+<p>The common implementation mistake is compact: tensor operations such as `multiply` and `pow` return a new tensor, but several derivative functions discard that return value. The cosine derivative also loses its minus sign.</p>
+<p>All five dedicated regression tests failed against the current implementation. This is one root-cause cluster, not five independent discoveries. A focused upstream report is being sent to the project maintainers.</p>
+<p>Project source:</p>
+<p class="source-link"><a href="https://github.com/nntrainer/nntrainer" rel="noopener noreferrer">github.com</a></p>
+<h2>3. Google JAX: when log2 of a power of two is not the exponent</h2>
+<p>GitHub user gonnet reported that `jnp.log2(2^k)` is not exact for a substantial subset of normal float32 and bfloat16 powers of two.</p>
+<p>On JAX 0.11.1 CPU I reproduced exactly 46 mismatches out of 254 float32 exponents and 105 out of 254 for bfloat16. The maximum bfloat16 absolute error was `0.5`. NumPy returned all 254 float32 exponents exactly in the same environment.</p>
+<p>This case needs careful language. JAX currently computes `log2` through natural logarithms, so ordinary floating-point error is expected, and the API may not promise exact special values. A `frexp` decomposition eliminated the mismatches but produced a more complex computation graph. In the upstream discussion, a JAX collaborator proposed that `log2` eventually become a native JAX/StableHLO/HLO primitive.</p>
+<p>The observation is confirmed. Whether it is a contract defect or an accuracy/performance design tradeoff remains open.</p>
+<p>Primary report and discussion:</p>
+<p class="source-link"><a href="https://github.com/jax-ml/jax/issues/40419" rel="noopener noreferrer">github.com</a></p>
+<h2>4. PyTorch: compilation changes whether clamp is legal</h2>
+<p>GitHub user laolvfan reported an eager/Inductor divergence for float32 `torch.clamp` with bounds outside the representable float32 range.</p>
+<p>I independently reproduced it on PyTorch 2.14.0, CPU, macOS ARM64. Eager execution, the compiled eager backend and AOT eager all raised an overflow conversion error. Inductor silently accepted the same function and returned the input unchanged. The same split appeared in `clamp`, `clamp_min` and `clamp_max`.</p>
+<p>The compiled numerical result is reasonable: an out-of-range bound cannot clamp a finite float32 value. But the same program should not change its acceptance contract merely because compilation was enabled. PyTorch labels the issue as silent correctness; an upstream contributor traced it to a missing checked scalar conversion in Inductor.</p>
+<p>Primary report:</p>
+<p class="source-link"><a href="https://github.com/pytorch/pytorch/issues/195675" rel="noopener noreferrer">github.com</a></p>
+<h2>5. TensorFlow: identical channels receive different NaN policies</h2>
+<p>GitHub user lackjava-creator reported a CPU MaxPool invariant violation on Apple Silicon. The input contains three identical float64 channels, and MaxPool does not reduce across channels. Therefore the three corresponding outputs must be identical whether the chosen policy propagates NaN or ignores it.</p>
+<p>On TensorFlow 2.21.0 I reproduced:</p>
+<ul><li>packed channels: `[NaN, NaN, 3]`</li><li>the same channels pooled separately: `[3, 3, 3]`</li></ul>
+<p>Upstream analysis tied the pattern to SIMD packet width: vector lanes and the scalar tail use different NaN behaviour. A patch requesting explicit NaN propagation is open but was not merged when this article was reviewed.</p>
+<p>Primary report:</p>
+<p class="source-link"><a href="https://github.com/tensorflow/tensorflow/issues/125965" rel="noopener noreferrer">github.com</a></p>
+<p>Proposed fix:</p>
+<p class="source-link"><a href="https://github.com/tensorflow/tensorflow/pull/125968" rel="noopener noreferrer">github.com</a></p>
+<h2>The product lesson: test contracts, not brand names</h2>
+<p>These cases span five organizations and several kinds of failure, yet the audit pattern is the same:</p>
+<h3>1. State a mathematical invariant before reading the implementation.</h3>
+<h3>2. Construct the smallest input that makes a violation observable.</h3>
+<h3>3. Run the actual library code, not a handwritten imitation.</h3>
+<h3>4. Preserve environment, version, command and raw output.</h3>
+<h3>5. Separate a confirmed defect from a numerical boundary or documentation mismatch.</h3>
+<h3>6. Attribute external discoveries and track upstream status.</h3>
+<p>This is the direction of GERO — Graph Evaluation &amp; Reliability Orchestrator. The aim is not another model that grades an answer by plausibility. The aim is an assurance layer that converts necessary claims into explicit contracts, routes them to heterogeneous checks, searches for counterexamples and returns bounded verdicts with replayable evidence.</p>
+<p>The present software cases do not validate that entire product thesis. They validate a narrower point: small mathematical invariants can expose consequential failures that large end-to-end scores may average away.</p>
+<p>That is enough to define the next experiment: expand the corpus across autodiff, tensor shapes, quantization, special values and compiler parity; require independent reproduction; and measure how often invariant-driven tests find defects missed by ordinary examples.</p>
+<h2>Evidence statement</h2>
+<p>The Samsung derivative cluster was identified and reproduced in this audit. The Apple MLX, JAX, PyTorch and TensorFlow cases originated with the GitHub users named above and were independently reproduced here. No affiliation with Apple, Samsung, Google, Meta/PyTorch or TensorFlow is claimed.</p></div>
+      </article>
+    </main>
+    
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

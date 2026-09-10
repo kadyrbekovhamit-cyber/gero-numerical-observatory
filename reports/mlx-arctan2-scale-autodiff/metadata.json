@@ -1,0 +1,73 @@
+{
+  "title": "Scale Changes the Gradient: MLX arctan2",
+  "authors": [
+    "Xamit Kadirbekov"
+  ],
+  "publication_date": "2026-09-10",
+  "gero": "https://www.gero.uz/research/articles/mlx-arctan2-scale-autodiff.html",
+  "github": [
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/6416016f0d508a5482ed60144d2170162da20e6f/audits/2026-09-10-mlx-arctan2-scale-autodiff/initial-normalization/",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/6416016f0d508a5482ed60144d2170162da20e6f/audits/2026-09-10-mlx-arctan2-scale-autodiff/weighted-two-order/",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/6416016f0d508a5482ed60144d2170162da20e6f/audits/2026-09-10-mlx-arctan2-scale-autodiff/"
+  ],
+  "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-arctan2-scale-autodiff",
+  "zenodo": [
+    "https://doi.org/10.5281/zenodo.22685198"
+  ],
+  "collection_zenodo": null,
+  "linkedin": [
+    "https://www.linkedin.com/feed/update/urn:li:activity:7503731653689888768/"
+  ],
+  "source_article_sha256": "bd5c061ec618fe79531dbf247a01a573fe264869dea20cac5d3af57c51012e70",
+  "archival_packaging_date": "2026-09-10",
+  "original_source_links": [
+    "https://www.gero.uz/research/articles/mlx-arctan2-scale-autodiff.html",
+    "https://www.gero.uz/feed.xml",
+    "https://www.gero.uz/styles.css",
+    "https://www.gero.uz/research/research.css",
+    "https://www.gero.uz/assets/ux.css",
+    "https://www.gero.uz/_vercel/insights/script.js",
+    "https://www.gero.uz/index.html",
+    "https://www.gero.uz/index.html#method",
+    "https://www.gero.uz/index.html#lab",
+    "https://www.gero.uz/research/",
+    "mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact",
+    "https://www.gero.uz/assets/xamit-kadirbekov.jpg",
+    "https://doi.org/10.5281/zenodo.22685198",
+    "https://www.gero.uz/assets/og-mlx-arctan2-scale-autodiff.png",
+    "https://youtube.com/shorts/AUo3ys0DQ3E",
+    "https://www.gero.uz/research/media/mlx-arctan2-scale-autodiff-poster.png",
+    "https://www.gero.uz/research/media/mlx-arctan2-scale-autodiff.mp4",
+    "https://www.gero.uz/research/media/mlx-arctan2-scale-autodiff.en.vtt",
+    "https://www.gero.uz/research/data/mlx-arctan2-scale-autodiff-video-source.zip",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-arctan2-scale-autodiff/README.ru.md",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-arctan2-scale-autodiff/BUILD.md",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-arctan2-scale-autodiff/arctan2-scale-autodiff.patch",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-arctan2-scale-autodiff/publication-rerun.json",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-arctan2-scale-autodiff/wheel-reproduction.json",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-arctan2-scale-autodiff/probe.py",
+    "https://github.com/ml-explore/mlx/blob/81ba1c6a0e50a9268b931579c2d4f1158b9aab5a/mlx/primitives.cpp",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-arctan2-scale-autodiff/scaled_partials.cpp.inc",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/6416016f0d508a5482ed60144d2170162da20e6f/audits/2026-09-10-mlx-arctan2-scale-autodiff/initial-normalization/",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/6416016f0d508a5482ed60144d2170162da20e6f/audits/2026-09-10-mlx-arctan2-scale-autodiff/weighted-two-order/",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-arctan2-scale-autodiff/native_regression.cpp",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-arctan2-scale-autodiff/run-before.json",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-arctan2-scale-autodiff/run-after.json",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-arctan2-scale-autodiff/build-results.json",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-arctan2-scale-autodiff/publication-build-results.json",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-arctan2-scale-autodiff/validate_artifacts.py",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-arctan2-scale-autodiff/artifact-validation.json",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-arctan2-scale-autodiff/source-metadata.json",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-arctan2-scale-autodiff/native-source-metadata.json",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-arctan2-scale-autodiff/SHA256SUMS",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-arctan2-scale-autodiff/publication-duplicate-search.json",
+    "https://github.com/ml-explore/mlx/issues/2451",
+    "https://github.com/ml-explore/mlx/pull/2453",
+    "https://github.com/ml-explore/mlx/pull/3633",
+    "https://github.com/ml-explore/mlx/pull/3738",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-arctan2-scale-autodiff/LICENSE.md",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/6416016f0d508a5482ed60144d2170162da20e6f/audits/2026-09-10-mlx-arctan2-scale-autodiff/",
+    "https://www.gero.uz/research/data/mlx-arctan2-scale-autodiff-2026-09-10.zip",
+    "https://www.gero.uz/research/editorial.html"
+  ]
+}

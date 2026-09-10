@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="An accepted 7-quadrillion-unit amount makes two exact residuals collapse to zero in binary64, assigning the final unit to the wrong share." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="MoneyPHP loses largest-remainder ordering above float precision" />
+    <meta property="og:description" content="An accepted 7-quadrillion-unit amount makes two exact residuals collapse to zero in binary64, assigning the final unit to the wrong share." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/moneyphp-largest-remainder-float-collapse.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MoneyPHP loses largest-remainder ordering above float precision" />
+    <meta name="twitter:description" content="An accepted 7-quadrillion-unit amount makes two exact residuals collapse to zero in binary64, assigning the final unit to the wrong share." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/moneyphp-largest-remainder-float-collapse.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>MoneyPHP loses largest-remainder ordering above float precision — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "MoneyPHP loses largest-remainder ordering above float precision", "description": "An accepted 7-quadrillion-unit amount makes two exact residuals collapse to zero in binary64, assigning the final unit to the wrong share.", "datePublished": "2026-09-05", "dateModified": "2026-09-05", "url": "https://www.gero.uz/research/articles/moneyphp-largest-remainder-float-collapse.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+  </head>
+  <body class="research-body">
+    
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    
+    <main>
+      <article class="article-shell audit-article">
+        <a class="back-link" href="../">← Research index</a>
+        <header class="article-header">
+          <div class="article-kicker"><span>INDEPENDENT NUMERICAL AUDIT</span><span>5 September 2026</span></div>
+          <h1>MoneyPHP loses largest-remainder ordering above float precision</h1>
+          <p class="article-dek">An accepted 7-quadrillion-unit amount makes two exact residuals collapse to zero in binary64, assigning the final unit to the wrong share.</p>
+          <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54" /><div><strong>Xamit Kadirbekov</strong><span>Independent verification · GERO Research</span></div></div>
+          <div class="topic-row"><span>Numerical audit</span><span>MoneyPHP</span><span>Allocation</span></div>
+        </header>
+        <div class="evidence-banner"><strong>STATUS · VERIFIED ORDINARY CORRECTNESS DEFECT</strong><span>The total remains conserved; the defect changes which allocation receives the residual minor unit.</span></div>
+        <div class="brief-source">
+          <span>UPSTREAM RECORD</span>
+          <a href="https://github.com/moneyphp/money/pull/832" rel="noopener noreferrer">moneyphp/money#832 ↗</a>
+        </div>
+        <div class="article-prose"><h2>Finding</h2>
+<p><code>Money::allocate()</code> computes its initial integer shares with exact arithmetic, but converts the amount and ratios to binary <code>float</code> when ranking fractional remainders. At sufficiently large accepted amounts, distinct exact remainders collapse to the same floating-point value and the residual minor unit is given to the wrong share.</p>
+<h2>Minimal counterexample</h2>
+<pre><code class="language-php">$parts = (new Money\Money(
+    &#x27;7000000000000000&#x27;,
+    new Money\Currency(&#x27;USD&#x27;)
+))-&gt;allocate([1, 2]);</code></pre>
+<p>Observed amounts:</p>
+<pre><code class="language-text">[2333333333333334, 4666666666666666]</code></pre>
+<p>Exact largest-remainder result:</p>
+<pre><code class="language-text">[2333333333333333, 4666666666666667]</code></pre>
+<p>The exact fractional remainders are <code>1/3</code> and <code>2/3</code>. The single residual minor unit must therefore go to the second share. In the implementation both floating-point fractions become <code>0.0</code>, so the tie-breaking order gives it to the first share instead.</p>
+<h2>Reproducer</h2>
+<pre><code class="language-php">&lt;?php
+require &#x27;vendor/autoload.php&#x27;;
+
+use Money\Currency;
+use Money\Money;
+
+$actual = array_map(
+    static fn (Money $part): string =&gt; $part-&gt;getAmount(),
+    (new Money(&#x27;7000000000000000&#x27;, new Currency(&#x27;USD&#x27;)))-&gt;allocate([1, 2]),
+);
+
+$expected = [&#x27;2333333333333333&#x27;, &#x27;4666666666666667&#x27;];
+var_export([&#x27;actual&#x27; =&gt; $actual, &#x27;expected&#x27; =&gt; $expected]);
+assert($actual === $expected);</code></pre>
+<h2>Verification</h2>
+<ul><li>Reproduced on PHP <code>8.5.10</code> with BCMath.</li><li>Reproduced at release <code>v4.9.0</code>, commit <code>d49ee625c6ba79b9d7a228ce153b02fc1032152b</code>.</li><li>Reproduced on <code>master</code>, commit <code>a5199443bfd20c3d3644b8445b09054a4c014191</code>.</li><li>The allocated parts still sum to the original amount; the defect is the proportional ranking of the residual unit.</li><li>For ratios <code>[1, 2]</code>, the first failing region begins when the largest share reaches the binary64 spacing boundary near <code>2^52</code>. A scanned failing amount starts at <code>6755399441055744</code> minor units; no mismatch was found in sampled windows around <code>10^14</code> and <code>4 * 10^15</code>.</li><li>The counterexample amount <code>7 * 10^15</code> is itself below <code>2^53</code> and is exactly representable as binary64. The loss occurs when ranking the fractional shares, not when storing the original amount.</li><li>Targeted issue and pull-request searches found no exact duplicate. Related issue <code>#506</code> and pull request <code>#509</code> introduced the largest-remainder policy, but do not report this loss of precision.</li><li>A common-scale integer-weight correction and portable regression test were submitted upstream as <a href="https://github.com/moneyphp/money/pull/832" rel="noopener noreferrer">moneyphp/money#832</a>.</li></ul>
+<h2>Proposed correction</h2>
+<p>Normalize the ratios to common-scale integer weights, compute each exact residual numerator with MoneyPHP&#x27;s configured <code>Calculator</code>, and compare those numeric strings directly. This removes binary <code>float</code> from the remainder ranking while preserving input order for exact ties.</p>
+<h2>Boundary</h2>
+<p>This is an ordinary correctness defect in a public library method. It is not evidence that a bank or payment processor transferred an incorrect amount, and no production system was tested. Cases with decimal ratios can also expose floating-point tie-breaking, but a true exact tie does not establish a unique wrong allocation and is intentionally excluded from this finding.</p>
+<h2>Upstream status</h2>
+<p>Correction submitted as <a href="https://github.com/moneyphp/money/pull/832" rel="noopener noreferrer">moneyphp/money#832</a>. Following maintainer review, the implementation was reduced from three passes to two and a compatibility regression was added for an ordinary <code>1:2</code> allocation. All CI, static-analysis, documentation and benchmark jobs pass. The exact remainder ordering intentionally changes only the large-value case in which binary64 had collapsed distinct <code>1/3</code> and <code>2/3</code> remainders into a false tie.</p></div>
+      </article>
+    </main>
+    
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

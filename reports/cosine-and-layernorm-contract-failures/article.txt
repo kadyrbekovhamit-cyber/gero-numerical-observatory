@@ -1,0 +1,49 @@
+← Research index
+TECHNICAL NOTE7 September 2026
+When Cosine and LayerNorm Break Their Contracts
+A vector fails to match itself. A normalization layer loses a nonzero gradient. Two compact experiments turn mathematical invariants into reproducible implementation reports.
+Xamit KadirbekovReproducible numerical experiments · GERO Research
+Numerical stabilityAutodiffReproduction
+STATUS · LOCALLY REPRODUCEDTwo implementation reports with tested local patches. No exact duplicate identified within the recorded public searches. Maintainer confirmation, absolute novelty, version regression and model-level impact are not established.
+These experiments run actual MLX and nntrainer code. The tests compare values and derivatives with mathematical references, check equivalent independent batch layouts, and preserve source versions, inputs and execution logs. They do not evaluate chatbot answers or establish a defect in any particular Apple or Samsung device.
+ImplementationInputOriginal resultMathematical target
+MLX cosine, FP16x=[1000,−1000,1000,−1000], compare x with itselfvalue NaN; gradient NaNvalue 1; gradient 0
+MLX cosine, FP32x=0, y=[1e−5,2e−5,−1e−5,1e−5], eps=1e−8value 0; gradient NaNvalue 0; gradient y/eps
+nntrainer LayerNorm, FP32 CPUx=[−1,0,1,2], gamma=[1,2,4,8], dy=[1,1,1,1]dx=[0,0,0,0]dx≈[0.626,−0.537,−0.805,0.716]
+The first two examples are two failure mechanisms within one cosine implementation report. Test counts, data types and repeated processes are not counted as separate discoveries. Exact inputs and full-precision results are in the two evidence packages.
+Cosine: a finite answer becomes NaN
+The audited contract is dot(a,b) / max(norm(a)*norm(b), eps). The threshold applies to the product of norms. Clamping each norm separately would change the function.
+For the FP16 vector above, intermediate squares and products overflow although the final cosine is 1. The same mechanism is reproduced in FP32 at scale 1e20. A separate derivative failure appears at the zero vector: with positive eps, the function is locally dot(a,b)/eps, so the derivative in a is b/eps. An undefined derivative through the intermediate zero norm contaminates that finite result.
+The local Python patch promotes half-precision intermediates, scales vectors before squaring, preserves the product-of-norms epsilon rule, and guards inactive branches before dangerous operations. The patch applies to pinned MLX Python source and was executed with the official MLX/Metal 0.32.2 native core. It is not a newly compiled native main build. See the 100-digit reference tests and isolated patch.
+LayerNorm: the affine weight disappears from backward
+For the shown four-element example, use axis 3, beta=0 and epsilon=float32(1e−5). Differentiating the sum of outputs gives the nonzero vector in the table. Central differences of the actual native forward pass, with step 1/256, give [0.62604523, −0.53656006, −0.80487061, 0.71552277], independently confirming the analytic result.
+There is an even simpler invariant: when gamma is identically zero, the output equals beta and cannot depend on x. Its input gradient must therefore be zero. The original implementation violates this property. The unit-gamma control passes, which shows why testing only the default affine initialization is insufficient.
+d = x - mean(x)
+v = mean(d*d) + epsilon
+r = 1/sqrt(v)
+g = dy * gamma
+dx = r * (g - mean(g) - d*mean(g*d)/v)
+The original code performs reductions before applying gamma. It then tries an unsupported in-place broadcast from the reduced inverse-standard-deviation tensor to gamma. The multiplication returns an error code that the caller ignores. The tested patch computes dy*gamma in a full-size buffer before both reductions and preserves the affine parameter gradients. See the patch and native tests.
+What the local validation establishes
+SuiteBeforeAfter local patch
+MLX cosine, CPU62 failed / 39 passed101 passed
+MLX cosine, MetalKey examples reproduced101 passed
+nntrainer LayerNorm, native FP32 CPU20 failed / 22 passed42 passed
+Cosine coverage includes FP16, BF16 and FP32 values and analytic gradients, multiple scales and axes, epsilon semantics, reductions and compiled execution. The nntrainer suite includes 24 new tests and 18 existing LayerNorm tests: all seven nonempty combinations of non-batch axes, trainable and frozen weights, finite differences, zero and constant gamma, independent batch transformations and shift invariance. Each audit repeats its key examples in three fresh processes.
+The host was macOS 15.5 arm64. nntrainer was built at commit a7ea056e79ab8e14447ea305c1b634e233343258; MLX Python source was pinned to ce916dbbcaa88e433b6fd1e60a17f766d49c27fe. The reused nntrainer build contains unrelated earlier loss and activation repairs; the LayerNorm baseline itself matches the pinned source. Full upstream CI, Linux/Android, nntrainer FP16/GPU, performance and end-to-end training impact were not tested.
+Duplicate review and exclusions
+No exact cosine match was identified in the retained public searches. The nntrainer review used nine queries covering 94 distinct public issues and pull requests, including closed entries. The nearest LayerNorm work concerns FP16 forward NaNs and inference paths in PR #4096 and PR #4304; the inspected changes do not repair this backward computation.
+This is a bounded novelty review. Private reports, unindexed material and every comment or unpublished branch are not covered. Known NVFP4 shape/tail behavior associated with MLX PR #3912 is excluded. QuantizeLinear and earlier loss/activation findings are not new cases in this release.
+Watch and discuss
+Watch the 52-second YouTube explanation → · Read the LinkedIn post →
+The vertical 1080p video includes English narration, uploaded English captions and original mathematical diagrams. The synthetic voice is disclosed. The tests and patches below are the primary evidence.
+Download and reproduce
+Open both reproducible GitHub packages →
+MLX cosine: tests, patch, logs and checksums
+SHA-256: 09149a442b9592e0ddc3e7c2665cdc85fc3a54ecf720b6cb3b0eb288bb544c8d
+nntrainer LayerNorm: native tests, patch and checksums
+SHA-256: feec74e831228c90032a8422c38c710852eed13b72df0da3a2d9522dcb3fc433
+The immutable ZIP files capture the research state before publication; the publication record is maintained separately. Experiments, local repair proposals and publication materials were prepared with AI assistance. Conclusions are grounded in recorded execution and mathematical references.
+Primary implementation sources
+MLX loss source at the audited commit
+nntrainer LayerNorm at the audited commit

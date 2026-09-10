@@ -1,0 +1,67 @@
+← Research index
+ORIGINAL RESEARCH4 September 2026
+Four Loss Layers, One Missing Scale: A Mixed-Precision Contract Failure
+Four of five implemented loss derivatives omit the configured loss scale; four runtime counterexamples and a 71-test repair expose the cross-component contract failure.
+Xamit KadirbekovAuthors · GERO Research
+Mixed precisionLoss scalingRuntime audit
+STATUS · AUTHOR'S ANALYSISArguments and proposals are distinguished from the linked laboratories' reported results.
+Mixed-precision training uses a simple mathematical idea: multiply a loss by a scale before backpropagation, carry the enlarged gradient through the network, and divide by the same scale before the optimizer update. The transformation should preserve the true gradient while protecting small intermediate values from underflow.
+That only works if both halves of the contract are present.
+I found and reproduced a systematic omission in Samsung's open-source nntrainer project. Four of its five implemented loss derivatives do not apply the configured loss scale. Only the mean-squared-error loss does.
+The invariant
+Let L be a loss, theta the model parameters, and S the positive loss scale. Then
+d(SL)/dtheta = S dL/dtheta.
+The optimizer later performs the inverse operation:
+(S dL/dtheta) / S = dL/dtheta.
+If a loss layer emits the unscaled derivative dL/dtheta but the optimizer still divides by S, the resulting update can become dL/dtheta divided by S. This end-to-end consequence follows from the source path. My runtime experiment directly establishes the narrower fact at the loss boundary: four derivatives omit multiplication by S.
+The implementation asymmetry
+nntrainer already contains a shared helper that reads loss_scale from RunLayerContext and multiplies the derivative by it. MSELossLayer calls that helper.
+These four implemented derivatives do not:
+sigmoid cross-entropy;
+softmax cross-entropy;
+Kullback–Leibler divergence;
+constant-derivative loss.
+The generic cross-entropy base that only throws an unsupported-operation exception is not counted as an implemented loss.
+This is not a dispute over numerical tolerance. It is a missing algebraic operation across a family of code paths.
+Four minimal counterexamples
+I constructed real nntrainer Var_Grad objects and a real RunLayerContext with loss_scale = 8, then called the production calcDerivative methods.
+For sigmoid cross-entropy with logit zero and label one:
+base derivative: -0.5;
+expected scaled derivative: -4.0;
+observed: -0.5.
+For softmax cross-entropy with logits [0, 0] and label [1, 0]:
+base derivative: [-0.5, 0.5];
+expected: [-4.0, 4.0];
+observed: [-0.5, 0.5].
+For KL divergence with P = 0.25 and Q = 0.5:
+base derivative -P/Q: -0.5;
+expected: -4.0;
+observed: -0.5.
+For the constant-derivative loss:
+base derivative: 1.0;
+expected: 8.0;
+observed: 1.0.
+The KLD experiment was run after locally removing the separate label-mutation defect reported in nntrainer issue 4328. That isolates loss scaling from state corruption.
+The smallest repair
+No new algorithm is required. Each affected derivative can call the existing LossLayer::applyLossScale helper after forming its result.
+Before the repair, all four focused tests failed. After adding one helper call to each of four files:
+four of four loss-scale counterexamples passed;
+71 of 71 focused loss and semantic tests passed.
+I also invoked the full layer-test binary. It contains many unrelated golden tests whose data files were unavailable in this local invocation, so I do not claim the complete upstream suite is green. The bounded statement is 71 of 71 in the focused loss suite.
+Why this matters beyond one library
+Dynamic loss scaling is a protocol distributed across distant components: the loss layer scales, backpropagation transports, and the optimizer unscales. A local unit test can make every component look plausible while the composition violates the identity it is meant to preserve.
+This suggests a useful assurance pattern for AI infrastructure:
+1. state the cross-component mathematical invariant;
+2. identify every implementation that participates in it;
+3. compare sibling paths, not only one function;
+4. execute minimal counterexamples on the real runtime;
+5. distinguish observed behavior from inferred downstream impact;
+6. publish a repair with a bounded regression claim.
+That is the role GERO is being built to support: translating mathematical contracts into replayable tests and explicit evidence boundaries.
+Reproduction and disclosure
+Tested against nntrainer commit a7ea056e79ab8e14447ea305c1b634e233343258 on macOS ARM64 on 4 September 2026.
+Upstream report:
+github.com
+Full reproducibility note:
+gero.uz
+This finding was independently identified and reproduced by Xamit Kadirbekov. No affiliation with Samsung or the nntrainer maintainers is claimed.

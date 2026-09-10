@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="123 graphs, 246 evaluations, seven flagged graphs. A repeated CPU benchmark, fourteen archive replays and an 80-digit diagnostic check, with downloadable evidence and explicit limits." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="When the reference also fails: a reproducible ONNX numerical snapshot" />
+    <meta property="og:description" content="123 graphs, 246 evaluations, seven flagged graphs. A repeated CPU benchmark, fourteen archive replays and an 80-digit diagnostic check, with downloadable evidence and explicit limits." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/onnx-numerical-observatory-reproduced-snapshot.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="When the reference also fails: a reproducible ONNX numerical snapshot" />
+    <meta name="twitter:description" content="123 graphs, 246 evaluations, seven flagged graphs. A repeated CPU benchmark, fourteen archive replays and an 80-digit diagnostic check, with downloadable evidence and explicit limits." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/onnx-numerical-observatory-reproduced-snapshot.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>When the reference also fails: a reproducible ONNX numerical snapshot — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "When the reference also fails: a reproducible ONNX numerical snapshot", "datePublished": "2026-09-06", "dateModified": "2026-09-06", "url": "https://www.gero.uz/research/articles/onnx-numerical-observatory-reproduced-snapshot.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}}</script>
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+  <style>.article-prose th,.article-prose td{padding:16px 12px;text-align:left;border-bottom:1px solid #d4d9d5;font-size:14px}.article-prose code{overflow-wrap:anywhere}.article-prose pre{overflow-x:auto}</style></head>
+  <body class="research-body">
+    
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    <main><article class="article-shell">
+<a class="back-link" href="../">← Research index</a>
+<header class="article-header"><div class="article-kicker"><span>TECHNICAL NOTE · REPRODUCED SNAPSHOT</span><time datetime="2026-09-06">6 September 2026</time></div>
+<h1>When the reference also fails: a reproducible ONNX numerical snapshot</h1><p class="article-dek">123 graphs, 246 evaluations, seven flagged graphs. A repeated CPU benchmark, fourteen archive replays and an 80-digit diagnostic check, with downloadable evidence and explicit limits.</p>
+<div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54"><div><strong>Xamit Kadirbekov</strong><span>GERO Research · reviewed 6 September 2026</span></div></div></header>
+<div class="evidence-banner"><strong>STATUS · REPRODUCED</strong><span>All 14 flagged observation archives replayed in the recorded environment. Novelty, upstream defect status and regressions between versions remain unestablished.</span></div>
+<div class="article-prose">
+<p>A reference implementation helps compare outputs, but it is still a floating-point program. GERO's Numerical Observatory combines differential execution with mathematical invariants and downloadable evidence. This release publishes a measured CPU snapshot, not a certification of an entire library.</p>
+<p><a href="../../stability/">Open the interactive Numerical Observatory →</a> · <a href="../../stability/data/latest.json">Raw run JSON</a> · <a href="../../stability/reports/reverification.json">Reverification and Decimal diagnostics</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory">Source and tests</a></p>
+<h2>A 71-second overview</h2><p>Watch the short explanation with English captions. Synthetic narration; original diagrams from the measured snapshot.</p><iframe title="GERO Numerical Observatory — video overview" src="https://www.youtube-nocookie.com/embed/KTLC9_FomBs" width="360" height="640" style="border:0;max-width:100%;border-radius:14px" loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe><p><a href="https://www.youtube.com/shorts/KTLC9_FomBs">Watch on YouTube →</a></p><h2>What was run</h2>
+<p>The experiment contains <strong>123 synthetic graphs × two runtime optimization settings = 246 evaluations</strong>. Of these, <strong>232 passed all configured checks</strong> and <strong>14 divergence observations came from seven distinct graphs</strong>. The tester's <strong>57 unit/property tests passed</strong>. A complete rerun reproduced every observation identity, and all fourteen flagged ZIP archives reproduced their original observation identities after their SHA-256 manifests were verified. <a href="../../stability/reports/report.md">Run report</a>; <a href="../../stability/reports/reverification.json">reverification record</a>.</p>
+<p>The environment is Python 3.12.13, ONNX Runtime 1.22.1, ONNX 1.19.0 and NumPy 2.2.6 on macOS 15.5 arm64. Execution uses CPUExecutionProvider, one thread, sequential execution and opset 19 / IR 10. ONNX's official ReferenceEvaluator runs with its optimized option disabled. ORT runs once with graph optimizations disabled and once with all graph optimizations enabled. This does not test the latest versions or other execution providers.</p>
+<h2>The reference needs a check, too</h2>
+<p>A separate diagnostic evaluates each flagged graph's mathematical formula using Python Decimal with 80 decimal digits. It converts stored binary inputs and epsilon exactly before calculation; final diagnostic values are exported as float64. All seven diagnostic results are finite. This is an algorithmically independent calculation by the same project, not third-party validation or a proof of correctly rounded transcendental functions. <a href="../../stability/reports/verify_snapshot.py">Diagnostic/replay script</a>.</p>
+<p>The table counts non-finite outputs in the original optimization-disabled observations. The corresponding enabled observations were also flagged and replayed. A zero in this table means only that outputs were finite; it does not mean they met every tolerance.</p>
+<div style="overflow-x:auto"><table style="min-width:580px;width:100%;border-collapse:collapse"><thead><tr><th>Graph</th><th>Runtime<br>non-finite / total</th><th>Reference<br>non-finite / total</th><th>Evidence</th></tr></thead><tbody><tr><td><code>CosineSimilarity</code><br>large_offset · float16</td><td>0 / 4</td><td>4 / 4</td><td><a href='../../stability/?search=b4eaa370b87ca85ed3d66eba0000d9143683243a97e7a9a0df27405dc2d81f93'>Inspect graph →</a></td></tr><tr><td><code>CosineSimilarity</code><br>tiny · float16</td><td>0 / 4</td><td>0 / 4</td><td><a href='../../stability/?search=2965f56cd92655f0aa10d8740fb3e5271e12daa553264b4ed7ea7148a9072ab3'>Inspect graph →</a></td></tr><tr><td><code>LayerNormalization</code><br>large_offset · float32</td><td>17 / 68</td><td>0 / 68</td><td><a href='../../stability/?search=2438080ccfb7d623c6113b3157ecf20fe7b1833aad624dee6097ad00d8e5f49b'>Inspect graph →</a></td></tr><tr><td><code>LogSoftmax</code><br>random-001 · float32</td><td>0 / 420</td><td>141 / 420</td><td><a href='../../stability/?search=7fd92f5ab9dbbb6f185776841f2dba00d077fa88456e18ebfb53f7610cf5c6b2'>Inspect graph →</a></td></tr><tr><td><code>LogSoftmax</code><br>random-022 · float32</td><td>0 / 508</td><td>458 / 508</td><td><a href='../../stability/?search=2fc18a24c42bbda7a98ab28226bfcb3cbbecb6096993cc486187e8ad12d6b31a'>Inspect graph →</a></td></tr><tr><td><code>LpNormalization</code><br>large_offset · float16</td><td>0 / 68</td><td>0 / 68</td><td><a href='../../stability/?search=49db6cd40097be38311d45dac965498978848ba8462d8017ab1f30ea67f53f0a'>Inspect graph →</a></td></tr><tr><td><code>LpNormalization</code><br>tiny · float16</td><td>0 / 68</td><td>17 / 68</td><td><a href='../../stability/?search=554a9eabfdd5be921eab3dc6b654d994d0ea1aa6e2fd79dc5b497574d47f5620'>Inspect graph →</a></td></tr></tbody></table></div>
+<p>In the float32 LayerNormalization case, the input has shape [4,17] and values near 10,000 with small variation. Scale is one, bias is zero and epsilon is approximately 10⁻⁵. ONNX Runtime returns 17 non-finite values out of 68; the reference output is finite but all 68 values exceed the configured Decimal diagnostic tolerance. The largest finite absolute error against the diagnostic is about 2.3035 for ORT and 0.003607 for the reference. These measured errors do not by themselves establish a source-level cause.</p>
+<p>In the other six graphs, ORT outputs fall within the configured tolerance of the diagnostic, while the reference violates the finite-domain or accuracy checks. Thus, assigning every differential failure to the production runtime would misread these observations. <a href="../../stability/reports/reverification.json">Full per-case counts and finite-error measurements</a>.</p>
+<h2>The contract is explicit</h2>
+<ul><li><strong>Batch independence:</strong> partition, permutation, duplication and rank-change checks for operations on independent examples. This contract does not apply to training BatchNorm or an intentional reduction across a batch.</li>
+<li><strong>Probabilities:</strong> finite values strictly in [0,1], with normalization tested within a dtype-specific tolerance. The custom masked-softmax contract makes a fully masked row exactly zero.</li>
+<li><strong>Equivalent computations:</strong> compare semantically equivalent graphs within tolerance and use separate analytic formulas where available.</li>
+<li><strong>Coverage:</strong> Softmax, LogSoftmax, masked softmax, LayerNormalization, LpNormalization, per-example MSE, cosine similarity and DequantizeLinear. QuantizeLinear and DynamicQuantizeLinear are excluded, including nested nodes and local functions.</li></ul>
+<p>The default acceptance rule is <code>abs(actual − reference) ≤ atol + rtol × abs(reference)</code>. Float16 uses rtol 5×10⁻³ / atol 5×10⁻⁴; float32 uses 10⁻⁵ / 10⁻⁶; float64 uses 10⁻¹² / 10⁻¹³. Shapes and dtypes must match before comparison. These are the project's explicit test thresholds, not a universal accuracy guarantee in the ONNX specification. Matching NaN values never pass a finite-domain contract. A batch check that fails because values are non-finite does not establish genuine dependence on batch composition.</p>
+<h2>From one run to a usable evidence library</h2>
+<p>The dashboard filters operation, category, dtype, optimization and result. Every observation links to model files, inputs, outputs, session settings, tester source and a hash manifest. Content-based identities deduplicate repeated identical observations while preserving distinct environments and configurations. Similarity grouping is a triage aid, not proof of a common root cause.</p>
+<p>A regression requires a compatible baseline and a pass-to-failure transition. This publication compares repeat executions of one pinned stack; <strong>it demonstrates no regression between library versions</strong>. Searching a few related upstream issues is also not enough to establish novelty. These remain investigation candidates, and no maintainer confirmation is claimed.</p>
+<h2>Replay the snapshot</h2>
+<p>The <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory">repository</a> includes the source, exact dependency list, unit/property tests, full measured snapshot and verification script. From its root:</p>
+<pre><code>python3.12 -m venv .venv
+.venv/bin/python -m pip install -r requirements.lock
+.venv/bin/python -m pytest -q
+.venv/bin/python -m gero_stability.cli export benchmarks/2026-09-06/latest.json --site site
+.venv/bin/python -m http.server 4187 --directory site</code></pre>
+<p>Download a selected reproducer ZIP from the dashboard and run <code>python -m gero_stability.cli replay /path/to/extracted/bundle --output reports/replay</code>. Exact observation identity requires the recorded versions and environment; a different machine or stack is a new observation. The CPU model string was unavailable in the original environment and is recorded as such. Timings are descriptive and include Python call overhead, not a production speed ranking.</p>
+<h2>Sources and limits</h2>
+<ul><li><a href="https://onnx.ai/onnx/api/reference.html">Official ONNX ReferenceEvaluator documentation</a>.</li><li><a href="https://onnx.ai/onnx/operators/onnx__LayerNormalization.html">ONNX LayerNormalization semantics</a>.</li><li><a href="https://onnx.ai/onnx/operators/onnx__LogSoftmax.html">ONNX LogSoftmax semantics</a>.</li><li><a href="https://onnxruntime.ai/docs/performance/model-optimizations/graph-optimizations.html">ORT graph optimization settings</a>.</li><li><a href="../../stability/data/latest.json">Primary measured snapshot</a> and <a href="../../stability/reports/reverification.json">independent-algorithm diagnostic record</a>.</li></ul>
+<aside class="boundary-box"><strong>Publication boundary</strong><p>This is the author's own research product and synthetic-graph CPU experiment. It does not measure trained-model quality, GPU behavior, all possible inputs, deployed-product impact, novelty or security risk. No sponsorship is involved in this publication. Future corrections will be dated here.</p></aside>
+</div></article></main>
+    
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Fineract&#x27;s public number-of-payments helper returns 7 when its adjacent payment function was given a 12-period loan." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Apache Fineract nop does not invert pmt for non-zero rates" />
+    <meta property="og:description" content="Fineract&#x27;s public number-of-payments helper returns 7 when its adjacent payment function was given a 12-period loan." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/apache-fineract-nop-inverse-error.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Apache Fineract nop does not invert pmt for non-zero rates" />
+    <meta name="twitter:description" content="Fineract&#x27;s public number-of-payments helper returns 7 when its adjacent payment function was given a 12-period loan." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/apache-fineract-nop-inverse-error.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>Apache Fineract nop does not invert pmt for non-zero rates — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Apache Fineract nop does not invert pmt for non-zero rates", "description": "Fineract's public number-of-payments helper returns 7 when its adjacent payment function was given a 12-period loan.", "datePublished": "2026-09-05", "dateModified": "2026-09-05", "url": "https://www.gero.uz/research/articles/apache-fineract-nop-inverse-error.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+  </head>
+  <body class="research-body">
+    
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    
+    <main>
+      <article class="article-shell audit-article">
+        <a class="back-link" href="../">← Research index</a>
+        <header class="article-header">
+          <div class="article-kicker"><span>INDEPENDENT NUMERICAL AUDIT</span><span>5 September 2026</span></div>
+          <h1>Apache Fineract nop does not invert pmt for non-zero rates</h1>
+          <p class="article-dek">Fineract&#x27;s public number-of-payments helper returns 7 when its adjacent payment function was given a 12-period loan.</p>
+          <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54" /><div><strong>Xamit Kadirbekov</strong><span>Independent verification · GERO Research</span></div></div>
+          <div class="topic-row"><span>Mathematical audit</span><span>Apache Fineract</span><span>Loan formulas</span></div>
+        </header>
+        <div class="evidence-banner"><strong>STATUS · FIXED UPSTREAM</strong><span>Apache fixed the formula for Fineract 1.16.0 and credited Xamit Kadirbekov / GERO Research in the upstream commit.</span></div>
+        <div class="brief-source">
+          <span>UPSTREAM RECORD</span>
+          <a href="https://github.com/apache/fineract/commit/e7bdad1155b761556fd7cffb50e5d3ba9fe19eac" rel="noopener noreferrer">apache/fineract e7bdad1 ↗</a>
+        </div>
+        <div class="article-prose"><h2>Finding</h2>
+<p>The public <code>FinanicalFunctions.nop()</code> method is intended to calculate a number of payments, but its non-zero-rate branch repeats a payment-style expression with <code>emiAmount</code> in the exponent. It is not the algebraic inverse of the adjacent <code>pmt()</code> method.</p>
+<h2>Minimal counterexample</h2>
+<p>For end-of-period payments:</p>
+<pre><code class="language-text">rate = 0.01
+principal = 1000
+future value = 0
+periods = 12</code></pre>
+<p>Fineract&#x27;s own payment function returns:</p>
+<pre><code class="language-text">pmt(0.01, 12, 1000, 0, false) = -88.848788678342</code></pre>
+<p>The inverse should therefore recover <code>12</code>. The independent closed form is:</p>
+<pre><code class="language-text">N = log(PMT / (PMT + principal * rate)) / log1p(rate)</code></pre>
+<p>It returns <code>12.000000000</code>, while Fineract returns:</p>
+<pre><code class="language-text">nop(0.01, -88.848788678342, 1000, 0, false) = 7</code></pre>
+<h2>Verification matrix</h2>
+<p>Terms <code>6</code>, <code>12</code>, <code>24</code>, and <code>36</code> were tested at periodic rates <code>0</code>, <code>0.001</code>, <code>0.01</code>, and <code>0.05</code>.</p>
+<ul><li>Zero-rate branch: <code>4/4</code> round trips passed.</li><li>Non-zero-rate branch: <code>0/12</code> round trips passed.</li><li>Environment: OpenJDK <code>26.0.2</code>, macOS ARM64.</li><li>Source baseline: commit <code>74099701987ccb4755706d9a3de9fbbd3576ea1b</code>.</li></ul>
+<h2>Proposed correction</h2>
+<p>Let <code>d = (type ? 1 + rate : 1)</code> and <code>A = emiAmount * d</code>. Solving the adjacent <code>pmt()</code> equation for the term gives:</p>
+<pre><code class="language-text">growth = (A - rate * futureValue) / (A + rate * principal)
+N = log(growth) / log1p(rate)</code></pre>
+<p>Because the existing API returns an integer number of payments, the computed term is rounded to the closest whole payment. A regression suite covering zero and non-zero rates, both payment timings, and a non-zero future value passes <code>33/33</code> round trips with the correction.</p>
+<p>The focused implementation and regression tests are available in the public fork at commit <a href="https://github.com/kadyrbekovhamit-cyber/fineract/commit/6980e1377ce2e5a1eaf0586e628b27bb64dd8c26" rel="noopener noreferrer">`6980e1377ce2e5a1eaf0586e628b27bb64dd8c26`</a>. The full Gradle target could not be run locally because this checkout requires JDK 25 while the available runtime is JDK 26; the corrected source compiled and the direct round-trip harness passed.</p>
+<h2>Duplicate and impact checks</h2>
+<ul><li>Repository-wide search found no call site for <code>FinanicalFunctions.nop()</code>; only the declaration exists across 6,773 Java files. The sole external reference to the class is a call to <code>FinanicalFunctions.pmt()</code> from <code>LoanApplicationTerms.java</code>.</li><li>The repository uses ASF JIRA rather than GitHub issues. Targeted public searches found no matching report.</li></ul>
+<h2>Upstream status</h2>
+<p>Apache registered the finding as <a href="https://issues.apache.org/jira/browse/FINERACT-2809" rel="noopener noreferrer">FINERACT-2809</a> and marked it fixed for Fineract 1.16.0 on 7 September 2026. The correction and regression tests are now in upstream <code>develop</code> as commit <a href="https://github.com/apache/fineract/commit/e7bdad1155b761556fd7cffb50e5d3ba9fe19eac" rel="noopener noreferrer">`e7bdad1`</a>. The commit credits &quot;Xamit Kadirbekov / GERO Research&quot;, and the maintainer&#x27;s JIRA resolution comment states: &quot;Fix belongs to Xamit Kadirbekov&quot;.</p>
+<h2>Boundary</h2>
+<p>This is a dormant public-library defect. Because the current repository has no <code>nop()</code> call site, it is not evidence of an incorrect real loan schedule, customer impact, data loss, or a security vulnerability.</p></div>
+      </article>
+    </main>
+    
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="MLX power returns NaN derivatives at zero for smooth fixed-exponent polynomials. A local C++ patch passes 41 scenarios and 396 checks; prior work and test-discovery limits are documented." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="A Constant, a Polynomial, a NaN: MLX power Derivatives at Zero" />
+    <meta property="og:description" content="MLX power returns NaN derivatives at zero for smooth fixed-exponent polynomials. A local C++ patch passes 41 scenarios and 396 checks; prior work and test-discovery limits are documented." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/mlx-power-zero-derivatives.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-mlx-power.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="A Constant, a Polynomial, a NaN: MLX power Derivatives at Zero" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="A Constant, a Polynomial, a NaN: MLX power Derivatives at Zero" />
+    <meta name="twitter:description" content="MLX power returns NaN derivatives at zero for smooth fixed-exponent polynomials. A local C++ patch passes 41 scenarios and 396 checks; prior work and test-discovery limits are documented." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-mlx-power.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/mlx-power-zero-derivatives.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <link rel="stylesheet" href="../../assets/ux.css" />
+    <meta name="keywords" content="MLX, power, derivatives at zero, NaN, autodiff, regression tests" />
+    <title>A Constant, a Polynomial, a NaN: MLX power Derivatives at Zero — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "A Constant, a Polynomial, a NaN: MLX power Derivatives at Zero", "description": "MLX power returns NaN derivatives at zero for smooth fixed-exponent polynomials. A local C++ patch passes 41 scenarios and 396 checks; prior work and test-discovery limits are documented.", "datePublished": "2026-09-09", "dateModified": "2026-09-09", "url": "https://www.gero.uz/research/articles/mlx-power-zero-derivatives.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <style>
+      .audit-table{overflow-x:auto;margin:1.5rem 0}.audit-table table{width:100%;min-width:620px;border-collapse:collapse}.audit-table th,.audit-table td{padding:14px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #d4d9d5;font-size:14px}.article-prose code{overflow-wrap:anywhere}.article-prose pre{overflow-x:auto}.video-frame{position:relative;aspect-ratio:9/16;max-width:390px;margin:2rem auto;background:#111;border-radius:18px;overflow:hidden;box-shadow:0 18px 50px rgba(14,24,20,.18)}.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    </style>
+  </head>
+  <body class="research-body">
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home"><span class="brand-mark" aria-hidden="true">G</span><span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span></a>
+      <nav aria-label="Main navigation"><a href="../../index.html#method">Method</a><a href="../../index.html#lab">Live lab</a><a class="nav-active" href="../../research/">Research</a></nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    <main><article class="article-shell">
+<a class="back-link" href="../">← Research index</a>
+<header class="article-header"><div class="article-kicker"><span>NUMERICAL CASE STUDY</span><span>9 September 2026</span></div>
+<h1>A Constant, a Polynomial, a NaN: MLX power Derivatives at Zero</h1><p class="article-dek">A constant has zero derivative. A singular intermediate in its backward formula says otherwise.</p>
+<div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54"><div><strong>Xamit Kadirbekov</strong><span>Reproducible numerical experiments · GERO Research</span></div></div>
+<div class="topic-row"><span>MLX 0.32.2</span><span>Power derivatives at zero</span><span>CPU float32</span></div></header>
+<div class="evidence-banner"><strong>STATUS · LOCALLY REPRODUCED</strong><span>Original: 42 failed checks out of 396. Local C++ patch: all 41 scenarios and 396 checks pass. This is a remaining case in a known error family; novelty is unestablished.</span></div>
+<div class="article-prose">
+<p>At zero, <code>power(x,0)</code> returns one, yet its first derivative is NaN instead of zero. Repeated differentiation reaches the same failure for positive integer powers. Even the polynomial <code>1 + 2x + 3x²</code>, represented with an array of exponents, receives a NaN first gradient instead of 2.</p>
+<p>The official MLX 0.32.2 wheel and actual native C++ code were rerun for publication. A direct polynomial expression, independent algebra and finite differences of the actual forward agree on the expected derivative. The <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/7e5f169c5e31deb2752e4dc6065a1cfc68a7c6a0/audits/2026-09-09-mlx-power-zero-derivatives">evidence package</a> contains executable tests, source pins, a proposed patch and before/after logs.</p>
+<img src="../../assets/og-mlx-power.png" width="1200" height="630" style="width:100%;height:auto;border-radius:16px" alt="At zero, a polynomial expressed through MLX power has NaN gradient instead of 2. A local C++ patch passes 41 scenarios and 396 checks. This extends a known Power VJP error family.">
+<h2>The 63-second explanation</h2>
+<video controls playsinline preload="metadata" poster="../media/mlx-power-poster.png" width="1080" height="1920" style="display:block;width:100%;max-width:390px;height:auto;margin:24px auto;border-radius:18px" aria-label="MLX power derivatives at zero, English narrated explanation">
+<source src="../media/mlx-power-short.mp4" type="video/mp4"><track kind="captions" src="../media/mlx-power-short.en.vtt" srclang="en" label="English">Your browser does not support embedded video. <a href="../media/mlx-power-short.mp4">Download the video</a>.</video>
+<p><a href="https://www.youtube.com/shorts/Nxe8eoop8zc">Watch the English Short on YouTube →</a></p>
+<p class="muted">Original diagrams and synthetic narration by the fictional Alex Vector using the macOS Daniel voice. AI-assisted preparation. <a href="../data/mlx-power-video-source-2026-09-09.zip">Remotion project, narration and source ledger →</a></p>
+<h2>Fixed exponents: ordinary smooth functions</h2>
+<pre><code>import mlx.core as mx
+mx.set_default_device(mx.cpu)
+x = mx.array(0.0)
+
+mx.grad(lambda t: mx.power(t, 0.0))(x)
+# Original: NaN; expected: 0
+
+mx.grad(mx.grad(lambda t: mx.power(t, 1.0)))(x)
+# Original: NaN; expected: 0</code></pre>
+<p>The claim concerns real, fixed nonnegative integer exponents, finite CPU float32 inputs and differentiation with respect to the base. Under MLX’s forward convention for exponent zero, these functions are polynomials. No joint differentiability claim is made for varying both base and exponent at <code>(0,0)</code>.</p>
+<p>For <code>f(x)=xⁿ</code>, derivative order <code>k≤n</code> gives <code>n!/(n−k)! × xⁿ⁻ᵏ</code>; every higher derivative is identically zero. The square’s first and second derivatives at zero are currently correct. Its third derivative reaches the NaN case. The cube’s fourth derivative does too.</p>
+<h2>The polynomial example</h2>
+<pre><code>exponents = mx.array([0., 1., 2.])
+coefficients = mx.array([1., 2., 3.])
+model = lambda x: (coefficients * mx.power(x, exponents)).sum()
+loss = lambda x: 0.5 * (model(x) - 4.) ** 2</code></pre>
+<p>At zero, the model value is 1 and its derivative is 2. Central differences with step <code>1/1024</code> give exactly 2. Writing <code>1+2*x+3*x*x</code> directly in the same wheel also gives 2. The exponent-array version instead gives NaN.</p>
+<div class="audit-table"><table><thead><tr><th>Quantity</th><th>Original</th><th>Patched C++</th></tr></thead><tbody>
+<tr><td>Model derivative at zero</td><td>NaN</td><td>2</td></tr>
+<tr><td>Initial loss</td><td>4.5</td><td>4.5</td></tr>
+<tr><td>Loss derivative</td><td>NaN</td><td>−6</td></tr>
+<tr><td>Loss after step size 0.125</td><td>NaN</td><td>0.017578125</td></tr>
+</tbody></table></div>
+<p>The corrected step gives <code>x=0.75</code>, model value <code>4.1875</code> and loss <code>0.5×0.1875²=0.017578125</code>. The native test reevaluates the actual forward after both updates. This is a small synthetic example; no effect on a complete training pipeline has been established.</p>
+<h2>Zero times infinity in the derivative</h2>
+<p>In <a href="https://github.com/ml-explore/mlx/blob/24c699ecee2f7c8b2040de8da1c8382c8bcf31c7/mlx/primitives.cpp#L3452">pinned Power::vjp</a>, the base derivative contains <code>b × power(a,b−1)</code>. At <code>a=0,b=0</code> it evaluates <code>0×Inf</code>. Repeated differentiation of positive integer powers eventually reaches this helper case.</p>
+<p>The <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/7e5f169c5e31deb2752e4dc6065a1cfc68a7c6a0/audits/2026-09-09-mlx-power-zero-derivatives/power-zero-derivatives.patch">proposed patch</a> replaces the auxiliary base only when the base and exponent are both real zero:</p>
+<pre><code>safe_base = 1 if a == 0 and b == 0 else a
+base_derivative = b * power(safe_base, b - 1)</code></pre>
+<p>This avoids creating the singular intermediate. The forward and complex paths are unchanged. JVP delegates to the VJP helper and receives the same correction. The guard is deliberately narrow: for positive <code>a</code>, the mixed derivative at <code>b=0</code> is <code>1/a</code>. Replacing the base whenever the exponent is zero could break that result. Positive-base mixed-derivative controls pass before and after this patch.</p>
+<p>The guard adds elementwise work. Performance has not been benchmarked, and this is not a general solution for every singular or overflowing power expression.</p>
+<h2>A separate test-discovery gap</h2>
+<p>At the pinned revision, <code>TestAutograd</code> defines <code>test_power_grad</code> twice, at lines 699 and 734 of <a href="https://github.com/ml-explore/mlx/blob/24c699ecee2f7c8b2040de8da1c8382c8bcf31c7/python/tests/test_autograd.py#L699">test_autograd.py</a>. The later definition replaces the earlier method, hiding its three historical assertions.</p>
+<p>The patch renames the earlier method and adds two regression methods. AST parsing confirms syntax and unique names. <strong>The Python additions were not run against a newly built patched wheel.</strong> Equivalent numerical cases were executed in C++. This collision is a coverage issue; it is not evidence that the collision caused this numerical defect.</p>
+<h2>Execution evidence and version boundary</h2>
+<div class="audit-table"><table><thead><tr><th>Native result</th><th>Original</th><th>Patched</th></tr></thead><tbody><tr><td>Scenarios passed</td><td>29/41</td><td>41/41</td></tr><tr><td>Checks passed</td><td>354/396</td><td>396/396</td></tr><tr><td>Failed checks</td><td>42</td><td>0</td></tr></tbody></table></div>
+<p>The suite covers fixed integer powers through fifth derivatives, positive-base mixed derivatives, JVP/VJP, broadcasting and actual-forward finite differences. The 42 failures reflect one numerical mechanism, not 42 independent discoveries. Passing these cases does not prove correctness over all inputs.</p>
+<ul><li>Inspected main: <code>24c699ecee2f7c8b2040de8da1c8382c8bcf31c7</code>.</li><li>Compatible native base: <code>ce916dbbcaa88e433b6fd1e60a17f766d49c27fe</code>. Power VJP and JVP were confirmed identical between these revisions.</li><li>Apple clang 17.0.0, C++20, macOS arm64, CPU float32, computational thread environment variables set to one.</li><li>All 32 input artifact hashes matched; the fresh wheel and native runs completed; the artifact validator passed 52 checks.</li></ul>
+<p><strong>The native run uses a partial rebuild on a compatible base, linked against a reused CPU-only MLX archive. It is not a clean full build of current main.</strong> Required archive and source hashes are recorded in the public package.</p>
+<pre><code>python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+.venv/bin/python probe.py
+
+export MLX_SOURCE_ROOT=/absolute/path/to/mlx-at-ce916db
+export MLX_CPU_BUILD=/absolute/path/to/cpu-build
+python3 build_and_test.py</code></pre>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/7e5f169c5e31deb2752e4dc6065a1cfc68a7c6a0/audits/2026-09-09-mlx-power-zero-derivatives/BUILD.md">Build instructions</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/7e5f169c5e31deb2752e4dc6065a1cfc68a7c6a0/audits/2026-09-09-mlx-power-zero-derivatives/native_regression.cpp">C++ harness</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/7e5f169c5e31deb2752e4dc6065a1cfc68a7c6a0/audits/2026-09-09-mlx-power-zero-derivatives/run-before.log">Original log</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/7e5f169c5e31deb2752e4dc6065a1cfc68a7c6a0/audits/2026-09-09-mlx-power-zero-derivatives/run-after.log">Patched log</a>.</p>
+<h2>Prior work and remaining limits</h2>
+<p><a href="https://github.com/ml-explore/mlx/issues/504">Issue #504</a> and <a href="https://github.com/ml-explore/mlx/pull/505">PR #505</a>, merged in January 2024, fixed a NaN first derivative of a square at zero. That correction introduced the current base-derivative formula. This report documents a remaining zero-exponent case and its higher-order consequences; it does not claim that the old square-first-derivative failure persists.</p>
+<p>Four recorded repository searches did not identify an exact matching report among returned results. They do not establish novelty or maintainer acceptance. GPU, FP16/BF16, compiled execution, general complex powers, exponent derivatives at zero/zero, singular fractional powers and extreme scales were not validated.</p>
+<p>Prepared with AI assistance; measurements come from actual local execution, algebra and finite differences. Independent GERO Research, without Apple endorsement. Included MLX source retains its MIT license.</p>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/7e5f169c5e31deb2752e4dc6065a1cfc68a7c6a0/audits/2026-09-09-mlx-power-zero-derivatives">Full English report, tests and patch →</a><br><a href="../data/mlx-power-audit-2026-09-09.zip">Download the evidence ZIP</a><br><code>SHA-256: 16d76684e67b688b6afd3126ab0e77630540a2c7cf001e6ba23b8339f207e2f7</code></p>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/7e5f169c5e31deb2752e4dc6065a1cfc68a7c6a0/audits/2026-09-09-mlx-power-zero-derivatives/SOURCES.md">Source ledger</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/7e5f169c5e31deb2752e4dc6065a1cfc68a7c6a0/audits/2026-09-09-mlx-power-zero-derivatives/SHA256SUMS.json">File checksums</a></p>
+<p>#MLX #Autodiff #MachineLearning #NumericalComputing #SoftwareTesting</p>
+</div></article></main>
+    <footer><div class="shell footer-grid"><div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div><p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p><a href="../../feed.xml">RSS</a></div></footer>
+  </body>
+</html>

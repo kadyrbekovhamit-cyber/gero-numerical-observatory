@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="OpenAI&#x27;s monitorability evaluations raise a systems question: will a useful safety signal remain informative after training, scaling and distribution shift?" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Monitoring reasoning is a stability problem" />
+    <meta property="og:description" content="OpenAI&#x27;s monitorability evaluations raise a systems question: will a useful safety signal remain informative after training, scaling and distribution shift?" />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/chain-of-thought-monitorability.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Monitoring reasoning is a stability problem" />
+    <meta name="twitter:description" content="OpenAI&#x27;s monitorability evaluations raise a systems question: will a useful safety signal remain informative after training, scaling and distribution shift?" />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/chain-of-thought-monitorability.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>Monitoring reasoning is a stability problem — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "AnalysisNewsArticle", "headline": "Monitoring reasoning is a stability problem", "description": "OpenAI's monitorability evaluations raise a systems question: will a useful safety signal remain informative after training, scaling and distribution shift?", "datePublished": "2026-09-02", "dateModified": "2026-09-02", "url": "https://www.gero.uz/research/articles/chain-of-thought-monitorability.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+  </head>
+  <body class="research-body">
+    
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    
+    <main>
+      <article class="article-shell brief-article">
+        <a class="back-link" href="../">← Research index</a>
+        <header class="article-header">
+          <div class="article-kicker"><span>FRONTIER LAB WATCH</span><span>Reviewed 2 September 2026</span></div>
+          <h1>Monitoring reasoning is a stability problem</h1>
+          <p class="article-dek">OpenAI&#x27;s monitorability evaluations raise a systems question: will a useful safety signal remain informative after training, scaling and distribution shift?</p>
+          <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54" /><div><strong>Xamit Kadirbekov</strong><span>Independent analysis · Source: OpenAI</span></div></div>
+          <div class="topic-row"><span>Chain-of-thought</span><span>Monitoring</span><span>Stability</span></div>
+        </header>
+        <div class="evidence-banner source-report"><strong>STATUS · SOURCE REPORT + GERO ANALYSIS</strong><span>This brief has not independently reproduced the laboratory's experiment.</span></div>
+        <div class="brief-source">
+          <span>PRIMARY SOURCE · 18 December 2025</span>
+          <a href="https://openai.com/index/evaluating-chain-of-thought-monitorability/" rel="noopener noreferrer">Evaluating chain-of-thought monitorability ↗</a>
+        </div>
+        <div class="article-prose">
+          <h2>What the laboratory reports</h2>
+          <ul><li>OpenAI introduces a suite of evaluations for how well monitors can detect properties of model reasoning.</li><li>The report describes current frontier reasoning as fairly but not perfectly monitorable.</li><li>It warns that monitorability could be fragile under future changes in training and scaling and frames it as one layer in defense in depth.</li></ul>
+          <h2>The mathematical problem</h2>
+          <p>A monitor is a detector coupled to a changing generator. We need sensitivity, specificity and calibration across a family of model and environment perturbations, plus a stability margin before monitor outputs can control release decisions.</p>
+          <h2>GERO's proposed response</h2>
+          <ul><li>Define monitorability as a versioned evidence contract, not a permanent model property.</li><li>Stress the monitor under paraphrase, tool changes, optimization pressure and shifted task distributions.</li><li>Fuse monitor evidence with mechanistic and deterministic checks while preserving disagreement.</li></ul>
+          <h2>A falsifiable experiment</h2>
+          <ul><li>Freeze a hidden hazard set and evaluate successive model checkpoints.</li><li>Estimate worst-group detection and calibration rather than only the mean score.</li><li>Trigger abstention when the measured stability margin falls below the deployment threshold.</li></ul>
+          <aside class="boundary-box"><strong>Boundary</strong><p>No chain-of-thought monitor can certify hazards that are absent from its evaluation distribution or unobservable in its input channel.</p></aside>
+          <h2>Read the primary source</h2>
+          <p>This article is an original analytical summary, not a republication. Read <a href="https://openai.com/index/evaluating-chain-of-thought-monitorability/" rel="noopener noreferrer">Evaluating chain-of-thought monitorability</a> for the laboratory's complete claims, methods and context.</p>
+        </div>
+      </article>
+    </main>
+    
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

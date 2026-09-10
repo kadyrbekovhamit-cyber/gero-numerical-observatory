@@ -1,0 +1,59 @@
+{
+  "title": "When Dropout Sends Two Gradients to One Input",
+  "authors": [
+    "Xamit Kadirbekov"
+  ],
+  "publication_date": "2026-09-09",
+  "gero": "https://www.gero.uz/research/articles/nntrainer-dropout-gradient-routing.html",
+  "github": [
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa16b7ccfbff9358b3484226fa45c838ad0457a0/audits/2026-09-09-nntrainer-dropout-routing/evidence/patches/source.patch",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa16b7ccfbff9358b3484226fa45c838ad0457a0/audits/2026-09-09-nntrainer-dropout-routing/evidence/before.log",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa16b7ccfbff9358b3484226fa45c838ad0457a0/audits/2026-09-09-nntrainer-dropout-routing/prepublication-check/full-runtime-authorized.log",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa16b7ccfbff9358b3484226fa45c838ad0457a0/audits/2026-09-09-nntrainer-dropout-routing/evidence/patches/tests.patch",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa16b7ccfbff9358b3484226fa45c838ad0457a0/audits/2026-09-09-nntrainer-dropout-routing/evidence/DUPLICATES.md",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa16b7ccfbff9358b3484226fa45c838ad0457a0/audits/2026-09-09-nntrainer-dropout-routing",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa16b7ccfbff9358b3484226fa45c838ad0457a0/audits/2026-09-09-nntrainer-dropout-routing/BUILD.md",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa16b7ccfbff9358b3484226fa45c838ad0457a0/audits/2026-09-09-nntrainer-dropout-routing/REPORT.md",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa16b7ccfbff9358b3484226fa45c838ad0457a0/audits/2026-09-09-nntrainer-dropout-routing/SOURCES.md"
+  ],
+  "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/nntrainer-dropout-gradient-routing",
+  "zenodo": [],
+  "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+  "linkedin": [
+    "https://www.linkedin.com/feed/update/urn:li:activity:7503307336120188928/"
+  ],
+  "source_article_sha256": "3061b616617c1728d989355a6a7d74558e3e09e8cc90d094069510d429421dee",
+  "archival_packaging_date": "2026-09-10",
+  "original_source_links": [
+    "https://www.gero.uz/research/articles/nntrainer-dropout-gradient-routing.html",
+    "https://www.gero.uz/feed.xml",
+    "https://www.gero.uz/styles.css",
+    "https://www.gero.uz/research/research.css",
+    "https://www.gero.uz/assets/ux.css",
+    "https://www.gero.uz/_vercel/insights/script.js",
+    "https://www.gero.uz/index.html",
+    "https://www.gero.uz/index.html#method",
+    "https://www.gero.uz/index.html#lab",
+    "https://www.gero.uz/research/",
+    "mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact",
+    "https://www.gero.uz/assets/xamit-kadirbekov.jpg",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa16b7ccfbff9358b3484226fa45c838ad0457a0/audits/2026-09-09-nntrainer-dropout-routing/evidence/patches/source.patch",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa16b7ccfbff9358b3484226fa45c838ad0457a0/audits/2026-09-09-nntrainer-dropout-routing/evidence/before.log",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa16b7ccfbff9358b3484226fa45c838ad0457a0/audits/2026-09-09-nntrainer-dropout-routing/prepublication-check/full-runtime-authorized.log",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa16b7ccfbff9358b3484226fa45c838ad0457a0/audits/2026-09-09-nntrainer-dropout-routing/evidence/patches/tests.patch",
+    "https://github.com/nntrainer/nntrainer/pull/1640",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa16b7ccfbff9358b3484226fa45c838ad0457a0/audits/2026-09-09-nntrainer-dropout-routing/evidence/DUPLICATES.md",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa16b7ccfbff9358b3484226fa45c838ad0457a0/audits/2026-09-09-nntrainer-dropout-routing",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa16b7ccfbff9358b3484226fa45c838ad0457a0/audits/2026-09-09-nntrainer-dropout-routing/BUILD.md",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa16b7ccfbff9358b3484226fa45c838ad0457a0/audits/2026-09-09-nntrainer-dropout-routing/REPORT.md",
+    "https://www.gero.uz/research/data/dropout-audit-2026-09-09.zip",
+    "mailto:kadyrbekovhamit@gmail.com?subject=GERO%20Dropout%20audit",
+    "https://www.gero.uz/assets/og-dropout.png",
+    "https://www.gero.uz/research/data/nntrainer-dropout-gradient-routing-short.mp4",
+    "https://www.gero.uz/research/data/dropout-captions.en.vtt",
+    "https://www.gero.uz/research/data/dropout-captions.en.srt",
+    "https://github.com/nntrainer/nntrainer/blob/a7ea056e79ab8e14447ea305c1b634e233343258/nntrainer/layers/dropout.cpp",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa16b7ccfbff9358b3484226fa45c838ad0457a0/audits/2026-09-09-nntrainer-dropout-routing/SOURCES.md",
+    "https://www.gero.uz/research/editorial.html"
+  ]
+}

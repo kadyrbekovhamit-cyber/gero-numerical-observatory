@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Reproduced ELU, GELU and Softplus failures in pinned MLX and nntrainer code, with tested local repairs and downloadable evidence." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Finite Inputs, Non-finite Results: An Activation Stability Audit" />
+    <meta property="og:description" content="Reproduced ELU, GELU and Softplus failures in pinned MLX and nntrainer code, with tested local repairs and downloadable evidence." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/finite-inputs-nonfinite-activations-mlx-nntrainer.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Finite Inputs, Non-finite Results: An Activation Stability Audit" />
+    <meta name="twitter:description" content="Reproduced ELU, GELU and Softplus failures in pinned MLX and nntrainer code, with tested local repairs and downloadable evidence." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/finite-inputs-nonfinite-activations-mlx-nntrainer.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>Finite Inputs, Non-finite Results: An Activation Stability Audit — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Finite Inputs, Non-finite Results: An Activation Stability Audit", "description": "Reproduced ELU, GELU and Softplus failures in pinned MLX and nntrainer code, with tested local repairs and downloadable evidence.", "datePublished": "2026-09-07", "dateModified": "2026-09-07", "url": "https://www.gero.uz/research/articles/finite-inputs-nonfinite-activations-mlx-nntrainer.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}}</script>
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+  <style>.audit-table{overflow-x:auto;margin:1.5rem 0}.audit-table table{width:100%;min-width:620px;border-collapse:collapse}.audit-table th,.audit-table td{padding:14px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #d4d9d5;font-size:14px}.article-prose code{overflow-wrap:anywhere}.article-prose pre{overflow-x:auto}</style></head>
+  <body class="research-body">
+
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    <main><article class="article-shell">
+<a class="back-link" href="../">← Research index</a>
+<header class="article-header">
+<div class="article-kicker"><span>TECHNICAL NOTE</span><span>7 September 2026</span></div>
+<h1>Finite Inputs, Non-finite Results: An Activation Stability Audit</h1>
+<p class="article-dek">A finite activation value can hide a NaN gradient. A representable output can overflow in an intermediate expression. Small contract tests make both visible.</p>
+<div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54"><div><strong>Xamit Kadirbekov</strong><span>Reproducible numerical experiments · GERO Research</span></div></div>
+<div class="topic-row"><span>Numerical stability</span><span>Autodiff</span><span>Reproduction</span></div></header>
+<div class="evidence-banner"><strong>STATUS · LOCALLY REPRODUCED</strong><span>Source-pinned observations and tested local patch proposals. No matching public report was identified in the recorded search; upstream confirmation and absolute novelty are not established.</span></div>
+<div class="article-prose">
+<p>This audit checks actual implementations in Apple’s MLX and Samsung’s nntrainer. The objects under test are activation functions and their derivatives. The experiment does not measure a chatbot’s answers, model-level accuracy or the reliability of every product from either company.</p>
+<p>Three activation families produced compact counterexamples. The failures were reproduced, ordinary inputs were retained as controls, and local changes were checked against independent mathematical formulas and existing tests.</p>
+<div class="audit-table" role="region" aria-label="Reproduced activation results" tabindex="0"><table><thead><tr><th>Implementation</th><th>Finite input</th><th>Original result</th><th>After local repair</th></tr></thead><tbody>
+<tr><td>MLX ELU</td><td>100, float32</td><td>Value 100; gradient NaN</td><td>Value 100; gradient 1</td></tr>
+<tr><td>MLX exact GELU</td><td>40000, float16</td><td>+∞</td><td>40000</td></tr>
+<tr><td>MLX approximate GELU</td><td>40000, float16</td><td>Finite value; gradient NaN</td><td>Finite value; gradient 1</td></tr>
+<tr><td>nntrainer Softplus</td><td>1000, float32</td><td>+∞</td><td>1000</td></tr>
+<tr><td>nntrainer Softplus</td><td>−40, float32</td><td>0</td><td>≈ 4.248354 × 10⁻¹⁸</td></tr>
+</tbody></table></div>
+<p>The targets shown for the large GELU and Softplus inputs are their values at the tested floating-point precision. The corresponding real-valued transcendental functions are not asserted to equal their asymptotes exactly.</p>
+
+<h2>ELU: the inactive branch still matters to autodiff</h2>
+<p>For positive x, ELU returns x, so its derivative is 1. At x = 100 the original implementation returns the correct value, while automatic differentiation produces NaN. Its inactive branch still constructs an exponential of the large positive input; the backward graph encounters an infinity multiplied by zero. SELU inherits this behavior through its use of ELU.</p>
+<p>The local change bounds the input of the inactive exponential before evaluating it and uses <code>expm1</code> for the negative branch. The original branch selection is preserved. This removes the invalid intermediate, including when the function is used by SELU.</p>
+
+<h2>GELU: equivalent algebra can have a different floating-point range</h2>
+<p>The exact GELU implementation evaluates <code>x * (1 + erf(x / sqrt(2))) / 2</code>. In the positive tail, the parenthesized factor rounds to 2. Multiplication can therefore overflow before division by 2 restores the intended magnitude. In float16, x = 40000 is representable and the final GELU value should round to 40000; the original expression returns infinity.</p>
+<p>The repair forms the bounded CDF factor first: <code>x * (0.5 * (1 + erf(...)))</code>. This avoids the oversized intermediate.</p>
+<p>The tanh approximation has a separate gradient problem: its cubic polynomial can overflow, and a saturated tanh does not reliably prevent a NaN in the backward computation. The proposed change bounds only the polynomial input to [−10, 10] and retains the original exterior x. Tanh has already rounded to ±1 in that tail. The documented approximation interval [−6, 6] is unchanged.</p>
+
+<h2>Softplus: preserve both tails</h2>
+<p>Softplus is log(1 + exp(x)). Direct evaluation overflows at x = 1000 even though its float32 result is finite. At x = −40, adding the tiny exponential to 1 loses it before the logarithm is taken, producing zero even though the correct small positive value is representable.</p>
+<pre><code>softplus(x) = max(x, 0) + log1p(exp(-abs(x)))</code></pre>
+<p>The patched implementation uses this identity with the existing beta constant, computes intermediate values in double, and retains the return type. Tests exercise the actual C++ helper and tensor activation dispatch. A forward finite-difference check also agrees with the existing backward derivative after the change.</p>
+
+<h2>What was executed</h2>
+<ul><li><strong>MLX:</strong> Python activation source at <code>ce916dbb</code>, executed with official MLX 0.32.2 native wheels on Apple M4, macOS 15.5. CPU and Metal, float16 and float32. This is not a full native build of main.</li>
+<li><strong>nntrainer:</strong> real C++ library built from <code>a7ea056e</code>, CPU FP32, one thread, BLAS disabled. Darwin build include accommodations are documented in the reproduction package.</li>
+<li><strong>Independent diagnostics:</strong> ordinary values and analytic derivatives checked with mpmath at 80 decimal digits. Elementwise batch-layout invariance and representable large-tail values are checked separately.</li></ul>
+<pre><code>MLX focused suite, original CPU:  10 failed / 16 passed
+MLX with patch, CPU:              26 passed
+MLX with patch, Metal:            26 passed
+nntrainer activations, original:   4 failed / 20 passed
+nntrainer activations, patched:   24 passed
+nntrainer: 2 pre-existing tests remain disabled</code></pre>
+<p>The 26-test MLX suite contains 24 new parameterized checks and two existing upstream ELU/GELU tests. The counts represent checks, not a count of new bugs. Full repository CI, CUDA, nntrainer FP16/Android, performance and model-training outcomes were not assessed.</p>
+
+<h2>Prior art and the publication boundary</h2>
+<p>The evidence package preserves dated searches of open and closed issues and pull requests, including alternate terms for NaNs, gradients, overflow and Softplus. Closest matches concern activation introduction, compilation/performance, memory growth and a half-precision build conversion. No exact matching report was identified within that search scope.</p>
+<p>That result supports publishing a reproducible technical observation. It does not establish absolute priority, maintainer acceptance or a version-to-version regression. The previously reproduced Bloom issue already has <a href="https://github.com/safety-research/bloom/pull/56">an existing PR #56</a> and is excluded from these new candidates. QuantizeLinear is also excluded.</p>
+<p>Experiments, tests and draft patches were prepared with AI coding assistance. The reported conclusions come from executing the pinned implementations and checking the mathematical contracts.</p>
+
+<h2>Download and reproduce</h2>
+<p><a href="../data/activation-audit-2026-09-07.zip" download>Download the evidence ZIP with checksums →</a></p>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/audits/2026-09-07-activations">Source pins, tests, proposed patches and commands on GitHub →</a></p>
+<p>The package identifies which code is original, which is patched, which tests are expected to fail before repair, and which devices were actually used. It lets another engineer challenge the result without reconstructing the experiment from screenshots.</p>
+<h2>Primary implementation sources</h2>
+<ul><li><a href="https://github.com/ml-explore/mlx/blob/ce916dbbcaa88e433b6fd1e60a17f766d49c27fe/python/mlx/nn/layers/activations.py">MLX activation source at the audited commit</a></li>
+<li><a href="https://github.com/nntrainer/nntrainer/blob/a7ea056e79ab8e14447ea305c1b634e233343258/nntrainer/layers/acti_func.h">nntrainer activation source at the audited commit</a></li>
+<li><a href="https://github.com/ml-explore/mlx/pull/117">MLX activation introduction, PR #117</a></li>
+<li><a href="https://github.com/nntrainer/nntrainer/pull/2545">nntrainer Softplus introduction, PR #2545</a></li></ul>
+</div></article></main>
+
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

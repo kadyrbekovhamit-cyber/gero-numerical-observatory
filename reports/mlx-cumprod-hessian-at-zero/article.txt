@@ -1,0 +1,62 @@
+← Research index
+NUMERICAL CASE STUDY9 September 2026
+A Smooth Polynomial, a NaN Hessian: MLX cumprod at Zero
+The first gradient is correct. Differentiating it again breaks an ordinary polynomial.
+Xamit KadirbekovReproducible numerical experiments · GERO Research
+MLX 0.32.2Higher derivativesCPU float32
+STATUS · LOCALLY REPRODUCEDOriginal: 44 of 57 scenarios fail. Division-free C++ prototype: all 57 scenarios and 311 checks pass. The prototype costs O(N log N) scalar work; production suitability remains untested.
+The sum of the cumulative products of three real inputs is F(a,b,c)=a+ab+abc. It is smooth everywhere, including zero. At [0,2,3], MLX 0.32.2 gives the correct first gradient, [9,0,0], but repeated reverse-mode differentiation returns NaNs in the Hessian.
+The same MLX wheel correctly differentiates the explicitly written polynomial. Central finite differences of its actual first gradient also recover the exact Hessian. These independent references identify a problem in the autodiff graph of cumprod.
+The 49-second explanation
+Your browser does not support embedded video. Download the video.
+Original diagrams and synthetic narration by the fictional Alex Vector using the macOS Daniel voice. AI-assisted preparation. Remotion project, narration and source ledger →
+A finite reference, a non-finite result
+F(a,b,c) = a + ab + abc
+gradient = [1+b+bc, a+ac, ab]
+Hessian = [[0, 1+c, b],
+[1+c, 0, a],
+[b, a, 0]]
+At [0,2,3]:
+MLX                   Exact
+[[NaN, 4, 2],         [[0, 4, 2],
+[NaN, 0, 0],          [4, 0, 0],
+[NaN, 0, 0]]          [2, 0, 0]]
+Even a one-element inclusive scan fails a native check: cumprod([x]) is the identity, with second derivative zero, but the original returns NaN at zero. These are small, deterministic CPU cases; no full-model effect is inferred.
+Why the first-order repair is insufficient
+The Prod branch of Scan::vjp in the pinned source divides by the input. Special handling of the first zero and masking give the right first derivative in the example. Differentiating that backward graph again still encounters zero division.
+PR #1167, Stable cumprod grad at 0, merged on 31 May 2024, already addressed first gradients. Its added tests cover zeros and scan modes, but do not differentiate the resulting gradients again. This report credits that work and investigates higher-order behavior beyond its inspected test coverage. Novelty of the present finding is not established.
+A division-free recurrence
+For a real forward inclusive scan with incoming cotangents cᵢ, the polynomial derivative can be expressed as:
+Pᵢ = product(xₖ for k < i)
+Bₙ₋₁ = cₙ₋₁
+Bᵢ = cᵢ + xᵢ₊₁ Bᵢ₊₁
+∂L/∂xᵢ = Pᵢ Bᵢ
+Expanding the recurrence gives the sum of product-monomial derivatives without dividing by an input. Exclusive mode shifts the cotangents and pads with zero; reverse mode changes the direction. The prefix product is an exclusive cumprod.
+The prototype composes affine transformations over distances 1,2,4,…, doubling the covered suffix on each round. It changes only the Prod branch of Scan::vjp. The patch applies cleanly to the inspected main and produces the saved candidate byte-for-byte.
+The tradeoff is O(N log N) scalar work and O(log N) array-operation rounds. N is the scan-axis length. A work-efficient associative scan, memory use and large-array performance need further investigation. Passing this small selection does not make the prototype production-ready.
+Actual native results
+CPU float32 implementationScenarios passingChecks failing
+Original13 / 57172 / 311
+Division-free prototype57 / 570 / 311
+The native reference enumerates monomials and their derivatives in double precision without autodiff. Checks cover forward values, gradients and Hessian rows; scan direction, inclusive/exclusive modes, several zero placements, nonzero controls, lengths 0,1,3,5,8 and two-dimensional axes 1 and −2. Additional cases check mixed third/fourth derivatives and finite differences of the first gradient.
+Weights cycle through [1,−0.5,2] in the native weighted-sum cases; the simple Python example uses unit weights. Main tolerance is 2e−5*(1+abs(reference)); finite differences use step 1/256 and tolerance 1e−3*(1+abs(reference)). One vector comparison counts as one check. The 44 failed scenarios are manifestations of one defect.
+Build provenance and limitations
+The wheel is MLX 0.32.2, CPU float32. The source pin is 24c699ecee2f7c8b2040de8da1c8382c8bcf31c7. Native before/after runs separately compile pristine/patched primitives.cpp on compatible base ce916dbbcaa88e433b6fd1e60a17f766d49c27fe, then link ahead of an existing CPU-only static archive. The entire Scan::vjp method matches the inspected main byte-for-byte.
+This is a partial native rebuild, not a clean complete build of main. Apple clang 17.0.0, C++20, macOS 15.5 arm64 and Python 3.12.14 were used. Compilation and tests ran sequentially with thread environment limits set to one. Source/archive hashes, compiler flags and actual logs are retained.
+Not tested: Metal/CUDA, complex dtype, FP16/BF16, compiled graphs, large arrays, extreme magnitudes and full-model training. The prototype does not implement a cumprod JVP. Passing a finite selection is not a proof for all inputs or derivative orders. Maintainer acceptance, performance suitability and originality remain unestablished.
+Reproduction and sources
+Immutable report, source snapshots, Python probe and C++ harness
+Prototype patch · Before log · After log
+Build setup and its validation boundary · Source ledger and prior work
+# On a compatible Mac, from the extracted report directory:
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python probe.py
+# With a compatible CPU static build of the recorded base:
+export MLX_SOURCE_ROOT=/absolute/path/to/mlx-at-ce916db
+export MLX_CPU_BUILD=/absolute/path/to/cpu-build
+.venv/bin/python build_and_test.py
+Download the evidence package (ZIP) →
+SHA-256: ca73b0f8ac26a83b9d77329af1796a3f78143edb8c0d942e44be95d43881b96b
+Prepared with AI assistance; numerical evidence comes from actual local executions and independent mathematical references. Independent reproduction and scoped numerical-correctness reviews are welcome: contact GERO. This work is not affiliated with or endorsed by Apple.
+#MachineLearning #MLX #Autodiff #NumericalComputing #SoftwareTesting

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="All inputs remain JavaScript safe integers, yet binary64 rounding changes a 3-unit allocation from the exact [2, 1, 0] to [3, 0, 0]." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Dinero.js misallocates safe integers after an unsafe intermediate product" />
+    <meta property="og:description" content="All inputs remain JavaScript safe integers, yet binary64 rounding changes a 3-unit allocation from the exact [2, 1, 0] to [3, 0, 0]." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/dinero-js-safe-intermediate-overflow.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dinero.js misallocates safe integers after an unsafe intermediate product" />
+    <meta name="twitter:description" content="All inputs remain JavaScript safe integers, yet binary64 rounding changes a 3-unit allocation from the exact [2, 1, 0] to [3, 0, 0]." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/dinero-js-safe-intermediate-overflow.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>Dinero.js misallocates safe integers after an unsafe intermediate product — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Dinero.js misallocates safe integers after an unsafe intermediate product", "description": "All inputs remain JavaScript safe integers, yet binary64 rounding changes a 3-unit allocation from the exact [2, 1, 0] to [3, 0, 0].", "datePublished": "2026-09-06", "dateModified": "2026-09-06", "url": "https://www.gero.uz/research/articles/dinero-js-safe-intermediate-overflow.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+  </head>
+  <body class="research-body">
+    
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    
+    <main>
+      <article class="article-shell audit-article">
+        <a class="back-link" href="../">← Research index</a>
+        <header class="article-header">
+          <div class="article-kicker"><span>INDEPENDENT NUMERICAL AUDIT</span><span>6 September 2026</span></div>
+          <h1>Dinero.js misallocates safe integers after an unsafe intermediate product</h1>
+          <p class="article-dek">All inputs remain JavaScript safe integers, yet binary64 rounding changes a 3-unit allocation from the exact [2, 1, 0] to [3, 0, 0].</p>
+          <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54" /><div><strong>Xamit Kadirbekov</strong><span>Independent verification · GERO Research</span></div></div>
+          <div class="topic-row"><span>Numerical audit</span><span>Dinero.js</span><span>Allocation</span></div>
+        </header>
+        <div class="evidence-banner"><strong>STATUS · VERIFIED ORDINARY CORRECTNESS DEFECT</strong><span>Reproduced on Dinero.js 2.0.2 and current main; no production application impact is claimed.</span></div>
+        <div class="brief-source">
+          <span>UPSTREAM RECORD</span>
+          <a href="https://github.com/kadyrbekovhamit-cyber/gero-dinero-allocation-audit" rel="noopener noreferrer">Public reproducer on GitHub ↗</a>
+        </div>
+        <div class="article-prose"><h2>Finding</h2>
+<p>Dinero.js <code>2.0.2</code> can return a mathematically incorrect allocation with its default <code>number</code> calculator even when the amount, every ratio, the ratio sum, and all returned shares are JavaScript safe integers. The failure occurs when an intermediate multiplication crosses the safe-integer boundary and rounds across an integer-division boundary.</p>
+<h2>Minimal counterexample</h2>
+<pre><code class="language-text">amount = 3
+ratios = [3002399751580333, 1000000000000000, 501199875790167]
+ratio sum = 4503599627370500
+
+actual:   [3, 0, 0]
+expected: [2, 1, 0]</code></pre>
+<p>For <code>amount = -3</code>, the actual result is <code>[-3, 0, 0]</code>; the exact result is <code>[-2, -1, 0]</code>.</p>
+<h2>Exact oracle</h2>
+<p>For the largest ratio:</p>
+<pre><code class="language-text">3 × 3002399751580333 = 9007199254740999
+                    = 2 × 4503599627370500 − 1</code></pre>
+<p>The exact quotient is therefore <code>1</code>. JavaScript <code>number</code> rounds the intermediate product to <code>9007199254741000</code>, making it exactly twice the ratio sum. Dinero.js consequently begins with a share of <code>2</code> and then assigns the remaining unit to the same largest ratio, returning <code>3</code>.</p>
+<p>The independent oracle performs the products and integer division with <code>BigInt</code>, followed by the same largest-ratio remainder policy.</p>
+<h2>Verification</h2>
+<ul><li>Reproduced with the published package <code>dinero.js@2.0.2</code>.</li><li>Confirmed on upstream <code>main</code> commit <code>76b969e519dc44675d4af898d25629995d0b16f2</code>; its <code>distribute.ts</code> is identical to the release implementation.</li><li>Positive and negative counterexamples both reproduce.</li><li>Each input ratio and their sum passes <code>Number.isSafeInteger()</code>.</li><li>Targeted searches found no duplicate. Issues <code>#771</code> and <code>#776</code> cover different failure modes.</li></ul>
+<h2>Proposed correction</h2>
+<p>The behavior-preserving solution is a combined exact integer multiply-divide operation. The default <code>number</code> calculator can promote safe integer operands to <code>BigInt</code> for <code>(amount × ratio) / total</code>, then convert the bounded quotient back to <code>number</code>. The <code>bigint</code> calculator can evaluate the expression directly.</p>
+<p>A smaller defensive correction is to detect an unsafe intermediate product and throw a clear precision error that directs callers to <code>dinero.js/bigint</code>. Silently returning a different allocation should not be the fallback.</p>
+<h2>Upstream status</h2>
+<p>Reported as <a href="https://github.com/dinerojs/dinero.js/issues/892" rel="noopener noreferrer">dinerojs/dinero.js#892</a> on 9 September 2026. An issue was used instead of a pull request because a behavior-preserving fix requires extending the public calculator abstraction with an exact combined multiply-divide operation; the narrow alternative is a documented precision error directing number users to the bigint calculator.</p>
+<h2>Boundary</h2>
+<p>This is an ordinary numerical-correctness defect, not a security vulnerability. No affected production application or customer loss has been identified. The result demonstrates a library-level contract failure under valid safe-integer inputs.</p></div>
+      </article>
+    </main>
+    
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

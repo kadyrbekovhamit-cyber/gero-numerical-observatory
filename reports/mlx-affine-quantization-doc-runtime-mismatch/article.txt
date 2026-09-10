@@ -1,0 +1,49 @@
+← Research index
+INDEPENDENT NUMERICAL AUDIT4 September 2026
+MLX affine quantization: a documentation/runtime contract mismatch
+MLX 0.32.2 returns a valid affine parameterization that differs from the formula stated in its public documentation.
+Xamit KadirbekovIndependent verification · GERO Research
+Numerical auditMLXQuantization
+STATUS · VERIFIED DOCUMENTATION/RUNTIME CONTRACT MISMATCHThe runtime result is internally consistent. This audit does not demonstrate excess quantization error, corrupted inference or a security defect.
+REPRODUCER · MLX 0.32.2
+Code, output and full report ↗
+Finding
+For 32 evenly spaced float32 values spanning [-1, 3], with group_size=32 and bits=4, the affine formula published for mx.quantize and the parameters returned by MLX 0.32.2 are not the same contract.
+Published formula
+alpha = max(w)
+beta = min(w)
+scale = (alpha - beta) / (2^bits - 1)
+q = round((w - beta) / scale)
+For the test group, that formula specifies:
+scale = 0.266666667
+bias = -1
+endpoint codes = [0, 15]
+Observed MLX 0.32.2 result
+scale = -0.272727281
+bias = 3
+endpoint codes = [15, 0]
+The runtime uses a reversed code direction and a different endpoint anchoring rule. The parameters are valid, but they do not match the formula and return-value description presented by the public documentation.
+Independent NumPy check
+The reproducer unpacks the four-bit fields from MLX's returned uint32 words and evaluates scale × q + bias independently in NumPy float64.
+runtime-vs-NumPy oracle max error: 2.08616257e-07
+round-trip max error:             0.131964862
+The first result confirms that mx.dequantize is consistent with the returned parameters. The second is ordinary four-bit quantization error for this input. No additional inference error was found.
+Minimal reproduction
+python3 -m pip install mlx==0.32.2 mlx-metal==0.32.2 numpy
+python3 reproduce_affine_docs.py
+Platform: Apple Silicon.
+MLX: 0.32.2.
+MLX Metal: 0.32.2.
+Input: 32 evenly spaced float32 values in [-1, 3].
+Quantization: affine, four bits, one group of 32 values.
+Source explanation
+The fallback implementation compares endpoint magnitudes, may negate the scale, selects an endpoint and anchors the scale through a rounded endpoint code. The published affine formula does not describe these sign, selection and anchoring operations.
+Recommended correction
+MLX can resolve the mismatch in either of two ways: document the implemented sign, endpoint-selection and anchoring rules; or specify only the dequantization invariant and state explicitly that the returned scale may be negative and the bias need not equal the group minimum.
+Pinned evidence
+Published formula at the release commit.
+Runtime implementation at the release commit.
+Release commit: 1f8e74e3f12f31365464a6867c6579f0e9b29d85.
+Reproducer, captured output and audit report.
+Boundary
+This report establishes a reproducible documentation/runtime contract mismatch for one pinned MLX release on Apple Silicon. It does not claim a numerical inference bug, a security vulnerability or a defect in an Apple consumer product.

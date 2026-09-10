@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Anthropic&#x27;s Fermat formalization shows the scale now possible in Lean; the remaining assurance problem is preserving meaning, provenance and dependency scope from source theorem to checked root." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="A machine-checked proof still needs a statement contract" />
+    <meta property="og:description" content="Anthropic&#x27;s Fermat formalization shows the scale now possible in Lean; the remaining assurance problem is preserving meaning, provenance and dependency scope from source theorem to checked root." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/formal-proof-statement-contract.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="A machine-checked proof still needs a statement contract" />
+    <meta name="twitter:description" content="Anthropic&#x27;s Fermat formalization shows the scale now possible in Lean; the remaining assurance problem is preserving meaning, provenance and dependency scope from source theorem to checked root." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/formal-proof-statement-contract.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>A machine-checked proof still needs a statement contract — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "AnalysisNewsArticle", "headline": "A machine-checked proof still needs a statement contract", "description": "Anthropic's Fermat formalization shows the scale now possible in Lean; the remaining assurance problem is preserving meaning, provenance and dependency scope from source theorem to checked root.", "datePublished": "2026-09-07", "dateModified": "2026-09-07", "url": "https://www.gero.uz/research/articles/formal-proof-statement-contract.html", "author": [{"@type": "Person", "name": "Xamit Kadirbekov"}], "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+  </head>
+  <body class="research-body">
+    
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    
+    <main>
+      <article class="article-shell brief-article">
+        <a class="back-link" href="../">← Research index</a>
+        <header class="article-header">
+          <div class="article-kicker"><span>FRONTIER LAB WATCH</span><span>Reviewed 7 September 2026</span></div>
+          <h1>A machine-checked proof still needs a statement contract</h1>
+          <p class="article-dek">Anthropic&#x27;s Fermat formalization shows the scale now possible in Lean; the remaining assurance problem is preserving meaning, provenance and dependency scope from source theorem to checked root.</p>
+          <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54" /><div><strong>Xamit Kadirbekov</strong><span>Independent analysis · Source: Anthropic</span></div></div>
+          <div class="topic-row"><span>Formal verification</span><span>Semantic equivalence</span><span>Proof provenance</span></div>
+        </header>
+        <div class="evidence-banner source-report"><strong>STATUS · SOURCE REPORT + GERO ANALYSIS</strong><span>This brief has not independently reproduced the laboratory's experiment.</span></div>
+        <div class="brief-source">
+          <span>PRIMARY SOURCE · 4 September 2026</span>
+          <a href="https://www.anthropic.com/research/formalizing-fermats-last-theorem" rel="noopener noreferrer">Formalizing Fermat&#x27;s Last Theorem ↗</a>
+        </div>
+        <div class="article-prose">
+          <h2>What the laboratory reports</h2>
+          <ul><li>Anthropic reports the first complete computer-checked proof of Fermat&#x27;s Last Theorem, produced largely autonomously by Claude in Lean over 11 days.</li><li>The final proof uses 29,500 intermediate theorems; Anthropic reports 13 million generated lines and a collaboration of dozens of agents.</li><li>Early attempts lost track of project state. The successful workflow used Prove2Me to maintain a theorem dependency DAG, support search and reuse, and coordinate parallel work.</li><li>Anthropic reports that Lean checked the finished proof, a comparator matched its root statement to Mathlib&#x27;s FLT statement, and Kevin Buzzard reviewed the artifact.</li></ul>
+          <h2>The mathematical problem</h2>
+          <p>Kernel acceptance establishes that a formal term has the encoded type under a particular axiom, library and toolchain environment. End-to-end assurance additionally requires a semantic commuting diagram: the intended natural-language theorem, the chosen formal root, imported definitions and the claimed conclusion must denote the same proposition. At this scale, provenance and change impact across the dependency DAG become part of correctness.</p>
+          <h2>GERO's proposed response</h2>
+          <ul><li>Package the formalization as a certificate-bearing claim graph with the root statement, axiom ledger, dependency DAG, library commits and toolchain hashes.</li><li>Keep kernel verification, statement equivalence, source-to-formal mapping and provenance as separate verdicts rather than collapsing them into one &#x27;proved&#x27; label.</li><li>Prioritize independent review of high-centrality semantic bridges and require a clean replay from pinned artifacts before downstream reuse.</li></ul>
+          <h2>A falsifiable experiment</h2>
+          <ul><li>Create controlled variants with one perturbation at a time: a changed root quantifier, a mismatched definition, an altered import and a stale dependency hash.</li><li>Compare Lean compilation alone with the proposed statement-and-provenance contract on defect detection, false acceptance and expert review time.</li><li>Repeat the clean build in an isolated pinned environment and record which assurance layers survive without access to the original agent workspace.</li></ul>
+          <aside class="boundary-box"><strong>Boundary</strong><p>GERO has not downloaded, rebuilt or independently reviewed Anthropic&#x27;s proof artifact. This brief accepts the laboratory&#x27;s report as a primary source and proposes an assurance protocol around it; it does not allege a defect in the formalization.</p></aside>
+          <h2>Read the primary source</h2>
+          <p>This article is an original analytical summary, not a republication. Read <a href="https://www.anthropic.com/research/formalizing-fermats-last-theorem" rel="noopener noreferrer">Formalizing Fermat&#x27;s Last Theorem</a> for the laboratory's complete claims, methods and context.</p>
+        </div>
+      </article>
+    </main>
+    
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

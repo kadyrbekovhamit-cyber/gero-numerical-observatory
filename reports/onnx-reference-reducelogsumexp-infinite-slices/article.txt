@@ -1,0 +1,32 @@
+← Research index
+INDEPENDENT NUMERICAL AUDIT9 September 2026
+ONNX ReferenceEvaluator turns infinite ReduceLogSumExp slices into NaN
+Slices [inf, -inf] and [-inf, -inf] both become NaN, although the exact results and ONNX Runtime give +inf and -inf respectively.
+Xamit KadirbekovIndependent verification · GERO Research
+Numerical auditONNXReduction
+STATUS · VERIFIED ORDINARY CORRECTNESS DEFECTReproduced on ONNX 1.22.0 and current main; correction PR #8441 passed 454 reference-evaluator tests and a 723-case differential sweep.
+UPSTREAM RECORD
+onnx/onnx#8441 ↗
+Finding
+The ONNX reference implementation of ReduceLogSumExp returns NaN whenever a reduction slice contains no finite value. According to the operator's defining composition, a slice with at least one +inf reduces to +inf, and a slice containing only -inf reduces to -inf.
+The implementation replaces all infinite elements with -inf before choosing its stability shift. With no finite element, the shift itself is -inf, so the subtraction creates invalid inf - inf or -inf - -inf values.
+Minimal counterexample
+input row       ReferenceEvaluator   ONNX Runtime   float64 oracle
+[ inf,  inf]    NaN                  +inf           +inf
+[ inf, -inf]    NaN                  +inf           +inf
+[-inf, -inf]    NaN                  -inf           -inf
+[1000, 999]     1000.31323           1000.31323     1000.31323
+The oracle is NumPy logaddexp.reduce in float64. The same answers follow directly from log(sum(exp(x))): exp(+inf)=+inf, while a sum of exponentials of only -inf is zero and log(0)=-inf.
+Verification
+Reproduced with ONNX 1.22.0, ONNX Runtime 1.29.0, NumPy 2.5.2, Python 3.12 and the CPU execution provider.
+Confirmed unchanged on ONNX main commit c71cbb485c97aa2cb257626a5ac5b0f205c49a22.
+Checked opsets 13, 18 and the current opset.
+The patched helper passed 723 differential checks across float16, float32 and float64, several axes and both values of keepdims against numpy.logaddexp.reduce.
+The complete reference-evaluator test module passed: 454 tests, 4 skipped.
+A mutation restoring the original algorithm made all three new regression tests fail with [NaN, NaN] instead of [+inf, -inf].
+Searches of ONNX issues and PRs found no matching infinite-slice report.
+Correction
+Keep the maximum as the stability shift when it is finite. When the maximum is non-finite, use zero as the shift. Then the elementary exponential and logarithm operations naturally produce the specified infinities, while finite slices retain the usual max-shift stability.
+The correction and regression test are submitted in ONNX PR #8441. The public reproducer is in gero-onnx-reducelogsumexp-infinity-audit.
+Boundary
+This finding concerns the Python reference oracle. It is not a security issue and does not identify a defect in ONNX Runtime. Its practical risk is false backend-conformance disagreement or propagation of NaN from fully masked or otherwise infinite reduction slices.

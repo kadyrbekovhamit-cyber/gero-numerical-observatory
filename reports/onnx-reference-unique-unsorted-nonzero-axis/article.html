@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="With sorted=0 and a nonzero axis, first-occurrence indices are always applied to axis 0, producing wrong data or an immediate out-of-bounds exception." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="ONNX ReferenceEvaluator gathers unsorted Unique slices from the wrong axis" />
+    <meta property="og:description" content="With sorted=0 and a nonzero axis, first-occurrence indices are always applied to axis 0, producing wrong data or an immediate out-of-bounds exception." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/onnx-reference-unique-unsorted-nonzero-axis.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ONNX ReferenceEvaluator gathers unsorted Unique slices from the wrong axis" />
+    <meta name="twitter:description" content="With sorted=0 and a nonzero axis, first-occurrence indices are always applied to axis 0, producing wrong data or an immediate out-of-bounds exception." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/onnx-reference-unique-unsorted-nonzero-axis.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>ONNX ReferenceEvaluator gathers unsorted Unique slices from the wrong axis — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "ONNX ReferenceEvaluator gathers unsorted Unique slices from the wrong axis", "description": "With sorted=0 and a nonzero axis, first-occurrence indices are always applied to axis 0, producing wrong data or an immediate out-of-bounds exception.", "datePublished": "2026-09-09", "dateModified": "2026-09-09", "url": "https://www.gero.uz/research/articles/onnx-reference-unique-unsorted-nonzero-axis.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+  </head>
+  <body class="research-body">
+    
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    
+    <main>
+      <article class="article-shell audit-article">
+        <a class="back-link" href="../">← Research index</a>
+        <header class="article-header">
+          <div class="article-kicker"><span>INDEPENDENT NUMERICAL AUDIT</span><span>9 September 2026</span></div>
+          <h1>ONNX ReferenceEvaluator gathers unsorted Unique slices from the wrong axis</h1>
+          <p class="article-dek">With sorted=0 and a nonzero axis, first-occurrence indices are always applied to axis 0, producing wrong data or an immediate out-of-bounds exception.</p>
+          <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54" /><div><strong>Xamit Kadirbekov</strong><span>Independent verification · GERO Research</span></div></div>
+          <div class="topic-row"><span>Numerical audit</span><span>ONNX</span><span>Tensor indexing</span></div>
+        </header>
+        <div class="evidence-banner"><strong>STATUS · VERIFIED ORDINARY CORRECTNESS DEFECT</strong><span>Reproduced on ONNX 1.22.0 and current main; correction PR #8443 passed 453 reference-evaluator tests and 13 differential axis cases.</span></div>
+        <div class="brief-source">
+          <span>UPSTREAM RECORD</span>
+          <a href="https://github.com/onnx/onnx/pull/8443" rel="noopener noreferrer">onnx/onnx#8443 ↗</a>
+        </div>
+        <div class="article-prose"><h2>Finding</h2>
+<p><code>Unique(sorted=0)</code> returns unique values or subtensors in order of first occurrence. The released ONNX ReferenceEvaluator correctly computes the first-occurrence indices, but it always applies those indices to input axis 0. When the operator&#x27;s <code>axis</code> is nonzero, the evaluator therefore selects from the wrong dimension.</p>
+<p>For many shapes the result is an immediate exception. For a 2×4 input with <code>axis=1</code>, unique column index 3 is valid on the four-column dimension but out of range on the two-row dimension hard-coded by the evaluator.</p>
+<h2>Minimal counterexample</h2>
+<pre><code class="language-text">X = [[ 1,  2,  1,  3],
+     [10, 20, 10, 30]]
+axis = 1, sorted = 0
+
+ReferenceEvaluator: IndexError: index 3 is out of bounds for axis 0 with size 2
+specified Y / ORT:  [[1, 2, 3], [10, 20, 30]]
+indices:             [0, 1, 3]
+inverse_indices:     [0, 1, 0, 2]
+counts:              [2, 1, 1]</code></pre>
+<h2>Verification</h2>
+<ul><li>Reproduced with ONNX <code>1.22.0</code>, ONNX Runtime <code>1.29.0</code>, NumPy <code>2.5.2</code>, Python 3.12 and the CPU execution provider.</li><li>Confirmed unchanged on ONNX <code>main</code> commit <code>c71cbb485c97aa2cb257626a5ac5b0f205c49a22</code>.</li><li>Regression tests cover positive <code>axis=1</code> and the equivalent negative <code>axis=-1</code>, checking all four outputs exactly.</li><li>Thirteen differential cases across flattened, positive and negative axes match ONNX Runtime after the correction.</li><li>The complete reference-evaluator test module passed: 453 tests, 4 skipped.</li><li>Restoring the hard-coded axis makes both regression cases fail with the original exception.</li><li>Ruff format/check and <code>git diff --check</code> pass.</li><li>Searches of ONNX issues and pull requests found no matching report.</li></ul>
+<h2>Correction</h2>
+<p>Pass the operator&#x27;s actual <code>axis</code> to <code>numpy.take</code>. The correction is one source line; the absent-axis case remains valid because NumPy gathers from the flattened input when <code>axis=None</code>.</p>
+<p>The correction and regression tests are submitted in <a href="https://github.com/onnx/onnx/pull/8443" rel="noopener noreferrer">ONNX PR #8443</a>. The public reproducer is in <a href="https://github.com/kadyrbekovhamit-cyber/gero-onnx-unique-unsorted-axis-audit" rel="noopener noreferrer">gero-onnx-unique-unsorted-axis-audit</a>.</p>
+<h2>Boundary</h2>
+<p>This is a reference-implementation correctness defect, not a security issue. It affects unsorted <code>Unique</code> evaluation whenever a nonzero axis is supplied. ONNX Runtime produces the specified output for the counterexample.</p></div>
+      </article>
+    </main>
+    
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

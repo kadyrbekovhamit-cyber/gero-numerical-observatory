@@ -1,0 +1,50 @@
+← Research index
+TECHNICAL CASE STUDY9 September 2026
+When Dropout Sends Two Gradients to One Input
+Forward can preserve both inputs while backward writes both gradients to the same destination. A six-number native example makes the mismatch visible.
+Xamit KadirbekovReproducible numerical experiments · GERO Research
+DropoutAutodiffNative C++ tests
+STATUS · LOCALLY REPRODUCED AND REPAIREDCPU FP32 layer-level result. Effects on complete models and Samsung devices are not established. Publication of this case study does not mean upstream acceptance.
+A zero drop rate gives a simple contract: each output should equal its corresponding input, and each input should receive its own output gradient. We tested that correspondence in the actual nntrainer C++ DropOutLayer at commit a7ea056e79ab8e14447ea305c1b634e233343258.
+The layer's initialization accepts multiple input dimensions and its forward path processes them. The observed mismatch is in the backward destination selection.
+A six-number example
+Use two inputs, [1,2,3] and [4,5,6], each shaped [1,1,1,3], with dropout_rate=0. Forward returns both tensors unchanged. Supply deliberately different output gradients:
+InputIncoming output gradientOriginal input gradientCorrect / patched
+0[1,2,3][10,20,30][1,2,3]
+1[10,20,30][0,0,0][10,20,30]
+Input-gradient buffers were separately allocated and initialized to zero. Thus the second row identifies an unwritten destination. Input values and the incoming gradients remained unchanged.
+The derivative and the destination
+For a fixed saved mask, this layer applies y_i = x_i × mask_i. Its backward operator must route dy_i × mask_i to dx_i. At zero rate that reduces to dx_i = dy_i.
+The source loops over input index i, but requests getOutgoingDerivative(SINGLE_INOUT_IDX), where the constant equals zero. Later iterations overwrite the first gradient; other gradient destinations are not written.
+// Destination inside the loop over input i
+// Original:
+context.getOutgoingDerivative(SINGLE_INOUT_IDX)
+// Proposed local repair:
+context.getOutgoingDerivative(i)
+The source patch also removes the now-unused constant. Inspect the isolated patch →
+Independent mathematical checks, native execution
+Central finite differences of the actual forward pass confirm the derivative for every coordinate of both inputs. This uses a mixed signed objective and step 1/32. It is an algorithmically independent reference, not a third-party laboratory review.
+A separate three-input case uses the existing reStoreData(true) replay path with different saved masks and rate 0.5. It checks the masked backward branch deterministically; it is not a statistical evaluation of random mask generation.
+Selected testsOriginal sourceLocal repair
+15 pre-existing Dropout tests15 passed15 passed
+4 added tests1 passed, 3 failed4 passed
+Total16/19 passed19/19 passed
+The added cases cover a single-input control, two-input routing, native-forward finite differences and three-input saved-mask replay. The control passes before and after. Before publication, both the deterministic four-test driver and the final 19-test selection were run again successfully using the retained patched binary.
+Original log → · Publication-day 19-test log → · Regression tests →
+Where the conclusion stops
+The measured environment is macOS 15.5 arm64, CPU FP32, using an existing configured build with earlier unrelated repairs. The baseline Dropout source matched the pinned revision byte-for-byte, and the published patches change only Dropout source and tests. A fresh clean build and cross-platform matrix were not performed.
+Full-network training, in-place graph allocation, FP16, GPU and other platforms were not evaluated. The result establishes a layer-level correctness defect in the tested configuration; it does not establish effects on complete models or particular Samsung devices, or a security vulnerability.
+The constant-zero destination already appears in a public patch from 2021. This work supplies a reproduction and local repair and does not claim first discovery. The retained duplicate review describes its bounded search. A published patch is not an accepted upstream fix.
+Reproduce and review
+The engineering check is concrete: assign deliberately different output gradients to independent inputs and inspect each destination. Correct single-input tests cannot exercise this routing.
+Open the immutable GitHub evidence package → · Self-contained build recipe → · Developer-facing report →
+Download the complete case study, patches and logs (ZIP) →
+SHA-256: 9b6e3875435ff4cc215ad585224cff3a44f2b9aba7dce058adc86f9d8789100b
+Independent reproduction is welcome. For scoped numerical-correctness work, contact GERO. Research and editorial materials were prepared with AI assistance; numerical claims come from retained native executions.
+Watch the 34-second case study
+Your browser does not support embedded video.
+Download the English short → · English subtitles (SRT) →. Original diagrams and synthetic English narration; the same layer-level limitations apply.
+Primary sources
+DropOutLayer at the audited commit
+Source ledger and measured evidence
+#MachineLearning #SoftwareTesting #Autodiff #NumericalComputing #OpenSource #nntrainer

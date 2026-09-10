@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="The summaries of versions 18 and 21 contradict the num_groups attribute and the operator&#x27;s own four-channel, two-group example." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="ONNX GroupNormalization reverses channel/group divisibility in its documentation" />
+    <meta property="og:description" content="The summaries of versions 18 and 21 contradict the num_groups attribute and the operator&#x27;s own four-channel, two-group example." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/onnx-groupnormalization-divisibility-doc.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ONNX GroupNormalization reverses channel/group divisibility in its documentation" />
+    <meta name="twitter:description" content="The summaries of versions 18 and 21 contradict the num_groups attribute and the operator&#x27;s own four-channel, two-group example." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/onnx-groupnormalization-divisibility-doc.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>ONNX GroupNormalization reverses channel/group divisibility in its documentation — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "ONNX GroupNormalization reverses channel/group divisibility in its documentation", "description": "The summaries of versions 18 and 21 contradict the num_groups attribute and the operator's own four-channel, two-group example.", "datePublished": "2026-09-07", "dateModified": "2026-09-07", "url": "https://www.gero.uz/research/articles/onnx-groupnormalization-divisibility-doc.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+  </head>
+  <body class="research-body">
+    
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    
+    <main>
+      <article class="article-shell audit-article">
+        <a class="back-link" href="../">← Research index</a>
+        <header class="article-header">
+          <div class="article-kicker"><span>INDEPENDENT NUMERICAL AUDIT</span><span>7 September 2026</span></div>
+          <h1>ONNX GroupNormalization reverses channel/group divisibility in its documentation</h1>
+          <p class="article-dek">The summaries of versions 18 and 21 contradict the num_groups attribute and the operator&#x27;s own four-channel, two-group example.</p>
+          <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54" /><div><strong>Xamit Kadirbekov</strong><span>Independent verification · GERO Research</span></div></div>
+          <div class="topic-row"><span>Documentation audit</span><span>ONNX</span><span>Normalization</span></div>
+        </header>
+        <div class="evidence-banner"><strong>STATUS · VERIFIED DOCUMENTATION CONTRADICTION</strong><span>Twelve small CPU models checked both schema versions; correction PR #8440 includes regenerated operator documentation.</span></div>
+        <div class="brief-source">
+          <span>UPSTREAM RECORD</span>
+          <a href="https://github.com/onnx/onnx/pull/8440" rel="noopener noreferrer">onnx/onnx#8440 ↗</a>
+        </div>
+        <div class="article-prose"><h2>Claim under test</h2>
+<p>Group Normalization partitions each instance&#x27;s channels into equal groups. Let <code>C</code> be the positive number of channels and <code>G</code> the positive number of groups. If each group has <code>k</code> channels, then <code>C = G * k</code>, with positive integer <code>k</code>. The necessary and sufficient divisibility condition is <code>C % G == 0</code>.</p>
+<p>The <a href="https://onnx.ai/onnx/operators/onnx__GroupNormalization.html" rel="noopener noreferrer">official ONNX operator page</a> states the reverse condition in the summaries of versions 18 and 21. On that same page, the description of the <code>num_groups</code> attribute gives the correct condition, and the example uses four channels divided into two groups.</p>
+<h2>Minimal contradiction</h2>
+<p>Two integer examples distinguish the conditions without numerical tolerances:</p>
+<pre><code class="language-text">C=4, G=2: C % G = 0, G % C = 2; valid: two groups of two channels.
+C=2, G=4: C % G = 2, G % C = 0; invalid: half a channel per group.</code></pre>
+<p>The summary rejects the valid example and admits the invalid one. This is an internal documentation contradiction, independently of any runtime experiment.</p>
+<h2>Runtime controls</h2>
+<p>On 2026-09-07 the local reproducer exercised both schema versions with ONNX 1.22.0, ONNX Runtime 1.29.0 and NumPy 2.5.2 on macOS ARM64 / Python 3.12. Each input has shape <code>(1, C, 2, 2)</code> and contains consecutive float32 integers. Scale is one, bias is zero and epsilon is <code>1e-5</code>.</p>
+<p>Version 18 uses scale and bias of shape <code>(G,)</code>; version 21 uses <code>(C,)</code>. For each version, the following checks passed:</p>
+<pre><code class="language-text">C=4, G=2: accepted; independent float64 calculation matched.
+C=6, G=3: accepted; independent float64 calculation matched.
+C=4, G=1: accepted; independent float64 calculation matched.
+C=4, G=4: accepted; independent float64 calculation matched.
+C=2, G=4: rejected at reshape.
+C=5, G=2: rejected at reshape.</code></pre>
+<p>All eight valid outputs were finite and agreed with a separate calculation of the group mean, population variance and normalization at <code>rtol=atol=1e-6</code>. The four invalid models were rejected. The inputs require only a few dozen elements; ONNX Runtime, BLAS and OpenMP were limited to one worker, and all cases ran sequentially on the CPU.</p>
+<p>The <a href="https://github.com/kadyrbekovhamit-cyber/gero-onnx-groupnorm-doc-audit" rel="noopener noreferrer">public reproduction repository</a> contains the original version 21 example. The extended version 18/21 check and its captured output are currently local additions, pending publication.</p>
+<h2>Correction</h2>
+<p>Both summaries should say that the number of channels is divisible by <code>num_groups</code>. This leaves the attribute&#x27;s existing rule intact.</p>
+<p>A two-hunk local patch corrects the version 21 and version 18 strings in <a href="https://github.com/onnx/onnx/blob/1fdd92cf2f70f7a00c55d9153d243829d9349a96/onnx/defs/doc_strings.cc#L2941" rel="noopener noreferrer">`onnx/defs/doc_strings.cc`</a>. The patch passed <code>git apply --check</code> against the reviewed commit. No ONNX source build was required for these documentation and runtime checks.</p>
+<h2>Upstream status</h2>
+<p><a href="https://github.com/onnx/onnx/issues/8422" rel="noopener noreferrer">ONNX issue #8422</a> was filed on 2026-09-06. The source correction and regenerated operator documentation were submitted as <a href="https://github.com/onnx/onnx/pull/8440" rel="noopener noreferrer">ONNX PR #8440</a> on 2026-09-09. The ONNX extension was rebuilt before running the official documentation generator; <code>clang-format --dry-run --Werror</code> and <code>git diff --check</code> passed.</p>
+<h2>Boundary</h2>
+<p>This finding concerns the direction of a documentation condition. The tested runtime enforces the expected grouping requirement. These examples do not establish a runtime numerical defect, production-model impact or a security vulnerability. Zero-sized tensors and zero or negative group counts are outside this audit&#x27;s positive-integer scope.</p></div>
+      </article>
+    </main>
+    
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

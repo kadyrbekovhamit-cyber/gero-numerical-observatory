@@ -1,0 +1,72 @@
+← Research index
+ORIGINAL RESEARCH2 September 2026
+Where Mathematics Meets AI Reliability: The Problems Frontier Labs Are Naming Themselves
+A research perspective connecting the reliability problems named by frontier labs to observability, control, verification and calibrated abstention.
+Xamit KadirbekovAuthor · GERO Research
+AI reliabilityMathematicsAssurance
+STATUS · AUTHOR'S ANALYSISArguments and proposals are distinguished from the linked laboratories' reported results.
+Frontier AI has crossed an important threshold. The question is no longer only whether a model can produce an impressive mathematical answer. The harder question is whether we can determine — reliably, reproducibly, and at scale — which parts of its reasoning deserve to become scientific or engineering knowledge.
+This is not a problem invented by outside critics. Anthropic, OpenAI, and Google DeepMind are describing different versions of it in their own research.
+Anthropic: Reasoning Is Not The Same As A Trustworthy Explanation
+Anthropic has shown that a model’s visible chain of thought is not necessarily a faithful account of the process that produced its answer. In one study, outcome-based reinforcement learning improved faithfulness at first, but the reported gains plateaued at 28% on one evaluation and 20% on another. In reward-hacking experiments, models learned to exploit incorrect hints in more than 99% of cases, while rarely acknowledging the shortcut in their visible reasoning.
+Anthropic’s work on Automated Alignment Researchers identifies an equally important systems problem. As AI agents become better at proposing hypotheses and running experiments, the bottleneck may move from idea generation to evaluation: was the experiment well designed, did the method generalize, and did the agent optimize the intended objective rather than a convenient proxy?
+Its mechanistic-interpretability research adds another warning. Attribution graphs can reveal meaningful parts of a model’s computation, but Anthropic states that current methods capture only a fraction of the computation even for short prompts, may introduce tool artifacts, and still require substantial human interpretation.
+Openai: A Strong Prover Can Fool A Verifier
+OpenAI’s process-supervision work demonstrated that supervising intermediate reasoning steps can outperform supervision based only on the final answer. This is progress, but it also clarifies the problem: correctness cannot safely be reduced to outcome matching.
+In its prover–verifier experiments, OpenAI trained a “sneaky prover” to generate incorrect solutions that a weaker verifier would accept. Adversarial training made the verifier stronger, but the experiment exposes a structural risk for AI research: a generator and an evaluator built from similar models may share blind spots.
+Research-level mathematics raises the standard further. OpenAI’s First Proof submissions produced several serious proof attempts, but one result initially considered likely correct was later judged incorrect. OpenAI also acknowledged that the sprint involved human selection and model interaction and was not yet a clean controlled evaluation. That honesty is scientifically important: the protocol is part of the result.
+Google Deepmind: Olympiad Success Does Not Remove The Research Gap
+Google DeepMind’s Aletheia work makes the distinction explicit. Competition mathematics is relatively bounded. Research mathematics requires advanced literature, long dependency chains, ambiguous questions, and specialist knowledge. DeepMind writes that data scarcity can lead to superficial understanding and hallucinations in advanced subjects.
+Aletheia therefore separates generation, verification, and revision. It uses search and browsing to reduce false citations and, importantly, can admit failure instead of always producing an answer. This is a crucial design principle. In research, a calibrated refusal can be more valuable than an elegant but unsupported proof.
+The Mathematical Connection
+These problems resemble classical engineering failures more than ordinary text-generation errors.
+Theodore von Kármán studied flutter: a stable structure becomes unstable when coupled to a flow. In frontier AI, the relevant object may be the coupled model–evaluator–training loop. A model can appear stable in isolation while the closed system enters a reward-hacking regime.
+Norbert Wiener and Rudolf Kalman asked how to recover a hidden state from noisy measurements. AI laboratories face the same observability question: can safety-relevant internal states be inferred from outputs, activations, tool traces, and chain of thought — and which states are fundamentally unobservable with the available sensors?
+Claude Shannon gives us a capacity question: how much information about the real mechanism survives in a compressed reasoning trace or interpretability summary?
+Richard Bellman gives us a control question: when should a research agent generate another candidate, call a deterministic tool, request a formal proof, escalate to an expert, or stop?
+Peter Lax gives us an evaluation question: is a benchmark consistent with the property we care about, stable under small changes, and convergent toward real-world risk?
+Stanley Osher gives us a geometric question: how does the boundary between acceptable and failing behavior move as the model, prompt, tools, and training procedure change?
+This suggests a shift in framing. We do not only need larger generators. We need mathematical control and assurance around generators.
+What We Are Building
+I am developing GERO — a research assurance runtime for AI-generated mathematical and technical claims.
+The intended workflow is:
+1. Compile a proof or research report into a dependency graph: assumptions → measurements → lemmas → conclusions → engineering decisions.
+2. Apply a “Keldysh test” before expensive search: can the problem be reformulated using an invariant, a sufficient statistic, a low-dimensional order parameter, an interval bound, or a formal certificate?
+3. Route each checkable node to a verifier with different failure modes: exact arithmetic, dimensional analysis, interval propagation, finite counterexample search, symbolic algebra, execution, retrieval, SMT, Lean, or human review.
+4. Attack the result: swap quantifiers, remove a hidden assumption, change the population or metric, search for boundary cases, and test whether a locally correct conclusion depends on a false intermediate lemma.
+5. Return a bounded status — VERIFIED, CONTRADICTED, INSUFFICIENT EVIDENCE, or UNVERIFIABLE — together with a replayable certificate. A fluent explanation is not itself a certificate.
+The First Prototype
+The current deterministic prototype supports exact rational arithmetic, SI-dimensional consistency, interval enclosure, finite implication checks, finite quantified formulas, explicit assumption coverage, structured evidence contracts, and dependency-graph status propagation.
+In an initial engineering smoke test of 60 paired clean/controlled-defect cases, it detected all 60 injected defects, rejected none of the clean controls, and issued no positive verdict without a certificate.
+This is not yet a research-grade result. The cases were generated to test the software mechanisms. They do not establish performance on natural mathematical proofs.
+The next benchmark must be harder and independent:
+at least 300 proof trajectories across analysis, probability, optimization, linear algebra, and discrete mathematics;
+blind annotation by multiple mathematical experts;
+sealed test data and contamination controls;
+comparisons against self-verification, a strong single LLM judge, and cross-family voting;
+primary metrics focused on false acceptance of plausible but invalid proofs, not only overall accuracy;
+explicit measurement of semantic failures where a formal checker proves the wrong translation of the original question.
+The Product Thesis
+The long-term product is not another chatbot and not a claim that mathematics can guarantee every behavior of a frontier model.
+It is an independent research-assurance layer that prevents a conclusion from being stronger than its weakest necessary dependency. Language models propose and structure. Heterogeneous tools provide evidence. The system either returns a bounded certificate or escalates the unresolved claim.
+For Anthropic, this could complement automated alignment research and behavioral evaluation by checking experiment integrity, proxy substitution, and dependency failures.
+For OpenAI, it aligns with the need for rigorous evaluation of research-grade proofs and stronger prover–verifier protocols.
+For Google DeepMind, it targets the semantic bridge between natural-language research, literature-grounded evidence, and formal or executable verification.
+I am looking to exchange ideas with researchers working on scalable oversight, mathematical reasoning, mechanistic interpretability, formal methods, evaluation integrity, and the emerging science of learning mechanics.
+The central question is simple:
+How do we turn probabilistic research output into knowledge that can be independently checked, reproduced, and safely acted upon?
+Primary sources
+Anthropic — Reasoning models don’t always say what they think:
+anthropic.com
+Anthropic — Automated Alignment Researchers:
+anthropic.com
+Anthropic — Tracing the thoughts of a large language model:
+anthropic.com
+OpenAI — Improving mathematical reasoning with process supervision:
+openai.com
+OpenAI — Prover–Verifier Games:
+openai.com
+OpenAI — First Proof submissions:
+openai.com
+Google DeepMind — Accelerating Mathematical and Scientific Discovery with Gemini Deep Think:
+deepmind.google

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A reproducible nntrainer causal-mask report: future values affect earlier outputs. Native tests, a local repair and an upstream issue are available." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="When Causal Attention Sees the Future" />
+    <meta property="og:description" content="A reproducible nntrainer causal-mask report: future values affect earlier outputs. Native tests, a local repair and an upstream issue are available." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/when-causal-attention-sees-the-future.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="When Causal Attention Sees the Future" />
+    <meta name="twitter:description" content="A reproducible nntrainer causal-mask report: future values affect earlier outputs. Native tests, a local repair and an upstream issue are available." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/when-causal-attention-sees-the-future.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <link rel="stylesheet" href="../../assets/ux.css" />
+    <title>When Causal Attention Sees the Future — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "When Causal Attention Sees the Future", "description": "A reproducible nntrainer causal-mask report: future values affect earlier outputs. Native tests, a local repair and an upstream issue are available.", "datePublished": "2026-09-07", "dateModified": "2026-09-07", "url": "https://www.gero.uz/research/articles/when-causal-attention-sees-the-future.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}}</script>
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+  <style>.audit-table{overflow-x:auto;margin:1.5rem 0}.audit-table table{width:100%;min-width:620px;border-collapse:collapse}.audit-table th,.audit-table td{padding:14px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #d4d9d5;font-size:14px}.article-prose code{overflow-wrap:anywhere}.article-prose pre{overflow-x:auto}</style>    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+  </head>
+  <body class="research-body">
+
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    <main><article class="article-shell">
+<a class="back-link" href="../">← Research index</a>
+<header class="article-header"><div class="article-kicker"><span>TECHNICAL NOTE</span><span>7 September 2026</span></div>
+<h1>When Causal Attention Sees the Future</h1>
+<p class="article-dek">Changing a future value should not change an earlier causal-attention output. A small native experiment shows this invariant failing in nntrainer, then passing with a local repair.</p>
+<div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54"><div><strong>Xamit Kadirbekov</strong><span>Reproducible numerical experiments · GERO Research</span></div></div>
+<div class="topic-row"><span>Causal attention</span><span>Masking</span><span>Native regression tests</span></div></header>
+<div class="evidence-banner"><strong>STATUS · REPORTED UPSTREAM</strong><span>Locally reproduced on native CPU FP32. <a href="https://github.com/nntrainer/nntrainer/issues/4333">nntrainer issue #4333</a> contains the report and proposed patch. Maintainer confirmation and upstream acceptance are pending.</span></div>
+<div class="article-prose">
+<p>Causal attention restricts which keys a query may use. Under the upper-triangular mask convention implemented by this layer, query position i may attend only to keys j ≤ i. This gives a stronger check than approximate numerical agreement: a forbidden future value must have no influence on an earlier output.</p>
+<p>This report tests the actual <code>nntrainer::AttentionLayer</code> at commit <code>a7ea056e79ab8e14447ea305c1b634e233343258</code>. It covers one implementation report with three related failure mechanisms, rather than treating shapes, repeated runs or test failures as separate discoveries.</p>
+<h2>A two-query counterexample</h2>
+<pre><code>causal_mask = true
+scaled_dot_product = false
+Q: shape [1, 1, 2, 1], values [0, 0]
+K: shape [1, 1, 3, 1], values [0, 0, 0]
+V: shape [1, 1, 3, 1], values [2, 10, 50]</code></pre>
+<div class="audit-table" role="region" aria-label="Causal attention output and gradient" tabindex="0"><table><thead><tr><th>Quantity</th><th>Original implementation</th><th>Causal target / local patch</th></tr></thead><tbody>
+<tr><td>Output</td><td>[20.66666794, 20.66666794]</td><td>[2, 6]</td></tr>
+<tr><td>Derivative of first output with respect to V</td><td>[⅓, ⅓, ⅓]</td><td>[1, 0, 0]</td></tr>
+<tr><td>Change only future V₂ from 50 to −100</td><td>Earlier outputs change</td><td>Earlier outputs remain [2, 6]</td></tr>
+</tbody></table></div>
+<p>With zero logits, the original code averages all three values: (2 + 10 + 50) / 3. The causal target instead reads only the first value at query zero, and averages the first two at query one. These are exact mathematical targets; this is not an ordinary floating-point tolerance difference.</p>
+<p>The rectangular example extends the layer’s existing upper-left triangular convention. If a different rectangular alignment is intended, its contract should be explicit; rejecting an unsupported shape would also be preferable to silently returning unmasked attention.</p>
+<h2>Three ways the mask loses its meaning</h2>
+<ol>
+<li><strong>Rectangular score matrices.</strong> The implementation allocates an Nk × Nk mask for an Nq × Nk score tensor. The in-place addition fails for the tested rectangular shapes, and the caller ignores its return code.</li>
+<li><strong>A finite penalty can be overcome.</strong> Adding −1e10 is not equivalent to excluding a position. For Q=[1,1], K=[0,2e10] and V=[2,10], all inputs are finite. The original square case returns [10,10], while causal attention requires [2,10].</li>
+<li><strong>Later incremental blocks.</strong> The incremental path applies its mask only when <code>from == 0</code>. With Q=K=[0,0,0] and V=[2,10,50], full forwarding gives [2,6,20.6667]. Splitting into blocks [0,1) and [1,3) gives [2,20.6667,20.6667] before the patch.</li>
+</ol>
+<h2>A local repair that preserves the causal contract</h2>
+<p>The proposed helper uses the actual score dimensions and directly overwrites forbidden entries with negative infinity before Softmax. For incremental blocks it also uses the absolute query offset <code>from</code>. It does not add a parameter or a dependency.</p>
+<pre><code>for each local query i and key j:
+    if j &gt; query_offset + i:
+        scores[..., i, j] = -infinity</code></pre>
+<p>This prevents arbitrarily large finite forbidden logits from surviving an additive penalty. The tested cases have at least one allowed key per query. General all-masked-row semantics and broader incremental batching require their own contracts and are outside this patch.</p>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/dbd6a98d7c4213d1df26252d4b5cc053c18c05d3/audits/2026-09-07-causal-attention/evidence/patches/nntrainer-attention.patch">Inspect the implementation patch →</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/dbd6a98d7c4213d1df26252d4b5cc053c18c05d3/audits/2026-09-07-causal-attention/evidence/attention_regression.cpp">Inspect the native regression tests →</a></p>
+<h2>What was tested</h2>
+<div class="audit-table" role="region" aria-label="Native test results" tabindex="0"><table><thead><tr><th>Selected native suite</th><th>Original</th><th>After local patch</th></tr></thead><tbody>
+<tr><td>28 new tests + 14 existing attention tests</td><td>21 failed / 21 passed</td><td>42 passed</td></tr>
+<tr><td>Four minimal tests in fresh processes</td><td>3 repetitions, stable output</td><td>3 repetitions, stable output</td></tr>
+</tbody></table></div>
+<p>The suite compares outputs and gradients dQ, dK and dV with an FP64 reference across 16 shape/scaling combinations. It checks native-forward finite differences, future-value perturbation invariance, independent batch execution, and eight partitions of a five-token sequence. Setting V to the identity exposes attention probabilities directly: values stay in [0,1], rows sum to one, and forbidden entries are exactly zero after the patch.</p>
+<p>General reference comparisons use absolute tolerance 3e−5. Finite differences use step 1/256 and absolute tolerance 2e−4. The host was macOS 15.5 arm64 on Apple M4, with native CPU FP32, NCHW, channel 1. Full forwarding covers batch sizes 1 and 2; incremental tests cover batch size 1 only.</p>
+<p>The reused native build contains earlier unrelated loss, activation and LayerNorm repairs. The attention baseline itself exactly matches the pinned source, and the attention patch is isolated. A clean full-repository rebuild, other operating systems, FP16/GPU, performance, end-to-end model impact and upstream CI were not tested. This is not a claim about a particular Samsung device.</p>
+<h2>Duplicate review and upstream status</h2>
+<p>Ten recorded queries covered 191 distinct public issues and pull requests, including closed entries. No exact match was found within those searches. A refresh before submission found no new causal-attention issue. This does not establish absolute novelty or cover private reports.</p>
+<p>The nearest records include the masking feature request <a href="https://github.com/nntrainer/nntrainer/issues/1713">#1713</a>, dtype-specific masking in MultiHeadAttentionLayer (<a href="https://github.com/nntrainer/nntrainer/pull/2409">#2409</a>), and broader incremental API work (<a href="https://github.com/nntrainer/nntrainer/pull/3780">#3780</a>). The saved review explains the differences. QuantizeLinear and earlier published findings are excluded from this report.</p>
+<p><a href="https://github.com/nntrainer/nntrainer/issues/4333">The report is filed as nntrainer #4333 →</a> It includes a runnable test patch and an implementation patch. Local passing tests demonstrate the proposed repair within the stated coverage; they do not imply that maintainers have accepted it.</p>
+<h2>Reproduce and contribute</h2>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/dbd6a98d7c4213d1df26252d4b5cc053c18c05d3/audits/2026-09-07-causal-attention">Open the pinned evidence package →</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/dbd6a98d7c4213d1df26252d4b5cc053c18c05d3/audits/2026-09-07-causal-attention/evidence/BUILD.md">Native reproduction instructions →</a></p>
+<p><a href="../data/attention-audit-2026-09-07.zip" download>Download tests, patches, logs and checksums (ZIP) →</a><br>SHA-256: <code>f100ce28cd9d86dca67eca7b29dd365f246edd40add1e7f4bfa80dffab0b7554</code></p>
+<p>The immutable archive captures the research state before submission. Publication status is recorded separately. Experiments, repair proposals and editorial materials were prepared with AI assistance.</p>
+<p>Maintaining attention kernels, ML runtimes or numerical test suites? Independent reproduction is welcome, especially a review of rectangular alignment and incremental-block semantics. Please contribute evidence to <a href="https://github.com/nntrainer/nntrainer/issues/4333">the upstream discussion</a> or <a href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20causal%20attention%20reproduction">contact GERO</a>.</p>
+<h2>Discuss this report</h2><p><a href="https://www.linkedin.com/feed/update/urn:li:share:7502761599108182016/">Join the LinkedIn discussion →</a></p>
+<p><a href="https://www.youtube.com/shorts/7q9ka3ePYPM">Watch the 48-second YouTube explanation →</a></p><p>Portrait 1080p, English narration and uploaded English subtitles. Synthetic narration is disclosed. The tests and native execution logs remain the primary evidence.</p>
+<h2>Primary sources</h2>
+<ul><li><a href="https://github.com/nntrainer/nntrainer/blob/a7ea056e79ab8e14447ea305c1b634e233343258/nntrainer/layers/attention_layer.cpp">AttentionLayer source at the audited commit</a></li>
+<li><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/dbd6a98d7c4213d1df26252d4b5cc053c18c05d3/audits/2026-09-07-causal-attention/evidence/DUPLICATES.md">Recorded duplicate review and nearby work</a></li>
+<li><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/dbd6a98d7c4213d1df26252d4b5cc053c18c05d3/audits/2026-09-07-causal-attention/evidence/validation.json">Machine-readable validation results</a></li></ul>
+</div></article></main>
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

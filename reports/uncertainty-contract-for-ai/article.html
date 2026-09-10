@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Why scope, evidence, calibration, falsification, escalation and traceability should be a single contract around every high-consequence AI answer." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="The Most Important AI Feature Is Not an Answer. It Is a Boundary." />
+    <meta property="og:description" content="Why scope, evidence, calibration, falsification, escalation and traceability should be a single contract around every high-consequence AI answer." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/uncertainty-contract-for-ai.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Most Important AI Feature Is Not an Answer. It Is a Boundary." />
+    <meta name="twitter:description" content="Why scope, evidence, calibration, falsification, escalation and traceability should be a single contract around every high-consequence AI answer." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/uncertainty-contract-for-ai.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>The Most Important AI Feature Is Not an Answer. It Is a Boundary. — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "The Most Important AI Feature Is Not an Answer. It Is a Boundary.", "description": "Why scope, evidence, calibration, falsification, escalation and traceability should be a single contract around every high-consequence AI answer.", "datePublished": "2026-09-02", "dateModified": "2026-09-02", "url": "https://www.gero.uz/research/articles/uncertainty-contract-for-ai.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+  </head>
+  <body class="research-body">
+    
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    
+    <main>
+      <article class="article-shell">
+        <a class="back-link" href="../">← Research index</a>
+        <header class="article-header">
+          <div class="article-kicker"><span>ORIGINAL RESEARCH</span><span>2 September 2026</span></div>
+          <h1>The Most Important AI Feature Is Not an Answer. It Is a Boundary.</h1>
+          <p class="article-dek">Why scope, evidence, calibration, falsification, escalation and traceability should be a single contract around every high-consequence AI answer.</p>
+          <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54" /><div><strong>Xamit Kadirbekov</strong><span>Author · GERO Research</span></div></div>
+          <div class="topic-row"><span>Uncertainty</span><span>Calibration</span><span>AI products</span></div>
+        </header>
+        <div class="evidence-banner"><strong>STATUS · AUTHOR'S ANALYSIS</strong><span>Arguments and proposals are distinguished from the linked laboratories' reported results.</span></div>
+        <div class="article-prose"><p>After designing and shipping more than 28 AI products across health, law, education, energy, forecasting, biotech, finance and public services, I keep encountering the same failure in different clothes.</p>
+<p>The system knows how to produce an answer. It does not know how to communicate the boundary of that answer.</p>
+<p>In a legal product, the boundary separates a real precedent from a plausible invented citation. In a research setting, it separates a checked lemma from a plausible step nobody verified. In infrastructure, it separates a sourced CAPEX estimate from a number created by an unstated assumption. In forecasting, it separates a calibrated scenario from confident storytelling.</p>
+<p>This is not mainly a user-interface problem. It is a mathematical and architectural problem.</p>
+<h2>The Lesson From Frontier Research</h2>
+<p>OpenAI’s First Proof experiment illustrates the issue clearly. The team initially considered one model-generated research proof likely correct. After expert and community analysis, it concluded that the attempt was wrong. OpenAI explicitly called for a more rigorous evaluation framework.</p>
+<p>Google DeepMind made abstention a deliberate feature of its Aletheia mathematics agent. The agent can generate, verify and revise a candidate solution — but it can also admit failure rather than force a result.</p>
+<p>Both examples point to the same design principle:</p>
+<p>An advanced AI system needs a defined right to stop, defer, qualify or escalate.</p>
+<p>I call the technical expression of that principle an uncertainty contract.</p>
+<h2>What Is An Uncertainty Contract?</h2>
+<p>An uncertainty contract specifies what the system may claim, what evidence is required, which failure costs matter, and when the system must abstain or hand the task to another tool or person.</p>
+<p>For evidence E and an unknown true state Y, the system chooses among actions such as ACCEPT, REJECT and DEFER. The rational action is not simply the class with the highest model probability. It is the action with the lowest expected loss:</p>
+<p>a*(E) = arg min E[L(a, Y) | E],</p>
+<p>where the available actions include deferral.</p>
+<p>This matters because the cost of a false acceptance can be radically different from the cost of a false rejection.</p>
+<p>Missing a weak commercial lead is inconvenient. Approving a fabricated legal precedent, an unproved lemma presented as established, incorrect tax result or false engineering constraint can be much worse. The decision threshold must therefore depend on the domain, evidence and downstream action — not only on model confidence.</p>
+<h2>The Six Parts Of The Contract</h2>
+<h3>1. Scope</h3>
+<p>What exact decision is the system allowed to make?</p>
+<p>A proof assistant may propose a decomposition and locate the load-bearing step. That does not authorize it to certify the result. A tax assistant may categorize a transaction probabilistically, while the tax calculation itself should remain deterministic.</p>
+<h3>2. Evidence</h3>
+<p>What artifact must support the answer?</p>
+<p>A legal claim needs a real case and relevant passage. An engineering figure needs an input, formula and source. A mathematical claim needs a proof dependency or reproducible check. A forecast needs assumptions, a model and calibration history.</p>
+<h3>3. Calibration</h3>
+<p>Does 70% confidence correspond to approximately 70 correct results on comparable cases?</p>
+<p>Accuracy alone does not answer this. Reliability diagrams, Brier scores, stratification by problem type and out-of-distribution tests are more informative about whether confidence means anything operationally.</p>
+<h3>4. Falsification</h3>
+<p>What attempts were made to break the result?</p>
+<p>The system should search for counterexamples, boundary cases, conflicting sources, hidden assumptions and alternative explanations before releasing a high-consequence conclusion.</p>
+<h3>5. Escalation</h3>
+<p>Who or what receives the case when automated evidence is insufficient?</p>
+<p>The destination may be a deterministic engine, a formal solver, a different model family, an expert, a dispatcher, a physician or a compliance officer. “Ask a human” is not a workflow until the responsible human and transmitted evidence are specified.</p>
+<h3>6. Trace</h3>
+<p>Can another person reproduce why the system acted?</p>
+<p>The record should include the input, assumptions, model and tool versions, retrieved sources, calculations, failed checks and final decision status.</p>
+<h2>Five Products, One Underlying Architecture</h2>
+<p>This principle emerged from products that look unrelated on the surface.</p>
+<p>Precedent searches real US case law and uses a separate anti-hallucination auditor. The boundary is simple: no legal authority without a retrievable source.</p>
+<p>DataCenter Feasibility Lab builds a pre-feasibility model from 58 inputs. Every figure should be traced to a source, calculated from declared assumptions or marked UNKNOWN.</p>
+<p>NuBank matches nanobodies, oligonucleotides, phages and small molecules against a biological target. The product is designed around an explicit can/cannot verdict rather than an eloquent but ambiguous recommendation.</p>
+<p>ATLAS Oracle combines more than 35 computational methods with calibration and an honesty gate. Its purpose is not to predict the future with theatrical certainty, but to make conditional “what-if” reasoning inspectable.</p>
+<p>GENESIS explores self-improving AI. Its central safeguard is a held-out evaluation harness: a system must not be allowed to define the exam, answer it and grade itself using the same evidence.</p>
+<p>The vertical changes. The reliability pattern remains:</p>
+<p>claim → evidence contract → independent checks → bounded decision → escalation or certificate.</p>
+<h2>From Vertical Products To A Reusable Runtime</h2>
+<p>These lessons are converging in GERO — a research assurance runtime for AI-generated mathematical and technical claims.</p>
+<p>GERO is intended to compile an answer into a dependency graph, attach evidence requirements to its necessary claims, route those claims to heterogeneous verifiers, attack the result, propagate failures through the graph and return a bounded status with a replayable certificate.</p>
+<p>The goal is not to guarantee that a probabilistic model will never be wrong. The goal is to prevent the system from making a stronger claim than its evidence supports.</p>
+<p>This creates four useful output states:</p>
+<ul><li>VERIFIED — required evidence is present;</li><li>CONDITIONALLY VERIFIED — valid only under named assumptions;</li><li>CONTRADICTED — a reproducible failure exists;</li><li>INSUFFICIENT EVIDENCE — the system must defer or escalate.</li></ul>
+<p>“I do not know” becomes a structured engineering result, not a conversational apology.</p>
+<h2>The Product Question Every Ai Team Should Ask</h2>
+<p>Most teams ask: How often does the model answer correctly?</p>
+<p>The more important deployment question is:</p>
+<p>When the model is wrong, does the system know enough about its boundary to prevent the wrong answer from becoming an action?</p>
+<p>That question links frontier mathematical reasoning with everyday AI products. The stakes change across a school dashboard, legal search engine, proof checker, tax system or infrastructure model. The need for an uncertainty contract does not.</p>
+<p>The next generation of AI products will not win only by knowing more.</p>
+<p>They will win by making the boundary between known, inferred, contradicted and unresolved impossible to ignore.</p>
+<h2>Product links</h2>
+<p>Portfolio: <a href="https://kadyrbekovhamit-cyber.github.io/" rel="noopener noreferrer">kadyrbekovhamit-cyber.github.io</a></p>
+<p>Precedent: <a href="https://precedent-omega-two.vercel.app" rel="noopener noreferrer">precedent-omega-two.vercel.app</a></p>
+<p>DataCenter Feasibility Lab: <a href="https://data-center-feasibility-lab.vercel.app" rel="noopener noreferrer">data-center-feasibility-lab.vercel.app</a></p>
+<p>NuBank: <a href="https://nubank.uz" rel="noopener noreferrer">nubank.uz</a></p>
+<p>ATLAS Oracle: <a href="https://atlas-oracle.vercel.app" rel="noopener noreferrer">atlas-oracle.vercel.app</a></p>
+<h2>Research sources</h2>
+<p>OpenAI — Our First Proof submissions:</p>
+<p class="source-link"><a href="https://openai.com/index/first-proof-submissions/" rel="noopener noreferrer">openai.com</a></p>
+<p>Google DeepMind — Accelerating Mathematical and Scientific Discovery with Gemini Deep Think:</p>
+<p class="source-link"><a href="https://deepmind.google/blog/accelerating-mathematical-and-scientific-discovery-with-gemini-deep-think/" rel="noopener noreferrer">deepmind.google</a></p></div>
+      </article>
+    </main>
+    
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

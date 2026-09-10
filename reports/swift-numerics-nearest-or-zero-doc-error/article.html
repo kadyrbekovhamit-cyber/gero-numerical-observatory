@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="An exact arithmetic check found that one Swift Numerics example reported 3 where its stated rounding rule and its own explanation require 2." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="A one-line contradiction in Swift Numerics&#x27; tie-to-zero documentation" />
+    <meta property="og:description" content="An exact arithmetic check found that one Swift Numerics example reported 3 where its stated rounding rule and its own explanation require 2." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/swift-numerics-nearest-or-zero-doc-error.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="A one-line contradiction in Swift Numerics&#x27; tie-to-zero documentation" />
+    <meta name="twitter:description" content="An exact arithmetic check found that one Swift Numerics example reported 3 where its stated rounding rule and its own explanation require 2." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/swift-numerics-nearest-or-zero-doc-error.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>A one-line contradiction in Swift Numerics&#x27; tie-to-zero documentation — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "A one-line contradiction in Swift Numerics' tie-to-zero documentation", "description": "An exact arithmetic check found that one Swift Numerics example reported 3 where its stated rounding rule and its own explanation require 2.", "datePublished": "2026-09-03", "dateModified": "2026-09-03", "url": "https://www.gero.uz/research/articles/swift-numerics-nearest-or-zero-doc-error.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+  </head>
+  <body class="research-body">
+    
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    
+    <main>
+      <article class="article-shell audit-article">
+        <a class="back-link" href="../">← Research index</a>
+        <header class="article-header">
+          <div class="article-kicker"><span>INDEPENDENT NUMERICAL AUDIT</span><span>3 September 2026</span></div>
+          <h1>A one-line contradiction in Swift Numerics&#x27; tie-to-zero documentation</h1>
+          <p class="article-dek">An exact arithmetic check found that one Swift Numerics example reported 3 where its stated rounding rule and its own explanation require 2.</p>
+          <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54" /><div><strong>Xamit Kadirbekov</strong><span>Independent verification · GERO Research</span></div></div>
+          <div class="topic-row"><span>Numerical audit</span><span>Swift</span><span>Rounding</span></div>
+        </header>
+        <div class="evidence-banner"><strong>STATUS · VERIFIED DOCUMENTATION DEFECT</strong><span>The arithmetic, source line and proposed correction were checked. This finding concerns documentation, not a demonstrated runtime or security defect.</span></div>
+        <div class="brief-source">
+          <span>UPSTREAM RECORD · APPLE SWIFT NUMERICS</span>
+          <a href="https://github.com/apple/swift-numerics/pull/348" rel="noopener noreferrer">Pull request #348 ↗</a>
+        </div>
+        <div class="article-prose">
+          <h2>Finding</h2>
+          <p>At source commit <code>899af71c0256d0ad181e3b7eb3453c1065d928a5</code>, the documentation for <code>RoundingRule.toNearestOrZero</code> stated that <code>5.shifted(rightBy: 1, rounding: .toNearestOrZero)</code> is <code>3</code>. The next sentence says that 5/2 = 2.5 is equally close to 2 and 3 and that 2 is closer to zero. The example and its explanation therefore contradicted one another.</p>
+          <h2>Exact certificate</h2>
+          <ol>
+            <li>The exact quotient is 5/2 = 2.5.</li>
+            <li>The two nearest integers are 2 and 3.</li>
+            <li>Both are exactly 0.5 from 2.5.</li>
+            <li>The documented tie-break is toward zero.</li>
+            <li>Therefore the result is 2.</li>
+          </ol>
+          <div class="audit-equation" aria-label="Five divided by two rounds to two under the tie-to-zero rule"><span>5 ÷ 2 = 2.5</span><strong>tie → 2</strong></div>
+          <h2>Correction submitted upstream</h2>
+          <pre><code>- is `3`,
++ is `2`,</code></pre>
+          <p>The one-character correction was submitted to the official repository as <a href="https://github.com/apple/swift-numerics/pull/348" rel="noopener noreferrer">apple/swift-numerics#348</a>. The reviewed source is preserved at the <a href="https://github.com/apple/swift-numerics/blob/899af71c0256d0ad181e3b7eb3453c1065d928a5/Sources/IntegerUtilities/RoundingRule.swift#L160-L167" rel="noopener noreferrer">exact commit and line range</a>; the <a href="https://github.com/apple/swift-numerics" rel="noopener noreferrer">repository</a> remains the authoritative upstream record.</p>
+          <h2>Validation</h2>
+          <ul>
+            <li>Recomputed the result with exact rational arithmetic.</li>
+            <li>Checked the example against the enum's stated tie-breaking contract.</li>
+            <li>Applied the minimal one-line documentation patch.</li>
+            <li>Ran <code>swift build</code> successfully.</li>
+            <li>Ran <code>git diff --check</code> successfully.</li>
+          </ul>
+          <aside class="boundary-box"><strong>Boundary</strong><p>This audit establishes a documentation contradiction only. It does not establish an implementation error, a security vulnerability or a defect in an Apple consumer product. Upstream maintainers retain authority over review and acceptance of the patch.</p></aside>
+        </div>
+      </article>
+    </main>
+    
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

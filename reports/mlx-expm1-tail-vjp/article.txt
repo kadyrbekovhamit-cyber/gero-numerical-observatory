@@ -1,0 +1,46 @@
+← Research indexINDEPENDENT NUMERICAL AUDIT10 September 2026
+A Nonzero Derivative Becomes Zero: MLX expm1
+At x=-20, reverse mode returns zero for a derivative near 0.20611536. A local VJP repair plus the known exp control passes 216 native comparisons; the VJP-only patch can regress float64.Xamit KadirbekovReproducible numerical experiments · GERO ResearchMLX 0.32.2AutodiffCPU float32 / float64LOCALLY REPRODUCEDFour native control variants. Known exp dependency credited. Partial CPU rebuild; GPU and performance untested.
+Permanent evidence archive: 10.5281/zenodo.22685337 · Zenodo, version 1.0.0.
+A one-minute explanation
+Watch the YouTube Short →
+Synthetic narration by fictional Alex Vector using macOS Samantha. Original evidence diagrams, with source ledger, script and renderer. AI-assisted preparation.
+For f(x)=1e8*expm1(x) at float32 x=-20, the mathematical derivative is 0.2061153622. The tested MLX forward mode returns 0.2061153501, while reverse mode returns 0. A local VJP repair combined with a control for the already reported float64-exp defect passes 216 native comparisons, including second and third derivatives.
+The VJP patch alone is not a complete float64 repair: the existing CPU exp defect can turn a previously finite derivative at x=100 into infinity. Both changes and four control variants are included. No performance qualification or upstream acceptance is claimed.
+Detailed Russian report · Build instructions · Python reproduction · C++ regression · VJP patch
+Reproduce the failure
+import mlx.core as mx
+mx.set_default_device(mx.cpu)
+x = mx.array(-20., dtype=mx.float32)
+f = lambda z: 1e8 * mx.expm1(z)
+print(mx.grad(f)(x))                            # 0
+print(mx.jvp(f, [x], [mx.ones_like(x)])[1][0])   # ~0.20611535
+Run python3 probe.py with MLX 0.32.2 installed. It limits numerical threads to one and selects CPU. The wheel may initialize Metal at import; the arithmetic is explicitly on CPU. The native archive has no Metal backend.
+InputdtypeForward expm1JVP, direction 1VJP, cotangent 1Analytic derivative
+-20float32-12.06115347e-902.06115362e-9
+-18float32-11.52299915e-801.52299797e-8
+-10float32-0.99995458134.53999310e-54.54187393e-54.53999298e-5
+-40float64-14.24835372e-1804.24835426e-18
+The expected derivatives are normal representable values, so derivative underflow does not explain the zeros. The reference is the analytic derivative exp(x), numerically evaluated with Python math.exp and C++ std::exp in double. The real MLX JVP provides a separate control. Wheel measurements.
+Finite differences of the rounded float32 forward output near -20 are not used as a reference: that output is already -1 at neighboring points. This report concerns the derivative of the mathematical operation used by autodiff.
+Cause and repair dependency
+The pinned Expm1::vjp multiplies the incoming cotangent by outputs[0] + 1. Once expm1(x) rounds to -1, the derivative vanishes. Relative accuracy is also lost before complete saturation. Expm1::jvp instead computes exp(primals[0]) directly.
+The VJP patch uses that same direct exp formula. It eliminates the tested float32 mismatches, but exposes the separate CPU double-exp precision/range problem already described in MLX #3047. At float64 x=100, the original VJP is finite while a VJP-only replacement using the defective exp returns infinity. At x=-1, it loses double precision.
+The included exp control uses scalar libm to isolate correctness. It is reused known work, not a new discovery. Neither its speed nor the added exp evaluation in VJP has been benchmarked.
+Native variantComparisonsfloat32 mismatchesfloat64 mismatchesTotal
+Original VJP and exp216256792
+VJP repair only21608787
+Exp control only216252853
+VJP repair + exp control216000
+Before · VJP only · Exp only · Combined. These are comparisons, not distinct defects. Existing float64 JVP errors belong to the known exp dependency.
+The native suite calls actual MLX primitives. It covers float32/float64 scalar points from -80 to 20, directions 0/1/-0.5/2, extra double points -700/-100/100/700, second and third reverse derivatives at -40/-20/-10/0/1, a 2×3 matrix, noncontiguous input, mixed weights and scalar broadcasting. Relative tolerances are 4e-6 for float32 and 2e-14 for float64; expected zeros require exact zero. There is no large absolute tolerance that would hide missing small derivatives. Reference inputs are rounded to their actual dtype first.
+Public history and scope
+No matching MLX negative-tail VJP report was found in the recorded public search. Its six broad expm1 results were #1277 (forward Metal behavior), #1281 (older tolerances/build), #973 (operation addition), #3080 (arm64 CPU JIT/Float16 compilation), #4257 (complex rejection) and #4227 (analytic gradient tests, with no defects reported in its chosen series). Search evidence.
+An analogous reverse-mode expm1 failure was already reported for JAX in JAX #39794, opened 6 August 2026. This package does not rerun JAX and does not claim a globally new mechanism. The bounded MLX search does not prove absolute priority.
+The wheel is 0.32.2; native baseline is ce916dbbcaa88e433b6fd1e60a17f766d49c27fe; reviewed public main is 81ba1c6a0e50a9268b931579c2d4f1158b9aab5a. Complete Expm1::vjp and Expm1::jvp methods match between baseline and saved main. Source hashes · Native provenance.
+Validation uses isolated primitives.cpp and unary.cpp overrides before a pre-existing CPU archive; it is not a complete current-main build. CPU float32/float64 were tested. GPU, float16/bfloat16, compile, vmap, NaN/±inf, model-level effects and performance were not. Complex expm1 is unsupported and excluded. The finite suite does not establish arbitrary-order autodiff correctness.
+Numerical work was sequential with one numerical thread and no GPU computation. Publication rerun evidence, artifact verification, source code and hashes are included; compiled binaries and unfinished scouts are excluded. AI assisted investigation, code and publication preparation. This is an independent author repository report, not an upstream MLX submission.
+Versioned evidence
+GitHub report, source and patch · Evidence ZIP
+ZIP SHA-256: f72a5f7ba76f48a28ca3b3ebcb030a69aa3e387cd5f85fb80689b813e1700395
+License: report text and original diagrams CC BY 4.0; code and derivative MLX patches MIT. See the package for notices.

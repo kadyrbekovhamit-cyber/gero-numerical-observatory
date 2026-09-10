@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A reproducible statistical note showing why zero observed false positives in a tiny validation sample does not establish a zero false-positive rate." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Zero Observed False Positives Is Not a Zero False-Positive Rate" />
+    <meta property="og:description" content="Exact and Wilson bounds, sample-size thresholds, runnable code and the assumptions that make a zero-error headline meaningful or misleading." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/zero-observed-false-positives-small-sample.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Zero Observed False Positives Is Not a Zero False-Positive Rate" />
+    <meta name="twitter:description" content="A reproducible note on uncertainty after zero observed failures." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/zero-observed-false-positives-small-sample.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>Zero Observed False Positives Is Not a Zero False-Positive Rate — GERO Research</title>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Zero Observed False Positives Is Not a Zero False-Positive Rate","description":"A reproducible statistical note showing why zero observed false positives in a tiny validation sample does not establish a zero false-positive rate.","datePublished":"2026-09-06","dateModified":"2026-09-06","url":"https://www.gero.uz/research/articles/zero-observed-false-positives-small-sample.html","author":[{"@type":"Person","name":"Xamit Kadirbekov"}],"publisher":{"@type":"Organization","name":"GERO Research"}}</script>
+    <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
+    <script defer src="/_vercel/insights/script.js"></script>
+  </head>
+  <body class="research-body">
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home"><span class="brand-mark" aria-hidden="true">G</span><span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span></a>
+      <nav aria-label="Main navigation"><a href="../../index.html#method">Method</a><a href="../../index.html#lab">Live lab</a><a class="nav-active" href="../../research/">Research</a></nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    <main>
+      <article class="article-shell">
+        <a class="back-link" href="../">← Research index</a>
+        <header class="article-header">
+          <div class="article-kicker"><span>TECHNICAL NOTE</span><span>6 September 2026</span></div>
+          <h1>Zero Observed False Positives Is Not a Zero False-Positive Rate</h1>
+          <p class="article-dek">A zero-error headline is a point estimate. The uncertainty can still be enormous. Here are the exact bounds, the sample sizes and the runnable calculation.</p>
+          <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54" /><div><strong>Xamit Kadirbekov</strong><span>Independent statistical analysis · GERO Research</span></div></div>
+          <div class="topic-row"><span>Model validation</span><span>False positives</span><span>Small samples</span></div>
+        </header>
+        <div class="evidence-banner"><strong>STATUS · REPRODUCIBLE NOTE</strong><span>This article demonstrates a general statistical boundary with synthetic counts. It does not evaluate or name any third-party product.</span></div>
+        <div class="article-prose">
+          <p>Suppose an AI or fraud-detection pilot tests two legitimate cases. Both are cleared correctly. The observed false-positive rate is 0/2 = 0%.</p>
+          <p>That statement is arithmetically correct and statistically incomplete. Two clean observations do not establish that the underlying false-positive probability is zero, or even small.</p>
+
+          <h2>The exact calculation</h2>
+          <p>Let each representative negative case independently produce a false positive with probability <em>p</em>. If zero failures are observed in <em>n</em> cases, then the probability of that result is (1 − <em>p</em>)<sup><em>n</em></sup>. Setting this probability equal to 0.05 gives the one-sided exact 95% upper confidence bound:</p>
+          <pre><code>p_upper = 1 - 0.05^(1/n)</code></pre>
+          <p>For <em>n</em> = 2, the bound is 0.776393. In other words, observing zero failures in two trials is compatible with an underlying false-positive rate as high as 77.6% under this conservative one-sided procedure.</p>
+          <p>The upper endpoint of a two-sided 95% Wilson score interval is 65.8%. The two numbers are not competing answers: they use different interval constructions and sidedness. A report must name which interval it uses.</p>
+
+          <h2>What changes as the sample grows</h2>
+          <pre><code>negative cases, observed rate, exact one-sided 95% upper, Wilson two-sided 95% upper
+2,   0.0%, 77.6393%, 65.7620%
+10,  0.0%, 25.8866%, 27.7533%
+30,  0.0%,  9.5034%, 11.3513%
+59,  0.0%,  4.9508%,  6.1129%
+299, 0.0%,  0.9969%,  1.2685%</code></pre>
+          <p>With zero observed failures, at least 59 representative negative cases are required before the one-sided exact 95% upper bound falls to 5%. To push it below 1% requires 299.</p>
+          <p>Those are minimum counts under the model, not universal certification thresholds. A safety-critical decision may require a smaller bound, higher confidence, power against a named alternative and separate guarantees for important subgroups.</p>
+
+          <h2>The assumptions are part of the result</h2>
+          <p>The binomial calculation assumes independent, representative cases and a stable probability of failure. Repeated entities, hand-picked negatives, correlated transactions, distribution shift or subgroup imbalance can make the effective sample much smaller than the headline count.</p>
+          <p>Class imbalance also changes what a buyer needs to know. Sensitivity and specificity are not enough by themselves. Precision depends on prevalence; threshold changes can move false positives and false negatives in opposite directions; a pooled average can hide a weak subgroup.</p>
+          <p>A defensible validation package should therefore report:</p>
+          <ul>
+            <li>the target population and sampling process;</li>
+            <li>the confusion matrix and class prevalence;</li>
+            <li>confidence intervals, not only point estimates;</li>
+            <li>threshold and calibration stability;</li>
+            <li>subgroup and distribution-shift results; and</li>
+            <li>which claims are measured, simulated or still assumptions.</li>
+          </ul>
+
+          <h2>Why this matters for AI assurance</h2>
+          <p>A claim ledger should not turn “no failure observed” into “failure is impossible.” GERO treats the first statement as evidence and the second as a stronger claim requiring its own contract.</p>
+          <p>The useful output is bounded: zero failures were observed in the tested sample; the estimated rate was 0%; the uncertainty interval remained wide; external validity was not established. That is less dramatic than a zero-risk headline and far more useful for underwriting, procurement and deployment.</p>
+
+          <h2>Reproduce it</h2>
+          <p>The calculation uses only Python's standard library. The public repository includes the script, tests and evidence boundary:</p>
+          <p class="source-link"><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/tools/zero_failure_bounds.py" rel="noopener noreferrer">Source code and tests on GitHub →</a></p>
+          <pre><code>python3 tools/zero_failure_bounds.py
+python3 -m pytest tests/test_zero_failure_bounds.py -q</code></pre>
+
+          <h2>Sources</h2>
+          <p>NIST/SEMATECH documents Wilson and exact binomial confidence intervals and their calculation.</p>
+          <p class="source-link"><a href="https://itl.nist.gov/div898/handbook/prc/section2/prc241.htm" rel="noopener noreferrer">NIST/SEMATECH — Confidence intervals →</a></p>
+          <p>NIST's AI Risk Management Framework notes that accuracy measurement should include false-positive and false-negative rates, external validity and context-specific harm.</p>
+          <p class="source-link"><a href="https://airc.nist.gov/airmf-resources/airmf/3-sec-characteristics/" rel="noopener noreferrer">NIST AI RMF — AI risks and trustworthiness →</a></p>
+          <p>Clopper, C. J., and Pearson, E. S. (1934). “The Use of Confidence or Fiducial Limits Illustrated in the Case of the Binomial.” <em>Biometrika</em> 26(4), 404–413. DOI: <a href="https://doi.org/10.1093/biomet/26.4.404" rel="noopener noreferrer">10.1093/biomet/26.4.404</a>.</p>
+        </div>
+      </article>
+    </main>
+    <footer><div class="shell footer-grid"><div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div><p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p><a href="../../feed.xml">RSS</a></div></footer>
+  </body>
+</html>
+

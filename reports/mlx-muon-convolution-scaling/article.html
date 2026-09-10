@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A native CPU reproduction isolates a shape-dependent Muon update in MLX. Equivalent convolution and linear layers agree before the optimizer step; a minimal reorder passes 31 focused tests." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Same Gradients, Half the Step: MLX Muon and Convolution Shapes" />
+    <meta property="og:description" content="A native CPU reproduction isolates a shape-dependent Muon update in MLX. Equivalent convolution and linear layers agree before the optimizer step; a minimal reorder passes 31 focused tests." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/mlx-muon-convolution-scaling.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-mlx-muon.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Same Gradients, Half the Step: MLX Muon and Convolution Shapes" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Same Gradients, Half the Step: MLX Muon and Convolution Shapes" />
+    <meta name="twitter:description" content="A native CPU reproduction isolates a shape-dependent Muon update in MLX. Equivalent convolution and linear layers agree before the optimizer step; a minimal reorder passes 31 focused tests." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-mlx-muon.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/mlx-muon-convolution-scaling.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <link rel="stylesheet" href="../../assets/ux.css" />
+    <meta name="keywords" content="MLX, Muon, convolution, optimizer, numerical computing, regression tests" />
+    <title>Same Gradients, Half the Step: MLX Muon and Convolution Shapes — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Same Gradients, Half the Step: MLX Muon and Convolution Shapes", "description": "A native CPU reproduction isolates a shape-dependent Muon update in MLX. Equivalent convolution and linear layers agree before the optimizer step; a minimal reorder passes 31 focused tests.", "datePublished": "2026-09-09", "dateModified": "2026-09-09", "url": "https://www.gero.uz/research/articles/mlx-muon-convolution-scaling.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <style>
+      .audit-table{overflow-x:auto;margin:1.5rem 0}.audit-table table{width:100%;min-width:620px;border-collapse:collapse}.audit-table th,.audit-table td{padding:14px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #d4d9d5;font-size:14px}.article-prose code{overflow-wrap:anywhere}.article-prose pre{overflow-x:auto}.video-frame{position:relative;aspect-ratio:9/16;max-width:390px;margin:2rem auto;background:#111;border-radius:18px;overflow:hidden;box-shadow:0 18px 50px rgba(14,24,20,.18)}.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    </style>
+  </head>
+  <body class="research-body">
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home"><span class="brand-mark" aria-hidden="true">G</span><span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span></a>
+      <nav aria-label="Main navigation"><a href="../../index.html#method">Method</a><a href="../../index.html#lab">Live lab</a><a class="nav-active" href="../../research/">Research</a></nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    <main><article class="article-shell">
+<a class="back-link" href="../">← Research index</a>
+<header class="article-header"><div class="article-kicker"><span>NUMERICAL CASE STUDY</span><span>9 September 2026</span></div>
+<h1>Same Gradients, Half the Step: MLX Muon and Convolution Shapes</h1><p class="article-dek">Equivalent weight layouts agree on the calculation and its derivative. Then the optimizer makes their updates different.</p>
+<div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54"><div><strong>Xamit Kadirbekov</strong><span>Reproducible numerical experiments · GERO Research</span></div></div>
+<div class="topic-row"><span>MLX 0.32.2</span><span>Muon</span><span>CPU FP32</span></div></header>
+<div class="evidence-banner"><strong>STATUS · LOCALLY REPRODUCED</strong><span>Minimal patch: 31/31 focused tests pass; the original fails 19. These are manifestations of one defect. Novelty, maintainer acceptance and full-model effects are unestablished.</span></div>
+<div class="article-prose">
+<p>A 1×1 convolution and an equivalent linear layer can implement the same function. In this native MLX experiment, their outputs, losses and gradients are identical. Yet the convolution's Muon weight step is half the linear layer's step within FP32 rounding. The cause is the dimensions used to compute the optimizer's scale.</p>
+<img src="../../assets/og-mlx-muon.png" width="1200" height="630" style="width:100%;height:auto;border-radius:16px" alt="MLX Muon, same gradients and half the step: linear weights 8 by 2 normalized to 100 percent; equivalent convolution weights 8 by 1 by 1 by 2 produce 50 percent. The patch passes 31 focused tests. Model effects are unmeasured.">
+<h2>The 40-second explanation</h2>
+<video controls playsinline preload="metadata" poster="../media/mlx-muon-poster.png" width="1080" height="1920" style="display:block;width:100%;max-width:390px;height:auto;margin:24px auto;border-radius:18px" aria-label="MLX Muon: same gradients, half the step, English narrated explanation">
+<source src="../media/mlx-muon-short.mp4" type="video/mp4"><track kind="captions" src="../media/mlx-muon-short.en.vtt" srclang="en" label="English">Your browser does not support embedded video. <a href="../media/mlx-muon-short.mp4">Download the video</a>.</video>
+<p class="muted">Original explanatory diagrams; synthetic narration by the fictional Alex Vector using the macOS Daniel voice. AI-assisted preparation. <a href="../data/mlx-muon-video-source-2026-09-09.zip">Remotion source, script and source ledger →</a></p>
+<h2>What the shape changes</h2>
+<p>In the <a href="https://github.com/ml-explore/mlx/blob/24c699ecee2f7c8b2040de8da1c8382c8bcf31c7/python/mlx/optimizers/optimizers.py#L940">pinned MLX source</a>, Muon flattens trailing tensor dimensions before Newton–Schulz, then restores the original shape before calculating the learning-rate multiplier. For a convolution weight <code>(Cout,H,W,Cin)</code>, the resulting ratio is <code>W/Cin</code>.</p>
+<p>The matrix-based multiplier instead uses <code>Cout/(H*W*Cin)</code>. This ordering is consistent with the <a href="https://github.com/KellerJordan/Muon/blob/f98f1cacc0263b04290753e32be8d498c1efc806/muon.py#L34">author's Muon source</a>, reviewed as an algorithm reference and not cross-executed in PyTorch.</p>
+<pre><code>scale = sqrt(max(1, rows / columns))
+
+Convolution layout: (8, 1, 1, 2)
+Flattened matrix:   (8, 2)
+
+After restoring shape: sqrt(max(1, 1/2)) = 1
+Using matrix shape:   sqrt(max(1, 8/2)) = 2</code></pre>
+<p>Holding the flattened update fixed therefore predicts a step ratio of one half. This is an algebraic prediction; the following values are separate native measurements.</p>
+<h2>Measured behavior</h2>
+<p>With zero parameters, gradient <code>(arange(N)+1)/16</code>, learning rate 0.01, momentum and weight decay zero, Nesterov disabled and five Newton–Schulz iterations:</p>
+<div class="audit-table" role="region" aria-label="Muon tensor versus matrix update measurements" tabindex="0"><table><thead><tr><th>Tensor / matrix shape</th><th>Tensor step norm</th><th>Matrix step norm</th><th>Ratio</th></tr></thead><tbody>
+<tr><td>(8,1,1,2) / (8,2)</td><td>0.011393075</td><td>0.022786150</td><td>0.5</td></tr>
+<tr><td>(1,1,8,2) / (1,16)</td><td>0.013928725</td><td>0.006964363</td><td>2.0</td></tr>
+<tr><td>(2,2,2,2) / (2,8)</td><td>0.009926165</td><td>0.009926165</td><td>1.0</td></tr></tbody></table></div>
+<p>Both released MLX 0.32.2 and the pinned Python module reproduce these comparisons. The third is a control where the two scale rules coincide.</p>
+<p>The real convolution/linear check uses <code>mx.conv2d(x,w.reshape(8,1,1,2))</code> versus <code>x @ w.T</code>, and the mean square of the output as loss. Maximum output and gradient differences are zero; both losses are <code>0.0851593017578125</code>. Step norms are <code>0.026587212458252907</code> for linear weights and <code>0.013293605297803879</code> for convolution weights. <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/08b9f5225203aa522fdf9856854a7863821cc66d/audits/2026-09-09-mlx-muon-convolution-scaling/probe.py">Exact inputs and reproduction →</a></p>
+<h2>The minimal patch</h2>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/08b9f5225203aa522fdf9856854a7863821cc66d/audits/2026-09-09-mlx-muon-convolution-scaling/muon-shape-scaling.patch">The patch</a> moves the existing scale calculation before the reshape. The API, Newton–Schulz, momentum and weight-decay logic are unchanged. The patch applies cleanly and produces the tested candidate byte-for-byte; the AST outside <code>Muon.apply_single</code> remains unchanged.</p>
+<div class="audit-table" role="region" aria-label="Before and after regression results" tabindex="0"><table><thead><tr><th>Variant</th><th>Pass</th><th>Fail</th><th>Execution errors</th></tr></thead><tbody><tr><td>Original pinned Python</td><td>12 / 31</td><td>19</td><td>0</td></tr><tr><td>Locally patched Python</td><td>31 / 31</td><td>0</td><td>0</td></tr></tbody></table></div>
+<p>The selection covers 24 shape/configuration comparisons, four independent Python-math scale checks, two real convolution/linear comparisons and the unchanged body of an upstream Muon test in a CPU fixture. The scale-only checks use zero Newton–Schulz steps to isolate normalization; the other comparisons use five. Three-step comparisons also check momentum state, shape, dtype and unchanged inputs. This is not the entire upstream suite.</p>
+<h2>Scope, provenance and reproduction</h2>
+<p>For finite, consistent parameters and gradients represented as a tensor or its flattened matrix, the tested invariant is update agreement at <code>atol=2e-6</code>, <code>rtol=2e-5</code>. The domain is eight small shapes and three optimizer configurations. Passing these tests does not establish correctness for all states.</p>
+<p>The source pin is <code>24c699ecee2f7c8b2040de8da1c8382c8bcf31c7</code>. Its Python code ran against the 0.32.2 native wheel on macOS 15.5 arm64, Python 3.12.14, CPU FP32. A fresh native build of main, GPU, FP16/BF16, distributed training, complete model training and device effects were not tested.</p>
+<pre><code>python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python probe.py
+.venv/bin/python regression.py</code></pre>
+<p>Run the scripts sequentially from the extracted evidence directory on an MLX-compatible Mac. They set CPU and one-thread environment limits before import. The regression runner records intentional baseline failures as well as patched results: inspect its JSON counts, not just the script exit code.</p>
+<p>A publication-time search of Muon-related issues and pull requests found no exact duplicate in the inspected scope. Novelty and maintainer acceptance remain unconfirmed. The observed update discrepancy does not establish harm to a trained model or an Apple device.</p>
+<h2>Evidence and primary sources</h2>
+<ul><li><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/08b9f5225203aa522fdf9856854a7863821cc66d/audits/2026-09-09-mlx-muon-convolution-scaling">Immutable GitHub report, native scripts, results and patch</a></li><li><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/08b9f5225203aa522fdf9856854a7863821cc66d/audits/2026-09-09-mlx-muon-convolution-scaling/SOURCES.md">Source ledger and duplicate-search limits</a></li><li><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/08b9f5225203aa522fdf9856854a7863821cc66d/audits/2026-09-09-mlx-muon-convolution-scaling/before.log">Original test log</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/08b9f5225203aa522fdf9856854a7863821cc66d/audits/2026-09-09-mlx-muon-convolution-scaling/after.log">Patched test log</a></li><li><a href="https://ml-explore.github.io/mlx/build/html/python/optimizers/_autosummary/mlx.optimizers.Muon.html">Official MLX Muon documentation</a></li></ul>
+<p><a href="../data/mlx-muon-audit-2026-09-09.zip" download>Download the evidence package (ZIP) →</a><br>SHA-256: <code>9eb19d2debc3156406a6608427e57c42468b306977f21d5677605c3ec96386d6</code></p>
+<p>Independent reproduction and scoped numerical-correctness reviews are welcome: <a href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20MLX%20numerical%20review">contact GERO</a>. Prepared with AI assistance; the evidence consists of actual native executions and an independently specified algebraic check, not a third-party audit.</p>
+<p class="muted">#MachineLearning #Muon #MLX #NumericalComputing #SoftwareTesting</p>
+</div></article></main>
+    <footer><div class="shell footer-grid"><div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div><p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p><a href="../../feed.xml">RSS</a></div></footer>
+  </body>
+</html>

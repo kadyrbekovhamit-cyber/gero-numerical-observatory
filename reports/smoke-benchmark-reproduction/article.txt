@@ -1,0 +1,29 @@
+← Research index
+ORIGINAL RESEARCH2 September 2026
+The 60-Pair Smoke Benchmark, With the Data and the Command
+The dataset, the command and the full result behind the 60-pair claim — including the distinction between a refuted defect and an abstention that the short phrasing hides.
+Xamit KadirbekovAuthor · GERO Research
+ReproductionBenchmarkAbstention
+STATUS · AUTHOR'S ANALYSISArguments and proposals are distinguished from the linked laboratories' reported results.
+Two articles on this site state that an initial engineering smoke test of sixty paired cases detected every injected defect, rejected none of the clean controls, and issued no positive verdict without a certificate. A claim about verification that cannot itself be verified is the exact failure this project exists to name. This note publishes the dataset, the command and the full result.
+What The Benchmark Is
+Sixty pairs. Each pair contains one correct structured claim and one copy of the same claim with a single deliberate defect injected. The defect is declared in the data, so the expected answer is known before the run.
+The benchmark describes its own scope in its output, and the wording matters: "deterministic engineering smoke test; not a research-grade capability claim." It tests whether the software mechanisms fire on defects they were built to catch. It does not test whether the system can certify a natural research proof, and no result below should be read that way.
+How To Reproduce It
+From the project root:
+PYTHONPATH=. python3 -m benchmarks.evaluate_proof_integrity_benchmark
+The dataset is published alongside this note as proof_integrity_smoke_60_pairs.json, and the full machine output as proof_integrity_smoke_report.json. The run is deterministic: no sampling, no model call, no network.
+The Result
+Controlled defect recall: 1.0. Clean false rejection rate: 0.0. Certificate coverage across all results: 1.0. Verdicts issued as verified without a certificate: zero.
+All sixty clean claims returned VERIFIED. All sixty defective claims failed to return a positive verdict.
+The Distinction The Short Phrasing Hides
+"Detected all sixty defects" is true but coarse. The sixty failures split into two different outcomes:
+Forty-five returned CONTRADICTED — the system positively established that the claim is wrong.
+Fifteen returned INSUFFICIENT_EVIDENCE — the system did not establish that the claim is wrong. It established that it could not certify the claim, and abstained.
+Those are not the same thing and should not be counted as one. A system that abstains is doing its job, but abstention is weaker evidence about the defect than contradiction. Anyone reading "detected all 60" should read "none of the sixty passed, and three quarters of them were positively refuted."
+By Defect Class
+The injected defects span quantifier inversion, contradicted intermediate lemmas, direction mismatches, hidden regularity assumptions, metric mismatches, population mismatches and time-horizon mismatches. Every class was caught at its full pair count. The per-class breakdown is in the published report.
+What This Does Not Show
+The defects were designed by the same person who built the detectors. That is the standard weakness of a self-authored benchmark and no amount of clean numbers removes it. The honest reading is that the mechanisms work on the failure modes their author anticipated.
+It says nothing about defects nobody thought to inject, about natural rather than synthetic proofs, or about arguments where the defect is an attribution error rather than a logical one — which, on the evidence of the retraction log published on this site, is the failure mode that actually kills claims.
+The next useful experiment is not a larger version of this one. It is the same protocol run on cases somebody else wrote.

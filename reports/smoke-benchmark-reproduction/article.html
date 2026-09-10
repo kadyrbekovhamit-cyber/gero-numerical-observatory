@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="The dataset, the command and the full result behind the 60-pair claim — including the distinction between a refuted defect and an abstention that the short phrasing hides." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="The 60-Pair Smoke Benchmark, With the Data and the Command" />
+    <meta property="og:description" content="The dataset, the command and the full result behind the 60-pair claim — including the distinction between a refuted defect and an abstention that the short phrasing hides." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/smoke-benchmark-reproduction.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The 60-Pair Smoke Benchmark, With the Data and the Command" />
+    <meta name="twitter:description" content="The dataset, the command and the full result behind the 60-pair claim — including the distinction between a refuted defect and an abstention that the short phrasing hides." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/smoke-benchmark-reproduction.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>The 60-Pair Smoke Benchmark, With the Data and the Command — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "The 60-Pair Smoke Benchmark, With the Data and the Command", "description": "The dataset, the command and the full result behind the 60-pair claim — including the distinction between a refuted defect and an abstention that the short phrasing hides.", "datePublished": "2026-09-02", "dateModified": "2026-09-02", "url": "https://www.gero.uz/research/articles/smoke-benchmark-reproduction.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+  </head>
+  <body class="research-body">
+    
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    
+    <main>
+      <article class="article-shell">
+        <a class="back-link" href="../">← Research index</a>
+        <header class="article-header">
+          <div class="article-kicker"><span>ORIGINAL RESEARCH</span><span>2 September 2026</span></div>
+          <h1>The 60-Pair Smoke Benchmark, With the Data and the Command</h1>
+          <p class="article-dek">The dataset, the command and the full result behind the 60-pair claim — including the distinction between a refuted defect and an abstention that the short phrasing hides.</p>
+          <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54" /><div><strong>Xamit Kadirbekov</strong><span>Author · GERO Research</span></div></div>
+          <div class="topic-row"><span>Reproduction</span><span>Benchmark</span><span>Abstention</span></div>
+        </header>
+        <div class="evidence-banner"><strong>STATUS · AUTHOR'S ANALYSIS</strong><span>Arguments and proposals are distinguished from the linked laboratories' reported results.</span></div>
+        <div class="article-prose"><p>Two articles on this site state that an initial engineering smoke test of sixty paired cases detected every injected defect, rejected none of the clean controls, and issued no positive verdict without a certificate. A claim about verification that cannot itself be verified is the exact failure this project exists to name. This note publishes the dataset, the command and the full result.</p>
+<h2>What The Benchmark Is</h2>
+<p>Sixty pairs. Each pair contains one correct structured claim and one copy of the same claim with a single deliberate defect injected. The defect is declared in the data, so the expected answer is known before the run.</p>
+<p>The benchmark describes its own scope in its output, and the wording matters: &quot;deterministic engineering smoke test; not a research-grade capability claim.&quot; It tests whether the software mechanisms fire on defects they were built to catch. It does not test whether the system can certify a natural research proof, and no result below should be read that way.</p>
+<h2>How To Reproduce It</h2>
+<p>From the project root:</p>
+<p>PYTHONPATH=. python3 -m benchmarks.evaluate_proof_integrity_benchmark</p>
+<p>The dataset is published alongside this note as proof_integrity_smoke_60_pairs.json, and the full machine output as proof_integrity_smoke_report.json. The run is deterministic: no sampling, no model call, no network.</p>
+<h2>The Result</h2>
+<p>Controlled defect recall: 1.0. Clean false rejection rate: 0.0. Certificate coverage across all results: 1.0. Verdicts issued as verified without a certificate: zero.</p>
+<p>All sixty clean claims returned VERIFIED. All sixty defective claims failed to return a positive verdict.</p>
+<h2>The Distinction The Short Phrasing Hides</h2>
+<p>&quot;Detected all sixty defects&quot; is true but coarse. The sixty failures split into two different outcomes:</p>
+<p>Forty-five returned CONTRADICTED — the system positively established that the claim is wrong.</p>
+<p>Fifteen returned INSUFFICIENT_EVIDENCE — the system did not establish that the claim is wrong. It established that it could not certify the claim, and abstained.</p>
+<p>Those are not the same thing and should not be counted as one. A system that abstains is doing its job, but abstention is weaker evidence about the defect than contradiction. Anyone reading &quot;detected all 60&quot; should read &quot;none of the sixty passed, and three quarters of them were positively refuted.&quot;</p>
+<h2>By Defect Class</h2>
+<p>The injected defects span quantifier inversion, contradicted intermediate lemmas, direction mismatches, hidden regularity assumptions, metric mismatches, population mismatches and time-horizon mismatches. Every class was caught at its full pair count. The per-class breakdown is in the published report.</p>
+<h2>What This Does Not Show</h2>
+<p>The defects were designed by the same person who built the detectors. That is the standard weakness of a self-authored benchmark and no amount of clean numbers removes it. The honest reading is that the mechanisms work on the failure modes their author anticipated.</p>
+<p>It says nothing about defects nobody thought to inject, about natural rather than synthetic proofs, or about arguments where the defect is an attribution error rather than a logical one — which, on the evidence of the retraction log published on this site, is the failure mode that actually kills claims.</p>
+<p>The next useful experiment is not a larger version of this one. It is the same protocol run on cases somebody else wrote.</p></div>
+      </article>
+    </main>
+    
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

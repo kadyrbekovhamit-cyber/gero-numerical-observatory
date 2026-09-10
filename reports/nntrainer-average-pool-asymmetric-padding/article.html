@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="nntrainer returns correct average-pooling forward values but loses three quarters of the gradient sum when SAME padding is asymmetric." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="When SAME Padding Makes Average-Pooling Backward Skip Windows" />
+    <meta property="og:description" content="A native C++ reproduction, finite-difference oracle and 58-test repair isolate an asymmetric-padding defect in nntrainer average pooling." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/nntrainer-average-pool-asymmetric-padding.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="When SAME Padding Makes Average-Pooling Backward Skip Windows" />
+    <meta name="twitter:description" content="A native C++ reproduction, finite-difference oracle and 58-test repair isolate an asymmetric-padding defect in nntrainer average pooling." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/nntrainer-average-pool-asymmetric-padding.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <link rel="stylesheet" href="../../assets/ux.css" />
+    <title>When SAME Padding Makes Average-Pooling Backward Skip Windows — GERO Research</title>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"When SAME Padding Makes Average-Pooling Backward Skip Windows","description":"A native C++ reproduction, finite-difference oracle and 58-test repair isolate an asymmetric-padding defect in nntrainer average pooling.","datePublished":"2026-09-09","dateModified":"2026-09-09","url":"https://www.gero.uz/research/articles/nntrainer-average-pool-asymmetric-padding.html","author":{"@type":"Person","name":"Xamit Kadirbekov"},"publisher":{"@type":"Organization","name":"GERO Research"}}</script>
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <style>
+      .audit-table{overflow-x:auto;margin:1.5rem 0}.audit-table table{width:100%;min-width:620px;border-collapse:collapse}.audit-table th,.audit-table td{padding:14px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #d4d9d5;font-size:14px}.article-prose code{overflow-wrap:anywhere}.article-prose pre{overflow-x:auto}.video-frame{position:relative;aspect-ratio:9/16;max-width:390px;margin:2rem auto;background:#111;border-radius:18px;overflow:hidden;box-shadow:0 18px 50px rgba(14,24,20,.18)}.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    </style>
+  </head>
+  <body class="research-body">
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home"><span class="brand-mark" aria-hidden="true">G</span><span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span></a>
+      <nav aria-label="Main navigation"><a href="../../index.html#method">Method</a><a href="../../index.html#lab">Live lab</a><a class="nav-active" href="../../research/">Research</a></nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    <main><article class="article-shell">
+      <a class="back-link" href="../">← Research index</a>
+      <header class="article-header">
+        <div class="article-kicker"><span>INDEPENDENT NUMERICAL AUDIT</span><span>9 September 2026</span></div>
+        <h1>When SAME Padding Makes Average-Pooling Backward Skip Windows</h1>
+        <p class="article-dek">The forward pass is correct. The backward pass visits only one of four output windows and retains one quarter of the required gradient sum.</p>
+        <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54"><div><strong>Xamit Kadirbekov</strong><span>Reproducible numerical experiments · GERO Research</span></div></div>
+        <div class="topic-row"><span>Average pooling</span><span>Autodiff</span><span>Native regression tests</span></div>
+      </header>
+      <div class="evidence-banner"><strong>STATUS · REPRODUCED TRAINING-CORRECTNESS DEFECT</strong><span>Reproduced in native CPU FP32 on nntrainer commit <code>a7ea056</code>. A minimal two-line local repair changes 8 failures out of 58 to 58 passes. No released-product or security impact is claimed.</span></div>
+      <div class="article-prose">
+        <p>A forward value can look completely healthy while its derivative implements a different operator. Average pooling with asymmetric SAME padding supplies a compact example.</p>
+        <p>This audit exercises the real <code>nntrainer::Pooling2DLayer</code> in Samsung's open-source nntrainer project. It compares backward with two independent oracles: a hand-constructed window-membership Jacobian and central finite differences of the layer's own native C++ forward.</p>
+
+        <h2>The smallest counterexample</h2>
+        <pre><code>input:          [[1, 2],
+                 [3, 4]]
+kernel:         2 x 2
+stride:         1 x 1
+pooling:        average
+padding:        same
+upstream grad:  [1, 1, 1, 1]</code></pre>
+        <p>SAME padding resolves to top=0, bottom=1, left=0, right=1. The four output windows contain 4, 2, 2 and 1 valid elements. nntrainer's forward correctly excludes padded positions from each averaging divisor.</p>
+        <div class="audit-table" role="region" aria-label="Average pooling values and gradients" tabindex="0"><table><thead><tr><th>Quantity</th><th>Current source</th><th>Correct / local repair</th></tr></thead><tbody>
+          <tr><td>Forward</td><td>[2.5, 3, 3.5, 4]</td><td>[2.5, 3, 3.5, 4]</td></tr>
+          <tr><td>Input gradient</td><td>[0.25, 0.25, 0.25, 0.25]</td><td>[0.25, 0.75, 0.75, 2.25]</td></tr>
+          <tr><td>Gradient sum</td><td>1</td><td>4</td></tr>
+        </tbody></table></div>
+        <p>Backward visits only the first output window. The maximum absolute error is 2, and three quarters of the gradient sum are lost. This is not a floating-point tolerance dispute.</p>
+
+        <h2>The forward pass is its own independent oracle</h2>
+        <p>To avoid importing another framework's padding convention, the second check differentiates nntrainer's own forward numerically. With mixed upstream gradient <code>[1,-2,3,4]</code>, central finite differences produce:</p>
+        <pre><code>[0.25, -0.75, 1.75, 4.75]</code></pre>
+        <p>The current backward again returns four values of <code>0.25</code>. The analytic backward therefore disagrees with the Jacobian of the exact forward code under test.</p>
+
+        <h2>Two loop bounds select the wrong padding sides</h2>
+        <p>The forward loop extends through bottom and right padding. Backward instead ends its traversal using top and left:</p>
+        <pre><code>height - pool_height + top
+width  - pool_width  + left</code></pre>
+        <p>For the asymmetric case, both top and left are zero while bottom and right are one. Replacing the two end bounds with bottom and right makes backward visit the same output-window grid as forward. The local repair does not change the forward algorithm or averaging convention.</p>
+
+        <h2>Verification matrix</h2>
+        <div class="audit-table" role="region" aria-label="Focused native test results" tabindex="0"><table><thead><tr><th>Selected native suite</th><th>Passed</th><th>Failed</th></tr></thead><tbody>
+          <tr><td>Current pooling source</td><td>50</td><td>8</td></tr>
+          <tr><td>After the two-line repair</td><td>58</td><td>0</td></tr>
+        </tbody></table></div>
+        <p>The selection includes 12 new tests and 46 existing pooling semantic/property tests. Reproducing cases cover even-kernel SAME padding, bottom-only and right-only padding, stride 2, multiple batches and channels, and explicit bottom/right padding. Symmetric padding, valid padding, global average pooling and max pooling with SAME act as passing controls.</p>
+        <p>The matrix also checks zero upstream gradients, linearity, gradient sums and input immutability. Linearity alone is insufficient: an incorrect transposed operator can still be linear. That is why the independent Jacobian and finite-difference checks are decisive.</p>
+
+        <h2>History changes the novelty claim</h2>
+        <p>An old <a href="https://github.com/nntrainer/nntrainer/pull/1360">nntrainer PR #1360</a> already contained the correct bottom/right backward bounds. This publication therefore does <strong>not</strong> claim first discovery or established novelty. The defect is reproduced in the stated current source, while the recorded public search found no exact report containing this reproduction.</p>
+        <p>The distinction matters: confirming a present defect and establishing priority are different research questions.</p>
+
+        <h2>Evidence boundary</h2>
+        <p>The tested environment was macOS arm64, native CPU, FP32, NCHW and one runtime thread. FP16, NHWC, other platforms, performance and end-to-end model impact were not tested. The result does not establish a defect in a released Samsung product, a security vulnerability, upstream acceptance or eligibility for a reward.</p>
+        <p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/audits/2026-09-09-nntrainer-average-pool-padding">Open the complete evidence package →</a> It includes the native regression, source and test patches, before/after logs and XML, finite-difference results, provenance, duplicate review and SHA-256 manifest.</p>
+        <p><a href="https://github.com/nntrainer/nntrainer/blob/a7ea056e79ab8e14447ea305c1b634e233343258/nntrainer/layers/pooling2d_layer.cpp#L214">Inspect the tested upstream source →</a></p>
+
+        <h2>Watch the 43-second reproduction</h2>
+        <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/TbRvf5eZgWQ" title="Forward Correct, Backward Wrong: nntrainer Average Pooling" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <p>Portrait 1080p, English narration and uploaded English subtitles. The narration uses a synthetic voice for the fictional digital narrator Alex Vector; no real-person voice cloning, stock footage or music is used. The native tests and execution logs remain the primary evidence.</p>
+
+        <h2>Primary records</h2>
+        <ul>
+          <li><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/audits/2026-09-09-nntrainer-average-pool-padding">GERO evidence package and reproduction instructions</a></li>
+          <li><a href="https://github.com/nntrainer/nntrainer/blob/a7ea056e79ab8e14447ea305c1b634e233343258/nntrainer/layers/pooling2d_layer.cpp#L214">Pooling2DLayer at the audited commit</a></li>
+          <li><a href="https://github.com/nntrainer/nntrainer/pull/1360">Historical nntrainer PR #1360</a></li>
+          <li><a href="https://www.youtube.com/shorts/TbRvf5eZgWQ">YouTube Short</a></li>
+          <li><a href="https://www.linkedin.com/feed/update/urn:li:share:7503300049058271232">LinkedIn discussion</a></li>
+        </ul>
+        <p>Experiments, repair proposals and editorial materials were prepared with AI assistance and reviewed against preserved native evidence.</p>
+      </div>
+    </article></main>
+    <footer><div class="shell footer-grid"><div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div><p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p><a href="../../feed.xml">RSS</a></div></footer>
+  </body>
+</html>

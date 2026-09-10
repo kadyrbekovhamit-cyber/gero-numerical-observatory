@@ -1,0 +1,61 @@
+← Research index
+TECHNICAL NOTE · REPRODUCED SNAPSHOT6 September 2026
+When the reference also fails: a reproducible ONNX numerical snapshot
+123 graphs, 246 evaluations, seven flagged graphs. A repeated CPU benchmark, fourteen archive replays and an 80-digit diagnostic check, with downloadable evidence and explicit limits.
+Xamit KadirbekovGERO Research · reviewed 6 September 2026
+STATUS · REPRODUCEDAll 14 flagged observation archives replayed in the recorded environment. Novelty, upstream defect status and regressions between versions remain unestablished.
+A reference implementation helps compare outputs, but it is still a floating-point program. GERO's Numerical Observatory combines differential execution with mathematical invariants and downloadable evidence. This release publishes a measured CPU snapshot, not a certification of an entire library.
+Open the interactive Numerical Observatory → · Raw run JSON · Reverification and Decimal diagnostics · Source and tests
+A 71-second overview
+Watch the short explanation with English captions. Synthetic narration; original diagrams from the measured snapshot.
+Watch on YouTube →
+What was run
+The experiment contains 123 synthetic graphs × two runtime optimization settings = 246 evaluations. Of these, 232 passed all configured checks and 14 divergence observations came from seven distinct graphs. The tester's 57 unit/property tests passed. A complete rerun reproduced every observation identity, and all fourteen flagged ZIP archives reproduced their original observation identities after their SHA-256 manifests were verified. Run report; reverification record.
+The environment is Python 3.12.13, ONNX Runtime 1.22.1, ONNX 1.19.0 and NumPy 2.2.6 on macOS 15.5 arm64. Execution uses CPUExecutionProvider, one thread, sequential execution and opset 19 / IR 10. ONNX's official ReferenceEvaluator runs with its optimized option disabled. ORT runs once with graph optimizations disabled and once with all graph optimizations enabled. This does not test the latest versions or other execution providers.
+The reference needs a check, too
+A separate diagnostic evaluates each flagged graph's mathematical formula using Python Decimal with 80 decimal digits. It converts stored binary inputs and epsilon exactly before calculation; final diagnostic values are exported as float64. All seven diagnostic results are finite. This is an algorithmically independent calculation by the same project, not third-party validation or a proof of correctly rounded transcendental functions. Diagnostic/replay script.
+The table counts non-finite outputs in the original optimization-disabled observations. The corresponding enabled observations were also flagged and replayed. A zero in this table means only that outputs were finite; it does not mean they met every tolerance.
+GraphRuntime
+non-finite / totalReference
+non-finite / totalEvidence
+CosineSimilarity
+large_offset · float160 / 44 / 4Inspect graph →
+CosineSimilarity
+tiny · float160 / 40 / 4Inspect graph →
+LayerNormalization
+large_offset · float3217 / 680 / 68Inspect graph →
+LogSoftmax
+random-001 · float320 / 420141 / 420Inspect graph →
+LogSoftmax
+random-022 · float320 / 508458 / 508Inspect graph →
+LpNormalization
+large_offset · float160 / 680 / 68Inspect graph →
+LpNormalization
+tiny · float160 / 6817 / 68Inspect graph →
+In the float32 LayerNormalization case, the input has shape [4,17] and values near 10,000 with small variation. Scale is one, bias is zero and epsilon is approximately 10⁻⁵. ONNX Runtime returns 17 non-finite values out of 68; the reference output is finite but all 68 values exceed the configured Decimal diagnostic tolerance. The largest finite absolute error against the diagnostic is about 2.3035 for ORT and 0.003607 for the reference. These measured errors do not by themselves establish a source-level cause.
+In the other six graphs, ORT outputs fall within the configured tolerance of the diagnostic, while the reference violates the finite-domain or accuracy checks. Thus, assigning every differential failure to the production runtime would misread these observations. Full per-case counts and finite-error measurements.
+The contract is explicit
+Batch independence: partition, permutation, duplication and rank-change checks for operations on independent examples. This contract does not apply to training BatchNorm or an intentional reduction across a batch.
+Probabilities: finite values strictly in [0,1], with normalization tested within a dtype-specific tolerance. The custom masked-softmax contract makes a fully masked row exactly zero.
+Equivalent computations: compare semantically equivalent graphs within tolerance and use separate analytic formulas where available.
+Coverage: Softmax, LogSoftmax, masked softmax, LayerNormalization, LpNormalization, per-example MSE, cosine similarity and DequantizeLinear. QuantizeLinear and DynamicQuantizeLinear are excluded, including nested nodes and local functions.
+The default acceptance rule is abs(actual − reference) ≤ atol + rtol × abs(reference). Float16 uses rtol 5×10⁻³ / atol 5×10⁻⁴; float32 uses 10⁻⁵ / 10⁻⁶; float64 uses 10⁻¹² / 10⁻¹³. Shapes and dtypes must match before comparison. These are the project's explicit test thresholds, not a universal accuracy guarantee in the ONNX specification. Matching NaN values never pass a finite-domain contract. A batch check that fails because values are non-finite does not establish genuine dependence on batch composition.
+From one run to a usable evidence library
+The dashboard filters operation, category, dtype, optimization and result. Every observation links to model files, inputs, outputs, session settings, tester source and a hash manifest. Content-based identities deduplicate repeated identical observations while preserving distinct environments and configurations. Similarity grouping is a triage aid, not proof of a common root cause.
+A regression requires a compatible baseline and a pass-to-failure transition. This publication compares repeat executions of one pinned stack; it demonstrates no regression between library versions. Searching a few related upstream issues is also not enough to establish novelty. These remain investigation candidates, and no maintainer confirmation is claimed.
+Replay the snapshot
+The repository includes the source, exact dependency list, unit/property tests, full measured snapshot and verification script. From its root:
+python3.12 -m venv .venv
+.venv/bin/python -m pip install -r requirements.lock
+.venv/bin/python -m pytest -q
+.venv/bin/python -m gero_stability.cli export benchmarks/2026-09-06/latest.json --site site
+.venv/bin/python -m http.server 4187 --directory site
+Download a selected reproducer ZIP from the dashboard and run python -m gero_stability.cli replay /path/to/extracted/bundle --output reports/replay. Exact observation identity requires the recorded versions and environment; a different machine or stack is a new observation. The CPU model string was unavailable in the original environment and is recorded as such. Timings are descriptive and include Python call overhead, not a production speed ranking.
+Sources and limits
+Official ONNX ReferenceEvaluator documentation.
+ONNX LayerNormalization semantics.
+ONNX LogSoftmax semantics.
+ORT graph optimization settings.
+Primary measured snapshot and independent-algorithm diagnostic record.
+Publication boundary
+This is the author's own research product and synthetic-graph CPU experiment. It does not measure trained-model quality, GPU behavior, all possible inputs, deployed-product impact, novelty or security risk. No sponsorship is involved in this publication. Future corrections will be dated here.

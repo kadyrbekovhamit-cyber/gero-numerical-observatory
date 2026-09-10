@@ -1,0 +1,123 @@
+← Research index
+ORIGINAL RESEARCH2 September 2026
+AI Can Generate New Mathematics. Who Certifies the Proof?
+A falsification-first protocol for turning AI-generated mathematical arguments into dependency graphs, bounded verdicts and replayable evidence.
+Xamit KadirbekovAuthor · GERO Research
+Proof verificationFormal methodsFalse acceptance
+STATUS · AUTHOR'S ANALYSISArguments and proposals are distinguished from the linked laboratories' reported results.
+In February 2026, OpenAI published an unusually important correction in its report on the First Proof research-level mathematics challenge.
+The company had asked an internal model to attempt ten specialized problems. It initially considered the model’s solution to Problem 2 likely correct. After official commentary and further analysis by the mathematical community, OpenAI concluded that the attempt was wrong.
+This is not an embarrassing footnote. It is the central engineering problem of AI-assisted mathematics.
+OpenAI states it plainly: for research-level problems, “correctness is hard to establish without expert review.” It also says its fast-sprint evaluation was not as clean as a properly controlled experiment should be and calls for a more rigorous evaluation framework.
+That gap matters more as models move from solving exercises to proposing new mathematics. A plausible false proof is not just a bad answer. It can consume expert time, contaminate later reasoning, enter a paper or codebase, and become a false dependency for further work.
+The next bottleneck is therefore not only proof generation. It is proof assurance.
+The Problem: Verification Is Not A Single Score
+A mathematical proof is a dependency structure. Its conclusion is valid only if every necessary assumption, definition, reduction, lemma, calculation, quantifier, and cited result survives scrutiny.
+Yet an LLM evaluator often compresses this structure into one judgment: “looks correct.” That creates several failure modes.
+1. Shared blind spots. A generator and verifier from the same model family may accept the same plausible shortcut.
+2. Error cancellation. Two locally invalid steps can accidentally produce a correct-looking final expression.
+3. Semantic drift. A proof assistant may verify a formal statement that is not equivalent to the original natural-language problem.
+4. Hidden assumptions. Positivity, compactness, independence, differentiability, finiteness, or a boundary condition may enter without being declared.
+5. Citation substitution. A real theorem may be cited, but with conditions that do not apply to the present case.
+6. Selection bias. If humans choose the best-looking result from many attempts, the reported outcome mixes model ability with evaluator judgment.
+7. Unknown status disguised as success. A verifier that cannot find an error may label the proof correct, even though “not refuted” and “verified” are different states.
+Formal verification helps enormously, but it does not remove the entire problem. OpenAI’s own January 2026 science report notes that Lean can expose gaps in a formalized proof. The unresolved bridge is semantic: did we formalize the right claim, with the right assumptions, and preserve its intended meaning?
+A Proposed Solution: A Falsification-First Assurance Layer
+I am developing GERO — a research assurance runtime — around a simple principle:
+Never certify an entire proof directly. Certify its necessary dependencies, using verifiers with different failure modes, and preserve the evidence.
+The proposed protocol has seven stages.
+1. Compile the proof into a claim graph
+Represent the argument as a directed acyclic graph G = (V, E).
+Each node v is a checkable claim. Each edge u → v means that claim v depends on claim u. Nodes include definitions, assumptions, cited theorems, algebraic transformations, numerical computations, lemmas, and the final result.
+The graph prevents a fluent final paragraph from hiding a broken intermediate step. If a necessary node is unresolved, the conclusion cannot receive a stronger status.
+2. Attach an evidence contract to every node
+For each claim, record:
+exact premises and conclusion;
+variable domains and quantifiers;
+units, tolerances, and boundary conditions where relevant;
+the acceptable verification method;
+the artifact required as evidence.
+Examples of artifacts include an exact-arithmetic trace, an interval enclosure, a symbolic identity, executable tests, a counterexample search log, an SMT result, a Lean theorem, a primary-source citation, or expert review.
+3. Route claims to heterogeneous verifiers
+Do not ask one LLM to grade another LLM and call that independence.
+Route different claim types to tools that fail differently:
+exact rational arithmetic for finite calculations;
+dimensional analysis for physical consistency;
+interval methods for bounded numerical claims;
+computer algebra for identities;
+finite-model and counterexample search for quantified statements;
+SMT solvers for constrained logical claims;
+Lean or another proof assistant for formalizable theorems;
+retrieval against primary literature for imported results;
+an independent model family for semantic critique;
+a domain expert for irreducibly judgment-heavy steps.
+Agreement between correlated LLMs is not a certificate. Evidence from independent mechanisms is much stronger.
+4. Try to break the proof before trying to approve it
+The system should spend an explicit falsification budget on each critical node:
+negate the conclusion and search for a model;
+test small and degenerate cases;
+swap quantifiers;
+perturb assumptions and boundary conditions;
+examine limiting behavior;
+search for equality cases;
+check whether a cited theorem’s hypotheses are actually satisfied;
+generate adversarial reformulations of the same claim.
+This is closer to engineering stress testing than to ordinary answer grading. A proof that survives diverse attacks earns evidence. A proof that merely sounds coherent does not.
+5. Allocate a proof-level risk budget
+Suppose p_v is a conservative upper bound on the probability that node v contains an undetected failure after its assigned checks. Without assuming independence, a basic union bound gives:
+P(undetected failure in the proof) ≤ Σ p_v,
+where the sum runs over necessary nodes.
+This is not a magical probability oracle. The p_v values must be calibrated empirically on controlled defect sets and expert-labelled proofs. But the formulation creates an actionable engineering discipline: spend more verification compute and human attention on high-impact nodes until the total residual risk falls below a declared threshold.
+6. Return bounded statuses, not artificial certainty
+GERO should return one of several explicit states:
+VERIFIED — the required evidence contracts are satisfied;
+CONDITIONALLY VERIFIED — valid under named assumptions or a specific formalization;
+CONTRADICTED — a reproducible failure or counterexample exists;
+INSUFFICIENT EVIDENCE — checks are incomplete or inconclusive;
+SEMANTIC REVIEW REQUIRED — the formal result may not match the intended claim.
+Abstention is a feature. Google DeepMind makes the same design choice in Aletheia: its research agent can admit failure instead of forcing an answer.
+7. Produce a replayable certificate
+Every verdict should ship with a research record containing:
+the claim graph and versioned assumptions;
+model and tool versions;
+prompts or task specifications needed to reproduce the checks;
+seeds and generated candidates where relevant;
+solver traces and formal artifacts;
+citations and retrieved passages;
+failed attacks, surviving counterexamples, and unresolved nodes;
+human decisions and their scope.
+The certificate does not claim eternal mathematical truth. It states exactly what was checked, by which mechanisms, under which assumptions, and what remains open.
+How This Would Improve A First Proof–Style Evaluation
+A cleaner research-grade evaluation could use:
+sealed problems and evaluator data;
+predeclared generation and selection budgets;
+a frozen claim-extraction protocol;
+blind expert annotation of critical nodes;
+independent formalization review;
+injected but hidden proof defects to measure false acceptance;
+cross-family and tool-based verification;
+public certificates for accepted results;
+separate reporting for autonomous generation, human steering, verification, and final editing.
+The primary metric should not be “How many proofs did the model produce?” It should be:
+How often did the assurance process accept a plausible but invalid proof?
+That false-acceptance rate is the quantity that determines whether AI-generated mathematics can safely enter the research record.
+What Exists Today — And What Does Not
+The current GERO prototype already supports exact rational arithmetic, dimensional checks, interval enclosure, finite implication checks, finite quantified formulas, structured evidence contracts, and dependency-graph status propagation.
+In an initial engineering smoke test with 60 paired clean and deliberately corrupted cases, it detected all 60 injected defects, rejected none of the clean controls, and issued no positive verdict without a certificate.
+This is not yet evidence that GERO can certify natural research proofs. The cases were designed to test software mechanisms. The next step must be an independent benchmark containing expert-written and model-generated proof trajectories, realistic semantic mismatches, hidden assumptions, incorrect citations, and subtle formalization errors.
+The target is not to replace mathematicians. It is to make their scarce judgment auditable and deploy it where automation remains weakest.
+The Product Opportunity
+Frontier labs are building stronger mathematical generators. Google DeepMind has added a generator–verifier–reviser loop. OpenAI is combining long-horizon reasoning with formal tools and is publicly asking for more rigorous evaluation of research-grade proofs.
+GERO is intended to become the independent assurance layer between those systems and the scientific record:
+LLM proposes → GERO decomposes → heterogeneous tools attack and verify → experts resolve the frontier → the system returns a bounded status and replayable certificate.
+The decisive question for AI mathematics is changing.
+It is no longer only: Can the model discover a proof?
+It is also: Can another team independently determine why that proof should be trusted — or exactly where it fails?
+That is the problem I believe we should solve next.
+Primary sources
+OpenAI — Our First Proof submissions:
+openai.com
+OpenAI — AI as a Scientific Collaborator, January 2026:
+cdn.openai.com
+Google DeepMind — Accelerating Mathematical and Scientific Discovery with Gemini Deep Think:
+deepmind.google

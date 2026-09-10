@@ -1,0 +1,67 @@
+← Research index
+ORIGINAL RESEARCH4 September 2026
+What Simple Mathematical Invariants Reveal About AI Software
+Five compact case studies show how chain rules, shape semantics, special values and execution parity expose silent failures in production AI software.
+Xamit KadirbekovAuthors · GERO Research
+Numerical reliabilityAutodiffReproduction
+STATUS · AUTHOR'S ANALYSISArguments and proposals are distinguished from the linked laboratories' reported results.
+AI software failures are often discussed as if they require an enormous benchmark or a frontier model to discover. Some do. But many begin with a much smaller question:
+What property must remain true, regardless of implementation?
+A derivative must obey the chain rule. An operation that does not mix channels must preserve the symmetry of identical channels. Compiling a program should not silently change whether the program is accepted. A vectorized map should preserve the shape implied by the unvectorized operation.
+Over the last several days I applied this invariant-first approach to current numerical and machine-learning libraries. The result is not a leaderboard and not a claim that one framework is "bad." It is a set of small, replayable case studies showing why mathematical contracts are useful assurance tools for AI R&D.
+Every case below is classified by evidence. Where another researcher filed the original report, that attribution is explicit. Independent reproduction is not rediscovery.
+1. Apple MLX: a one-element slice changes the mathematics of grad and vmap
+GitHub user mentria-ai reported that a strided slice selecting exactly one element can produce an incorrect gradient and an incorrect vectorized shape in MLX.
+I independently reproduced the report on official MLX 0.32.2, CPU backend, macOS ARM64. A plain slice had shape `(1, 3)`, while `vmap` returned `(4, 2, 3)` instead of `(4, 1, 3)`. In the gradient example, the expected second row `[100, 101, 102]` became `[101, 103, 105]`. A negative-stride case lost a nonzero gradient entirely.
+The useful invariant is not "compare MLX with another library." It is internal: vectorization must preserve the per-example slice semantics, and reverse-mode differentiation must scatter cotangents into exactly the selected positions.
+Primary report:
+github.com
+2. Samsung nntrainer: five unary layers violate the chain rule
+This was the strongest new cluster in the audit.
+I invoked the actual `calcDerivative` implementations for five nntrainer layers through their real runtime context. The incoming gradient was deliberately chosen to be different from one so that a missing chain-rule factor could not hide.
+The observed results were:
+`sqrt`, with `x=4` and incoming gradient `g=3`: expected `0.75`, observed `0.5`.
+`negative`, with `g=3`: expected `-3`, observed `3`.
+`sin`, with `x=0.5` and `g=2`: expected `1.7551651`, observed `0.87758255`.
+`cos`, with `x=0.5` and `g=2`: expected `-0.9588511`, observed `+0.47942555`.
+`tan`, with `x=0.5` and `g=2`: expected `2.5968928`, observed `0.87758255`.
+The common implementation mistake is compact: tensor operations such as `multiply` and `pow` return a new tensor, but several derivative functions discard that return value. The cosine derivative also loses its minus sign.
+All five dedicated regression tests failed against the current implementation. This is one root-cause cluster, not five independent discoveries. A focused upstream report is being sent to the project maintainers.
+Project source:
+github.com
+3. Google JAX: when log2 of a power of two is not the exponent
+GitHub user gonnet reported that `jnp.log2(2^k)` is not exact for a substantial subset of normal float32 and bfloat16 powers of two.
+On JAX 0.11.1 CPU I reproduced exactly 46 mismatches out of 254 float32 exponents and 105 out of 254 for bfloat16. The maximum bfloat16 absolute error was `0.5`. NumPy returned all 254 float32 exponents exactly in the same environment.
+This case needs careful language. JAX currently computes `log2` through natural logarithms, so ordinary floating-point error is expected, and the API may not promise exact special values. A `frexp` decomposition eliminated the mismatches but produced a more complex computation graph. In the upstream discussion, a JAX collaborator proposed that `log2` eventually become a native JAX/StableHLO/HLO primitive.
+The observation is confirmed. Whether it is a contract defect or an accuracy/performance design tradeoff remains open.
+Primary report and discussion:
+github.com
+4. PyTorch: compilation changes whether clamp is legal
+GitHub user laolvfan reported an eager/Inductor divergence for float32 `torch.clamp` with bounds outside the representable float32 range.
+I independently reproduced it on PyTorch 2.14.0, CPU, macOS ARM64. Eager execution, the compiled eager backend and AOT eager all raised an overflow conversion error. Inductor silently accepted the same function and returned the input unchanged. The same split appeared in `clamp`, `clamp_min` and `clamp_max`.
+The compiled numerical result is reasonable: an out-of-range bound cannot clamp a finite float32 value. But the same program should not change its acceptance contract merely because compilation was enabled. PyTorch labels the issue as silent correctness; an upstream contributor traced it to a missing checked scalar conversion in Inductor.
+Primary report:
+github.com
+5. TensorFlow: identical channels receive different NaN policies
+GitHub user lackjava-creator reported a CPU MaxPool invariant violation on Apple Silicon. The input contains three identical float64 channels, and MaxPool does not reduce across channels. Therefore the three corresponding outputs must be identical whether the chosen policy propagates NaN or ignores it.
+On TensorFlow 2.21.0 I reproduced:
+packed channels: `[NaN, NaN, 3]`
+the same channels pooled separately: `[3, 3, 3]`
+Upstream analysis tied the pattern to SIMD packet width: vector lanes and the scalar tail use different NaN behaviour. A patch requesting explicit NaN propagation is open but was not merged when this article was reviewed.
+Primary report:
+github.com
+Proposed fix:
+github.com
+The product lesson: test contracts, not brand names
+These cases span five organizations and several kinds of failure, yet the audit pattern is the same:
+1. State a mathematical invariant before reading the implementation.
+2. Construct the smallest input that makes a violation observable.
+3. Run the actual library code, not a handwritten imitation.
+4. Preserve environment, version, command and raw output.
+5. Separate a confirmed defect from a numerical boundary or documentation mismatch.
+6. Attribute external discoveries and track upstream status.
+This is the direction of GERO — Graph Evaluation & Reliability Orchestrator. The aim is not another model that grades an answer by plausibility. The aim is an assurance layer that converts necessary claims into explicit contracts, routes them to heterogeneous checks, searches for counterexamples and returns bounded verdicts with replayable evidence.
+The present software cases do not validate that entire product thesis. They validate a narrower point: small mathematical invariants can expose consequential failures that large end-to-end scores may average away.
+That is enough to define the next experiment: expand the corpus across autodiff, tensor shapes, quantization, special values and compiler parity; require independent reproduction; and measure how often invariant-driven tests find defects missed by ordinary examples.
+Evidence statement
+The Samsung derivative cluster was identified and reproduced in this audit. The Apple MLX, JAX, PyTorch and TensorFlow cases originated with the GitHub users named above and were independently reproduced here. No affiliation with Apple, Samsung, Google, Meta/PyTorch or TensorFlow is claimed.

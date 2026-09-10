@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="At two equal float32 inputs of 100000000, MLX returns gradient [1,1] instead of [0.5,0.5]. An isolated CPU study separates a new VJP prototype from an already reported exp limitation." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Same Inputs, Wrong Weights: MLX logcumsumexp Gradients at Large Offsets" />
+    <meta property="og:description" content="At two equal float32 inputs of 100000000, MLX returns gradient [1,1] instead of [0.5,0.5]. An isolated CPU study separates a new VJP prototype from an already reported exp limitation." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/mlx-logcumsumexp-shift-gradient.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-mlx-logshift.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Same Inputs, Wrong Weights: MLX logcumsumexp Gradients at Large Offsets" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Same Inputs, Wrong Weights: MLX logcumsumexp Gradients at Large Offsets" />
+    <meta name="twitter:description" content="At two equal float32 inputs of 100000000, MLX returns gradient [1,1] instead of [0.5,0.5]. An isolated CPU study separates a new VJP prototype from an already reported exp limitation." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-mlx-logshift.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/mlx-logcumsumexp-shift-gradient.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <link rel="stylesheet" href="../../assets/ux.css" />
+    <meta name="keywords" content="MLX, logcumsumexp, gradient normalization, offset, autodiff" />
+    <title>Same Inputs, Wrong Weights: MLX logcumsumexp Gradients at Large Offsets — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Same Inputs, Wrong Weights: MLX logcumsumexp Gradients at Large Offsets", "description": "At two equal float32 inputs of 100000000, MLX returns gradient [1,1] instead of [0.5,0.5]. An isolated CPU study separates a new VJP prototype from an already reported exp limitation.", "datePublished": "2026-09-10", "dateModified": "2026-09-10", "url": "https://www.gero.uz/research/articles/mlx-logcumsumexp-shift-gradient.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <style>
+      .audit-table{overflow-x:auto;margin:1.5rem 0}.audit-table table{width:100%;min-width:620px;border-collapse:collapse}.audit-table th,.audit-table td{padding:14px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #d4d9d5;font-size:14px}.article-prose code{overflow-wrap:anywhere}.article-prose pre{overflow-x:auto}.video-frame{position:relative;aspect-ratio:9/16;max-width:390px;margin:2rem auto;background:#111;border-radius:18px;overflow:hidden;box-shadow:0 18px 50px rgba(14,24,20,.18)}.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    </style>
+  </head>
+  <body class="research-body">
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home"><span class="brand-mark" aria-hidden="true">G</span><span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span></a>
+      <nav aria-label="Main navigation"><a href="../../index.html#method">Method</a><a href="../../index.html#lab">Live lab</a><a class="nav-active" href="../../research/">Research</a></nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    <main><article class="article-shell">
+<a class="back-link" href="../">← Research index</a>
+<header class="article-header"><div class="article-kicker"><span>NUMERICAL CASE STUDY</span><span>10 September 2026</span></div>
+<h1>Same Inputs, Wrong Weights: MLX logcumsumexp Gradients at Large Offsets</h1><p class="article-dek">A rounded forward value cannot always reconstruct a correctly normalized backward pass.</p>
+<div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54"><div><strong>Xamit Kadirbekov</strong><span>Reproducible numerical experiments · GERO Research</span></div></div>
+<div class="topic-row"><span>MLX 0.32.2</span><span>Gradient normalization</span><span>CPU</span></div></header>
+<div class="evidence-banner"><strong>STATUS · LOCALLY REPRODUCED</strong><span>Gradient [1,1] instead of [0.5,0.5]. Combined research prototype: 1122 gradient checks and 477 higher-order comparisons pass. Separate known exp limitation credited; GPU and performance untested.</span></div>
+<div class="article-prose"><p><strong>Permanent evidence archive:</strong> <a href="https://doi.org/10.5281/zenodo.22685380">10.5281/zenodo.22685380</a> · Zenodo, version 1.0.0.</p><p>Adding the same constant to both inputs of logsumexp should not change its gradient. A large common offset exposes a normalization loss in MLX logcumsumexp. Four isolated native variants distinguish the VJP repair from a separate, already public float64-exp issue.</p>
+<img src="../../assets/og-mlx-logshift.png" width="1200" height="630" style="width:100%;height:auto;border-radius:16px" alt="At equal float32 inputs 100000000, MLX logcumsumexp returns gradient [1,1], while the analytic result and equivalent logsumexp give [0.5,0.5].">
+<h2>The short explanation</h2>
+<video controls playsinline preload="metadata" poster="../media/mlx-logshift-poster.png" width="1080" height="1920" style="display:block;width:100%;max-width:390px;height:auto;margin:24px auto;border-radius:18px"><source src="../media/mlx-logshift-short.mp4" type="video/mp4"><track kind="captions" src="../media/mlx-logshift-short.en.vtt" srclang="en" label="English">Your browser does not support embedded video.</video>
+<p><a href="https://youtube.com/shorts/Y0XoB3Lllxs">Watch the English YouTube Short →</a></p><p class="muted">Original diagrams and synthetic narration by fictional Alex Vector using the macOS Daniel voice. AI-assisted preparation. <a href="../data/mlx-logshift-video-source-2026-09-10.zip">Remotion project and source ledger →</a></p>
+<h2>A translation-invariant derivative</h2>
+<p>For f(x) = log(exp(x₀) + exp(x₁)), adding the same finite scalar c to both inputs adds c to the value without changing the gradient:</p>
+<pre><code>f(x + c·1) = c + f(x)
+∂f/∂xⱼ = exp(xⱼ) / Σₖ exp(xₖ)
+gradient at [c,c] = [1/2, 1/2].</code></pre>
+<p>The inputs below are the actual representable values passed to the runtime. The equal-input case does not depend on recovering a tiny difference between rounded inputs.</p>
+<div class="audit-table"><table><thead><tr><th>float32 input</th><th>Last logcumsumexp gradient</th><th>logsumexp gradient</th><th>Analytic reference</th></tr></thead><tbody><tr><td>[0, 0]</td><td>[0.5, 0.5]</td><td>[0.5, 0.5]</td><td>[0.5, 0.5]</td></tr><tr><td>[1000, 1000]</td><td>approximately [0.49998546, 0.49998546]</td><td>[0.5, 0.5]</td><td>[0.5, 0.5]</td></tr><tr><td>[100000, 100000]</td><td>approximately [0.49891850, 0.49891850]</td><td>[0.5, 0.5]</td><td>[0.5, 0.5]</td></tr><tr><td>[100000000, 100000000]</td><td><strong>[1, 1]</strong></td><td>[0.5, 0.5]</td><td>[0.5, 0.5]</td></tr><tr><td>[-100000000, -100000000]</td><td><strong>[1, 1]</strong></td><td>[0.5, 0.5]</td><td>[0.5, 0.5]</td></tr></tbody></table></div>
+<p>The float64 equal-input case also reaches [1, 1] at c = 10²⁰. These statements concern derivatives of the specified real-valued operation evaluated on representable inputs, not differentiation of the discontinuous map induced by rounding itself.</p>
+<p>Minimal installed-package reproduction:</p>
+<pre><code>import mlx.core as mx
+mx.set_default_device(mx.cpu)
+x = mx.array([1e8, 1e8], dtype=mx.float32)
+print(mx.grad(lambda z: mx.logcumsumexp(z)[-1])(x))  # [1, 1]
+print(mx.grad(mx.logsumexp)(x))                     # [0.5, 0.5]</code></pre>
+<p>The <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/83c2ef82dcf9210cbef0a8f137f27519edb55a75/audits/2026-09-10-mlx-logcumsumexp-shift-vjp/reproduce.py">reproduction script</a> records a wider input table and a counterexample to global centering. <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/83c2ef82dcf9210cbef0a8f137f27519edb55a75/audits/2026-09-10-mlx-logcumsumexp-shift-vjp/wheel-reproduction.json">Saved results</a> identify the installed package and CPU device. Finite differences with a step below the float32 spacing near 10⁸ are not used as evidence.</p>
+<h2>Why the normalization is lost</h2>
+<p>The inspected <a href="https://github.com/ml-explore/mlx/blob/81ba1c6a0e50a9268b931579c2d4f1158b9aab5a/mlx/primitives.cpp">Scan::vjp implementation</a> uses the rounded forward scan output in exponential differences in the backward computation.</p>
+<p>For equal inputs, the exact final output is c + log(2). At c = 10⁸, adjacent float32 values are 8 apart, so the forward output rounds to c. That value can be a reasonable rounded forward result, yet reusing it to reconstruct exponential weights loses the log(2) normalizer: the backward calculation yields unit weights instead of half weights.</p>
+<p>The bug is the resulting backward rule. It is not a claim that the rounded forward value must retain a fraction smaller than one representable step.</p>
+<h2>Subtracting a single global maximum is insufficient</h2>
+<p>A scan has different prefixes. An element beyond the prefix being differentiated must not distort its derivative.</p>
+<p>For x = [0, 0, 10⁸], differentiate the second output. The original scan gives [0.5, 0.5, 0]. A wrapper that subtracts stop_gradient(max(x)) from the entire vector before the scan and adds it back gives <strong>[1, 1, 0]</strong>. The future large element shifts the earlier prefix into a region that loses precision.</p>
+<p>This counterexample was rerun on the actual installed package. It rules out that simple wrapper as a general repair.</p>
+<h2>A normalized recurrence</h2>
+<p>For a finite real inclusive prefix, maintain a stopped running maximum mᵢ and a normalized mass sᵢ = Σⱼ≤ᵢ exp(xⱼ − mᵢ):</p>
+<pre><code>aᵢ = sᵢ₋₁ exp(mᵢ₋₁ − mᵢ)
+bᵢ = exp(xᵢ − mᵢ)
+sᵢ = aᵢ + bᵢ
+ρᵢ = aᵢ / sᵢ
+ηᵢ = bᵢ / sᵢ.</code></pre>
+<p>For the first position, ρ₀ = 0 and η₀ = 1. If Lᵢ is the prefix logsumexp, then:</p>
+<pre><code>dLᵢ = ρᵢ dLᵢ₋₁ + ηᵢ dxᵢ.</code></pre>
+<p>For incoming cotangents gᵢ, reverse accumulation becomes:</p>
+<pre><code>λᵢ = gᵢ + ρᵢ₊₁ λᵢ₊₁
+grad_xᵢ = ηᵢ λᵢ.</code></pre>
+<p>This recurrence is linear in g and avoids logarithms of cotangent magnitudes or sign branches. To retain higher derivatives through the masses, the first mass stays as exp(x₀ − stop_gradient(x₀)) in the graph rather than becoming a constant.</p>
+<p>Reverse scans reverse the index order; exclusive scans shift the cotangent correspondence by one position. Empty prefixes are excluded from smooth test losses. The algebraic derivation assumes finite real inputs; it does not define a complete derivative convention at infinities or NaNs.</p>
+<p>See <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/83c2ef82dcf9210cbef0a8f137f27519edb55a75/audits/2026-09-10-mlx-logcumsumexp-shift-vjp/stable_scan_vjp.cpp.inc">implementation</a> and <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/83c2ef82dcf9210cbef0a8f137f27519edb55a75/audits/2026-09-10-mlx-logcumsumexp-shift-vjp/stable-logcumsumexp-vjp-prototype.patch">research patch</a>. The forward pass is unchanged. The prototype constructs O(n) sequential graph steps along the scan axis and does not build a dense Jacobian. Its performance at large n has not been measured.</p>
+<h2>Separating the new VJP case from known exp behavior</h2>
+<p>Strict float64 testing also encounters the CPU exp precision limitation already documented in <a href="https://github.com/ml-explore/mlx/issues/3047">MLX issue #3047</a>. That issue explicitly includes exp among operations using float32 approximations for double inputs. It is credited as prior public work and is <strong>not counted as a new discovery</strong> here.</p>
+<p>Four native variants isolate the two changes:</p>
+<div class="audit-table"><table><thead><tr><th>Variant</th><th>Gradient checks</th><th>Mismatches</th></tr></thead><tbody><tr><td>Original VJP + original exp</td><td>1122</td><td>348</td></tr><tr><td>New VJP only</td><td>1122</td><td>120, all float64</td></tr><tr><td>Double-exp repair only</td><td>1122</td><td>401</td></tr><tr><td>New VJP + double-exp repair</td><td>1122</td><td><strong>0</strong></td></tr></tbody></table></div>
+<p>The thresholds are unchanged: 2e−5 × (1 + abs(reference)) for float32, and 2e−12 × (1 + abs(reference)) for float64. A check compares a complete output gradient, not a distinct defect or a model. More failed comparisons in the exp-only variant do not mean that a more accurate exponential is mathematically worse: failure counts depend on the inputs, interactions and thresholds.</p>
+<p>The independent <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/83c2ef82dcf9210cbef0a8f137f27519edb55a75/audits/2026-09-10-mlx-logcumsumexp-shift-vjp/native_regression.cpp">native reference</a> computes explicitly normalized prefix weights with scalar double arithmetic after converting inputs to the actual test dtype. Shapes, finite results, both directions, inclusive/exclusive modes, signed and zero cotangents, large offsets, early/late extreme values and two noncontiguous layouts are covered. Axis lengths are 1, 2 and 4, plus both axes of a 2×3 matrix.</p>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/83c2ef82dcf9210cbef0a8f137f27519edb55a75/audits/2026-09-10-mlx-logcumsumexp-shift-vjp/run-before.json">Before</a>, <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/83c2ef82dcf9210cbef0a8f137f27519edb55a75/audits/2026-09-10-mlx-logcumsumexp-shift-vjp/run-scan-only.json">VJP-only</a>, <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/83c2ef82dcf9210cbef0a8f137f27519edb55a75/audits/2026-09-10-mlx-logcumsumexp-shift-vjp/run-exp-only.json">exp-only</a> and <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/83c2ef82dcf9210cbef0a8f137f27519edb55a75/audits/2026-09-10-mlx-logcumsumexp-shift-vjp/run-combined.json">combined</a> data retain every check. The initial failed VJP-only attempt is retained as <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/83c2ef82dcf9210cbef0a8f137f27519edb55a75/audits/2026-09-10-mlx-logcumsumexp-shift-vjp/initial-run-after.json">initial-run-after.json</a>, not hidden.</p>
+<p>The separate known-exp regression has 47 checks: 34 mismatches before its repair and none after. Its source, patch and logs are in <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/83c2ef82dcf9210cbef0a8f137f27519edb55a75/audits/2026-09-10-mlx-logcumsumexp-shift-vjp/known-float64-exp/">known-float64-exp</a>.</p>
+<h2>Higher-order regression</h2>
+<p>The new VJP, together with the double-exp repair, also passes <strong>477 comparisons across 186 scenarios</strong> from the earlier <a href="https://www.gero.uz/research/articles/mlx-logcumsumexp-hessian-at-zero.html">zero-cotangent curvature report</a>. The publication rerun again returns second derivative 1 for the scalar x²/2 example and the correct two checked third derivatives.</p>
+<p>These 477 comparisons are a separate regression suite. The new recurrence replaces the previous research VJP implementation; the two VJP patches must not be stacked. Passing this finite suite does not establish arbitrary-order autodiff correctness. <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/83c2ef82dcf9210cbef0a8f137f27519edb55a75/audits/2026-09-10-mlx-logcumsumexp-shift-vjp/run-higher-order.log">Higher-order log</a> and <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/83c2ef82dcf9210cbef0a8f137f27519edb55a75/audits/2026-09-10-mlx-logcumsumexp-shift-vjp/higher-order/native_regression.cpp">preserved test source</a>.</p>
+<h2>Reproduction and provenance</h2>
+<ul><li>Installed wheel: MLX 0.32.2, operations explicitly on CPU.</li><li>Native baseline: ce916dbbcaa88e433b6fd1e60a17f766d49c27fe.</li><li>Inspected public main: 81ba1c6a0e50a9268b931579c2d4f1158b9aab5a.</li><li>The inspected Scan::vjp method matches between those snapshots; this is not a complete build or test of current main.</li><li>Sequential compilation and execution, numerical thread settings fixed to one.</li><li>Apple Clang 17 / C++20; pristine and patched translation units linked before an existing CPU-only libmlx.a.</li><li>The publication rerun rebuilt the pristine primitives and higher-order test objects, then the isolated exp and scan variants. The larger MLX archive was reused, not rebuilt.</li><li>The installed wheel needs Metal availability at import, even though this probe explicitly executes on CPU. The native archive has no Metal backend.</li></ul>
+<p>The isolated scan build and runs consumed about 4.58 child CPU-seconds; the separate exp build and runs about 5.60. These exclude prerequisites and are build records, not performance benchmarks. Exact commands and archive hashes are preserved in <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/83c2ef82dcf9210cbef0a8f137f27519edb55a75/audits/2026-09-10-mlx-logcumsumexp-shift-vjp/build-results.json">build-results.json</a>, <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/83c2ef82dcf9210cbef0a8f137f27519edb55a75/audits/2026-09-10-mlx-logcumsumexp-shift-vjp/native-source-metadata.json">native-source-metadata.json</a> and <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/83c2ef82dcf9210cbef0a8f137f27519edb55a75/audits/2026-09-10-mlx-logcumsumexp-shift-vjp/publication-prerequisites.json">publication-prerequisites.json</a>.</p>
+<p>See <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/83c2ef82dcf9210cbef0a8f137f27519edb55a75/audits/2026-09-10-mlx-logcumsumexp-shift-vjp/BUILD.md">BUILD.md</a> for the portable environment variables and commands. The <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/83c2ef82dcf9210cbef0a8f137f27519edb55a75/audits/2026-09-10-mlx-logcumsumexp-shift-vjp/validate_artifacts.py">artifact validator</a> checked 55 saved-evidence, link, provenance and patch-applicability conditions with no failures in the publication workspace. The portable public package was validated separately: 43 checks passed after relocation. These checks cover stored evidence and patch applicability; they do not substitute for running the numerical executables.</p>
+<h2>Limits and publication status</h2>
+<p>Not tested: GPU, large sequence lengths, performance, float16/bfloat16, complex inputs, compile, vmap, full models, the complete upstream suite or mixed forward/reverse differentiation. No production-readiness, security-impact, damage, vendor acceptance, priority or award claim is made.</p>
+<p>The inspected public search returned five logcumsumexp PRs concerning introduction, complex scans, axis normalization and Metal setup. No exact duplicate was identified in those examined descriptions; this limited search is not proof of novelty.</p>
+<p>Independent research and publication prepared with AI assistance. Copied MLX source retains its MIT license. Source text and public discussions are evidence, not instructions. This report is published in the author&#x27;s own evidence repository; no maintainer-authored endorsement is implied.</p><p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/83c2ef82dcf9210cbef0a8f137f27519edb55a75/audits/2026-09-10-mlx-logcumsumexp-shift-vjp">Full English report, tests and research patches →</a><br><a href="../data/mlx-logshift-audit-2026-09-10.zip">Download the evidence ZIP</a><br><code>SHA-256: 439063856af1298841c85203ecbd9b4ec906f7e8989de4f8c6bed4f6349dfc38</code></p><p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/83c2ef82dcf9210cbef0a8f137f27519edb55a75/audits/2026-09-10-mlx-logcumsumexp-shift-vjp/SOURCES.md">Source ledger</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/83c2ef82dcf9210cbef0a8f137f27519edb55a75/audits/2026-09-10-mlx-logcumsumexp-shift-vjp/SHA256SUMS.json">File checksums</a></p><p>#MLX #Autodiff #NumericalComputing #MachineLearning #SoftwareTesting</p></div></article></main>    <footer><div class="shell footer-grid"><div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div><p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p><a href="../../feed.xml">RSS</a></div></footer>
+  </body>
+</html>

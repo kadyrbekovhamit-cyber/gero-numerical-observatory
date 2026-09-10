@@ -1,0 +1,56 @@
+{
+  "title": "A Real Loss, a Reversed Gradient: Complex Autodiff in MLX",
+  "authors": [
+    "Xamit Kadirbekov"
+  ],
+  "publication_date": "2026-09-09",
+  "gero": "https://www.gero.uz/research/articles/mlx-complex-autodiff-reversed-gradient.html",
+  "github": [
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/b696781d366e528ccc6853bc8033b1169db6368b/audits/2026-09-09-mlx-complex-autodiff",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/b696781d366e528ccc6853bc8033b1169db6368b/audits/2026-09-09-mlx-complex-autodiff/native_regression.cpp",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/b696781d366e528ccc6853bc8033b1169db6368b/audits/2026-09-09-mlx-complex-autodiff/complex-derivatives.patch",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/b696781d366e528ccc6853bc8033b1169db6368b/audits/2026-09-09-mlx-complex-autodiff/run-before.log",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/b696781d366e528ccc6853bc8033b1169db6368b/audits/2026-09-09-mlx-complex-autodiff/run-after.log",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/b696781d366e528ccc6853bc8033b1169db6368b/audits/2026-09-09-mlx-complex-autodiff/BUILD.md",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/b696781d366e528ccc6853bc8033b1169db6368b/audits/2026-09-09-mlx-complex-autodiff/SOURCES.md"
+  ],
+  "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-complex-autodiff-reversed-gradient",
+  "zenodo": [],
+  "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+  "linkedin": [
+    "https://www.linkedin.com/feed/update/urn:li:activity:7503399107747803136/"
+  ],
+  "source_article_sha256": "1b03cb54c2ba51ba57ef9f10a505047666f87235e5c0a1177a26deec7dca06e3",
+  "archival_packaging_date": "2026-09-10",
+  "original_source_links": [
+    "https://www.gero.uz/research/articles/mlx-complex-autodiff-reversed-gradient.html",
+    "https://www.gero.uz/feed.xml",
+    "https://www.gero.uz/styles.css",
+    "https://www.gero.uz/research/research.css",
+    "https://www.gero.uz/assets/ux.css",
+    "https://www.gero.uz/_vercel/insights/script.js",
+    "https://www.gero.uz/index.html",
+    "https://www.gero.uz/index.html#method",
+    "https://www.gero.uz/index.html#lab",
+    "https://www.gero.uz/research/",
+    "mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact",
+    "https://www.gero.uz/assets/xamit-kadirbekov.jpg",
+    "https://www.gero.uz/assets/og-mlx-complex.png",
+    "https://www.gero.uz/research/media/mlx-complex-poster.png",
+    "https://www.gero.uz/research/media/mlx-complex-short.mp4",
+    "https://www.gero.uz/research/media/mlx-complex-short.en.vtt",
+    "https://www.gero.uz/research/data/mlx-complex-video-source-2026-09-09.zip",
+    "https://github.com/ml-explore/mlx/blob/24c699ecee2f7c8b2040de8da1c8382c8bcf31c7/mlx/primitives.cpp",
+    "https://github.com/ml-explore/mlx/pull/3766",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/b696781d366e528ccc6853bc8033b1169db6368b/audits/2026-09-09-mlx-complex-autodiff",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/b696781d366e528ccc6853bc8033b1169db6368b/audits/2026-09-09-mlx-complex-autodiff/native_regression.cpp",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/b696781d366e528ccc6853bc8033b1169db6368b/audits/2026-09-09-mlx-complex-autodiff/complex-derivatives.patch",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/b696781d366e528ccc6853bc8033b1169db6368b/audits/2026-09-09-mlx-complex-autodiff/run-before.log",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/b696781d366e528ccc6853bc8033b1169db6368b/audits/2026-09-09-mlx-complex-autodiff/run-after.log",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/b696781d366e528ccc6853bc8033b1169db6368b/audits/2026-09-09-mlx-complex-autodiff/BUILD.md",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/b696781d366e528ccc6853bc8033b1169db6368b/audits/2026-09-09-mlx-complex-autodiff/SOURCES.md",
+    "https://www.gero.uz/research/data/mlx-complex-audit-2026-09-09.zip",
+    "mailto:kadyrbekovhamit@gmail.com?subject=GERO%20MLX%20numerical%20review",
+    "https://www.gero.uz/research/editorial.html"
+  ]
+}

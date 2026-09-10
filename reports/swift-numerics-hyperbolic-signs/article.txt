@@ -1,0 +1,75 @@
+← Research index
+ORIGINAL RESEARCH5 September 2026
+The Fast Path Put a Complex Number in the Wrong Quadrant: A Swift Numerics Sign Audit
+A large-negative-real fast path flips component signs in complex cosh and sinh, propagates into cos and sin, and is reinforced by incorrect test expectations.
+Xamit KadirbekovAuthors · GERO Research
+Numerical computingSwift NumericsMetamorphic testing
+STATUS · AUTHOR'S ANALYSISArguments and proposals are distinguished from the linked laboratories' reported results.
+A numerical fast path can preserve magnitude, avoid overflow, and still return the wrong answer.
+In Swift Numerics, the large-argument paths for complex `cosh` and `sinh` return the wrong sign for one component when the real part is sufficiently large and negative. Because complex `cos` and `sin` are defined through those hyperbolic functions, the same error propagates into the upper half of the complex plane.
+This is not a disagreement about one unit in the last place. The returned value is placed in the wrong quadrant.
+A four-call reproducer
+import ComplexModule
+typealias C = Complex<Double>
+print(C.cosh(C(-40, 0.5)))
+print(C.sinh(C(-40, 0.5)))
+print(C.cos(C(0.5, 40)))
+print(C.sin(C(0.5, 40)))
+Against Swift Numerics commit `899af71c0256d0ad181e3b7eb3453c1065d928a5`, the observed results are:
+cosh(-40 + 0.5i) = ( 1.032850027510405e+17,  5.642485416641618e+16)
+sinh(-40 + 0.5i) = (-1.032850027510405e+17, -5.642485416641618e+16)
+cos( 0.5 + 40i)  = ( 1.032850027510405e+17,  5.642485416641618e+16)
+sin( 0.5 + 40i)  = (-5.642485416641618e+16,  1.032850027510405e+17)
+The expected signs are:
+cosh(-40 + 0.5i) = ( 1.032850027510405e+17, -5.642485416641618e+16)
+sinh(-40 + 0.5i) = (-1.032850027510405e+17,  5.642485416641618e+16)
+cos( 0.5 + 40i)  = ( 1.032850027510405e+17, -5.642485416641618e+16)
+sin( 0.5 + 40i)  = ( 5.642485416641618e+16,  1.032850027510405e+17)
+Two exact symmetries settle the signs
+For `z = x + iy`, the defining identities are:
+cosh(z) = cosh(x) cos(y) + i sinh(x) sin(y)
+sinh(z) = sinh(x) cos(y) + i cosh(x) sin(y)
+Since real `cosh` is even and real `sinh` is odd, they imply:
+cosh(-x + iy) = conjugate(cosh(x + iy))
+sinh(-x + iy) = -conjugate(sinh(x + iy))
+The observed values violate both identities by changing the wrong component sign.
+This gives a particularly clean oracle: evaluate the same library at `40 + 0.5i`, where its positive-real fast path has the correct sign structure, and apply the exact symmetries. No delicate reference rounding is needed to determine the expected quadrant.
+An independent high-precision check
+I also evaluated the same input using `mpmath` at 80 decimal digits:
+cosh(-40 + 0.5i)
+= 103285002751040493.884940309205... - 56424854166416174.631995251979...i
+sinh(-40 + 0.5i)
+= -103285002751040493.884940309205... + 56424854166416174.631995251979...i
+The independent result confirms the symmetry oracle and the expected signs.
+Where the fast path goes wrong
+For large `abs(x)`, Swift Numerics avoids premature overflow by replacing the large hyperbolic factors with scaled forms based on `exp(abs(x))/2`.
+That magnitude approximation is appropriate, but negative `x` requires asymmetric sign handling:
+in `cosh(x + iy)`, only the imaginary component contains the odd factor `sinh(x)`;
+in `sinh(x + iy)`, only the real component contains the odd factor `sinh(x)`.
+The current large-argument `cosh` path applies no sign correction. The corresponding `sinh` path applies the sign of `x` to the entire complex value. Each therefore changes the wrong component when `x` is negative.
+For `Double`, the fast path starts near:
+abs(real) >= -log(Double.ulpOfOne) ≈ 36.04
+The input `-40 + 0.5i` is finite, ordinary, and comfortably inside that branch.
+Why four public functions are affected
+The implementation defines:
+cos(z) = cosh(iz)
+sin(z) = -i sinh(iz)
+For `z = 0.5 + 40i`, the transformed hyperbolic input has real part `-40`. The same faulty negative-real branch is therefore used. `cos` receives the wrong imaginary sign, while `sin` receives the wrong real sign.
+Why the tests still pass
+The existing near-overflow tests do exercise negative real inputs. However, their expected signs match the implementation rather than the mathematical identities:
+`cosh(-x + iπ/4)` is expected to have a positive imaginary component, but it should be negative;
+`sinh(-x + iπ/4)` is expected to have a negative imaginary component, but it should be positive.
+This is an important testing pattern: a test can cover the right branch and still certify the wrong behavior when its oracle repeats the implementation's sign assumption.
+A stronger regression suite would include symmetry or metamorphic checks in addition to fixed expected values.
+A bounded fix direction
+Let `sx` be `+1` or `-1` according to the sign of the real component. In the scaled branches, the phase factors should have the form:
+cosh: (cos(y), sx · sin(y))
+sinh: (sx · cos(y), sin(y))
+The two-step overflow-avoiding scaling can remain unchanged. The negative-real test expectations then need the corresponding component-sign corrections, with additional symmetry tests preventing regression.
+Scope and boundary
+This report establishes a reproducible functional error for finite complex inputs in the large-negative-real fast path and its propagation to two derived functions. It is not a security claim, and it does not estimate how often applications supply inputs in the affected region.
+The public audit contains the executable Swift reproducer, recorded outputs, source links, independent-oracle values, and the proposed fix direction:
+github.com
+The defect has been reported upstream as Swift Numerics issue #347:
+github.com
+Tested on Apple Swift 6.1.2, arm64 macOS. Independent reproduction and analysis by Xamit Kadirbekov / GERO. No affiliation with Apple or the Swift Numerics maintainers is claimed.

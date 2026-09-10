@@ -1,0 +1,54 @@
+{
+  "title": "A Smooth Polynomial, a NaN Hessian: MLX cumprod at Zero",
+  "authors": [
+    "Xamit Kadirbekov"
+  ],
+  "publication_date": "2026-09-09",
+  "gero": "https://www.gero.uz/research/articles/mlx-cumprod-hessian-at-zero.html",
+  "github": [
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/bb80fd03fdacd58b30476ebaa0c07954e3448d61/audits/2026-09-09-mlx-cumprod-hessian",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/bb80fd03fdacd58b30476ebaa0c07954e3448d61/audits/2026-09-09-mlx-cumprod-hessian/cumprod-polynomial-vjp.patch",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/bb80fd03fdacd58b30476ebaa0c07954e3448d61/audits/2026-09-09-mlx-cumprod-hessian/run-before.log",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/bb80fd03fdacd58b30476ebaa0c07954e3448d61/audits/2026-09-09-mlx-cumprod-hessian/run-after.log",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/bb80fd03fdacd58b30476ebaa0c07954e3448d61/audits/2026-09-09-mlx-cumprod-hessian/BUILD.md",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/bb80fd03fdacd58b30476ebaa0c07954e3448d61/audits/2026-09-09-mlx-cumprod-hessian/SOURCES.md"
+  ],
+  "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-cumprod-hessian-at-zero",
+  "zenodo": [],
+  "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+  "linkedin": [
+    "https://www.linkedin.com/feed/update/urn:li:activity:7503403580889014273/"
+  ],
+  "source_article_sha256": "bf84b9c2aea0231140fa7edaae6c7c5bd059840db206c1b314d6b4aa45a268ef",
+  "archival_packaging_date": "2026-09-10",
+  "original_source_links": [
+    "https://www.gero.uz/research/articles/mlx-cumprod-hessian-at-zero.html",
+    "https://www.gero.uz/feed.xml",
+    "https://www.gero.uz/styles.css",
+    "https://www.gero.uz/research/research.css",
+    "https://www.gero.uz/assets/ux.css",
+    "https://www.gero.uz/_vercel/insights/script.js",
+    "https://www.gero.uz/index.html",
+    "https://www.gero.uz/index.html#method",
+    "https://www.gero.uz/index.html#lab",
+    "https://www.gero.uz/research/",
+    "mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact",
+    "https://www.gero.uz/assets/xamit-kadirbekov.jpg",
+    "https://www.gero.uz/assets/og-mlx-cumprod.png",
+    "https://www.gero.uz/research/media/mlx-cumprod-poster.png",
+    "https://www.gero.uz/research/media/mlx-cumprod-short.mp4",
+    "https://www.gero.uz/research/media/mlx-cumprod-short.en.vtt",
+    "https://www.gero.uz/research/data/mlx-cumprod-video-source-2026-09-09.zip",
+    "https://github.com/ml-explore/mlx/blob/24c699ecee2f7c8b2040de8da1c8382c8bcf31c7/mlx/primitives.cpp",
+    "https://github.com/ml-explore/mlx/pull/1167",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/bb80fd03fdacd58b30476ebaa0c07954e3448d61/audits/2026-09-09-mlx-cumprod-hessian",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/bb80fd03fdacd58b30476ebaa0c07954e3448d61/audits/2026-09-09-mlx-cumprod-hessian/cumprod-polynomial-vjp.patch",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/bb80fd03fdacd58b30476ebaa0c07954e3448d61/audits/2026-09-09-mlx-cumprod-hessian/run-before.log",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/bb80fd03fdacd58b30476ebaa0c07954e3448d61/audits/2026-09-09-mlx-cumprod-hessian/run-after.log",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/bb80fd03fdacd58b30476ebaa0c07954e3448d61/audits/2026-09-09-mlx-cumprod-hessian/BUILD.md",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/bb80fd03fdacd58b30476ebaa0c07954e3448d61/audits/2026-09-09-mlx-cumprod-hessian/SOURCES.md",
+    "https://www.gero.uz/research/data/mlx-cumprod-audit-2026-09-09.zip",
+    "mailto:kadyrbekovhamit@gmail.com?subject=GERO%20MLX%20cumprod%20review",
+    "https://www.gero.uz/research/editorial.html"
+  ]
+}

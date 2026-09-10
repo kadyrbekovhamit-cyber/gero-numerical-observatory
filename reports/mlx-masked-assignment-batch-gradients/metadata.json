@@ -1,0 +1,61 @@
+{
+  "title": "An Unused Value Gets a Gradient: MLX Masked Assignment",
+  "authors": [
+    "Xamit Kadirbekov"
+  ],
+  "publication_date": "2026-09-09",
+  "gero": "https://www.gero.uz/research/articles/mlx-masked-assignment-batch-gradients.html",
+  "github": [
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/408d41180536784624e19ac79377f248ec05bbfc/audits/2026-09-09-mlx-masked-scatter-batch-vjp",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/408d41180536784624e19ac79377f248ec05bbfc/audits/2026-09-09-mlx-masked-scatter-batch-vjp/masked-scatter-batch-vjp.patch",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/408d41180536784624e19ac79377f248ec05bbfc/audits/2026-09-09-mlx-masked-scatter-batch-vjp/BUILD.md",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/408d41180536784624e19ac79377f248ec05bbfc/audits/2026-09-09-mlx-masked-scatter-batch-vjp/native_regression.cpp",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/408d41180536784624e19ac79377f248ec05bbfc/audits/2026-09-09-mlx-masked-scatter-batch-vjp/run-before.log",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/408d41180536784624e19ac79377f248ec05bbfc/audits/2026-09-09-mlx-masked-scatter-batch-vjp/run-after.log",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/408d41180536784624e19ac79377f248ec05bbfc/audits/2026-09-09-mlx-masked-scatter-batch-vjp/SOURCES.md",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/408d41180536784624e19ac79377f248ec05bbfc/audits/2026-09-09-mlx-masked-scatter-batch-vjp/SHA256SUMS.json"
+  ],
+  "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-masked-assignment-batch-gradients",
+  "zenodo": [],
+  "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+  "linkedin": [
+    "https://www.linkedin.com/feed/update/urn:li:activity:7503425063011135489/"
+  ],
+  "source_article_sha256": "0832bf959acf868be16bd7773edc3e3e61630cab4016fa61702ce5eaa33506cd",
+  "archival_packaging_date": "2026-09-10",
+  "original_source_links": [
+    "https://www.gero.uz/research/articles/mlx-masked-assignment-batch-gradients.html",
+    "https://www.gero.uz/feed.xml",
+    "https://www.gero.uz/styles.css",
+    "https://www.gero.uz/research/research.css",
+    "https://www.gero.uz/assets/ux.css",
+    "https://www.gero.uz/_vercel/insights/script.js",
+    "https://www.gero.uz/index.html",
+    "https://www.gero.uz/index.html#method",
+    "https://www.gero.uz/index.html#lab",
+    "https://www.gero.uz/research/",
+    "mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact",
+    "https://www.gero.uz/assets/xamit-kadirbekov.jpg",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/408d41180536784624e19ac79377f248ec05bbfc/audits/2026-09-09-mlx-masked-scatter-batch-vjp",
+    "https://www.gero.uz/assets/og-mlx-masked-scatter.png",
+    "https://www.gero.uz/research/media/mlx-masked-scatter-poster.png",
+    "https://www.gero.uz/research/media/mlx-masked-scatter-short.mp4",
+    "https://www.gero.uz/research/media/mlx-masked-scatter-short.en.vtt",
+    "https://www.youtube.com/shorts/VcQjzP1dj08",
+    "https://www.gero.uz/research/data/mlx-masked-scatter-video-source-2026-09-09.zip",
+    "https://ml-explore.github.io/mlx/build/html/usage/indexing.html#boolean-mask-assignment",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/408d41180536784624e19ac79377f248ec05bbfc/audits/2026-09-09-mlx-masked-scatter-batch-vjp/masked-scatter-batch-vjp.patch",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/408d41180536784624e19ac79377f248ec05bbfc/audits/2026-09-09-mlx-masked-scatter-batch-vjp/BUILD.md",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/408d41180536784624e19ac79377f248ec05bbfc/audits/2026-09-09-mlx-masked-scatter-batch-vjp/native_regression.cpp",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/408d41180536784624e19ac79377f248ec05bbfc/audits/2026-09-09-mlx-masked-scatter-batch-vjp/run-before.log",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/408d41180536784624e19ac79377f248ec05bbfc/audits/2026-09-09-mlx-masked-scatter-batch-vjp/run-after.log",
+    "https://github.com/ml-explore/mlx/pull/2663",
+    "https://github.com/ml-explore/mlx/pull/2832",
+    "https://github.com/ml-explore/mlx/pull/3421",
+    "https://github.com/ml-explore/mlx/pull/3633",
+    "https://www.gero.uz/research/data/mlx-masked-scatter-audit-2026-09-09.zip",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/408d41180536784624e19ac79377f248ec05bbfc/audits/2026-09-09-mlx-masked-scatter-batch-vjp/SOURCES.md",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/408d41180536784624e19ac79377f248ec05bbfc/audits/2026-09-09-mlx-masked-scatter-batch-vjp/SHA256SUMS.json",
+    "https://www.gero.uz/research/editorial.html"
+  ]
+}

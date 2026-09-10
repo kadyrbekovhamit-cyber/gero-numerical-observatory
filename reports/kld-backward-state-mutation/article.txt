@@ -1,0 +1,54 @@
+← Research index
+ORIGINAL RESEARCH4 September 2026
+A KL-Divergence Backward Pass That Changes Its Own Target
+A one-scalar experiment shows how an in-place label negation makes repeated KL-divergence backward calls alternate their gradient sign.
+Xamit KadirbekovAuthors · GERO Research
+State mutationAutodiffKL divergence
+STATUS · AUTHOR'S ANALYSISArguments and proposals are distinguished from the linked laboratories' reported results.
+Some numerical defects produce an obviously wrong answer. A more dangerous class produces the right answer once and corrupts the state needed for the next computation.
+I found and reproduced such a case in Samsung's open-source nntrainer project. The Kullback–Leibler divergence backward pass changes its stored label in place. For a fixed input, the first derivative has the correct sign; the second identical backward call has the opposite sign.
+The mathematical invariant
+For
+D_KL(P || Q) = sum_i P_i log(P_i / Q_i),
+the derivative with respect to the prediction Q is
+dD_KL/dQ_i = -P_i / Q_i.
+Two necessary properties follow immediately:
+evaluating the derivative must not modify the target distribution P;
+repeated backward evaluations on unchanged state must return the same derivative.
+These are stronger tests than checking one numerical answer. The first call can be correct even while the implementation destroys the label that made it correct.
+The smallest counterexample
+I constructed the actual nntrainer RunLayerContext with one scalar:
+target P = 0.25;
+prediction Q = 0.5;
+expected derivative = -0.5.
+Then I invoked the real KLDLossLayer::calcDerivative twice without changing the context.
+The observed state transition was:
+before backward: label +0.25;
+after the first backward: gradient -0.5, label -0.25;
+after the second backward: gradient +0.5, label +0.25.
+The gradient sign alternates between calls. This is deterministic state mutation, not a floating-point tolerance dispute.
+The implementation cause
+The current backward implementation obtains a reference to the stored label and calls an in-place operation equivalent to:
+label = -label
+It then divides that modified label by the prediction. The first derivative is numerically correct, but only because the target distribution itself was negated.
+The defect is compact enough to escape an ordinary one-shot test. A test that checks only the first derivative can pass. A test that also checks state preservation and repeatability exposes it immediately.
+A correction tested on the real library
+I replaced the in-place negation with an out-of-place operation that writes directly into the derivative tensor, then divides that derivative by Q. The label remains unchanged.
+Against the original implementation, the focused GoogleTest failed because the second gradient was +0.5 instead of -0.5 and the label after the first call was -0.25 instead of +0.25.
+After rebuilding the actual nntrainer dynamic library with the correction, the same test passed: both backward calls returned -0.5 and the label remained +0.25.
+This validates the narrow correction. It does not claim that every reduction, loss-scaling or upstream-gradient convention in the KLD layer has been audited.
+Why this matters for AI assurance
+Loss functions sit at the point where mathematics becomes an update to model parameters. State corruption here can depend on execution history: how many times backward was invoked, whether a retry occurred, or whether a debugging tool re-evaluated a step.
+The larger lesson is methodological. A mathematical contract should include not only a formula for the output, but also invariants about state:
+1. purity — which tensors are allowed to change;
+2. repeatability — whether identical calls return identical results;
+3. conservation — whether normalization or probability mass is preserved;
+4. composition — whether the result remains correct inside a larger chain rule.
+This is the kind of evidence GERO is being designed to organize: explicit invariants, minimal counterexamples, real-runtime execution, bounded claims and replayable artifacts.
+Reproduction and disclosure
+Tested against nntrainer commit a7ea056e79ab8e14447ea305c1b634e233343258 on macOS ARM64.
+Local reproducibility record:
+gero.uz
+Upstream report:
+github.com
+This finding was independently identified and reproduced by Xamit Kadirbekov. No affiliation with Samsung or the nntrainer maintainers is claimed.

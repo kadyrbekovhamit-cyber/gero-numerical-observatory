@@ -1,0 +1,27 @@
+← Research index
+ORIGINAL RESEARCH2 September 2026
+A Retraction Log: Six Collatz Claims and What Killed Them
+Six claims, zero arithmetic errors, five failures. Every one failed above the arithmetic layer: wrong quantity, prior art, or a fabricated citation.
+Xamit KadirbekovAuthor · GERO Research
+CollatzRetractionPrior art
+STATUS · AUTHOR'S ANALYSISArguments and proposals are distinguished from the linked laboratories' reported results.
+Most write-ups report what survived. This one reports what did not, because the failure pattern turned out to be more useful than the results.
+Over several weeks an AI system and I worked on structural questions around the Collatz map — not the conjecture itself, but measurable sub-problems: bounds on a surplus statistic, exact certificates for a graph-theoretic quantity, and termination arguments for rewriting systems. Six claims reached the point where they looked publishable. One survived.
+What Survived
+At level 3⁸ a quantity had been established only by a mixed-integer program, which returns a number without a checkable witness. We constructed ninety pairwise disjoint cycles explicitly, which converts the bound from a solver output into a certificate anyone can verify by inspection. That is the whole of the surviving result, and it is a small one.
+What Did Not, And Why
+The five failures split into three kinds, and the kinds matter more than the count.
+Already published, in a form we did not recognise. A bound we derived on a rewriting system turned out to be weaker than an existing published result by a factor of 27.9. A branching rule we treated as a discovery is standard in reverse-tree constructions. A family of words we characterised had been published by Rozier in 2019. In a later run the system began re-deriving a statement that is Theorem 1 of an existing paper.
+None of these were computational errors. Every number was correct. They failed on attribution, which numerical verification cannot detect.
+Wrong quantity, right arithmetic. One claim held that a sieve stabilised at density one eighth. The measure formula was verified and it was correct — but it measured the projection of the survivor set, not the survivor density, which we had ourselves computed earlier as tending to zero. A correct computation of the wrong object survived internal review because internal review checked the computation.
+Fabricated sources. Two AI-generated novelty analyses supplied in support of these claims contained invented DOIs. Checked through Crossref, one returned 404 and another resolved to an unrelated paper on recursive least squares. One text introduced a technical term with zero occurrences anywhere in the literature. The prose around them was fluent and specific.
+The Measurement That Settled A Disagreement
+One episode is worth isolating. Two independent expert agents disagreed about the limiting value of a surplus ratio: one asserted 9.99, the other 8.29. Both produced arguments. Neither argument was checkable at the length they were written.
+The disagreement was settled by direct computation of the quantity, which returned 9.99 at the predicted critical density. That is the cheap resolution and it should have been the first move rather than the third.
+What The Log Says About Assurance
+Six claims. Zero arithmetic errors. Five failures.
+Every failure was a failure of the layer above arithmetic: is this the quantity we meant, has someone already proved it, does this citation exist. Those are the three questions an assurance layer has to answer, and none of them is answered by running the computation again.
+The retrieval failures are the most instructive. The paper that killed the largest claim in a neighbouring project had no DOI, was absent from Crossref and OpenAlex, and sat in a Russian archive that returns 403 to a plain HTTP request. A literature check that queries only the standard indexes will report "no prior art" with complete confidence and be wrong.
+Current Status
+There is no publishable Collatz result here. The ninety-cycle certificate is a footnote-sized contribution to an existing argument, not a paper. The surplus measurements are reproducible but do not bear on the conjecture.
+We are reporting this because a research programme that only publishes its successes provides no information about its own reliability. The ratio that matters is not how many claims a system produces. It is how many survive an adversarial check, and what kind of check killed the rest.

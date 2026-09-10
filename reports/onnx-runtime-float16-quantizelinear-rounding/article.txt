@@ -1,0 +1,63 @@
+← Research index
+INDEPENDENT NUMERICAL AUDIT5 September 2026
+ONNX Runtime float16 QuantizeLinear truncates instead of rounding
+A two-value counterexample shows the CPU float16 path returning [0, 0] where the ONNX rounding contract requires [1, -1].
+Xamit KadirbekovIndependent verification · GERO Research
+Numerical auditONNX RuntimeQuantization
+STATUS · VERIFIED ORDINARY CORRECTNESS DEFECTReproduced on ONNX Runtime 1.29.0; correction PR #32452 is approved. Its sole red optional-lint job failed while building an unrelated reviewdog container.
+UPSTREAM RECORD
+microsoft/onnxruntime#32452 ↗
+Finding
+The ONNX QuantizeLinear specification requires round-to-nearest with ties to even. The ONNX Runtime CPU path for MLFloat16 converts x / scale directly with static_cast<int32_t>, which truncates toward zero.
+Minimal counterexample
+x (float16)     = [0.050018310546875, -0.050018310546875]
+scale (float16) = 0.0999755859375
+zero_point      = 0 (int8)
+x / scale in the float32 CPU kernel
+= [0.5003052503, -0.5003052503]
+Results for opset 19:
+NumPy nearest-even oracle = [ 1, -1]
+ONNX ReferenceEvaluator   = [ 1, -1]
+ONNX Runtime CPU 1.19.2   = [ 0,  0]
+These inputs are not exact ties: their magnitudes are greater than 0.5, so both nearest-even and ordinary nearest rounding select magnitude 1.
+Reproducer
+import numpy as np
+import onnx
+import onnxruntime as ort
+from onnx import TensorProto, helper
+from onnx.reference import ReferenceEvaluator
+x = np.array([0.050018310546875, -0.050018310546875], dtype=np.float16)
+scale = np.array(0.0999755859375, dtype=np.float16)
+zero_point = np.array(0, dtype=np.int8)
+node = helper.make_node("QuantizeLinear", ["x", "scale", "zero_point"], ["y"])
+graph = helper.make_graph(
+[node], "float16_quantize_rounding",
+[helper.make_tensor_value_info("x", TensorProto.FLOAT16, [2])],
+[helper.make_tensor_value_info("y", TensorProto.INT8, [2])],
+[onnx.numpy_helper.from_array(scale, "scale"),
+onnx.numpy_helper.from_array(zero_point, "zero_point")],
+)
+model = helper.make_model(graph, opset_imports=[helper.make_opsetid("", 19)])
+model.ir_version = 10
+oracle = np.clip(np.rint(x / scale), -128, 127).astype(np.int8)
+reference = ReferenceEvaluator(model).run(None, {"x": x})[0]
+actual = ort.InferenceSession(
+model.SerializeToString(), providers=["CPUExecutionProvider"]
+).run(None, {"x": x})[0]
+assert np.array_equal(oracle, reference)
+assert np.array_equal(actual, oracle), (actual, oracle)
+Verification
+Runtime reproduction: ONNX Runtime 1.19.2 and current 1.29.0; the latter was tested with ONNX 1.22.0 in a Python 3.12 environment.
+Current source baseline: commit eebea690a0b842d6c1aae89e3f1b2164a95f9233.
+At that baseline, onnxruntime/core/util/qmath.h still uses the direct integer cast in the MLFloat16 overload, while other nearby paths use std::nearbyint.
+The runtime call chain reaches that overload through quantize_linear.cc:1014, quantize_linear.cc:822, and qmath.h:341.
+A 4,096-value float16 differential test produced 2,041 mismatches against the specification oracle, always toward zero and by at most one quantization unit. The float32 control returned the expected result.
+Control audit: 18/18 float32 cases passed, including ties, saturation, infinities, per-axis broadcasting, dequantization, random differential cases, and scale equivariance.
+Existing issue microsoft/onnxruntime#18576 reports the same float16-to-int8 rounding defect. It was opened on 2023-11-24, independently reconfirmed on version 1.20.1, and closed by a stale bot on 2025-08-07 without a correction.
+The correction and a non-integral regression test were submitted upstream as microsoft/onnxruntime#32452.
+The existing QuantizeLinearOpMLFloat16Test.Uint8 coverage uses exact multiples of the scale, for which truncation and nearest-even are indistinguishable. A non-integral regression input is required.
+Upstream status
+The correction in microsoft/onnxruntime#32452 was approved by ONNX Runtime member xadupre on 2026-09-07. The follow-up revision also added an explicit ties-to-even regression case requested during review.
+All checks that exercised the change passed. The sole red check, Optional Lint, failed before inspecting the changed code: the reviewdog/action-misspell container build requested a stale Debian bullseye-security URL for libperl5.32 and received HTTP 404 on both attempts. The separate C++ lint, lintrunner, format, build and test jobs passed.
+Boundary
+This is an ordinary numerical-correctness defect in a CPU execution path, not a security finding. A correction should be proposed on the existing issue via a pull request rather than filed as a duplicate issue. The change may alter the outputs of models that implicitly relied on truncation, but it aligns this path with the ONNX contract and with the nearby blocked float16 implementation.

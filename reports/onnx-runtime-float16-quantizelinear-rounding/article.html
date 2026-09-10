@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A two-value counterexample shows the CPU float16 path returning [0, 0] where the ONNX rounding contract requires [1, -1]." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="ONNX Runtime float16 QuantizeLinear truncates instead of rounding" />
+    <meta property="og:description" content="A two-value counterexample shows the CPU float16 path returning [0, 0] where the ONNX rounding contract requires [1, -1]." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/onnx-runtime-float16-quantizelinear-rounding.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ONNX Runtime float16 QuantizeLinear truncates instead of rounding" />
+    <meta name="twitter:description" content="A two-value counterexample shows the CPU float16 path returning [0, 0] where the ONNX rounding contract requires [1, -1]." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/onnx-runtime-float16-quantizelinear-rounding.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>ONNX Runtime float16 QuantizeLinear truncates instead of rounding — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "ONNX Runtime float16 QuantizeLinear truncates instead of rounding", "description": "A two-value counterexample shows the CPU float16 path returning [0, 0] where the ONNX rounding contract requires [1, -1].", "datePublished": "2026-09-05", "dateModified": "2026-09-05", "url": "https://www.gero.uz/research/articles/onnx-runtime-float16-quantizelinear-rounding.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+  </head>
+  <body class="research-body">
+    
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    
+    <main>
+      <article class="article-shell audit-article">
+        <a class="back-link" href="../">← Research index</a>
+        <header class="article-header">
+          <div class="article-kicker"><span>INDEPENDENT NUMERICAL AUDIT</span><span>5 September 2026</span></div>
+          <h1>ONNX Runtime float16 QuantizeLinear truncates instead of rounding</h1>
+          <p class="article-dek">A two-value counterexample shows the CPU float16 path returning [0, 0] where the ONNX rounding contract requires [1, -1].</p>
+          <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54" /><div><strong>Xamit Kadirbekov</strong><span>Independent verification · GERO Research</span></div></div>
+          <div class="topic-row"><span>Numerical audit</span><span>ONNX Runtime</span><span>Quantization</span></div>
+        </header>
+        <div class="evidence-banner"><strong>STATUS · VERIFIED ORDINARY CORRECTNESS DEFECT</strong><span>Reproduced on ONNX Runtime 1.29.0; correction PR #32452 is approved. Its sole red optional-lint job failed while building an unrelated reviewdog container.</span></div>
+        <div class="brief-source">
+          <span>UPSTREAM RECORD</span>
+          <a href="https://github.com/microsoft/onnxruntime/pull/32452" rel="noopener noreferrer">microsoft/onnxruntime#32452 ↗</a>
+        </div>
+        <div class="article-prose"><h2>Finding</h2>
+<p>The ONNX <code>QuantizeLinear</code> specification requires round-to-nearest with ties to even. The ONNX Runtime CPU path for <code>MLFloat16</code> converts <code>x / scale</code> directly with <code>static_cast&lt;int32_t&gt;</code>, which truncates toward zero.</p>
+<h2>Minimal counterexample</h2>
+<pre><code class="language-text">x (float16)     = [0.050018310546875, -0.050018310546875]
+scale (float16) = 0.0999755859375
+zero_point      = 0 (int8)
+x / scale in the float32 CPU kernel
+                  = [0.5003052503, -0.5003052503]</code></pre>
+<p>Results for opset 19:</p>
+<pre><code class="language-text">NumPy nearest-even oracle = [ 1, -1]
+ONNX ReferenceEvaluator   = [ 1, -1]
+ONNX Runtime CPU 1.19.2   = [ 0,  0]</code></pre>
+<p>These inputs are not exact ties: their magnitudes are greater than <code>0.5</code>, so both nearest-even and ordinary nearest rounding select magnitude <code>1</code>.</p>
+<h2>Reproducer</h2>
+<pre><code class="language-python">import numpy as np
+import onnx
+import onnxruntime as ort
+from onnx import TensorProto, helper
+from onnx.reference import ReferenceEvaluator
+
+x = np.array([0.050018310546875, -0.050018310546875], dtype=np.float16)
+scale = np.array(0.0999755859375, dtype=np.float16)
+zero_point = np.array(0, dtype=np.int8)
+
+node = helper.make_node(&quot;QuantizeLinear&quot;, [&quot;x&quot;, &quot;scale&quot;, &quot;zero_point&quot;], [&quot;y&quot;])
+graph = helper.make_graph(
+    [node], &quot;float16_quantize_rounding&quot;,
+    [helper.make_tensor_value_info(&quot;x&quot;, TensorProto.FLOAT16, [2])],
+    [helper.make_tensor_value_info(&quot;y&quot;, TensorProto.INT8, [2])],
+    [onnx.numpy_helper.from_array(scale, &quot;scale&quot;),
+     onnx.numpy_helper.from_array(zero_point, &quot;zero_point&quot;)],
+)
+model = helper.make_model(graph, opset_imports=[helper.make_opsetid(&quot;&quot;, 19)])
+model.ir_version = 10
+
+oracle = np.clip(np.rint(x / scale), -128, 127).astype(np.int8)
+reference = ReferenceEvaluator(model).run(None, {&quot;x&quot;: x})[0]
+actual = ort.InferenceSession(
+    model.SerializeToString(), providers=[&quot;CPUExecutionProvider&quot;]
+).run(None, {&quot;x&quot;: x})[0]
+
+assert np.array_equal(oracle, reference)
+assert np.array_equal(actual, oracle), (actual, oracle)</code></pre>
+<h2>Verification</h2>
+<ul><li>Runtime reproduction: ONNX Runtime <code>1.19.2</code> and current <code>1.29.0</code>; the latter was tested with ONNX <code>1.22.0</code> in a Python 3.12 environment.</li><li>Current source baseline: commit <code>eebea690a0b842d6c1aae89e3f1b2164a95f9233</code>.</li><li>At that baseline, <code>onnxruntime/core/util/qmath.h</code> still uses the direct integer cast in the <code>MLFloat16</code> overload, while other nearby paths use <code>std::nearbyint</code>.</li><li>The runtime call chain reaches that overload through <code>quantize_linear.cc:1014</code>, <code>quantize_linear.cc:822</code>, and <code>qmath.h:341</code>.</li><li>A 4,096-value float16 differential test produced 2,041 mismatches against the specification oracle, always toward zero and by at most one quantization unit. The float32 control returned the expected result.</li><li>Control audit: <code>18/18</code> float32 cases passed, including ties, saturation, infinities, per-axis broadcasting, dequantization, random differential cases, and scale equivariance.</li><li>Existing issue <a href="https://github.com/microsoft/onnxruntime/issues/18576" rel="noopener noreferrer">microsoft/onnxruntime#18576</a> reports the same float16-to-int8 rounding defect. It was opened on 2023-11-24, independently reconfirmed on version <code>1.20.1</code>, and closed by a stale bot on 2025-08-07 without a correction.</li><li>The correction and a non-integral regression test were submitted upstream as <a href="https://github.com/microsoft/onnxruntime/pull/32452" rel="noopener noreferrer">microsoft/onnxruntime#32452</a>.</li><li>The existing <code>QuantizeLinearOpMLFloat16Test.Uint8</code> coverage uses exact multiples of the scale, for which truncation and nearest-even are indistinguishable. A non-integral regression input is required.</li></ul>
+<h2>Upstream status</h2>
+<p>The correction in <a href="https://github.com/microsoft/onnxruntime/pull/32452" rel="noopener noreferrer">microsoft/onnxruntime#32452</a> was approved by ONNX Runtime member <code>xadupre</code> on 2026-09-07. The follow-up revision also added an explicit ties-to-even regression case requested during review.</p>
+<p>All checks that exercised the change passed. The sole red check, <code>Optional Lint</code>, failed before inspecting the changed code: the <code>reviewdog/action-misspell</code> container build requested a stale Debian <code>bullseye-security</code> URL for <code>libperl5.32</code> and received HTTP 404 on both attempts. The separate C++ lint, lintrunner, format, build and test jobs passed.</p>
+<h2>Boundary</h2>
+<p>This is an ordinary numerical-correctness defect in a CPU execution path, not a security finding. A correction should be proposed on the existing issue via a pull request rather than filed as a duplicate issue. The change may alter the outputs of models that implicitly relied on truncation, but it aligns this path with the ONNX contract and with the nearby blocked float16 implementation.</p></div>
+      </article>
+    </main>
+    
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

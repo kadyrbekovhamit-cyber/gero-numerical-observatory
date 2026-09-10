@@ -1,0 +1,34 @@
+← Research index
+INDEPENDENT NUMERICAL AUDIT9 September 2026
+ONNX ReferenceEvaluator misidentifies BatchNormalization opset-9 modes
+Inference uses blended training statistics and five-output training cannot return its requested statistics because mode is selected from momentum instead of output count.
+Xamit KadirbekovIndependent verification · GERO Research
+Numerical auditONNXBatch normalization
+STATUS · VERIFIED ORDINARY CORRECTNESS DEFECTReproduced on ONNX 1.22.0 and current main; correction PR #8442 passed 455 reference-evaluator tests and four NumPy/ONNX Runtime controls.
+UPSTREAM RECORD
+onnx/onnx#8442 ↗
+Finding
+Before opset 14, BatchNormalization represents inference with one output and training with five outputs. The released ONNX ReferenceEvaluator instead chooses inference only when momentum is None. Because the operator schema supplies the default momentum 0.9, a normal one-output inference node enters the wrong calculation.
+The implementation then blends the supplied running statistics with current batch statistics and normalizes using that blend. This makes an inference result depend on momentum, which is a training-only effect. Conversely, a five-output training node returns only Y, so the evaluator cannot resolve the four requested statistic outputs.
+Minimal counterexample
+For input [[[1, 3]], [[5, 7]]], scale 2, bias 0.5, estimated mean 10, and estimated variance 4:
+mode       momentum    ReferenceEvaluator                     NumPy / ORT
+inference  default     maximum absolute error 0.703072        correct
+inference  0.5         maximum absolute error 3.343142        correct
+training   default     missing requested statistic outputs    correct
+training   0.5         missing requested statistic outputs    correct
+The exact inference result is independent of momentum. In training, the current batch has mean 4 and variance 5; these values determine Y, while momentum only updates the running mean and variance.
+Verification
+Reproduced with ONNX 1.22.0, ONNX Runtime 1.29.0, NumPy 2.5.2, Python 3.12 and the CPU execution provider.
+Confirmed unchanged on ONNX main commit c71cbb485c97aa2cb257626a5ac5b0f205c49a22.
+Checked inference and training with both schema-default momentum and explicit momentum 0.5.
+All four corrected cases agree with direct NumPy formulas and ONNX Runtime.
+The complete reference-evaluator test module passed: 455 tests, 4 skipped.
+A mutation restoring the released implementation made every new regression case fail: two numerical mismatches and two missing-output errors.
+Ruff format/check and git diff --check pass.
+Searches of ONNX issues and pull requests found no matching report.
+Correction
+Use the number of node outputs to select the opset-9 mode. In training, compute Y from current-batch statistics, update the running statistics with momentum, and return all five outputs in their legacy order. The fifth legacy output is the saved inverse standard deviation used by ONNX Runtime.
+The correction and regression tests are submitted in ONNX PR #8442. The public reproducer is in gero-onnx-batchnorm-opset9-modes-audit.
+Boundary
+This finding concerns the Python reference oracle and legacy opset-9 model validation. It is not a security issue and is not evidence of an ONNX Runtime inference defect.

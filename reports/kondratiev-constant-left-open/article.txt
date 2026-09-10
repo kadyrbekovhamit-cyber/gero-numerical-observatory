@@ -1,0 +1,40 @@
+← Research index
+ORIGINAL RESEARCH2 September 2026
+A Constant Left Open in 1973, and What It Took to Close It
+Krol proved the leading narrow-cone constant in 1973 and left the next term as O(1). Identifying it took analysis; establishing who owned the first term took archive retrieval.
+Xamit KadirbekovAuthor · GERO Research
+p-LaplacianPriorityVerification
+STATUS · AUTHOR'S ANALYSISArguments and proposals are distinguished from the linked laboratories' reported results.
+In 1973 I. N. Krol' published a short paper in Trudy Matematicheskogo Instituta imeni V. A. Steklova, volume 125, pages 140–146, in a collection edited by O. A. Ladyzhenskaya. He studied the Dirichlet problem for the p-Laplace equation in a circular cone of half-angle l in n-dimensional space, looked for solutions of the separated form u = |x|^λ f(θ), and proved a sharp statement about the narrow-cone limit.
+His Theorem 2 says that as the cone closes,
+λ(l) = ± L / l + O(1),
+where L is the first zero of an explicit Cauchy problem that does not contain the angle at all. The leading term is settled, for every dimension, by a one-dimensional problem anyone can integrate.
+Then the theorem stops. The bounded term is written as O(1) and never identified.
+Fifty-three years later it was still O(1). Akman, Lewis and Vogel cite Krol's paper directly and add an asymptotic at the opposite endpoint. Lundström and Singh record the same leading constant for planar sectors and also leave the next term as an unidentified O(1). Llorente, Manfredi, Troy and Wu write plainly that "apart from such cases, little is known about the exponent."
+This Is The Shape Of Problem Gero Is Built For
+Not an open conjecture. A closed theorem with a labelled hole in it, where the hole is a specific number that somebody can compute and nobody did.
+What We Computed
+Rewriting the angular equation through a non-singular phase turns the exponent into a first-passage condition: κ is the unique value for which a scalar phase reaches π/2 exactly at the cone boundary. That reformulation is not new — it is a Prüfer-type change of variable applied to Krol's own ODE — but it makes the perturbation tractable.
+From it we obtain that Krol's asymptotic is the first truncation of a locally convergent Laurent series,
+κ(α, p, n) = K/α + C + Dα + …,
+and that every coefficient after Krol's leading constant follows from a linear variational equation along Krol's own limiting trajectory. The constant he left open is
+C = −η(K)/K,
+where η solves that linear equation. On the two sections where the problem is classically solvable, C collapses to closed form:
+C = −(n−2)/2 when p = 2, for every dimension; C = (p² − 4) / (4p(p−1)) when n = 2, for every p.
+The third coefficient also closes on the planar section: D = (p−2)²(p² + 4p − 4) / (4π p³ (p−1)).
+And the constant obeys a sign law. Writing C = (p−n)R with R strictly positive, the sign of the constant is the sign of p − n, and the constant vanishes exactly on the conformal line p = n. On that line the expansion is odd: every even power disappears and the first surviving correction is negative for n greater than two.
+The Experiment
+A number of this kind is worth nothing without an attempt to break it.
+Krol's own constant was recomputed by integrating his 1973 Cauchy problem directly and locating the first zero. Across all seventy-two parameter pairs it agreed with the value obtained from the phase formulation to 4.4 × 10⁻⁹. The two routes share no code.
+The closed forms were checked against exact theory rather than against themselves. On the p = 2 section the leading constant must equal a Bessel zero and the constant term must equal −(n−2)/2; observed error 10⁻¹³ and 10⁻¹⁰ respectively. On the n = 2 section the same quantities follow from the classical planar relation; observed error 10⁻¹³, 10⁻¹⁰ and 10⁻⁸ for the three coefficients.
+The strongest check came from outside. Lundström and Singh publish a closed expression for the planar case. Evaluating the constant term numerically from their formula returns exact fractions: −8/3 at p = 1.2, −7/12 at p = 1.5, 5/24 at p = 3, 21/80 at p = 5, 4/15 at p = 10. Our closed form reproduces all five, with zero error to machine precision on four of them.
+Two independent global controls hold as well. The exponent equals one at α = π/2 for every p and n, to 2 × 10⁻¹³. And at the single parameter pair (p, n) = (2, 4) the series terminates after two terms and the exponent is exactly π/α − 1 — confirmed to 10⁻¹³ at angles up to α = 3, far outside the regime where the expansion was derived.
+What This Is Not
+The leading term is Krol's. Not ours, not rediscovered, not independently obtained — his, from 1973, for every dimension, with the defining Cauchy problem written out in his paper. The planar value of that constant appears again in Lundström and Singh. Anything we say about K is a citation.
+The phase reformulation is a non-singular rewriting of a known equation and is not offered as a result.
+There is still no closed formula for the exponent at a general angle, and none for the leading constant itself when n ≥ 3 and p ≠ 2. What exists there is an exact implicit definition and a table.
+The priority audit is incomplete. Four sources that could bear on the constant could not be obtained, and until they are read the correct description of the work is "obtained independently, priority not established."
+Why It Belongs On This Site
+The interesting part of this exercise was not the analysis. It was the retrieval.
+The claim we started with was that the leading constant was new. It survived two days of internal checking. It died in twenty minutes once the 1973 paper was actually in hand — a paper with no DOI, absent from Crossref and OpenAlex, sitting in a Russian archive behind a request that returns 403 without a browser user-agent.
+An assurance layer that only checks arithmetic would have certified the wrong claim. The failure mode was not a wrong number. It was a correct number attached to the wrong attribution, and no amount of numerical verification would have caught it.

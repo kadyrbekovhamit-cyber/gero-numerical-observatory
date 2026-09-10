@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="MLX 0.32.2 returns a valid affine parameterization that differs from the formula stated in its public documentation." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="MLX affine quantization: a documentation/runtime contract mismatch" />
+    <meta property="og:description" content="MLX 0.32.2 returns a valid affine parameterization that differs from the formula stated in its public documentation." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/mlx-affine-quantization-doc-runtime-mismatch.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MLX affine quantization: a documentation/runtime contract mismatch" />
+    <meta name="twitter:description" content="MLX 0.32.2 returns a valid affine parameterization that differs from the formula stated in its public documentation." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/mlx-affine-quantization-doc-runtime-mismatch.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>MLX affine quantization: a documentation/runtime contract mismatch — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "MLX affine quantization: a documentation/runtime contract mismatch", "description": "MLX 0.32.2 returns a valid affine parameterization that differs from the formula stated in its public documentation.", "datePublished": "2026-09-04", "dateModified": "2026-09-04", "url": "https://www.gero.uz/research/articles/mlx-affine-quantization-doc-runtime-mismatch.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+  </head>
+  <body class="research-body">
+    
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    
+    <main>
+      <article class="article-shell audit-article">
+        <a class="back-link" href="../">← Research index</a>
+        <header class="article-header">
+          <div class="article-kicker"><span>INDEPENDENT NUMERICAL AUDIT</span><span>4 September 2026</span></div>
+          <h1>MLX affine quantization: a documentation/runtime contract mismatch</h1>
+          <p class="article-dek">MLX 0.32.2 returns a valid affine parameterization that differs from the formula stated in its public documentation.</p>
+          <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54" /><div><strong>Xamit Kadirbekov</strong><span>Independent verification · GERO Research</span></div></div>
+          <div class="topic-row"><span>Numerical audit</span><span>MLX</span><span>Quantization</span></div>
+        </header>
+        <div class="evidence-banner"><strong>STATUS · VERIFIED DOCUMENTATION/RUNTIME CONTRACT MISMATCH</strong><span>The runtime result is internally consistent. This audit does not demonstrate excess quantization error, corrupted inference or a security defect.</span></div>
+        <div class="brief-source">
+          <span>REPRODUCER · MLX 0.32.2</span>
+          <a href="https://github.com/kadyrbekovhamit-cyber/gero-mlx-quantization-audit" rel="noopener noreferrer">Code, output and full report ↗</a>
+        </div>
+        <div class="article-prose">
+          <h2>Finding</h2>
+          <p>For 32 evenly spaced <code>float32</code> values spanning <code>[-1, 3]</code>, with <code>group_size=32</code> and <code>bits=4</code>, the affine formula published for <code>mx.quantize</code> and the parameters returned by MLX 0.32.2 are not the same contract.</p>
+          <h2>Published formula</h2>
+          <pre><code>alpha = max(w)
+beta = min(w)
+scale = (alpha - beta) / (2^bits - 1)
+q = round((w - beta) / scale)</code></pre>
+          <p>For the test group, that formula specifies:</p>
+          <pre><code>scale = 0.266666667
+bias = -1
+endpoint codes = [0, 15]</code></pre>
+          <h2>Observed MLX 0.32.2 result</h2>
+          <pre><code>scale = -0.272727281
+bias = 3
+endpoint codes = [15, 0]</code></pre>
+          <p>The runtime uses a reversed code direction and a different endpoint anchoring rule. The parameters are valid, but they do not match the formula and return-value description presented by the public documentation.</p>
+          <h2>Independent NumPy check</h2>
+          <p>The reproducer unpacks the four-bit fields from MLX's returned <code>uint32</code> words and evaluates <code>scale × q + bias</code> independently in NumPy <code>float64</code>.</p>
+          <pre><code>runtime-vs-NumPy oracle max error: 2.08616257e-07
+round-trip max error:             0.131964862</code></pre>
+          <p>The first result confirms that <code>mx.dequantize</code> is consistent with the returned parameters. The second is ordinary four-bit quantization error for this input. No additional inference error was found.</p>
+          <h2>Minimal reproduction</h2>
+          <pre><code>python3 -m pip install mlx==0.32.2 mlx-metal==0.32.2 numpy
+python3 reproduce_affine_docs.py</code></pre>
+          <ul>
+            <li>Platform: Apple Silicon.</li>
+            <li>MLX: <code>0.32.2</code>.</li>
+            <li>MLX Metal: <code>0.32.2</code>.</li>
+            <li>Input: 32 evenly spaced <code>float32</code> values in <code>[-1, 3]</code>.</li>
+            <li>Quantization: affine, four bits, one group of 32 values.</li>
+          </ul>
+          <h2>Source explanation</h2>
+          <p>The fallback implementation compares endpoint magnitudes, may negate the scale, selects an endpoint and anchors the scale through a rounded endpoint code. The published affine formula does not describe these sign, selection and anchoring operations.</p>
+          <h2>Recommended correction</h2>
+          <p>MLX can resolve the mismatch in either of two ways: document the implemented sign, endpoint-selection and anchoring rules; or specify only the dequantization invariant and state explicitly that the returned scale may be negative and the bias need not equal the group minimum.</p>
+          <h2>Pinned evidence</h2>
+          <ul>
+            <li><a href="https://github.com/ml-explore/mlx/blob/1f8e74e3f12f31365464a6867c6579f0e9b29d85/python/src/ops.cpp#L4731-L4752" rel="noopener noreferrer">Published formula at the release commit</a>.</li>
+            <li><a href="https://github.com/ml-explore/mlx/blob/1f8e74e3f12f31365464a6867c6579f0e9b29d85/mlx/ops.cpp#L5005-L5049" rel="noopener noreferrer">Runtime implementation at the release commit</a>.</li>
+            <li>Release commit: <code>1f8e74e3f12f31365464a6867c6579f0e9b29d85</code>.</li>
+            <li><a href="https://github.com/kadyrbekovhamit-cyber/gero-mlx-quantization-audit" rel="noopener noreferrer">Reproducer, captured output and audit report</a>.</li>
+          </ul>
+          <aside class="boundary-box"><strong>Boundary</strong><p>This report establishes a reproducible documentation/runtime contract mismatch for one pinned MLX release on Apple Silicon. It does not claim a numerical inference bug, a security vulnerability or a defect in an Apple consumer product.</p></aside>
+        </div>
+      </article>
+    </main>
+    
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

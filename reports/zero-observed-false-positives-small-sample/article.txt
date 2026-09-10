@@ -1,0 +1,47 @@
+← Research index
+TECHNICAL NOTE6 September 2026
+Zero Observed False Positives Is Not a Zero False-Positive Rate
+A zero-error headline is a point estimate. The uncertainty can still be enormous. Here are the exact bounds, the sample sizes and the runnable calculation.
+Xamit KadirbekovIndependent statistical analysis · GERO Research
+Model validationFalse positivesSmall samples
+STATUS · REPRODUCIBLE NOTEThis article demonstrates a general statistical boundary with synthetic counts. It does not evaluate or name any third-party product.
+Suppose an AI or fraud-detection pilot tests two legitimate cases. Both are cleared correctly. The observed false-positive rate is 0/2 = 0%.
+That statement is arithmetically correct and statistically incomplete. Two clean observations do not establish that the underlying false-positive probability is zero, or even small.
+The exact calculation
+Let each representative negative case independently produce a false positive with probability p. If zero failures are observed in n cases, then the probability of that result is (1 − p)n. Setting this probability equal to 0.05 gives the one-sided exact 95% upper confidence bound:
+p_upper = 1 - 0.05^(1/n)
+For n = 2, the bound is 0.776393. In other words, observing zero failures in two trials is compatible with an underlying false-positive rate as high as 77.6% under this conservative one-sided procedure.
+The upper endpoint of a two-sided 95% Wilson score interval is 65.8%. The two numbers are not competing answers: they use different interval constructions and sidedness. A report must name which interval it uses.
+What changes as the sample grows
+negative cases, observed rate, exact one-sided 95% upper, Wilson two-sided 95% upper
+2,   0.0%, 77.6393%, 65.7620%
+10,  0.0%, 25.8866%, 27.7533%
+30,  0.0%,  9.5034%, 11.3513%
+59,  0.0%,  4.9508%,  6.1129%
+299, 0.0%,  0.9969%,  1.2685%
+With zero observed failures, at least 59 representative negative cases are required before the one-sided exact 95% upper bound falls to 5%. To push it below 1% requires 299.
+Those are minimum counts under the model, not universal certification thresholds. A safety-critical decision may require a smaller bound, higher confidence, power against a named alternative and separate guarantees for important subgroups.
+The assumptions are part of the result
+The binomial calculation assumes independent, representative cases and a stable probability of failure. Repeated entities, hand-picked negatives, correlated transactions, distribution shift or subgroup imbalance can make the effective sample much smaller than the headline count.
+Class imbalance also changes what a buyer needs to know. Sensitivity and specificity are not enough by themselves. Precision depends on prevalence; threshold changes can move false positives and false negatives in opposite directions; a pooled average can hide a weak subgroup.
+A defensible validation package should therefore report:
+the target population and sampling process;
+the confusion matrix and class prevalence;
+confidence intervals, not only point estimates;
+threshold and calibration stability;
+subgroup and distribution-shift results; and
+which claims are measured, simulated or still assumptions.
+Why this matters for AI assurance
+A claim ledger should not turn “no failure observed” into “failure is impossible.” GERO treats the first statement as evidence and the second as a stronger claim requiring its own contract.
+The useful output is bounded: zero failures were observed in the tested sample; the estimated rate was 0%; the uncertainty interval remained wide; external validity was not established. That is less dramatic than a zero-risk headline and far more useful for underwriting, procurement and deployment.
+Reproduce it
+The calculation uses only Python's standard library. The public repository includes the script, tests and evidence boundary:
+Source code and tests on GitHub →
+python3 tools/zero_failure_bounds.py
+python3 -m pytest tests/test_zero_failure_bounds.py -q
+Sources
+NIST/SEMATECH documents Wilson and exact binomial confidence intervals and their calculation.
+NIST/SEMATECH — Confidence intervals →
+NIST's AI Risk Management Framework notes that accuracy measurement should include false-positive and false-negative rates, external validity and context-specific harm.
+NIST AI RMF — AI risks and trustworthiness →
+Clopper, C. J., and Pearson, E. S. (1934). “The Use of Confidence or Fiducial Limits Illustrated in the Case of the Binomial.” Biometrika 26(4), 404–413. DOI: 10.1093/biomet/26.4.404.

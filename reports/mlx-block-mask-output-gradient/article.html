@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="An extra output-mask factor suppresses its derivative at zero. A one-line C++ repair passes 377 scenarios and 604 checks; the demonstrated training step lowers loss from 18 to 0." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Zero Mask, Missing Gradient: MLX block_masked_mm" />
+    <meta property="og:description" content="An extra output-mask factor suppresses its derivative at zero. A one-line C++ repair passes 377 scenarios and 604 checks; the demonstrated training step lowers loss from 18 to 0." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/mlx-block-mask-output-gradient.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-mlx-block-mask.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Zero Mask, Missing Gradient: MLX block_masked_mm" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Zero Mask, Missing Gradient: MLX block_masked_mm" />
+    <meta name="twitter:description" content="An extra output-mask factor suppresses its derivative at zero. A one-line C++ repair passes 377 scenarios and 604 checks; the demonstrated training step lowers loss from 18 to 0." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-mlx-block-mask.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/mlx-block-mask-output-gradient.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <link rel="stylesheet" href="../../assets/ux.css" />
+    <meta name="keywords" content="MLX, block_masked_mm, output mask, gradients, autodiff" />
+    <title>Zero Mask, Missing Gradient: MLX block_masked_mm — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Zero Mask, Missing Gradient: MLX block_masked_mm", "description": "An extra output-mask factor suppresses its derivative at zero. A one-line C++ repair passes 377 scenarios and 604 checks; the demonstrated training step lowers loss from 18 to 0.", "datePublished": "2026-09-10", "dateModified": "2026-09-10", "url": "https://www.gero.uz/research/articles/mlx-block-mask-output-gradient.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <style>
+      .audit-table{overflow-x:auto;margin:1.5rem 0}.audit-table table{width:100%;min-width:620px;border-collapse:collapse}.audit-table th,.audit-table td{padding:14px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #d4d9d5;font-size:14px}.article-prose code{overflow-wrap:anywhere}.article-prose pre{overflow-x:auto}.video-frame{position:relative;aspect-ratio:9/16;max-width:390px;margin:2rem auto;background:#111;border-radius:18px;overflow:hidden;box-shadow:0 18px 50px rgba(14,24,20,.18)}.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    </style>
+  </head>
+  <body class="research-body">
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home"><span class="brand-mark" aria-hidden="true">G</span><span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span></a>
+      <nav aria-label="Main navigation"><a href="../../index.html#method">Method</a><a href="../../index.html#lab">Live lab</a><a class="nav-active" href="../../research/">Research</a></nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    <main><article class="article-shell">
+<a class="back-link" href="../">← Research index</a>
+<header class="article-header"><div class="article-kicker"><span>NUMERICAL CASE STUDY</span><span>10 September 2026</span></div>
+<h1>Zero Mask, Missing Gradient: MLX block_masked_mm</h1><p class="article-dek">A real output mask can have a nonzero derivative at zero. Applying it again in backward makes learning stall.</p>
+<div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54"><div><strong>Xamit Kadirbekov</strong><span>Reproducible numerical experiments · GERO Research</span></div></div>
+<div class="topic-row"><span>MLX 0.32.2</span><span>Trainable masks</span><span>FP32 CPU</span></div></header>
+<div class="evidence-banner"><strong>STATUS · LOCALLY REPRODUCED</strong><span>Original: 77 mismatches in 604 checks. Local C++ repair: 377 scenarios and all 604 checks pass. Partial native rebuild. GPU, complete models and novelty remain unestablished.</span></div>
+<div class="article-prose"><p>In MLX block_masked_mm, the VJP for a differentiable real output mask multiplies by that mask a second time. At zero, the minimal example returns gradient 0 instead of 12. In a separate quadratic objective, an actual update leaves loss at 18; the repaired update reaches 0. This is one derivative defect with multiple manifestations.</p>
+<img src="../../assets/og-mlx-block-mask.png" width="1200" height="630" style="width:100%;height:auto;border-radius:16px" alt="MLX real output-mask gradient: 0 instead of 12 at zero. Actual quadratic loss stays 18 before repair and reaches 0 after. One-line local C++ repair passes 377 scenarios and 604 checks.">
+<h2>The short explanation</h2>
+<video controls playsinline preload="metadata" poster="../media/mlx-block-mask-poster.png" width="1080" height="1920" style="display:block;width:100%;max-width:390px;height:auto;margin:24px auto;border-radius:18px" aria-label="MLX output-mask derivative, English explanation"><source src="../media/mlx-block-mask-short.mp4" type="video/mp4"><track kind="captions" src="../media/mlx-block-mask-short.en.vtt" srclang="en" label="English">Your browser does not support embedded video.</video>
+<p><a href="https://youtube.com/shorts/DGmn3WVE2a0">Watch the English YouTube Short →</a></p><p class="muted">Original diagrams and synthetic narration by fictional Alex Vector using the macOS Daniel voice. AI-assisted preparation. <a href="../data/mlx-block-mask-video-source-2026-09-10.zip">Remotion project and source ledger →</a></p>
+<h2>Minimal example</h2>
+<p>Let <code>A</code> be an all-ones 2×3 matrix and <code>B</code> an all-ones 3×2 matrix. Choose block size 32 and a single real output-mask value <code>m</code>. There are four output elements, each equal to <code>3m</code>:</p>
+<pre><code>F(m) = sum(block_masked_mm(A, B, 32, m)) = 12m
+F&#x27;(m) = 12</code></pre>
+<p>The <a href="https://ml-explore.github.io/mlx/build/html/python/_autosummary/mlx.core.block_masked_mm.html">public API</a> supports output masks and block sizes 32 or 64. The single 1×1 mask has the required tile dimensions here. <a href="https://github.com/ml-explore/mlx/pull/1152">PR #1152</a> explicitly introduced multiplicative floating-point masks and their derivatives; this is not an attempt to differentiate a Boolean selection decision.</p>
+<pre><code>import mlx.core as mx
+mx.set_default_device(mx.cpu)
+a = mx.ones((2, 3))
+b = mx.ones((3, 2))
+f = lambda m: mx.block_masked_mm(a, b, 32, m).sum()
+m = mx.zeros((1, 1))
+print(f(m).item())            # 0: correct forward
+print(mx.grad(f)(m).item())   # 0: expected 12</code></pre>
+<div class="audit-table"><table><thead><tr><th>Mask m</th><th>Actual forward F(m)</th><th>Original gradient</th><th>Actual-forward finite difference</th><th>Patched C++ gradient</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td><td>12</td><td>12</td></tr><tr><td>0.5</td><td>6</td><td>6</td><td>12</td><td>12</td></tr><tr><td>1</td><td>12</td><td>12</td><td>12</td><td>12</td></tr><tr><td>−2</td><td>−24</td><td>−24</td><td>12</td><td>12</td></tr></tbody></table></div>
+<p>The finite-difference step is <code>1/1024</code>. The arithmetic values in this minimal example are exactly representable in FP32. Both the installed wheel and the native baseline actually execute the forward operation; the reference is not inferred only from source code. The native repaired variant then returns 12 for all four masks.</p>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/4231f559ddd786e8cf245ad40bb0942ae99e2843/audits/2026-09-10-mlx-block-mask-output-vjp/reproduce.py">Reproduction</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/4231f559ddd786e8cf245ad40bb0942ae99e2843/audits/2026-09-10-mlx-block-mask-output-vjp/wheel-reproduction.json">Fresh wheel results</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/4231f559ddd786e8cf245ad40bb0942ae99e2843/audits/2026-09-10-mlx-block-mask-output-vjp/native_regression.cpp">Native test</a></p>
+<h2>A concrete optimization step stalls</h2>
+<p>Keep the same matrices and make every target output equal to 3. Train only the real output mask:</p>
+<pre><code>L(m) = 0.5 * sum over four elements of (3m - 3)^2
+     = 18(m - 1)^2
+L&#x27;(m) = 36(m - 1)</code></pre>
+<p>At <code>m=0</code>, the exact derivative is −36. The faulty rule returns 0. With learning rate <code>1/36</code>, a correct update sets <code>m=1</code>, reaching the target exactly; the original update leaves <code>m=0</code>.</p>
+<div class="audit-table"><table><thead><tr><th>Execution</th><th>Initial loss</th><th>Computed gradient</th><th>Updated mask</th><th>Actual next loss</th></tr></thead><tbody><tr><td>MLX 0.32.2 wheel / original C++</td><td>18</td><td>0</td><td>0</td><td>18</td></tr><tr><td>Patched C++</td><td>18</td><td>−36</td><td>1</td><td>0</td></tr></tbody></table></div>
+<p>The native test reevaluates the actual forward after each update. This small synthetic objective demonstrates stalled learning for this parameter and initialization. It is not a measurement of production-model quality or a general guarantee that the same step size is appropriate elsewhere.</p>
+<h2>Cause and one-line repair</h2>
+<p>Let <code>C</code> be the matrix product after applying any input masks, before the output mask. Let <code>E</code> expand the output mask <code>O</code> over its blocks, and let <code>G</code> be the incoming gradient:</p>
+<pre><code>Y = C * E(O)
+Correct output-mask VJP = reduce_to_mask_shape(G * C)
+Original output-mask VJP = reduce_to_mask_shape(G * C * E(O))
+                         = O * correct_output_mask_VJP</code></pre>
+<p><code>reduce_to_mask_shape</code> includes sums within partial edge tiles and across dimensions broadcast by the mask. The extra mask factor is not an IEEE-754 rounding effect.</p>
+<p>In <a href="https://github.com/ml-explore/mlx/blob/81ba1c6a0e50a9268b931579c2d4f1158b9aab5a/mlx/primitives.cpp#L5997">BlockMaskedMM::vjp at the inspected revision</a>, the branch computing the output-mask derivative recomputes <code>C</code> using the original output mask. Remove that argument <strong>only in this derivative branch</strong>:</p>
+<pre><code>       auto C = block_masked_mm(
+           primals[0],
+           primals[1],
+           block_size_,
+-          primals[2],
++          std::nullopt,
+           lhs_mask,
+           rhs_mask,
+           stream());</code></pre>
+<p>Input masks remain applied. The repair uses no division by the output mask and works at zero. The rest of the operation is unchanged in the supplied patch.</p>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/4231f559ddd786e8cf245ad40bb0942ae99e2843/audits/2026-09-10-mlx-block-mask-output-vjp/output-mask-vjp.patch">Patch</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/4231f559ddd786e8cf245ad40bb0942ae99e2843/audits/2026-09-10-mlx-block-mask-output-vjp/upstream-mlx_primitives.cpp">Saved upstream source</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/4231f559ddd786e8cf245ad40bb0942ae99e2843/audits/2026-09-10-mlx-block-mask-output-vjp/BlockMaskedMM-baseline-to-upstream.diff">Base-to-upstream method comparison</a></p>
+<h2>Actual before/after validation</h2>
+<p>The independent reference in <code>native_regression.cpp</code> uses scalar loops with <code>double</code> accumulation for forward values and each argument&#x27;s derivative. It does not call the VJP under test to produce its expected gradients. Each array comparison checks shape, finite values and componentwise error at most <code>1e-5 * (1 + abs(reference))</code>.</p>
+<div class="audit-table"><table><thead><tr><th>Variant</th><th>Executed scenarios</th><th>Array/scalar comparisons</th><th>Mismatches</th><th>Scenarios with mismatches</th></tr></thead><tbody><tr><td>Original C++</td><td>377</td><td>604</td><td>77</td><td>76</td></tr><tr><td>Patched C++</td><td>377</td><td>604</td><td>0</td><td>0</td></tr></tbody></table></div>
+<p>Both variants reach all 604 comparisons. No exceptions or shape failures were recorded. All original mismatches belong to output-mask derivatives or the demonstrated optimization step.</p>
+<p>The suite covers:</p>
+<ul><li>Blocks 32 and 64; rectangular matrices and partial edge tiles.</li><li>Zero, one, fractional, negative and heterogeneous floating-point output masks.</li><li>Input masks present/absent and a no-output-mask control.</li><li>Batch broadcasting for inputs and masks, including a scalar broadcast mask.</li><li>Noncontiguous inputs and incoming gradients.</li><li>Joint VJPs, individual-argument VJPs and reordered differentiable arguments.</li><li>Input gradients with a fixed Boolean output mask.</li><li>The four finite-difference cases and the actual optimization step.</li></ul>
+<p>The tests use finite synthetic FP32 arrays with compatible matrix and mask shapes. Zero output-mask entries are part of the tested domain, not excluded as nondifferentiable: the floating-mask forward expression is linear in each mask entry.</p>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/4231f559ddd786e8cf245ad40bb0942ae99e2843/audits/2026-09-10-mlx-block-mask-output-vjp/run-before.log">Before log</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/4231f559ddd786e8cf245ad40bb0942ae99e2843/audits/2026-09-10-mlx-block-mask-output-vjp/run-after.log">After log</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/4231f559ddd786e8cf245ad40bb0942ae99e2843/audits/2026-09-10-mlx-block-mask-output-vjp/build-results.json">Build commands and timings</a></p>
+<p>Compilation and execution were sequential with compute-library thread settings fixed at 1. The publication rerun used about <strong>3.66 child CPU-seconds</strong> for compilation, linking and the two native executions; the earlier recorded run used about 3.45. These are local process accounting measurements, not portable performance benchmarks. The fresh wheel reproduction used about 0.005 CPU-seconds within its measured section.</p>
+<h2>Reproducibility and versions</h2>
+<div class="audit-table"><table><thead><tr><th>Component</th><th>Recorded version or scope</th></tr></thead><tbody><tr><td>Installed package</td><td>MLX 0.32.2</td></tr><tr><td>Native base</td><td><code>ce916dbbcaa88e433b6fd1e60a17f766d49c27fe</code></td></tr><tr><td>Inspected public source</td><td><code>81ba1c6a0e50a9268b931579c2d4f1158b9aab5a</code></td></tr><tr><td>Native platform</td><td>macOS arm64, Apple Clang 17, C++20, Accelerate</td></tr><tr><td>Local compilation</td><td>Changed translation unit and test compiled at <code>-O0</code></td></tr><tr><td>Runtime</td><td>FP32 CPU, compute-library thread limits set to 1</td></tr><tr><td>Archive SHA-256</td><td><code>7826e14e2d1ee526a16352829d460ae39c048e331c339be0b6f8d67d74e68a06</code></td></tr></tbody></table></div>
+<p>The complete <code>BlockMaskedMM::vjp</code> method matches byte-for-byte between the pinned native base and inspected public source. Each native variant links a separate pristine or repaired <code>primitives.cpp</code> before the existing CPU archive. This is <strong>a partial native rebuild, not a complete clean build of the current main branch</strong>. Source/archive hashes and provenance are in <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/4231f559ddd786e8cf245ad40bb0942ae99e2843/audits/2026-09-10-mlx-block-mask-output-vjp/source-metadata.json">source-metadata.json</a>.</p>
+<p>Installed-wheel reproduction, on a compatible macOS environment:</p>
+<pre><code>python3 -m venv .venv
+.venv/bin/pip install mlx==0.32.2
+.venv/bin/python reproduce.py</code></pre>
+<p>Native reproduction with an existing compatible CPU archive and its <code>compile_commands.json</code>:</p>
+<pre><code>export MLX_SOURCE_ROOT=/absolute/path/to/mlx-source
+export MLX_CPU_BUILD=/absolute/path/to/cpu-build
+python3 build_and_test.py
+python3 validate_artifacts.py</code></pre>
+<p>See <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/4231f559ddd786e8cf245ad40bb0942ae99e2843/audits/2026-09-10-mlx-block-mask-output-vjp/BUILD.md">BUILD.md</a> for the archive setup recipe and dependency/build limits. The runner reads the pinned base from Git, writes only beside itself and preserves the source working tree. <code>validate_artifacts.py</code> checks consistency of saved evidence; it does not replace numerical execution. <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/4231f559ddd786e8cf245ad40bb0942ae99e2843/audits/2026-09-10-mlx-block-mask-output-vjp/SHA256SUMS.json">File checksums</a> identify the published artifacts.</p>
+<h2>Existing tests and related reports</h2>
+<p>The inspected <a href="https://github.com/ml-explore/mlx/blob/81ba1c6a0e50a9268b931579c2d4f1158b9aab5a/python/tests/test_blas.py#L1072">test_block_masked_matmul</a> differentiates the matrices and input masks while capturing the output mask in a closure. That specific test does not request an output-mask derivative, which explains why it does not catch this case. This says nothing about every possible downstream test.</p>
+<p>The publication check repeated three GitHub issue/PR searches. Relevant results include <a href="https://github.com/ml-explore/mlx/pull/978">PR #978</a>, introducing masked multiplication, and <a href="https://github.com/ml-explore/mlx/pull/1152">PR #1152</a>, adding multiplicative floating masks and their VJPs. They document the intended feature. <a href="https://github.com/ml-explore/mlx/pull/4441">PR #4441</a> repairs <code>Pad::vjp</code> axis handling, including higher-order paths; it is a different cause from the first-order extra-mask multiplication reproduced here.</p>
+<p>No exact output-mask-gradient correction was identified in the reviewed search results. Search coverage does not establish originality or exclude private or differently titled reports. <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/4231f559ddd786e8cf245ad40bb0942ae99e2843/audits/2026-09-10-mlx-block-mask-output-vjp/publication-duplicate-search.json">Search responses</a> and <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/4231f559ddd786e8cf245ad40bb0942ae99e2843/audits/2026-09-10-mlx-block-mask-output-vjp/related-public-reports.json">related report bodies</a> are included.</p>
+<h2>Limits and remaining questions</h2>
+<p>This report does not test GPU execution, other dtypes, higher-order derivatives, full models, the entire upstream test suite or all possible shapes. It does not establish security impact, maintainer acceptance or reward eligibility. Successful tests are bounded evidence, not a proof for every state.</p>
+<p>The suspected <code>needs_lhs_mask_vjp</code> / <code>needs_rhs_mask_vjp</code> bookkeeping issue remains unconfirmed as a separate numerical defect: later branches can recompute missing intermediates. Mixed GatherQMM derivatives are outside this package. No additional finding is asserted from those hypotheses.</p>
+<p>Independent research, with AI assistance disclosed. No Apple endorsement or sponsorship. The executable examples, algebra, patch and limitations are provided for review and repair.</p><p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/4231f559ddd786e8cf245ad40bb0942ae99e2843/audits/2026-09-10-mlx-block-mask-output-vjp">Full English report, tests and patch →</a><br><a href="../data/mlx-block-mask-audit-2026-09-10.zip">Download the evidence ZIP</a><br><code>SHA-256: 78f5b61c940b8b379373e2c19a037300de433338264b5de81bd7b101810b9350</code></p><p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/4231f559ddd786e8cf245ad40bb0942ae99e2843/audits/2026-09-10-mlx-block-mask-output-vjp/SOURCES.md">Source ledger</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/4231f559ddd786e8cf245ad40bb0942ae99e2843/audits/2026-09-10-mlx-block-mask-output-vjp/SHA256SUMS.json">File checksums</a></p><p>#MLX #Autodiff #MachineLearning #NumericalComputing #SoftwareTesting</p></div></article></main>    <footer><div class="shell footer-grid"><div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div><p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p><a href="../../feed.xml">RSS</a></div></footer>
+  </body>
+</html>

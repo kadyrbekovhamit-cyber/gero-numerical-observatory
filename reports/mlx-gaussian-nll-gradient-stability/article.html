@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Native MLX 0.32.2 CPU reproduction: finite Gaussian NLL with a variance gradient of the wrong sign. Inputs, references, regression tests and limits of a mitigation." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Finite Loss, Wrong Gradient: Gaussian NLL in MLX" />
+    <meta property="og:description" content="Native MLX 0.32.2 CPU reproduction: finite Gaussian NLL with a variance gradient of the wrong sign. Inputs, references, regression tests and limits of a mitigation." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/mlx-gaussian-nll-gradient-stability.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-mlx-gaussian.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Finite Loss, Wrong Gradient: Gaussian NLL in MLX" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Finite Loss, Wrong Gradient: Gaussian NLL in MLX" />
+    <meta name="twitter:description" content="Native MLX 0.32.2 CPU reproduction: finite Gaussian NLL with a variance gradient of the wrong sign. Inputs, references, regression tests and limits of a mitigation." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-mlx-gaussian.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/mlx-gaussian-nll-gradient-stability.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <link rel="stylesheet" href="../../assets/ux.css" />
+    <meta name="keywords" content="MLX, Gaussian NLL, numerical stability, autodiff, FP16, regression tests" />
+    <title>Finite Loss, Wrong Gradient: Gaussian NLL in MLX — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Finite Loss, Wrong Gradient: Gaussian NLL in MLX", "description": "Native MLX 0.32.2 CPU reproduction: finite Gaussian NLL with a variance gradient of the wrong sign. Inputs, references, regression tests and limits of a mitigation.", "datePublished": "2026-09-09", "dateModified": "2026-09-09", "url": "https://www.gero.uz/research/articles/mlx-gaussian-nll-gradient-stability.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <style>
+      .audit-table{overflow-x:auto;margin:1.5rem 0}.audit-table table{width:100%;min-width:620px;border-collapse:collapse}.audit-table th,.audit-table td{padding:14px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #d4d9d5;font-size:14px}.article-prose code{overflow-wrap:anywhere}.article-prose pre{overflow-x:auto}.video-frame{position:relative;aspect-ratio:9/16;max-width:390px;margin:2rem auto;background:#111;border-radius:18px;overflow:hidden;box-shadow:0 18px 50px rgba(14,24,20,.18)}.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    </style>
+  </head>
+  <body class="research-body">
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home"><span class="brand-mark" aria-hidden="true">G</span><span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span></a>
+      <nav aria-label="Main navigation"><a href="../../index.html#method">Method</a><a href="../../index.html#lab">Live lab</a><a class="nav-active" href="../../research/">Research</a></nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    <main><article class="article-shell">
+<a class="back-link" href="../">← Research index</a>
+<header class="article-header"><div class="article-kicker"><span>NUMERICAL CASE STUDY</span><span>9 September 2026</span></div>
+<h1>Finite Loss, Wrong Gradient: Gaussian NLL in MLX</h1><p class="article-dek">A finite loss can still point the optimizer in the wrong direction. Three scalar inputs expose an unstable intermediate in autodiff.</p>
+<div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54"><div><strong>Xamit Kadirbekov</strong><span>Reproducible numerical experiments · GERO Research</span></div></div>
+<div class="topic-row"><span>MLX 0.32.2</span><span>Gaussian NLL</span><span>CPU FP16 / FP32</span></div></header>
+<div class="evidence-banner"><strong>STATUS · LOCALLY REPRODUCED</strong><span>Numerical-stability result on native MLX 0.32.2 CPU. Novelty and full-model impact are unestablished. The proposed mitigation has a retained counterexample.</span></div>
+<div class="article-prose">
+<p>With FP16 <code>mean=20</code>, <code>target=0</code> and <code>variance=300</code>, Gaussian negative log-likelihood in MLX returns a finite loss, but its variance gradient has the wrong sign. Central differences of the actual forward function independently confirm the negative slope.</p>
+<img src="../../assets/og-mlx-gaussian.png" width="1200" height="630" style="width:100%;height:auto;border-radius:16px" alt="MLX Gaussian NLL on CPU FP16: mean 20, target 0, variance 300. Mathematical variance gradient −0.00055556; measured gradient +0.00166702. Full-model effects and novelty are not established.">
+<h2>The derivative that should be returned</h2>
+<p>The <a href="https://ml-explore.github.io/mlx/build/html/python/nn/_autosummary_functions/mlx.nn.losses.gaussian_nll_loss.html">API contract</a> uses variance, not standard deviation. For one element, finite inputs, variance above epsilon and <code>full=False</code>:</p>
+<pre><code>r = mean - target
+L = 0.5 * (log(v) + r*r/v)
+dL/dv = (v-r*r)/(2*v*v)
+
+At r=20, v=300:
+dL/dv = (300-400)/180000 = -1/1800</code></pre>
+<p>The native result is <code>+0.001667022705078125</code>, versus a mathematical derivative of approximately <code>−0.000555555556</code>. This is a sign reversal, not a last-bit rounding difference. Negative Gaussian NLL values themselves are valid for a density and are not counted as an error.</p>
+<h2>Observed values</h2>
+<div class="audit-table" role="region" aria-label="Native and reference Gaussian NLL results" tabindex="0"><table><thead><tr><th>Type; mean, target, variance</th><th>Native loss</th><th>Reference loss</th><th>Native dL/dv</th><th>Reference dL/dv</th></tr></thead><tbody>
+<tr><td>FP16; 300, 0, 300</td><td>Inf</td><td>152.851891</td><td>NaN</td><td>−0.498333</td></tr>
+<tr><td>FP16; 20, 0, 300</td><td>3.517578125</td><td>3.518557904</td><td>+0.00166702</td><td>−0.00055556</td></tr>
+<tr><td>FP16; 0, 0, 0.0001</td><td>−4.60546875</td><td>−4.605087223</td><td>NaN</td><td>+4999.170441</td></tr>
+<tr><td>FP32; 1e20, 0, 1e20</td><td>Inf</td><td>5.0000001002e19</td><td>NaN</td><td>−0.5</td></tr>
+</tbody></table></div>
+<p>References use 80-digit Decimal arithmetic from the actual rounded inputs. FP16 <code>0.0001</code>, for example, is <code>0.00010001659393310547</code>. The <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/26e6469fbde42107f6d54377b5b14dc17fbb76e9/audits/2026-09-09-mlx-gaussian-nll-stability/evidence/mlx-review-results.json">full machine-readable results</a> preserve exact inputs, controls, intermediates and additional FP32 cases. All 14 inspected scenarios agree between the pinned Python function and the installed public API.</p>
+<h2>Why an algebraically correct formula fails</h2>
+<p>The loss squares the residual before division. FP16 cannot represent <code>300²=90000</code>: its largest finite value is 65504. Forward therefore overflows before the division, even though the final loss of about 152.85 would fit.</p>
+<p>Backward contains a different dangerous square. The denominator contribution of <code>Divide::vjp</code> is evaluated as <code>−(cotangent*numerator)/square(denominator)</code>. With residual 20 and variance 300, the residual square 400 is finite, but the variance square overflows. The negative gradient contribution disappears, leaving approximately <code>1/(2*300)</code>.</p>
+<p>For a sufficiently small variance, its square instead rounds to zero, creating Inf or NaN in backward. Direct tests of <code>a/b</code> reproduce the same mechanism without the loss function. At FP16 <code>a=b=300</code>, forward is 1 but the derivative with respect to b is −0 rather than −1/300. These cases are related manifestations of numerical instability, not separate discoveries for every failing input.</p>
+<p>At the finite-loss example, central differences of the native forward are negative for steps 2, 8, 16 and 32. Their values range from −0.00048828125 to −0.000579833984375. The steps accommodate FP16 quantization; this is a local sign check, not a proof for all inputs.</p>
+<h2>A mitigation that passes 12 tests—and still has a limit</h2>
+<p>A local candidate promotes inputs to FP32 before subtraction and squares the normalized residual <code>r/sqrt(v)</code>. The original passes 4 of 12 regression methods; the candidate passes 12/12. The exact public minimal script and both selections were rerun before publication.</p>
+<p><strong>The candidate is not a universal repair.</strong> It changes the FP16 loss dtype and epsilon precision. At FP32 <code>mean=variance≈3e38</code>, it still returns <code>dL/dv=−Inf</code> instead of −0.5. This counterexample is retained and excluded explicitly from the passing 12-test subset. Simply reordering the forward term to <code>r*(r/v)</code> does not repair the gradient either. A production solution needs a stable backward rule and an explicit supported domain.</p>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/26e6469fbde42107f6d54377b5b14dc17fbb76e9/audits/2026-09-09-mlx-gaussian-nll-stability/gaussian_candidate.py">Candidate code →</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/26e6469fbde42107f6d54377b5b14dc17fbb76e9/audits/2026-09-09-mlx-gaussian-nll-stability/test_mlx_regressions.py">Regression assertions →</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/26e6469fbde42107f6d54377b5b14dc17fbb76e9/audits/2026-09-09-mlx-gaussian-nll-stability/evidence/publication-rerun.json">Publication-day rerun →</a></p>
+<h2>Minimal native reproduction</h2><pre><code>&quot;&quot;&quot;Public MLX API reproduction; small synthetic arrays on CPU.&quot;&quot;&quot;
+import mlx.core as mx
+from mlx.nn.losses import gaussian_nll_loss
+
+mx.set_default_device(mx.cpu)
+for mean, variance in [(300., 300.), (20., 300.), (0., .0001)]:
+    x = mx.array([mean], dtype=mx.float16)
+    y = mx.array([0.], dtype=mx.float16)
+    v = mx.array([variance], dtype=mx.float16)
+    loss = gaussian_nll_loss(x, y, v)
+    derivative = mx.grad(lambda z: gaussian_nll_loss(x, y, z))(v)
+    print(&#x27;mean=&#x27;, x.item(), &#x27;variance=&#x27;, v.item(),
+          &#x27;loss=&#x27;, loss.item(), &#x27;dL/dvariance=&#x27;, derivative.item())
+</code></pre>
+<p>Measured environment: macOS 15.5 arm64, Python 3.12.14, official MLX 0.32.2 wheel, CPU. The installed native core hash matches its wheel RECORD. The installed Gaussian function structurally matches the source pinned at <code>ce916dbbcaa88e433b6fd1e60a17f766d49c27fe</code>; this is not a fresh native-core build of that commit.</p>
+<h2>Scope and useful negative results</h2>
+<p>GPU/Metal execution, complete model training, device effects, every input range and the latest upstream HEAD were not tested. The measured mean/target gradients remain correct in the original 300/300 example; it would be inaccurate to say all gradients are wrong.</p>
+<p>Separately, nntrainer nearest/bilinear Upsample passed the original 18 tests and 72 additional cases against an independent interpolation matrix. No new defect was established in that bounded CPU FP32 area. The code and measured results are included in the evidence appendix.</p>
+<p>Two publication-day GitHub searches returned documentation, control-flow, attention and memory-related reports; no exact Gaussian gradient-sign match was identified in that scope. That limited search does not prove novelty. Maintainer confirmation, upstream acceptance, security impact and bounty eligibility are not established.</p>
+<h2>Evidence and primary sources</h2>
+<ul><li><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/26e6469fbde42107f6d54377b5b14dc17fbb76e9/audits/2026-09-09-mlx-gaussian-nll-stability">Immutable GitHub report, runnable code, tests and logs</a></li>
+<li><a href="https://github.com/ml-explore/mlx/blob/ce916dbbcaa88e433b6fd1e60a17f766d49c27fe/python/mlx/nn/losses.py#L330">Pinned Gaussian loss source</a></li>
+<li><a href="https://github.com/ml-explore/mlx/blob/ce916dbbcaa88e433b6fd1e60a17f766d49c27fe/mlx/primitives.cpp#L1806">Pinned division backward implementation</a></li>
+<li><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/26e6469fbde42107f6d54377b5b14dc17fbb76e9/audits/2026-09-09-mlx-gaussian-nll-stability/SOURCES.md">Source ledger and duplicate-search limits</a></li></ul>
+<p><a href="../data/mlx-gaussian-nll-audit-2026-09-09.zip" download>Download the evidence package (ZIP) →</a><br>SHA-256: <code>b6f066befd016ce54c162332a5c83bc8f7a00d4be97e6b9ff1fc62df3d717232</code></p>
+<p>Independent reproduction and scoped numerical-correctness reviews are welcome: <a href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20MLX%20numerical%20review">contact GERO</a>. Prepared with AI assistance; the evidence consists of native executions and algorithmically independent references, not a third-party laboratory review.</p>
+<p class="muted">#MachineLearning #NumericalStability #Autodiff #MLX #SoftwareTesting</p>
+</div></article></main>
+    <footer><div class="shell footer-grid"><div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div><p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p><a href="../../feed.xml">RSS</a></div></footer>
+  </body>
+</html>

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Five bounded audit cases show how documented equivalence, exact identities, input preservation and parameter propagation expose failures that fixed expected values can miss." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="How Numerical Contracts Break: Five Cases in Swift Numerics and nntrainer" />
+    <meta property="og:description" content="Five bounded audit cases show how documented equivalence, exact identities, input preservation and parameter propagation expose failures that fixed expected values can miss." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/numerical-contracts-swift-numerics-nntrainer.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How Numerical Contracts Break: Five Cases in Swift Numerics and nntrainer" />
+    <meta name="twitter:description" content="Five bounded audit cases show how documented equivalence, exact identities, input preservation and parameter propagation expose failures that fixed expected values can miss." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/numerical-contracts-swift-numerics-nntrainer.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>How Numerical Contracts Break: Five Cases in Swift Numerics and nntrainer — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "How Numerical Contracts Break: Five Cases in Swift Numerics and nntrainer", "description": "Five bounded audit cases show how documented equivalence, exact identities, input preservation and parameter propagation expose failures that fixed expected values can miss.", "datePublished": "2026-09-05", "dateModified": "2026-09-05", "url": "https://www.gero.uz/research/articles/numerical-contracts-swift-numerics-nntrainer.html", "author": [{"@type": "Person", "name": "Xamit Kadirbekov"}], "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+  </head>
+  <body class="research-body">
+    
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    
+    <main>
+      <article class="article-shell">
+        <a class="back-link" href="../">← Research index</a>
+        <header class="article-header">
+          <div class="article-kicker"><span>ORIGINAL RESEARCH</span><span>5 September 2026</span></div>
+          <h1>How Numerical Contracts Break: Five Cases in Swift Numerics and nntrainer</h1>
+          <p class="article-dek">Five bounded audit cases show how documented equivalence, exact identities, input preservation and parameter propagation expose failures that fixed expected values can miss.</p>
+          <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Khamit Kadyrbekov" width="54" height="54" /><div><strong>Xamit Kadirbekov</strong><span>Authors · GERO Research</span></div></div>
+          <div class="topic-row"><span>Numerical contracts</span><span>Software testing</span><span>Open source</span></div>
+        </header>
+        <div class="evidence-banner"><strong>STATUS · AUTHOR&#x27;S ANALYSIS</strong><span>Arguments and proposals are distinguished from the linked laboratories&#x27; reported results.</span></div>
+        
+        <div class="article-prose"><p>A numerical library can pass its tests and still violate a documented equivalence, return a complex value in the wrong quadrant, mutate its own inputs, or bypass a shared gradient-scaling mechanism.</p>
+<p>In an independent audit of Swift Numerics and nntrainer, I looked beyond isolated expected numbers. I tested exact mathematical relations, repeated-call consistency, input preservation, parameter propagation, and agreement between public documentation and runtime behavior.</p>
+<p>The result is a set of five compact cases. The first is an accuracy observation rather than a confirmed defect. The other four are open upstream reports with reproducible counterexamples.</p>
+<p>This is not a security assessment or a general judgment on either project. It is a practical demonstration of contract-based numerical testing.</p>
+<h2>Audit method</h2>
+<p>The workflow varied by case, but followed the same structure:</p>
+<h3>1. Identify a documented property, mathematical identity, or pipeline contract.</h3>
+<h3>2. Build a minimal reproducer.</h3>
+<h3>3. Compare against an independent oracle or an exact internal relation.</h3>
+<h3>4. Locate the responsible source branch.</h3>
+<h3>5. Test a bounded repair with focused regression checks.</h3>
+<h3>6. Report the result upstream with explicit scope and limitations.</h3>
+<h2>Case 1 — One ULP in Double.root</h2>
+<p>The initial observation was:</p>
+<pre><code>Double.root(3125, 5)</code></pre>
+<p>The mathematical fifth root of 3125 is exactly 5, while the runtime result is one unit in the last place above it:</p>
+<pre><code>5.000000000000001</code></pre>
+<p>This result alone does not establish a library defect. Xiaodi Wu correctly noted that the behavior is not unique to `root` or to Swift Numerics: it can arise from composing approximate floating-point operations.</p>
+<p>The useful conclusion is narrower. The case exposes a boundary of observed accuracy and shows why surprising rounding must be separated from violations of exact contracts.</p>
+<p>Discussion:</p>
+<p class="source-link"><a href="https://github.com/apple/swift-numerics/issues/342" rel="noopener noreferrer">github.com</a></p>
+<h2>Case 2 — Complex.reciprocal and a documented equivalence</h2>
+<p>The public documentation says that, when `reciprocal` returns a value rather than `nil`, direct division is always equivalent to multiplication by that value.</p>
+<p>A counterexample is:</p>
+<pre><code>let a = Complex&lt;Double&gt;(1e300, 0)
+let b = Complex&lt;Double&gt;(1e300, 1e200)
+
+print(a / b)
+print(a * b.reciprocal!)</code></pre>
+<p>The two paths return:</p>
+<pre><code>a / b           = (0.9999999999999999, -1e-100)
+a * reciprocal  = (0.9999999999999999,  0.0)</code></pre>
+<p>The imaginary component of the reciprocal underflows to zero. Direct division uses scaling and preserves its contribution.</p>
+<p>This is not a demand that arbitrary algebraically equivalent floating-point expressions be bitwise identical. It is a counterexample to a specific statement in the public API documentation.</p>
+<p>Report:</p>
+<p class="source-link"><a href="https://github.com/apple/swift-numerics/issues/346" rel="noopener noreferrer">github.com</a></p>
+<h2>Case 3 — The wrong quadrant in Complex.cosh and Complex.sinh</h2>
+<p>The more serious Swift Numerics case appears in a branch designed to avoid overflow:</p>
+<pre><code>let z = Complex&lt;Double&gt;(-40, 0.5)
+
+print(Complex.cosh(z))
+print(Complex.sinh(z))</code></pre>
+<p>Observed:</p>
+<pre><code>cosh(z) =  1.032850027510405e17 + 5.642485416641618e16 i
+sinh(z) = -1.032850027510405e17 - 5.642485416641618e16 i</code></pre>
+<p>The imaginary signs should be the opposite. Exact identities determine the expected quadrants:</p>
+<pre><code>cosh(-x + iy) = conjugate(cosh(x + iy))
+sinh(-x + iy) = -conjugate(sinh(x + iy))</code></pre>
+<p>These checks do not depend on another library or on a tolerance near the last bit. An 80-decimal-digit `mpmath` evaluation independently confirms the expected signs.</p>
+<p>The cause is in the large-`abs(x)` fast paths. In `cosh`, the sign of the negative real input is not applied to the imaginary component. In `sinh`, it is applied to both components even though it should affect only the real one. The error then propagates to `Complex.cos` and `Complex.sin`.</p>
+<p>This is a wrong-quadrant result, not a last-bit discrepancy. Existing near-overflow tests contain the same incorrect sign expectations.</p>
+<p>Report:</p>
+<p class="source-link"><a href="https://github.com/apple/swift-numerics/issues/347" rel="noopener noreferrer">github.com</a></p>
+<h2>Case 4 — KLD backward mutates its label</h2>
+<p>In nntrainer&#x27;s Kullback–Leibler divergence layer, the derivative path negates the label in place:</p>
+<pre><code>label.multiply_i(-1.0f);
+label.divide(predicted, deriv);</code></pre>
+<p>For P = 0.25 and Q = 0.5, the expected derivative is -0.5. Two consecutive backward calls produce:</p>
+<pre><code>before backward:  label = +0.25
+first backward:   gradient = -0.5, label = -0.25
+second backward:  gradient = +0.5, label = +0.25</code></pre>
+<p>The gradient alternates because the computation mutates its input state.</p>
+<p>A bounded local repair writes the negative value directly into the output tensor while leaving `label` unchanged. The focused regression check passes after that change.</p>
+<p>Report:</p>
+<p class="source-link"><a href="https://github.com/nntrainer/nntrainer/issues/4328" rel="noopener noreferrer">github.com</a></p>
+<h2>Case 5 — Four loss layers bypass loss_scale</h2>
+<p>nntrainer has a shared dynamic loss-scaling mechanism, but four implemented loss layers do not call the existing helper:</p>
+<ul><li>sigmoid cross-entropy;</li><li>softmax cross-entropy;</li><li>KLD;</li><li>constant-derivative loss.</li></ul>
+<p>With `loss_scale = 8`, a derivative of -0.5 should become -4.0. In the affected layers it remains -0.5.</p>
+<p>Adding the existing call:</p>
+<pre><code>LossLayer::applyLossScale(context, ret_derivative);</code></pre>
+<p>makes all four focused counterexamples and 71 focused regression tests pass. The KLD layer uses the output name `deriv`, but the helper call is the same.</p>
+<p>I do not claim a fully green project build: 104 unrelated golden tests could not run correctly because their runtime data was absent from the tested checkout.</p>
+<p>Report:</p>
+<p class="source-link"><a href="https://github.com/nntrainer/nntrainer/issues/4329" rel="noopener noreferrer">github.com</a></p>
+<h2>What the cases have in common</h2>
+<p>There is no demonstrated single root cause across these cases. What unifies them is the detection method: test properties and contracts in addition to fixed expected numbers.</p>
+<p>The most productive checks were:</p>
+<ul><li>exact mathematical relations between outputs;</li><li>preservation of input data;</li><li>repeatability under identical calls;</li><li>propagation of control parameters through the full pipeline;</li><li>agreement between public documentation and runtime behavior.</li></ul>
+<p>One unexpected last digit is not automatically a defect. A wrong component sign, mutation of an input tensor, omission of `loss_scale`, or a direct counterexample to a documented equivalence is a different class of evidence.</p>
+<p>The practical conclusion is simple: numerical systems should be tested not only with examples, but also with properties that must hold for entire families of inputs. Those checks can expose failures that ordinary example-based tests miss.</p>
+<p>As of 5 September 2026, the four reports presented here as defects — #346, #347, #4328, and #4329 — remain open and have no maintainer comments.</p>
+<p>Executable Swift audit materials:</p>
+<p class="source-link"><a href="https://github.com/kadyrbekovhamit-cyber/swift-numerics-complex-contract-audit" rel="noopener noreferrer">github.com</a></p>
+<p>Root-accuracy audit materials:</p>
+<p class="source-link"><a href="https://github.com/kadyrbekovhamit-cyber/swift-numerics-root-accuracy-audit" rel="noopener noreferrer">github.com</a></p>
+<p>Independent reproduction and analysis by Xamit Kadirbekov / GERO. No affiliation with Apple, Swift Numerics, Samsung, or the nntrainer maintainers is claimed.</p></div>
+      </article>
+    </main>
+    
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

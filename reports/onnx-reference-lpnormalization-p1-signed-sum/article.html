@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="The input [1, -1] becomes [0, 0], while the exact L1-normalized result and ONNX Runtime both return [0.5, -0.5]." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="ONNX reference LpNormalization uses a signed sum for p=1" />
+    <meta property="og:description" content="The input [1, -1] becomes [0, 0], while the exact L1-normalized result and ONNX Runtime both return [0.5, -0.5]." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/onnx-reference-lpnormalization-p1-signed-sum.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ONNX reference LpNormalization uses a signed sum for p=1" />
+    <meta name="twitter:description" content="The input [1, -1] becomes [0, 0], while the exact L1-normalized result and ONNX Runtime both return [0.5, -0.5]." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/onnx-reference-lpnormalization-p1-signed-sum.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>ONNX reference LpNormalization uses a signed sum for p=1 — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "ONNX reference LpNormalization uses a signed sum for p=1", "description": "The input [1, -1] becomes [0, 0], while the exact L1-normalized result and ONNX Runtime both return [0.5, -0.5].", "datePublished": "2026-09-07", "dateModified": "2026-09-07", "url": "https://www.gero.uz/research/articles/onnx-reference-lpnormalization-p1-signed-sum.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+  </head>
+  <body class="research-body">
+    
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    
+    <main>
+      <article class="article-shell audit-article">
+        <a class="back-link" href="../">← Research index</a>
+        <header class="article-header">
+          <div class="article-kicker"><span>INDEPENDENT NUMERICAL AUDIT</span><span>7 September 2026</span></div>
+          <h1>ONNX reference LpNormalization uses a signed sum for p=1</h1>
+          <p class="article-dek">The input [1, -1] becomes [0, 0], while the exact L1-normalized result and ONNX Runtime both return [0.5, -0.5].</p>
+          <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54" /><div><strong>Xamit Kadirbekov</strong><span>Independent verification · GERO Research</span></div></div>
+          <div class="topic-row"><span>Numerical audit</span><span>ONNX</span><span>Normalization</span></div>
+        </header>
+        <div class="evidence-banner"><strong>STATUS · VERIFIED ORDINARY CORRECTNESS DEFECT</strong><span>Reproduced on ONNX 1.22.0 and current main; correction PR #8427 adds absolute values and a negative-input regression.</span></div>
+        <div class="brief-source">
+          <span>UPSTREAM RECORD</span>
+          <a href="https://github.com/onnx/onnx/pull/8427" rel="noopener noreferrer">onnx/onnx#8427 ↗</a>
+        </div>
+        <div class="article-prose"><h2>Claim under test</h2>
+<p>ONNX defines <code>LpNormalization</code> as division by an Lp norm along a selected axis. For <code>p=1</code>, the divisor is the sum of absolute values:</p>
+<pre><code class="language-text">||x||₁ = Σᵢ |xᵢ|</code></pre>
+<p>The sign of a component must not reduce the norm contributed by another component.</p>
+<h2>Minimal counterexample</h2>
+<p>For <code>axis=0</code>, <code>p=1</code>, and float32 input <code>[1, -1]</code>:</p>
+<pre><code class="language-text">ONNX ReferenceEvaluator   [ 0.0,  0.0]
+ONNX Runtime CPU          [ 0.5, -0.5]
+exact x / Σ|x|            [ 0.5, -0.5]</code></pre>
+<p>The exact L1 norm is <code>|1| + |-1| = 2</code>. The reference implementation instead forms the signed sum <code>1 + (-1) = 0</code>; its zero-norm guard then replaces the result with a zero vector.</p>
+<p>Two further cases isolate the same cause:</p>
+<pre><code class="language-text">input [-1,-2]  reference [ 1/3,  2/3]  exact [-1/3, -2/3]
+input [ 1,-3]  reference [-1/2,  3/2]  exact [ 1/4, -3/4]</code></pre>
+<p>The second reference output even has L1 norm <code>2</code>, so it is not normalized.</p>
+<h2>Cause</h2>
+<p>The current implementation computes:</p>
+<pre><code class="language-python">norm = np.power(np.power(x, p).sum(axis=axis), 1.0 / p)</code></pre>
+<p>For <code>p=2</code>, squaring removes the sign. For <code>p=1</code>, it does not. The definition requires <code>np.abs(x)</code> before exponentiation.</p>
+<p>The existing <code>p=1</code> backend examples use only non-negative inputs, so signed summation and absolute summation happen to agree in those tests.</p>
+<h2>Independent verification</h2>
+<ul><li>Exact arithmetic gives <code>[1/2, -1/2]</code> for the minimal input.</li><li>NumPy <code>x / np.sum(np.abs(x))</code> gives <code>[0.5, -0.5]</code> in float32.</li><li>ONNX Runtime 1.29.0 returns the same result on the CPU provider.</li><li>ONNX ReferenceEvaluator 1.22.0 returns <code>[0, 0]</code>.</li><li>The formula remained present on ONNX <code>main</code> commit <code>1fdd92cf2f70f7a00c55d9153d243829d9349a96</code>, checked 2026-09-07.</li><li>Searches across open and closed ONNX issues and pull requests using four relevant phrasings found no duplicate.</li></ul>
+<p>The executable reproducer is published at <a href="https://github.com/kadyrbekovhamit-cyber/gero-onnx-reference-lpnormalization-audit" rel="noopener noreferrer">gero-onnx-reference-lpnormalization-audit</a>.</p>
+<h2>Impact and boundary</h2>
+<p>This defect affects the Python ReferenceEvaluator when <code>p=1</code> and the reduced axis contains negative values. It does not implicate ONNX Runtime, which matched the exact result in every tested case. The <code>p=2</code> path is not implicated.</p>
+<p>A reference evaluator is used as an oracle by backend authors and conformance tests. Here, a correct runtime can disagree with the official reference, and a consumer of <code>onnx.reference</code> can receive a vector with wrong signs, magnitudes, or normalization.</p>
+<p>This is an ordinary numerical-correctness defect, not a security finding. No deployed-system impact or loss is claimed.</p>
+<h2>Proposed correction</h2>
+<p>Compute the norm from absolute values:</p>
+<pre><code class="language-python">norm = np.power(np.power(np.abs(x), p).sum(axis=axis), 1.0 / p)</code></pre>
+<p>A regression test must include a negative <code>p=1</code> input; <code>[1, -1]</code> distinguishes the two formulas with an exact result.</p>
+<h2>Upstream status</h2>
+<p>The one-line correction and a negative-input backend regression test were submitted as <a href="https://github.com/onnx/onnx/pull/8427" rel="noopener noreferrer">ONNX pull request #8427</a>.</p></div>
+      </article>
+    </main>
+    
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

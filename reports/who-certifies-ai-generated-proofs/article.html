@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A falsification-first protocol for turning AI-generated mathematical arguments into dependency graphs, bounded verdicts and replayable evidence." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="AI Can Generate New Mathematics. Who Certifies the Proof?" />
+    <meta property="og:description" content="A falsification-first protocol for turning AI-generated mathematical arguments into dependency graphs, bounded verdicts and replayable evidence." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/who-certifies-ai-generated-proofs.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AI Can Generate New Mathematics. Who Certifies the Proof?" />
+    <meta name="twitter:description" content="A falsification-first protocol for turning AI-generated mathematical arguments into dependency graphs, bounded verdicts and replayable evidence." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/who-certifies-ai-generated-proofs.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>AI Can Generate New Mathematics. Who Certifies the Proof? — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "AI Can Generate New Mathematics. Who Certifies the Proof?", "description": "A falsification-first protocol for turning AI-generated mathematical arguments into dependency graphs, bounded verdicts and replayable evidence.", "datePublished": "2026-09-02", "dateModified": "2026-09-02", "url": "https://www.gero.uz/research/articles/who-certifies-ai-generated-proofs.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+  </head>
+  <body class="research-body">
+    
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    
+    <main>
+      <article class="article-shell">
+        <a class="back-link" href="../">← Research index</a>
+        <header class="article-header">
+          <div class="article-kicker"><span>ORIGINAL RESEARCH</span><span>2 September 2026</span></div>
+          <h1>AI Can Generate New Mathematics. Who Certifies the Proof?</h1>
+          <p class="article-dek">A falsification-first protocol for turning AI-generated mathematical arguments into dependency graphs, bounded verdicts and replayable evidence.</p>
+          <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54" /><div><strong>Xamit Kadirbekov</strong><span>Author · GERO Research</span></div></div>
+          <div class="topic-row"><span>Proof verification</span><span>Formal methods</span><span>False acceptance</span></div>
+        </header>
+        <div class="evidence-banner"><strong>STATUS · AUTHOR'S ANALYSIS</strong><span>Arguments and proposals are distinguished from the linked laboratories' reported results.</span></div>
+        <div class="article-prose"><p>In February 2026, OpenAI published an unusually important correction in its report on the First Proof research-level mathematics challenge.</p>
+<p>The company had asked an internal model to attempt ten specialized problems. It initially considered the model’s solution to Problem 2 likely correct. After official commentary and further analysis by the mathematical community, OpenAI concluded that the attempt was wrong.</p>
+<p>This is not an embarrassing footnote. It is the central engineering problem of AI-assisted mathematics.</p>
+<p>OpenAI states it plainly: for research-level problems, “correctness is hard to establish without expert review.” It also says its fast-sprint evaluation was not as clean as a properly controlled experiment should be and calls for a more rigorous evaluation framework.</p>
+<p>That gap matters more as models move from solving exercises to proposing new mathematics. A plausible false proof is not just a bad answer. It can consume expert time, contaminate later reasoning, enter a paper or codebase, and become a false dependency for further work.</p>
+<p>The next bottleneck is therefore not only proof generation. It is proof assurance.</p>
+<h2>The Problem: Verification Is Not A Single Score</h2>
+<p>A mathematical proof is a dependency structure. Its conclusion is valid only if every necessary assumption, definition, reduction, lemma, calculation, quantifier, and cited result survives scrutiny.</p>
+<p>Yet an LLM evaluator often compresses this structure into one judgment: “looks correct.” That creates several failure modes.</p>
+<h3>1. Shared blind spots. A generator and verifier from the same model family may accept the same plausible shortcut.</h3>
+<h3>2. Error cancellation. Two locally invalid steps can accidentally produce a correct-looking final expression.</h3>
+<h3>3. Semantic drift. A proof assistant may verify a formal statement that is not equivalent to the original natural-language problem.</h3>
+<h3>4. Hidden assumptions. Positivity, compactness, independence, differentiability, finiteness, or a boundary condition may enter without being declared.</h3>
+<h3>5. Citation substitution. A real theorem may be cited, but with conditions that do not apply to the present case.</h3>
+<h3>6. Selection bias. If humans choose the best-looking result from many attempts, the reported outcome mixes model ability with evaluator judgment.</h3>
+<h3>7. Unknown status disguised as success. A verifier that cannot find an error may label the proof correct, even though “not refuted” and “verified” are different states.</h3>
+<p>Formal verification helps enormously, but it does not remove the entire problem. OpenAI’s own January 2026 science report notes that Lean can expose gaps in a formalized proof. The unresolved bridge is semantic: did we formalize the right claim, with the right assumptions, and preserve its intended meaning?</p>
+<h2>A Proposed Solution: A Falsification-First Assurance Layer</h2>
+<p>I am developing GERO — a research assurance runtime — around a simple principle:</p>
+<p>Never certify an entire proof directly. Certify its necessary dependencies, using verifiers with different failure modes, and preserve the evidence.</p>
+<p>The proposed protocol has seven stages.</p>
+<h3>1. Compile the proof into a claim graph</h3>
+<p>Represent the argument as a directed acyclic graph G = (V, E).</p>
+<p>Each node v is a checkable claim. Each edge u → v means that claim v depends on claim u. Nodes include definitions, assumptions, cited theorems, algebraic transformations, numerical computations, lemmas, and the final result.</p>
+<p>The graph prevents a fluent final paragraph from hiding a broken intermediate step. If a necessary node is unresolved, the conclusion cannot receive a stronger status.</p>
+<h3>2. Attach an evidence contract to every node</h3>
+<p>For each claim, record:</p>
+<ul><li>exact premises and conclusion;</li><li>variable domains and quantifiers;</li><li>units, tolerances, and boundary conditions where relevant;</li><li>the acceptable verification method;</li><li>the artifact required as evidence.</li></ul>
+<p>Examples of artifacts include an exact-arithmetic trace, an interval enclosure, a symbolic identity, executable tests, a counterexample search log, an SMT result, a Lean theorem, a primary-source citation, or expert review.</p>
+<h3>3. Route claims to heterogeneous verifiers</h3>
+<p>Do not ask one LLM to grade another LLM and call that independence.</p>
+<p>Route different claim types to tools that fail differently:</p>
+<ul><li>exact rational arithmetic for finite calculations;</li><li>dimensional analysis for physical consistency;</li><li>interval methods for bounded numerical claims;</li><li>computer algebra for identities;</li><li>finite-model and counterexample search for quantified statements;</li><li>SMT solvers for constrained logical claims;</li><li>Lean or another proof assistant for formalizable theorems;</li><li>retrieval against primary literature for imported results;</li><li>an independent model family for semantic critique;</li><li>a domain expert for irreducibly judgment-heavy steps.</li></ul>
+<p>Agreement between correlated LLMs is not a certificate. Evidence from independent mechanisms is much stronger.</p>
+<h3>4. Try to break the proof before trying to approve it</h3>
+<p>The system should spend an explicit falsification budget on each critical node:</p>
+<ul><li>negate the conclusion and search for a model;</li><li>test small and degenerate cases;</li><li>swap quantifiers;</li><li>perturb assumptions and boundary conditions;</li><li>examine limiting behavior;</li><li>search for equality cases;</li><li>check whether a cited theorem’s hypotheses are actually satisfied;</li><li>generate adversarial reformulations of the same claim.</li></ul>
+<p>This is closer to engineering stress testing than to ordinary answer grading. A proof that survives diverse attacks earns evidence. A proof that merely sounds coherent does not.</p>
+<h3>5. Allocate a proof-level risk budget</h3>
+<p>Suppose p_v is a conservative upper bound on the probability that node v contains an undetected failure after its assigned checks. Without assuming independence, a basic union bound gives:</p>
+<p>P(undetected failure in the proof) ≤ Σ p_v,</p>
+<p>where the sum runs over necessary nodes.</p>
+<p>This is not a magical probability oracle. The p_v values must be calibrated empirically on controlled defect sets and expert-labelled proofs. But the formulation creates an actionable engineering discipline: spend more verification compute and human attention on high-impact nodes until the total residual risk falls below a declared threshold.</p>
+<h3>6. Return bounded statuses, not artificial certainty</h3>
+<p>GERO should return one of several explicit states:</p>
+<ul><li>VERIFIED — the required evidence contracts are satisfied;</li><li>CONDITIONALLY VERIFIED — valid under named assumptions or a specific formalization;</li><li>CONTRADICTED — a reproducible failure or counterexample exists;</li><li>INSUFFICIENT EVIDENCE — checks are incomplete or inconclusive;</li><li>SEMANTIC REVIEW REQUIRED — the formal result may not match the intended claim.</li></ul>
+<p>Abstention is a feature. Google DeepMind makes the same design choice in Aletheia: its research agent can admit failure instead of forcing an answer.</p>
+<h3>7. Produce a replayable certificate</h3>
+<p>Every verdict should ship with a research record containing:</p>
+<ul><li>the claim graph and versioned assumptions;</li><li>model and tool versions;</li><li>prompts or task specifications needed to reproduce the checks;</li><li>seeds and generated candidates where relevant;</li><li>solver traces and formal artifacts;</li><li>citations and retrieved passages;</li><li>failed attacks, surviving counterexamples, and unresolved nodes;</li><li>human decisions and their scope.</li></ul>
+<p>The certificate does not claim eternal mathematical truth. It states exactly what was checked, by which mechanisms, under which assumptions, and what remains open.</p>
+<h2>How This Would Improve A First Proof–Style Evaluation</h2>
+<p>A cleaner research-grade evaluation could use:</p>
+<ul><li>sealed problems and evaluator data;</li><li>predeclared generation and selection budgets;</li><li>a frozen claim-extraction protocol;</li><li>blind expert annotation of critical nodes;</li><li>independent formalization review;</li><li>injected but hidden proof defects to measure false acceptance;</li><li>cross-family and tool-based verification;</li><li>public certificates for accepted results;</li><li>separate reporting for autonomous generation, human steering, verification, and final editing.</li></ul>
+<p>The primary metric should not be “How many proofs did the model produce?” It should be:</p>
+<p>How often did the assurance process accept a plausible but invalid proof?</p>
+<p>That false-acceptance rate is the quantity that determines whether AI-generated mathematics can safely enter the research record.</p>
+<h2>What Exists Today — And What Does Not</h2>
+<p>The current GERO prototype already supports exact rational arithmetic, dimensional checks, interval enclosure, finite implication checks, finite quantified formulas, structured evidence contracts, and dependency-graph status propagation.</p>
+<p>In an initial engineering smoke test with 60 paired clean and deliberately corrupted cases, it detected all 60 injected defects, rejected none of the clean controls, and issued no positive verdict without a certificate.</p>
+<p>This is not yet evidence that GERO can certify natural research proofs. The cases were designed to test software mechanisms. The next step must be an independent benchmark containing expert-written and model-generated proof trajectories, realistic semantic mismatches, hidden assumptions, incorrect citations, and subtle formalization errors.</p>
+<p>The target is not to replace mathematicians. It is to make their scarce judgment auditable and deploy it where automation remains weakest.</p>
+<h2>The Product Opportunity</h2>
+<p>Frontier labs are building stronger mathematical generators. Google DeepMind has added a generator–verifier–reviser loop. OpenAI is combining long-horizon reasoning with formal tools and is publicly asking for more rigorous evaluation of research-grade proofs.</p>
+<p>GERO is intended to become the independent assurance layer between those systems and the scientific record:</p>
+<p>LLM proposes → GERO decomposes → heterogeneous tools attack and verify → experts resolve the frontier → the system returns a bounded status and replayable certificate.</p>
+<p>The decisive question for AI mathematics is changing.</p>
+<p>It is no longer only: Can the model discover a proof?</p>
+<p>It is also: Can another team independently determine why that proof should be trusted — or exactly where it fails?</p>
+<p>That is the problem I believe we should solve next.</p>
+<h2>Primary sources</h2>
+<p>OpenAI — Our First Proof submissions:</p>
+<p class="source-link"><a href="https://openai.com/index/first-proof-submissions/" rel="noopener noreferrer">openai.com</a></p>
+<p>OpenAI — AI as a Scientific Collaborator, January 2026:</p>
+<p class="source-link"><a href="https://cdn.openai.com/pdf/f4b4a5da-b2de-418d-9fcd-6b293e9dc157/oai_ai-as-a-scientific-collaborator_jan-2026.pdf" rel="noopener noreferrer">cdn.openai.com</a></p>
+<p>Google DeepMind — Accelerating Mathematical and Scientific Discovery with Gemini Deep Think:</p>
+<p class="source-link"><a href="https://deepmind.google/blog/accelerating-mathematical-and-scientific-discovery-with-gemini-deep-think/" rel="noopener noreferrer">deepmind.google</a></p></div>
+      </article>
+    </main>
+    
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

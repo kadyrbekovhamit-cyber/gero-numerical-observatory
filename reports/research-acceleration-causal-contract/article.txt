@@ -1,0 +1,28 @@
+← Research index
+FRONTIER LAB WATCHReviewed 7 September 2026
+Research acceleration needs an outcome-weighted evidence contract
+OpenAI reports rapidly growing agent use while warning that activity metrics are hard to interpret; the mathematical task is to estimate validated progress under steering, selection and changing compute.
+Xamit KadirbekovIndependent analysis · Source: OpenAI
+Research agentsCausal evaluationHuman steering
+STATUS · SOURCE REPORT + GERO ANALYSISThis brief has not independently reproduced the laboratory's experiment.
+PRIMARY SOURCE · 6 September 2026
+Research acceleration: The view inside OpenAI ↗
+What the laboratory reports
+OpenAI says it has reached its September 2026 goal of an automated research intern: a system that can perform well-defined, multi-day research tasks under human direction.
+By mid-August, aggregate coding-agent use in the research organization reached 3.1 agent-workdays for every human workday, and experiments per active experimenter were at a tracked high.
+OpenAI cautions that code volume and experiment counts are easy to measure but difficult to interpret as research progress, with compute growth and other bottlenecks complicating attribution.
+For tasks with a ground-truth outcome, reported success rose, but complex tasks still required substantial steering; more than half of successful 4–8 hour tasks in the previous six months included at least one human intervention.
+The mathematical problem
+Agent activity is not the estimand. The relevant quantity is validated incremental research progress per unit of compute and human attention. Ground-truth availability, exclusion of uncertain outcomes, changing task mix, compute growth and intervention after partial failure create confounding and missing-not-at-random labels. A raw success rate can therefore move without identifying autonomous capability or net acceleration.
+GERO's proposed response
+Pre-register the task unit, success predicate, resource budget and stopping rule before an agent run begins.
+Preserve every attempt, intervention and unresolved outcome in a replayable event graph; report both assisted and intervention-free success instead of conditioning only on completed work.
+Validate outputs in layers: executable artifact checks, blinded expert review and held-out replication, with compute and expert minutes attached to each verdict.
+A falsifiable experiment
+Randomly assign matched research tasks to human-only, fixed-budget agent-only and human-agent workflows while holding available compute and task horizon explicit.
+Use blinded reviewers and pre-registered criteria to measure valid completion, false acceptance, correction count, expert minutes, compute cost and cycle time.
+Retain uncertain and failed tasks in the denominator, then repeat on a shifted task set to test whether the measured acceleration generalizes.
+Boundary
+GERO cannot audit OpenAI's internal logs, classifier or causal effect from the public aggregate report. The proposed experiment is a prospective evaluation design, not an independent estimate of OpenAI's research acceleration.
+Read the primary source
+This article is an original analytical summary, not a republication. Read Research acceleration: The view inside OpenAI for the laboratory's complete claims, methods and context.

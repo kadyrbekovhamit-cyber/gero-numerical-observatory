@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Reproduced BCE and logaddexp failures in MLX and nntrainer, with mathematical references, tested local patches and downloadable evidence." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="When Small Losses and Gradients Disappear" />
+    <meta property="og:description" content="Reproduced BCE and logaddexp failures in MLX and nntrainer, with mathematical references, tested local patches and downloadable evidence." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/when-small-losses-and-gradients-disappear.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="When Small Losses and Gradients Disappear" />
+    <meta name="twitter:description" content="Reproduced BCE and logaddexp failures in MLX and nntrainer, with mathematical references, tested local patches and downloadable evidence." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/when-small-losses-and-gradients-disappear.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>When Small Losses and Gradients Disappear — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "When Small Losses and Gradients Disappear", "description": "Reproduced BCE and logaddexp failures in MLX and nntrainer, with mathematical references, tested local patches and downloadable evidence.", "datePublished": "2026-09-07", "dateModified": "2026-09-07", "url": "https://www.gero.uz/research/articles/when-small-losses-and-gradients-disappear.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}}</script>
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+  <style>.audit-table{overflow-x:auto;margin:1.5rem 0}.audit-table table{width:100%;min-width:620px;border-collapse:collapse}.audit-table th,.audit-table td{padding:14px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #d4d9d5;font-size:14px}.article-prose code{overflow-wrap:anywhere}.article-prose pre{overflow-x:auto}</style></head>
+  <body class="research-body">
+
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    <main><article class="article-shell">
+<a class="back-link" href="../">← Research index</a>
+<header class="article-header"><div class="article-kicker"><span>TECHNICAL NOTE</span><span>7 September 2026</span></div>
+<h1>When Small Losses and Gradients Disappear</h1>
+<p class="article-dek">Zero can look reassuring while hiding a lost, representable quantity. Three compact cases in MLX and nntrainer expose two ways that floating-point algebra erases useful information.</p>
+<div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54"><div><strong>Xamit Kadirbekov</strong><span>Reproducible numerical experiments · GERO Research</span></div></div>
+<div class="topic-row"><span>Numerical stability</span><span>Autodiff</span><span>Reproduction</span></div></header>
+<div class="evidence-banner"><strong>STATUS · LOCALLY REPRODUCED</strong><span>Source-pinned observations and tested local patch proposals. No exact public duplicate found within the recorded search. Maintainer confirmation, priority and version regression are not established.</span></div>
+<div class="article-prose">
+<p>This audit executes actual MLX and nntrainer implementations. It checks mathematical values and derivatives, rather than a chatbot’s answers. Three implementation reports belong to two failure families: binary cross-entropy tail cancellation, and an asymmetric derivative of logaddexp.</p>
+<div class="audit-table" role="region" aria-label="Reproduced loss and gradient results" tabindex="0"><table><thead><tr><th>Implementation, FP32</th><th>Input</th><th>Original</th><th>Mathematical target</th></tr></thead><tbody>
+<tr><td>MLX binary cross entropy</td><td>logit 20, label 1</td><td>loss 0</td><td>≈ 2.0611536203 × 10⁻⁹</td></tr>
+<tr><td>MLX logaddexp VJP and JVP</td><td>logaddexp(20,b), derivative in b at b=0</td><td>derivative 0</td><td>≈ 2.0611536182 × 10⁻⁹</td></tr>
+<tr><td>nntrainer sigmoid cross entropy</td><td>logit 20, label 1; loss_scale=1</td><td>loss 0; gradient 0</td><td>loss ≈ 2.061 × 10⁻⁹; gradient ≈ −2.061 × 10⁻⁹</td></tr>
+</tbody></table></div>
+<p>These quantities are inside the normal FP32 range. Rounding to zero is avoidable here. This experiment does not establish a measurable effect on model quality or a failure of every product from either organization.</p>
+<h2>BCE: a small positive loss disappears</h2>
+<p>The MLX logits formula is <code>logaddexp(0,x) − x·y</code>. For x=20 and y=1, the small correction has already been lost when it is added to 20; subtracting 20 cannot recover it. The reflected input, x=−20 and y=0, retains the correction. A label/sign symmetry check reveals the mismatch.</p>
+<pre><code>linear = x*(1-y) if x &gt;= 0 else -x*y
+loss = linear + log1p(exp(-abs(x)))</code></pre>
+<p>The local patch evaluates this identity using a sign branch that also gives the correct derivative at zero. It preserves weights, reductions, soft labels and the existing probability-input branch. Small-value tests use relative tolerance with zero absolute tolerance; references are evaluated from the actual rounded inputs with mpmath at 100 decimal digits.</p>
+<h2>Logaddexp: exchanging arguments changes the gradient</h2>
+<p>Logaddexp is symmetric in its arguments. Its derivatives should exchange with them. MLX computed the second derivative factor as <code>1 − sigmoid(a−b)</code>. At a−b=20, the sigmoid rounds to one, so the subtraction erases a representable derivative. Putting the differentiated value in the first argument restores it.</p>
+<pre><code>d/da logaddexp(a,b) = sigmoid(a-b)
+d/db logaddexp(a,b) = sigmoid(b-a)</code></pre>
+<p>The patch computes both factors directly in the native VJP and JVP implementations. A fresh C++ build of the audited main commit reproduces the failures on CPU; all 438 checks pass after the change. The extra execution cost has not been benchmarked.</p>
+<h2>nntrainer: preserve the tail in forward and backward</h2>
+<p>The sigmoid cross-entropy layer uses <code>log(1 + exp(-abs(x)))</code>, so adding a tiny exponential to one can lose it before the logarithm. Its subtraction of large matching linear terms is a second source of cancellation. Backward subtracts the label from an already rounded sigmoid.</p>
+<p>The FP32 CPU patch uses log1p, a sign-dependent linear term and double intermediates. Backward computes the small sigmoid tail directly. Tests execute the actual layer through RunLayerContext, verify analytic gradients and finite differences, and preserve labels and global-mean behavior across batch shapes. The previously reported loss_scale issue is separate; these cases use a scale of one.</p>
+<h2>What passed, and what was actually built</h2>
+<div class="audit-table" role="region" aria-label="Before and after test results" tabindex="0"><table><thead><tr><th>Suite</th><th>Original</th><th>Patched</th></tr></thead><tbody>
+<tr><td>MLX BCE, CPU</td><td>23 failed / 8 passed</td><td>31 passed</td></tr>
+<tr><td>MLX BCE, Metal</td><td>Minimal original failures reproduced</td><td>31 passed</td></tr>
+<tr><td>MLX native C++ logaddexp, CPU</td><td>72 failures / 438 checks</td><td>0 failures / 438 checks</td></tr>
+<tr><td>nntrainer losses, FP32 CPU</td><td>4 failed / 73 passed</td><td>77 passed</td></tr>
+</tbody></table></div>
+<ul><li><strong>MLX:</strong> main at <code>ce916dbb</code>. Python BCE source runs with official MLX/core 0.32.2 on CPU and Metal. The logaddexp C++ core was built from that source on CPU.</li>
+<li><strong>Native Metal limitation:</strong> the installed Command Line Tools lack <code>xcrun metal</code>. The original logaddexp defect is reproduced on official Metal 0.32.2; its native patch was tested on CPU only.</li>
+<li><strong>nntrainer:</strong> main at <code>a7ea056e</code>, real C++ FP32 CPU execution. The 77 tests include five new sigmoid tests, six prior softmax tests and 66 existing loss semantics tests. A clean reproduction of the five new tests needs only this round’s patches.</li>
+<li><strong>Machine and coverage:</strong> Apple M4, macOS 15.5. MLX tests cover FP32, FP16 and BF16 with suitable representability limits. Full repository CI, CUDA, mobile backends, performance and model-training outcomes were not assessed.</li></ul>
+<h2>Duplicate review and evidence boundary</h2>
+<p>The package preserves public searches covering open and closed issues and pull requests, along with the nearest matches and reasons for excluding them. The existing <a href="https://github.com/ml-explore/mlx/pull/1280">MLX probability-input BCE fix</a> concerns a different mode. <a href="https://github.com/nntrainer/nntrainer/issues/4329">nntrainer loss scaling</a> is a known, separate issue. No exact match was identified for these cases within the recorded search; this is not a guarantee of absolute novelty.</p>
+<p>QuantizeLinear and earlier activation reports are excluded from the new-case count. Large-input normalization and cosine candidates remain preliminary. No new Anthropic/Bloom finding is claimed in this release. Experiments, local patches and publication materials were prepared with AI assistance; the numerical conclusions come from the recorded execution and mathematical references.</p>
+<h2>Watch and discuss</h2>
+<p><a href="https://www.youtube.com/shorts/fcOZBV1P6mA">Watch the 50-second YouTube Short →</a> · <a href="https://www.linkedin.com/feed/update/urn:li:share:7502621453343911936/">Read the LinkedIn post →</a></p>
+<p>The video uses synthetic English narration and original diagrams, with captions and links to the same evidence.</p>
+<h2>Download and reproduce</h2>
+<p><a href="../data/losses-autodiff-audit-2026-09-07.zip" download>Download tests, logs, patches and checksums →</a></p>
+<p><a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/audits/2026-09-07-losses-autodiff">Open the reproducible GitHub package →</a></p>
+<p>Archive SHA-256: <code>95e949524548b3599922354cf997b38e9fed9a841cbda5fbbbc98f0d0fc5211e</code></p>
+<h2>Primary implementation sources</h2>
+<ul><li><a href="https://github.com/ml-explore/mlx/blob/ce916dbbcaa88e433b6fd1e60a17f766d49c27fe/python/mlx/nn/losses.py">MLX losses at the audited commit</a></li>
+<li><a href="https://github.com/ml-explore/mlx/blob/ce916dbbcaa88e433b6fd1e60a17f766d49c27fe/mlx/primitives.cpp">MLX VJP/JVP implementations at the audited commit</a></li>
+<li><a href="https://github.com/nntrainer/nntrainer/blob/a7ea056e79ab8e14447ea305c1b634e233343258/nntrainer/layers/loss/cross_entropy_sigmoid_loss_layer.cpp">nntrainer sigmoid cross-entropy layer at the audited commit</a></li></ul>
+</div></article></main>
+
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

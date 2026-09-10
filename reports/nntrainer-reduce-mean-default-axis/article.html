@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="An omitted reduction axis throws during initialization; a batch-two regression exposes the broken default and verifies a 23-test local correction." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="ReduceMean Without an Axis Could Not Initialize" />
+    <meta property="og:description" content="An omitted reduction axis throws during initialization; a batch-two regression exposes the broken default and verifies a 23-test local correction." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/nntrainer-reduce-mean-default-axis.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ReduceMean Without an Axis Could Not Initialize" />
+    <meta name="twitter:description" content="An omitted reduction axis throws during initialization; a batch-two regression exposes the broken default and verifies a 23-test local correction." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/nntrainer-reduce-mean-default-axis.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>ReduceMean Without an Axis Could Not Initialize — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "AnalysisNewsArticle", "headline": "ReduceMean Without an Axis Could Not Initialize", "description": "An omitted reduction axis throws during initialization; a batch-two regression exposes the broken default and verifies a 23-test local correction.", "datePublished": "2026-09-06", "dateModified": "2026-09-06", "url": "https://www.gero.uz/research/articles/nntrainer-reduce-mean-default-axis.html", "author": [{"@type": "Person", "name": "Xamit Kadirbekov"}], "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+  </head>
+  <body class="research-body">
+    
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    
+    <main>
+      <article class="article-shell">
+        <a class="back-link" href="../">← Research index</a>
+        <header class="article-header">
+          <div class="article-kicker"><span>INDEPENDENT NUMERICAL AUDIT</span><span>6 September 2026</span></div>
+          <h1>ReduceMean Without an Axis Could Not Initialize</h1>
+          <p class="article-dek">An omitted reduction axis throws during initialization; a batch-two regression exposes the broken default and verifies a 23-test local correction.</p>
+          <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Khamit Kadyrbekov" width="54" height="54" /><div><strong>Xamit Kadirbekov</strong><span>Authors · GERO Research</span></div></div>
+          <div class="topic-row"><span>Tensor semantics</span><span>Default parameters</span><span>Runtime audit</span></div>
+        </header>
+        <div class="evidence-banner"><strong>STATUS · REPRODUCED INITIALIZATION DEFECT</strong><span>The no-axis initialization failure was reproduced on the tested source; a local correction passes 23 focused tests. No security or deployed-product impact is claimed.</span></div>
+        
+        <div class="article-prose"><p>An optional parameter is only optional if the code path without it actually works.</p>
+<p>In Samsung&#x27;s open-source nntrainer project, `ReduceMeanLayer` documents a clear default: when no reduction axis is supplied, reduce every tensor dimension except batch. The forward path says the same thing in executable form by averaging over dimensions 1, 2 and 3.</p>
+<p>At the tested commit, that default path could not reach the forward calculation.</p>
+<h2>The Contract</h2>
+<p>For an input tensor with shape:</p>
+<pre><code>{batch=2, channel=1, height=1, width=2}</code></pre>
+<p>omitting `axis` should preserve the batch and reduce the other dimensions:</p>
+<pre><code>expected output shape: {2, 1, 1, 1}</code></pre>
+<p>This is not an inferred preference. It is stated in the source comment and mirrored by the implementation of `forwarding()`.</p>
+<h2>The Failure</h2>
+<p>A focused test creates a real `ReduceMeanLayer` with no properties and calls its production `finalize()` method. On the unmodified source it fails with:</p>
+<pre><code>Cannot get property, property is empty</code></pre>
+<p>No output specification is created.</p>
+<h2>The Control-Flow Defect</h2>
+<p>The original initialization logic performs two incompatible actions:</p>
+<pre><code>if (reduce_axis.empty()) {
+  out_dim = TensorDim({1, 1, 1, 1});
+}
+
+out_dim.setTensorDim(reduce_axis.get(), 1);</code></pre>
+<p>First, the empty branch replaces the entire output shape with ones, including the batch dimension. Then execution continues and reads the empty property unconditionally. The shared property getter correctly rejects that read by throwing `std::invalid_argument`.</p>
+<p>The exception is the observable failure. The batch collapse is a second defect in the same branch, but the throw prevents it from becoming a returned output shape in this revision.</p>
+<h2>The Minimal Correction</h2>
+<p>The corrected control flow preserves the copied input batch dimension, reduces dimensions 1–3, and only calls `get()` when the property exists:</p>
+<pre><code>if (reduce_axis.empty()) {
+  out_dim.setTensorDim(1, 1);
+  out_dim.setTensorDim(2, 1);
+  out_dim.setTensorDim(3, 1);
+} else {
+  out_dim.setTensorDim(reduce_axis.get(), 1);
+}</code></pre>
+<p>No new algorithm or API is required. The repair makes initialization agree with the existing forward path.</p>
+<h2>The Verification</h2>
+<p>Before the correction:</p>
+<pre><code>new default-axis test: 0/1 passed
+failure: empty property exception</code></pre>
+<p>After the correction:</p>
+<pre><code>new default-axis regression:          1/1 passed
+existing ReduceMean semantic tests: 22/22 passed
+total focused tests:                23/23 passed</code></pre>
+<p>The new test uses batch size two deliberately. A batch of one would not expose whether initialization preserved the batch dimension.</p>
+<h2>Why This Small Case Matters</h2>
+<p>Reduction operators sit at the intersection of tensor shape algebra, API defaults and runtime memory planning. A fixed-value test with an explicit axis exercises the arithmetic but can miss the default branch entirely. The stronger test begins from the invariant:</p>
+<pre><code>omitted axis ⇒ reduce non-batch dimensions and preserve batch</code></pre>
+<p>That invariant immediately suggests three checks: the optional property must not be read when empty; the output shape must retain batch; and initialization must agree with the axes used by forwarding.</p>
+<h2>Evidence Boundary</h2>
+<p>This is a reproduced initialization/finalization defect in the no-`axis` path. It is not presented as a security vulnerability, a demonstrated failure in a released Samsung product, or silent numerical corruption during forwarding.</p>
+<p>Upstream report:</p>
+<p class="source-link"><a href="https://github.com/nntrainer/nntrainer/issues/4332" rel="noopener noreferrer">github.com</a></p>
+<p>Tested source:</p>
+<p class="source-link"><a href="https://github.com/nntrainer/nntrainer/blob/a7ea056e79ab8e14447ea305c1b634e233343258/nntrainer/layers/reduce_mean_layer.cpp#L23-L51" rel="noopener noreferrer">github.com</a></p>
+<p>The lesson is broader than one layer: test the algebra promised by defaults, not only the arithmetic exercised by explicit parameters.</p></div>
+      </article>
+    </main>
+    
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

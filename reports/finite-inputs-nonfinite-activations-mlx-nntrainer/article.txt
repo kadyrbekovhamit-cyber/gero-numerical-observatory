@@ -1,0 +1,51 @@
+← Research index
+TECHNICAL NOTE7 September 2026
+Finite Inputs, Non-finite Results: An Activation Stability Audit
+A finite activation value can hide a NaN gradient. A representable output can overflow in an intermediate expression. Small contract tests make both visible.
+Xamit KadirbekovReproducible numerical experiments · GERO Research
+Numerical stabilityAutodiffReproduction
+STATUS · LOCALLY REPRODUCEDSource-pinned observations and tested local patch proposals. No matching public report was identified in the recorded search; upstream confirmation and absolute novelty are not established.
+This audit checks actual implementations in Apple’s MLX and Samsung’s nntrainer. The objects under test are activation functions and their derivatives. The experiment does not measure a chatbot’s answers, model-level accuracy or the reliability of every product from either company.
+Three activation families produced compact counterexamples. The failures were reproduced, ordinary inputs were retained as controls, and local changes were checked against independent mathematical formulas and existing tests.
+ImplementationFinite inputOriginal resultAfter local repair
+MLX ELU100, float32Value 100; gradient NaNValue 100; gradient 1
+MLX exact GELU40000, float16+∞40000
+MLX approximate GELU40000, float16Finite value; gradient NaNFinite value; gradient 1
+nntrainer Softplus1000, float32+∞1000
+nntrainer Softplus−40, float320≈ 4.248354 × 10⁻¹⁸
+The targets shown for the large GELU and Softplus inputs are their values at the tested floating-point precision. The corresponding real-valued transcendental functions are not asserted to equal their asymptotes exactly.
+ELU: the inactive branch still matters to autodiff
+For positive x, ELU returns x, so its derivative is 1. At x = 100 the original implementation returns the correct value, while automatic differentiation produces NaN. Its inactive branch still constructs an exponential of the large positive input; the backward graph encounters an infinity multiplied by zero. SELU inherits this behavior through its use of ELU.
+The local change bounds the input of the inactive exponential before evaluating it and uses expm1 for the negative branch. The original branch selection is preserved. This removes the invalid intermediate, including when the function is used by SELU.
+GELU: equivalent algebra can have a different floating-point range
+The exact GELU implementation evaluates x * (1 + erf(x / sqrt(2))) / 2. In the positive tail, the parenthesized factor rounds to 2. Multiplication can therefore overflow before division by 2 restores the intended magnitude. In float16, x = 40000 is representable and the final GELU value should round to 40000; the original expression returns infinity.
+The repair forms the bounded CDF factor first: x * (0.5 * (1 + erf(...))). This avoids the oversized intermediate.
+The tanh approximation has a separate gradient problem: its cubic polynomial can overflow, and a saturated tanh does not reliably prevent a NaN in the backward computation. The proposed change bounds only the polynomial input to [−10, 10] and retains the original exterior x. Tanh has already rounded to ±1 in that tail. The documented approximation interval [−6, 6] is unchanged.
+Softplus: preserve both tails
+Softplus is log(1 + exp(x)). Direct evaluation overflows at x = 1000 even though its float32 result is finite. At x = −40, adding the tiny exponential to 1 loses it before the logarithm is taken, producing zero even though the correct small positive value is representable.
+softplus(x) = max(x, 0) + log1p(exp(-abs(x)))
+The patched implementation uses this identity with the existing beta constant, computes intermediate values in double, and retains the return type. Tests exercise the actual C++ helper and tensor activation dispatch. A forward finite-difference check also agrees with the existing backward derivative after the change.
+What was executed
+MLX: Python activation source at ce916dbb, executed with official MLX 0.32.2 native wheels on Apple M4, macOS 15.5. CPU and Metal, float16 and float32. This is not a full native build of main.
+nntrainer: real C++ library built from a7ea056e, CPU FP32, one thread, BLAS disabled. Darwin build include accommodations are documented in the reproduction package.
+Independent diagnostics: ordinary values and analytic derivatives checked with mpmath at 80 decimal digits. Elementwise batch-layout invariance and representable large-tail values are checked separately.
+MLX focused suite, original CPU:  10 failed / 16 passed
+MLX with patch, CPU:              26 passed
+MLX with patch, Metal:            26 passed
+nntrainer activations, original:   4 failed / 20 passed
+nntrainer activations, patched:   24 passed
+nntrainer: 2 pre-existing tests remain disabled
+The 26-test MLX suite contains 24 new parameterized checks and two existing upstream ELU/GELU tests. The counts represent checks, not a count of new bugs. Full repository CI, CUDA, nntrainer FP16/Android, performance and model-training outcomes were not assessed.
+Prior art and the publication boundary
+The evidence package preserves dated searches of open and closed issues and pull requests, including alternate terms for NaNs, gradients, overflow and Softplus. Closest matches concern activation introduction, compilation/performance, memory growth and a half-precision build conversion. No exact matching report was identified within that search scope.
+That result supports publishing a reproducible technical observation. It does not establish absolute priority, maintainer acceptance or a version-to-version regression. The previously reproduced Bloom issue already has an existing PR #56 and is excluded from these new candidates. QuantizeLinear is also excluded.
+Experiments, tests and draft patches were prepared with AI coding assistance. The reported conclusions come from executing the pinned implementations and checking the mathematical contracts.
+Download and reproduce
+Download the evidence ZIP with checksums →
+Source pins, tests, proposed patches and commands on GitHub →
+The package identifies which code is original, which is patched, which tests are expected to fail before repair, and which devices were actually used. It lets another engineer challenge the result without reconstructing the experiment from screenshots.
+Primary implementation sources
+MLX activation source at the audited commit
+nntrainer activation source at the audited commit
+MLX activation introduction, PR #117
+nntrainer Softplus introduction, PR #2545

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Scalar base 240 is accepted and formatted as 1.10 for the exact value 250/240, while the equivalent multi-base currency [20, 12] is correctly rejected." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Dinero.js toDecimal accepts non-decimal bases and returns plausible wrong strings" />
+    <meta property="og:description" content="Scalar base 240 is accepted and formatted as 1.10 for the exact value 250/240, while the equivalent multi-base currency [20, 12] is correctly rejected." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/dinerojs-todecimal-non-decimal-base-guard.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dinero.js toDecimal accepts non-decimal bases and returns plausible wrong strings" />
+    <meta name="twitter:description" content="Scalar base 240 is accepted and formatted as 1.10 for the exact value 250/240, while the equivalent multi-base currency [20, 12] is correctly rejected." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/dinerojs-todecimal-non-decimal-base-guard.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>Dinero.js toDecimal accepts non-decimal bases and returns plausible wrong strings — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Dinero.js toDecimal accepts non-decimal bases and returns plausible wrong strings", "description": "Scalar base 240 is accepted and formatted as 1.10 for the exact value 250/240, while the equivalent multi-base currency [20, 12] is correctly rejected.", "datePublished": "2026-09-06", "dateModified": "2026-09-06", "url": "https://www.gero.uz/research/articles/dinerojs-todecimal-non-decimal-base-guard.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+  </head>
+  <body class="research-body">
+    
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    
+    <main>
+      <article class="article-shell audit-article">
+        <a class="back-link" href="../">← Research index</a>
+        <header class="article-header">
+          <div class="article-kicker"><span>INDEPENDENT NUMERICAL AUDIT</span><span>6 September 2026</span></div>
+          <h1>Dinero.js toDecimal accepts non-decimal bases and returns plausible wrong strings</h1>
+          <p class="article-dek">Scalar base 240 is accepted and formatted as 1.10 for the exact value 250/240, while the equivalent multi-base currency [20, 12] is correctly rejected.</p>
+          <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54" /><div><strong>Xamit Kadirbekov</strong><span>Independent verification · GERO Research</span></div></div>
+          <div class="topic-row"><span>Numerical audit</span><span>Dinero.js</span><span>Currency formatting</span></div>
+        </header>
+        <div class="evidence-banner"><strong>STATUS · VERIFIED ORDINARY CORRECTNESS DEFECT</strong><span>Reproduced on Dinero.js 2.0.2 and current main; the finding concerns custom currency definitions, not bundled ISO currencies.</span></div>
+        <div class="brief-source">
+          <span>UPSTREAM RECORD</span>
+          <a href="https://github.com/kadyrbekovhamit-cyber/gero-dinero-todecimal-audit" rel="noopener noreferrer">Public reproducer on GitHub ↗</a>
+        </div>
+        <div class="article-prose"><h2>Finding</h2>
+<p><code>toDecimal</code> is documented to work only with single-based decimal currencies, and it enforces that with an assertion. The assertion tests <code>base % 10 == 0</code>, which means every non-zero multiple of ten — <code>20</code>, <code>30</code>, <code>60</code>, <code>100</code>, <code>240</code>, … — passes the guard. Bases such as <code>20</code>, <code>60</code>, and <code>240</code> are not decimal bases at all. The function nevertheless formats their remainders as decimal digits and can return a well-formed but numerically wrong string instead of raising <code>Currency is not decimal.</code></p>
+<p><code>base: 100</code> is a useful boundary rather than a clean example of the same classification. It is a power of ten and can represent a decimal subdivision, but the formatter still uses <code>padStart(scale)</code> instead of accounting for the two decimal digits contributed by each base-100 scale step. Consequently some amounts are accidentally right (<code>250 -&gt; &quot;2.50&quot;</code>) while others are wrong (<code>105 -&gt; &quot;1.5&quot;</code>, exact <code>1.05</code>).</p>
+<p>The faulty line is <code>packages/dinero.js/src/core/api/toDecimal.ts:39</code>:</p>
+<pre><code class="language-ts">const isBaseTen = equalFn(calculator.modulo(base, ten), zero);</code></pre>
+<h2>Minimal counterexample</h2>
+<p>Pre-decimal sterling, <code>240</code> pence to the pound. This is the exact currency shape used by the project&#x27;s own test suite at <code>packages/dinero.js/src/api/__tests__/haveSameCurrency.test.ts:63</code>.</p>
+<pre><code class="language-js">const GBP = { code: &#x27;GBP&#x27;, base: 240, exponent: 1 };
+toDecimal(dinero({ amount: 250, currency: GBP }));</code></pre>
+<p>Observed:</p>
+<pre><code class="language-text">toUnits   = [1,10]
+toDecimal = &quot;1.10&quot;</code></pre>
+<p>Exact value: <code>250 / 240 = 1.0416666666666667</code>. The correct behaviour is to throw <code>[Dinero.js] Currency is not decimal.</code>, exactly as the same call does for <code>MGA</code> (base <code>5</code>) or for the base <code>6</code> currency used in the project&#x27;s own <code>docs/guides/formatting-non-decimal-currencies.md</code>.</p>
+<p>The diagnostic is stronger when the same currency is expressed in the two representations that the library itself treats as equivalent:</p>
+<pre><code class="language-js">const scalar = dinero({
+  amount: 250,
+  currency: { code: &#x27;GBP&#x27;, base: 240, exponent: 1 },
+});
+const multi = dinero({
+  amount: 250,
+  currency: { code: &#x27;GBP&#x27;, base: [20, 12], exponent: 1 },
+});
+
+haveSameCurrency([scalar, multi]); // true
+toDecimal(scalar);                 // &quot;1.10&quot; (wrong)
+toDecimal(multi);                  // throws Currency is not decimal. (correct)</code></pre>
+<p>This is not needed to establish the defect—the published <code>toDecimal</code> contract already does that—but it shows that the permissive scalar guard accepts an encoding of the same non-decimal currency that the multi-base guard rejects.</p>
+<p>Further values, all from the published <code>2.0.2</code>:</p>
+<pre><code class="language-text">base=20  amount=25   toUnits=[1,5]   toDecimal=&quot;1.5&quot;    exact=1.25
+base=20  amount=39   toUnits=[1,19]  toDecimal=&quot;1.19&quot;   exact=1.95
+base=60  amount=90   toUnits=[1,30]  toDecimal=&quot;1.30&quot;   exact=1.5
+base=100 amount=105  toUnits=[1,5]   toDecimal=&quot;1.5&quot;    exact=1.05
+base=100 amount=250  toUnits=[2,50]  toDecimal=&quot;2.50&quot;   exact=2.5 (accidental match)
+base=5   amount=7    toUnits=[1,2]   toDecimal=THREW    exact=1.4
+base=6   amount=7    toUnits=[1,1]   toDecimal=THREW    exact=1.1666666666666667</code></pre>
+<p><code>toUnits</code> decomposes every one of these correctly. The defect is confined to the guard in <code>toDecimal</code> and to the decimal string it then produces.</p>
+<h2>Reproducer</h2>
+<pre><code class="language-js">import { dinero, toDecimal, toUnits } from &#x27;dinero.js&#x27;;
+
+const GBP = { code: &#x27;GBP&#x27;, base: 240, exponent: 1 };
+const d = dinero({ amount: 250, currency: GBP });
+
+console.log(toUnits(d));    // [ 1, 10 ]
+console.log(toDecimal(d));  // &quot;1.10&quot;   -- expected: throw &quot;Currency is not decimal.&quot;
+console.log(250 / 240);     // 1.0416666666666667</code></pre>
+<h2>Verification</h2>
+<ul><li>Reproduced on Node <code>25.9.0</code>, macOS <code>15.5</code> (arm64), against the published npm release <code>dinero.js@2.0.2</code>.</li><li>Reproduced against current <code>main</code>, commit <code>76b969e519dc44675d4af898d25629995d0b16f2</code>, by bundling <code>packages/dinero.js/src/index.ts</code> with esbuild and running the same inputs. Identical output.</li><li>Independent oracle: exact rational arithmetic. <code>250/240</code> and <code>25/20</code> are exact binary-representable values; there is no floating-point ambiguity and no tie.</li><li>Documented claim under test, <code>docs/api/formatting/to-decimal.md</code>: *&quot;You can only use this function with Dinero objects that are single-based and use a decimal currency.&quot;* The library implements that restriction as an assertion; the assertion is what is wrong.</li><li>Boundary scan of single bases <code>2..120</code>: <code>toDecimal</code> accepts exactly <code>10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120</code>. Non-power-of-ten members of that set are not decimal bases and can return a wrong decimal string. Base <code>100</code> is decimal but exposes the separate width error described above. All other bases, and all array (multi-base) currencies, are rejected.</li><li>Duplicate search over open and closed issues and pull requests (<code>toDecimal+non-decimal</code>, <code>toDecimal+base</code>, <code>isBaseTen</code>, <code>Currency+is+not+decimal</code>, <code>non-decimal+currency</code>, <code>base+240</code>, <code>custom+currency+base</code>) found no report of this guard. Related but distinct closed items: <code>#309</code> (non-decimal currency support), <code>#751</code> and <code>#759</code> (<code>toDecimal</code> and exponent-zero currencies), <code>#756</code> (<code>toUnits</code> leading zeros).</li></ul>
+<h2>Proposed correction</h2>
+<p>There are two defensible repairs, depending on the intended public contract. If <code>toDecimal</code> supports only the canonical Dinero representation with base exactly <code>10</code>, make the existing predicate match its name:</p>
+<pre><code class="language-diff">-    const isBaseTen = equalFn(calculator.modulo(base, ten), zero);
++    const isBaseTen = equalFn(base, ten);</code></pre>
+<p>After this change, <code>base: 240</code>, <code>base: 20</code>, <code>base: 60</code> and <code>base: 100</code> all throw <code>[Dinero.js] Currency is not decimal.</code>, while <code>base: 10</code> is unaffected. The project&#x27;s full test suite still passes: <code>74</code> files, <code>848</code> tests, before and after.</p>
+<p>If single scalar bases such as <code>100</code> are intended to be valid decimal representations, the complete repair is broader: accept only powers of ten and pad the fractional remainder to <code>log10(base) * scale</code> digits. A regression test must then include both <code>base: 100, amount: 105 -&gt; &quot;1.05&quot;</code> and rejection of <code>base: 20</code>, <code>base: 60</code>, and <code>base: 240</code>. The current predicate implements neither contract correctly.</p>
+<h2>Boundary</h2>
+<p>This is an ordinary correctness defect in a public library method. It affects only user-defined currencies: no ISO 4217 currency shipped in <code>dinero.js/currencies</code> has a single base that is a multiple of ten other than <code>10</code> (<code>MGA</code> and <code>MRU</code> use base <code>5</code> and are correctly rejected). It is reachable through a documented feature — the library documents custom currencies with arbitrary bases and ships a guide on non-decimal currencies — and the currency shape in the counterexample is one the project&#x27;s own tests use. The failure mode is a silently wrong decimal string rather than an exception, so a caller that persists or displays <code>toDecimal</code> output records a wrong amount without any signal. No production system was tested.</p>
+<h2>Upstream status</h2>
+<p>Correction submitted as <a href="https://github.com/dinerojs/dinero.js/pull/891" rel="noopener noreferrer">dinerojs/dinero.js#891</a> on 9 September 2026. The change adds regression coverage for number, bigint and Big.js calculators. The full project run passed 851 tests across 74 files; type tests, lint and formatting also passed. CodeRabbit reported no actionable finding and assessed the merge risk as minimal. The remaining Vercel failure requires authorization from the upstream project owner and is unrelated to the code.</p></div>
+      </article>
+    </main>
+    
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

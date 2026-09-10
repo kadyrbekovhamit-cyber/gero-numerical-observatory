@@ -1,0 +1,30 @@
+← Research index
+INDEPENDENT NUMERICAL AUDIT3 September 2026
+A one-line contradiction in Swift Numerics' tie-to-zero documentation
+An exact arithmetic check found that one Swift Numerics example reported 3 where its stated rounding rule and its own explanation require 2.
+Xamit KadirbekovIndependent verification · GERO Research
+Numerical auditSwiftRounding
+STATUS · VERIFIED DOCUMENTATION DEFECTThe arithmetic, source line and proposed correction were checked. This finding concerns documentation, not a demonstrated runtime or security defect.
+UPSTREAM RECORD · APPLE SWIFT NUMERICS
+Pull request #348 ↗
+Finding
+At source commit 899af71c0256d0ad181e3b7eb3453c1065d928a5, the documentation for RoundingRule.toNearestOrZero stated that 5.shifted(rightBy: 1, rounding: .toNearestOrZero) is 3. The next sentence says that 5/2 = 2.5 is equally close to 2 and 3 and that 2 is closer to zero. The example and its explanation therefore contradicted one another.
+Exact certificate
+The exact quotient is 5/2 = 2.5.
+The two nearest integers are 2 and 3.
+Both are exactly 0.5 from 2.5.
+The documented tie-break is toward zero.
+Therefore the result is 2.
+5 ÷ 2 = 2.5tie → 2
+Correction submitted upstream
+- is `3`,
++ is `2`,
+The one-character correction was submitted to the official repository as apple/swift-numerics#348. The reviewed source is preserved at the exact commit and line range; the repository remains the authoritative upstream record.
+Validation
+Recomputed the result with exact rational arithmetic.
+Checked the example against the enum's stated tie-breaking contract.
+Applied the minimal one-line documentation patch.
+Ran swift build successfully.
+Ran git diff --check successfully.
+Boundary
+This audit establishes a documentation contradiction only. It does not establish an implementation error, a security vulnerability or a defect in an Apple consumer product. Upstream maintainers retain authority over review and acceptance of the patch.

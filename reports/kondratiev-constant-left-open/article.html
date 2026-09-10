@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Krol proved the leading narrow-cone constant in 1973 and left the next term as O(1). Identifying it took analysis; establishing who owned the first term took archive retrieval." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="A Constant Left Open in 1973, and What It Took to Close It" />
+    <meta property="og:description" content="Krol proved the leading narrow-cone constant in 1973 and left the next term as O(1). Identifying it took analysis; establishing who owned the first term took archive retrieval." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/kondratiev-constant-left-open.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="A Constant Left Open in 1973, and What It Took to Close It" />
+    <meta name="twitter:description" content="Krol proved the leading narrow-cone constant in 1973 and left the next term as O(1). Identifying it took analysis; establishing who owned the first term took archive retrieval." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/kondratiev-constant-left-open.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>A Constant Left Open in 1973, and What It Took to Close It — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "A Constant Left Open in 1973, and What It Took to Close It", "description": "Krol proved the leading narrow-cone constant in 1973 and left the next term as O(1). Identifying it took analysis; establishing who owned the first term took archive retrieval.", "datePublished": "2026-09-02", "dateModified": "2026-09-02", "url": "https://www.gero.uz/research/articles/kondratiev-constant-left-open.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+  </head>
+  <body class="research-body">
+    
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    
+    <main>
+      <article class="article-shell">
+        <a class="back-link" href="../">← Research index</a>
+        <header class="article-header">
+          <div class="article-kicker"><span>ORIGINAL RESEARCH</span><span>2 September 2026</span></div>
+          <h1>A Constant Left Open in 1973, and What It Took to Close It</h1>
+          <p class="article-dek">Krol proved the leading narrow-cone constant in 1973 and left the next term as O(1). Identifying it took analysis; establishing who owned the first term took archive retrieval.</p>
+          <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54" /><div><strong>Xamit Kadirbekov</strong><span>Author · GERO Research</span></div></div>
+          <div class="topic-row"><span>p-Laplacian</span><span>Priority</span><span>Verification</span></div>
+        </header>
+        <div class="evidence-banner"><strong>STATUS · AUTHOR'S ANALYSIS</strong><span>Arguments and proposals are distinguished from the linked laboratories' reported results.</span></div>
+        <div class="article-prose"><p>In 1973 I. N. Krol&#x27; published a short paper in Trudy Matematicheskogo Instituta imeni V. A. Steklova, volume 125, pages 140–146, in a collection edited by O. A. Ladyzhenskaya. He studied the Dirichlet problem for the p-Laplace equation in a circular cone of half-angle l in n-dimensional space, looked for solutions of the separated form u = |x|^λ f(θ), and proved a sharp statement about the narrow-cone limit.</p>
+<p>His Theorem 2 says that as the cone closes,</p>
+<p>λ(l) = ± L / l + O(1),</p>
+<p>where L is the first zero of an explicit Cauchy problem that does not contain the angle at all. The leading term is settled, for every dimension, by a one-dimensional problem anyone can integrate.</p>
+<p>Then the theorem stops. The bounded term is written as O(1) and never identified.</p>
+<p>Fifty-three years later it was still O(1). Akman, Lewis and Vogel cite Krol&#x27;s paper directly and add an asymptotic at the opposite endpoint. Lundström and Singh record the same leading constant for planar sectors and also leave the next term as an unidentified O(1). Llorente, Manfredi, Troy and Wu write plainly that &quot;apart from such cases, little is known about the exponent.&quot;</p>
+<h2>This Is The Shape Of Problem Gero Is Built For</h2>
+<p>Not an open conjecture. A closed theorem with a labelled hole in it, where the hole is a specific number that somebody can compute and nobody did.</p>
+<h2>What We Computed</h2>
+<p>Rewriting the angular equation through a non-singular phase turns the exponent into a first-passage condition: κ is the unique value for which a scalar phase reaches π/2 exactly at the cone boundary. That reformulation is not new — it is a Prüfer-type change of variable applied to Krol&#x27;s own ODE — but it makes the perturbation tractable.</p>
+<p>From it we obtain that Krol&#x27;s asymptotic is the first truncation of a locally convergent Laurent series,</p>
+<p>κ(α, p, n) = K/α + C + Dα + …,</p>
+<p>and that every coefficient after Krol&#x27;s leading constant follows from a linear variational equation along Krol&#x27;s own limiting trajectory. The constant he left open is</p>
+<p>C = −η(K)/K,</p>
+<p>where η solves that linear equation. On the two sections where the problem is classically solvable, C collapses to closed form:</p>
+<p>C = −(n−2)/2 when p = 2, for every dimension; C = (p² − 4) / (4p(p−1)) when n = 2, for every p.</p>
+<p>The third coefficient also closes on the planar section: D = (p−2)²(p² + 4p − 4) / (4π p³ (p−1)).</p>
+<p>And the constant obeys a sign law. Writing C = (p−n)R with R strictly positive, the sign of the constant is the sign of p − n, and the constant vanishes exactly on the conformal line p = n. On that line the expansion is odd: every even power disappears and the first surviving correction is negative for n greater than two.</p>
+<h2>The Experiment</h2>
+<p>A number of this kind is worth nothing without an attempt to break it.</p>
+<p>Krol&#x27;s own constant was recomputed by integrating his 1973 Cauchy problem directly and locating the first zero. Across all seventy-two parameter pairs it agreed with the value obtained from the phase formulation to 4.4 × 10⁻⁹. The two routes share no code.</p>
+<p>The closed forms were checked against exact theory rather than against themselves. On the p = 2 section the leading constant must equal a Bessel zero and the constant term must equal −(n−2)/2; observed error 10⁻¹³ and 10⁻¹⁰ respectively. On the n = 2 section the same quantities follow from the classical planar relation; observed error 10⁻¹³, 10⁻¹⁰ and 10⁻⁸ for the three coefficients.</p>
+<p>The strongest check came from outside. Lundström and Singh publish a closed expression for the planar case. Evaluating the constant term numerically from their formula returns exact fractions: −8/3 at p = 1.2, −7/12 at p = 1.5, 5/24 at p = 3, 21/80 at p = 5, 4/15 at p = 10. Our closed form reproduces all five, with zero error to machine precision on four of them.</p>
+<p>Two independent global controls hold as well. The exponent equals one at α = π/2 for every p and n, to 2 × 10⁻¹³. And at the single parameter pair (p, n) = (2, 4) the series terminates after two terms and the exponent is exactly π/α − 1 — confirmed to 10⁻¹³ at angles up to α = 3, far outside the regime where the expansion was derived.</p>
+<h2>What This Is Not</h2>
+<p>The leading term is Krol&#x27;s. Not ours, not rediscovered, not independently obtained — his, from 1973, for every dimension, with the defining Cauchy problem written out in his paper. The planar value of that constant appears again in Lundström and Singh. Anything we say about K is a citation.</p>
+<p>The phase reformulation is a non-singular rewriting of a known equation and is not offered as a result.</p>
+<p>There is still no closed formula for the exponent at a general angle, and none for the leading constant itself when n ≥ 3 and p ≠ 2. What exists there is an exact implicit definition and a table.</p>
+<p>The priority audit is incomplete. Four sources that could bear on the constant could not be obtained, and until they are read the correct description of the work is &quot;obtained independently, priority not established.&quot;</p>
+<h2>Why It Belongs On This Site</h2>
+<p>The interesting part of this exercise was not the analysis. It was the retrieval.</p>
+<p>The claim we started with was that the leading constant was new. It survived two days of internal checking. It died in twenty minutes once the 1973 paper was actually in hand — a paper with no DOI, absent from Crossref and OpenAlex, sitting in a Russian archive behind a request that returns 403 without a browser user-agent.</p>
+<p>An assurance layer that only checks arithmetic would have certified the wrong claim. The failure mode was not a wrong number. It was a correct number attached to the wrong attribution, and no amount of numerical verification would have caught it.</p></div>
+      </article>
+    </main>
+    
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

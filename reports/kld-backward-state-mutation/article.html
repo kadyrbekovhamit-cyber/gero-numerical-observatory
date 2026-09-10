@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A one-scalar experiment shows how an in-place label negation makes repeated KL-divergence backward calls alternate their gradient sign." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="A KL-Divergence Backward Pass That Changes Its Own Target" />
+    <meta property="og:description" content="A one-scalar experiment shows how an in-place label negation makes repeated KL-divergence backward calls alternate their gradient sign." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/kld-backward-state-mutation.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="A KL-Divergence Backward Pass That Changes Its Own Target" />
+    <meta name="twitter:description" content="A one-scalar experiment shows how an in-place label negation makes repeated KL-divergence backward calls alternate their gradient sign." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/kld-backward-state-mutation.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>A KL-Divergence Backward Pass That Changes Its Own Target — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "A KL-Divergence Backward Pass That Changes Its Own Target", "description": "A one-scalar experiment shows how an in-place label negation makes repeated KL-divergence backward calls alternate their gradient sign.", "datePublished": "2026-09-04", "dateModified": "2026-09-04", "url": "https://www.gero.uz/research/articles/kld-backward-state-mutation.html", "author": [{"@type": "Person", "name": "Xamit Kadirbekov"}], "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+  </head>
+  <body class="research-body">
+    
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    
+    <main>
+      <article class="article-shell">
+        <a class="back-link" href="../">← Research index</a>
+        <header class="article-header">
+          <div class="article-kicker"><span>ORIGINAL RESEARCH</span><span>4 September 2026</span></div>
+          <h1>A KL-Divergence Backward Pass That Changes Its Own Target</h1>
+          <p class="article-dek">A one-scalar experiment shows how an in-place label negation makes repeated KL-divergence backward calls alternate their gradient sign.</p>
+          <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Khamit Kadyrbekov" width="54" height="54" /><div><strong>Xamit Kadirbekov</strong><span>Authors · GERO Research</span></div></div>
+          <div class="topic-row"><span>State mutation</span><span>Autodiff</span><span>KL divergence</span></div>
+        </header>
+        <div class="evidence-banner"><strong>STATUS · AUTHOR&#x27;S ANALYSIS</strong><span>Arguments and proposals are distinguished from the linked laboratories&#x27; reported results.</span></div>
+        
+        <div class="article-prose"><p>Some numerical defects produce an obviously wrong answer. A more dangerous class produces the right answer once and corrupts the state needed for the next computation.</p>
+<p>I found and reproduced such a case in Samsung&#x27;s open-source nntrainer project. The Kullback–Leibler divergence backward pass changes its stored label in place. For a fixed input, the first derivative has the correct sign; the second identical backward call has the opposite sign.</p>
+<h2>The mathematical invariant</h2>
+<p>For</p>
+<p>D_KL(P || Q) = sum_i P_i log(P_i / Q_i),</p>
+<p>the derivative with respect to the prediction Q is</p>
+<p>dD_KL/dQ_i = -P_i / Q_i.</p>
+<p>Two necessary properties follow immediately:</p>
+<ul><li>evaluating the derivative must not modify the target distribution P;</li><li>repeated backward evaluations on unchanged state must return the same derivative.</li></ul>
+<p>These are stronger tests than checking one numerical answer. The first call can be correct even while the implementation destroys the label that made it correct.</p>
+<h2>The smallest counterexample</h2>
+<p>I constructed the actual nntrainer RunLayerContext with one scalar:</p>
+<ul><li>target P = 0.25;</li><li>prediction Q = 0.5;</li><li>expected derivative = -0.5.</li></ul>
+<p>Then I invoked the real KLDLossLayer::calcDerivative twice without changing the context.</p>
+<p>The observed state transition was:</p>
+<ul><li>before backward: label +0.25;</li><li>after the first backward: gradient -0.5, label -0.25;</li><li>after the second backward: gradient +0.5, label +0.25.</li></ul>
+<p>The gradient sign alternates between calls. This is deterministic state mutation, not a floating-point tolerance dispute.</p>
+<h2>The implementation cause</h2>
+<p>The current backward implementation obtains a reference to the stored label and calls an in-place operation equivalent to:</p>
+<p>label = -label</p>
+<p>It then divides that modified label by the prediction. The first derivative is numerically correct, but only because the target distribution itself was negated.</p>
+<p>The defect is compact enough to escape an ordinary one-shot test. A test that checks only the first derivative can pass. A test that also checks state preservation and repeatability exposes it immediately.</p>
+<h2>A correction tested on the real library</h2>
+<p>I replaced the in-place negation with an out-of-place operation that writes directly into the derivative tensor, then divides that derivative by Q. The label remains unchanged.</p>
+<p>Against the original implementation, the focused GoogleTest failed because the second gradient was +0.5 instead of -0.5 and the label after the first call was -0.25 instead of +0.25.</p>
+<p>After rebuilding the actual nntrainer dynamic library with the correction, the same test passed: both backward calls returned -0.5 and the label remained +0.25.</p>
+<p>This validates the narrow correction. It does not claim that every reduction, loss-scaling or upstream-gradient convention in the KLD layer has been audited.</p>
+<h2>Why this matters for AI assurance</h2>
+<p>Loss functions sit at the point where mathematics becomes an update to model parameters. State corruption here can depend on execution history: how many times backward was invoked, whether a retry occurred, or whether a debugging tool re-evaluated a step.</p>
+<p>The larger lesson is methodological. A mathematical contract should include not only a formula for the output, but also invariants about state:</p>
+<h3>1. purity — which tensors are allowed to change;</h3>
+<h3>2. repeatability — whether identical calls return identical results;</h3>
+<h3>3. conservation — whether normalization or probability mass is preserved;</h3>
+<h3>4. composition — whether the result remains correct inside a larger chain rule.</h3>
+<p>This is the kind of evidence GERO is being designed to organize: explicit invariants, minimal counterexamples, real-runtime execution, bounded claims and replayable artifacts.</p>
+<h2>Reproduction and disclosure</h2>
+<p>Tested against nntrainer commit a7ea056e79ab8e14447ea305c1b634e233343258 on macOS ARM64.</p>
+<p>Local reproducibility record:</p>
+<p class="source-link"><a href="https://www.gero.uz/research/articles/kld-backward-state-mutation.html" rel="noopener noreferrer">gero.uz</a></p>
+<p>Upstream report:</p>
+<p class="source-link"><a href="https://github.com/nntrainer/nntrainer/issues/4328" rel="noopener noreferrer">github.com</a></p>
+<p>This finding was independently identified and reproduced by Xamit Kadirbekov. No affiliation with Samsung or the nntrainer maintainers is claimed.</p></div>
+      </article>
+    </main>
+    
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Double.root(3125, 5) returns 5.000000000000001 although the exact, representable result is 5.0." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="An exact fifth root exposes a one-ULP accuracy gap in Swift Numerics" />
+    <meta property="og:description" content="Double.root(3125, 5) returns 5.000000000000001 although the exact, representable result is 5.0." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/swift-numerics-double-root-one-ulp-counterexample.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="An exact fifth root exposes a one-ULP accuracy gap in Swift Numerics" />
+    <meta name="twitter:description" content="Double.root(3125, 5) returns 5.000000000000001 although the exact, representable result is 5.0." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/swift-numerics-double-root-one-ulp-counterexample.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>An exact fifth root exposes a one-ULP accuracy gap in Swift Numerics — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "An exact fifth root exposes a one-ULP accuracy gap in Swift Numerics", "description": "Double.root(3125, 5) returns 5.000000000000001 although the exact, representable result is 5.0.", "datePublished": "2026-09-03", "dateModified": "2026-09-03", "url": "https://www.gero.uz/research/articles/swift-numerics-double-root-one-ulp-counterexample.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+  </head>
+  <body class="research-body">
+    
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    
+    <main>
+      <article class="article-shell audit-article">
+        <a class="back-link" href="../">← Research index</a>
+        <header class="article-header">
+          <div class="article-kicker"><span>INDEPENDENT NUMERICAL AUDIT</span><span>3 September 2026</span></div>
+          <h1>An exact fifth root exposes a one-ULP accuracy gap in Swift Numerics</h1>
+          <p class="article-dek">Double.root(3125, 5) returns 5.000000000000001 although the exact, representable result is 5.0.</p>
+          <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54" /><div><strong>Xamit Kadirbekov</strong><span>Independent verification · GERO Research</span></div></div>
+          <div class="topic-row"><span>Numerical audit</span><span>Swift</span><span>Floating point</span></div>
+        </header>
+        <div class="evidence-banner"><strong>STATUS · VERIFIED 1-ULP COUNTEREXAMPLE</strong><span>The public implementation was built and executed at the cited commit. This is an accuracy finding, not a security finding.</span></div>
+        <div class="brief-source">
+          <span>REVIEWED SOURCE · APPLE SWIFT NUMERICS</span>
+          <a href="https://github.com/apple/swift-numerics/blob/899af71c0256d0ad181e3b7eb3453c1065d928a5/Sources/RealModule/Double%2BReal.swift#L200-L207" rel="noopener noreferrer">Exact implementation and commit ↗</a>
+        </div>
+        <div class="article-prose">
+          <h2>Finding</h2>
+          <p>At source commit <code>899af71c0256d0ad181e3b7eb3453c1065d928a5</code>, the public call <code>Double.root(3125.0, 5)</code> returns <code>5.000000000000001</code>. The mathematically exact result is <code>5.0</code>, which is exactly representable as a binary <code>Double</code>.</p>
+          <h2>Minimal reproducer</h2>
+          <pre><code>import RealModule
+
+let result = Double.root(3125.0, 5)
+print(result)
+print(result == 5.0)
+print(String(result.bitPattern, radix: 16))</code></pre>
+          <p>Observed output:</p>
+          <pre><code>5.000000000000001
+false
+4014000000000001</code></pre>
+          <h2>Exact certificate</h2>
+          <ol>
+            <li><code>5 × 5 × 5 × 5 × 5 = 3125</code>.</li>
+            <li>Therefore the exact fifth root of 3125 is 5.</li>
+            <li>The bit pattern of exact <code>5.0</code> is <code>0x4014000000000000</code>.</li>
+            <li>The returned bit pattern is <code>0x4014000000000001</code>.</li>
+            <li>The returned value is therefore one representable <code>Double</code> above the exact answer: a one-ULP gap.</li>
+          </ol>
+          <div class="audit-equation" aria-label="The fifth root of 3125 is exactly five, while the implementation returns the next representable double"><span>⁵√3125 = 5</span><strong>implementation → 5 + 1 ULP</strong></div>
+          <h2>Why it happens</h2>
+          <p>The implementation reduces an integer root to a general power:</p>
+          <pre><code>libm_pow(x.magnitude, 1 / Double(n))</code></pre>
+          <p>The binary <code>Double</code> format cannot represent <code>1/5</code> exactly. That rounded exponent is then passed to <code>pow</code>. The source already contains a TODO noting that the implementation is “not quite correct” because either <code>n</code> or <code>1/n</code> may not be representable as <code>Double</code>. This audit supplies a small, concrete regression case for that acknowledged limitation.</p>
+          <h2>Reproduction record</h2>
+          <ul>
+            <li>Repository: <a href="https://github.com/apple/swift-numerics" rel="noopener noreferrer">apple/swift-numerics</a>.</li>
+            <li>Commit: <code>899af71c0256d0ad181e3b7eb3453c1065d928a5</code>.</li>
+            <li>Toolchain: Apple Swift 6.1.2.</li>
+            <li>Target: arm64 Apple macOS.</li>
+            <li>The <code>RealModule</code> target was built and the public <code>Double.root</code> method was called directly.</li>
+          </ul>
+          <h2>Question for upstream</h2>
+          <p>Should <code>root(x, n)</code> guarantee a correctly rounded result when the exact root is representable, or is a small approximation error part of the intended contract? In either case, <code>root(3125, 5)</code> is a useful regression and documentation test because it makes the current accuracy boundary explicit.</p>
+          <aside class="boundary-box"><strong>Boundary</strong><p>This reproduces a one-ULP numerical discrepancy in an open-source mathematical function. It is not a demonstrated security vulnerability, does not establish material impact in an Apple product, and does not imply that general-purpose <code>pow</code> implementations promise exact results. Upstream maintainers retain authority over the intended accuracy contract and any correction.</p></aside>
+        </div>
+      </article>
+    </main>
+    
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

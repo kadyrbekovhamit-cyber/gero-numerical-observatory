@@ -1,0 +1,60 @@
+{
+  "title": "A Constant, a Polynomial, a NaN: MLX power Derivatives at Zero",
+  "authors": [
+    "Xamit Kadirbekov"
+  ],
+  "publication_date": "2026-09-09",
+  "gero": "https://www.gero.uz/research/articles/mlx-power-zero-derivatives.html",
+  "github": [
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/7e5f169c5e31deb2752e4dc6065a1cfc68a7c6a0/audits/2026-09-09-mlx-power-zero-derivatives",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/7e5f169c5e31deb2752e4dc6065a1cfc68a7c6a0/audits/2026-09-09-mlx-power-zero-derivatives/power-zero-derivatives.patch",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/7e5f169c5e31deb2752e4dc6065a1cfc68a7c6a0/audits/2026-09-09-mlx-power-zero-derivatives/BUILD.md",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/7e5f169c5e31deb2752e4dc6065a1cfc68a7c6a0/audits/2026-09-09-mlx-power-zero-derivatives/native_regression.cpp",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/7e5f169c5e31deb2752e4dc6065a1cfc68a7c6a0/audits/2026-09-09-mlx-power-zero-derivatives/run-before.log",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/7e5f169c5e31deb2752e4dc6065a1cfc68a7c6a0/audits/2026-09-09-mlx-power-zero-derivatives/run-after.log",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/7e5f169c5e31deb2752e4dc6065a1cfc68a7c6a0/audits/2026-09-09-mlx-power-zero-derivatives/SOURCES.md",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/7e5f169c5e31deb2752e4dc6065a1cfc68a7c6a0/audits/2026-09-09-mlx-power-zero-derivatives/SHA256SUMS.json"
+  ],
+  "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-power-zero-derivatives",
+  "zenodo": [],
+  "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+  "linkedin": [
+    "https://www.linkedin.com/feed/update/urn:li:activity:7503429157217910784/"
+  ],
+  "source_article_sha256": "dd1ce6e61a625f53faf0bc7dc610d01894fa71d7543dc88fcd079f3b0c19dd2b",
+  "archival_packaging_date": "2026-09-10",
+  "original_source_links": [
+    "https://www.gero.uz/research/articles/mlx-power-zero-derivatives.html",
+    "https://www.gero.uz/feed.xml",
+    "https://www.gero.uz/styles.css",
+    "https://www.gero.uz/research/research.css",
+    "https://www.gero.uz/assets/ux.css",
+    "https://www.gero.uz/_vercel/insights/script.js",
+    "https://www.gero.uz/index.html",
+    "https://www.gero.uz/index.html#method",
+    "https://www.gero.uz/index.html#lab",
+    "https://www.gero.uz/research/",
+    "mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact",
+    "https://www.gero.uz/assets/xamit-kadirbekov.jpg",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/7e5f169c5e31deb2752e4dc6065a1cfc68a7c6a0/audits/2026-09-09-mlx-power-zero-derivatives",
+    "https://www.gero.uz/assets/og-mlx-power.png",
+    "https://www.gero.uz/research/media/mlx-power-poster.png",
+    "https://www.gero.uz/research/media/mlx-power-short.mp4",
+    "https://www.gero.uz/research/media/mlx-power-short.en.vtt",
+    "https://www.youtube.com/shorts/Nxe8eoop8zc",
+    "https://www.gero.uz/research/data/mlx-power-video-source-2026-09-09.zip",
+    "https://github.com/ml-explore/mlx/blob/24c699ecee2f7c8b2040de8da1c8382c8bcf31c7/mlx/primitives.cpp#L3452",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/7e5f169c5e31deb2752e4dc6065a1cfc68a7c6a0/audits/2026-09-09-mlx-power-zero-derivatives/power-zero-derivatives.patch",
+    "https://github.com/ml-explore/mlx/blob/24c699ecee2f7c8b2040de8da1c8382c8bcf31c7/python/tests/test_autograd.py#L699",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/7e5f169c5e31deb2752e4dc6065a1cfc68a7c6a0/audits/2026-09-09-mlx-power-zero-derivatives/BUILD.md",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/7e5f169c5e31deb2752e4dc6065a1cfc68a7c6a0/audits/2026-09-09-mlx-power-zero-derivatives/native_regression.cpp",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/7e5f169c5e31deb2752e4dc6065a1cfc68a7c6a0/audits/2026-09-09-mlx-power-zero-derivatives/run-before.log",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/7e5f169c5e31deb2752e4dc6065a1cfc68a7c6a0/audits/2026-09-09-mlx-power-zero-derivatives/run-after.log",
+    "https://github.com/ml-explore/mlx/issues/504",
+    "https://github.com/ml-explore/mlx/pull/505",
+    "https://www.gero.uz/research/data/mlx-power-audit-2026-09-09.zip",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/7e5f169c5e31deb2752e4dc6065a1cfc68a7c6a0/audits/2026-09-09-mlx-power-zero-derivatives/SOURCES.md",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/7e5f169c5e31deb2752e4dc6065a1cfc68a7c6a0/audits/2026-09-09-mlx-power-zero-derivatives/SHA256SUMS.json",
+    "https://www.gero.uz/research/editorial.html"
+  ]
+}
