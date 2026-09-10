@@ -1,0 +1,209 @@
+{
+  "checked_at_utc": "2026-09-10T14:12:55Z",
+  "queries": [
+    {
+      "query": "repo:ml-explore/mlx \"divide\" \"gradient\"",
+      "url": "https://api.github.com/search/issues?q=repo%3Aml-explore%2Fmlx+%22divide%22+%22gradient%22&per_page=100",
+      "result": {
+        "total_count": 9,
+        "incomplete_results": false,
+        "items": [
+          {
+            "number": 4310,
+            "title": "Validate the optimizer betas at construction",
+            "html_url": "https://github.com/ml-explore/mlx/pull/4310",
+            "state": "closed",
+            "created_at": "2026-08-16T20:49:27Z",
+            "updated_at": "2026-08-19T07:45:48Z"
+          },
+          {
+            "number": 4293,
+            "title": "`RMSNormVJP` backward writes a full `{n_rows, D}` `gw_temp` intermediate",
+            "html_url": "https://github.com/ml-explore/mlx/pull/4293",
+            "state": "closed",
+            "created_at": "2026-08-16T06:03:37Z",
+            "updated_at": "2026-08-19T16:23:36Z"
+          },
+          {
+            "number": 3733,
+            "title": "Avoid NaNs for zero-cotangent sqrt VJPs",
+            "html_url": "https://github.com/ml-explore/mlx/pull/3733",
+            "state": "closed",
+            "created_at": "2026-06-20T22:17:17Z",
+            "updated_at": "2026-06-21T03:59:25Z"
+          },
+          {
+            "number": 2451,
+            "title": "[BUG] arctan2 gradient doesn't match JAX",
+            "html_url": "https://github.com/ml-explore/mlx/issues/2451",
+            "state": "closed",
+            "created_at": "2025-08-01T06:39:19Z",
+            "updated_at": "2025-08-02T04:06:05Z"
+          },
+          {
+            "number": 2178,
+            "title": "Fix some complex vjps",
+            "html_url": "https://github.com/ml-explore/mlx/pull/2178",
+            "state": "closed",
+            "created_at": "2025-05-13T06:00:14Z",
+            "updated_at": "2025-05-15T06:37:13Z"
+          },
+          {
+            "number": 2254,
+            "title": "[BUG] DISASTER! - MLX using DOUBLE the memory required for tensors",
+            "html_url": "https://github.com/ml-explore/mlx/issues/2254",
+            "state": "closed",
+            "created_at": "2025-06-08T19:54:48Z",
+            "updated_at": "2025-06-11T03:57:37Z"
+          },
+          {
+            "number": 1226,
+            "title": "[BUG] all_reduce_grads() fails with a Transformer model for number of nodes > 1",
+            "html_url": "https://github.com/ml-explore/mlx/issues/1226",
+            "state": "closed",
+            "created_at": "2024-06-24T12:41:45Z",
+            "updated_at": "2024-08-09T00:32:19Z"
+          },
+          {
+            "number": 473,
+            "title": "[Fix] Fix SGD implementation",
+            "html_url": "https://github.com/ml-explore/mlx/pull/473",
+            "state": "closed",
+            "created_at": "2024-01-16T23:22:46Z",
+            "updated_at": "2024-01-30T23:50:46Z"
+          },
+          {
+            "number": 735,
+            "title": "Fast Inference SDPA op",
+            "html_url": "https://github.com/ml-explore/mlx/pull/735",
+            "state": "closed",
+            "created_at": "2024-02-23T21:02:33Z",
+            "updated_at": "2024-03-06T20:47:21Z"
+          }
+        ],
+        "search_type": "lexical"
+      }
+    },
+    {
+      "query": "repo:ml-explore/mlx \"division\" \"gradient\"",
+      "url": "https://api.github.com/search/issues?q=repo%3Aml-explore%2Fmlx+%22division%22+%22gradient%22&per_page=100",
+      "result": {
+        "total_count": 2,
+        "incomplete_results": false,
+        "items": [
+          {
+            "number": 3241,
+            "title": "[Metal] Fused Flash Attention backward (VJP) kernels",
+            "html_url": "https://github.com/ml-explore/mlx/pull/3241",
+            "state": "open",
+            "created_at": "2026-03-11T09:52:13Z",
+            "updated_at": "2026-08-20T23:06:50Z"
+          },
+          {
+            "number": 451,
+            "title": "[BUG] value_and_grad is really slow",
+            "html_url": "https://github.com/ml-explore/mlx/issues/451",
+            "state": "closed",
+            "created_at": "2024-01-13T10:33:43Z",
+            "updated_at": "2026-07-01T07:55:27Z"
+          }
+        ],
+        "search_type": "lexical"
+      }
+    },
+    {
+      "query": "repo:ml-explore/mlx \"Divide::vjp\"",
+      "url": "https://api.github.com/search/issues?q=repo%3Aml-explore%2Fmlx+%22Divide%3A%3Avjp%22&per_page=100",
+      "result": {
+        "total_count": 2,
+        "incomplete_results": false,
+        "items": [
+          {
+            "number": 3733,
+            "title": "Avoid NaNs for zero-cotangent sqrt VJPs",
+            "html_url": "https://github.com/ml-explore/mlx/pull/3733",
+            "state": "closed",
+            "created_at": "2026-06-20T22:17:17Z",
+            "updated_at": "2026-06-21T03:59:25Z"
+          },
+          {
+            "number": 2178,
+            "title": "Fix some complex vjps",
+            "html_url": "https://github.com/ml-explore/mlx/pull/2178",
+            "state": "closed",
+            "created_at": "2025-05-13T06:00:14Z",
+            "updated_at": "2025-05-15T06:37:13Z"
+          }
+        ],
+        "search_type": "lexical"
+      }
+    },
+    {
+      "query": "repo:ml-explore/mlx \"division\" \"overflow\"",
+      "url": "https://api.github.com/search/issues?q=repo%3Aml-explore%2Fmlx+%22division%22+%22overflow%22&per_page=100",
+      "result": {
+        "total_count": 7,
+        "incomplete_results": false,
+        "items": [
+          {
+            "number": 4346,
+            "title": "Floor integer floor_divide to match python and numpy",
+            "html_url": "https://github.com/ml-explore/mlx/pull/4346",
+            "state": "open",
+            "created_at": "2026-08-18T17:24:04Z",
+            "updated_at": "2026-08-28T22:55:09Z"
+          },
+          {
+            "number": 4311,
+            "title": "fix: divmod should floor the quotient to match numpy (#4119)",
+            "html_url": "https://github.com/ml-explore/mlx/pull/4311",
+            "state": "closed",
+            "created_at": "2026-08-16T20:49:53Z",
+            "updated_at": "2026-08-16T23:50:46Z"
+          },
+          {
+            "number": 4108,
+            "title": "Fix divmod truncating the quotient for floats",
+            "html_url": "https://github.com/ml-explore/mlx/pull/4108",
+            "state": "closed",
+            "created_at": "2026-08-09T22:49:12Z",
+            "updated_at": "2026-08-18T10:14:04Z"
+          },
+          {
+            "number": 3998,
+            "title": "Make the gather_qmm_rhs dispatch thresholds overridable",
+            "html_url": "https://github.com/ml-explore/mlx/pull/3998",
+            "state": "closed",
+            "created_at": "2026-08-04T08:48:17Z",
+            "updated_at": "2026-08-06T00:49:33Z"
+          },
+          {
+            "number": 4212,
+            "title": "Bound GGUF metadata string/array values against the file mapping",
+            "html_url": "https://github.com/ml-explore/mlx/pull/4212",
+            "state": "closed",
+            "created_at": "2026-08-12T16:11:10Z",
+            "updated_at": "2026-08-18T22:54:06Z"
+          },
+          {
+            "number": 3875,
+            "title": "Round MLX_SDPA_BLOCKS up to a multiple of 32",
+            "html_url": "https://github.com/ml-explore/mlx/pull/3875",
+            "state": "closed",
+            "created_at": "2026-07-20T16:05:09Z",
+            "updated_at": "2026-07-22T04:20:39Z"
+          },
+          {
+            "number": 2140,
+            "title": "RuntimeWarning when running tests with numpy 2.x",
+            "html_url": "https://github.com/ml-explore/mlx/issues/2140",
+            "state": "closed",
+            "created_at": "2025-04-30T10:03:05Z",
+            "updated_at": "2025-05-01T23:22:10Z"
+          }
+        ],
+        "search_type": "lexical"
+      }
+    }
+  ]
+}

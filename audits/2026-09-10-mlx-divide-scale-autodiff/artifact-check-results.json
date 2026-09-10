@@ -1,0 +1,150 @@
+{
+  "checks": [
+    {
+      "label": "1328 cases each side",
+      "passed": true
+    },
+    {
+      "label": "600 baseline mismatches",
+      "passed": true
+    },
+    {
+      "label": "all final cases pass",
+      "passed": true
+    },
+    {
+      "label": "matching cases references tolerances",
+      "passed": true
+    },
+    {
+      "label": "all references finite",
+      "passed": true
+    },
+    {
+      "label": "all outputs finite",
+      "passed": true
+    },
+    {
+      "label": "dtype coverage",
+      "passed": true
+    },
+    {
+      "label": "recomputed final comparisons",
+      "passed": true
+    },
+    {
+      "label": "complex controls pass both versions",
+      "passed": true
+    },
+    {
+      "label": "zero-gradient higher order coverage",
+      "passed": true
+    },
+    {
+      "label": "weighted exponent cases",
+      "passed": true
+    },
+    {
+      "label": "mixed Hessian coverage",
+      "passed": true
+    },
+    {
+      "label": "wheel version and CPU",
+      "passed": true
+    },
+    {
+      "label": "wheel direct values",
+      "passed": true
+    },
+    {
+      "label": "wheel finite difference evidence",
+      "passed": true
+    },
+    {
+      "label": "wheel scale-dependent gradient failure",
+      "passed": true
+    },
+    {
+      "label": "public fetch without errors",
+      "passed": true
+    },
+    {
+      "label": "source hash mlx/primitives.cpp",
+      "passed": true
+    },
+    {
+      "label": "source hash mlx/ops.cpp",
+      "passed": true
+    },
+    {
+      "label": "source hash python/tests/test_autograd.py",
+      "passed": true
+    },
+    {
+      "label": "JVP and VJP match public main",
+      "passed": true
+    },
+    {
+      "label": "dependency libmlx.a",
+      "passed": true
+    },
+    {
+      "label": "dependency before.o",
+      "passed": true
+    },
+    {
+      "label": "vjp original branches preserved",
+      "passed": true
+    },
+    {
+      "label": "jvp original branches preserved",
+      "passed": true
+    },
+    {
+      "label": "only target methods and helper changed",
+      "passed": true
+    },
+    {
+      "label": "patch applies to saved current main",
+      "passed": true
+    },
+    {
+      "label": "applied patch exact content",
+      "passed": true
+    },
+    {
+      "label": "four complete duplicate searches",
+      "passed": true
+    },
+    {
+      "label": "18 unique public results",
+      "passed": true
+    },
+    {
+      "label": "native return codes",
+      "passed": true
+    },
+    {
+      "label": "hyperbolic compatibility cases",
+      "passed": true
+    },
+    {
+      "label": "arctan2 compatibility cases",
+      "passed": true
+    },
+    {
+      "label": "compatibility object hyperbolic",
+      "passed": true
+    },
+    {
+      "label": "compatibility object arctan2",
+      "passed": true
+    },
+    {
+      "label": "compatibility commands succeeded",
+      "passed": true
+    }
+  ],
+  "failures": 0,
+  "cpu_seconds": 0.028412
+}

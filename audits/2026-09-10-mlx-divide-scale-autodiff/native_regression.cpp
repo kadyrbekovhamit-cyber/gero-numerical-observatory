@@ -1,0 +1,219 @@
+#include <cmath>
+#include <complex>
+#include <functional>
+#include <iomanip>
+#include <iostream>
+#include <string>
+#include <tuple>
+#include <vector>
+#include "mlx/mlx.h"
+namespace mx=mlx::core;
+using A=mx::array;
+using VF=std::function<std::vector<A>(const std::vector<A>&)>;
+using SF=std::function<A(const A&)>;
+using MF=std::function<A(const std::vector<A>&)>;
+int checks=0,failures=0;
+VF fun=[](const std::vector<A>& z){return std::vector<A>{mx::divide(z[0],z[1])};};
+std::string dtype_name(mx::Dtype dtype) {
+  if(dtype==mx::float64)return "float64";
+  if(dtype==mx::float16)return "float16";
+  if(dtype==mx::bfloat16)return "bfloat16";
+  return "float32";
+}
+std::vector<double> values(const A& input) {
+  auto a=mx::contiguous(mx::astype(input,mx::float64));
+  mx::eval(a);
+  return {a.data<double>(),a.data<double>()+a.size()};
+}
+A pack(const std::vector<A>& arrays) {
+  std::vector<A> flat;
+  for(const auto& a:arrays)flat.push_back(mx::reshape(a,{-1}));
+  return mx::concatenate(flat);
+}
+void numbers(const std::vector<double>& v) {
+  std::cout << '[';
+  for(size_t i=0;i<v.size();++i) {
+    if(i)std::cout << ',';
+    if(std::isfinite(v[i]))std::cout << std::setprecision(17) << v[i];
+    else std::cout << (std::isnan(v[i]) ? "\"NaN\"" : v[i]>0 ? "\"Infinity\"" : "\"-Infinity\"");
+  }
+  std::cout << ']';
+}
+void check(std::string label,const A& actual,const std::vector<double>& expected,mx::Dtype dtype,double tol=0,
+           std::string display="",bool contract=true) {
+  ++checks;
+  if(!tol)tol=dtype==mx::float64 ? 5e-13 :
+      dtype==mx::float16 ? 3e-3 : dtype==mx::bfloat16 ? 2e-2 : 2e-5;
+  auto got=values(actual);
+  bool ok=contract && got.size()==expected.size() && actual.dtype()==dtype;
+  for(size_t i=0;i<got.size() && i<expected.size();++i)
+    ok &= std::isfinite(got[i]) && std::isfinite(expected[i]) &&
+      (expected[i]==0 ? std::abs(got[i])<=tol : std::abs(got[i]/expected[i]-1)<=tol);
+  failures+=!ok;
+  std::cout << "CASE {\"label\":\"" << label << "\",\"dtype\":\""
+            << (display.empty() ? dtype_name(dtype) : display) << "\",\"actual\":";
+  numbers(got);
+  std::cout << ",\"expected\":";numbers(expected);
+  std::cout << ",\"tolerance\":" << tol << ",\"passed\":" << (ok ? "true" : "false") << "}\n";
+}
+std::pair<double,double> reference(double y,double x) {
+  return {1/x,-(y/x)/x};
+}
+std::string tag(int power,double a,double b) {
+  return "p="+std::to_string(power)+"/a="+std::to_string(a)+"/b="+std::to_string(b);
+}
+void first(int power,double a,double b,mx::Dtype dtype) {
+  double c=std::ldexp(1.,power);
+  A y(c*a,dtype),x(c*b,dtype);
+  auto [gy,gx]=reference(values(y)[0],values(x)[0]);
+  std::string label=tag(power,a,b);
+  for(double weight:{0.,1.,-.5}) {
+    A w(weight,dtype);
+    std::string name=label+"/w="+std::to_string(weight);
+    check(name+"/VJP",pack(mx::vjp(fun,{y,x},{w}).second),{weight*gy,weight*gx},dtype);
+    SF fy=[=](const A& z){return mx::divide(z,x);};
+    SF fx=[=](const A& z){return mx::divide(y,z);};
+    check(name+"/JVP-y",mx::jvp(fy,y,w).second,{weight*gy},dtype);
+    check(name+"/JVP-x",mx::jvp(fx,x,w).second,{weight*gx},dtype);
+    check(name+"/JVP-both",mx::jvp(fun,{y,x},{w,mx::negative(w)}).second[0],
+          {weight*(gy-gx)},dtype);
+  }
+  check(label+"/radial-JVP",mx::jvp(fun,{y,x},{y,x}).second[0],{0.},dtype);
+  check(label+"/opposite-scaling-JVP",mx::jvp(fun,{y,x},{y,mx::negative(x)}).second[0],
+        {2*values(y)[0]/values(x)[0]},dtype);
+}
+void higher(int power,double tv,mx::Dtype dtype) {
+  A c(std::ldexp(1.,power),dtype),t(tv,dtype);
+  SF f=[=](const A& z){return mx::divide(c,mx::multiply(c,z));};
+  std::string label="composite/p="+std::to_string(power)+"/t="+std::to_string(tv);
+  check(label+"/1",mx::grad(f)(t),{-1/(tv*tv)},dtype);
+  check(label+"/2",mx::grad(mx::grad(f))(t),{2/(tv*tv*tv)},dtype);
+  check(label+"/3",mx::grad(mx::grad(mx::grad(f)))(t),{-6/(tv*tv*tv*tv)},dtype);
+  if(tv==1) {
+    double h=std::ldexp(1.,dtype==mx::float64 ? -10 : -6);
+    auto fd=mx::divide(mx::subtract(f(A(tv+h,dtype)),f(A(tv-h,dtype))),A(2*h,dtype));
+    check(label+"/finite-difference",fd,{-1/(tv*tv)},dtype,dtype==mx::float64 ? 2e-6 : 5e-4);
+  }
+}
+void mixed(int power,mx::Dtype dtype) {
+  A c(std::ldexp(1.,power),dtype);
+  MF f=[=](const std::vector<A>& z){return mx::divide(mx::multiply(c,z[0]),mx::multiply(c,z[1]));};
+  auto gradient=mx::grad(f,std::vector<int>{0,1});
+  std::vector<A> h;
+  for(int i=0;i<2;++i) {
+    MF part=[=](const std::vector<A>& z){return gradient(z)[i];};
+    auto row=mx::grad(part,std::vector<int>{0,1})({A(1.,dtype),A(2.,dtype)});
+    h.insert(h.end(),row.begin(),row.end());
+  }
+  check("mixed-Hessian/p="+std::to_string(power),pack(h),{0,-.25,-.25,.25},dtype);
+}
+void zero_gradient(int power,mx::Dtype dtype) {
+  A c(std::ldexp(1.,power),dtype),one(1.,dtype);
+  SF residual=[=](const A& t) {
+    return mx::square(mx::subtract(mx::divide(c,mx::multiply(c,t)),one));
+  };
+  SF identity=[=](const A& t) {
+    auto v=mx::multiply(c,t);return mx::divide(v,v);
+  };
+  std::string label="zero-gradient/p="+std::to_string(power);
+  check(label+"/residual-1",mx::grad(residual)(one),{0},dtype);
+  check(label+"/residual-2",mx::grad(mx::grad(residual))(one),{2},dtype);
+  check(label+"/residual-3",mx::grad(mx::grad(mx::grad(residual)))(one),{-12},dtype);
+  check(label+"/identity-1",mx::grad(identity)(one),{0},dtype);
+  check(label+"/identity-2",mx::grad(mx::grad(identity))(one),{0},dtype);
+  check(label+"/identity-3",mx::grad(mx::grad(mx::grad(identity)))(one),{0},dtype);
+}
+void broadcast(int power,mx::Dtype dtype) {
+  double c=std::ldexp(1.,power);
+  double ys[]={c,2*c},xs[]={c,-c,2*c},ws[]={0,1,-.5,2,-1,1};
+  A y=mx::astype(A(ys,{2,1},mx::float64),dtype);
+  A x=mx::astype(A(xs,{1,3},mx::float64),dtype);
+  A w=mx::astype(A(ws,{2,3},mx::float64),dtype);
+  std::vector<double> v(5,0.),j;
+  for(int i=0;i<2;++i)for(int k=0;k<3;++k) {
+    auto [gy,gx]=reference(ys[i],xs[k]);
+    v[i]+=ws[3*i+k]*gy;v[2+k]+=ws[3*i+k]*gx;
+    j.push_back(c*gy);
+  }
+  std::string label="broadcast/p="+std::to_string(power);
+  check(label+"/VJP",pack(mx::vjp(fun,{y,x},{w}).second),v,dtype);
+  check(label+"/JVP",mx::jvp(fun,{y,x},{mx::full_like(y,c),mx::zeros_like(x)}).second[0],j,dtype);
+}
+void matrix(int power,mx::Dtype dtype,bool strided) {
+  double c=std::ldexp(1.,power);
+  double ys[]={c,2*c,0,-c,-2*c,c},xs[]={2*c,c,c,-2*c,-c,2*c},ws[]={0,1,-.5,2,-1,1};
+  A y=mx::astype(A(ys,{2,3},mx::float64),dtype);
+  A x=mx::astype(A(xs,{2,3},mx::float64),dtype);
+  A w=mx::astype(A(ws,{2,3},mx::float64),dtype);
+  if(strided)y=mx::swapaxes(mx::contiguous(mx::swapaxes(y,0,1)),0,1);
+  std::vector<double> gyv,gxv,j;
+  for(int i=0;i<6;++i) {
+    auto [gy,gx]=reference(ys[i],xs[i]);
+    gyv.push_back(ws[i]*gy);gxv.push_back(ws[i]*gx);
+    j.push_back(c*(gy-gx));
+  }
+  gyv.insert(gyv.end(),gxv.begin(),gxv.end());
+  std::string label=(strided ? "strided/p=" : "matrix/p=")+std::to_string(power);
+  check(label+"/VJP",pack(mx::vjp(fun,{y,x},{w}).second),gyv,dtype);
+  check(label+"/JVP",mx::jvp(fun,{y,x},{mx::full_like(y,c),mx::full_like(x,-c)}).second[0],j,dtype);
+}
+void weighted_powers(mx::Dtype dtype) {
+  std::vector<std::tuple<int,int,int>> exponents=dtype==mx::float16 ?
+    std::vector<std::tuple<int,int,int>>{{10,10,0},{-10,-10,0},{-14,3,14},
+      {-10,-2,14},{10,7,10},{-10,-8,-10},{14,3,-14}} :
+    std::vector<std::tuple<int,int,int>>{{80,80,0},{-80,-80,0},{-120,32,120},
+      {-100,-20,120},{100,70,100},{-100,-80,-100},{120,32,-120}};
+  for(auto [pa,pb,pg]:exponents) {
+    if(dtype==mx::float64){pa*=8;pb*=8;pg*=8;}
+    for(double sign:{-1.,1.}) {
+      A a(sign*std::ldexp(1.,pa),dtype),b(std::ldexp(1.,pb),dtype),g(std::ldexp(1.,pg),dtype);
+      SF f=[=](const A& z){return mx::divide(a,z);};
+      double expected=-sign*std::ldexp(1.,pg+pa-2*pb);
+      std::string label="weighted/pa="+std::to_string(pa)+"/pb="+std::to_string(pb)+
+        "/pg="+std::to_string(pg)+"/sign="+std::to_string(sign);
+      check(label+"/JVP",mx::jvp(f,b,g).second,{expected},dtype);
+      check(label+"/VJP",mx::vjp(f,b,g).second,{expected},dtype);
+    }
+  }
+}
+void check_complex(std::string label,const A& actual,const std::vector<std::complex<double>>& expected) {
+  std::vector<double> parts;
+  for(auto z:expected)parts.push_back(z.real());
+  for(auto z:expected)parts.push_back(z.imag());
+  check(label,pack({mx::real(actual),mx::imag(actual)}),parts,mx::float32,8e-6,
+        "complex64",actual.dtype()==mx::complex64);
+}
+void complex_controls() {
+  using Z=std::complex<double>;
+  for(Z a:{Z(1,2),Z(-.5,1)})for(Z b:{Z(2,-.5),Z(-1,2)})for(Z g:{Z(0,0),Z(.5,1)}) {
+    A aa(std::complex<float>(a),mx::complex64),bb(std::complex<float>(b),mx::complex64);
+    A gg(std::complex<float>(g),mx::complex64),hh(std::complex<float>(.5*std::conj(g)),mx::complex64);
+    std::string label="complex/a="+std::to_string(a.real())+"/b="+std::to_string(b.real())+
+        "/g="+std::to_string(g.real());
+    auto cb=std::conj(b);
+    check_complex(label+"/VJP",pack(mx::vjp(fun,{aa,bb},{gg}).second),
+                  {g/cb,-g*std::conj(a)/(cb*cb)});
+    check_complex(label+"/JVP",mx::jvp(fun,{aa,bb},{gg,hh}).second[0],
+                  {g/b-a*(.5*std::conj(g))/(b*b)});
+  }
+}
+int main() {
+  mx::set_default_device(mx::Device::cpu);
+  for(auto dtype:{mx::float16,mx::bfloat16,mx::float32,mx::float64}) {
+    int low=dtype==mx::float16 ? -14 : dtype==mx::float64 ? -600 : -80;
+    int high=dtype==mx::float16 ? 10 : dtype==mx::float64 ? 600 : 80;
+    for(int power:{0,low,high}) {
+      for(auto [a,b]:std::vector<std::pair<double,double>>{
+            {1,1},{2,1},{-1,2},{1,-2},{-1,-2},{0,1}})
+        first(power,a,b,dtype);
+      if(dtype!=mx::float32 && dtype!=mx::float64)continue;
+      for(double t:{-2.,-1.,-.5,.5,1.,2.})higher(power,t,dtype);
+      mixed(power,dtype);zero_gradient(power,dtype);broadcast(power,dtype);
+      matrix(power,dtype,false);matrix(power,dtype,true);
+    }
+    weighted_powers(dtype);
+  }
+  complex_controls();
+  std::cout << "SUMMARY checks=" << checks << " failures=" << failures << '\n';
+  return failures ? 1 : 0;
+}

@@ -1,0 +1,17 @@
+{
+  "dependencies": [
+    {
+      "suite": "hyperbolic",
+      "checks": 518,
+      "path": "${ORIGINAL_AUDIT_ROOT}/software-audits/mlx-inverse-hyperbolic-overflow-2026-09-10/test.o",
+      "sha256": "96afce3eb8cc930352ce9b845e3e4f94ba45415eafc7e4c6535397014cdaa014"
+    },
+    {
+      "suite": "arctan2",
+      "checks": 1368,
+      "path": "${ORIGINAL_AUDIT_ROOT}/software-audits/mlx-arctan2-scale-autodiff-2026-09-10/test.o",
+      "sha256": "96b47c7f5c30aba90e43ac39e1049333d7d888e6c37ff1f0944e77c3c03e4a54"
+    }
+  ],
+  "scope": "Three local patches together on the same baseline TU; prebuilt CPU archive."
+}

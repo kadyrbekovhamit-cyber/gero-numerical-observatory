@@ -1,0 +1,18 @@
+{
+  "baseline_revision": "ce916dbbcaa88e433b6fd1e60a17f766d49c27fe",
+  "target_methods_identical": {
+    "jvp": true,
+    "vjp": true
+  },
+  "dependencies": [
+    {
+      "path": "${ORIGINAL_AUDIT_ROOT}/software-audits/current-stack-2026-09-07-round3/build-native/mlx-build/libmlx.a",
+      "sha256": "7826e14e2d1ee526a16352829d460ae39c048e331c339be0b6f8d67d74e68a06"
+    },
+    {
+      "path": "${ORIGINAL_AUDIT_ROOT}/software-audits/mlx-logcumsumexp-hessian-2026-09-10/before.o",
+      "sha256": "fe564bdff67b9f70f26fe428968aa069503b772f395bbf4f91abf920982d7e29"
+    }
+  ],
+  "scope": "Primitives TU override before a prebuilt CPU archive; not a full current-main build."
+}

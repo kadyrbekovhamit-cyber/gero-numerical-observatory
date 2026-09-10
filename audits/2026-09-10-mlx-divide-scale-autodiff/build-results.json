@@ -1,0 +1,106 @@
+[
+  {
+    "label": "compile-test",
+    "command": [
+      "/usr/bin/c++",
+      "-DACCELERATE_NEW_LAPACK",
+      "-DFMT_HEADER_ONLY=1",
+      "-DMLX_STATIC",
+      "-DMLX_USE_ACCELERATE",
+      "-I${ORIGINAL_AUDIT_ROOT}/software-audits/current-stack-2026-09-07-round3/build-native/_deps/json-src/single_include/nlohmann",
+      "-I${ORIGINAL_AUDIT_ROOT}/audit-targets/current-stack-2026-09-07/mlx",
+      "-I${ORIGINAL_AUDIT_ROOT}/software-audits/current-stack-2026-09-07-round3/build-native/_deps/fmt-src/include",
+      "-F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks",
+      "-O0",
+      "-DNDEBUG",
+      "-std=gnu++20",
+      "-fPIC",
+      "-fvisibility=hidden",
+      "-fvisibility-inlines-hidden",
+      "-o",
+      "${ORIGINAL_AUDIT_ROOT}/software-audits/mlx-divide-scale-autodiff-2026-09-10/test.o",
+      "-c",
+      "${ORIGINAL_AUDIT_ROOT}/software-audits/mlx-divide-scale-autodiff-2026-09-10/native_regression.cpp"
+    ],
+    "returncode": 0,
+    "wall_seconds": 1.1058348750000002,
+    "cpu_seconds": 0.9526669999999999
+  },
+  {
+    "label": "compile-patch",
+    "command": [
+      "/usr/bin/c++",
+      "-DACCELERATE_NEW_LAPACK",
+      "-DFMT_HEADER_ONLY=1",
+      "-DMLX_STATIC",
+      "-DMLX_USE_ACCELERATE",
+      "-I${ORIGINAL_AUDIT_ROOT}/software-audits/current-stack-2026-09-07-round3/build-native/_deps/json-src/single_include/nlohmann",
+      "-I${ORIGINAL_AUDIT_ROOT}/audit-targets/current-stack-2026-09-07/mlx",
+      "-I${ORIGINAL_AUDIT_ROOT}/software-audits/current-stack-2026-09-07-round3/build-native/_deps/fmt-src/include",
+      "-F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks",
+      "-O0",
+      "-DNDEBUG",
+      "-std=gnu++20",
+      "-fPIC",
+      "-fvisibility=hidden",
+      "-fvisibility-inlines-hidden",
+      "-o",
+      "${ORIGINAL_AUDIT_ROOT}/software-audits/mlx-divide-scale-autodiff-2026-09-10/after.o",
+      "-c",
+      "${ORIGINAL_AUDIT_ROOT}/software-audits/mlx-divide-scale-autodiff-2026-09-10/patched-baseline-primitives.cpp"
+    ],
+    "returncode": 0,
+    "wall_seconds": 1.0169647080000002,
+    "cpu_seconds": 1.0026659999999998
+  },
+  {
+    "label": "link-before",
+    "command": [
+      "/usr/bin/c++",
+      "${ORIGINAL_AUDIT_ROOT}/software-audits/mlx-divide-scale-autodiff-2026-09-10/test.o",
+      "${ORIGINAL_AUDIT_ROOT}/software-audits/mlx-logcumsumexp-hessian-2026-09-10/before.o",
+      "${ORIGINAL_AUDIT_ROOT}/software-audits/current-stack-2026-09-07-round3/build-native/mlx-build/libmlx.a",
+      "-framework",
+      "Accelerate",
+      "-o",
+      "${ORIGINAL_AUDIT_ROOT}/software-audits/mlx-divide-scale-autodiff-2026-09-10/native-before"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.17858320800000005,
+    "cpu_seconds": 0.19218800000000003
+  },
+  {
+    "label": "run-before",
+    "command": [
+      "${ORIGINAL_AUDIT_ROOT}/software-audits/mlx-divide-scale-autodiff-2026-09-10/native-before"
+    ],
+    "returncode": 1,
+    "wall_seconds": 1.418682542,
+    "cpu_seconds": 0.09687700000000021
+  },
+  {
+    "label": "link-after",
+    "command": [
+      "/usr/bin/c++",
+      "${ORIGINAL_AUDIT_ROOT}/software-audits/mlx-divide-scale-autodiff-2026-09-10/test.o",
+      "${ORIGINAL_AUDIT_ROOT}/software-audits/mlx-divide-scale-autodiff-2026-09-10/after.o",
+      "${ORIGINAL_AUDIT_ROOT}/software-audits/current-stack-2026-09-07-round3/build-native/mlx-build/libmlx.a",
+      "-framework",
+      "Accelerate",
+      "-o",
+      "${ORIGINAL_AUDIT_ROOT}/software-audits/mlx-divide-scale-autodiff-2026-09-10/native-after"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.08447712500000026,
+    "cpu_seconds": 0.1705270000000001
+  },
+  {
+    "label": "run-after",
+    "command": [
+      "${ORIGINAL_AUDIT_ROOT}/software-audits/mlx-divide-scale-autodiff-2026-09-10/native-after"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.7792476250000004,
+    "cpu_seconds": 0.3643370000000001
+  }
+]

@@ -1,0 +1,28 @@
+namespace {
+
+array real_divide_denominator_partial(
+    const array& weight, const array& numerator, const array& denominator, Stream s) {
+  auto one = array(1., denominator.dtype());
+  auto aw = abs(stop_gradient(weight, s), s);
+  auto an = abs(stop_gradient(numerator, s), s);
+  auto ad = abs(stop_gradient(denominator, s), s);
+  auto weight_is_large = greater_equal(aw, an, s);
+  auto large = where(weight_is_large, weight, numerator, s);
+  auto small = where(weight_is_large, numerator, weight, s);
+  auto denominator_is_large = greater_equal(ad, one, s);
+  auto split = where(
+      denominator_is_large,
+      greater_equal(minimum(aw, an, s), ad, s),
+      isfinite(divide(stop_gradient(large, s), stop_gradient(denominator, s), s), s),
+      s);
+  auto divide_first = logical_or(denominator_is_large, split, s);
+  auto first_divisor = where(divide_first, denominator, one, s);
+  auto second_divisor = where(split, denominator, one, s);
+  auto next_divisor = where(split, one, denominator, s);
+  auto last_divisor = where(divide_first, one, denominator, s);
+  auto product = multiply(
+      divide(large, first_divisor, s), divide(small, second_divisor, s), s);
+  return negative(divide(divide(product, next_divisor, s), last_divisor, s), s);
+}
+
+} // namespace

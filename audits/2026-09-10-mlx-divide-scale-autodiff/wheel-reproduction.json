@@ -1,0 +1,279 @@
+{
+  "version": "0.32.2",
+  "device": "Device(cpu, 0)",
+  "cases": [
+    {
+      "dtype": "mlx.core.float16",
+      "scale": 1.0,
+      "value": 1.0,
+      "vjp": [
+        1.0,
+        -1.0
+      ],
+      "jvp_denominator": -1.0,
+      "radial_jvp": 0.0,
+      "expected_vjp": [
+        1.0,
+        -1.0
+      ],
+      "expected_radial": 0.0
+    },
+    {
+      "dtype": "mlx.core.float16",
+      "scale": 6.103515625e-05,
+      "value": 1.0,
+      "vjp": [
+        16384.0,
+        "-Infinity"
+      ],
+      "jvp_denominator": "-Infinity",
+      "radial_jvp": "NaN",
+      "expected_vjp": [
+        16384.0,
+        -16384.0
+      ],
+      "expected_radial": 0.0
+    },
+    {
+      "dtype": "mlx.core.float16",
+      "scale": 1024.0,
+      "value": 1.0,
+      "vjp": [
+        0.0009765625,
+        -0.0
+      ],
+      "jvp_denominator": -0.0,
+      "radial_jvp": "NaN",
+      "expected_vjp": [
+        0.0009765625,
+        -0.0009765625
+      ],
+      "expected_radial": 0.0
+    },
+    {
+      "dtype": "mlx.core.bfloat16",
+      "scale": 1.0,
+      "value": 1.0,
+      "vjp": [
+        1.0,
+        -1.0
+      ],
+      "jvp_denominator": -1.0,
+      "radial_jvp": 0.0,
+      "expected_vjp": [
+        1.0,
+        -1.0
+      ],
+      "expected_radial": 0.0
+    },
+    {
+      "dtype": "mlx.core.bfloat16",
+      "scale": 8.271806125530277e-25,
+      "value": 1.0,
+      "vjp": [
+        1.2089258196146292e+24,
+        "-Infinity"
+      ],
+      "jvp_denominator": "-Infinity",
+      "radial_jvp": "NaN",
+      "expected_vjp": [
+        1.2089258196146292e+24,
+        -1.2089258196146292e+24
+      ],
+      "expected_radial": 0.0
+    },
+    {
+      "dtype": "mlx.core.bfloat16",
+      "scale": 1.2089258196146292e+24,
+      "value": 1.0,
+      "vjp": [
+        8.271806125530277e-25,
+        -0.0
+      ],
+      "jvp_denominator": -0.0,
+      "radial_jvp": "NaN",
+      "expected_vjp": [
+        8.271806125530277e-25,
+        -8.271806125530277e-25
+      ],
+      "expected_radial": 0.0
+    },
+    {
+      "dtype": "mlx.core.float32",
+      "scale": 1.0,
+      "value": 1.0,
+      "vjp": [
+        1.0,
+        -1.0
+      ],
+      "jvp_denominator": -1.0,
+      "radial_jvp": 0.0,
+      "expected_vjp": [
+        1.0,
+        -1.0
+      ],
+      "expected_radial": 0.0
+    },
+    {
+      "dtype": "mlx.core.float32",
+      "scale": 8.271806125530277e-25,
+      "value": 1.0,
+      "vjp": [
+        1.2089258196146292e+24,
+        "-Infinity"
+      ],
+      "jvp_denominator": "-Infinity",
+      "radial_jvp": "NaN",
+      "expected_vjp": [
+        1.2089258196146292e+24,
+        -1.2089258196146292e+24
+      ],
+      "expected_radial": 0.0
+    },
+    {
+      "dtype": "mlx.core.float32",
+      "scale": 1.2089258196146292e+24,
+      "value": 1.0,
+      "vjp": [
+        8.271806125530277e-25,
+        -0.0
+      ],
+      "jvp_denominator": -0.0,
+      "radial_jvp": "NaN",
+      "expected_vjp": [
+        8.271806125530277e-25,
+        -8.271806125530277e-25
+      ],
+      "expected_radial": 0.0
+    },
+    {
+      "dtype": "mlx.core.float64",
+      "scale": 1.0,
+      "value": 1.0,
+      "vjp": [
+        1.0,
+        -1.0
+      ],
+      "jvp_denominator": -1.0,
+      "radial_jvp": 0.0,
+      "expected_vjp": [
+        1.0,
+        -1.0
+      ],
+      "expected_radial": 0.0
+    },
+    {
+      "dtype": "mlx.core.float64",
+      "scale": 2.409919865102884e-181,
+      "value": 1.0,
+      "vjp": [
+        4.149515568880993e+180,
+        "-Infinity"
+      ],
+      "jvp_denominator": "-Infinity",
+      "radial_jvp": "NaN",
+      "expected_vjp": [
+        4.149515568880993e+180,
+        -4.149515568880993e+180
+      ],
+      "expected_radial": 0.0
+    },
+    {
+      "dtype": "mlx.core.float64",
+      "scale": 4.149515568880993e+180,
+      "value": 1.0,
+      "vjp": [
+        2.409919865102884e-181,
+        -0.0
+      ],
+      "jvp_denominator": -0.0,
+      "radial_jvp": "NaN",
+      "expected_vjp": [
+        2.409919865102884e-181,
+        -2.409919865102884e-181
+      ],
+      "expected_radial": 0.0
+    }
+  ],
+  "compositions": [
+    {
+      "dtype": "mlx.core.float32",
+      "scale": 1.0,
+      "value": 1.0,
+      "gradient": -1.0,
+      "hessian": 2.0,
+      "third": -6.0,
+      "finite_difference": -1.0002460479736328,
+      "step": 0.015625,
+      "expected_gradient": -1.0,
+      "expected_hessian": 2.0,
+      "expected_third": -6.0
+    },
+    {
+      "dtype": "mlx.core.float32",
+      "scale": 8.271806125530277e-25,
+      "value": 1.0,
+      "gradient": "-Infinity",
+      "hessian": "NaN",
+      "third": "NaN",
+      "finite_difference": -1.0002460479736328,
+      "step": 0.015625,
+      "expected_gradient": -1.0,
+      "expected_hessian": 2.0,
+      "expected_third": -6.0
+    },
+    {
+      "dtype": "mlx.core.float32",
+      "scale": 1.2089258196146292e+24,
+      "value": 1.0,
+      "gradient": -0.0,
+      "hessian": "NaN",
+      "third": "NaN",
+      "finite_difference": -1.0002460479736328,
+      "step": 0.015625,
+      "expected_gradient": -1.0,
+      "expected_hessian": 2.0,
+      "expected_third": -6.0
+    },
+    {
+      "dtype": "mlx.core.float64",
+      "scale": 1.0,
+      "value": 1.0,
+      "gradient": -1.0,
+      "hessian": 2.0,
+      "third": -6.0,
+      "finite_difference": -1.000000953675226,
+      "step": 0.0009765625,
+      "expected_gradient": -1.0,
+      "expected_hessian": 2.0,
+      "expected_third": -6.0
+    },
+    {
+      "dtype": "mlx.core.float64",
+      "scale": 2.409919865102884e-181,
+      "value": 1.0,
+      "gradient": "-Infinity",
+      "hessian": "NaN",
+      "third": "NaN",
+      "finite_difference": -1.000000953675226,
+      "step": 0.0009765625,
+      "expected_gradient": -1.0,
+      "expected_hessian": 2.0,
+      "expected_third": -6.0
+    },
+    {
+      "dtype": "mlx.core.float64",
+      "scale": 4.149515568880993e+180,
+      "value": 1.0,
+      "gradient": -0.0,
+      "hessian": "NaN",
+      "third": "NaN",
+      "finite_difference": -1.000000953675226,
+      "step": 0.0009765625,
+      "expected_gradient": -1.0,
+      "expected_hessian": 2.0,
+      "expected_third": -6.0
+    }
+  ],
+  "cpu_seconds": 0.005310999999999996
+}

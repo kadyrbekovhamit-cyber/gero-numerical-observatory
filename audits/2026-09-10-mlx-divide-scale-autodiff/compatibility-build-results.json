@@ -1,0 +1,79 @@
+[
+  {
+    "label": "compat-compile",
+    "command": [
+      "/usr/bin/c++",
+      "-DACCELERATE_NEW_LAPACK",
+      "-DFMT_HEADER_ONLY=1",
+      "-DMLX_STATIC",
+      "-DMLX_USE_ACCELERATE",
+      "-I${ORIGINAL_AUDIT_ROOT}/software-audits/current-stack-2026-09-07-round3/build-native/_deps/json-src/single_include/nlohmann",
+      "-I${ORIGINAL_AUDIT_ROOT}/audit-targets/current-stack-2026-09-07/mlx",
+      "-I${ORIGINAL_AUDIT_ROOT}/software-audits/current-stack-2026-09-07-round3/build-native/_deps/fmt-src/include",
+      "-F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks",
+      "-O0",
+      "-DNDEBUG",
+      "-std=gnu++20",
+      "-fPIC",
+      "-fvisibility=hidden",
+      "-fvisibility-inlines-hidden",
+      "-o",
+      "${ORIGINAL_AUDIT_ROOT}/software-audits/mlx-divide-scale-autodiff-2026-09-10/combined.o",
+      "-c",
+      "${ORIGINAL_AUDIT_ROOT}/software-audits/mlx-divide-scale-autodiff-2026-09-10/combined-primitives.cpp"
+    ],
+    "returncode": 0,
+    "wall_seconds": 1.269844667,
+    "cpu_seconds": 1.138819
+  },
+  {
+    "label": "compat-link-hyperbolic",
+    "command": [
+      "/usr/bin/c++",
+      "${ORIGINAL_AUDIT_ROOT}/software-audits/mlx-inverse-hyperbolic-overflow-2026-09-10/test.o",
+      "${ORIGINAL_AUDIT_ROOT}/software-audits/mlx-divide-scale-autodiff-2026-09-10/combined.o",
+      "${ORIGINAL_AUDIT_ROOT}/software-audits/current-stack-2026-09-07-round3/build-native/mlx-build/libmlx.a",
+      "-framework",
+      "Accelerate",
+      "-o",
+      "${ORIGINAL_AUDIT_ROOT}/software-audits/mlx-divide-scale-autodiff-2026-09-10/compat-hyperbolic"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.17004362499999992,
+    "cpu_seconds": 0.18720100000000003
+  },
+  {
+    "label": "compat-run-hyperbolic",
+    "command": [
+      "${ORIGINAL_AUDIT_ROOT}/software-audits/mlx-divide-scale-autodiff-2026-09-10/compat-hyperbolic"
+    ],
+    "returncode": 0,
+    "wall_seconds": 1.4141716249999998,
+    "cpu_seconds": 0.09171799999999991
+  },
+  {
+    "label": "compat-link-arctan2",
+    "command": [
+      "/usr/bin/c++",
+      "${ORIGINAL_AUDIT_ROOT}/software-audits/mlx-arctan2-scale-autodiff-2026-09-10/test.o",
+      "${ORIGINAL_AUDIT_ROOT}/software-audits/mlx-divide-scale-autodiff-2026-09-10/combined.o",
+      "${ORIGINAL_AUDIT_ROOT}/software-audits/current-stack-2026-09-07-round3/build-native/mlx-build/libmlx.a",
+      "-framework",
+      "Accelerate",
+      "-o",
+      "${ORIGINAL_AUDIT_ROOT}/software-audits/mlx-divide-scale-autodiff-2026-09-10/compat-arctan2"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.07862104199999997,
+    "cpu_seconds": 0.1662889999999999
+  },
+  {
+    "label": "compat-run-arctan2",
+    "command": [
+      "${ORIGINAL_AUDIT_ROOT}/software-audits/mlx-divide-scale-autodiff-2026-09-10/compat-arctan2"
+    ],
+    "returncode": 0,
+    "wall_seconds": 1.0469101670000005,
+    "cpu_seconds": 0.31842600000000004
+  }
+]

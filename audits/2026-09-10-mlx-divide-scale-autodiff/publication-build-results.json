@@ -1,0 +1,264 @@
+[
+  {
+    "label": "compile-test",
+    "command": [
+      "/usr/bin/c++",
+      "-DACCELERATE_NEW_LAPACK",
+      "-DFMT_HEADER_ONLY=1",
+      "-DMLX_STATIC",
+      "-DMLX_USE_ACCELERATE",
+      "-I${MLX_CPU_BUILD}/_deps/json-src/single_include/nlohmann",
+      "-I${MLX_SOURCE_ROOT}",
+      "-I${MLX_CPU_BUILD}/_deps/fmt-src/include",
+      "-F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks",
+      "-O0",
+      "-DNDEBUG",
+      "-std=gnu++20",
+      "-fPIC",
+      "-fvisibility=hidden",
+      "-fvisibility-inlines-hidden",
+      "-o",
+      "${PACKAGE}/rerun/test.o",
+      "-c",
+      "${PACKAGE}/native_regression.cpp"
+    ],
+    "returncode": 0,
+    "wall_seconds": 1.2729170410000001,
+    "cpu_seconds": 1.046531
+  },
+  {
+    "label": "compile-before",
+    "command": [
+      "/usr/bin/c++",
+      "-DACCELERATE_NEW_LAPACK",
+      "-DFMT_HEADER_ONLY=1",
+      "-DMLX_STATIC",
+      "-DMLX_USE_ACCELERATE",
+      "-I${MLX_CPU_BUILD}/_deps/json-src/single_include/nlohmann",
+      "-I${MLX_SOURCE_ROOT}",
+      "-I${MLX_CPU_BUILD}/_deps/fmt-src/include",
+      "-F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks",
+      "-O0",
+      "-DNDEBUG",
+      "-std=gnu++20",
+      "-fPIC",
+      "-fvisibility=hidden",
+      "-fvisibility-inlines-hidden",
+      "-o",
+      "${PACKAGE}/rerun/before.o",
+      "-c",
+      "${PACKAGE}/baseline-primitives.cpp"
+    ],
+    "returncode": 0,
+    "wall_seconds": 1.0959587079999997,
+    "cpu_seconds": 1.082454
+  },
+  {
+    "label": "compile-after",
+    "command": [
+      "/usr/bin/c++",
+      "-DACCELERATE_NEW_LAPACK",
+      "-DFMT_HEADER_ONLY=1",
+      "-DMLX_STATIC",
+      "-DMLX_USE_ACCELERATE",
+      "-I${MLX_CPU_BUILD}/_deps/json-src/single_include/nlohmann",
+      "-I${MLX_SOURCE_ROOT}",
+      "-I${MLX_CPU_BUILD}/_deps/fmt-src/include",
+      "-F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks",
+      "-O0",
+      "-DNDEBUG",
+      "-std=gnu++20",
+      "-fPIC",
+      "-fvisibility=hidden",
+      "-fvisibility-inlines-hidden",
+      "-o",
+      "${PACKAGE}/rerun/after.o",
+      "-c",
+      "${PACKAGE}/patched-baseline-primitives.cpp"
+    ],
+    "returncode": 0,
+    "wall_seconds": 1.1044221250000001,
+    "cpu_seconds": 1.0883489999999996
+  },
+  {
+    "label": "link-before",
+    "command": [
+      "/usr/bin/c++",
+      "${PACKAGE}/rerun/test.o",
+      "${PACKAGE}/rerun/before.o",
+      "${MLX_CPU_BUILD}/mlx-build/libmlx.a",
+      "-framework",
+      "Accelerate",
+      "-o",
+      "${PACKAGE}/rerun/native-before"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.21659941699999985,
+    "cpu_seconds": 0.19740300000000022
+  },
+  {
+    "label": "run-before",
+    "command": [
+      "${PACKAGE}/rerun/native-before"
+    ],
+    "returncode": 1,
+    "wall_seconds": 1.8819922089999999,
+    "cpu_seconds": 0.09635699999999997
+  },
+  {
+    "label": "link-after",
+    "command": [
+      "/usr/bin/c++",
+      "${PACKAGE}/rerun/test.o",
+      "${PACKAGE}/rerun/after.o",
+      "${MLX_CPU_BUILD}/mlx-build/libmlx.a",
+      "-framework",
+      "Accelerate",
+      "-o",
+      "${PACKAGE}/rerun/native-after"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.08966629100000034,
+    "cpu_seconds": 0.16952799999999996
+  },
+  {
+    "label": "run-after",
+    "command": [
+      "${PACKAGE}/rerun/native-after"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.9195239589999993,
+    "cpu_seconds": 0.6544330000000002
+  },
+  {
+    "label": "compile-combined",
+    "command": [
+      "/usr/bin/c++",
+      "-DACCELERATE_NEW_LAPACK",
+      "-DFMT_HEADER_ONLY=1",
+      "-DMLX_STATIC",
+      "-DMLX_USE_ACCELERATE",
+      "-I${MLX_CPU_BUILD}/_deps/json-src/single_include/nlohmann",
+      "-I${MLX_SOURCE_ROOT}",
+      "-I${MLX_CPU_BUILD}/_deps/fmt-src/include",
+      "-F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks",
+      "-O0",
+      "-DNDEBUG",
+      "-std=gnu++20",
+      "-fPIC",
+      "-fvisibility=hidden",
+      "-fvisibility-inlines-hidden",
+      "-o",
+      "${PACKAGE}/rerun/combined.o",
+      "-c",
+      "${PACKAGE}/rerun/combined-primitives.cpp"
+    ],
+    "returncode": 0,
+    "wall_seconds": 1.0901440000000004,
+    "cpu_seconds": 1.0803510000000003
+  },
+  {
+    "label": "compile-compat-hyperbolic",
+    "command": [
+      "/usr/bin/c++",
+      "-DACCELERATE_NEW_LAPACK",
+      "-DFMT_HEADER_ONLY=1",
+      "-DMLX_STATIC",
+      "-DMLX_USE_ACCELERATE",
+      "-I${MLX_CPU_BUILD}/_deps/json-src/single_include/nlohmann",
+      "-I${MLX_SOURCE_ROOT}",
+      "-I${MLX_CPU_BUILD}/_deps/fmt-src/include",
+      "-F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks",
+      "-O0",
+      "-DNDEBUG",
+      "-std=gnu++20",
+      "-fPIC",
+      "-fvisibility=hidden",
+      "-fvisibility-inlines-hidden",
+      "-o",
+      "${PACKAGE}/rerun/hyperbolic.o",
+      "-c",
+      "${PACKAGE}/compatibility/hyperbolic/native_regression.cpp"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.6921864170000003,
+    "cpu_seconds": 0.6791839999999995
+  },
+  {
+    "label": "link-compat-hyperbolic",
+    "command": [
+      "/usr/bin/c++",
+      "${PACKAGE}/rerun/hyperbolic.o",
+      "${PACKAGE}/rerun/combined.o",
+      "${MLX_CPU_BUILD}/mlx-build/libmlx.a",
+      "-framework",
+      "Accelerate",
+      "-o",
+      "${PACKAGE}/rerun/compat-hyperbolic"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.07937362500000056,
+    "cpu_seconds": 0.14561100000000027
+  },
+  {
+    "label": "compat-run-hyperbolic",
+    "command": [
+      "${PACKAGE}/rerun/compat-hyperbolic"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.6066015829999998,
+    "cpu_seconds": 0.11900099999999991
+  },
+  {
+    "label": "compile-compat-arctan2",
+    "command": [
+      "/usr/bin/c++",
+      "-DACCELERATE_NEW_LAPACK",
+      "-DFMT_HEADER_ONLY=1",
+      "-DMLX_STATIC",
+      "-DMLX_USE_ACCELERATE",
+      "-I${MLX_CPU_BUILD}/_deps/json-src/single_include/nlohmann",
+      "-I${MLX_SOURCE_ROOT}",
+      "-I${MLX_CPU_BUILD}/_deps/fmt-src/include",
+      "-F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks",
+      "-O0",
+      "-DNDEBUG",
+      "-std=gnu++20",
+      "-fPIC",
+      "-fvisibility=hidden",
+      "-fvisibility-inlines-hidden",
+      "-o",
+      "${PACKAGE}/rerun/arctan2.o",
+      "-c",
+      "${PACKAGE}/compatibility/arctan2/native_regression.cpp"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.8873794579999998,
+    "cpu_seconds": 0.8798949999999996
+  },
+  {
+    "label": "link-compat-arctan2",
+    "command": [
+      "/usr/bin/c++",
+      "${PACKAGE}/rerun/arctan2.o",
+      "${PACKAGE}/rerun/combined.o",
+      "${MLX_CPU_BUILD}/mlx-build/libmlx.a",
+      "-framework",
+      "Accelerate",
+      "-o",
+      "${PACKAGE}/rerun/compat-arctan2"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.08270566600000073,
+    "cpu_seconds": 0.15216100000000043
+  },
+  {
+    "label": "compat-run-arctan2",
+    "command": [
+      "${PACKAGE}/rerun/compat-arctan2"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.8886382919999996,
+    "cpu_seconds": 0.5897190000000009
+  }
+]

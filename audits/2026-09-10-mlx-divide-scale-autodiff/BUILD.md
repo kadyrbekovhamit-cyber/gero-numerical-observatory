@@ -1,0 +1,32 @@
+# Native CPU reproduction
+
+Set `MLX_SOURCE_ROOT` to baseline `ce916dbbcaa88e433b6fd1e60a17f766d49c27fe` and `MLX_CPU_BUILD` to a configured CPU build. The runner compiles the test and both baseline/patched primitives.cpp independently, links each before the existing archive, and compares fresh JSON rows with the stored results. The original working tree is never edited.
+
+To prepare an analogous archive on an Apple-silicon Mac with CMake ≥3.25
+and Apple command-line developer tools:
+
+```sh
+git clone https://github.com/ml-explore/mlx.git mlx-source
+git -C mlx-source checkout ce916dbbcaa88e433b6fd1e60a17f766d49c27fe
+cmake -S build-support -B cpu-build \
+  -DAUDIT_MLX_SOURCE="$PWD/mlx-source" \
+  -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+  -DBUILD_SHARED_LIBS=OFF -DMLX_BUILD_CPU=ON \
+  -DMLX_BUILD_METAL=OFF -DMLX_BUILD_CUDA=OFF \
+  -DMLX_BUILD_TESTS=OFF -DMLX_BUILD_EXAMPLES=OFF \
+  -DMLX_BUILD_GGUF=OFF -DMLX_BUILD_SAFETENSORS=OFF \
+  -DMLX_BUILD_PYTHON_BINDINGS=OFF
+cmake --build cpu-build --target mlx --parallel 1
+export MLX_SOURCE_ROOT="$PWD/mlx-source"
+export MLX_CPU_BUILD="$PWD/cpu-build"
+python3 build_and_test.py
+```
+
+The setup recipe is supplied for portability from the recorded CMake
+configuration; this fresh archive build was **not executed** for publication.
+Dependency retrieval needs network access. Compiler/SDK/dependency differences
+can change archive hashes and floating-point behavior; retain your own logs.
+The runner's tested path uses the existing archive whose SHA-256 is recorded
+in publication-rerun.json. It writes generated objects, binaries and fresh logs under rerun/. These large generated files are excluded from the evidence archive. The stored run-*.json files retain the original audit results.
+
+The divide runner additionally compiles both bundled compatibility harnesses and the three-patch combined translation unit, then verifies all 1886 compatibility rows. These steps are sequential, with one numerical thread. The two prior patch helpers and harnesses are copied from the separately published inverse-hyperbolic and arctan2 audits.
