@@ -4,9 +4,10 @@
     "github_catalogues": 66,
     "gero_articles": 66,
     "linkedin_covered": 66,
-    "individual_zenodo": 25,
+    "individual_zenodo": 39,
     "huggingface_covered": 66,
-    "previous_collection_members": 45
+    "previous_collection_members": 45,
+    "zenodo_document_coverage": 66
   },
   "publications": [
     {
@@ -560,7 +561,9 @@
       ],
       "gero": "https://www.gero.uz/research/articles/onnx-reference-gatherelements-rejects-subshapes.html",
       "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/onnx-reference-gatherelements-rejects-subshapes",
-      "zenodo": [],
+      "zenodo": [
+        "https://doi.org/10.5281/zenodo.22695938"
+      ],
       "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
       "linkedin": [
         "https://www.linkedin.com/feed/update/urn:li:share:7503828100607303681/"
@@ -581,7 +584,9 @@
       ],
       "gero": "https://www.gero.uz/research/articles/cosine-and-layernorm-contract-failures.html",
       "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/cosine-and-layernorm-contract-failures",
-      "zenodo": [],
+      "zenodo": [
+        "https://doi.org/10.5281/zenodo.22696093"
+      ],
       "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
       "linkedin": [
         "https://www.linkedin.com/feed/update/urn:li:activity:7502701334874308608/"
@@ -707,7 +712,9 @@
       ],
       "gero": "https://www.gero.uz/research/articles/when-small-losses-and-gradients-disappear.html",
       "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/when-small-losses-and-gradients-disappear",
-      "zenodo": [],
+      "zenodo": [
+        "https://doi.org/10.5281/zenodo.22696183"
+      ],
       "collection_zenodo": null,
       "linkedin": [
         "https://www.linkedin.com/feed/update/urn:li:activity:7502621454132424705/"
@@ -728,7 +735,9 @@
       ],
       "gero": "https://www.gero.uz/research/articles/finite-inputs-nonfinite-activations-mlx-nntrainer.html",
       "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/finite-inputs-nonfinite-activations-mlx-nntrainer",
-      "zenodo": [],
+      "zenodo": [
+        "https://doi.org/10.5281/zenodo.22696216"
+      ],
       "collection_zenodo": null,
       "linkedin": [
         "https://www.linkedin.com/feed/update/urn:li:activity:7502601926598098944/"
@@ -812,7 +821,9 @@
       ],
       "gero": "https://www.gero.uz/research/articles/zero-observed-false-positives-small-sample.html",
       "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/zero-observed-false-positives-small-sample",
-      "zenodo": [],
+      "zenodo": [
+        "https://doi.org/10.5281/zenodo.22696303"
+      ],
       "collection_zenodo": null,
       "linkedin": [
         "https://www.linkedin.com/feed/update/urn:li:activity:7502433461769785344/"
@@ -833,7 +844,9 @@
       ],
       "gero": "https://www.gero.uz/research/articles/onnx-numerical-observatory-reproduced-snapshot.html",
       "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/onnx-numerical-observatory-reproduced-snapshot",
-      "zenodo": [],
+      "zenodo": [
+        "https://doi.org/10.5281/zenodo.22696321"
+      ],
       "collection_zenodo": null,
       "linkedin": [
         "https://www.linkedin.com/feed/update/urn:li:activity:7502343487728631809/"
@@ -854,7 +867,9 @@
       ],
       "gero": "https://www.gero.uz/research/articles/nntrainer-reduce-mean-default-axis.html",
       "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/nntrainer-reduce-mean-default-axis",
-      "zenodo": [],
+      "zenodo": [
+        "https://doi.org/10.5281/zenodo.22696352"
+      ],
       "collection_zenodo": null,
       "linkedin": [
         "https://www.linkedin.com/feed/update/urn:li:activity:7502340084277604352/"
@@ -939,7 +954,9 @@
       ],
       "gero": "https://www.gero.uz/research/articles/swift-numerics-complex-reciprocal-contract.html",
       "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/swift-numerics-complex-reciprocal-contract",
-      "zenodo": [],
+      "zenodo": [
+        "https://doi.org/10.5281/zenodo.22696386"
+      ],
       "collection_zenodo": null,
       "linkedin": [
         "https://www.linkedin.com/feed/update/urn:li:activity:7501847389041979392/"
@@ -960,7 +977,9 @@
       ],
       "gero": "https://www.gero.uz/research/articles/swift-numerics-hyperbolic-signs.html",
       "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/swift-numerics-hyperbolic-signs",
-      "zenodo": [],
+      "zenodo": [
+        "https://doi.org/10.5281/zenodo.22696411"
+      ],
       "collection_zenodo": null,
       "linkedin": [
         "https://www.linkedin.com/feed/update/urn:li:activity:7501864798410895360/",
@@ -982,7 +1001,9 @@
       ],
       "gero": "https://www.gero.uz/research/articles/numerical-contracts-swift-numerics-nntrainer.html",
       "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/numerical-contracts-swift-numerics-nntrainer",
-      "zenodo": [],
+      "zenodo": [
+        "https://doi.org/10.5281/zenodo.22696455"
+      ],
       "collection_zenodo": null,
       "linkedin": [
         "https://www.linkedin.com/feed/update/urn:li:activity:7502021012935434240/"
@@ -1024,7 +1045,9 @@
       ],
       "gero": "https://www.gero.uz/research/articles/mathematical-invariants-across-ai-stacks.html",
       "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mathematical-invariants-across-ai-stacks",
-      "zenodo": [],
+      "zenodo": [
+        "https://doi.org/10.5281/zenodo.22696485"
+      ],
       "collection_zenodo": null,
       "linkedin": [
         "https://www.linkedin.com/feed/update/urn:li:activity:7501510255651123200/"
@@ -1045,7 +1068,9 @@
       ],
       "gero": "https://www.gero.uz/research/articles/kld-backward-state-mutation.html",
       "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/kld-backward-state-mutation",
-      "zenodo": [],
+      "zenodo": [
+        "https://doi.org/10.5281/zenodo.22696525"
+      ],
       "collection_zenodo": null,
       "linkedin": [
         "https://www.linkedin.com/feed/update/urn:li:activity:7501517280263184384/"
@@ -1066,7 +1091,9 @@
       ],
       "gero": "https://www.gero.uz/research/articles/nntrainer-loss-scale-contract.html",
       "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/nntrainer-loss-scale-contract",
-      "zenodo": [],
+      "zenodo": [
+        "https://doi.org/10.5281/zenodo.22696560"
+      ],
       "collection_zenodo": null,
       "linkedin": [
         "https://www.linkedin.com/feed/update/urn:li:activity:7501564559007322112/"
@@ -1154,7 +1181,9 @@
       ],
       "gero": "https://www.gero.uz/research/articles/nntrainer-uint8-affine-zero-point.html",
       "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/nntrainer-uint8-affine-zero-point",
-      "zenodo": [],
+      "zenodo": [
+        "https://doi.org/10.5281/zenodo.22696596"
+      ],
       "collection_zenodo": null,
       "linkedin": [
         "https://www.linkedin.com/feed/update/urn:li:activity:7501930972641124352/",

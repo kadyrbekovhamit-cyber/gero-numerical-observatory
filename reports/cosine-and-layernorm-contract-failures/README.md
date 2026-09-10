@@ -17,6 +17,7 @@ This archive preserves the claims and limitations of the original report. It mak
 ## Publication records
 
 - [GERO](https://www.gero.uz/research/articles/cosine-and-layernorm-contract-failures.html)
+- [Individual Zenodo record](https://doi.org/10.5281/zenodo.22696093)
 - [Earlier collection archive](https://doi.org/10.5281/zenodo.22683900)
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7502701334874308608/)
 - [Hugging Face document corpus](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/ORIGINAL-CATALOG.md)

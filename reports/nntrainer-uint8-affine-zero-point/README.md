@@ -14,6 +14,7 @@ No numerical tests were rerun for this archival deposit. The report preserves th
 ## Publication records
 
 - [GERO](https://www.gero.uz/research/articles/nntrainer-uint8-affine-zero-point.html)
+- [Individual Zenodo record](https://doi.org/10.5281/zenodo.22696596)
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7501930972641124352/)
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7501307096056111104/)
 - [Hugging Face document corpus](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/nntrainer-uint8-affine-zero-point.md)

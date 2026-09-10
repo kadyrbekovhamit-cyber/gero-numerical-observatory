@@ -17,5 +17,6 @@ This archive preserves the claims and limitations of the original report. It mak
 ## Publication records
 
 - [GERO](https://www.gero.uz/research/articles/nntrainer-loss-scale-contract.html)
+- [Individual Zenodo record](https://doi.org/10.5281/zenodo.22696560)
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7501564559007322112/)
 - [Hugging Face document corpus](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/nntrainer-loss-scale-contract.md)

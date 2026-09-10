@@ -17,5 +17,6 @@ This archive preserves the claims and limitations of the original report. It mak
 ## Publication records
 
 - [GERO](https://www.gero.uz/research/articles/numerical-contracts-swift-numerics-nntrainer.html)
+- [Individual Zenodo record](https://doi.org/10.5281/zenodo.22696455)
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7502021012935434240/)
 - [Hugging Face document corpus](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/numerical-contracts-swift-numerics-nntrainer.md)
