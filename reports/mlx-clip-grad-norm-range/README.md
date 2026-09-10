@@ -9,4 +9,5 @@ Frozen article HTML and readable text preserve the report; platform records belo
 ## Publication records
 
 - [GERO](https://www.gero.uz/research/articles/mlx-clip-grad-norm-range.html)
+- [Individual Zenodo record](https://doi.org/10.5281/zenodo.22693758)
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503839320303378432/)

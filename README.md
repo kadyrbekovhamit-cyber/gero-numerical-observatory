@@ -4,7 +4,7 @@
 
 - [MLX division: extreme scales change a scale-invariant derivative](audits/2026-09-10-mlx-divide-scale-autodiff/) — 1328 native comparisons; 600 mismatches before, zero after; 1886 compatibility comparisons pass. Fresh sequential CPU runs match the original evidence. [Zenodo archive](https://doi.org/10.5281/zenodo.22692449) · [GERO](https://www.gero.uz/research/articles/mlx-divide-scale-autodiff.html) · [56-second video](https://youtube.com/shorts/YWUx2uGVIpo).
 
-- [MLX clipping: finite gradients become zero](audits/2026-09-10-mlx-clip-grad-norm-range/) — 219 input scenarios, 1701 assertions (633 numerical comparisons); 230 failures before, zero after; 39 additional compatibility/autodiff checks pass. CPU only; large-model performance untested.
+- [MLX clipping: finite gradients become zero](audits/2026-09-10-mlx-clip-grad-norm-range/) — 219 input scenarios, 1701 assertions (633 numerical comparisons); 230 failures before, zero after; 39 additional compatibility/autodiff checks pass. CPU only; large-model performance untested. [Zenodo archive](https://doi.org/10.5281/zenodo.22693758).
 
 [Four MLX audit archives now have verified Zenodo DOIs](docs/MLX_ZENODO_PUBLICATION_RECORDS.md).
 
