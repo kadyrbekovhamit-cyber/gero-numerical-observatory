@@ -1,0 +1,325 @@
+{
+  "version": "0.32.2",
+  "device": "Device(cpu, 0)",
+  "cases": [
+    {
+      "op": "arcsinh",
+      "dtype": "mlx.core.float32",
+      "input": 0.0,
+      "value": 0.0,
+      "jvp": 1.0,
+      "vjp": 1.0,
+      "expected": 1.0
+    },
+    {
+      "op": "arcsinh",
+      "dtype": "mlx.core.float32",
+      "input": 1.0,
+      "value": 0.8813735842704773,
+      "jvp": 0.7071067690849304,
+      "vjp": 0.7071067690849304,
+      "expected": 0.7071067811865475
+    },
+    {
+      "op": "arcsinh",
+      "dtype": "mlx.core.float32",
+      "input": 1.0000000200408773e+20,
+      "value": 46.744850158691406,
+      "jvp": 0.0,
+      "vjp": 0.0,
+      "expected": 9.99999979959123e-21
+    },
+    {
+      "op": "arcsinh",
+      "dtype": "mlx.core.float32",
+      "input": -1.0000000200408773e+20,
+      "value": -46.744850158691406,
+      "jvp": 0.0,
+      "vjp": 0.0,
+      "expected": 9.99999979959123e-21
+    },
+    {
+      "op": "arccosh",
+      "dtype": "mlx.core.float32",
+      "input": 1.000100016593933,
+      "value": 0.014143191277980804,
+      "jvp": 70.7048110961914,
+      "vjp": 70.7048110961914,
+      "expected": 70.70304416008295
+    },
+    {
+      "op": "arccosh",
+      "dtype": "mlx.core.float32",
+      "input": 2.0,
+      "value": 1.316957950592041,
+      "jvp": 0.5773502588272095,
+      "vjp": 0.5773502588272095,
+      "expected": 0.5773502691896258
+    },
+    {
+      "op": "arccosh",
+      "dtype": "mlx.core.float32",
+      "input": 1.0000000200408773e+20,
+      "value": 46.744850158691406,
+      "jvp": 0.0,
+      "vjp": 0.0,
+      "expected": 9.99999979959123e-21
+    },
+    {
+      "op": "arcsinh",
+      "dtype": "mlx.core.float64",
+      "input": 0.0,
+      "value": 0.0,
+      "jvp": 1.0,
+      "vjp": 1.0,
+      "expected": 1.0
+    },
+    {
+      "op": "arcsinh",
+      "dtype": "mlx.core.float64",
+      "input": 1.0,
+      "value": 0.881373587019543,
+      "jvp": 0.7071067811865475,
+      "vjp": 0.7071067811865475,
+      "expected": 0.7071067811865475
+    },
+    {
+      "op": "arcsinh",
+      "dtype": "mlx.core.float64",
+      "input": 1e+200,
+      "value": 461.2101657793691,
+      "jvp": 0.0,
+      "vjp": 0.0,
+      "expected": 1e-200
+    },
+    {
+      "op": "arcsinh",
+      "dtype": "mlx.core.float64",
+      "input": -1e+200,
+      "value": -461.2101657793691,
+      "jvp": 0.0,
+      "vjp": 0.0,
+      "expected": 1e-200
+    },
+    {
+      "op": "arccosh",
+      "dtype": "mlx.core.float64",
+      "input": 1.0001,
+      "value": 0.014142017775251545,
+      "jvp": 70.70891041800492,
+      "vjp": 70.70891041800492,
+      "expected": 70.70891041799419
+    },
+    {
+      "op": "arccosh",
+      "dtype": "mlx.core.float64",
+      "input": 2.0,
+      "value": 1.3169578969248166,
+      "jvp": 0.5773502691896258,
+      "vjp": 0.5773502691896258,
+      "expected": 0.5773502691896258
+    },
+    {
+      "op": "arccosh",
+      "dtype": "mlx.core.float64",
+      "input": 1e+200,
+      "value": 461.2101657793691,
+      "jvp": 0.0,
+      "vjp": 0.0,
+      "expected": 1e-200
+    },
+    {
+      "op": "arcsinh",
+      "dtype": "mlx.core.float16",
+      "input": 0.0,
+      "value": 0.0,
+      "jvp": 1.0,
+      "vjp": 1.0,
+      "expected": 1.0
+    },
+    {
+      "op": "arcsinh",
+      "dtype": "mlx.core.float16",
+      "input": 1.0,
+      "value": 0.88134765625,
+      "jvp": 0.70703125,
+      "vjp": 0.70703125,
+      "expected": 0.7071067811865475
+    },
+    {
+      "op": "arcsinh",
+      "dtype": "mlx.core.float16",
+      "input": 1000.0,
+      "value": 7.6015625,
+      "jvp": 0.0,
+      "vjp": 0.0,
+      "expected": 0.000999999500000375
+    },
+    {
+      "op": "arcsinh",
+      "dtype": "mlx.core.float16",
+      "input": -1000.0,
+      "value": -7.6015625,
+      "jvp": 0.0,
+      "vjp": 0.0,
+      "expected": 0.000999999500000375
+    },
+    {
+      "op": "arccosh",
+      "dtype": "mlx.core.float16",
+      "input": 1.125,
+      "value": 0.494873046875,
+      "jvp": 1.939453125,
+      "vjp": 1.939453125,
+      "expected": 1.9402850002906635
+    },
+    {
+      "op": "arccosh",
+      "dtype": "mlx.core.float16",
+      "input": 2.0,
+      "value": 1.3173828125,
+      "jvp": 0.5771484375,
+      "vjp": 0.5771484375,
+      "expected": 0.5773502691896258
+    },
+    {
+      "op": "arccosh",
+      "dtype": "mlx.core.float16",
+      "input": 1000.0,
+      "value": 7.6015625,
+      "jvp": 0.0,
+      "vjp": 0.0,
+      "expected": 0.001000000500000375
+    },
+    {
+      "op": "arcsinh",
+      "dtype": "mlx.core.bfloat16",
+      "input": 0.0,
+      "value": 0.0,
+      "jvp": 1.0,
+      "vjp": 1.0,
+      "expected": 1.0
+    },
+    {
+      "op": "arcsinh",
+      "dtype": "mlx.core.bfloat16",
+      "input": 1.0,
+      "value": 0.8828125,
+      "jvp": 0.70703125,
+      "vjp": 0.70703125,
+      "expected": 0.7071067811865475
+    },
+    {
+      "op": "arcsinh",
+      "dtype": "mlx.core.bfloat16",
+      "input": 9.972771014849226e+19,
+      "value": 46.75,
+      "jvp": 0.0,
+      "vjp": 0.0,
+      "expected": 1.0027303329345705e-20
+    },
+    {
+      "op": "arcsinh",
+      "dtype": "mlx.core.bfloat16",
+      "input": -9.972771014849226e+19,
+      "value": -46.75,
+      "jvp": 0.0,
+      "vjp": 0.0,
+      "expected": 1.0027303329345705e-20
+    },
+    {
+      "op": "arccosh",
+      "dtype": "mlx.core.bfloat16",
+      "input": 1.125,
+      "value": 0.494140625,
+      "jvp": 1.9375,
+      "vjp": 1.9375,
+      "expected": 1.9402850002906635
+    },
+    {
+      "op": "arccosh",
+      "dtype": "mlx.core.bfloat16",
+      "input": 2.0,
+      "value": 1.3203125,
+      "jvp": 0.578125,
+      "vjp": 0.578125,
+      "expected": 0.5773502691896258
+    },
+    {
+      "op": "arccosh",
+      "dtype": "mlx.core.bfloat16",
+      "input": 9.972771014849226e+19,
+      "value": 46.75,
+      "jvp": 0.0,
+      "vjp": 0.0,
+      "expected": 1.0027303329345705e-20
+    }
+  ],
+  "compositions": [
+    {
+      "op": "arcsinh",
+      "dtype": "mlx.core.float32",
+      "scale": 1.2089258196146292e+24,
+      "t": 1.0,
+      "value": 56.144920349121094,
+      "gradient": 0.0,
+      "hessian": -0.0,
+      "third": "NaN",
+      "finite_difference": 1.0001220703125,
+      "step": 0.015625,
+      "expected_gradient": 1.0,
+      "expected_hessian": -1.0,
+      "expected_third": 2.0,
+      "reference_note": "Finite-scale analytic corrections are below the precision shown."
+    },
+    {
+      "op": "arccosh",
+      "dtype": "mlx.core.float32",
+      "scale": 1.2089258196146292e+24,
+      "t": 1.0,
+      "value": 56.144920349121094,
+      "gradient": 0.0,
+      "hessian": -0.0,
+      "third": "NaN",
+      "finite_difference": 1.0001220703125,
+      "step": 0.015625,
+      "expected_gradient": 1.0,
+      "expected_hessian": -1.0,
+      "expected_third": 2.0,
+      "reference_note": "Finite-scale analytic corrections are below the precision shown."
+    },
+    {
+      "op": "arcsinh",
+      "dtype": "mlx.core.float64",
+      "scale": 4.149515568880993e+180,
+      "t": 1.0,
+      "value": 416.5814555165271,
+      "gradient": 0.0,
+      "hessian": -0.0,
+      "third": "NaN",
+      "finite_difference": 1.00000031790114,
+      "step": 0.0009765625,
+      "expected_gradient": 1.0,
+      "expected_hessian": -1.0,
+      "expected_third": 2.0,
+      "reference_note": "Finite-scale analytic corrections are below the precision shown."
+    },
+    {
+      "op": "arccosh",
+      "dtype": "mlx.core.float64",
+      "scale": 4.149515568880993e+180,
+      "t": 1.0,
+      "value": 416.5814555165271,
+      "gradient": 0.0,
+      "hessian": -0.0,
+      "third": "NaN",
+      "finite_difference": 1.00000031790114,
+      "step": 0.0009765625,
+      "expected_gradient": 1.0,
+      "expected_hessian": -1.0,
+      "expected_third": 2.0,
+      "reference_note": "Finite-scale analytic corrections are below the precision shown."
+    }
+  ],
+  "cpu_seconds": 0.005975999999999995
+}

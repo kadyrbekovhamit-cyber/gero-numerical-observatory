@@ -1,5 +1,7 @@
 # GERO Numerical Observatory
 
+
+- [MLX arcsinh/arccosh: representable gradients lost to intermediate overflow](audits/2026-09-10-mlx-inverse-hyperbolic-overflow/) — 518 native comparisons; 188 mismatches before, zero after the real-derivative patch.
 - [MLX expm1: a nonzero tail derivative becomes zero](audits/2026-09-10-mlx-expm1-tail-vjp/) — 216 native checks, four repair controls and credited analogous JAX report.
 
 - [MLX logcumsumexp: offsets change the gradient](audits/2026-09-10-mlx-logcumsumexp-shift-vjp/) — combined recurrence and known exp repair pass 1122 gradient checks plus 477 higher-order comparisons.

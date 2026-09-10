@@ -1,0 +1,118 @@
+{
+  "checks": [
+    {
+      "label": "518 cases on each side",
+      "passed": true
+    },
+    {
+      "label": "188 baseline failures",
+      "passed": true
+    },
+    {
+      "label": "no failures after",
+      "passed": true
+    },
+    {
+      "label": "identical cases and references",
+      "passed": true
+    },
+    {
+      "label": "all references finite",
+      "passed": true
+    },
+    {
+      "label": "all patched outputs finite",
+      "passed": true
+    },
+    {
+      "label": "dtype coverage",
+      "passed": true
+    },
+    {
+      "label": "recomputed patched pass flags",
+      "passed": true
+    },
+    {
+      "label": "wheel CPU version",
+      "passed": true
+    },
+    {
+      "label": "wheel dtype coverage",
+      "passed": true
+    },
+    {
+      "label": "wheel four composite counterexamples",
+      "passed": true
+    },
+    {
+      "label": "public fetch without errors",
+      "passed": true
+    },
+    {
+      "label": "hash mlx/primitives.cpp",
+      "passed": true
+    },
+    {
+      "label": "hash python/tests/test_autograd.py",
+      "passed": true
+    },
+    {
+      "label": "four methods match public main",
+      "passed": true
+    },
+    {
+      "label": "dependency libmlx.a",
+      "passed": true
+    },
+    {
+      "label": "dependency before.o",
+      "passed": true
+    },
+    {
+      "label": "ArcSinh original complex JVP body preserved",
+      "passed": true
+    },
+    {
+      "label": "ArcSinh real-only guard",
+      "passed": true
+    },
+    {
+      "label": "ArcSinh VJP unchanged",
+      "passed": true
+    },
+    {
+      "label": "ArcCosh original complex JVP body preserved",
+      "passed": true
+    },
+    {
+      "label": "ArcCosh real-only guard",
+      "passed": true
+    },
+    {
+      "label": "ArcCosh VJP unchanged",
+      "passed": true
+    },
+    {
+      "label": "patch applies to saved current main",
+      "passed": true
+    },
+    {
+      "label": "applied patch exact content",
+      "passed": true
+    },
+    {
+      "label": "four complete duplicate searches",
+      "passed": true
+    },
+    {
+      "label": "build return codes",
+      "passed": true
+    },
+    {
+      "label": "initial harness evidence retained",
+      "passed": true
+    }
+  ],
+  "failures": 0,
+  "cpu_seconds": 0.021415999999999998
+}

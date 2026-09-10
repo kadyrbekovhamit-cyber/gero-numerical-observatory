@@ -1,0 +1,146 @@
+[
+  {
+    "check": "link README.md README.ru.md",
+    "passed": true
+  },
+  {
+    "check": "link README.md BUILD.md",
+    "passed": true
+  },
+  {
+    "check": "link README.md probe.py",
+    "passed": true
+  },
+  {
+    "check": "link README.md native_regression.cpp",
+    "passed": true
+  },
+  {
+    "check": "link README.md inverse-hyperbolic-real.patch",
+    "passed": true
+  },
+  {
+    "check": "link README.md wheel-reproduction.json",
+    "passed": true
+  },
+  {
+    "check": "link README.md run-before.json",
+    "passed": true
+  },
+  {
+    "check": "link README.md run-after.json",
+    "passed": true
+  },
+  {
+    "check": "link README.md publication-rerun.json",
+    "passed": true
+  },
+  {
+    "check": "link README.md publication-build-results.json",
+    "passed": true
+  },
+  {
+    "check": "link README.md artifact-validation.json",
+    "passed": true
+  },
+  {
+    "check": "link README.md initial-harness-attempt/",
+    "passed": true
+  },
+  {
+    "check": "link README.md BUILD.md",
+    "passed": true
+  },
+  {
+    "check": "link README.md source-metadata.json",
+    "passed": true
+  },
+  {
+    "check": "link README.md native-source-metadata.json",
+    "passed": true
+  },
+  {
+    "check": "link README.md publication-duplicate-search.json",
+    "passed": true
+  },
+  {
+    "check": "link README.md LICENSE.md",
+    "passed": true
+  },
+  {
+    "check": "link README.ru.md probe.py",
+    "passed": true
+  },
+  {
+    "check": "link README.ru.md wheel-reproduction.json",
+    "passed": true
+  },
+  {
+    "check": "link README.ru.md inverse-hyperbolic-real.patch",
+    "passed": true
+  },
+  {
+    "check": "link README.ru.md native_regression.cpp",
+    "passed": true
+  },
+  {
+    "check": "link README.ru.md run-before.json",
+    "passed": true
+  },
+  {
+    "check": "link README.ru.md run-after.json",
+    "passed": true
+  },
+  {
+    "check": "link README.ru.md build_and_test.py",
+    "passed": true
+  },
+  {
+    "check": "link README.ru.md build-results.json",
+    "passed": true
+  },
+  {
+    "check": "link README.ru.md initial-harness-attempt/",
+    "passed": true
+  },
+  {
+    "check": "link README.ru.md source-metadata.json",
+    "passed": true
+  },
+  {
+    "check": "link README.ru.md native-source-metadata.json",
+    "passed": true
+  },
+  {
+    "check": "link README.ru.md duplicate-search.json",
+    "passed": true
+  },
+  {
+    "check": "link README.ru.md validate_artifacts.py",
+    "passed": true
+  },
+  {
+    "check": "link README.ru.md artifact-check-results.json",
+    "passed": true
+  },
+  {
+    "check": "fresh duplicate searches complete",
+    "passed": true
+  },
+  {
+    "check": "all rows match before",
+    "passed": true
+  },
+  {
+    "check": "all rows match after",
+    "passed": true
+  },
+  {
+    "check": "native validator passed",
+    "passed": true
+  },
+  {
+    "check": "no personal filesystem paths",
+    "passed": true
+  }
+]

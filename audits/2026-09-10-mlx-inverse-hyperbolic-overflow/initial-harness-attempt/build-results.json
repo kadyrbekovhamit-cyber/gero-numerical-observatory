@@ -1,0 +1,106 @@
+[
+  {
+    "label": "compile-test",
+    "command": [
+      "/usr/bin/c++",
+      "-DACCELERATE_NEW_LAPACK",
+      "-DFMT_HEADER_ONLY=1",
+      "-DMLX_STATIC",
+      "-DMLX_USE_ACCELERATE",
+      "-I${AUDIT_ARCHIVE_ROOT}/current-stack-2026-09-07-round3/build-native/_deps/json-src/single_include/nlohmann",
+      "-I${MLX_SOURCE_ROOT}",
+      "-I${AUDIT_ARCHIVE_ROOT}/current-stack-2026-09-07-round3/build-native/_deps/fmt-src/include",
+      "-F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks",
+      "-O0",
+      "-DNDEBUG",
+      "-std=gnu++20",
+      "-fPIC",
+      "-fvisibility=hidden",
+      "-fvisibility-inlines-hidden",
+      "-o",
+      "${AUDIT_ARCHIVE_ROOT}/mlx-inverse-hyperbolic-overflow-2026-09-10/test.o",
+      "-c",
+      "${AUDIT_ARCHIVE_ROOT}/mlx-inverse-hyperbolic-overflow-2026-09-10/native_regression.cpp"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.953981208,
+    "cpu_seconds": 0.7677749999999999
+  },
+  {
+    "label": "compile-patch",
+    "command": [
+      "/usr/bin/c++",
+      "-DACCELERATE_NEW_LAPACK",
+      "-DFMT_HEADER_ONLY=1",
+      "-DMLX_STATIC",
+      "-DMLX_USE_ACCELERATE",
+      "-I${AUDIT_ARCHIVE_ROOT}/current-stack-2026-09-07-round3/build-native/_deps/json-src/single_include/nlohmann",
+      "-I${MLX_SOURCE_ROOT}",
+      "-I${AUDIT_ARCHIVE_ROOT}/current-stack-2026-09-07-round3/build-native/_deps/fmt-src/include",
+      "-F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks",
+      "-O0",
+      "-DNDEBUG",
+      "-std=gnu++20",
+      "-fPIC",
+      "-fvisibility=hidden",
+      "-fvisibility-inlines-hidden",
+      "-o",
+      "${AUDIT_ARCHIVE_ROOT}/mlx-inverse-hyperbolic-overflow-2026-09-10/after.o",
+      "-c",
+      "${AUDIT_ARCHIVE_ROOT}/mlx-inverse-hyperbolic-overflow-2026-09-10/patched-baseline-primitives.cpp"
+    ],
+    "returncode": 0,
+    "wall_seconds": 1.1643088750000001,
+    "cpu_seconds": 1.1298650000000001
+  },
+  {
+    "label": "link-before",
+    "command": [
+      "/usr/bin/c++",
+      "${AUDIT_ARCHIVE_ROOT}/mlx-inverse-hyperbolic-overflow-2026-09-10/test.o",
+      "${AUDIT_ARCHIVE_ROOT}/mlx-logcumsumexp-hessian-2026-09-10/before.o",
+      "${AUDIT_ARCHIVE_ROOT}/current-stack-2026-09-07-round3/build-native/mlx-build/libmlx.a",
+      "-framework",
+      "Accelerate",
+      "-o",
+      "${AUDIT_ARCHIVE_ROOT}/mlx-inverse-hyperbolic-overflow-2026-09-10/native-before"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.25338154200000007,
+    "cpu_seconds": 0.21138400000000007
+  },
+  {
+    "label": "run-before",
+    "command": [
+      "${AUDIT_ARCHIVE_ROOT}/mlx-inverse-hyperbolic-overflow-2026-09-10/native-before"
+    ],
+    "returncode": 1,
+    "wall_seconds": 3.1151901250000003,
+    "cpu_seconds": 0.044152000000000025
+  },
+  {
+    "label": "link-after",
+    "command": [
+      "/usr/bin/c++",
+      "${AUDIT_ARCHIVE_ROOT}/mlx-inverse-hyperbolic-overflow-2026-09-10/test.o",
+      "${AUDIT_ARCHIVE_ROOT}/mlx-inverse-hyperbolic-overflow-2026-09-10/after.o",
+      "${AUDIT_ARCHIVE_ROOT}/current-stack-2026-09-07-round3/build-native/mlx-build/libmlx.a",
+      "-framework",
+      "Accelerate",
+      "-o",
+      "${AUDIT_ARCHIVE_ROOT}/mlx-inverse-hyperbolic-overflow-2026-09-10/native-after"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.11208637500000052,
+    "cpu_seconds": 0.18378999999999968
+  },
+  {
+    "label": "run-after",
+    "command": [
+      "${AUDIT_ARCHIVE_ROOT}/mlx-inverse-hyperbolic-overflow-2026-09-10/native-after"
+    ],
+    "returncode": 1,
+    "wall_seconds": 0.24470629099999996,
+    "cpu_seconds": 0.05162600000000006
+  }
+]
