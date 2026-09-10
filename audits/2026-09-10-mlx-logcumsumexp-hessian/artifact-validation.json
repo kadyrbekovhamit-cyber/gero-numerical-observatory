@@ -1,0 +1,222 @@
+{
+  "checks": 54,
+  "failures": 0,
+  "details": [
+    {
+      "name": "version",
+      "passed": true
+    },
+    {
+      "name": "cpu",
+      "passed": true
+    },
+    {
+      "name": "singleton_measured",
+      "passed": true
+    },
+    {
+      "name": "singleton_finite_difference",
+      "passed": true
+    },
+    {
+      "name": "two_element_measured",
+      "passed": true
+    },
+    {
+      "name": "two_element_expected",
+      "passed": true
+    },
+    {
+      "name": "two_element_finite_difference",
+      "passed": true
+    },
+    {
+      "name": "direct_cotangent_nan",
+      "passed": true
+    },
+    {
+      "name": "source_errors",
+      "passed": true
+    },
+    {
+      "name": "sha256_mlx/primitives.cpp",
+      "passed": true
+    },
+    {
+      "name": "sha256_python/tests/test_autograd.py",
+      "passed": true
+    },
+    {
+      "name": "upstream_method",
+      "passed": true
+    },
+    {
+      "name": "helper_embedded",
+      "passed": true
+    },
+    {
+      "name": "before_summary",
+      "passed": true
+    },
+    {
+      "name": "before_failure_count",
+      "passed": true
+    },
+    {
+      "name": "before_no_exceptions",
+      "passed": true
+    },
+    {
+      "name": "before_first_order_passed",
+      "passed": true
+    },
+    {
+      "name": "before_singleton",
+      "passed": true
+    },
+    {
+      "name": "after_summary",
+      "passed": true
+    },
+    {
+      "name": "after_failure_count",
+      "passed": true
+    },
+    {
+      "name": "after_no_exceptions",
+      "passed": true
+    },
+    {
+      "name": "after_first_order_passed",
+      "passed": true
+    },
+    {
+      "name": "after_singleton",
+      "passed": true
+    },
+    {
+      "name": "third_order_one",
+      "passed": true
+    },
+    {
+      "name": "third_order_two",
+      "passed": true
+    },
+    {
+      "name": "build_count",
+      "passed": true
+    },
+    {
+      "name": "build_codes",
+      "passed": true
+    },
+    {
+      "name": "search_success",
+      "passed": true
+    },
+    {
+      "name": "search_pages_complete",
+      "passed": true
+    },
+    {
+      "name": "corrected_transpose_oracle",
+      "passed": true
+    },
+    {
+      "name": "mixed_before",
+      "passed": true
+    },
+    {
+      "name": "mixed_after",
+      "passed": true
+    },
+    {
+      "name": "2026-09-10-mlx-logcumsumexp-hessian/link/reproduce.py",
+      "passed": true
+    },
+    {
+      "name": "2026-09-10-mlx-logcumsumexp-hessian/link/wheel-reproduction.json",
+      "passed": true
+    },
+    {
+      "name": "2026-09-10-mlx-logcumsumexp-hessian/link/logcumsumexp-higher-order-prototype.patch",
+      "passed": true
+    },
+    {
+      "name": "2026-09-10-mlx-logcumsumexp-hessian/link/logscan_product.cpp.inc",
+      "passed": true
+    },
+    {
+      "name": "2026-09-10-mlx-logcumsumexp-hessian/link/native_regression.cpp",
+      "passed": true
+    },
+    {
+      "name": "2026-09-10-mlx-logcumsumexp-hessian/link/run-before.log",
+      "passed": true
+    },
+    {
+      "name": "2026-09-10-mlx-logcumsumexp-hessian/link/run-after.log",
+      "passed": true
+    },
+    {
+      "name": "2026-09-10-mlx-logcumsumexp-hessian/link/build-results.json",
+      "passed": true
+    },
+    {
+      "name": "2026-09-10-mlx-logcumsumexp-hessian/link/compiler-version.txt",
+      "passed": true
+    },
+    {
+      "name": "2026-09-10-mlx-logcumsumexp-hessian/link/source-metadata.json",
+      "passed": true
+    },
+    {
+      "name": "2026-09-10-mlx-logcumsumexp-hessian/link/SHA256SUMS.json",
+      "passed": true
+    },
+    {
+      "name": "2026-09-10-mlx-logcumsumexp-hessian/link/BUILD.md",
+      "passed": true
+    },
+    {
+      "name": "2026-09-10-mlx-logcumsumexp-hessian/link/gather-qmm-followup/README.md",
+      "passed": true
+    },
+    {
+      "name": "2026-09-10-mlx-logcumsumexp-hessian/link/publication-duplicate-search.json",
+      "passed": true
+    },
+    {
+      "name": "gather-qmm-followup/link/mixed_regression.cpp",
+      "passed": true
+    },
+    {
+      "name": "gather-qmm-followup/link/build_mixed.py",
+      "passed": true
+    },
+    {
+      "name": "gather-qmm-followup/link/run-before.log",
+      "passed": true
+    },
+    {
+      "name": "gather-qmm-followup/link/run-after.log",
+      "passed": true
+    },
+    {
+      "name": "gather-qmm-followup/link/mixed-build-results.json",
+      "passed": true
+    },
+    {
+      "name": "gather-qmm-followup/link/probe-results.json",
+      "passed": true
+    },
+    {
+      "name": "gather-qmm-followup/link/probe.py",
+      "passed": true
+    },
+    {
+      "name": "gather-qmm-followup/link/../README.md",
+      "passed": true
+    }
+  ]
+}

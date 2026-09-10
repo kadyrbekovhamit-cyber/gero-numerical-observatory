@@ -1,0 +1,79 @@
+[
+  {
+    "label": "compile-mixed",
+    "command": [
+      "/usr/bin/c++",
+      "-DACCELERATE_NEW_LAPACK",
+      "-DFMT_HEADER_ONLY=1",
+      "-DMLX_STATIC",
+      "-DMLX_USE_ACCELERATE",
+      "-I${MLX_CPU_BUILD}/_deps/json-src/single_include/nlohmann",
+      "-I${MLX_SOURCE_ROOT}",
+      "-I${MLX_CPU_BUILD}/_deps/fmt-src/include",
+      "-F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks",
+      "-O0",
+      "-DNDEBUG",
+      "-std=gnu++20",
+      "-fPIC",
+      "-fvisibility=hidden",
+      "-fvisibility-inlines-hidden",
+      "-o",
+      "${AUDIT_DIR}/gather-qmm-followup/mixed_regression.o",
+      "-c",
+      "${AUDIT_DIR}/gather-qmm-followup/mixed_regression.cpp"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.96673625,
+    "cpu_seconds": 0.840317
+  },
+  {
+    "label": "link-before",
+    "command": [
+      "/usr/bin/c++",
+      "${AUDIT_DIR}/gather-qmm-followup/mixed_regression.o",
+      "${QMM_PREVIOUS_OBJECTS}/before.o",
+      "${MLX_CPU_BUILD}/mlx-build/libmlx.a",
+      "-framework",
+      "Accelerate",
+      "-o",
+      "${AUDIT_DIR}/gather-qmm-followup/mixed-before"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.26050345899999994,
+    "cpu_seconds": 0.251962
+  },
+  {
+    "label": "run-before",
+    "command": [
+      "${AUDIT_DIR}/gather-qmm-followup/mixed-before"
+    ],
+    "returncode": 1,
+    "wall_seconds": 1.288923292,
+    "cpu_seconds": 0.013158000000000059
+  },
+  {
+    "label": "link-after",
+    "command": [
+      "/usr/bin/c++",
+      "${AUDIT_DIR}/gather-qmm-followup/mixed_regression.o",
+      "${QMM_PREVIOUS_OBJECTS}/after.o",
+      "${MLX_CPU_BUILD}/mlx-build/libmlx.a",
+      "-framework",
+      "Accelerate",
+      "-o",
+      "${AUDIT_DIR}/gather-qmm-followup/mixed-after"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.10913333400000003,
+    "cpu_seconds": 0.1764469999999998
+  },
+  {
+    "label": "run-after",
+    "command": [
+      "${AUDIT_DIR}/gather-qmm-followup/mixed-after"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.2761584589999999,
+    "cpu_seconds": 0.010890000000000177
+  }
+]

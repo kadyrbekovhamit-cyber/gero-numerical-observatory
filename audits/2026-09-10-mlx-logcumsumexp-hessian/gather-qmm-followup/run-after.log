@@ -1,0 +1,9 @@
+EVIDENCE gathered=1 transpose=1 param=1 x_then_parameter=1 parameter_then_x=1 fd=1 expected=1
+EVIDENCE gathered=1 transpose=1 param=2 x_then_parameter=1 parameter_then_x=1 fd=1 expected=1
+EVIDENCE gathered=1 transpose=0 param=1 x_then_parameter=32 parameter_then_x=32 fd=32 expected=32
+EVIDENCE gathered=1 transpose=0 param=2 x_then_parameter=32 parameter_then_x=32 fd=32 expected=32
+EVIDENCE gathered=0 transpose=1 param=1 x_then_parameter=1 parameter_then_x=1 fd=1 expected=1
+EVIDENCE gathered=0 transpose=1 param=2 x_then_parameter=1 parameter_then_x=1 fd=1 expected=1
+EVIDENCE gathered=0 transpose=0 param=1 x_then_parameter=32 parameter_then_x=32 fd=32 expected=32
+EVIDENCE gathered=0 transpose=0 param=2 x_then_parameter=32 parameter_then_x=32 fd=32 expected=32
+SUMMARY checks=24 failures=0

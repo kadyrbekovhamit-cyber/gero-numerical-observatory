@@ -1,0 +1,229 @@
+{
+  "version": "0.32.2",
+  "device": "Device(cpu, 0)",
+  "qmm": [
+    {
+      "gathered": true,
+      "transpose": true,
+      "param": 1,
+      "dx_then_param": 32.0,
+      "param_then_dx": 1.0,
+      "finite_difference": 1.0,
+      "expected": 1.0
+    },
+    {
+      "gathered": true,
+      "transpose": true,
+      "param": 2,
+      "dx_then_param": 32.0,
+      "param_then_dx": 1.0,
+      "finite_difference": 1.0,
+      "expected": 1.0
+    },
+    {
+      "gathered": true,
+      "transpose": false,
+      "param": 1,
+      "dx_then_param": 32.0,
+      "param_then_dx": 1.0,
+      "finite_difference": 32.0,
+      "expected": 32.0
+    },
+    {
+      "gathered": true,
+      "transpose": false,
+      "param": 2,
+      "dx_then_param": 32.0,
+      "param_then_dx": 1.0,
+      "finite_difference": 32.0,
+      "expected": 32.0
+    },
+    {
+      "gathered": false,
+      "transpose": true,
+      "param": 1,
+      "dx_then_param": 1.0,
+      "param_then_dx": 1.0,
+      "finite_difference": 1.0,
+      "expected": 1.0
+    },
+    {
+      "gathered": false,
+      "transpose": true,
+      "param": 2,
+      "dx_then_param": 1.0,
+      "param_then_dx": 1.0,
+      "finite_difference": 1.0,
+      "expected": 1.0
+    },
+    {
+      "gathered": false,
+      "transpose": false,
+      "param": 1,
+      "dx_then_param": 32.0,
+      "param_then_dx": 32.0,
+      "finite_difference": 32.0,
+      "expected": 32.0
+    },
+    {
+      "gathered": false,
+      "transpose": false,
+      "param": 2,
+      "dx_then_param": 32.0,
+      "param_then_dx": 32.0,
+      "finite_difference": 32.0,
+      "expected": 32.0
+    }
+  ],
+  "scan": [
+    {
+      "test": "shift",
+      "shift": 0.0,
+      "forward": 0.6931471824645996,
+      "gradient": [
+        1.5,
+        0.5
+      ],
+      "expected": [
+        1.5,
+        0.5
+      ]
+    },
+    {
+      "test": "shift",
+      "shift": 1000.0,
+      "forward": 2000.693115234375,
+      "gradient": [
+        1.4999871253967285,
+        0.4999854564666748
+      ],
+      "expected": [
+        1.5,
+        0.5
+      ]
+    },
+    {
+      "test": "shift",
+      "shift": 100000.0,
+      "forward": 200000.6875,
+      "gradient": [
+        1.5011777877807617,
+        0.4989185035228729
+      ],
+      "expected": [
+        1.5,
+        0.5
+      ]
+    },
+    {
+      "test": "shift",
+      "shift": 100000000.0,
+      "forward": 200000000.0,
+      "gradient": [
+        1.0,
+        1.0
+      ],
+      "expected": [
+        1.5,
+        0.5
+      ]
+    },
+    {
+      "test": "loss_hessian",
+      "target": [
+        0.0,
+        0.6931471805599453
+      ],
+      "loss": 0.0,
+      "gradient": [
+        0.0,
+        0.0
+      ],
+      "hessian": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "reference": [
+        [
+          1.25,
+          0.25
+        ],
+        [
+          0.25,
+          0.25
+        ]
+      ]
+    },
+    {
+      "test": "loss_hessian",
+      "target": [
+        0.0,
+        0.0
+      ],
+      "loss": 0.24022650718688965,
+      "gradient": [
+        0.3465736210346222,
+        0.3465736210346222
+      ],
+      "hessian": [
+        [
+          0.4232868552207947,
+          0.07671321928501129
+        ],
+        [
+          0.07671321928501129,
+          0.4232868552207947
+        ]
+      ],
+      "reference": [
+        [
+          1.42328679561615,
+          0.0767132043838501
+        ],
+        [
+          0.0767132043838501,
+          0.4232867956161499
+        ]
+      ]
+    },
+    {
+      "test": "loss_hessian",
+      "target": [
+        1.0,
+        1.0
+      ],
+      "loss": 0.54707932472229,
+      "gradient": [
+        -1.1534264087677002,
+        -0.1534264087677002
+      ],
+      "hessian": [
+        [
+          1.1732866764068604,
+          0.3267131745815277
+        ],
+        [
+          0.3267131745815277,
+          0.17328676581382751
+        ]
+      ],
+      "reference": [
+        [
+          1.17328679561615,
+          0.3267132043838501
+        ],
+        [
+          0.3267132043838501,
+          0.1732867956161499
+        ]
+      ]
+    }
+  ],
+  "cpu_seconds": 0.010665000000000001
+}

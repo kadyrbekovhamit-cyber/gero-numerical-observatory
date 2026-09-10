@@ -1,0 +1,73 @@
+{
+  "version": "0.32.2",
+  "device": "Device(cpu, 0)",
+  "singleton": {
+    "value": 0.0,
+    "gradient": 0.0,
+    "second": 0.0,
+    "expected_second": 1.0,
+    "finite_curvature": 1.0
+  },
+  "two_element": {
+    "target": [
+      0.0,
+      0.6931471824645996
+    ],
+    "loss": 0.0,
+    "gradient": [
+      0.0,
+      0.0
+    ],
+    "hessian": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    "finite_hessian": [
+      [
+        1.2500003576278687,
+        0.25
+      ],
+      [
+        0.25,
+        0.2500000596046448
+      ]
+    ],
+    "expected_hessian": [
+      [
+        1.25,
+        0.25
+      ],
+      [
+        0.25,
+        0.25
+      ]
+    ],
+    "derivative_of_vjp_wrt_cotangent": [
+      [
+        "NaN",
+        "NaN"
+      ],
+      [
+        "NaN",
+        "NaN"
+      ]
+    ],
+    "expected_derivative_of_vjp_wrt_cotangent": [
+      [
+        1.0,
+        0.5
+      ],
+      [
+        0.0,
+        0.5
+      ]
+    ]
+  },
+  "cpu_seconds": 0.007574999999999998
+}
