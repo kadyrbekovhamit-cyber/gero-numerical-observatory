@@ -18,3 +18,4 @@ This archive preserves the claims and limitations of the original report. It mak
 
 - [GERO](https://www.gero.uz/research/articles/nntrainer-reduce-mean-default-axis.html)
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7502340084277604352/)
+- [Hugging Face document corpus](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/nntrainer-reduce-mean-default-axis.md)

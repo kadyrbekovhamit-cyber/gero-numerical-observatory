@@ -1,0 +1,88 @@
+{
+  "github": {
+    "status": "published",
+    "url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fff3935d2023d3d246985d2ee0cf937818662335/audits/2026-09-10-mlx-batchnorm-low-precision-state/"
+  },
+  "gero": {
+    "status": "published",
+    "url": "https://www.gero.uz/research/articles/mlx-batchnorm-low-precision-state.html",
+    "deployment_id": "dpl_6PGPNY9zcPY2DTLcDcY7mfJQxQAU",
+    "deployment_url": "https://gero-ibxsoc2cp-kadyrbekovhamit-cybers-projects.vercel.app",
+    "files": 578,
+    "verification": "Eight public resources HTTP 200 and byte-identical."
+  },
+  "linkedin": {
+    "platform": "LinkedIn",
+    "status": "published",
+    "url": "https://www.linkedin.com/feed/update/urn:li:share:7503878393873190912/",
+    "verification": "Authenticated Xamit Kadirbekov; Post successful toast and View post permalink."
+  },
+  "zenodo": {
+    "status": "published",
+    "record_id": "22695450",
+    "doi": "10.5281/zenodo.22695450",
+    "url": "https://zenodo.org/records/22695450",
+    "md5": "b77dce6f33e6bc5690a064106a98fe81",
+    "verification": "Public UI title, author, DOI, archive checksum and Published status verified."
+  },
+  "youtube": {
+    "status": "published",
+    "url": "https://www.youtube.com/shorts/0p6Vyjfr9YY",
+    "video_id": "0p6Vyjfr9YY",
+    "channel": "Technology Product",
+    "channel_id": "UCFGlrcs6ZfWXAXMy8wY2rXQ",
+    "verified_utc": "2026-09-10T18:34:54.080932+00:00",
+    "verification": "YouTube Studio Video published dialog, public Shorts page title verified. English (United States) selected, supplied timed VTT saved; no copyright issues reported. Public; not made for kids; no paid promotion; synthetic-content disclosure enabled.",
+    "thumbnail": "Automatic video frame; uploading a custom thumbnail requires phone verification."
+  },
+  "huggingface": {
+    "status": "published",
+    "account": "XamitK",
+    "url": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09",
+    "commit": "d2917918e2ba6bbc017490afe6e6c19c7b8b4a41",
+    "commit_url": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/commit/d2917918e2ba6bbc017490afe6e6c19c7b8b4a41",
+    "verified_utc": "2026-09-10T18:27:09.857746+00:00",
+    "documents": 66,
+    "new_documents": 19,
+    "old_rows_byte_identical": 47,
+    "old_files_unchanged": 15,
+    "files_before": 18,
+    "files_after": 41,
+    "files_deleted": 0,
+    "uploaded_files_verified": [
+      "CURRENT-CATALOG.md",
+      "README.md",
+      "SHA256SUMS",
+      "current-publication-catalog.json",
+      "finite-inputs-nonfinite-activations-mlx-nntrainer.md",
+      "fractional-projective-gap-harmonic-gaussian-chaoses.md",
+      "gero-supplement-19-publications-2026-09-10.zip",
+      "kld-backward-state-mutation.md",
+      "mathematical-invariants-across-ai-stacks.md",
+      "mlx-arctan2-scale-autodiff.md",
+      "mlx-batchnorm-low-precision-state.md",
+      "mlx-clip-grad-norm-range.md",
+      "mlx-divide-scale-autodiff.md",
+      "mlx-expm1-tail-vjp.md",
+      "mlx-inverse-hyperbolic-overflow.md",
+      "nntrainer-loss-scale-contract.md",
+      "nntrainer-reduce-mean-default-axis.md",
+      "nntrainer-uint8-affine-zero-point.md",
+      "numerical-contracts-swift-numerics-nntrainer.md",
+      "onnx-numerical-observatory-reproduced-snapshot.md",
+      "reports.jsonl",
+      "supplement-manifest.json",
+      "swift-numerics-complex-reciprocal-contract.md",
+      "swift-numerics-hyperbolic-signs.md",
+      "when-small-losses-and-gradients-disappear.md",
+      "zero-observed-false-positives-small-sample.md"
+    ],
+    "supplement_sha256": "67a73a26b3d3a8fdac6fb077da2d74110e357b2bacef8a0c0e8d721cab3dc7a7"
+  },
+  "instagram": {
+    "status": "paused_by_user"
+  },
+  "facebook": {
+    "status": "not_requested_huggingface_clarification"
+  }
+}

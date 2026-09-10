@@ -18,3 +18,4 @@ This archive preserves the claims and limitations of the original report. It mak
 
 - [GERO](https://www.gero.uz/research/articles/zero-observed-false-positives-small-sample.html)
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7502433461769785344/)
+- [Hugging Face document corpus](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/zero-observed-false-positives-small-sample.md)

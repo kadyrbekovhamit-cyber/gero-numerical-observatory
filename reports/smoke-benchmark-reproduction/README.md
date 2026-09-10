@@ -18,3 +18,4 @@ This archive preserves the claims and limitations of the original report. It mak
 - [GERO](https://www.gero.uz/research/articles/smoke-benchmark-reproduction.html)
 - [Earlier collection archive](https://doi.org/10.5281/zenodo.22683900)
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503832354294177792/)
+- [Hugging Face document corpus](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/ORIGINAL-CATALOG.md)

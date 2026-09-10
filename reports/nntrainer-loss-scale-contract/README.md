@@ -18,3 +18,4 @@ This archive preserves the claims and limitations of the original report. It mak
 
 - [GERO](https://www.gero.uz/research/articles/nntrainer-loss-scale-contract.html)
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7501564559007322112/)
+- [Hugging Face document corpus](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/nntrainer-loss-scale-contract.md)

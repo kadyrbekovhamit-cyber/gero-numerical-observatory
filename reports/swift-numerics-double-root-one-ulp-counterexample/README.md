@@ -23,3 +23,4 @@ This archive preserves the claims and limitations of the original report. It mak
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7501708458396712960/)
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7501707962625859584/)
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7501332609281716224/)
+- [Hugging Face document corpus](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/ORIGINAL-CATALOG.md)

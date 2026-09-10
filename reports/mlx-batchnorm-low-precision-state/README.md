@@ -9,3 +9,7 @@ The article snapshot preserves the report. Verified platform records are added s
 ## Publication records
 
 - [GERO](https://www.gero.uz/research/articles/mlx-batchnorm-low-precision-state.html)
+- [Individual Zenodo record](https://doi.org/10.5281/zenodo.22695450)
+- [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503878393873190912/)
+- [Hugging Face document corpus](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-batchnorm-low-precision-state.md)
+- [YouTube short video](https://www.youtube.com/shorts/0p6Vyjfr9YY)

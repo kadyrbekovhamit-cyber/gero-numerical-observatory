@@ -18,3 +18,4 @@ This archive preserves the claims and limitations of the original report. It mak
 
 - [GERO](https://www.gero.uz/research/articles/when-small-losses-and-gradients-disappear.html)
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7502621454132424705/)
+- [Hugging Face document corpus](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/when-small-losses-and-gradients-disappear.md)
