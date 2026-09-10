@@ -1,0 +1,6 @@
+{
+  "baseline_revision": "ce916dbbcaa88e433b6fd1e60a17f766d49c27fe",
+  "header_sha256": "5dbe79caa33a228d1354b2621876dc0fb3629dd6733c8ee4ebd0471790b0a94a",
+  "archive_sha256": "7826e14e2d1ee526a16352829d460ae39c048e331c339be0b6f8d67d74e68a06",
+  "scope": "CPU archive with isolated unary.cpp override; other TUs using the header are not rebuilt."
+}

@@ -1,0 +1,106 @@
+[
+  {
+    "label": "compile-test",
+    "command": [
+      "/usr/bin/c++",
+      "-DACCELERATE_NEW_LAPACK",
+      "-DFMT_HEADER_ONLY=1",
+      "-DMLX_STATIC",
+      "-DMLX_USE_ACCELERATE",
+      "-I${MLX_CPU_BUILD}/_deps/json-src/single_include/nlohmann",
+      "-I${MLX_SOURCE_ROOT}",
+      "-I${MLX_CPU_BUILD}/_deps/fmt-src/include",
+      "-F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks",
+      "-O0",
+      "-DNDEBUG",
+      "-std=gnu++20",
+      "-fPIC",
+      "-fvisibility=hidden",
+      "-fvisibility-inlines-hidden",
+      "-o",
+      "/Users/khamit/Documents/math/software-audits/mlx-logcumsumexp-shift-vjp-2026-09-10/native_regression.o",
+      "-c",
+      "/Users/khamit/Documents/math/software-audits/mlx-logcumsumexp-shift-vjp-2026-09-10/native_regression.cpp"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.971958208,
+    "cpu_seconds": 0.775385
+  },
+  {
+    "label": "compile-prototype",
+    "command": [
+      "/usr/bin/c++",
+      "-DACCELERATE_NEW_LAPACK",
+      "-DFMT_HEADER_ONLY=1",
+      "-DMLX_STATIC",
+      "-DMLX_USE_ACCELERATE",
+      "-I${MLX_CPU_BUILD}/_deps/json-src/single_include/nlohmann",
+      "-I${MLX_SOURCE_ROOT}",
+      "-I${MLX_CPU_BUILD}/_deps/fmt-src/include",
+      "-F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks",
+      "-O0",
+      "-DNDEBUG",
+      "-std=gnu++20",
+      "-fPIC",
+      "-fvisibility=hidden",
+      "-fvisibility-inlines-hidden",
+      "-o",
+      "/Users/khamit/Documents/math/software-audits/mlx-logcumsumexp-shift-vjp-2026-09-10/after.o",
+      "-c",
+      "/Users/khamit/Documents/math/software-audits/mlx-logcumsumexp-shift-vjp-2026-09-10/patched-baseline-primitives.cpp"
+    ],
+    "returncode": 0,
+    "wall_seconds": 1.1102088339999998,
+    "cpu_seconds": 1.0798839999999998
+  },
+  {
+    "label": "link-before",
+    "command": [
+      "/usr/bin/c++",
+      "/Users/khamit/Documents/math/software-audits/mlx-logcumsumexp-shift-vjp-2026-09-10/native_regression.o",
+      "/Users/khamit/Documents/math/software-audits/mlx-logcumsumexp-hessian-2026-09-10/before.o",
+      "${MLX_CPU_BUILD}/mlx-build/libmlx.a",
+      "-framework",
+      "Accelerate",
+      "-o",
+      "/Users/khamit/Documents/math/software-audits/mlx-logcumsumexp-shift-vjp-2026-09-10/native-before"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.15644349999999996,
+    "cpu_seconds": 0.18246600000000013
+  },
+  {
+    "label": "run-before",
+    "command": [
+      "/Users/khamit/Documents/math/software-audits/mlx-logcumsumexp-shift-vjp-2026-09-10/native-before"
+    ],
+    "returncode": 1,
+    "wall_seconds": 1.410245625,
+    "cpu_seconds": 0.127865
+  },
+  {
+    "label": "link-after",
+    "command": [
+      "/usr/bin/c++",
+      "/Users/khamit/Documents/math/software-audits/mlx-logcumsumexp-shift-vjp-2026-09-10/native_regression.o",
+      "/Users/khamit/Documents/math/software-audits/mlx-logcumsumexp-shift-vjp-2026-09-10/after.o",
+      "${MLX_CPU_BUILD}/mlx-build/libmlx.a",
+      "-framework",
+      "Accelerate",
+      "-o",
+      "/Users/khamit/Documents/math/software-audits/mlx-logcumsumexp-shift-vjp-2026-09-10/native-after"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.10720854199999996,
+    "cpu_seconds": 0.18881399999999987
+  },
+  {
+    "label": "run-after",
+    "command": [
+      "/Users/khamit/Documents/math/software-audits/mlx-logcumsumexp-shift-vjp-2026-09-10/native-after"
+    ],
+    "returncode": 1,
+    "wall_seconds": 0.541973375,
+    "cpu_seconds": 0.30059700000000017
+  }
+]

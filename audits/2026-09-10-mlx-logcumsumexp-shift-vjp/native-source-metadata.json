@@ -1,0 +1,10 @@
+{
+  "baseline_revision": "ce916dbbcaa88e433b6fd1e60a17f766d49c27fe",
+  "baseline_sha256": "fa11ff592720a7898b4d3ba3e57d01355f58a8c6f6d1132a2711cd4ef2edeaba",
+  "upstream_scan_vjp_identical": true,
+  "archive": "${MLX_CPU_BUILD}/mlx-build/libmlx.a",
+  "archive_sha256": "7826e14e2d1ee526a16352829d460ae39c048e331c339be0b6f8d67d74e68a06",
+  "baseline_object": "${AUDIT_DIR}/higher-order/before.o",
+  "baseline_object_sha256": "fe564bdff67b9f70f26fe428968aa069503b772f395bbf4f91abf920982d7e29",
+  "scope": "Small CPU-only archive with pristine/patched translation-unit override; not a full current-main build."
+}

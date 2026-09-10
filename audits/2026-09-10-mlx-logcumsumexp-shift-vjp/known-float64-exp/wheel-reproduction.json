@@ -1,0 +1,80 @@
+{
+  "version": "0.32.2",
+  "device": "Device(cpu, 0)",
+  "output_dtype": "mlx.core.float64",
+  "cases": [
+    {
+      "input": -700.0,
+      "actual": 0.0,
+      "expected": 9.85967654375977e-305,
+      "relative_error": 1.0
+    },
+    {
+      "input": -100.0,
+      "actual": 0.0,
+      "expected": 3.720075976020836e-44,
+      "relative_error": 1.0
+    },
+    {
+      "input": -89.0,
+      "actual": 0.0,
+      "expected": 2.2273635617957438e-39,
+      "relative_error": 1.0
+    },
+    {
+      "input": -1.0,
+      "actual": 0.3678794503211975,
+      "expected": 0.36787944117144233,
+      "relative_error": 2.4871613213406363e-08
+    },
+    {
+      "input": -1e-08,
+      "actual": 1.0,
+      "expected": 0.9999999900000001,
+      "relative_error": 9.99999993922529e-09
+    },
+    {
+      "input": 0.0,
+      "actual": 1.0,
+      "expected": 1.0,
+      "relative_error": 0.0
+    },
+    {
+      "input": 1e-08,
+      "actual": 1.0,
+      "expected": 1.00000001,
+      "relative_error": 9.999999828202988e-09
+    },
+    {
+      "input": 0.25,
+      "actual": 1.2840254306793213,
+      "expected": 1.2840254166877414,
+      "relative_error": 1.0896653357406194e-08
+    },
+    {
+      "input": 1.0,
+      "actual": 2.7182817459106445,
+      "expected": 2.718281828459045,
+      "relative_error": 3.036785944932063e-08
+    },
+    {
+      "input": 89.0,
+      "actual": "Infinity",
+      "expected": 4.4896128191743455e+38,
+      "relative_error": "Infinity"
+    },
+    {
+      "input": 100.0,
+      "actual": "Infinity",
+      "expected": 2.6881171418161356e+43,
+      "relative_error": "Infinity"
+    },
+    {
+      "input": 700.0,
+      "actual": "Infinity",
+      "expected": 1.0142320547350045e+304,
+      "relative_error": "Infinity"
+    }
+  ],
+  "cpu_seconds": 0.0017689999999999997
+}

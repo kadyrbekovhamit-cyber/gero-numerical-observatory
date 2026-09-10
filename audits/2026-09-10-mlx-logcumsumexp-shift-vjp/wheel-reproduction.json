@@ -1,0 +1,281 @@
+{
+  "version": "0.32.2",
+  "device": "Device(cpu, 0)",
+  "cases": [
+    {
+      "dtype": "mlx.core.float32",
+      "input": [
+        0.0,
+        0.0
+      ],
+      "scan_value": 0.6931471824645996,
+      "reduce_value": 0.6931471824645996,
+      "scan_gradient": [
+        0.5,
+        0.5
+      ],
+      "reduce_gradient": [
+        0.5,
+        0.5
+      ],
+      "expected": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "dtype": "mlx.core.float32",
+      "input": [
+        1000.0,
+        1000.0
+      ],
+      "scan_value": 1000.6931762695312,
+      "reduce_value": 1000.6931762695312,
+      "scan_gradient": [
+        0.4999854564666748,
+        0.4999854564666748
+      ],
+      "reduce_gradient": [
+        0.5,
+        0.5
+      ],
+      "expected": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "dtype": "mlx.core.float32",
+      "input": [
+        100000.0,
+        100000.0
+      ],
+      "scan_value": 100000.6953125,
+      "reduce_value": 100000.6953125,
+      "scan_gradient": [
+        0.4989185035228729,
+        0.4989185035228729
+      ],
+      "reduce_gradient": [
+        0.5,
+        0.5
+      ],
+      "expected": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "dtype": "mlx.core.float32",
+      "input": [
+        100000000.0,
+        100000000.0
+      ],
+      "scan_value": 100000000.0,
+      "reduce_value": 100000000.0,
+      "scan_gradient": [
+        1.0,
+        1.0
+      ],
+      "reduce_gradient": [
+        0.5,
+        0.5
+      ],
+      "expected": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "dtype": "mlx.core.float32",
+      "input": [
+        -100000000.0,
+        -100000000.0
+      ],
+      "scan_value": -100000000.0,
+      "reduce_value": -100000000.0,
+      "scan_gradient": [
+        1.0,
+        1.0
+      ],
+      "reduce_gradient": [
+        0.5,
+        0.5
+      ],
+      "expected": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "dtype": "mlx.core.float32",
+      "input": [
+        1.0000000200408773e+20,
+        1.0000000200408773e+20
+      ],
+      "scan_value": 1.0000000200408773e+20,
+      "reduce_value": 1.0000000200408773e+20,
+      "scan_gradient": [
+        1.0,
+        1.0
+      ],
+      "reduce_gradient": [
+        0.5,
+        0.5
+      ],
+      "expected": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "dtype": "mlx.core.float64",
+      "input": [
+        0.0,
+        0.0
+      ],
+      "scan_value": 0.6931471805599453,
+      "reduce_value": 0.6931471805599453,
+      "scan_gradient": [
+        0.5,
+        0.5
+      ],
+      "reduce_gradient": [
+        0.5,
+        0.5
+      ],
+      "expected": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "dtype": "mlx.core.float64",
+      "input": [
+        1000.0,
+        1000.0
+      ],
+      "scan_value": 1000.6931471805599,
+      "reduce_value": 1000.6931471805599,
+      "scan_gradient": [
+        0.5,
+        0.5
+      ],
+      "reduce_gradient": [
+        0.5,
+        0.5
+      ],
+      "expected": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "dtype": "mlx.core.float64",
+      "input": [
+        100000.0,
+        100000.0
+      ],
+      "scan_value": 100000.69314718056,
+      "reduce_value": 100000.69314718056,
+      "scan_gradient": [
+        0.5,
+        0.5
+      ],
+      "reduce_gradient": [
+        0.5,
+        0.5
+      ],
+      "expected": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "dtype": "mlx.core.float64",
+      "input": [
+        100000000.0,
+        100000000.0
+      ],
+      "scan_value": 100000000.69314718,
+      "reduce_value": 100000000.69314718,
+      "scan_gradient": [
+        0.5,
+        0.5
+      ],
+      "reduce_gradient": [
+        0.5,
+        0.5
+      ],
+      "expected": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "dtype": "mlx.core.float64",
+      "input": [
+        -100000000.0,
+        -100000000.0
+      ],
+      "scan_value": -99999999.30685282,
+      "reduce_value": -99999999.30685282,
+      "scan_gradient": [
+        0.5,
+        0.5
+      ],
+      "reduce_gradient": [
+        0.5,
+        0.5
+      ],
+      "expected": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "dtype": "mlx.core.float64",
+      "input": [
+        1e+20,
+        1e+20
+      ],
+      "scan_value": 1e+20,
+      "reduce_value": 1e+20,
+      "scan_gradient": [
+        1.0,
+        1.0
+      ],
+      "reduce_gradient": [
+        0.5,
+        0.5
+      ],
+      "expected": [
+        0.5,
+        0.5
+      ]
+    }
+  ],
+  "naive_global_center_counterexample": {
+    "input": [
+      0.0,
+      0.0,
+      100000000.0
+    ],
+    "original": [
+      0.5,
+      0.5,
+      0.0
+    ],
+    "global_center": [
+      1.0,
+      1.0,
+      0.0
+    ],
+    "expected": [
+      0.5,
+      0.5,
+      0.0
+    ]
+  },
+  "cpu_seconds": 0.007077
+}

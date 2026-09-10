@@ -1,0 +1,425 @@
+[
+  {
+    "dtype": "float64",
+    "size": 1,
+    "strided": false,
+    "input": -700,
+    "actual": 0,
+    "expected": 9.85967654375977e-305,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 1,
+    "strided": false,
+    "input": -100,
+    "actual": 0,
+    "expected": 3.720075976020836e-44,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 1,
+    "strided": false,
+    "input": -89,
+    "actual": 0,
+    "expected": 2.2273635617957438e-39,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 1,
+    "strided": false,
+    "input": -1,
+    "actual": 0.3678794503211975,
+    "expected": 0.36787944117144233,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 1,
+    "strided": false,
+    "input": -1e-08,
+    "actual": 1,
+    "expected": 0.9999999900000001,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 1,
+    "strided": false,
+    "input": 0,
+    "actual": 1,
+    "expected": 1,
+    "passed": true
+  },
+  {
+    "dtype": "float64",
+    "size": 1,
+    "strided": false,
+    "input": 1e-08,
+    "actual": 1,
+    "expected": 1.00000001,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 1,
+    "strided": false,
+    "input": 0.25,
+    "actual": 1.2840254306793213,
+    "expected": 1.2840254166877414,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 1,
+    "strided": false,
+    "input": 1,
+    "actual": 2.7182817459106445,
+    "expected": 2.718281828459045,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 1,
+    "strided": false,
+    "input": 89,
+    "actual": "Infinity",
+    "expected": 4.4896128191743455e+38,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 1,
+    "strided": false,
+    "input": 100,
+    "actual": "Infinity",
+    "expected": 2.6881171418161356e+43,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 1,
+    "strided": false,
+    "input": 700,
+    "actual": "Infinity",
+    "expected": 1.0142320547350045e+304,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 12,
+    "strided": false,
+    "input": -700,
+    "actual": 0,
+    "expected": 9.85967654375977e-305,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 12,
+    "strided": false,
+    "input": -100,
+    "actual": 0,
+    "expected": 3.720075976020836e-44,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 12,
+    "strided": false,
+    "input": -89,
+    "actual": 0,
+    "expected": 2.2273635617957438e-39,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 12,
+    "strided": false,
+    "input": -1,
+    "actual": 0.3678794503211975,
+    "expected": 0.36787944117144233,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 12,
+    "strided": false,
+    "input": -1e-08,
+    "actual": 1,
+    "expected": 0.9999999900000001,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 12,
+    "strided": false,
+    "input": 0,
+    "actual": 1,
+    "expected": 1,
+    "passed": true
+  },
+  {
+    "dtype": "float64",
+    "size": 12,
+    "strided": false,
+    "input": 1e-08,
+    "actual": 1,
+    "expected": 1.00000001,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 12,
+    "strided": false,
+    "input": 0.25,
+    "actual": 1.2840254306793213,
+    "expected": 1.2840254166877414,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 12,
+    "strided": false,
+    "input": 1,
+    "actual": 2.7182817459106445,
+    "expected": 2.718281828459045,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 12,
+    "strided": false,
+    "input": 89,
+    "actual": "Infinity",
+    "expected": 4.4896128191743455e+38,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 12,
+    "strided": false,
+    "input": 100,
+    "actual": "Infinity",
+    "expected": 2.6881171418161356e+43,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 12,
+    "strided": false,
+    "input": 700,
+    "actual": "Infinity",
+    "expected": 1.0142320547350045e+304,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 12,
+    "strided": true,
+    "input": -700,
+    "actual": 0,
+    "expected": 9.85967654375977e-305,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 12,
+    "strided": true,
+    "input": -100,
+    "actual": 0,
+    "expected": 3.720075976020836e-44,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 12,
+    "strided": true,
+    "input": -89,
+    "actual": 0,
+    "expected": 2.2273635617957438e-39,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 12,
+    "strided": true,
+    "input": -1,
+    "actual": 0.3678794503211975,
+    "expected": 0.36787944117144233,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 12,
+    "strided": true,
+    "input": -1e-08,
+    "actual": 1,
+    "expected": 0.9999999900000001,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 12,
+    "strided": true,
+    "input": 0,
+    "actual": 1,
+    "expected": 1,
+    "passed": true
+  },
+  {
+    "dtype": "float64",
+    "size": 12,
+    "strided": true,
+    "input": 1e-08,
+    "actual": 1,
+    "expected": 1.00000001,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 12,
+    "strided": true,
+    "input": 0.25,
+    "actual": 1.2840254306793213,
+    "expected": 1.2840254166877414,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 12,
+    "strided": true,
+    "input": 1,
+    "actual": 2.7182817459106445,
+    "expected": 2.718281828459045,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 12,
+    "strided": true,
+    "input": 89,
+    "actual": "Infinity",
+    "expected": 4.4896128191743455e+38,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 12,
+    "strided": true,
+    "input": 100,
+    "actual": "Infinity",
+    "expected": 2.6881171418161356e+43,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 12,
+    "strided": true,
+    "input": 700,
+    "actual": "Infinity",
+    "expected": 1.0142320547350045e+304,
+    "passed": false
+  },
+  {
+    "dtype": "float64",
+    "size": 5,
+    "strided": false,
+    "input": "-Infinity",
+    "actual": 0,
+    "expected": 0,
+    "passed": true
+  },
+  {
+    "dtype": "float64",
+    "size": 5,
+    "strided": false,
+    "input": "Infinity",
+    "actual": "Infinity",
+    "expected": "Infinity",
+    "passed": true
+  },
+  {
+    "dtype": "float64",
+    "size": 5,
+    "strided": false,
+    "input": "NaN",
+    "actual": "NaN",
+    "expected": "NaN",
+    "passed": true
+  },
+  {
+    "dtype": "float64",
+    "size": 5,
+    "strided": false,
+    "input": 0,
+    "actual": 1,
+    "expected": 1,
+    "passed": true
+  },
+  {
+    "dtype": "float64",
+    "size": 5,
+    "strided": false,
+    "input": 1e-08,
+    "actual": 1,
+    "expected": 1.00000001,
+    "passed": false
+  },
+  {
+    "dtype": "float32",
+    "size": 6,
+    "strided": false,
+    "input": -10,
+    "actual": 4.539993096841499e-05,
+    "expected": 4.5399929762484854e-05,
+    "passed": true
+  },
+  {
+    "dtype": "float32",
+    "size": 6,
+    "strided": false,
+    "input": -1,
+    "actual": 0.3678794503211975,
+    "expected": 0.36787944117144233,
+    "passed": true
+  },
+  {
+    "dtype": "float32",
+    "size": 6,
+    "strided": false,
+    "input": 0,
+    "actual": 1,
+    "expected": 1,
+    "passed": true
+  },
+  {
+    "dtype": "float32",
+    "size": 6,
+    "strided": false,
+    "input": 0.25,
+    "actual": 1.2840254306793213,
+    "expected": 1.2840254166877414,
+    "passed": true
+  },
+  {
+    "dtype": "float32",
+    "size": 6,
+    "strided": false,
+    "input": 1,
+    "actual": 2.7182817459106445,
+    "expected": 2.718281828459045,
+    "passed": true
+  },
+  {
+    "dtype": "float32",
+    "size": 6,
+    "strided": false,
+    "input": 10,
+    "actual": 22026.466796875,
+    "expected": 22026.465794806718,
+    "passed": true
+  }
+]

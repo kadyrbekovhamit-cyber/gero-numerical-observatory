@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.25)
+project(complex_derivative_audit LANGUAGES C CXX)
+set(CMAKE_CXX_STANDARD 20)
+if(NOT AUDIT_MLX_SOURCE)
+  message(FATAL_ERROR "Set AUDIT_MLX_SOURCE to the MLX checkout")
+endif()
+add_subdirectory(${AUDIT_MLX_SOURCE} mlx-build)

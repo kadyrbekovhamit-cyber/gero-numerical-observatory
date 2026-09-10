@@ -1,0 +1,178 @@
+{
+  "checks": 43,
+  "failures": 0,
+  "results": [
+    {
+      "check": "2026-09-10-mlx-logcumsumexp-shift-vjp/before",
+      "passed": true
+    },
+    {
+      "check": "2026-09-10-mlx-logcumsumexp-shift-vjp/scan-only",
+      "passed": true
+    },
+    {
+      "check": "2026-09-10-mlx-logcumsumexp-shift-vjp/exp-only",
+      "passed": true
+    },
+    {
+      "check": "2026-09-10-mlx-logcumsumexp-shift-vjp/combined",
+      "passed": true
+    },
+    {
+      "check": "link:2026-09-10-mlx-logcumsumexp-shift-vjp/reproduce.py",
+      "passed": true
+    },
+    {
+      "check": "link:2026-09-10-mlx-logcumsumexp-shift-vjp/wheel-reproduction.json",
+      "passed": true
+    },
+    {
+      "check": "link:2026-09-10-mlx-logcumsumexp-shift-vjp/stable_scan_vjp.cpp.inc",
+      "passed": true
+    },
+    {
+      "check": "link:2026-09-10-mlx-logcumsumexp-shift-vjp/stable-logcumsumexp-vjp-prototype.patch",
+      "passed": true
+    },
+    {
+      "check": "link:2026-09-10-mlx-logcumsumexp-shift-vjp/native_regression.cpp",
+      "passed": true
+    },
+    {
+      "check": "link:2026-09-10-mlx-logcumsumexp-shift-vjp/run-before.json",
+      "passed": true
+    },
+    {
+      "check": "link:2026-09-10-mlx-logcumsumexp-shift-vjp/run-scan-only.json",
+      "passed": true
+    },
+    {
+      "check": "link:2026-09-10-mlx-logcumsumexp-shift-vjp/run-exp-only.json",
+      "passed": true
+    },
+    {
+      "check": "link:2026-09-10-mlx-logcumsumexp-shift-vjp/run-combined.json",
+      "passed": true
+    },
+    {
+      "check": "link:2026-09-10-mlx-logcumsumexp-shift-vjp/initial-run-after.json",
+      "passed": true
+    },
+    {
+      "check": "link:2026-09-10-mlx-logcumsumexp-shift-vjp/known-float64-exp/",
+      "passed": true
+    },
+    {
+      "check": "link:2026-09-10-mlx-logcumsumexp-shift-vjp/run-higher-order.log",
+      "passed": true
+    },
+    {
+      "check": "link:2026-09-10-mlx-logcumsumexp-shift-vjp/higher-order/native_regression.cpp",
+      "passed": true
+    },
+    {
+      "check": "link:2026-09-10-mlx-logcumsumexp-shift-vjp/build-results.json",
+      "passed": true
+    },
+    {
+      "check": "link:2026-09-10-mlx-logcumsumexp-shift-vjp/native-source-metadata.json",
+      "passed": true
+    },
+    {
+      "check": "link:2026-09-10-mlx-logcumsumexp-shift-vjp/publication-prerequisites.json",
+      "passed": true
+    },
+    {
+      "check": "link:2026-09-10-mlx-logcumsumexp-shift-vjp/BUILD.md",
+      "passed": true
+    },
+    {
+      "check": "link:2026-09-10-mlx-logcumsumexp-shift-vjp/validate_artifacts.py",
+      "passed": true
+    },
+    {
+      "check": "fetch:2026-09-10-mlx-logcumsumexp-shift-vjp",
+      "passed": true
+    },
+    {
+      "check": "sha256:mlx/backend/cpu/simd/math.h",
+      "passed": true
+    },
+    {
+      "check": "sha256:mlx/backend/cpu/unary_ops.h",
+      "passed": true
+    },
+    {
+      "check": "sha256:mlx/backend/cpu/unary.cpp",
+      "passed": true
+    },
+    {
+      "check": "sha256:mlx/primitives.cpp",
+      "passed": true
+    },
+    {
+      "check": "duplicate-search:2026-09-10-mlx-logcumsumexp-shift-vjp",
+      "passed": true
+    },
+    {
+      "check": "known-float64-exp/before",
+      "passed": true
+    },
+    {
+      "check": "known-float64-exp/after",
+      "passed": true
+    },
+    {
+      "check": "fetch:known-float64-exp",
+      "passed": true
+    },
+    {
+      "check": "sha256:mlx/backend/cpu/simd/math.h",
+      "passed": true
+    },
+    {
+      "check": "sha256:mlx/backend/cpu/unary_ops.h",
+      "passed": true
+    },
+    {
+      "check": "sha256:mlx/backend/cpu/unary.cpp",
+      "passed": true
+    },
+    {
+      "check": "sha256:mlx/primitives.cpp",
+      "passed": true
+    },
+    {
+      "check": "duplicate-search:known-float64-exp",
+      "passed": true
+    },
+    {
+      "check": "float64-only-residual",
+      "passed": true
+    },
+    {
+      "check": "higher-orders-477",
+      "passed": true
+    },
+    {
+      "check": "original-failed-attempt-preserved",
+      "passed": true
+    },
+    {
+      "check": "upstream-exp-header-identical",
+      "passed": true
+    },
+    {
+      "check": "upstream-Scan-vjp-identical",
+      "passed": true
+    },
+    {
+      "check": "patch-applies:stable-logcumsumexp-vjp-prototype.patch",
+      "passed": true
+    },
+    {
+      "check": "patch-applies:float64-exp.patch",
+      "passed": true
+    }
+  ]
+}

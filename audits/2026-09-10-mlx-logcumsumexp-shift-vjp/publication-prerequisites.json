@@ -1,0 +1,50 @@
+[
+  {
+    "command": [
+      "/usr/bin/c++",
+      "-DACCELERATE_NEW_LAPACK",
+      "-DFMT_HEADER_ONLY=1",
+      "-DMLX_STATIC",
+      "-DMLX_USE_ACCELERATE",
+      "-I${MLX_CPU_BUILD}/_deps/json-src/single_include/nlohmann",
+      "-I${MLX_SOURCE_ROOT}",
+      "-I${MLX_CPU_BUILD}/_deps/fmt-src/include",
+      "-F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks",
+      "-O0",
+      "-DNDEBUG",
+      "-std=gnu++20",
+      "-fPIC",
+      "-fvisibility=hidden",
+      "-fvisibility-inlines-hidden",
+      "-o",
+      "${AUDIT_DIR}/higher-order/before.o",
+      "-c",
+      "${AUDIT_DIR}/higher-order/baseline-primitives.cpp"
+    ],
+    "returncode": 0
+  },
+  {
+    "command": [
+      "/usr/bin/c++",
+      "-DACCELERATE_NEW_LAPACK",
+      "-DFMT_HEADER_ONLY=1",
+      "-DMLX_STATIC",
+      "-DMLX_USE_ACCELERATE",
+      "-I${MLX_CPU_BUILD}/_deps/json-src/single_include/nlohmann",
+      "-I${MLX_SOURCE_ROOT}",
+      "-I${MLX_CPU_BUILD}/_deps/fmt-src/include",
+      "-F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks",
+      "-O0",
+      "-DNDEBUG",
+      "-std=gnu++20",
+      "-fPIC",
+      "-fvisibility=hidden",
+      "-fvisibility-inlines-hidden",
+      "-o",
+      "${AUDIT_DIR}/higher-order/native_regression.o",
+      "-c",
+      "${AUDIT_DIR}/higher-order/native_regression.cpp"
+    ],
+    "returncode": 0
+  }
+]

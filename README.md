@@ -1,5 +1,7 @@
 # GERO Numerical Observatory
 
+- [MLX logcumsumexp: offsets change the gradient](audits/2026-09-10-mlx-logcumsumexp-shift-vjp/) — combined recurrence and known exp repair pass 1122 gradient checks plus 477 higher-order comparisons.
+
 - [MLX logcumsumexp: missing curvature at a zero incoming gradient](audits/2026-09-10-mlx-logcumsumexp-hessian/) — research C++ prototype passes 477 checks; includes a 24-check GatherQMM follow-up.
 
 - [MLX: a trainable output mask loses its gradient at zero](audits/2026-09-10-mlx-block-mask-output-vjp/) — 377 scenarios, 604 checks; local C++ one-line repair.

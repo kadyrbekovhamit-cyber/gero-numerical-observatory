@@ -1,0 +1,134 @@
+[
+  {
+    "label": "compile-test",
+    "command": [
+      "/usr/bin/c++",
+      "-DACCELERATE_NEW_LAPACK",
+      "-DFMT_HEADER_ONLY=1",
+      "-DMLX_STATIC",
+      "-DMLX_USE_ACCELERATE",
+      "-I${MLX_CPU_BUILD}/_deps/json-src/single_include/nlohmann",
+      "-I${MLX_SOURCE_ROOT}",
+      "-I${MLX_CPU_BUILD}/_deps/fmt-src/include",
+      "-F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks",
+      "-O0",
+      "-DNDEBUG",
+      "-std=gnu++20",
+      "-fPIC",
+      "-fvisibility=hidden",
+      "-fvisibility-inlines-hidden",
+      "-o",
+      "${AUDIT_DIR}/known-float64-exp/test.o",
+      "-c",
+      "${AUDIT_DIR}/known-float64-exp/native_regression.cpp"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.607955333,
+    "cpu_seconds": 0.6025320000000001
+  },
+  {
+    "label": "compile-before",
+    "command": [
+      "/usr/bin/c++",
+      "-DACCELERATE_NEW_LAPACK",
+      "-DFMT_HEADER_ONLY=1",
+      "-DMLX_STATIC",
+      "-DMLX_USE_ACCELERATE",
+      "-I${MLX_CPU_BUILD}/_deps/json-src/single_include/nlohmann",
+      "-I${MLX_SOURCE_ROOT}",
+      "-I${MLX_CPU_BUILD}/_deps/fmt-src/include",
+      "-F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks",
+      "-O0",
+      "-DNDEBUG",
+      "-std=gnu++20",
+      "-fPIC",
+      "-fvisibility=hidden",
+      "-fvisibility-inlines-hidden",
+      "-o",
+      "${AUDIT_DIR}/known-float64-exp/before.o",
+      "-c",
+      "${MLX_SOURCE_ROOT}/mlx/backend/cpu/unary.cpp"
+    ],
+    "returncode": 0,
+    "wall_seconds": 2.319601,
+    "cpu_seconds": 2.292657
+  },
+  {
+    "label": "link-before",
+    "command": [
+      "/usr/bin/c++",
+      "${AUDIT_DIR}/known-float64-exp/test.o",
+      "${AUDIT_DIR}/known-float64-exp/before.o",
+      "${MLX_CPU_BUILD}/mlx-build/libmlx.a",
+      "-framework",
+      "Accelerate",
+      "-o",
+      "${AUDIT_DIR}/known-float64-exp/native-before"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.2115456659999997,
+    "cpu_seconds": 0.21109799999999976
+  },
+  {
+    "label": "run-before",
+    "command": [
+      "${AUDIT_DIR}/known-float64-exp/native-before"
+    ],
+    "returncode": 1,
+    "wall_seconds": 1.3098585839999997,
+    "cpu_seconds": 0.004148000000000374
+  },
+  {
+    "label": "compile-after",
+    "command": [
+      "/usr/bin/c++",
+      "-I${AUDIT_DIR}/known-float64-exp/overlay",
+      "-DACCELERATE_NEW_LAPACK",
+      "-DFMT_HEADER_ONLY=1",
+      "-DMLX_STATIC",
+      "-DMLX_USE_ACCELERATE",
+      "-I${MLX_CPU_BUILD}/_deps/json-src/single_include/nlohmann",
+      "-I${MLX_SOURCE_ROOT}",
+      "-I${MLX_CPU_BUILD}/_deps/fmt-src/include",
+      "-F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks",
+      "-O0",
+      "-DNDEBUG",
+      "-std=gnu++20",
+      "-fPIC",
+      "-fvisibility=hidden",
+      "-fvisibility-inlines-hidden",
+      "-o",
+      "${AUDIT_DIR}/known-float64-exp/after.o",
+      "-c",
+      "${MLX_SOURCE_ROOT}/mlx/backend/cpu/unary.cpp"
+    ],
+    "returncode": 0,
+    "wall_seconds": 2.3386880420000002,
+    "cpu_seconds": 2.3149910000000005
+  },
+  {
+    "label": "link-after",
+    "command": [
+      "/usr/bin/c++",
+      "${AUDIT_DIR}/known-float64-exp/test.o",
+      "${AUDIT_DIR}/known-float64-exp/after.o",
+      "${MLX_CPU_BUILD}/mlx-build/libmlx.a",
+      "-framework",
+      "Accelerate",
+      "-o",
+      "${AUDIT_DIR}/known-float64-exp/native-after"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.07674441599999948,
+    "cpu_seconds": 0.16303899999999993
+  },
+  {
+    "label": "run-after",
+    "command": [
+      "${AUDIT_DIR}/known-float64-exp/native-after"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.2786812919999999,
+    "cpu_seconds": 0.008969000000000504
+  }
+]

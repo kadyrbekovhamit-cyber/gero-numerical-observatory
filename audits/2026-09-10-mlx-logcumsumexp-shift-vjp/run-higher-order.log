@@ -1,0 +1,4 @@
+EVIDENCE singleton second=1 finite=1
+EVIDENCE third n=1 actual=1 expected=1
+EVIDENCE third n=2 actual=2 expected=2
+SUMMARY scenarios=186 checks=477 failures=0 failed_scenarios=0

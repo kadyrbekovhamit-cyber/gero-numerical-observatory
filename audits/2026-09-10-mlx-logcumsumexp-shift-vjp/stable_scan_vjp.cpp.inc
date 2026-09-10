@@ -1,0 +1,62 @@
+namespace {
+
+array stable_log_scan_vjp(
+    const array& x,
+    const array& grad,
+    int axis,
+    bool reverse,
+    bool inclusive,
+    Stream s) {
+  if (x.size() == 0) {
+    return zeros_like(x, s);
+  }
+  int n = x.shape(axis);
+  auto position = [=](int i) { return reverse ? n - 1 - i : i; };
+  auto first = take(x, position(0), axis, s);
+  auto zero = zeros_like(first, s);
+  auto one = ones_like(first, s);
+  auto maximum_value = stop_gradient(first, s);
+  auto shift = where(isfinite(maximum_value, s), maximum_value, zero, s);
+  auto mass = exp(subtract(first, shift, s), s);
+  auto denominator = where(greater(mass, zero, s), mass, one, s);
+  std::vector<array> previous_weights{zero};
+  std::vector<array> input_weights{divide(mass, denominator, s)};
+
+  for (int i = 1; i < n; ++i) {
+    auto value = take(x, position(i), axis, s);
+    auto next_maximum = stop_gradient(maximum(maximum_value, value, s), s);
+    auto next_shift =
+        where(isfinite(next_maximum, s), next_maximum, zero, s);
+    auto exponent = where(
+        isfinite(maximum_value, s), subtract(shift, next_shift, s), zero, s);
+    auto previous_mass = multiply(mass, exp(exponent, s), s);
+    auto input_mass = exp(subtract(value, next_shift, s), s);
+    mass = add(previous_mass, input_mass, s);
+    denominator = where(greater(mass, zero, s), mass, one, s);
+    previous_weights.push_back(divide(previous_mass, denominator, s));
+    input_weights.push_back(divide(input_mass, denominator, s));
+    maximum_value = next_maximum;
+    shift = next_shift;
+  }
+
+  std::vector<array> result;
+  result.reserve(n);
+  auto carry = zero;
+  for (int i = n - 1; i >= 0; --i) {
+    int output_index = inclusive ? i : i + 1;
+    auto incoming = output_index < n
+        ? take(grad, position(output_index), axis, s)
+        : zero;
+    if (i + 1 < n) {
+      carry = multiply(carry, previous_weights[i + 1], s);
+    }
+    carry = add(incoming, carry, s);
+    result.push_back(multiply(carry, input_weights[i], s));
+  }
+  if (!reverse) {
+    std::reverse(result.begin(), result.end());
+  }
+  return stack(result, axis, s);
+}
+
+} // namespace
