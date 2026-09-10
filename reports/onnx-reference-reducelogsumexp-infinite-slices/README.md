@@ -16,5 +16,6 @@ This archive preserves the claims and limitations of the original report. It mak
 ## Publication records
 
 - [GERO](https://www.gero.uz/research/articles/onnx-reference-reducelogsumexp-infinite-slices.html)
+- [Individual Zenodo record](https://doi.org/10.5281/zenodo.22694989)
 - [Earlier collection archive](https://doi.org/10.5281/zenodo.22683900)
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503826526207963136/)
