@@ -1,9 +1,10 @@
 # GERO publication catalogue
 
-64 distinct publications, ordered newest first. Software audits, research notes and essays retain their original evidence boundaries. Counts refer to publications, not distinct bugs. Collection deposits are separate from individual records; existing shared LinkedIn posts can cover several items.
+65 distinct publications, ordered newest first. Software audits, research notes and essays retain their original evidence boundaries. Counts refer to publications, not distinct bugs. Collection deposits are separate from individual records; existing shared LinkedIn posts can cover several items.
 
 | Date | Publication | GERO | Zenodo | LinkedIn |
 |---|---|---|---|---|
+|2026-09-10|[Finite Gradients Become Zero: MLX Gradient Clipping](mlx-clip-grad-norm-range/README.md)|[Article](https://www.gero.uz/research/articles/mlx-clip-grad-norm-range.html)|Pending|Pending|
 |2026-09-10|[Same Ratio, Wrong Derivative: MLX Division at Extreme Scales](mlx-divide-scale-autodiff/README.md)|[Article](https://www.gero.uz/research/articles/mlx-divide-scale-autodiff.html)|[Individual record](https://doi.org/10.5281/zenodo.22692449)|[Published](https://www.linkedin.com/feed/update/urn:li:share:7503821563104911361/)|
 |2026-09-10|[Scale Changes the Gradient: MLX arctan2](mlx-arctan2-scale-autodiff/README.md)|[Article](https://www.gero.uz/research/articles/mlx-arctan2-scale-autodiff.html)|[Individual record](https://doi.org/10.5281/zenodo.22685198)|[Published](https://www.linkedin.com/feed/update/urn:li:activity:7503731653689888768/)|
 |2026-09-10|[Finite Values, Missing Derivatives: MLX arcsinh and arccosh](mlx-inverse-hyperbolic-overflow/README.md)|[Article](https://www.gero.uz/research/articles/mlx-inverse-hyperbolic-overflow.html)|[Individual record](https://doi.org/10.5281/zenodo.22685280)|[Published](https://www.linkedin.com/feed/update/urn:li:activity:7503723056515911681/)|

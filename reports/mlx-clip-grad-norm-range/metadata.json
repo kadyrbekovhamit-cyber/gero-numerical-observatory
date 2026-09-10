@@ -1,0 +1,49 @@
+{
+  "title": "Finite Gradients Become Zero: MLX Gradient Clipping",
+  "authors": [
+    "Xamit Kadirbekov"
+  ],
+  "publication_date": "2026-09-10",
+  "gero": "https://www.gero.uz/research/articles/mlx-clip-grad-norm-range.html",
+  "github": [
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/d5ecf3aa92f84adef36f23aaf8f31c032a2ed86f/audits/2026-09-10-mlx-clip-grad-norm-range/"
+  ],
+  "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-clip-grad-norm-range",
+  "zenodo": [],
+  "collection_zenodo": null,
+  "linkedin": [],
+  "source_article_sha256": "05af89f62057baedf0a67acef7a38e4c97dc03f5b554efaf1d7a857cbc5d5cf2",
+  "archival_packaging_date": "2026-09-10",
+  "original_source_links": [
+    "https://www.gero.uz/index.html",
+    "https://www.gero.uz/index.html#method",
+    "https://www.gero.uz/index.html#lab",
+    "https://www.gero.uz/research/",
+    "mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-clip-grad-norm-range/BUILD.md",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-clip-grad-norm-range/run_reproduction.py",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-clip-grad-norm-range/evidence/README.md",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-clip-grad-norm-range/evidence/candidate.py",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-clip-grad-norm-range/evidence/clip-grad-norm-range.patch",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-clip-grad-norm-range/evidence/patched-optimizers.py",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-clip-grad-norm-range/evidence/regression-results.json",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-clip-grad-norm-range/evidence/compatibility-results.json",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-clip-grad-norm-range/verification/fresh-rerun.json",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-clip-grad-norm-range/verification/regression-results.json",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-clip-grad-norm-range/verification/compatibility-results.json",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-clip-grad-norm-range/verification/artifact-validation.json",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-clip-grad-norm-range/evidence/source-metadata.json",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-clip-grad-norm-range/evidence/SHA256SUMS.json",
+    "https://github.com/ml-explore/mlx/blob/81ba1c6a0e50a9268b931579c2d4f1158b9aab5a/python/mlx/optimizers/optimizers.py#L963",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-clip-grad-norm-range/evidence/duplicate-search.json",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-clip-grad-norm-range/evidence/duplicate-comments.json",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-clip-grad-norm-range/evidence/candidate-v1.py",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-clip-grad-norm-range/evidence/compatibility-v1-results.json",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-clip-grad-norm-range/evidence/harness-notes.txt",
+    "https://www.gero.uz/research/data/2026-09-10-mlx-clip-grad-norm-range/LICENSE.md",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/d5ecf3aa92f84adef36f23aaf8f31c032a2ed86f/audits/2026-09-10-mlx-clip-grad-norm-range/",
+    "https://www.gero.uz/research/data/mlx-clip-grad-norm-range-2026-09-10.zip",
+    "https://www.gero.uz/research/editorial.html",
+    "https://www.gero.uz/feed.xml"
+  ]
+}

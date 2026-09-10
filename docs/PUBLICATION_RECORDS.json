@@ -1,13 +1,28 @@
 {
   "counts": {
-    "total": 64,
-    "github_catalogues": 64,
-    "gero_articles": 64,
+    "total": 65,
+    "github_catalogues": 65,
+    "gero_articles": 65,
     "linkedin_covered": 64,
     "individual_zenodo": 9,
     "previous_collection_members": 45
   },
   "publications": [
+    {
+      "slug": "mlx-clip-grad-norm-range.html",
+      "title": "Finite Gradients Become Zero: MLX Gradient Clipping",
+      "publication_date": "2026-09-10",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/mlx-clip-grad-norm-range.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-clip-grad-norm-range",
+      "zenodo": [],
+      "collection_zenodo": null,
+      "linkedin": [],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/mlx-clip-grad-norm-range-2026-09-10.zip",
+      "archive_sha256": "ce99ebbbbce1bf46c63af01d970c55bb53089553fdd44b99acd173a8388e378d"
+    },
     {
       "slug": "mlx-divide-scale-autodiff.html",
       "title": "Same Ratio, Wrong Derivative: MLX Division at Extreme Scales",
