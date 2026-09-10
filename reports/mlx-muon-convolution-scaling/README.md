@@ -17,5 +17,6 @@ This archive preserves the claims and limitations of the original report. It mak
 ## Publication records
 
 - [GERO](https://www.gero.uz/research/articles/mlx-muon-convolution-scaling.html)
+- [Individual Zenodo record](https://doi.org/10.5281/zenodo.22694717)
 - [Earlier collection archive](https://doi.org/10.5281/zenodo.22683900)
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7503394863082782720/)
