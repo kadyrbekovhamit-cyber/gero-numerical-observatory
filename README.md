@@ -1,5 +1,7 @@
 # GERO Numerical Observatory
 
+[Four MLX audit archives now have verified Zenodo DOIs](docs/MLX_ZENODO_PUBLICATION_RECORDS.md).
+
 - [MLX arctan2: scale changes a scale-invariant gradient](audits/2026-09-10-mlx-arctan2-scale-autodiff/) — 1368 native comparisons; 772 mismatches before, zero after; both failed intermediate patches retained.
 
 
