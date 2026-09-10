@@ -38,6 +38,14 @@ LOCALLY REPRODUCED
 
 192 layer + 12 gradient scenarios · 102 main-suite failures → 0 · 33 compatibility checks pass.
 
+A one-minute explanation
+
+Synthetic narration by fictional Alex Vector using macOS Samantha. Original diagrams;
+
+source ledger, script and renderer
+
+. AI-assisted preparation.
+
 Independent numerical audit by Xamit Kadirbekov, 10 September 2026. Recorded on Apple MLX 0.32.2, CPU. A finite float16 batch can make BatchNorm's default float32 running variance infinite. Later small training batches do not restore that state; evaluation then produces zeros.
 
 import mlx.core as mx
