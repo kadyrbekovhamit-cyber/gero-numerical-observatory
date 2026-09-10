@@ -1,0 +1,127 @@
+{
+  "checked_at": "2026-09-10T08:16:51.056985+00:00",
+  "queries": [
+    {
+      "query": "repo:ml-explore/mlx arctan2",
+      "total_count": 11,
+      "incomplete_results": false,
+      "items": [
+        {
+          "number": 4257,
+          "title": "Reject complex in expm1, sigmoid and arctan2",
+          "html_url": "https://github.com/ml-explore/mlx/pull/4257",
+          "state": "closed",
+          "created_at": "2026-08-14T17:51:33Z",
+          "updated_at": "2026-08-15T03:59:34Z"
+        },
+        {
+          "number": 3633,
+          "title": "Fix JVPs of select, arctan2, masked_scatter, and bitwise ops",
+          "html_url": "https://github.com/ml-explore/mlx/pull/3633",
+          "state": "closed",
+          "created_at": "2026-06-05T23:15:20Z",
+          "updated_at": "2026-06-21T07:58:42Z"
+        },
+        {
+          "number": 4227,
+          "title": "Add multi-point closed-form gradient reference tests",
+          "html_url": "https://github.com/ml-explore/mlx/pull/4227",
+          "state": "closed",
+          "created_at": "2026-08-13T07:15:50Z",
+          "updated_at": "2026-08-13T08:09:39Z"
+        },
+        {
+          "number": 3738,
+          "title": "Fix stale tangent reuse in repeated JVPs",
+          "html_url": "https://github.com/ml-explore/mlx/pull/3738",
+          "state": "closed",
+          "created_at": "2026-06-21T13:40:15Z",
+          "updated_at": "2026-06-21T22:57:10Z"
+        },
+        {
+          "number": 3678,
+          "title": "Add array API standard aliases for existing ops",
+          "html_url": "https://github.com/ml-explore/mlx/pull/3678",
+          "state": "closed",
+          "created_at": "2026-06-14T13:36:35Z",
+          "updated_at": "2026-06-20T10:14:22Z"
+        },
+        {
+          "number": 2453,
+          "title": "Fix arctan2 grads",
+          "html_url": "https://github.com/ml-explore/mlx/pull/2453",
+          "state": "closed",
+          "created_at": "2025-08-02T01:04:00Z",
+          "updated_at": "2025-08-02T04:06:06Z"
+        },
+        {
+          "number": 2451,
+          "title": "[BUG] arctan2 gradient doesn't match JAX",
+          "html_url": "https://github.com/ml-explore/mlx/issues/2451",
+          "state": "closed",
+          "created_at": "2025-08-01T06:39:19Z",
+          "updated_at": "2025-08-02T04:06:05Z"
+        },
+        {
+          "number": 3080,
+          "title": "[BUG] arm64 CPU backend fails JIT compile when using Float16",
+          "html_url": "https://github.com/ml-explore/mlx/issues/3080",
+          "state": "closed",
+          "created_at": "2026-01-29T18:27:27Z",
+          "updated_at": "2026-05-09T00:02:14Z"
+        },
+        {
+          "number": 1777,
+          "title": "Start to cleanup/unify accelerate and common back-ends (Part 1/N)",
+          "html_url": "https://github.com/ml-explore/mlx/pull/1777",
+          "state": "closed",
+          "created_at": "2025-01-19T03:00:29Z",
+          "updated_at": "2025-02-02T14:21:11Z"
+        },
+        {
+          "number": 1065,
+          "title": "[Feature] arctan2",
+          "html_url": "https://github.com/ml-explore/mlx/issues/1065",
+          "state": "closed",
+          "created_at": "2024-05-02T00:56:30Z",
+          "updated_at": "2024-05-08T15:35:35Z"
+        },
+        {
+          "number": 1079,
+          "title": "Added ArcTan2 operation",
+          "html_url": "https://github.com/ml-explore/mlx/pull/1079",
+          "state": "closed",
+          "created_at": "2024-05-05T03:46:26Z",
+          "updated_at": "2024-05-08T15:35:16Z"
+        }
+      ]
+    },
+    {
+      "query": "repo:ml-explore/mlx atan2 gradient",
+      "total_count": 1,
+      "incomplete_results": false,
+      "items": [
+        {
+          "number": 4257,
+          "title": "Reject complex in expm1, sigmoid and arctan2",
+          "html_url": "https://github.com/ml-explore/mlx/pull/4257",
+          "state": "closed",
+          "created_at": "2026-08-14T17:51:33Z",
+          "updated_at": "2026-08-15T03:59:34Z"
+        }
+      ]
+    },
+    {
+      "query": "repo:ml-explore/mlx atan2 overflow",
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    },
+    {
+      "query": "repo:ml-explore/mlx atan2 underflow",
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  ]
+}

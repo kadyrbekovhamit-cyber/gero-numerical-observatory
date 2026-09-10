@@ -1,0 +1,134 @@
+{
+  "checks": [
+    {
+      "label": "1368 cases each side",
+      "passed": true
+    },
+    {
+      "label": "772 baseline failures",
+      "passed": true
+    },
+    {
+      "label": "all final cases pass",
+      "passed": true
+    },
+    {
+      "label": "same cases references tolerances",
+      "passed": true
+    },
+    {
+      "label": "all references finite",
+      "passed": true
+    },
+    {
+      "label": "all final outputs finite",
+      "passed": true
+    },
+    {
+      "label": "dtype coverage",
+      "passed": true
+    },
+    {
+      "label": "recompute final comparisons",
+      "passed": true
+    },
+    {
+      "label": "one-sided and joint JVP present",
+      "passed": true
+    },
+    {
+      "label": "mixed Hessian checked",
+      "passed": true
+    },
+    {
+      "label": "radial invariant checked",
+      "passed": true
+    },
+    {
+      "label": "angular invariant checked",
+      "passed": true
+    },
+    {
+      "label": "wheel CPU and version",
+      "passed": true
+    },
+    {
+      "label": "wheel four dtypes",
+      "passed": true
+    },
+    {
+      "label": "wheel first-order finite differences",
+      "passed": true
+    },
+    {
+      "label": "wheel scale-dependent failure",
+      "passed": true
+    },
+    {
+      "label": "source fetch no errors",
+      "passed": true
+    },
+    {
+      "label": "source hash mlx/primitives.cpp",
+      "passed": true
+    },
+    {
+      "label": "source hash mlx/ops.cpp",
+      "passed": true
+    },
+    {
+      "label": "source hash python/tests/test_autograd.py",
+      "passed": true
+    },
+    {
+      "label": "target methods identical to public main",
+      "passed": true
+    },
+    {
+      "label": "dependency hash libmlx.a",
+      "passed": true
+    },
+    {
+      "label": "dependency hash before.o",
+      "passed": true
+    },
+    {
+      "label": "only target methods and helpers changed",
+      "passed": true
+    },
+    {
+      "label": "patch applies to saved current main",
+      "passed": true
+    },
+    {
+      "label": "applied patch content",
+      "passed": true
+    },
+    {
+      "label": "four complete duplicate searches",
+      "passed": true
+    },
+    {
+      "label": "11 unique public results",
+      "passed": true
+    },
+    {
+      "label": "initial 1350 series retained",
+      "passed": true
+    },
+    {
+      "label": "initial six real regressions retained",
+      "passed": true
+    },
+    {
+      "label": "second six remaining failures retained",
+      "passed": true
+    },
+    {
+      "label": "expected build return codes",
+      "passed": true
+    }
+  ],
+  "failures": 0,
+  "cpu_seconds": 0.029631000000000005
+}

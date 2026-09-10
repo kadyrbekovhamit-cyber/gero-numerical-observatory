@@ -1,0 +1,89 @@
+--- a/mlx/primitives.cpp
++++ b/mlx/primitives.cpp
+@@ -521,6 +521,23 @@
+   return {{arctan(inputs[0], stream())}, axes};
+ }
+ 
++namespace {
++
++std::tuple<array, array, array> arctan2_scaled_partials(
++    const array& y, const array& x, Stream s) {
++  auto one = array(1., y.dtype());
++  auto magnitude = maximum(abs(y, s), abs(x, s), s);
++  auto valid = logical_and(
++      isfinite(magnitude, s), greater(magnitude, array(0., y.dtype()), s), s);
++  auto scale = stop_gradient(where(valid, magnitude, one, s), s);
++  auto u = divide(y, scale, s);
++  auto v = divide(x, scale, s);
++  auto norm = add(square(u, s), square(v, s), s);
++  return {divide(v, norm, s), negative(divide(u, norm, s), s), scale};
++}
++
++} // namespace
++
+ std::vector<array> ArcTan2::vjp(
+     const std::vector<array>& primals,
+     const std::vector<array>& cotangents,
+@@ -528,24 +545,13 @@
+     const std::vector<array>&) {
+   assert(primals.size() == 2);
+   assert(cotangents.size() == 1);
+-
+   const auto& s = stream();
+-  const array& x1 = primals[0];
+-  const array& x2 = primals[1];
+-  const array& dy = cotangents[0];
+-
++  auto [dy, dx, scale] = arctan2_scaled_partials(primals[0], primals[1], s);
+   std::vector<array> grads;
+-  array dy_over_x1_x2_squared =
+-      divide(dy, add(square(x1, s), square(x2, s)), s);
+-
+   for (auto arg : argnums) {
+-    if (arg == 0) {
+-      grads.emplace_back(multiply(x2, dy_over_x1_x2_squared, s));
+-    } else {
+-      grads.emplace_back(multiply(negative(x1, s), dy_over_x1_x2_squared, s));
+-    }
+-  }
+-
++    grads.push_back(divide(
++        multiply(cotangents[0], arg == 0 ? dy : dx, s), scale, s));
++  }
+   return grads;
+ }
+ 
+@@ -555,22 +561,18 @@
+     const std::vector<int>& argnums) {
+   assert(primals.size() == 2);
+   assert(tangents.size() == argnums.size());
+-
++  assert(!argnums.empty());
+   const auto& s = stream();
+-  const array& x1 = primals[0];
+-  const array& x2 = primals[1];
+-
+-  auto numerator = [&]() {
+-    if (argnums.size() == 2) {
+-      return subtract(
+-          multiply(x2, tangents[0], s), multiply(x1, tangents[1], s), s);
+-    } else if (argnums[0] == 0) {
+-      return multiply(x2, tangents[0], s);
+-    } else {
+-      return negative(multiply(x1, tangents[0], s), s);
+-    }
+-  }();
+-  return {divide(numerator, add(square(x1, s), square(x2, s), s), s)};
++  auto [dy, dx, scale] = arctan2_scaled_partials(primals[0], primals[1], s);
++  auto term = [&](int i) {
++    return divide(
++        multiply(tangents[i], argnums[i] == 0 ? dy : dx, s), scale, s);
++  };
++  auto out = term(0);
++  for (int i = 1; i < argnums.size(); ++i) {
++    out = add(out, term(i), s);
++  }
++  return {out};
+ }
+ 
+ std::pair<std::vector<array>, std::vector<int>> ArcTan2::vmap(

@@ -1,0 +1,106 @@
+[
+  {
+    "label": "compile-test",
+    "command": [
+      "/usr/bin/c++",
+      "-DACCELERATE_NEW_LAPACK",
+      "-DFMT_HEADER_ONLY=1",
+      "-DMLX_STATIC",
+      "-DMLX_USE_ACCELERATE",
+      "-I${AUDIT_ARCHIVE_ROOT}/current-stack-2026-09-07-round3/build-native/_deps/json-src/single_include/nlohmann",
+      "-I${MLX_SOURCE_ROOT}",
+      "-I${AUDIT_ARCHIVE_ROOT}/current-stack-2026-09-07-round3/build-native/_deps/fmt-src/include",
+      "-F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks",
+      "-O0",
+      "-DNDEBUG",
+      "-std=gnu++20",
+      "-fPIC",
+      "-fvisibility=hidden",
+      "-fvisibility-inlines-hidden",
+      "-o",
+      "${AUDIT_ARCHIVE_ROOT}/mlx-arctan2-scale-autodiff-2026-09-10/test.o",
+      "-c",
+      "${AUDIT_ARCHIVE_ROOT}/mlx-arctan2-scale-autodiff-2026-09-10/native_regression.cpp"
+    ],
+    "returncode": 0,
+    "wall_seconds": 1.077953292,
+    "cpu_seconds": 0.949163
+  },
+  {
+    "label": "compile-patch",
+    "command": [
+      "/usr/bin/c++",
+      "-DACCELERATE_NEW_LAPACK",
+      "-DFMT_HEADER_ONLY=1",
+      "-DMLX_STATIC",
+      "-DMLX_USE_ACCELERATE",
+      "-I${AUDIT_ARCHIVE_ROOT}/current-stack-2026-09-07-round3/build-native/_deps/json-src/single_include/nlohmann",
+      "-I${MLX_SOURCE_ROOT}",
+      "-I${AUDIT_ARCHIVE_ROOT}/current-stack-2026-09-07-round3/build-native/_deps/fmt-src/include",
+      "-F/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks",
+      "-O0",
+      "-DNDEBUG",
+      "-std=gnu++20",
+      "-fPIC",
+      "-fvisibility=hidden",
+      "-fvisibility-inlines-hidden",
+      "-o",
+      "${AUDIT_ARCHIVE_ROOT}/mlx-arctan2-scale-autodiff-2026-09-10/after.o",
+      "-c",
+      "${AUDIT_ARCHIVE_ROOT}/mlx-arctan2-scale-autodiff-2026-09-10/patched-baseline-primitives.cpp"
+    ],
+    "returncode": 0,
+    "wall_seconds": 1.0803811670000003,
+    "cpu_seconds": 1.0588519999999997
+  },
+  {
+    "label": "link-before",
+    "command": [
+      "/usr/bin/c++",
+      "${AUDIT_ARCHIVE_ROOT}/mlx-arctan2-scale-autodiff-2026-09-10/test.o",
+      "${AUDIT_ARCHIVE_ROOT}/mlx-logcumsumexp-hessian-2026-09-10/before.o",
+      "${AUDIT_ARCHIVE_ROOT}/current-stack-2026-09-07-round3/build-native/mlx-build/libmlx.a",
+      "-framework",
+      "Accelerate",
+      "-o",
+      "${AUDIT_ARCHIVE_ROOT}/mlx-arctan2-scale-autodiff-2026-09-10/native-before"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.18454091700000008,
+    "cpu_seconds": 0.19401299999999982
+  },
+  {
+    "label": "run-before",
+    "command": [
+      "${AUDIT_ARCHIVE_ROOT}/mlx-arctan2-scale-autodiff-2026-09-10/native-before"
+    ],
+    "returncode": 1,
+    "wall_seconds": 1.386404958,
+    "cpu_seconds": 0.08817399999999981
+  },
+  {
+    "label": "link-after",
+    "command": [
+      "/usr/bin/c++",
+      "${AUDIT_ARCHIVE_ROOT}/mlx-arctan2-scale-autodiff-2026-09-10/test.o",
+      "${AUDIT_ARCHIVE_ROOT}/mlx-arctan2-scale-autodiff-2026-09-10/after.o",
+      "${AUDIT_ARCHIVE_ROOT}/current-stack-2026-09-07-round3/build-native/mlx-build/libmlx.a",
+      "-framework",
+      "Accelerate",
+      "-o",
+      "${AUDIT_ARCHIVE_ROOT}/mlx-arctan2-scale-autodiff-2026-09-10/native-after"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.08590283300000001,
+    "cpu_seconds": 0.1540570000000001
+  },
+  {
+    "label": "run-after",
+    "command": [
+      "${AUDIT_ARCHIVE_ROOT}/mlx-arctan2-scale-autodiff-2026-09-10/native-after"
+    ],
+    "returncode": 1,
+    "wall_seconds": 0.4496210000000005,
+    "cpu_seconds": 0.24885700000000016
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "scope": "Isolated translation-unit rebuild before existing CPU archive; not a full current-main build.",
+  "archive_sha256": "7826e14e2d1ee526a16352829d460ae39c048e331c339be0b6f8d67d74e68a06",
+  "rows_identical_to_original": {
+    "before": true,
+    "after": true
+  },
+  "baseline_revision": "ce916dbbcaa88e433b6fd1e60a17f766d49c27fe",
+  "checks_per_variant": 1368,
+  "before_failures": 772,
+  "after_failures": 0,
+  "numerical_threads": 1,
+  "gpu_used": false,
+  "child_cpu_seconds": 4.2652969999999994
+}

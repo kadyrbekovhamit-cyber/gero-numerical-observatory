@@ -1,5 +1,7 @@
 # GERO Numerical Observatory
 
+- [MLX arctan2: scale changes a scale-invariant gradient](audits/2026-09-10-mlx-arctan2-scale-autodiff/) — 1368 native comparisons; 772 mismatches before, zero after; both failed intermediate patches retained.
+
 
 - [MLX arcsinh/arccosh: representable gradients lost to intermediate overflow](audits/2026-09-10-mlx-inverse-hyperbolic-overflow/) — 518 native comparisons; 188 mismatches before, zero after the real-derivative patch.
 - [MLX expm1: a nonzero tail derivative becomes zero](audits/2026-09-10-mlx-expm1-tail-vjp/) — 216 native checks, four repair controls and credited analogous JAX report.
