@@ -1,0 +1,925 @@
+{
+  "version": "0.32.2",
+  "device": "Device(cpu, 0)",
+  "cpu_seconds": 0.029367000000000004,
+  "summary": {
+    "before": {
+      "checks": 31,
+      "failed": 17
+    },
+    "after": {
+      "checks": 39,
+      "failed": 0
+    }
+  },
+  "checks": [
+    {
+      "name": "upstream_test_clip_grad_norm",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "relative_tolerance": 0
+    },
+    {
+      "name": "upstream_test_clip_grad_norm",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "relative_tolerance": 0
+    },
+    {
+      "name": "AD/mlx.core.float32/p0/JVP",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        0.3840000033378601,
+        -0.28799986839294434
+      ],
+      "expected": [
+        0.3839999663999981,
+        -0.2879998848000345
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/p0/VJP",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        1.6319994926452637
+      ],
+      "expected": [
+        1.6319995872000999
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/p0/second",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        -0.8985595107078552
+      ],
+      "expected": [
+        -0.8985595783681452
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/p0/JVP",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        0.3840000033378601,
+        -0.28799986839294434
+      ],
+      "expected": [
+        0.3839999663999981,
+        -0.2879998848000345
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/p0/VJP",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1.6319994926452637
+      ],
+      "expected": [
+        1.6319995872000999
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/p0/second",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -0.8985595107078552
+      ],
+      "expected": [
+        -0.8985595783681452
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/p40/JVP",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        0.3840000331401825,
+        -0.2879999876022339
+      ],
+      "expected": [
+        0.384,
+        -0.288
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/p40/VJP",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        1.6320000886917114
+      ],
+      "expected": [
+        1.632
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/p40/second",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        -0.5875200033187866
+      ],
+      "expected": [
+        -0.8985600000000002
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/p40/JVP",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        0.3840000331401825,
+        -0.2879999876022339
+      ],
+      "expected": [
+        0.384,
+        -0.288
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/p40/VJP",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1.6320000886917114
+      ],
+      "expected": [
+        1.632
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/p40/second",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -0.8985600471496582
+      ],
+      "expected": [
+        -0.8985600000000002
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/p80/JVP",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        "NaN",
+        "NaN"
+      ],
+      "expected": [
+        0.384,
+        -0.288
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/p80/VJP",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        0.0
+      ],
+      "expected": [
+        1.632
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/p80/second",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        "NaN"
+      ],
+      "expected": [
+        -0.8985600000000002
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/p80/JVP",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        0.3840000331401825,
+        -0.2879999876022339
+      ],
+      "expected": [
+        0.384,
+        -0.288
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/p80/VJP",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1.6320000886917114
+      ],
+      "expected": [
+        1.632
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/p80/second",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -0.8985600471496582
+      ],
+      "expected": [
+        -0.8985600000000002
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/p120/JVP",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        "NaN",
+        "NaN"
+      ],
+      "expected": [
+        0.384,
+        -0.288
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/p120/VJP",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        0.0
+      ],
+      "expected": [
+        1.632
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/p120/second",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        "NaN"
+      ],
+      "expected": [
+        -0.8985600000000002
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/p120/JVP",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        0.3840000331401825,
+        -0.2879999876022339
+      ],
+      "expected": [
+        0.384,
+        -0.288
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/p120/VJP",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1.6320000886917114
+      ],
+      "expected": [
+        1.632
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/p120/second",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -0.8985600471496582
+      ],
+      "expected": [
+        -0.8985600000000002
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/[0.0, 0.0]/cap1.0",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        "NaN",
+        "NaN"
+      ],
+      "expected": [
+        1.0,
+        2.0
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/[0.0, 0.0]/cap1.0",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1.0,
+        2.0
+      ],
+      "expected": [
+        1.0,
+        2.0
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/[0.0, 0.0]/cap0.0",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        "NaN",
+        "NaN"
+      ],
+      "expected": [
+        0.0,
+        0.0
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/[0.0, 0.0]/cap0.0",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        0.0,
+        0.0
+      ],
+      "expected": [
+        0.0,
+        0.0
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/[0.1, 0.2]/cap1.0",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        1.0,
+        2.0
+      ],
+      "expected": [
+        1.0,
+        2.0
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float32/[0.1, 0.2]/cap1.0",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1.0,
+        2.0
+      ],
+      "expected": [
+        1.0,
+        2.0
+      ],
+      "relative_tolerance": 1e-05
+    },
+    {
+      "name": "AD/mlx.core.float64/p0/JVP",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        0.3839999663999981,
+        -0.2879998848000345
+      ],
+      "expected": [
+        0.3839999663999981,
+        -0.2879998848000345
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/p0/VJP",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        1.6319995872000999
+      ],
+      "expected": [
+        1.6319995872000999
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/p0/second",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        -0.8985595783681453
+      ],
+      "expected": [
+        -0.8985595783681452
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/p0/JVP",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        0.3839999663999981,
+        -0.2879998848000345
+      ],
+      "expected": [
+        0.3839999663999981,
+        -0.2879998848000345
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/p0/VJP",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1.6319995872000999
+      ],
+      "expected": [
+        1.6319995872000999
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/p0/second",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -0.8985595783681453
+      ],
+      "expected": [
+        -0.8985595783681452
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/p100/JVP",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        0.38400000000000006,
+        -0.28800000000000003
+      ],
+      "expected": [
+        0.384,
+        -0.288
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/p100/VJP",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        1.6320000000000001
+      ],
+      "expected": [
+        1.632
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/p100/second",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        -0.89856
+      ],
+      "expected": [
+        -0.8985600000000002
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/p100/JVP",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        0.38400000000000006,
+        -0.28800000000000003
+      ],
+      "expected": [
+        0.384,
+        -0.288
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/p100/VJP",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1.6320000000000001
+      ],
+      "expected": [
+        1.632
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/p100/second",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -0.89856
+      ],
+      "expected": [
+        -0.8985600000000002
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/p600/JVP",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        "NaN",
+        "NaN"
+      ],
+      "expected": [
+        0.384,
+        -0.288
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/p600/VJP",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        0.0
+      ],
+      "expected": [
+        1.632
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/p600/second",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        "NaN"
+      ],
+      "expected": [
+        -0.8985600000000002
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/p600/JVP",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        0.38400000000000006,
+        -0.28800000000000003
+      ],
+      "expected": [
+        0.384,
+        -0.288
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/p600/VJP",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1.6320000000000001
+      ],
+      "expected": [
+        1.632
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/p600/second",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -0.89856
+      ],
+      "expected": [
+        -0.8985600000000002
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/p900/JVP",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        "NaN",
+        "NaN"
+      ],
+      "expected": [
+        0.384,
+        -0.288
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/p900/VJP",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        0.0
+      ],
+      "expected": [
+        1.632
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/p900/second",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        "NaN"
+      ],
+      "expected": [
+        -0.8985600000000002
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/p900/JVP",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        0.38400000000000006,
+        -0.28800000000000003
+      ],
+      "expected": [
+        0.384,
+        -0.288
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/p900/VJP",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1.6320000000000001
+      ],
+      "expected": [
+        1.632
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/p900/second",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -0.89856
+      ],
+      "expected": [
+        -0.8985600000000002
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/[0.0, 0.0]/cap1.0",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        "NaN",
+        "NaN"
+      ],
+      "expected": [
+        1.0,
+        2.0
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/[0.0, 0.0]/cap1.0",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1.0,
+        2.0
+      ],
+      "expected": [
+        1.0,
+        2.0
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/[0.0, 0.0]/cap0.0",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        "NaN",
+        "NaN"
+      ],
+      "expected": [
+        0.0,
+        0.0
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/[0.0, 0.0]/cap0.0",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        0.0,
+        0.0
+      ],
+      "expected": [
+        0.0,
+        0.0
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/[0.1, 0.2]/cap1.0",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        1.0,
+        2.0
+      ],
+      "expected": [
+        1.0,
+        2.0
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "AD/mlx.core.float64/[0.1, 0.2]/cap1.0",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1.0,
+        2.0
+      ],
+      "expected": [
+        1.0,
+        2.0
+      ],
+      "relative_tolerance": 5e-12
+    },
+    {
+      "name": "nonfinite/[inf, 1.0]/cap1.0",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        "NaN",
+        0.0
+      ],
+      "expected": [
+        "NaN",
+        0.0
+      ],
+      "relative_tolerance": 0
+    },
+    {
+      "name": "nonfinite/[nan, 1.0]/cap1.0",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        "NaN",
+        "NaN"
+      ],
+      "expected": [
+        "NaN",
+        "NaN"
+      ],
+      "relative_tolerance": 0
+    },
+    {
+      "name": "nonfinite/[3.0, 4.0]/capnan",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        "NaN",
+        "NaN"
+      ],
+      "expected": [
+        "NaN",
+        "NaN"
+      ],
+      "relative_tolerance": 0
+    },
+    {
+      "name": "nonfinite/[3.0, 4.0]/capinf",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        3.0,
+        4.0
+      ],
+      "expected": [
+        3.0,
+        4.0
+      ],
+      "relative_tolerance": 0
+    },
+    {
+      "name": "nonfinite/[inf, 1.0]/capinf",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        "NaN",
+        "NaN"
+      ],
+      "expected": [
+        "NaN",
+        "NaN"
+      ],
+      "relative_tolerance": 0
+    },
+    {
+      "name": "nonfinite/[nan, 1.0]/capinf",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        "NaN",
+        "NaN"
+      ],
+      "expected": [
+        "NaN",
+        "NaN"
+      ],
+      "relative_tolerance": 0
+    },
+    {
+      "name": "complex_fallback/[(1+2j), (3-4j)]",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "relative_tolerance": 0
+    },
+    {
+      "name": "complex_fallback/[0j, 0j]",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "relative_tolerance": 0
+    }
+  ]
+}

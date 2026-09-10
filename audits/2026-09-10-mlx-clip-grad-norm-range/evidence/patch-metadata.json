@@ -1,0 +1,7 @@
+{
+  "source_sha256": "25a57fe00ff9ae1fe836cd504506e16d0e9d890112daed05cef0e2bcb95f7714",
+  "patched_sha256": "152b3f4866e324e037de339826fac0c18de64bdb5b37b04b1856a9672d0290e0",
+  "patch_sha256": "67c183c44ec61a1b7f09a85fbfc343e60f8c154b20a6ad024534897608bff055",
+  "tested_candidate_body_matches_patch": true,
+  "changed_function": "clip_grad_norm"
+}

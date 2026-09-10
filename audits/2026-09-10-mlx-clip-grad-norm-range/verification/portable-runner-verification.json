@@ -1,0 +1,30 @@
+{
+  "regression-results.json": {
+    "all_rows_equal": true,
+    "summary": {
+      "before": {
+        "checks": 1701,
+        "failed": 230
+      },
+      "after": {
+        "checks": 1701,
+        "failed": 0
+      }
+    },
+    "cpu_seconds": 0.167482
+  },
+  "compatibility-results.json": {
+    "all_rows_equal": true,
+    "summary": {
+      "before": {
+        "checks": 31,
+        "failed": 17
+      },
+      "after": {
+        "checks": 39,
+        "failed": 0
+      }
+    },
+    "cpu_seconds": 0.052366
+  }
+}

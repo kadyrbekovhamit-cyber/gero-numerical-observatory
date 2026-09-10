@@ -1,0 +1,2 @@
+Initial compatibility run: StopIteration while looking for test_clip_grad_norm inside TestOptimizers. The public method is in TestSchedulers. The harness now finds the method in all top-level classes. No numerical results were obtained by this failed invocation.
+Candidate v1 passed all 1701 forward/API checks, but changed NaN propagation in two compatibility cases. Saved separately before correcting the selection predicate.

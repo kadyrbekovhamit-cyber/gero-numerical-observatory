@@ -1,0 +1,355 @@
+{
+  "version": "0.32.2",
+  "device": "Device(cpu, 0)",
+  "cases": [
+    {
+      "dtype": "mlx.core.float16",
+      "power": 0,
+      "input": [
+        3.0,
+        4.0
+      ],
+      "expected_norm": 5.0,
+      "linalg_norm": 5.0,
+      "reported_norm": 5.0,
+      "norm_dtype": "mlx.core.float16",
+      "clipped": [
+        0.599609375,
+        0.7998046875
+      ],
+      "clipped_dtype": "mlx.core.float16",
+      "expected_clipped": [
+        0.599999880000024,
+        0.799999840000032
+      ],
+      "sgd_update": [
+        -0.0599365234375,
+        -0.0799560546875
+      ],
+      "expected_update": [
+        -0.059999988000002405,
+        -0.0799999840000032
+      ]
+    },
+    {
+      "dtype": "mlx.core.float16",
+      "power": -14,
+      "input": [
+        0.00018310546875,
+        0.000244140625
+      ],
+      "expected_norm": 0.00030517578125,
+      "linalg_norm": 0.0003452301025390625,
+      "reported_norm": 0.0003452301025390625,
+      "norm_dtype": "mlx.core.float16",
+      "clipped": [
+        0.00018310546875,
+        0.000244140625
+      ],
+      "clipped_dtype": "mlx.core.float16",
+      "expected_clipped": [
+        0.00018310546875,
+        0.000244140625
+      ],
+      "sgd_update": [
+        -1.8298625946044922e-05,
+        -2.4437904357910156e-05
+      ],
+      "expected_update": [
+        -1.8310546875000003e-05,
+        -2.44140625e-05
+      ]
+    },
+    {
+      "dtype": "mlx.core.float16",
+      "power": 10,
+      "input": [
+        3072.0,
+        4096.0
+      ],
+      "expected_norm": 5120.0,
+      "linalg_norm": "Infinity",
+      "reported_norm": "Infinity",
+      "norm_dtype": "mlx.core.float16",
+      "clipped": [
+        0.0,
+        0.0
+      ],
+      "clipped_dtype": "mlx.core.float16",
+      "expected_clipped": [
+        0.5999999998828125,
+        0.7999999998437499
+      ],
+      "sgd_update": [
+        0.0,
+        0.0
+      ],
+      "expected_update": [
+        -0.059999999988281254,
+        -0.079999999984375
+      ]
+    },
+    {
+      "dtype": "mlx.core.bfloat16",
+      "power": 0,
+      "input": [
+        3.0,
+        4.0
+      ],
+      "expected_norm": 5.0,
+      "linalg_norm": 5.0,
+      "reported_norm": 5.0,
+      "norm_dtype": "mlx.core.bfloat16",
+      "clipped": [
+        0.6015625,
+        0.80078125
+      ],
+      "clipped_dtype": "mlx.core.bfloat16",
+      "expected_clipped": [
+        0.599999880000024,
+        0.799999840000032
+      ],
+      "sgd_update": [
+        -0.060302734375,
+        -0.080078125
+      ],
+      "expected_update": [
+        -0.059999988000002405,
+        -0.0799999840000032
+      ]
+    },
+    {
+      "dtype": "mlx.core.bfloat16",
+      "power": -80,
+      "input": [
+        2.481541837659083e-24,
+        3.308722450212111e-24
+      ],
+      "expected_norm": 4.1359030627651384e-24,
+      "linalg_norm": 0.0,
+      "reported_norm": 0.0,
+      "norm_dtype": "mlx.core.bfloat16",
+      "clipped": [
+        2.481541837659083e-24,
+        3.308722450212111e-24
+      ],
+      "clipped_dtype": "mlx.core.bfloat16",
+      "expected_clipped": [
+        2.481541837659083e-24,
+        3.308722450212111e-24
+      ],
+      "sgd_update": [
+        -2.4880041861946536e-25,
+        -3.311953624479896e-25
+      ],
+      "expected_update": [
+        -2.4815418376590834e-25,
+        -3.308722450212111e-25
+      ]
+    },
+    {
+      "dtype": "mlx.core.bfloat16",
+      "power": 80,
+      "input": [
+        3.6267774588438875e+24,
+        4.835703278458517e+24
+      ],
+      "expected_norm": 6.044629098073146e+24,
+      "linalg_norm": "Infinity",
+      "reported_norm": "Infinity",
+      "norm_dtype": "mlx.core.bfloat16",
+      "clipped": [
+        0.0,
+        0.0
+      ],
+      "clipped_dtype": "mlx.core.bfloat16",
+      "expected_clipped": [
+        0.6000000000000001,
+        0.8
+      ],
+      "sgd_update": [
+        0.0,
+        0.0
+      ],
+      "expected_update": [
+        -0.06000000000000001,
+        -0.08000000000000002
+      ]
+    },
+    {
+      "dtype": "mlx.core.float32",
+      "power": 0,
+      "input": [
+        3.0,
+        4.0
+      ],
+      "expected_norm": 5.0,
+      "linalg_norm": 5.0,
+      "reported_norm": 5.0,
+      "norm_dtype": "mlx.core.float32",
+      "clipped": [
+        0.5999999046325684,
+        0.7999998331069946
+      ],
+      "clipped_dtype": "mlx.core.float32",
+      "expected_clipped": [
+        0.599999880000024,
+        0.799999840000032
+      ],
+      "sgd_update": [
+        -0.059999991208314896,
+        -0.07999998331069946
+      ],
+      "expected_update": [
+        -0.059999988000002405,
+        -0.0799999840000032
+      ]
+    },
+    {
+      "dtype": "mlx.core.float32",
+      "power": -80,
+      "input": [
+        2.481541837659083e-24,
+        3.308722450212111e-24
+      ],
+      "expected_norm": 4.1359030627651384e-24,
+      "linalg_norm": 0.0,
+      "reported_norm": 0.0,
+      "norm_dtype": "mlx.core.float32",
+      "clipped": [
+        2.481541837659083e-24,
+        3.308722450212111e-24
+      ],
+      "clipped_dtype": "mlx.core.float32",
+      "expected_clipped": [
+        2.481541837659083e-24,
+        3.308722450212111e-24
+      ],
+      "sgd_update": [
+        -2.481541936266696e-25,
+        -3.3087224995159173e-25
+      ],
+      "expected_update": [
+        -2.4815418376590834e-25,
+        -3.308722450212111e-25
+      ]
+    },
+    {
+      "dtype": "mlx.core.float32",
+      "power": 80,
+      "input": [
+        3.6267774588438875e+24,
+        4.835703278458517e+24
+      ],
+      "expected_norm": 6.044629098073146e+24,
+      "linalg_norm": "Infinity",
+      "reported_norm": "Infinity",
+      "norm_dtype": "mlx.core.float32",
+      "clipped": [
+        0.0,
+        0.0
+      ],
+      "clipped_dtype": "mlx.core.float32",
+      "expected_clipped": [
+        0.6000000000000001,
+        0.8
+      ],
+      "sgd_update": [
+        0.0,
+        0.0
+      ],
+      "expected_update": [
+        -0.06000000000000001,
+        -0.08000000000000002
+      ]
+    },
+    {
+      "dtype": "mlx.core.float64",
+      "power": 0,
+      "input": [
+        3.0,
+        4.0
+      ],
+      "expected_norm": 5.0,
+      "linalg_norm": 5.0,
+      "reported_norm": 5.0,
+      "norm_dtype": "mlx.core.float64",
+      "clipped": [
+        0.599999880000024,
+        0.799999840000032
+      ],
+      "clipped_dtype": "mlx.core.float64",
+      "expected_clipped": [
+        0.599999880000024,
+        0.799999840000032
+      ],
+      "sgd_update": [
+        -0.0599999888940719,
+        -0.07999998519209586
+      ],
+      "expected_update": [
+        -0.059999988000002405,
+        -0.0799999840000032
+      ]
+    },
+    {
+      "dtype": "mlx.core.float64",
+      "power": -600,
+      "input": [
+        7.229759595308652e-181,
+        9.639679460411536e-181
+      ],
+      "expected_norm": 1.204959932551442e-180,
+      "linalg_norm": 0.0,
+      "reported_norm": 0.0,
+      "norm_dtype": "mlx.core.float64",
+      "clipped": [
+        7.229759595308652e-181,
+        9.639679460411536e-181
+      ],
+      "clipped_dtype": "mlx.core.float64",
+      "expected_clipped": [
+        7.229759595308652e-181,
+        9.639679460411536e-181
+      ],
+      "sgd_update": [
+        -7.229759703040465e-182,
+        -9.639679604053954e-182
+      ],
+      "expected_update": [
+        -7.229759595308653e-182,
+        -9.639679460411537e-182
+      ]
+    },
+    {
+      "dtype": "mlx.core.float64",
+      "power": 600,
+      "input": [
+        1.2448546706642979e+181,
+        1.6598062275523972e+181
+      ],
+      "expected_norm": 2.0747577844404965e+181,
+      "linalg_norm": "Infinity",
+      "reported_norm": "Infinity",
+      "norm_dtype": "mlx.core.float64",
+      "clipped": [
+        0.0,
+        0.0
+      ],
+      "clipped_dtype": "mlx.core.float64",
+      "expected_clipped": [
+        0.6000000000000001,
+        0.8
+      ],
+      "sgd_update": [
+        0.0,
+        0.0
+      ],
+      "expected_update": [
+        -0.06000000000000001,
+        -0.08000000000000002
+      ]
+    }
+  ],
+  "cpu_seconds": 0.005010999999999988
+}
