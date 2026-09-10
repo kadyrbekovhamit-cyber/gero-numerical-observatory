@@ -1,5 +1,7 @@
 # GERO Numerical Observatory
 
+- [MLX: a trainable output mask loses its gradient at zero](audits/2026-09-10-mlx-block-mask-output-vjp/) — 377 scenarios, 604 checks; local C++ one-line repair.
+
 - [MLX sorted gather VJP preconditions](audits/2026-09-09-mlx-gather-vjp-preconditions) — repeated selections and broadcast gradients, 69 scenarios / 626 checks, bounded C++ repair and explicit CPU limits.
 
 - [MLX Hadamard adjoint](audits/2026-09-09-mlx-hadamard-adjoint) — explicit matrix reference, 64 scenarios / 624 checks, measured energy updates and a local C++ patch.

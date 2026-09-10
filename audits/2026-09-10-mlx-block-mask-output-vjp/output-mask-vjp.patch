@@ -1,0 +1,11 @@
+--- a/mlx/primitives.cpp
++++ b/mlx/primitives.cpp
+@@ -5998,7 +5998,7 @@
+           primals[0],
+           primals[1],
+           block_size_,
+-          primals[2],
++          std::nullopt,
+           lhs_mask,
+           rhs_mask,
+           stream());

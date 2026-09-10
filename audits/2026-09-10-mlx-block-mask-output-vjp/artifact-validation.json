@@ -1,0 +1,202 @@
+{
+  "checks": 49,
+  "failures": 0,
+  "details": [
+    {
+      "name": "wheel_version",
+      "passed": true
+    },
+    {
+      "name": "wheel_cpu",
+      "passed": true
+    },
+    {
+      "name": "forward_0.0",
+      "passed": true
+    },
+    {
+      "name": "incorrect_gradient_0.0",
+      "passed": true
+    },
+    {
+      "name": "finite_difference_0.0",
+      "passed": true
+    },
+    {
+      "name": "forward_0.5",
+      "passed": true
+    },
+    {
+      "name": "incorrect_gradient_0.5",
+      "passed": true
+    },
+    {
+      "name": "finite_difference_0.5",
+      "passed": true
+    },
+    {
+      "name": "forward_1.0",
+      "passed": true
+    },
+    {
+      "name": "incorrect_gradient_1.0",
+      "passed": true
+    },
+    {
+      "name": "finite_difference_1.0",
+      "passed": true
+    },
+    {
+      "name": "forward_-2.0",
+      "passed": true
+    },
+    {
+      "name": "incorrect_gradient_-2.0",
+      "passed": true
+    },
+    {
+      "name": "finite_difference_-2.0",
+      "passed": true
+    },
+    {
+      "name": "training_stuck",
+      "passed": true
+    },
+    {
+      "name": "training_correct_reference",
+      "passed": true
+    },
+    {
+      "name": "training_gradient",
+      "passed": true
+    },
+    {
+      "name": "sha256_mlx/primitives.cpp",
+      "passed": true
+    },
+    {
+      "name": "sha256_python/tests/test_blas.py",
+      "passed": true
+    },
+    {
+      "name": "source_fetch_success",
+      "passed": true
+    },
+    {
+      "name": "same_public_method",
+      "passed": true
+    },
+    {
+      "name": "one_replacement_only",
+      "passed": true
+    },
+    {
+      "name": "before_summary",
+      "passed": true
+    },
+    {
+      "name": "before_fail_count",
+      "passed": true
+    },
+    {
+      "name": "before_no_exceptions",
+      "passed": true
+    },
+    {
+      "name": "before_only_output_mask_failures",
+      "passed": true
+    },
+    {
+      "name": "before_training_evidence",
+      "passed": true
+    },
+    {
+      "name": "after_summary",
+      "passed": true
+    },
+    {
+      "name": "after_fail_count",
+      "passed": true
+    },
+    {
+      "name": "after_no_exceptions",
+      "passed": true
+    },
+    {
+      "name": "after_only_output_mask_failures",
+      "passed": true
+    },
+    {
+      "name": "after_training_evidence",
+      "passed": true
+    },
+    {
+      "name": "build_process_count",
+      "passed": true
+    },
+    {
+      "name": "build_exit_codes",
+      "passed": true
+    },
+    {
+      "name": "public_search_success",
+      "passed": true
+    },
+    {
+      "name": "local_link_reproduce.py",
+      "passed": true
+    },
+    {
+      "name": "local_link_wheel-reproduction.json",
+      "passed": true
+    },
+    {
+      "name": "local_link_native_regression.cpp",
+      "passed": true
+    },
+    {
+      "name": "local_link_output-mask-vjp.patch",
+      "passed": true
+    },
+    {
+      "name": "local_link_upstream-mlx_primitives.cpp",
+      "passed": true
+    },
+    {
+      "name": "local_link_BlockMaskedMM-baseline-to-upstream.diff",
+      "passed": true
+    },
+    {
+      "name": "local_link_run-before.log",
+      "passed": true
+    },
+    {
+      "name": "local_link_run-after.log",
+      "passed": true
+    },
+    {
+      "name": "local_link_build-results.json",
+      "passed": true
+    },
+    {
+      "name": "local_link_source-metadata.json",
+      "passed": true
+    },
+    {
+      "name": "local_link_BUILD.md",
+      "passed": true
+    },
+    {
+      "name": "local_link_SHA256SUMS.json",
+      "passed": true
+    },
+    {
+      "name": "local_link_publication-duplicate-search.json",
+      "passed": true
+    },
+    {
+      "name": "local_link_related-public-reports.json",
+      "passed": true
+    }
+  ]
+}

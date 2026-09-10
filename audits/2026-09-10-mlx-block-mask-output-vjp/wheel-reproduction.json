@@ -1,0 +1,42 @@
+{
+  "version": "0.32.2",
+  "device": "Device(cpu, 0)",
+  "rows": [
+    {
+      "mask": 0.0,
+      "forward": 0.0,
+      "vjp": 0.0,
+      "finite_difference": 12.0,
+      "expected_gradient": 12.0
+    },
+    {
+      "mask": 0.5,
+      "forward": 6.0,
+      "vjp": 6.0,
+      "finite_difference": 12.0,
+      "expected_gradient": 12.0
+    },
+    {
+      "mask": 1.0,
+      "forward": 12.0,
+      "vjp": 12.0,
+      "finite_difference": 12.0,
+      "expected_gradient": 12.0
+    },
+    {
+      "mask": -2.0,
+      "forward": -24.0,
+      "vjp": -24.0,
+      "finite_difference": 12.0,
+      "expected_gradient": 12.0
+    }
+  ],
+  "training": {
+    "initial": 18.0,
+    "actual_gradient": 0.0,
+    "expected_gradient": -36.0,
+    "actual_next": 18.0,
+    "expected_next": 0.0
+  },
+  "cpu_seconds": 0.0049970000000000014
+}

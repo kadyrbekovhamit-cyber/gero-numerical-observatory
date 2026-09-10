@@ -1,0 +1,6 @@
+EVIDENCE mask=0 gradient=12 finite_difference=12
+EVIDENCE mask=0.5 gradient=12 finite_difference=12
+EVIDENCE mask=1 gradient=12 finite_difference=12
+EVIDENCE mask=-2 gradient=12 finite_difference=12
+EVIDENCE training initial=18 gradient=-36 next=0
+SUMMARY scenarios=377 checks=604 failures=0 failed_scenarios=0
