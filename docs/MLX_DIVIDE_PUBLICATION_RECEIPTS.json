@@ -1,0 +1,49 @@
+{
+  "linkedin": {
+    "platform": "LinkedIn",
+    "status": "published",
+    "url": "https://www.linkedin.com/feed/update/urn:li:share:7503821563104911361/",
+    "verification": "Authenticated UI displayed Post successful and View post link",
+    "verified_date": "2026-09-10"
+  },
+  "youtube": {
+    "url": "https://youtube.com/shorts/YWUx2uGVIpo",
+    "title": "Same Ratio, Wrong Slope | MLX Division",
+    "public": true,
+    "confirmation": "Видео опубликовано",
+    "manual_captions": "English (United States), added by you",
+    "duration_seconds": 56.576368
+  },
+  "zenodo": {
+    "platform": "Zenodo",
+    "status": "published",
+    "url": "https://zenodo.org/records/22692449",
+    "doi": "10.5281/zenodo.22692449",
+    "concept_doi": "10.5281/zenodo.22692448",
+    "file": "mlx-divide-scale-autodiff-2026-09-10.zip",
+    "bytes": 301872,
+    "md5": "5c10ac49eac36711ecc3024f2fa9a9cd",
+    "sha256": "f40bcebce434801f5cb53dbaac06c87479898d5b47b574b54677803498b6ea47",
+    "verification": "Published record UI, title, author, description, file size/checksum and DOI verified"
+  },
+  "github": {
+    "url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/fa9d8b6d88848c8fc85da7b8ef5336a1157926df/audits/2026-09-10-mlx-divide-scale-autodiff/",
+    "status": "published",
+    "commit": "fa9d8b6d88848c8fc85da7b8ef5336a1157926df"
+  },
+  "gero": {
+    "url": "https://www.gero.uz/research/articles/mlx-divide-scale-autodiff.html",
+    "status": "published",
+    "verified_evidence": "live-verification.json"
+  },
+  "verification": {
+    "numerical_checks": 1328,
+    "before_mismatches": 600,
+    "after_mismatches": 0,
+    "compatibility_checks": 1886,
+    "one_numerical_thread": true,
+    "gpu": false,
+    "performance_benchmark": false,
+    "zenodo_download_byte_equal": true
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "title": "A scale-dependent zero point silently corrupts UINT8 affine quantization in nntrainer",
+  "authors": [
+    "Xamit Kadirbekov"
+  ],
+  "publication_date": "2026-09-03",
+  "gero": "https://www.gero.uz/research/articles/nntrainer-uint8-affine-zero-point.html",
+  "github": [
+    "https://github.com/kadyrbekovhamit-cyber/gero-nntrainer-quantization-audit/tree/89d07cf2bb051803b8537741bd08dc6c5e83e3e7"
+  ],
+  "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/nntrainer-uint8-affine-zero-point",
+  "zenodo": [],
+  "collection_zenodo": null,
+  "linkedin": [
+    "https://www.linkedin.com/feed/update/urn:li:activity:7501930972641124352/",
+    "https://www.linkedin.com/feed/update/urn:li:activity:7501307096056111104/"
+  ],
+  "source_article_sha256": "00727f4883e43307ffd2f85a3deba28a1bb6907241813a2be09d70dec7e82711",
+  "archival_packaging_date": "2026-09-10",
+  "original_source_links": [
+    "https://github.com/kadyrbekovhamit-cyber/gero-nntrainer-quantization-audit/tree/89d07cf2bb051803b8537741bd08dc6c5e83e3e7",
+    "https://www.gero.uz/research/articles/nntrainer-uint8-affine-zero-point.html",
+    "https://www.gero.uz/research/data/nntrainer-quantization-audit-89d07cf.zip",
+    "https://github.com/nntrainer/nntrainer/issues/4324",
+    "https://github.com/nntrainer/nntrainer/pull/4331"
+  ]
+}

@@ -13,3 +13,10 @@ This article was already archived in the 45-item GERO collection (https://doi.or
 - [LinkedIn publication](https://www.linkedin.com/feed/update/urn:li:activity:7503503941146681345/)
 
 This archive preserves the claims and limitations of the original report. It makes no new claim about current upstream status, maintainer acceptance, security impact, monetary rewards or priority. Original GERO article and archival metadata: CC BY 4.0. Source code, third-party material and linked artifacts retain their own licenses; no blanket relicensing is intended.
+
+## Publication records
+
+- [GERO](https://www.gero.uz/research/articles/mlx-gather-qmm-transpose-gradients.html)
+- [Individual Zenodo record](https://doi.org/10.5281/zenodo.22692816)
+- [Earlier collection archive](https://doi.org/10.5281/zenodo.22683900)
+- [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7503503941146681345/)

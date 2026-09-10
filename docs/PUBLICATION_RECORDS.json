@@ -1,0 +1,1111 @@
+{
+  "counts": {
+    "total": 64,
+    "github_catalogues": 64,
+    "gero_articles": 64,
+    "linkedin_covered": 64,
+    "individual_zenodo": 9,
+    "previous_collection_members": 45
+  },
+  "publications": [
+    {
+      "slug": "mlx-divide-scale-autodiff.html",
+      "title": "Same Ratio, Wrong Derivative: MLX Division at Extreme Scales",
+      "publication_date": "2026-09-10",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/mlx-divide-scale-autodiff.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-divide-scale-autodiff",
+      "zenodo": [
+        "https://doi.org/10.5281/zenodo.22692449"
+      ],
+      "collection_zenodo": null,
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:share:7503821563104911361/"
+      ]
+    },
+    {
+      "slug": "mlx-arctan2-scale-autodiff.html",
+      "title": "Scale Changes the Gradient: MLX arctan2",
+      "publication_date": "2026-09-10",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/mlx-arctan2-scale-autodiff.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-arctan2-scale-autodiff",
+      "zenodo": [
+        "https://doi.org/10.5281/zenodo.22685198"
+      ],
+      "collection_zenodo": null,
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7503731653689888768/"
+      ]
+    },
+    {
+      "slug": "mlx-inverse-hyperbolic-overflow.html",
+      "title": "Finite Values, Missing Derivatives: MLX arcsinh and arccosh",
+      "publication_date": "2026-09-10",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/mlx-inverse-hyperbolic-overflow.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-inverse-hyperbolic-overflow",
+      "zenodo": [
+        "https://doi.org/10.5281/zenodo.22685280"
+      ],
+      "collection_zenodo": null,
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7503723056515911681/"
+      ]
+    },
+    {
+      "slug": "mlx-expm1-tail-vjp.html",
+      "title": "A Nonzero Derivative Becomes Zero: MLX expm1",
+      "publication_date": "2026-09-10",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/mlx-expm1-tail-vjp.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-expm1-tail-vjp",
+      "zenodo": [
+        "https://doi.org/10.5281/zenodo.22685337"
+      ],
+      "collection_zenodo": null,
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7503699621341339648/"
+      ]
+    },
+    {
+      "slug": "mlx-logcumsumexp-shift-gradient.html",
+      "title": "Same Inputs, Wrong Weights: MLX logcumsumexp Gradients at Large Offsets",
+      "publication_date": "2026-09-10",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/mlx-logcumsumexp-shift-gradient.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-logcumsumexp-shift-gradient",
+      "zenodo": [
+        "https://doi.org/10.5281/zenodo.22685380"
+      ],
+      "collection_zenodo": null,
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7503699309440446464/"
+      ]
+    },
+    {
+      "slug": "mlx-logcumsumexp-hessian-at-zero.html",
+      "title": "Missing Curvature: MLX logcumsumexp at a Zero Incoming Gradient",
+      "publication_date": "2026-09-10",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/mlx-logcumsumexp-hessian-at-zero.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-logcumsumexp-hessian-at-zero",
+      "zenodo": [
+        "https://doi.org/10.5281/zenodo.22684054"
+      ],
+      "collection_zenodo": null,
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7503666460431650816/"
+      ]
+    },
+    {
+      "slug": "mlx-block-mask-output-gradient.html",
+      "title": "Zero Mask, Missing Gradient: MLX block_masked_mm",
+      "publication_date": "2026-09-10",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/mlx-block-mask-output-gradient.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-block-mask-output-gradient",
+      "zenodo": [
+        "https://doi.org/10.5281/zenodo.22692750"
+      ],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7503652909281239040/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/mlx-block-mask-output-gradient.zip",
+      "archive_sha256": "cad8ec3a1634ae6f4366be457ad7884211a18a464945c8d0827240404682aeb0"
+    },
+    {
+      "slug": "mlx-gather-qmm-transpose-gradients.html",
+      "title": "A Missing Transpose in MLX Quantized Gradients",
+      "publication_date": "2026-09-09",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/mlx-gather-qmm-transpose-gradients.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-gather-qmm-transpose-gradients",
+      "zenodo": [
+        "https://doi.org/10.5281/zenodo.22692816"
+      ],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7503503941146681345/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/mlx-gather-qmm-transpose-gradients.zip",
+      "archive_sha256": "261ce87c437b439d16f6ecdf9c7f747ec368289926b5827be550121747728d75"
+    },
+    {
+      "slug": "mlx-gather-vjp-preconditions.html",
+      "title": "Sorted Indices, Wrong Gradients: MLX Gather",
+      "publication_date": "2026-09-09",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/mlx-gather-vjp-preconditions.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-gather-vjp-preconditions",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7503473794536144896/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/mlx-gather-vjp-preconditions.zip",
+      "archive_sha256": "267507a9446ee62d77d74ef8ee7d533bffec94ac65f212eb1a37597b15ba2e32"
+    },
+    {
+      "slug": "mlx-hadamard-adjoint.html",
+      "title": "Orthogonal Is Not Symmetric: MLX Hadamard Gradients",
+      "publication_date": "2026-09-09",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/mlx-hadamard-adjoint.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-hadamard-adjoint",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7503438353673973760/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/mlx-hadamard-adjoint.zip",
+      "archive_sha256": "764bdca93d7b10cd6096272530a5c8e7228ca50838508dacbf6465da9049f5cd"
+    },
+    {
+      "slug": "mlx-power-zero-derivatives.html",
+      "title": "A Constant, a Polynomial, a NaN: MLX power Derivatives at Zero",
+      "publication_date": "2026-09-09",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/mlx-power-zero-derivatives.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-power-zero-derivatives",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7503429157217910784/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/mlx-power-zero-derivatives.zip",
+      "archive_sha256": "c9a945b684732983c511fd45641a5805a0551d85695c0f7367811971d2436617"
+    },
+    {
+      "slug": "mlx-masked-assignment-batch-gradients.html",
+      "title": "An Unused Value Gets a Gradient: MLX Masked Assignment",
+      "publication_date": "2026-09-09",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/mlx-masked-assignment-batch-gradients.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-masked-assignment-batch-gradients",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7503425063011135489/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/mlx-masked-assignment-batch-gradients.zip",
+      "archive_sha256": "a1e6b37fbacc2e759913d29df9414bda873ac637f5952702e198c26d9f25e195"
+    },
+    {
+      "slug": "mlx-scatter-block-gradient.html",
+      "title": "A Missing Gradient in MLX Block Updates",
+      "publication_date": "2026-09-09",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/mlx-scatter-block-gradient.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-scatter-block-gradient",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7503418719625392128/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/mlx-scatter-block-gradient.zip",
+      "archive_sha256": "731eebee873af7fee69131a4f4c5f373854dfdd2f2e5ed6355a8efe4842b90a5"
+    },
+    {
+      "slug": "nntrainer-average-pool-asymmetric-padding.html",
+      "title": "When SAME Padding Makes Average-Pooling Backward Skip Windows",
+      "publication_date": "2026-09-09",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/nntrainer-average-pool-asymmetric-padding.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/nntrainer-average-pool-asymmetric-padding",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7503300050094264320/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/nntrainer-average-pool-asymmetric-padding.zip",
+      "archive_sha256": "47db17c1b0006cb36d8dc50c7510c4d0101869737862a62eda676b4db0822360"
+    },
+    {
+      "slug": "nntrainer-dropout-gradient-routing.html",
+      "title": "When Dropout Sends Two Gradients to One Input",
+      "publication_date": "2026-09-09",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/nntrainer-dropout-gradient-routing.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/nntrainer-dropout-gradient-routing",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7503307336120188928/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/nntrainer-dropout-gradient-routing.zip",
+      "archive_sha256": "227eb361fb55dfcf9a5fe3e12c2b0c35aba16ea6848009369173174e835924d5"
+    },
+    {
+      "slug": "mlx-gaussian-nll-gradient-stability.html",
+      "title": "Finite Loss, Wrong Gradient: Gaussian NLL in MLX",
+      "publication_date": "2026-09-09",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/mlx-gaussian-nll-gradient-stability.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-gaussian-nll-gradient-stability",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7503366760390090752/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/mlx-gaussian-nll-gradient-stability.zip",
+      "archive_sha256": "d2b689c19a3c62f0555a8563c4c7143e5405064af2a2a7fef6c37e31168795d3"
+    },
+    {
+      "slug": "mlx-muon-convolution-scaling.html",
+      "title": "Same Gradients, Half the Step: MLX Muon and Convolution Shapes",
+      "publication_date": "2026-09-09",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/mlx-muon-convolution-scaling.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-muon-convolution-scaling",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7503394863082782720/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/mlx-muon-convolution-scaling.zip",
+      "archive_sha256": "ac1b01008b684c89be920fae5c0511da1943634cb50dae6e530a0866b4b74f78"
+    },
+    {
+      "slug": "mlx-complex-autodiff-reversed-gradient.html",
+      "title": "A Real Loss, a Reversed Gradient: Complex Autodiff in MLX",
+      "publication_date": "2026-09-09",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/mlx-complex-autodiff-reversed-gradient.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-complex-autodiff-reversed-gradient",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7503399107747803136/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/mlx-complex-autodiff-reversed-gradient.zip",
+      "archive_sha256": "3660fc40e4f53b1e1ffe2220b36842c80939330a7ea03c707be187bff92b4b60"
+    },
+    {
+      "slug": "mlx-cumprod-hessian-at-zero.html",
+      "title": "A Smooth Polynomial, a NaN Hessian: MLX cumprod at Zero",
+      "publication_date": "2026-09-09",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/mlx-cumprod-hessian-at-zero.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-cumprod-hessian-at-zero",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7503403580889014273/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/mlx-cumprod-hessian-at-zero.zip",
+      "archive_sha256": "78b0aa58c012f90e97cda5aa4f214090bf8f6d85acdde54ced1c0fbe64b59ce7"
+    },
+    {
+      "slug": "onnx-reference-reducelogsumexp-infinite-slices.html",
+      "title": "ONNX ReferenceEvaluator turns infinite ReduceLogSumExp slices into NaN",
+      "publication_date": "2026-09-09",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/onnx-reference-reducelogsumexp-infinite-slices.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/onnx-reference-reducelogsumexp-infinite-slices",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:share:7503826526207963136/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/onnx-reference-reducelogsumexp-infinite-slices.zip",
+      "archive_sha256": "fdf3d7b680a084591eaf6fbe0e3086e9049bd385b7ec31a7eb62d51fd52d2233"
+    },
+    {
+      "slug": "onnx-reference-batchnorm-opset9-modes.html",
+      "title": "ONNX ReferenceEvaluator misidentifies BatchNormalization opset-9 modes",
+      "publication_date": "2026-09-09",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/onnx-reference-batchnorm-opset9-modes.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/onnx-reference-batchnorm-opset9-modes",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:share:7503827116036100096/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/onnx-reference-batchnorm-opset9-modes.zip",
+      "archive_sha256": "48cd8ada47d2d32c05605a942a87d9df71db5a16ef50d14bf3088c2d765a27a4"
+    },
+    {
+      "slug": "onnx-reference-unique-unsorted-nonzero-axis.html",
+      "title": "ONNX ReferenceEvaluator gathers unsorted Unique slices from the wrong axis",
+      "publication_date": "2026-09-09",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/onnx-reference-unique-unsorted-nonzero-axis.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/onnx-reference-unique-unsorted-nonzero-axis",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:share:7503827623358402561/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/onnx-reference-unique-unsorted-nonzero-axis.zip",
+      "archive_sha256": "a980e8fee68e04bac6531fc8d102a13abb2f346aa6ce81d25cdd44f864d8d54a"
+    },
+    {
+      "slug": "onnx-reference-gatherelements-rejects-subshapes.html",
+      "title": "ONNX ReferenceEvaluator rejects valid GatherElements subshapes",
+      "publication_date": "2026-09-09",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/onnx-reference-gatherelements-rejects-subshapes.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/onnx-reference-gatherelements-rejects-subshapes",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:share:7503828100607303681/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/onnx-reference-gatherelements-rejects-subshapes.zip",
+      "archive_sha256": "9af85caec996a5e82b57583f5341647298eb2e00215e751d9a1e4f17f4d2f589"
+    },
+    {
+      "slug": "cosine-and-layernorm-contract-failures.html",
+      "title": "When Cosine and LayerNorm Break Their Contracts",
+      "publication_date": "2026-09-07",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/cosine-and-layernorm-contract-failures.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/cosine-and-layernorm-contract-failures",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7502701334874308608/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/cosine-and-layernorm-contract-failures.zip",
+      "archive_sha256": "17f733d6f5b0d29a1ad28c72ce4b6461f9d1f3c1720b67aafb2768088ccbc5a1"
+    },
+    {
+      "slug": "research-acceleration-causal-contract.html",
+      "title": "Research acceleration needs an outcome-weighted evidence contract",
+      "publication_date": "2026-09-07",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/research-acceleration-causal-contract.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/research-acceleration-causal-contract",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:share:7503829774323290112/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/research-acceleration-causal-contract.zip",
+      "archive_sha256": "ea1eeb5df07f39e61b8dba679ed0e4f8976bc4dc9af5daecb7ec94a95542d7e7"
+    },
+    {
+      "slug": "formal-proof-statement-contract.html",
+      "title": "A machine-checked proof still needs a statement contract",
+      "publication_date": "2026-09-07",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/formal-proof-statement-contract.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/formal-proof-statement-contract",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:share:7503830128414879744/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/formal-proof-statement-contract.zip",
+      "archive_sha256": "30667dd3e6945f2abaf0a3f7bbee096ca03bf9da182043aafcac8af96e9a7f00"
+    },
+    {
+      "slug": "when-causal-attention-sees-the-future.html",
+      "title": "When Causal Attention Sees the Future",
+      "publication_date": "2026-09-07",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/when-causal-attention-sees-the-future.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/when-causal-attention-sees-the-future",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7502761599846428673/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/when-causal-attention-sees-the-future.zip",
+      "archive_sha256": "d8a2cc6bb387f3a933410847eadfd9434c2571e50481ccf69707c0d782fd8fd7"
+    },
+    {
+      "slug": "onnx-reference-lpnormalization-p1-signed-sum.html",
+      "title": "ONNX reference LpNormalization uses a signed sum for p=1",
+      "publication_date": "2026-09-07",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/onnx-reference-lpnormalization-p1-signed-sum.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/onnx-reference-lpnormalization-p1-signed-sum",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7502699891941474304/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/onnx-reference-lpnormalization-p1-signed-sum.zip",
+      "archive_sha256": "224020bf61420cb8ee46fff47cc70405b51bda3e11212707a5bc5565afe1e1c0"
+    },
+    {
+      "slug": "onnx-groupnormalization-divisibility-doc.html",
+      "title": "ONNX GroupNormalization reverses channel/group divisibility in its documentation",
+      "publication_date": "2026-09-07",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/onnx-groupnormalization-divisibility-doc.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/onnx-groupnormalization-divisibility-doc",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:share:7503828577839251457/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/onnx-groupnormalization-divisibility-doc.zip",
+      "archive_sha256": "9b609448c347de4c6285e745f88ef588405a29d79eb459d9f6131d69d6610590"
+    },
+    {
+      "slug": "when-small-losses-and-gradients-disappear.html",
+      "title": "When Small Losses and Gradients Disappear",
+      "publication_date": "2026-09-07",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/when-small-losses-and-gradients-disappear.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/when-small-losses-and-gradients-disappear",
+      "zenodo": [],
+      "collection_zenodo": null,
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7502621454132424705/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/when-small-losses-and-gradients-disappear.zip",
+      "archive_sha256": "d2614023beb88f977fad8be2bca9814173c7a5a1079456da93111d79e9a0fcd6"
+    },
+    {
+      "slug": "finite-inputs-nonfinite-activations-mlx-nntrainer.html",
+      "title": "Finite Inputs, Non-finite Results: An Activation Stability Audit",
+      "publication_date": "2026-09-07",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/finite-inputs-nonfinite-activations-mlx-nntrainer.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/finite-inputs-nonfinite-activations-mlx-nntrainer",
+      "zenodo": [],
+      "collection_zenodo": null,
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7502601926598098944/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/finite-inputs-nonfinite-activations-mlx-nntrainer.zip",
+      "archive_sha256": "023404d3e747f87e951848c6d33cdd614dbb1b28dc8b8d0105aac52e78305990"
+    },
+    {
+      "slug": "onnx-reference-logsoftmax-underflow.html",
+      "title": "ONNX reference LogSoftmax and cross-entropy return infinity for finite representable results",
+      "publication_date": "2026-09-06",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/onnx-reference-logsoftmax-underflow.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/onnx-reference-logsoftmax-underflow",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7502407746886135808/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/onnx-reference-logsoftmax-underflow.zip",
+      "archive_sha256": "3cf49a90a18201d6728382e95aaa86d5bda5a8963c54f8127e7d41e6e5c5285a"
+    },
+    {
+      "slug": "dinero-js-safe-intermediate-overflow.html",
+      "title": "Dinero.js misallocates safe integers after an unsafe intermediate product",
+      "publication_date": "2026-09-06",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/dinero-js-safe-intermediate-overflow.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/dinero-js-safe-intermediate-overflow",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7502311825464606720/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/dinero-js-safe-intermediate-overflow.zip",
+      "archive_sha256": "f714f458d71b030ba3c2bbd062cc4fa5e6075fd32061f739c6ed2c6eb49fd4b4"
+    },
+    {
+      "slug": "dinerojs-todecimal-non-decimal-base-guard.html",
+      "title": "Dinero.js toDecimal accepts non-decimal bases and returns plausible wrong strings",
+      "publication_date": "2026-09-06",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/dinerojs-todecimal-non-decimal-base-guard.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/dinerojs-todecimal-non-decimal-base-guard",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7502311825464606720/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/dinerojs-todecimal-non-decimal-base-guard.zip",
+      "archive_sha256": "3fe183ab6c1cd464d68702717081851a554072b229414ac196e3f2f4726fdc7d"
+    },
+    {
+      "slug": "zero-observed-false-positives-small-sample.html",
+      "title": "Zero Observed False Positives Is Not a Zero False-Positive Rate",
+      "publication_date": "2026-09-06",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/zero-observed-false-positives-small-sample.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/zero-observed-false-positives-small-sample",
+      "zenodo": [],
+      "collection_zenodo": null,
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7502433461769785344/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/zero-observed-false-positives-small-sample.zip",
+      "archive_sha256": "2d8f04cb611c57194259f8086c50053aec95e1abecabcd8e5276a01f36638b34"
+    },
+    {
+      "slug": "onnx-numerical-observatory-reproduced-snapshot.html",
+      "title": "When the reference also fails: a reproducible ONNX numerical snapshot",
+      "publication_date": "2026-09-06",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/onnx-numerical-observatory-reproduced-snapshot.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/onnx-numerical-observatory-reproduced-snapshot",
+      "zenodo": [],
+      "collection_zenodo": null,
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7502343487728631809/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/onnx-numerical-observatory-reproduced-snapshot.zip",
+      "archive_sha256": "8a9d4015a375e98d8756aa42f1b8e8603cf13c2bd1e0ce180547e8abffc364a6"
+    },
+    {
+      "slug": "nntrainer-reduce-mean-default-axis.html",
+      "title": "ReduceMean Without an Axis Could Not Initialize",
+      "publication_date": "2026-09-06",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/nntrainer-reduce-mean-default-axis.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/nntrainer-reduce-mean-default-axis",
+      "zenodo": [],
+      "collection_zenodo": null,
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7502340084277604352/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/nntrainer-reduce-mean-default-axis.zip",
+      "archive_sha256": "e3ac3d6b9c8c08f10ff7d52b4af460130bb87599de895e9cf1dc5d7888187a60"
+    },
+    {
+      "slug": "onnx-runtime-float16-quantizelinear-rounding.html",
+      "title": "ONNX Runtime float16 QuantizeLinear truncates instead of rounding",
+      "publication_date": "2026-09-05",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/onnx-runtime-float16-quantizelinear-rounding.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/onnx-runtime-float16-quantizelinear-rounding",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7502063498806611968/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/onnx-runtime-float16-quantizelinear-rounding.zip",
+      "archive_sha256": "7eeb0224f5bfbca8d8ae71ad6a74affcf13234e1eb1487ee00c563dee87e3cb4"
+    },
+    {
+      "slug": "moneyphp-largest-remainder-float-collapse.html",
+      "title": "MoneyPHP loses largest-remainder ordering above float precision",
+      "publication_date": "2026-09-05",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/moneyphp-largest-remainder-float-collapse.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/moneyphp-largest-remainder-float-collapse",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7502063498806611968/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/moneyphp-largest-remainder-float-collapse.zip",
+      "archive_sha256": "ce782646170f75d7a29c6e56e5c76af382711858f004ddf6a05cc8ff6ade5c7c"
+    },
+    {
+      "slug": "apache-fineract-nop-inverse-error.html",
+      "title": "Apache Fineract nop does not invert pmt for non-zero rates",
+      "publication_date": "2026-09-05",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/apache-fineract-nop-inverse-error.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/apache-fineract-nop-inverse-error",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7503091614219923456/",
+        "https://www.linkedin.com/feed/update/urn:li:activity:7502063498806611968/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/apache-fineract-nop-inverse-error.zip",
+      "archive_sha256": "10965386b3127dda05436e6a34899789288884ab81110e32ff4076df0ae8f3e4"
+    },
+    {
+      "slug": "swift-numerics-complex-reciprocal-contract.html",
+      "title": "When Reciprocal Multiplication Changes the Answer: Two Swift Numerics Contract Tests",
+      "publication_date": "2026-09-05",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/swift-numerics-complex-reciprocal-contract.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/swift-numerics-complex-reciprocal-contract",
+      "zenodo": [],
+      "collection_zenodo": null,
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7501847389041979392/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/swift-numerics-complex-reciprocal-contract.zip",
+      "archive_sha256": "8791c9471de71a0ea1c98445e9ae6e6934d4f606073a95529be43cbe53bcfc46"
+    },
+    {
+      "slug": "swift-numerics-hyperbolic-signs.html",
+      "title": "The Fast Path Put a Complex Number in the Wrong Quadrant: A Swift Numerics Sign Audit",
+      "publication_date": "2026-09-05",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/swift-numerics-hyperbolic-signs.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/swift-numerics-hyperbolic-signs",
+      "zenodo": [],
+      "collection_zenodo": null,
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7501864798410895360/",
+        "https://www.linkedin.com/feed/update/urn:li:activity:7501706011632771072/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/swift-numerics-hyperbolic-signs.zip",
+      "archive_sha256": "523b301c0ed6b84432a2d71439e09c3b17a921b4b81b334af997198014ec1a55"
+    },
+    {
+      "slug": "numerical-contracts-swift-numerics-nntrainer.html",
+      "title": "How Numerical Contracts Break: Five Cases in Swift Numerics and nntrainer",
+      "publication_date": "2026-09-05",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/numerical-contracts-swift-numerics-nntrainer.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/numerical-contracts-swift-numerics-nntrainer",
+      "zenodo": [],
+      "collection_zenodo": null,
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7502021012935434240/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/numerical-contracts-swift-numerics-nntrainer.zip",
+      "archive_sha256": "d914397229f1cb399fe267b159133a6bbb9260499fe2b2e8b5bad97b10966055"
+    },
+    {
+      "slug": "mlx-affine-quantization-doc-runtime-mismatch.html",
+      "title": "MLX affine quantization: a documentation/runtime contract mismatch",
+      "publication_date": "2026-09-04",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/mlx-affine-quantization-doc-runtime-mismatch.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-affine-quantization-doc-runtime-mismatch",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7501497104507400192/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/mlx-affine-quantization-doc-runtime-mismatch.zip",
+      "archive_sha256": "0f0f1a3778b675e90a4e8125a9eb6eacc39e57525ee6fa5b81ec8088379ba586"
+    },
+    {
+      "slug": "mathematical-invariants-across-ai-stacks.html",
+      "title": "What Simple Mathematical Invariants Reveal About AI Software",
+      "publication_date": "2026-09-04",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/mathematical-invariants-across-ai-stacks.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mathematical-invariants-across-ai-stacks",
+      "zenodo": [],
+      "collection_zenodo": null,
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7501510255651123200/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/mathematical-invariants-across-ai-stacks.zip",
+      "archive_sha256": "52a5a5dec471e6c04cc5f70f83b0407593765dbb6615b26dda15797885b7406c"
+    },
+    {
+      "slug": "kld-backward-state-mutation.html",
+      "title": "A KL-Divergence Backward Pass That Changes Its Own Target",
+      "publication_date": "2026-09-04",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/kld-backward-state-mutation.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/kld-backward-state-mutation",
+      "zenodo": [],
+      "collection_zenodo": null,
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7501517280263184384/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/kld-backward-state-mutation.zip",
+      "archive_sha256": "282f510ba8de71016e8e2f8d652cf10f917bf4848f93ac912e7e3e12256acef1"
+    },
+    {
+      "slug": "nntrainer-loss-scale-contract.html",
+      "title": "Four Loss Layers, One Missing Scale: A Mixed-Precision Contract Failure",
+      "publication_date": "2026-09-04",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/nntrainer-loss-scale-contract.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/nntrainer-loss-scale-contract",
+      "zenodo": [],
+      "collection_zenodo": null,
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7501564559007322112/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/nntrainer-loss-scale-contract.zip",
+      "archive_sha256": "a232e5022b81b7137254638261b86446e24de7d27bb09c857a6181c83662861a"
+    },
+    {
+      "slug": "fractional-projective-gap-harmonic-gaussian-chaoses.html",
+      "title": "Fractional Projective-Gap Inequalities for Harmonic Gaussian Chaoses",
+      "publication_date": "2026-09-04",
+      "authors": [
+        "Khamit Kadyrbekov",
+        "Daniyal Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/fractional-projective-gap-harmonic-gaussian-chaoses.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/fractional-projective-gap-harmonic-gaussian-chaoses",
+      "zenodo": [
+        "https://doi.org/10.5281/zenodo.22309754"
+      ],
+      "collection_zenodo": null,
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:share:7503830479956234240/"
+      ]
+    },
+    {
+      "slug": "swift-numerics-nearest-or-zero-doc-error.html",
+      "title": "A one-line contradiction in Swift Numerics' tie-to-zero documentation",
+      "publication_date": "2026-09-03",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/swift-numerics-nearest-or-zero-doc-error.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/swift-numerics-nearest-or-zero-doc-error",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7501997390271533056/",
+        "https://www.linkedin.com/feed/update/urn:li:activity:7501245334078128128/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/swift-numerics-nearest-or-zero-doc-error.zip",
+      "archive_sha256": "c9e483041ce57ddaaac7ff576397c0676751b2a6d10f43cc2f100c022985c83f"
+    },
+    {
+      "slug": "swift-numerics-double-root-one-ulp-counterexample.html",
+      "title": "An exact fifth root exposes a one-ULP accuracy gap in Swift Numerics",
+      "publication_date": "2026-09-03",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/swift-numerics-double-root-one-ulp-counterexample.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/swift-numerics-double-root-one-ulp-counterexample",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7501708458396712960/",
+        "https://www.linkedin.com/feed/update/urn:li:activity:7501707962625859584/",
+        "https://www.linkedin.com/feed/update/urn:li:activity:7501332609281716224/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/swift-numerics-double-root-one-ulp-counterexample.zip",
+      "archive_sha256": "02ab58e9deed0b1089dec8288490150d3779b346b19da714612c23b2a7109f85"
+    },
+    {
+      "slug": "nntrainer-uint8-affine-zero-point.html",
+      "title": "A scale-dependent zero point silently corrupts UINT8 affine quantization in nntrainer",
+      "publication_date": "2026-09-03",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/nntrainer-uint8-affine-zero-point.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/nntrainer-uint8-affine-zero-point",
+      "zenodo": [],
+      "collection_zenodo": null,
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7501930972641124352/",
+        "https://www.linkedin.com/feed/update/urn:li:activity:7501307096056111104/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/nntrainer-uint8-affine-zero-point.zip",
+      "archive_sha256": "631051ec07aba898932fcbf7f8e839a4f71044c20b41a1c1718eff19822cc7c4"
+    },
+    {
+      "slug": "where-mathematics-meets-ai-reliability.html",
+      "title": "Where Mathematics Meets AI Reliability: The Problems Frontier Labs Are Naming Themselves",
+      "publication_date": "2026-09-02",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/where-mathematics-meets-ai-reliability.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/where-mathematics-meets-ai-reliability",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7500728341201870848/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/where-mathematics-meets-ai-reliability.zip",
+      "archive_sha256": "5b2b202f205fae96ca931d3deeb1e7f775b201b5505ffb6b727fdf99d1a1b7d8"
+    },
+    {
+      "slug": "who-certifies-ai-generated-proofs.html",
+      "title": "AI Can Generate New Mathematics. Who Certifies the Proof?",
+      "publication_date": "2026-09-02",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/who-certifies-ai-generated-proofs.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/who-certifies-ai-generated-proofs",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7500885582739566592/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/who-certifies-ai-generated-proofs.zip",
+      "archive_sha256": "8a94bbfe7d8d550688f75ef940f630e336bf94168155bf8d1af31617c0d9d2de"
+    },
+    {
+      "slug": "uncertainty-contract-for-ai.html",
+      "title": "The Most Important AI Feature Is Not an Answer. It Is a Boundary.",
+      "publication_date": "2026-09-02",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/uncertainty-contract-for-ai.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/uncertainty-contract-for-ai",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:activity:7500900134432649216/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/uncertainty-contract-for-ai.zip",
+      "archive_sha256": "dfcce77c7430b1f534c9646a63ef464b945b9fde48615f54906ae9e09aaa250e"
+    },
+    {
+      "slug": "kondratiev-constant-left-open.html",
+      "title": "A Constant Left Open in 1973, and What It Took to Close It",
+      "publication_date": "2026-09-02",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/kondratiev-constant-left-open.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/kondratiev-constant-left-open",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:share:7503831150411366400/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/kondratiev-constant-left-open.zip",
+      "archive_sha256": "6b20b50c498f71a126a40d6c80d69083e6cdb5149e277233ad11b397adba7415"
+    },
+    {
+      "slug": "collatz-retraction-log.html",
+      "title": "A Retraction Log: Six Collatz Claims and What Killed Them",
+      "publication_date": "2026-09-02",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/collatz-retraction-log.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/collatz-retraction-log",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:share:7503831524157403136/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/collatz-retraction-log.zip",
+      "archive_sha256": "ad10ecaaaccdbc3a6215b3b5b4a6b9017808517074480bc018c979cb1ffd8a66"
+    },
+    {
+      "slug": "smoke-benchmark-reproduction.html",
+      "title": "The 60-Pair Smoke Benchmark, With the Data and the Command",
+      "publication_date": "2026-09-02",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/smoke-benchmark-reproduction.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/smoke-benchmark-reproduction",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:share:7503832354294177792/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/smoke-benchmark-reproduction.zip",
+      "archive_sha256": "fe928f12f8480f020426a8daddf0957c29c2175a5e28018b424a7ae45dbb0b64"
+    },
+    {
+      "slug": "chain-of-thought-observability.html",
+      "title": "Hidden reasoning is an observability problem",
+      "publication_date": "2026-09-02",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/chain-of-thought-observability.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/chain-of-thought-observability",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:share:7503833557262295040/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/chain-of-thought-observability.zip",
+      "archive_sha256": "f370379469dd4b7b2a44ad264d2509d883ce7d821bfba4500de55a484024e220"
+    },
+    {
+      "slug": "attribution-graphs-semantic-gap.html",
+      "title": "Attribution graphs still need a semantic contract",
+      "publication_date": "2026-09-02",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/attribution-graphs-semantic-gap.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/attribution-graphs-semantic-gap",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:share:7503833681409757185/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/attribution-graphs-semantic-gap.zip",
+      "archive_sha256": "207375179a755f014494f9506aa75dc0eacb2a0873c696a78d39f6fdc5092922"
+    },
+    {
+      "slug": "research-proof-certification.html",
+      "title": "Research mathematics needs proof assurance, not a single judge score",
+      "publication_date": "2026-09-02",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/research-proof-certification.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/research-proof-certification",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:share:7503833846920941568/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/research-proof-certification.zip",
+      "archive_sha256": "2e24f01a05bec09ff6e7f269b682eb926e0df7feccc5fa3ffa6c8ff0560f6cd7"
+    },
+    {
+      "slug": "chain-of-thought-monitorability.html",
+      "title": "Monitoring reasoning is a stability problem",
+      "publication_date": "2026-09-02",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/chain-of-thought-monitorability.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/chain-of-thought-monitorability",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:share:7503834054945914880/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/chain-of-thought-monitorability.zip",
+      "archive_sha256": "3e383ba5e68bdd98e9cabe87e8d7db0ffa64d924f7f4767740c2e4e35bb0678b"
+    },
+    {
+      "slug": "aletheia-research-math.html",
+      "title": "Research mathematics is a generator–verifier–reviser control loop",
+      "publication_date": "2026-09-02",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/aletheia-research-math.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/aletheia-research-math",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:share:7503834160244068352/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/aletheia-research-math.zip",
+      "archive_sha256": "dffc3b79d94dfe5e23d3f9db468bc3289c7f0233a0fe7962baf7aec5ba5aaaff"
+    },
+    {
+      "slug": "self-correction-decomposition.html",
+      "title": "Self-correction is two problems, not one",
+      "publication_date": "2026-09-02",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/self-correction-decomposition.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/self-correction-decomposition",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:share:7503834292385460224/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/self-correction-decomposition.zip",
+      "archive_sha256": "c95997c9d5f0320b5709d24bcafe0afebaa7c6290085cf59e0bb6927d81a9328"
+    },
+    {
+      "slug": "olympiad-to-research-gap.html",
+      "title": "A gold-level benchmark result is not a research reliability certificate",
+      "publication_date": "2026-09-02",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/olympiad-to-research-gap.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/olympiad-to-research-gap",
+      "zenodo": [],
+      "collection_zenodo": "https://doi.org/10.5281/zenodo.22683900",
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:share:7503834439735681024/"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/olympiad-to-research-gap.zip",
+      "archive_sha256": "5b35e2f5edb20750f3c2852ecf0876155fd94d404b05fc787ea26a39fdea1d34"
+    }
+  ]
+}
