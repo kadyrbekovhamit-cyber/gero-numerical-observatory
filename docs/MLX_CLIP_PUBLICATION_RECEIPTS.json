@@ -1,0 +1,50 @@
+{
+  "github": {
+    "platform": "GitHub",
+    "status": "published",
+    "url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/d5ecf3aa92f84adef36f23aaf8f31c032a2ed86f/audits/2026-09-10-mlx-clip-grad-norm-range/",
+    "commit": "d5ecf3aa92f84adef36f23aaf8f31c032a2ed86f",
+    "verification": "git push confirmed main and codex/publish-mlx-clip-grad-norm"
+  },
+  "gero": {
+    "platform": "GERO",
+    "status": "published",
+    "url": "https://www.gero.uz/research/articles/mlx-clip-grad-norm-range.html",
+    "deployment": "dpl_CJsNsxE1J7yRL7uXQmqUYqQxmbS7",
+    "deployment_url": "https://gero-gc9bsidlm-kadyrbekovhamit-cybers-projects.vercel.app",
+    "files": 529,
+    "unique_publications": 65,
+    "previous_files_preserved": 476,
+    "old_files_byte_identical": 470,
+    "initial_deployment": "dpl_otVKKhpom5e49m2aQqDm3pyzYsC7",
+    "final_update": "three publication-link/catalogue files changed; all 529 files preserved"
+  },
+  "linkedin": {
+    "platform": "LinkedIn",
+    "status": "published",
+    "url": "https://www.linkedin.com/feed/update/urn:li:share:7503839320303378432/",
+    "verification": "Post successful notification and View post link verified in authenticated UI"
+  },
+  "youtube": {
+    "video_id": "8X8Zt7vcmIA",
+    "url": "https://youtube.com/shorts/8X8Zt7vcmIA",
+    "title": "Clipping Erases a Finite Gradient | MLX",
+    "status": "published",
+    "processing": "checks completed; no issues found",
+    "language": "English (United States)",
+    "synthetic_disclosure": true,
+    "made_for_kids": false,
+    "paid_promotion": false,
+    "custom_thumbnail": "upload requires phone verification; not performed; original frame remains available",
+    "captions": "English (United States), added by you; six timed cues",
+    "public": true,
+    "confirmation": "Video published dialog verified",
+    "duration_seconds": 61.796333
+  },
+  "zenodo": {
+    "status": "not_uploaded",
+    "blocker": "Repeated HTTP 504 Gateway Time-out on the uploads page",
+    "new_record_or_doi_created": false,
+    "prepared_archive": "mlx-clip-grad-norm-range-2026-09-10.zip"
+  }
+}
