@@ -1,0 +1,100 @@
+{
+  "device": "Device(cpu, 0)",
+  "cpu_seconds": 0.00784,
+  "cases": [
+    {
+      "mode": "before",
+      "first_training": [
+        [
+          -0.0
+        ],
+        [
+          0.0
+        ]
+      ],
+      "first_state": "Infinity",
+      "second_training": [
+        [
+          -1.0
+        ],
+        [
+          1.0
+        ]
+      ],
+      "second_state": "Infinity",
+      "eval_output": [
+        [
+          -0.0
+        ],
+        [
+          0.0
+        ]
+      ],
+      "expected_first_state": 9216.875,
+      "expected_second_state": 8065.015625,
+      "expected_eval": [
+        -0.011135183881370128,
+        0.011135183881370128
+      ],
+      "checks": {
+        "first_training": false,
+        "second_training": true,
+        "first_state": false,
+        "second_state": false,
+        "eval": false
+      }
+    },
+    {
+      "mode": "after",
+      "first_training": [
+        [
+          -1.0
+        ],
+        [
+          1.0
+        ]
+      ],
+      "first_state": 9216.875,
+      "second_training": [
+        [
+          -1.0
+        ],
+        [
+          1.0
+        ]
+      ],
+      "second_state": 8065.015625,
+      "eval_output": [
+        [
+          -0.011135183274745941
+        ],
+        [
+          0.011135183274745941
+        ]
+      ],
+      "expected_first_state": 9216.875,
+      "expected_second_state": 8065.015625,
+      "expected_eval": [
+        -0.011135183881370128,
+        0.011135183881370128
+      ],
+      "checks": {
+        "first_training": true,
+        "second_training": true,
+        "first_state": true,
+        "second_state": true,
+        "eval": true
+      }
+    }
+  ],
+  "direct_statistics": {
+    "squares": [
+      36864.0,
+      36864.0
+    ],
+    "sum_squares": "Infinity",
+    "biased_variance": "Infinity",
+    "expected_biased_variance": 36864.0,
+    "note": "Sum overflows before division by two; training also fails."
+  }
+}

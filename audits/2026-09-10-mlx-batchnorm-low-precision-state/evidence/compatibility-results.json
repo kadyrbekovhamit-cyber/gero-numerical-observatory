@@ -1,0 +1,959 @@
+{
+  "version": "0.32.2",
+  "device": "Device(cpu, 0)",
+  "cpu_seconds": 0.023799999999999988,
+  "summary": {
+    "before": {
+      "checks": 29,
+      "failed": 18
+    },
+    "after": {
+      "checks": 33,
+      "failed": 0
+    }
+  },
+  "checks": [
+    {
+      "name": "upstream/test_batch_norm",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "atol": 0,
+      "rtol": 0
+    },
+    {
+      "name": "upstream/test_batch_norm_stats",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "atol": 0,
+      "rtol": 0
+    },
+    {
+      "name": "momentum/0.0/train",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        -0.0,
+        0.0
+      ],
+      "expected": [
+        -1.0,
+        1.0
+      ],
+      "atol": 0.001,
+      "rtol": 0
+    },
+    {
+      "name": "momentum/0.0/state",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        "NaN"
+      ],
+      "expected": [
+        1.0
+      ],
+      "atol": 0,
+      "rtol": 2e-06
+    },
+    {
+      "name": "momentum/0.0/next_state",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        "NaN"
+      ],
+      "expected": [
+        1.0
+      ],
+      "atol": 0,
+      "rtol": 2e-06
+    },
+    {
+      "name": "momentum/0.0/eval",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        "NaN",
+        "NaN"
+      ],
+      "expected": [
+        -0.9999950000374997,
+        0.9999950000374997
+      ],
+      "atol": 0,
+      "rtol": 3e-06
+    },
+    {
+      "name": "momentum/0.1/train",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        -0.0,
+        0.0
+      ],
+      "expected": [
+        -1.0,
+        1.0
+      ],
+      "atol": 0.001,
+      "rtol": 0
+    },
+    {
+      "name": "momentum/0.1/state",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        "Infinity"
+      ],
+      "expected": [
+        13108.1
+      ],
+      "atol": 0,
+      "rtol": 2e-06
+    },
+    {
+      "name": "momentum/0.1/next_state",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        "Infinity"
+      ],
+      "expected": [
+        11797.490000000002
+      ],
+      "atol": 0,
+      "rtol": 2e-06
+    },
+    {
+      "name": "momentum/0.1/eval",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        -0.0,
+        0.0
+      ],
+      "expected": [
+        -0.009206725417022795,
+        0.009206725417022795
+      ],
+      "atol": 0,
+      "rtol": 3e-06
+    },
+    {
+      "name": "momentum/0.125/train",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        -0.0,
+        0.0
+      ],
+      "expected": [
+        -1.0,
+        1.0
+      ],
+      "atol": 0.001,
+      "rtol": 0
+    },
+    {
+      "name": "momentum/0.125/state",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        "Infinity"
+      ],
+      "expected": [
+        16384.875
+      ],
+      "atol": 0,
+      "rtol": 2e-06
+    },
+    {
+      "name": "momentum/0.125/next_state",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        "Infinity"
+      ],
+      "expected": [
+        14337.015625
+      ],
+      "atol": 0,
+      "rtol": 2e-06
+    },
+    {
+      "name": "momentum/0.125/eval",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        -0.0,
+        0.0
+      ],
+      "expected": [
+        -0.008351617979500237,
+        0.008351617979500237
+      ],
+      "atol": 0,
+      "rtol": 3e-06
+    },
+    {
+      "name": "momentum/1.0/train",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        -0.0,
+        0.0
+      ],
+      "expected": [
+        -1.0,
+        1.0
+      ],
+      "atol": 0.001,
+      "rtol": 0
+    },
+    {
+      "name": "momentum/1.0/state",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        "Infinity"
+      ],
+      "expected": [
+        131072.0
+      ],
+      "atol": 0,
+      "rtol": 2e-06
+    },
+    {
+      "name": "momentum/1.0/next_state",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        "NaN"
+      ],
+      "expected": [
+        2.0
+      ],
+      "atol": 0,
+      "rtol": 2e-06
+    },
+    {
+      "name": "momentum/1.0/eval",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        "NaN",
+        "NaN"
+      ],
+      "expected": [
+        -0.7071050134262237,
+        0.7071050134262237
+      ],
+      "atol": 0,
+      "rtol": 3e-06
+    },
+    {
+      "name": "zero_variance/eps0.001",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "atol": 0,
+      "rtol": 0
+    },
+    {
+      "name": "zero_variance/eps1e-05",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "atol": 0,
+      "rtol": 0
+    },
+    {
+      "name": "zero_variance/eps1e-08",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        "NaN",
+        "NaN",
+        "NaN",
+        "NaN",
+        "NaN",
+        "NaN"
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "atol": 0,
+      "rtol": 0
+    },
+    {
+      "name": "zero_variance/eps1e-12",
+      "mode": "before",
+      "passed": false,
+      "actual": [
+        "NaN",
+        "NaN",
+        "NaN",
+        "NaN",
+        "NaN",
+        "NaN"
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "atol": 0,
+      "rtol": 0
+    },
+    {
+      "name": "invalid_training_shape/(2,)",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "atol": 0,
+      "rtol": 0
+    },
+    {
+      "name": "invalid_training_shape/(2, 1, 1, 1, 1)",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "atol": 0,
+      "rtol": 0
+    },
+    {
+      "name": "invalid_training_shape/(1, 2)",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "atol": 0,
+      "rtol": 0
+    },
+    {
+      "name": "checkpoint/mlx.core.float16/roundtrip",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "atol": 0,
+      "rtol": 0
+    },
+    {
+      "name": "checkpoint/mlx.core.float16/state_shape",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "atol": 0,
+      "rtol": 0
+    },
+    {
+      "name": "checkpoint/mlx.core.bfloat16/roundtrip",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "atol": 0,
+      "rtol": 0
+    },
+    {
+      "name": "checkpoint/mlx.core.bfloat16/state_shape",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "atol": 0,
+      "rtol": 0
+    },
+    {
+      "name": "upstream/test_batch_norm",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "atol": 0,
+      "rtol": 0
+    },
+    {
+      "name": "upstream/test_batch_norm_stats",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "atol": 0,
+      "rtol": 0
+    },
+    {
+      "name": "momentum/0.0/train",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -1.0,
+        1.0
+      ],
+      "expected": [
+        -1.0,
+        1.0
+      ],
+      "atol": 0.001,
+      "rtol": 0
+    },
+    {
+      "name": "momentum/0.0/state",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1.0
+      ],
+      "expected": [
+        1.0
+      ],
+      "atol": 0,
+      "rtol": 2e-06
+    },
+    {
+      "name": "momentum/0.0/next_state",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1.0
+      ],
+      "expected": [
+        1.0
+      ],
+      "atol": 0,
+      "rtol": 2e-06
+    },
+    {
+      "name": "momentum/0.0/eval",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -0.9999949932098389,
+        0.9999949932098389
+      ],
+      "expected": [
+        -0.9999950000374997,
+        0.9999950000374997
+      ],
+      "atol": 0,
+      "rtol": 3e-06
+    },
+    {
+      "name": "momentum/0.1/train",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -1.0,
+        1.0
+      ],
+      "expected": [
+        -1.0,
+        1.0
+      ],
+      "atol": 0.001,
+      "rtol": 0
+    },
+    {
+      "name": "momentum/0.1/state",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        13108.1005859375
+      ],
+      "expected": [
+        13108.1
+      ],
+      "atol": 0,
+      "rtol": 2e-06
+    },
+    {
+      "name": "momentum/0.1/next_state",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        11797.490234375
+      ],
+      "expected": [
+        11797.490000000002
+      ],
+      "atol": 0,
+      "rtol": 2e-06
+    },
+    {
+      "name": "momentum/0.1/eval",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -0.009206725284457207,
+        0.009206725284457207
+      ],
+      "expected": [
+        -0.009206725417022795,
+        0.009206725417022795
+      ],
+      "atol": 0,
+      "rtol": 3e-06
+    },
+    {
+      "name": "momentum/0.125/train",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -1.0,
+        1.0
+      ],
+      "expected": [
+        -1.0,
+        1.0
+      ],
+      "atol": 0.001,
+      "rtol": 0
+    },
+    {
+      "name": "momentum/0.125/state",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        16384.875
+      ],
+      "expected": [
+        16384.875
+      ],
+      "atol": 0,
+      "rtol": 2e-06
+    },
+    {
+      "name": "momentum/0.125/next_state",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        14337.015625
+      ],
+      "expected": [
+        14337.015625
+      ],
+      "atol": 0,
+      "rtol": 2e-06
+    },
+    {
+      "name": "momentum/0.125/eval",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -0.00835161842405796,
+        0.00835161842405796
+      ],
+      "expected": [
+        -0.008351617979500237,
+        0.008351617979500237
+      ],
+      "atol": 0,
+      "rtol": 3e-06
+    },
+    {
+      "name": "momentum/1.0/train",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -1.0,
+        1.0
+      ],
+      "expected": [
+        -1.0,
+        1.0
+      ],
+      "atol": 0.001,
+      "rtol": 0
+    },
+    {
+      "name": "momentum/1.0/state",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        131072.0
+      ],
+      "expected": [
+        131072.0
+      ],
+      "atol": 0,
+      "rtol": 2e-06
+    },
+    {
+      "name": "momentum/1.0/next_state",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        2.0
+      ],
+      "expected": [
+        2.0
+      ],
+      "atol": 0,
+      "rtol": 2e-06
+    },
+    {
+      "name": "momentum/1.0/eval",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -0.7071049809455872,
+        0.7071049809455872
+      ],
+      "expected": [
+        -0.7071050134262237,
+        0.7071050134262237
+      ],
+      "atol": 0,
+      "rtol": 3e-06
+    },
+    {
+      "name": "zero_variance/eps0.001",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "atol": 0,
+      "rtol": 0
+    },
+    {
+      "name": "zero_variance/eps1e-05",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "atol": 0,
+      "rtol": 0
+    },
+    {
+      "name": "zero_variance/eps1e-08",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "atol": 0,
+      "rtol": 0
+    },
+    {
+      "name": "zero_variance/eps1e-12",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "atol": 0,
+      "rtol": 0
+    },
+    {
+      "name": "invalid_training_shape/(2,)",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "atol": 0,
+      "rtol": 0
+    },
+    {
+      "name": "invalid_training_shape/(2, 1, 1, 1, 1)",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "atol": 0,
+      "rtol": 0
+    },
+    {
+      "name": "invalid_training_shape/(1, 2)",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "atol": 0,
+      "rtol": 0
+    },
+    {
+      "name": "precast_buffers/mlx.core.float16/promoted",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "atol": 0,
+      "rtol": 0
+    },
+    {
+      "name": "precast_buffers/mlx.core.float16/value",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        16384.875
+      ],
+      "expected": [
+        16384.875
+      ],
+      "atol": 0,
+      "rtol": 2e-06
+    },
+    {
+      "name": "checkpoint/mlx.core.float16/roundtrip",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "atol": 0,
+      "rtol": 0
+    },
+    {
+      "name": "checkpoint/mlx.core.float16/state_shape",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "atol": 0,
+      "rtol": 0
+    },
+    {
+      "name": "precast_buffers/mlx.core.bfloat16/promoted",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "atol": 0,
+      "rtol": 0
+    },
+    {
+      "name": "precast_buffers/mlx.core.bfloat16/value",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        16384.875
+      ],
+      "expected": [
+        16384.875
+      ],
+      "atol": 0,
+      "rtol": 2e-06
+    },
+    {
+      "name": "checkpoint/mlx.core.bfloat16/roundtrip",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "atol": 0,
+      "rtol": 0
+    },
+    {
+      "name": "checkpoint/mlx.core.bfloat16/state_shape",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "atol": 0,
+      "rtol": 0
+    }
+  ],
+  "remaining_limits": [
+    {
+      "dtype": "mlx.core.bfloat16",
+      "output": [
+        -0.0,
+        0.0
+      ],
+      "running_var": [
+        "Infinity"
+      ],
+      "note": "Outside repair scope: the variance exceeds float32 range."
+    },
+    {
+      "dtype": "mlx.core.float32",
+      "output": [
+        -0.0,
+        0.0
+      ],
+      "running_var": [
+        "Infinity"
+      ],
+      "note": "Outside repair scope: the variance exceeds float32 range."
+    }
+  ]
+}

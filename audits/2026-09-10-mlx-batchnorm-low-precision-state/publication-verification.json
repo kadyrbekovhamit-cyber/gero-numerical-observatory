@@ -1,0 +1,330 @@
+{
+  "checked_at_utc": "2026-09-10T17:59:40.049854+00:00",
+  "original_files": 31,
+  "original_manifest": {
+    "README.md": "3cb8bb57a041ec9a9729bc7f262f8bf1f072e43d0b60ef60770655ec9590ba22",
+    "SHA256SUMS.json": "86e9f51681caa120afc987b58c522486c05bca00a175eddd43a4b469fbdf51c2",
+    "artifact-validation-first.json": "6039957d9aef5f2a64b06522297bbc3023b062f7d8762a702a67cbc583dbf5c7",
+    "artifact-validation.json": "448a65f3723e264a95fa471f3b4916468d13de61deb6a2ee92a8b8a4daf26d58",
+    "batchnorm-fp32-statistics.patch": "c61410c1b14f49409cad6b7f79fcadb792c4ebbec91108436b4e9e48373f62ba",
+    "build_patch.py": "25cafcabab8bd164dd052cb1b6bc126aa0acca96dc8ba9508197b872415e0efd",
+    "compatibility-results.json": "d2f41d4ae59decd4d5a75b33c2752d184673a7342afa056cc1b9d12b920c09a9",
+    "compatibility.py": "f173f871b8436eb70cc2a0faead11376ec0ce11fc2eb23ca2f5528377c495e26",
+    "duplicate-comments.json": "4f1f2acfc6bba779e4b773e687e4332b231f00f2665aa7a3b81a02e515b5406d",
+    "duplicate-search.json": "0b76d9dc24ec8a0bfa5e99a2d2f14beca23a64a6118b67d223ece2f4a503c494",
+    "fetch_code_retry.py": "872f886d2ef767092ed731a0ecde7962074ea6cc8e74f8cc374a16e83e1bd034",
+    "fetch_comments.py": "2405721b3d6f2d632375c175b4a850fd309880958f35263118be4b0751d5bc90",
+    "fetch_sources.py": "4b318bd7048975d0aa3dcb57040546b8d54a0ebb1d90c873dde169d5c7555ff8",
+    "harness-notes.txt": "dd39a0aafb10ed092a202db5fb17f9d5b3f85fe18bbbfeca0e0664abadb4912a",
+    "installed-batchnorm-source.py": "296d35f419c2553b50fca08e40885a62a433071bebfaf1caaf91699b1d632f4f",
+    "patch-metadata.json": "e762428c5e8e6d4f34b1bf9dd8768b3c4ac77c97519ac34d9a5d532bc8238996",
+    "patched-normalization.py": "8bed1d294c7e8a1928ca487022f62dc7476eaec5fd1b6f6b5284ceed3dbfb609",
+    "probe.py": "5421fbfc3d5c90ea872ea595e31721171198b29c8a132221952d0301c8513d29",
+    "regression-first-results.json": "3885b933c206f41bede42bc108a7d48fe37025472dc8248a514c602e9c12f247",
+    "regression-results.json": "fda97d82c170d5de95120c2ed368f3e0dd29b97a5fb4bd573fb9c3299b0ab8d1",
+    "regression.py": "b8eaffbe9668c47ce83bb8a2f5e0caf642123e08b6a44a495ad0cd617c798a7b",
+    "source-metadata-first.json": "cf309139971d2d1dcb292347661223cc647de4f1270bc61c8bcbaf5f1948f8c8",
+    "source-metadata.json": "8b7f6ff53e8eb5e73e6778df5f231509ec0cfa698ee9324dd7e7ed24283e9e3a",
+    "upstream-mlx_ops.cpp": "7cf1107972ae6d8e3e663efa14a881f46091504822b5e7df69588111bead35bc",
+    "upstream-python_mlx_nn_layers_normalization.py": "0873ca425d5de6dd462d336ff45a2563f945abeebef3f5146bfc7c83af54be83",
+    "upstream-python_tests_test_nn.py": "bb4124dc2bedd2c62bb044f641e7923bbb01a37c13fe26e02e177c7cff8605bc",
+    "validate_artifacts.py": "7d1aa2891312df376d5827ac550373ea5a1b6c64a2c0dfa69057f319e6518102",
+    "variance-boundary-results.json": "ebdb52483c753e3e8ecc8ff54ebb86e4896b2fd638e927048f9347bcf84f5af9",
+    "variance_boundary-first.py": "4dd4e3f8411797ae7fff6d48870f0f78bbdc390dbdaab1645823d9babf5b5d3b",
+    "variance_boundary.py": "917cfe2b224e5771d92bb0d0930b14e373f336e9058536585691b119b88bc891",
+    "wheel-reproduction.json": "3ae46d175aead8a9cea5bdb3a1404173a95813966e9dc20faa1f7e32c2e282d9"
+  },
+  "numerical_tests_rerun": false,
+  "checks": [
+    {
+      "name": "original_hash/README.md",
+      "passed": true
+    },
+    {
+      "name": "original_hash/artifact-validation-first.json",
+      "passed": true
+    },
+    {
+      "name": "original_hash/artifact-validation.json",
+      "passed": true
+    },
+    {
+      "name": "original_hash/batchnorm-fp32-statistics.patch",
+      "passed": true
+    },
+    {
+      "name": "original_hash/build_patch.py",
+      "passed": true
+    },
+    {
+      "name": "original_hash/compatibility-results.json",
+      "passed": true
+    },
+    {
+      "name": "original_hash/compatibility.py",
+      "passed": true
+    },
+    {
+      "name": "original_hash/duplicate-comments.json",
+      "passed": true
+    },
+    {
+      "name": "original_hash/duplicate-search.json",
+      "passed": true
+    },
+    {
+      "name": "original_hash/fetch_code_retry.py",
+      "passed": true
+    },
+    {
+      "name": "original_hash/fetch_comments.py",
+      "passed": true
+    },
+    {
+      "name": "original_hash/fetch_sources.py",
+      "passed": true
+    },
+    {
+      "name": "original_hash/harness-notes.txt",
+      "passed": true
+    },
+    {
+      "name": "original_hash/installed-batchnorm-source.py",
+      "passed": true
+    },
+    {
+      "name": "original_hash/patch-metadata.json",
+      "passed": true
+    },
+    {
+      "name": "original_hash/patched-normalization.py",
+      "passed": true
+    },
+    {
+      "name": "original_hash/probe.py",
+      "passed": true
+    },
+    {
+      "name": "original_hash/regression-first-results.json",
+      "passed": true
+    },
+    {
+      "name": "original_hash/regression-results.json",
+      "passed": true
+    },
+    {
+      "name": "original_hash/regression.py",
+      "passed": true
+    },
+    {
+      "name": "original_hash/source-metadata-first.json",
+      "passed": true
+    },
+    {
+      "name": "original_hash/source-metadata.json",
+      "passed": true
+    },
+    {
+      "name": "original_hash/upstream-mlx_ops.cpp",
+      "passed": true
+    },
+    {
+      "name": "original_hash/upstream-python_mlx_nn_layers_normalization.py",
+      "passed": true
+    },
+    {
+      "name": "original_hash/upstream-python_tests_test_nn.py",
+      "passed": true
+    },
+    {
+      "name": "original_hash/validate_artifacts.py",
+      "passed": true
+    },
+    {
+      "name": "original_hash/variance-boundary-results.json",
+      "passed": true
+    },
+    {
+      "name": "original_hash/variance_boundary-first.py",
+      "passed": true
+    },
+    {
+      "name": "original_hash/variance_boundary.py",
+      "passed": true
+    },
+    {
+      "name": "original_hash/wheel-reproduction.json",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/README.md",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/SHA256SUMS.json",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/artifact-validation-first.json",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/artifact-validation.json",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/batchnorm-fp32-statistics.patch",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/build_patch.py",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/compatibility-results.json",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/compatibility.py",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/duplicate-comments.json",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/duplicate-search.json",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/fetch_code_retry.py",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/fetch_comments.py",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/fetch_sources.py",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/harness-notes.txt",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/installed-batchnorm-source.py",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/patch-metadata.json",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/patched-normalization.py",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/probe.py",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/regression-first-results.json",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/regression-results.json",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/regression.py",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/source-metadata-first.json",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/source-metadata.json",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/upstream-mlx_ops.cpp",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/upstream-python_mlx_nn_layers_normalization.py",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/upstream-python_tests_test_nn.py",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/validate_artifacts.py",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/variance-boundary-results.json",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/variance_boundary-first.py",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/variance_boundary.py",
+      "passed": true
+    },
+    {
+      "name": "copy_identical/wheel-reproduction.json",
+      "passed": true
+    },
+    {
+      "name": "regression/summary",
+      "passed": true
+    },
+    {
+      "name": "regression/before",
+      "passed": true
+    },
+    {
+      "name": "regression/after",
+      "passed": true
+    },
+    {
+      "name": "compatibility/summary",
+      "passed": true
+    },
+    {
+      "name": "compatibility/before",
+      "passed": true
+    },
+    {
+      "name": "compatibility/after",
+      "passed": true
+    },
+    {
+      "name": "patch_matches_tested_module",
+      "passed": true
+    },
+    {
+      "name": "publication_search/duplicate-batchnorm-fp16.json",
+      "passed": true
+    },
+    {
+      "name": "publication_search/duplicate-batchnorm-state.json",
+      "passed": true
+    },
+    {
+      "name": "publication_search/duplicate-batchnorm-issues.json",
+      "passed": true
+    },
+    {
+      "name": "publication_search/duplicate-batchnorm-prs.json",
+      "passed": true
+    }
+  ],
+  "failed": 0,
+  "scope": "Static artifact verification, source identity and patch application; original numerical results preserved."
+}

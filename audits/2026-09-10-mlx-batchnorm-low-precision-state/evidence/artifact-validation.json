@@ -1,0 +1,290 @@
+{
+  "total": 71,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "source_fetch_succeeded",
+      "passed": true
+    },
+    {
+      "name": "pinned_revision",
+      "passed": true
+    },
+    {
+      "name": "initial_dns_failure_preserved",
+      "passed": true
+    },
+    {
+      "name": "source_hash/python/mlx/nn/layers/normalization.py",
+      "passed": true
+    },
+    {
+      "name": "source_hash/python/tests/test_nn.py",
+      "passed": true
+    },
+    {
+      "name": "source_hash/mlx/ops.cpp",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/build_patch.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/compatibility.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/fetch_code_retry.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/fetch_comments.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/fetch_sources.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/installed-batchnorm-source.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/patched-normalization.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/probe.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/regression.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/upstream-python_mlx_nn_layers_normalization.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/upstream-python_tests_test_nn.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/validate_artifacts.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/variance_boundary-first.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/variance_boundary.py",
+      "passed": true
+    },
+    {
+      "name": "installed_class_matches_public",
+      "passed": true
+    },
+    {
+      "name": "only_stats_and_call_changed",
+      "passed": true
+    },
+    {
+      "name": "other_top_level_code_unchanged",
+      "passed": true
+    },
+    {
+      "name": "tested_source_matches_patch_metadata",
+      "passed": true
+    },
+    {
+      "name": "patch_added_lines",
+      "passed": true
+    },
+    {
+      "name": "git_apply/check",
+      "passed": true
+    },
+    {
+      "name": "git_apply/apply",
+      "passed": true
+    },
+    {
+      "name": "applied_patch_equals_tested_source",
+      "passed": true
+    },
+    {
+      "name": "regression/summary",
+      "passed": true
+    },
+    {
+      "name": "regression/real_cpu_wheel",
+      "passed": true
+    },
+    {
+      "name": "regression/cpu_under_limit",
+      "passed": true
+    },
+    {
+      "name": "regression/recount/before",
+      "passed": true
+    },
+    {
+      "name": "regression/recount/after",
+      "passed": true
+    },
+    {
+      "name": "compatibility/summary",
+      "passed": true
+    },
+    {
+      "name": "compatibility/real_cpu_wheel",
+      "passed": true
+    },
+    {
+      "name": "compatibility/cpu_under_limit",
+      "passed": true
+    },
+    {
+      "name": "compatibility/recount/before",
+      "passed": true
+    },
+    {
+      "name": "compatibility/recount/after",
+      "passed": true
+    },
+    {
+      "name": "192_forward_scenarios",
+      "passed": true
+    },
+    {
+      "name": "12_gradient_scenarios",
+      "passed": true
+    },
+    {
+      "name": "1020_numerical_assertions",
+      "passed": true
+    },
+    {
+      "name": "first_harness_mismatches_retained",
+      "passed": true
+    },
+    {
+      "name": "boundary_after_passes",
+      "passed": true
+    },
+    {
+      "name": "boundary_before_four_failures",
+      "passed": true
+    },
+    {
+      "name": "representable_variance_failure_recorded",
+      "passed": true
+    },
+    {
+      "name": "extreme_fp32_limitation_preserved",
+      "passed": true
+    },
+    {
+      "name": "four_searches_complete",
+      "passed": true
+    },
+    {
+      "name": "26_unique_search_hits",
+      "passed": true
+    },
+    {
+      "name": "31_targeted_comments",
+      "passed": true
+    },
+    {
+      "name": "report_link/compatibility-results.json",
+      "passed": true
+    },
+    {
+      "name": "report_link/probe.py",
+      "passed": true
+    },
+    {
+      "name": "report_link/wheel-reproduction.json",
+      "passed": true
+    },
+    {
+      "name": "report_link/variance-boundary-results.json",
+      "passed": true
+    },
+    {
+      "name": "report_link/variance_boundary.py",
+      "passed": true
+    },
+    {
+      "name": "report_link/batchnorm-fp32-statistics.patch",
+      "passed": true
+    },
+    {
+      "name": "report_link/source-metadata.json",
+      "passed": true
+    },
+    {
+      "name": "report_link/installed-batchnorm-source.py",
+      "passed": true
+    },
+    {
+      "name": "report_link/build_patch.py",
+      "passed": true
+    },
+    {
+      "name": "report_link/patched-normalization.py",
+      "passed": true
+    },
+    {
+      "name": "report_link/regression.py",
+      "passed": true
+    },
+    {
+      "name": "report_link/compatibility.py",
+      "passed": true
+    },
+    {
+      "name": "report_link/regression-results.json",
+      "passed": true
+    },
+    {
+      "name": "report_link/compatibility-results.json",
+      "passed": true
+    },
+    {
+      "name": "report_link/duplicate-search.json",
+      "passed": true
+    },
+    {
+      "name": "report_link/duplicate-comments.json",
+      "passed": true
+    },
+    {
+      "name": "report_link/regression-first-results.json",
+      "passed": true
+    },
+    {
+      "name": "report_link/harness-notes.txt",
+      "passed": true
+    },
+    {
+      "name": "report_link/variance_boundary-first.py",
+      "passed": true
+    },
+    {
+      "name": "report_link/source-metadata-first.json",
+      "passed": true
+    },
+    {
+      "name": "report_link/artifact-validation.json",
+      "passed": true
+    },
+    {
+      "name": "report_link/SHA256SUMS.json",
+      "passed": true
+    }
+  ]
+}

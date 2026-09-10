@@ -1,6 +1,8 @@
 # GERO Numerical Observatory
 
-[Publication catalogue](reports/README.md) · [Cross-platform publication records](https://www.gero.uz/research/publication-records.html). The catalogue contains 65 reports, notes, essays and preprints, ordered newest first. Individual Zenodo deposits and the earlier 45-item collection are recorded separately.
+[Publication catalogue](reports/README.md) · [Cross-platform publication records](https://www.gero.uz/research/publication-records.html). The catalogue contains 66 reports, notes, essays and preprints, ordered newest first. Individual Zenodo deposits and the earlier 45-item collection are recorded separately.
+
+- [MLX BatchNorm: one FP16 batch corrupts running variance](audits/2026-09-10-mlx-batchnorm-low-precision-state/) — 192 layer scenarios and 12 gradient scenarios; 102 main-suite failures before, zero after; 33 compatibility checks pass. The candidate prevents new corruption in the tested range, but does not restore already infinite state. CPU only; GPU and full-model performance untested.
 
 - [MLX division: extreme scales change a scale-invariant derivative](audits/2026-09-10-mlx-divide-scale-autodiff/) — 1328 native comparisons; 600 mismatches before, zero after; 1886 compatibility comparisons pass. Fresh sequential CPU runs match the original evidence. [Zenodo archive](https://doi.org/10.5281/zenodo.22692449) · [GERO](https://www.gero.uz/research/articles/mlx-divide-scale-autodiff.html) · [56-second video](https://youtube.com/shorts/YWUx2uGVIpo).
 

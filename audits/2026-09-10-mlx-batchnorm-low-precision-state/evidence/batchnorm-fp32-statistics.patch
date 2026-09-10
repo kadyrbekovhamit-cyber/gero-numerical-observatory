@@ -1,0 +1,22 @@
+--- a/python/mlx/nn/layers/normalization.py
++++ b/python/mlx/nn/layers/normalization.py
+@@ -366,6 +366,8 @@
+         Returns:
+             tuple: Tuple containing mean and variance.
+         """
++        if x.dtype in (mx.float16, mx.bfloat16):
++            x = x.astype(mx.float32)
+         reduction_axes = tuple(range(0, x.ndim - 1))
+ 
+         mean = mx.mean(x, axis=reduction_axes)
+@@ -409,5 +411,10 @@
+             mean = self.running_mean
+             var = self.running_var
+ 
++        input_dtype = x.dtype
+         x = (x - mean) * mx.rsqrt(var + self.eps)
++        if input_dtype in (mx.float16, mx.bfloat16) and (
++            self.training or not self.track_running_stats
++        ):
++            x = x.astype(input_dtype)
+         return (self.weight * x + self.bias) if "weight" in self else x

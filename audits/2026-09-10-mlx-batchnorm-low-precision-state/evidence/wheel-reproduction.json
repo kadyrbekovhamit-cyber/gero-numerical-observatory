@@ -1,0 +1,519 @@
+{
+  "version": "0.32.2",
+  "device": "Device(cpu, 0)",
+  "cpu_seconds": 0.03620800000000002,
+  "batch_norm": [
+    {
+      "dtype": "mlx.core.float16",
+      "stages": [
+        {
+          "amplitude": 256.0,
+          "output": [
+            [
+              -0.0
+            ],
+            [
+              0.0
+            ]
+          ],
+          "expected_output": [
+            [
+              -0.9999999999237061
+            ],
+            [
+              0.9999999999237061
+            ]
+          ],
+          "running_var": [
+            "Infinity"
+          ],
+          "expected_running_var": 16384.875,
+          "running_dtype": "mlx.core.float32",
+          "output_dtype": "mlx.core.float16"
+        },
+        {
+          "amplitude": 1.0,
+          "output": [
+            [
+              -1.0
+            ],
+            [
+              1.0
+            ]
+          ],
+          "expected_output": [
+            [
+              -0.9999950000374997
+            ],
+            [
+              0.9999950000374997
+            ]
+          ],
+          "running_var": [
+            "Infinity"
+          ],
+          "expected_running_var": 14337.015625,
+          "running_dtype": "mlx.core.float32",
+          "output_dtype": "mlx.core.float16"
+        },
+        {
+          "amplitude": 1.0,
+          "output": [
+            [
+              -1.0
+            ],
+            [
+              1.0
+            ]
+          ],
+          "expected_output": [
+            [
+              -0.9999950000374997
+            ],
+            [
+              0.9999950000374997
+            ]
+          ],
+          "running_var": [
+            "Infinity"
+          ],
+          "expected_running_var": 12545.138671875,
+          "running_dtype": "mlx.core.float32",
+          "output_dtype": "mlx.core.float16"
+        },
+        {
+          "amplitude": 1.0,
+          "output": [
+            [
+              -1.0
+            ],
+            [
+              1.0
+            ]
+          ],
+          "expected_output": [
+            [
+              -0.9999950000374997
+            ],
+            [
+              0.9999950000374997
+            ]
+          ],
+          "running_var": [
+            "Infinity"
+          ],
+          "expected_running_var": 10977.246337890625,
+          "running_dtype": "mlx.core.float32",
+          "output_dtype": "mlx.core.float16"
+        }
+      ],
+      "eval_output": [
+        [
+          -0.0
+        ],
+        [
+          0.0
+        ]
+      ],
+      "expected_eval": [
+        [
+          -0.009544502470230419
+        ],
+        [
+          0.009544502470230419
+        ]
+      ]
+    },
+    {
+      "dtype": "mlx.core.bfloat16",
+      "stages": [
+        {
+          "amplitude": 256.0,
+          "output": [
+            [
+              -1.0
+            ],
+            [
+              1.0
+            ]
+          ],
+          "expected_output": [
+            [
+              -0.9999999999237061
+            ],
+            [
+              0.9999999999237061
+            ]
+          ],
+          "running_var": [
+            16384.875
+          ],
+          "expected_running_var": 16384.875,
+          "running_dtype": "mlx.core.float32",
+          "output_dtype": "mlx.core.bfloat16"
+        },
+        {
+          "amplitude": 1.0,
+          "output": [
+            [
+              -1.0
+            ],
+            [
+              1.0
+            ]
+          ],
+          "expected_output": [
+            [
+              -0.9999950000374997
+            ],
+            [
+              0.9999950000374997
+            ]
+          ],
+          "running_var": [
+            14337.015625
+          ],
+          "expected_running_var": 14337.015625,
+          "running_dtype": "mlx.core.float32",
+          "output_dtype": "mlx.core.bfloat16"
+        },
+        {
+          "amplitude": 1.0,
+          "output": [
+            [
+              -1.0
+            ],
+            [
+              1.0
+            ]
+          ],
+          "expected_output": [
+            [
+              -0.9999950000374997
+            ],
+            [
+              0.9999950000374997
+            ]
+          ],
+          "running_var": [
+            12545.138671875
+          ],
+          "expected_running_var": 12545.138671875,
+          "running_dtype": "mlx.core.float32",
+          "output_dtype": "mlx.core.bfloat16"
+        },
+        {
+          "amplitude": 1.0,
+          "output": [
+            [
+              -1.0
+            ],
+            [
+              1.0
+            ]
+          ],
+          "expected_output": [
+            [
+              -0.9999950000374997
+            ],
+            [
+              0.9999950000374997
+            ]
+          ],
+          "running_var": [
+            10977.24609375
+          ],
+          "expected_running_var": 10977.246337890625,
+          "running_dtype": "mlx.core.float32",
+          "output_dtype": "mlx.core.bfloat16"
+        }
+      ],
+      "eval_output": [
+        [
+          -0.009544502943754196
+        ],
+        [
+          0.009544502943754196
+        ]
+      ],
+      "expected_eval": [
+        [
+          -0.009544502470230419
+        ],
+        [
+          0.009544502470230419
+        ]
+      ]
+    },
+    {
+      "dtype": "mlx.core.float32",
+      "stages": [
+        {
+          "amplitude": 256.0,
+          "output": [
+            [
+              -1.0
+            ],
+            [
+              1.0
+            ]
+          ],
+          "expected_output": [
+            [
+              -0.9999999999237061
+            ],
+            [
+              0.9999999999237061
+            ]
+          ],
+          "running_var": [
+            16384.875
+          ],
+          "expected_running_var": 16384.875,
+          "running_dtype": "mlx.core.float32",
+          "output_dtype": "mlx.core.float32"
+        },
+        {
+          "amplitude": 1.0,
+          "output": [
+            [
+              -0.9999949932098389
+            ],
+            [
+              0.9999949932098389
+            ]
+          ],
+          "expected_output": [
+            [
+              -0.9999950000374997
+            ],
+            [
+              0.9999950000374997
+            ]
+          ],
+          "running_var": [
+            14337.015625
+          ],
+          "expected_running_var": 14337.015625,
+          "running_dtype": "mlx.core.float32",
+          "output_dtype": "mlx.core.float32"
+        },
+        {
+          "amplitude": 1.0,
+          "output": [
+            [
+              -0.9999949932098389
+            ],
+            [
+              0.9999949932098389
+            ]
+          ],
+          "expected_output": [
+            [
+              -0.9999950000374997
+            ],
+            [
+              0.9999950000374997
+            ]
+          ],
+          "running_var": [
+            12545.138671875
+          ],
+          "expected_running_var": 12545.138671875,
+          "running_dtype": "mlx.core.float32",
+          "output_dtype": "mlx.core.float32"
+        },
+        {
+          "amplitude": 1.0,
+          "output": [
+            [
+              -0.9999949932098389
+            ],
+            [
+              0.9999949932098389
+            ]
+          ],
+          "expected_output": [
+            [
+              -0.9999950000374997
+            ],
+            [
+              0.9999950000374997
+            ]
+          ],
+          "running_var": [
+            10977.24609375
+          ],
+          "expected_running_var": 10977.246337890625,
+          "running_dtype": "mlx.core.float32",
+          "output_dtype": "mlx.core.float32"
+        }
+      ],
+      "eval_output": [
+        [
+          -0.009544502943754196
+        ],
+        [
+          0.009544502943754196
+        ]
+      ],
+      "expected_eval": [
+        [
+          -0.009544502470230419
+        ],
+        [
+          0.009544502470230419
+        ]
+      ]
+    },
+    {
+      "dtype": "mlx.core.float64",
+      "stages": [
+        {
+          "amplitude": 256.0,
+          "output": [
+            [
+              -0.9999999999237061
+            ],
+            [
+              0.9999999999237061
+            ]
+          ],
+          "expected_output": [
+            [
+              -0.9999999999237061
+            ],
+            [
+              0.9999999999237061
+            ]
+          ],
+          "running_var": [
+            16384.875
+          ],
+          "expected_running_var": 16384.875,
+          "running_dtype": "mlx.core.float64",
+          "output_dtype": "mlx.core.float64"
+        },
+        {
+          "amplitude": 1.0,
+          "output": [
+            [
+              -0.9999950000374997
+            ],
+            [
+              0.9999950000374997
+            ]
+          ],
+          "expected_output": [
+            [
+              -0.9999950000374997
+            ],
+            [
+              0.9999950000374997
+            ]
+          ],
+          "running_var": [
+            14337.015625
+          ],
+          "expected_running_var": 14337.015625,
+          "running_dtype": "mlx.core.float64",
+          "output_dtype": "mlx.core.float64"
+        },
+        {
+          "amplitude": 1.0,
+          "output": [
+            [
+              -0.9999950000374997
+            ],
+            [
+              0.9999950000374997
+            ]
+          ],
+          "expected_output": [
+            [
+              -0.9999950000374997
+            ],
+            [
+              0.9999950000374997
+            ]
+          ],
+          "running_var": [
+            12545.138671875
+          ],
+          "expected_running_var": 12545.138671875,
+          "running_dtype": "mlx.core.float64",
+          "output_dtype": "mlx.core.float64"
+        },
+        {
+          "amplitude": 1.0,
+          "output": [
+            [
+              -0.9999950000374997
+            ],
+            [
+              0.9999950000374997
+            ]
+          ],
+          "expected_output": [
+            [
+              -0.9999950000374997
+            ],
+            [
+              0.9999950000374997
+            ]
+          ],
+          "running_var": [
+            10977.246337890625
+          ],
+          "expected_running_var": 10977.246337890625,
+          "running_dtype": "mlx.core.float64",
+          "output_dtype": "mlx.core.float64"
+        }
+      ],
+      "eval_output": [
+        [
+          -0.009544502470230419
+        ],
+        [
+          0.009544502470230419
+        ]
+      ],
+      "expected_eval": [
+        [
+          -0.009544502470230419
+        ],
+        [
+          0.009544502470230419
+        ]
+      ]
+    }
+  ],
+  "group_norm_neighbor": [
+    {
+      "pytorch_compatible": false,
+      "output": [
+        [
+          [
+            -0.0,
+            0.0,
+            -0.0,
+            0.0
+          ]
+        ]
+      ]
+    },
+    {
+      "pytorch_compatible": true,
+      "output": [
+        [
+          [
+            -1.0,
+            1.0,
+            -1.0,
+            1.0
+          ]
+        ]
+      ]
+    }
+  ]
+}
