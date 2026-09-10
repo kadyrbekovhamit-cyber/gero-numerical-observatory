@@ -1,13 +1,28 @@
 {
   "counts": {
-    "total": 65,
-    "github_catalogues": 65,
-    "gero_articles": 65,
+    "total": 66,
+    "github_catalogues": 66,
+    "gero_articles": 66,
     "linkedin_covered": 65,
     "individual_zenodo": 22,
     "previous_collection_members": 45
   },
   "publications": [
+    {
+      "slug": "mlx-batchnorm-low-precision-state.html",
+      "title": "One FP16 Batch Corrupts MLX BatchNorm Running Variance",
+      "publication_date": "2026-09-10",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/mlx-batchnorm-low-precision-state.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-batchnorm-low-precision-state",
+      "zenodo": [],
+      "collection_zenodo": null,
+      "linkedin": [],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/mlx-batchnorm-low-precision-state-2026-09-10.zip",
+      "archive_sha256": "b1bc7d350aa734997fc760b6a51d12b14fefb2d0fe1b29a0b699d6eb3af8f9f4"
+    },
     {
       "slug": "mlx-clip-grad-norm-range.html",
       "title": "Finite Gradients Become Zero: MLX Gradient Clipping",

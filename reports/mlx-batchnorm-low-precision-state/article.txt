@@ -1,0 +1,336 @@
+One FP16 Batch Corrupts MLX BatchNorm Running Variance — GERO Research
+
+G
+
+GERO
+
+Graph Evaluation & Reliability Orchestrator
+
+Method
+
+Live lab
+
+Research
+
+Contact
+
+← Research index
+
+INDEPENDENT NUMERICAL AUDIT
+
+10 September 2026
+
+One FP16 Batch Corrupts MLX BatchNorm Running Variance
+
+A finite float16 batch makes the default running variance infinite, leaving later evaluation at zero. A CPU research patch changes 102 main-suite failures to zero, with 33 compatibility checks passing. Existing corrupted state is not restored.
+
+Xamit Kadirbekov
+
+Reproducible numerical experiments · GERO Research
+
+MLX 0.32.2
+
+BatchNorm state
+
+CPU only
+
+LOCALLY REPRODUCED
+
+192 layer + 12 gradient scenarios · 102 main-suite failures → 0 · 33 compatibility checks pass.
+
+Independent numerical audit by Xamit Kadirbekov, 10 September 2026. Recorded on Apple MLX 0.32.2, CPU. A finite float16 batch can make BatchNorm's default float32 running variance infinite. Later small training batches do not restore that state; evaluation then produces zeros.
+
+import mlx.core as mx
+import mlx.nn as nn
+mx.set_default_device(mx.cpu)
+bn = nn.BatchNorm(1, momentum=0.125, affine=False)
+x = mx.array([[-256.], [256.]], dtype=mx.float16)
+print(bn(x).tolist())             # observed: [[-0.0], [0.0]]
+print(bn.running_var.tolist())   # observed: [inf]
+small = mx.array([[-1.], [1.]], dtype=mx.float16)
+bn(small)
+print(bn.running_var.tolist())   # still [inf]
+bn.eval()
+print(bn(small).tolist())        # observed: [[-0.0], [0.0]]
+
+The correctly evaluated first training output is approximately
+
+[-1, 1]
+
+. With the stated momentum, running variance should become
+
+16384.875
+
+, then
+
+14337.015625
+
+after the small batch. Evaluation on that small batch should produce approximately
+
+[-0.008351618, 0.008351618]
+
+. These before/after values are preserved in the
+
+momentum/0.125/*
+
+entries of
+
+compatibility-results.json
+
+.
+
+The candidate prevents new corruption in the tested range. It does not repair statistics that are already infinite.
+
+No full-model quality loss, checkpoint recovery, security exploit or financial damage is claimed.
+
+Evidence and reproduction
+
+Original Russian audit
+
+, retained with its original pre-publication status.
+
+Probe
+
+and
+
+installed-wheel results
+
+.
+
+Seven-line research patch
+
+,
+
+patched module
+
+, and
+
+patch construction
+
+.
+
+Main results
+
+,
+
+compatibility results
+
+, and
+
+variance-boundary results
+
+.
+
+Portable instructions
+
+,
+
+original checksums
+
+, and
+
+publication artifact verification
+
+.
+
+The original files are preserved byte for byte under
+
+evidence/
+
+. Publication preparation checked their hashes, result counts and patch application without rerunning numerical experiments. The recorded numerical scripts explicitly use CPU, set numerical thread limits to one, and run sequentially. Their source modules execute on the installed MLX 0.32.2 binary runtime; this is not a complete build of current main.
+
+Mechanism
+
+The pinned
+
+BatchNorm implementation
+
+computes mean and variance in the input dtype. Conversion during the later running-state update cannot recover a value already lost to overflow.
+
+For inputs
+
+[-C, C]
+
+, the training variance is
+
+C²
+
+and the unbiased estimate used for running variance is
+
+2C²
+
+. With
+
+C = 256
+
+, these are
+
+65536
+
+and
+
+131072
+
+. They exceed float16's finite range, even though the intended float32 state update is finite:
+
+v1 = (1 - 1/8) * 1 + (1/8) * 131072 = 16384.875
+
+The next finite batch multiplies the corrupted state by
+
+7/8
+
+, retaining infinity. Small-batch training output can look normal again because training uses its current batch statistics. That does not establish recovery of the stored state used by evaluation.
+
+The boundary case
+
+[-192, 192]
+
+fails even though its true training variance
+
+36864
+
+fits float16. The reduction adds two squares before division, so
+
+36864 + 36864
+
+overflows first. The
+
+recorded boundary experiment
+
+and pinned
+
+variance source
+
+document this order of operations.
+
+Candidate repair and compatibility policy
+
+The candidate promotes float16/bfloat16 input to float32 before calculating mean and variance. Normalization uses those statistics; in training or without running-stat tracking, its result is cast back to the original low-precision dtype before affine parameters are applied.
+
+The separate biased/unbiased estimators, momentum formula, batch-size validation and frozen-parameter status remain. Float32/float64 arithmetic is unchanged. Evaluation with stored statistics preserves the original dtype promotion, including float32 output for float16 input with default float32 buffers.
+
+If a user has explicitly converted the state buffers to float16 or bfloat16, the next training call promotes those buffers to float32. This is an intentional compatibility choice that needs maintainer review. Four additional post-patch checks cover it.
+
+Recorded results
+
+Suite
+
+Checks before / after
+
+Failures before
+
+Failures after
+
+192 forward/state/eval scenarios and 12 gradient scenarios
+
+2760 / 2760
+
+102
+
+0
+
+Compatibility and parameter boundaries
+
+29 / 33
+
+18
+
+0
+
+Representable-variance boundary
+
+5 / 5
+
+4
+
+0
+
+The main suite's 2760 assertions include
+
+1020 numerical comparisons
+
+. Other assertions check dtypes, shapes, unchanged inputs, evaluation state and the absence of gradients for frozen statistics. They are not 2760 independent batches. The 102 baseline failures comprise 68 outputs, 24 running variances, four running means, two gamma gradients, two input gradients and two state updates during value-and-grad. There are 86 float16 and 16 bfloat16 failures; some are accuracy errors rather than overflow.
+
+The reference uses 60-digit scalar Decimal arithmetic on the already quantized inputs and analytical BatchNorm derivatives, with rounding matched to output and parameter dtypes. Tests cover NC, NLC and NHWC shapes; four real dtypes; multiple scales; affine and tracking modes; train-to-eval transitions; and nonuniform gamma/beta. Gradient checks include real
+
+nn.value_and_grad
+
+calls.
+
+Compatibility checks include the exact public
+
+test_batch_norm
+
+and
+
+test_batch_norm_stats
+
+methods, several momenta, small positive epsilon, invalid shapes, and save/load of small local NPZ checkpoints. The PyTorch-parity method was not run. Recorded process CPU times are test durations, not layer benchmarks.
+
+Prior work and limits
+
+The original bounded search examined 26 distinct issues/PRs and 31 comments.
+
+PR #3817
+
+fixes the running-variance estimator and singleton batches; that fix is already present in the audited source.
+
+Issue #1960
+
+concerns when state updates occur during value-and-grad. The state here does update, but receives infinity.
+
+Issue #4228
+
+documents related float16 overflow in InstanceNorm. This report establishes a BatchNorm counterexample and persistence into running state and evaluation. No exact duplicate was identified in the examined material; absolute novelty is not claimed.
+
+At inputs around
+
+2**80
+
+, variance can exceed even float32. The candidate still produces zeros/infinity in the preserved float32/bfloat16
+
+remaining_limits
+
+examples. Promoting bfloat16 to float32 does not solve that range problem. Standalone
+
+mx.mean
+
+/
+
+mx.var
+
+, GroupNorm, and other normalization layers are not repaired by this patch.
+
+GPU, compiled execution, distributed training, full-model training and large-array performance were not tested. Already corrupted statistics are not restored. The original harness correction and an initially incorrect hypothesis about the
+
+[-192,192]
+
+boundary are retained in the archive.
+
+Independent, AI-assisted research and publication preparation. This is a candidate patch for review, with no claim of upstream acceptance or production readiness.
+
+Licenses
+
+.
+
+Versioned evidence
+
+GitHub report, code and patch
+
+·
+
+Evidence ZIP
+
+ZIP SHA-256:
+
+b1bc7d350aa734997fc760b6a51d12b14fefb2d0fe1b29a0b699d6eb3af8f9f4
+
+GERO
+
+Independent mathematical assurance research.
+
+Edited by Xamit Kadirbekov · Tashkent ·
+
+Editorial standard
+
+RSS
