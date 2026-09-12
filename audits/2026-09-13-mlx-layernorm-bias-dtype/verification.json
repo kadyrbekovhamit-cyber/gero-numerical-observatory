@@ -1,0 +1,46 @@
+{
+  "verified_at": "2026-09-13 (Asia/Tashkent)",
+  "revision": "ce916dbbcaa88e433b6fd1e60a17f766d49c27fe",
+  "method": "Full CPU-only library built from clean git archive; candidate then changes only mlx/fast.cpp and relinks. No pre-existing MLX archive used for this publication rerun.",
+  "compiler": "Apple clang version 17.0.0 (clang-1700.0.13.5)",
+  "platform": "macOS-15.5-arm64-arm-64bit",
+  "configuration": {
+    "optimization": "-O0 -DNDEBUG",
+    "CPU": true,
+    "Metal": false,
+    "CUDA": false,
+    "build_jobs": 1,
+    "numerical_threads": 1,
+    "cpu_backend": "Accelerate",
+    "json_dependency": "3.11.3",
+    "fmt_dependency": "12.1.0",
+    "dependency_retrieval": "existing local upstream dependency copies; no fresh network download"
+  },
+  "files_compared_to_pinned_git": 946,
+  "source_mismatches_excluding_patch": [],
+  "checks": {
+    "before_complete": true,
+    "before_failures": true,
+    "before_same_as_isolated": true,
+    "after_complete": true,
+    "after_failures": true,
+    "after_same_as_isolated": true,
+    "16_controls_unchanged": true,
+    "source_changes_limited_to_fast": true,
+    "candidate_source_hash": true
+  },
+  "full_build_log": "full-build.log",
+  "full_build_completed": true,
+  "baseline": {
+    "checks": 385,
+    "failures": 106,
+    "returncode": 1
+  },
+  "candidate": {
+    "checks": 385,
+    "failures": 0,
+    "returncode": 0
+  },
+  "wheel": "Installed 0.32.2 import failed: no Metal device; no numerical operations executed",
+  "newer_public_source": "dfe17bafb23e66fe56596df532a497ab3611d0e5 branch read in browser; full newer revision not built"
+}

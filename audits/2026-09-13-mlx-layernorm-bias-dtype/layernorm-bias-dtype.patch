@@ -1,0 +1,11 @@
+--- a/mlx/fast.cpp
++++ b/mlx/fast.cpp
+@@ -336,7 +336,7 @@
+ 
+   auto out_type = (has_weight)
+       ? ((has_bias) ? result_type(x, *weight, *bias) : result_type(x, *weight))
+-      : x.dtype();
++      : ((has_bias) ? result_type(x, *bias) : x.dtype());
+   if (!issubdtype(out_type, floating)) {
+     std::ostringstream msg;
+     msg << "[layer_norm] Received unsupported type " << out_type << ".";

@@ -1,0 +1,28 @@
+{
+  "recorded_at_utc": "2026-09-12T19:01:33Z",
+  "audit_started_local": "2026-09-12",
+  "audit_completed_local": "2026-09-13",
+  "timezone": "Asia/Tashkent",
+  "observed_main_commit": "dfe17bafb23e66fe56596df532a497ab3611d0e5",
+  "commit_history_url": "https://github.com/ml-explore/mlx/commits/main/",
+  "file_url": "https://github.com/ml-explore/mlx/blob/dfe17bafb23e66fe56596df532a497ab3611d0e5/mlx/fast.cpp",
+  "method": "Read public GitHub file content in browser; read-only DOM extraction of displayed source.",
+  "displayed_file_latest_commit": "451dc8759703b8e3f3cde34251292edaff63a50f",
+  "file_character_count": 34595,
+  "layer_norm_character_count": 2993,
+  "layer_norm_start_line": 291,
+  "observed_out_type": "auto out_type = (has_weight) ? ((has_bias) ? result_type(x, *weight, *bias) : result_type(x, *weight)) : x.dtype();",
+  "observed_bias_cast": "(has_bias) ? astype(*bias, out_type, s) : array(0, out_type);",
+  "current_commit_full_build_executed": false,
+  "docs_url": "https://ml-explore.github.io/mlx/build/html/python/_autosummary/mlx.core.fast.layer_norm.html",
+  "docs_observations": {
+    "weight_optional_no_scaling_when_none": true,
+    "bias_optional_additive_offset": true,
+    "mixed_dtype_table_found": false
+  },
+  "retrieval_limits": [
+    "GitHub API unavailable from shell.",
+    "Some web fetches missed cache; public browser UI provided search results and pinned source.",
+    "Browser content export unsupported; no downloaded current-source file hash claimed."
+  ]
+}
