@@ -10,3 +10,6 @@ The article snapshot preserves the report. Verified platform records are added s
 
 - [GERO](https://www.gero.uz/research/articles/mlx-groupnorm-low-precision.html)
 - [Individual Zenodo record](https://doi.org/10.5281/zenodo.22725987)
+- [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7504529834346262529/)
+- [Hugging Face document corpus](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-groupnorm-low-precision.md)
+- [YouTube short video](https://www.youtube.com/shorts/j18LI5ljxsg)

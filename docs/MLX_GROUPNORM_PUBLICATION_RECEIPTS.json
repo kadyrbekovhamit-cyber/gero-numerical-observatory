@@ -1,0 +1,60 @@
+{
+  "zenodo": {
+    "status": "published",
+    "id": 22725987,
+    "url": "https://doi.org/10.5281/zenodo.22725987",
+    "public_zip_hash_verified": true
+  },
+  "github": {
+    "status": "published",
+    "commit": "b6eef1d",
+    "evidence_commit": "39a84f518678ded1dc20bbfd9ff559da14bfe460"
+  },
+  "youtube": {
+    "status": "published",
+    "id": "j18LI5ljxsg",
+    "url": "https://youtube.com/shorts/j18LI5ljxsg",
+    "captions": "English (United States), six timed cues; UI confirmed published",
+    "synthetic_disclosure": true,
+    "thumbnail": "automatic video frame"
+  },
+  "linkedin": {
+    "status": "published",
+    "url": "https://www.linkedin.com/feed/update/urn:li:share:7504529834346262529/",
+    "verification": "UI Post successful with View post permalink and full report text"
+  },
+  "huggingface": {
+    "status": "published",
+    "commit": "61303b072db3a6d736bf0404fabf43bc97cbf561",
+    "baseline_commit": "3c5fec519f0b9cecb2ff94fbe2a5fe98771f882d",
+    "documents": 67,
+    "existing_rows_byte_identical": 66,
+    "repository_files": 46,
+    "existing_files_unchanged": 36,
+    "files_verified": [
+      "mlx-groupnorm-low-precision.en.vtt",
+      "mlx-groupnorm-low-precision-video-source.zip",
+      "mlx-groupnorm-low-precision-2026-09-10.zip",
+      "CURRENT-CATALOG.md",
+      "README.md",
+      "mlx-groupnorm-low-precision.md",
+      "current-publication-catalog.json",
+      "mlx-groupnorm-low-precision.mp4",
+      "reports.jsonl",
+      "SHA256SUMS"
+    ],
+    "removed": [],
+    "verified_at": "2026-09-12T13:25:25.373329+00:00",
+    "url": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-groupnorm-low-precision.md"
+  },
+  "instagram": {
+    "status": "paused_by_user"
+  },
+  "gero": {
+    "status": "published",
+    "deployment": "dpl_9oKVJMUy1SLSvpTGVfRjffyPk9ZK",
+    "url": "https://www.gero.uz/research/articles/mlx-groupnorm-low-precision.html",
+    "preserved_previous_files": 578,
+    "current_files": 637
+  }
+}

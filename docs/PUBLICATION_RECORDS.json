@@ -3,9 +3,9 @@
     "total": 67,
     "github_catalogues": 67,
     "gero_articles": 67,
-    "linkedin_covered": 66,
+    "linkedin_covered": 67,
     "individual_zenodo": 40,
-    "huggingface_covered": 66,
+    "huggingface_covered": 67,
     "previous_collection_members": 45,
     "zenodo_document_coverage": 67
   },
@@ -23,9 +23,15 @@
         "https://doi.org/10.5281/zenodo.22725987"
       ],
       "collection_zenodo": null,
-      "linkedin": [],
-      "huggingface": [],
-      "youtube": [],
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:share:7504529834346262529/"
+      ],
+      "huggingface": [
+        "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-groupnorm-low-precision.md"
+      ],
+      "youtube": [
+        "https://www.youtube.com/shorts/j18LI5ljxsg"
+      ],
       "archive_url": "https://www.gero.uz/research/data/archival-packages/mlx-groupnorm-low-precision-2026-09-10.zip",
       "archive_sha256": "c13cd241d5f98bb91bc9f008cd8d5380f1ae1242dd0f3f3e422945a7b4cf8c29"
     },
