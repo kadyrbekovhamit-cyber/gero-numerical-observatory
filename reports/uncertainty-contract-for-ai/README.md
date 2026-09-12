@@ -17,6 +17,7 @@ This archive preserves the claims and limitations of the original report. It mak
 ## Publication records
 
 - [GERO](https://www.gero.uz/research/articles/uncertainty-contract-for-ai.html)
+- [Individual Zenodo record](https://doi.org/10.5281/zenodo.22729070)
 - [Earlier collection archive](https://doi.org/10.5281/zenodo.22683900)
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7500900134432649216/)
-- [Hugging Face document corpus](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/ORIGINAL-CATALOG.md)
+- [Hugging Face document](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/uncertainty-contract-for-ai.md)

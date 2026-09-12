@@ -16,6 +16,7 @@ This archive preserves the claims and limitations of the original report. It mak
 ## Publication records
 
 - [GERO](https://www.gero.uz/research/articles/kondratiev-constant-left-open.html)
+- [Individual Zenodo record](https://doi.org/10.5281/zenodo.22729077)
 - [Earlier collection archive](https://doi.org/10.5281/zenodo.22683900)
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503831150411366400/)
-- [Hugging Face document corpus](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/ORIGINAL-CATALOG.md)
+- [Hugging Face document](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/kondratiev-constant-left-open.md)

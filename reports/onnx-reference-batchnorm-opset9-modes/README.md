@@ -19,4 +19,4 @@ This archive preserves the claims and limitations of the original report. It mak
 - [Individual Zenodo record](https://doi.org/10.5281/zenodo.22695055)
 - [Earlier collection archive](https://doi.org/10.5281/zenodo.22683900)
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503827116036100096/)
-- [Hugging Face document corpus](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/ORIGINAL-CATALOG.md)
+- [Hugging Face document](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/onnx-reference-batchnorm-opset9-modes.md)
