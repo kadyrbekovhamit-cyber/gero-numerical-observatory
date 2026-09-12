@@ -1,0 +1,7 @@
+{
+  "source": "Observed tool output from retry_comment.py",
+  "number": 3613,
+  "success": false,
+  "error": "curl: (28) Connection timed out after 12005 milliseconds",
+  "effect": "One comment remains unread; the issue/PR body and other twelve comments were read."
+}

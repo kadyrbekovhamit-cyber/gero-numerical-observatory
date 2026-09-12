@@ -1,0 +1,38 @@
+{
+  "device": "Device(cpu, 0)",
+  "cpu_seconds": 0.0016100000000000003,
+  "input": [
+    -128.0,
+    128.0,
+    -128.0,
+    128.0
+  ],
+  "expected": [
+    -1.0,
+    1.0,
+    -1.0,
+    1.0
+  ],
+  "cases": [
+    {
+      "mode": "before",
+      "output": [
+        -0.0,
+        0.0,
+        -0.0,
+        0.0
+      ],
+      "dtype": "mlx.core.float16"
+    },
+    {
+      "mode": "after",
+      "output": [
+        -1.0,
+        1.0,
+        -1.0,
+        1.0
+      ],
+      "dtype": "mlx.core.float16"
+    }
+  ]
+}

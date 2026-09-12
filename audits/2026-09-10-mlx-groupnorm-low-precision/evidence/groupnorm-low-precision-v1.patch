@@ -1,0 +1,20 @@
+--- a/python/mlx/nn/layers/normalization.py
++++ b/python/mlx/nn/layers/normalization.py
+@@ -257,9 +257,14 @@
+         x = x.reshape(batch, -1, num_groups)
+ 
+         # Normalize
+-        means = mx.mean(x, axis=1, keepdims=True)
+-        var = mx.var(x, axis=1, keepdims=True)
+-        x = (x - means) * mx.rsqrt(var + self.eps)
++        if x.dtype in (mx.float16, mx.bfloat16):
++            x = mx.fast.layer_norm(
++                x.transpose(0, 2, 1), eps=self.eps, weight=None, bias=None
++            ).transpose(0, 2, 1)
++        else:
++            means = mx.mean(x, axis=1, keepdims=True)
++            var = mx.var(x, axis=1, keepdims=True)
++            x = (x - means) * mx.rsqrt(var + self.eps)
+         x = x.reshape(batch, *rest, dims)
+ 
+         return x

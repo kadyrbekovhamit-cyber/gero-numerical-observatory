@@ -1,0 +1,106 @@
+phase: numpy import
+phase: tests
+public test before
+membership before mlx.core.float16
+membership before mlx.core.bfloat16
+membership before mlx.core.float32
+membership before mlx.core.float64
+public test after
+membership after mlx.core.float16
+membership after mlx.core.bfloat16
+membership after mlx.core.float32
+membership after mlx.core.float64
+unchanged mlx.core.float16 False
+unchanged mlx.core.float16 True
+unchanged mlx.core.bfloat16 False
+unchanged mlx.core.bfloat16 True
+unchanged mlx.core.float32 False
+unchanged mlx.core.float32 True
+unchanged mlx.core.float64 False
+unchanged mlx.core.float64 True
+unchanged mlx.core.int32 False
+unchanged mlx.core.int32 True
+unchanged mlx.core.complex64 False
+unchanged mlx.core.complex64 True
+edge mlx.core.float16 empty
+edge mlx.core.float16 nan
+edge mlx.core.float16 inf
+edge mlx.core.bfloat16 empty
+edge mlx.core.bfloat16 nan
+edge mlx.core.bfloat16 inf
+{
+  "version": "0.32.2",
+  "device": "Device(cpu, 0)",
+  "cpu_seconds": 0.018102999999999994,
+  "summary": {
+    "before": {
+      "checks": 25,
+      "failed": 0
+    },
+    "after": {
+      "checks": 41,
+      "failed": 0
+    }
+  },
+  "remaining_limits": [
+    {
+      "kind": "variance_exceeds_float32",
+      "dtype": "mlx.core.bfloat16",
+      "compatible": false,
+      "output": [
+        -0.0,
+        0.0,
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "kind": "variance_exceeds_float32",
+      "dtype": "mlx.core.bfloat16",
+      "compatible": true,
+      "output": [
+        -0.0,
+        0.0,
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "kind": "variance_exceeds_float32",
+      "dtype": "mlx.core.float32",
+      "compatible": false,
+      "output": [
+        -0.0,
+        0.0,
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "kind": "variance_exceeds_float32",
+      "dtype": "mlx.core.float32",
+      "compatible": true,
+      "output": [
+        -0.0,
+        0.0,
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "kind": "unchanged_fast_path_float64_narrowing",
+      "output": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected": [
+        -1.264908534252813,
+        -0.6324542671264065,
+        0.6324542671264065,
+        1.264908534252813
+      ]
+    }
+  ]
+}

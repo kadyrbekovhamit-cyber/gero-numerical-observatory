@@ -1,0 +1,465 @@
+{
+  "version": "0.32.2",
+  "device": "Device(cpu, 0)",
+  "cpu_seconds": 0.004947999999999994,
+  "cases": [
+    {
+      "dtype": "mlx.core.float16",
+      "amplitude": 1.0,
+      "pytorch_compatible": false,
+      "output": [
+        -1.0,
+        1.0,
+        -1.0,
+        1.0
+      ],
+      "output_dtype": "mlx.core.float16",
+      "expected": [
+        -0.9999950000374997,
+        0.9999950000374997,
+        -0.9999950000374997,
+        0.9999950000374997
+      ]
+    },
+    {
+      "dtype": "mlx.core.float16",
+      "amplitude": 1.0,
+      "pytorch_compatible": true,
+      "output": [
+        -1.0,
+        1.0,
+        -1.0,
+        1.0
+      ],
+      "output_dtype": "mlx.core.float16",
+      "expected": [
+        -0.9999950000374997,
+        0.9999950000374997,
+        -0.9999950000374997,
+        0.9999950000374997
+      ]
+    },
+    {
+      "dtype": "mlx.core.float16",
+      "amplitude": 128.0,
+      "pytorch_compatible": false,
+      "output": [
+        -0.0,
+        0.0,
+        -0.0,
+        0.0
+      ],
+      "output_dtype": "mlx.core.float16",
+      "expected": [
+        -0.9999999996948243,
+        0.9999999996948243,
+        -0.9999999996948243,
+        0.9999999996948243
+      ]
+    },
+    {
+      "dtype": "mlx.core.float16",
+      "amplitude": 128.0,
+      "pytorch_compatible": true,
+      "output": [
+        -1.0,
+        1.0,
+        -1.0,
+        1.0
+      ],
+      "output_dtype": "mlx.core.float16",
+      "expected": [
+        -0.9999999996948243,
+        0.9999999996948243,
+        -0.9999999996948243,
+        0.9999999996948243
+      ]
+    },
+    {
+      "dtype": "mlx.core.float16",
+      "amplitude": 256.0,
+      "pytorch_compatible": false,
+      "output": [
+        -0.0,
+        0.0,
+        -0.0,
+        0.0
+      ],
+      "output_dtype": "mlx.core.float16",
+      "expected": [
+        -0.9999999999237061,
+        0.9999999999237061,
+        -0.9999999999237061,
+        0.9999999999237061
+      ]
+    },
+    {
+      "dtype": "mlx.core.float16",
+      "amplitude": 256.0,
+      "pytorch_compatible": true,
+      "output": [
+        -1.0,
+        1.0,
+        -1.0,
+        1.0
+      ],
+      "output_dtype": "mlx.core.float16",
+      "expected": [
+        -0.9999999999237061,
+        0.9999999999237061,
+        -0.9999999999237061,
+        0.9999999999237061
+      ]
+    },
+    {
+      "dtype": "mlx.core.bfloat16",
+      "amplitude": 1.0,
+      "pytorch_compatible": false,
+      "output": [
+        -1.0,
+        1.0,
+        -1.0,
+        1.0
+      ],
+      "output_dtype": "mlx.core.bfloat16",
+      "expected": [
+        -0.9999950000374997,
+        0.9999950000374997,
+        -0.9999950000374997,
+        0.9999950000374997
+      ]
+    },
+    {
+      "dtype": "mlx.core.bfloat16",
+      "amplitude": 1.0,
+      "pytorch_compatible": true,
+      "output": [
+        -1.0,
+        1.0,
+        -1.0,
+        1.0
+      ],
+      "output_dtype": "mlx.core.bfloat16",
+      "expected": [
+        -0.9999950000374997,
+        0.9999950000374997,
+        -0.9999950000374997,
+        0.9999950000374997
+      ]
+    },
+    {
+      "dtype": "mlx.core.bfloat16",
+      "amplitude": 128.0,
+      "pytorch_compatible": false,
+      "output": [
+        -1.0,
+        1.0,
+        -1.0,
+        1.0
+      ],
+      "output_dtype": "mlx.core.bfloat16",
+      "expected": [
+        -0.9999999996948243,
+        0.9999999996948243,
+        -0.9999999996948243,
+        0.9999999996948243
+      ]
+    },
+    {
+      "dtype": "mlx.core.bfloat16",
+      "amplitude": 128.0,
+      "pytorch_compatible": true,
+      "output": [
+        -1.0,
+        1.0,
+        -1.0,
+        1.0
+      ],
+      "output_dtype": "mlx.core.bfloat16",
+      "expected": [
+        -0.9999999996948243,
+        0.9999999996948243,
+        -0.9999999996948243,
+        0.9999999996948243
+      ]
+    },
+    {
+      "dtype": "mlx.core.bfloat16",
+      "amplitude": 256.0,
+      "pytorch_compatible": false,
+      "output": [
+        -1.0,
+        1.0,
+        -1.0,
+        1.0
+      ],
+      "output_dtype": "mlx.core.bfloat16",
+      "expected": [
+        -0.9999999999237061,
+        0.9999999999237061,
+        -0.9999999999237061,
+        0.9999999999237061
+      ]
+    },
+    {
+      "dtype": "mlx.core.bfloat16",
+      "amplitude": 256.0,
+      "pytorch_compatible": true,
+      "output": [
+        -1.0,
+        1.0,
+        -1.0,
+        1.0
+      ],
+      "output_dtype": "mlx.core.bfloat16",
+      "expected": [
+        -0.9999999999237061,
+        0.9999999999237061,
+        -0.9999999999237061,
+        0.9999999999237061
+      ]
+    },
+    {
+      "dtype": "mlx.core.float32",
+      "amplitude": 1.0,
+      "pytorch_compatible": false,
+      "output": [
+        -0.9999949932098389,
+        0.9999949932098389,
+        -0.9999949932098389,
+        0.9999949932098389
+      ],
+      "output_dtype": "mlx.core.float32",
+      "expected": [
+        -0.9999950000374997,
+        0.9999950000374997,
+        -0.9999950000374997,
+        0.9999950000374997
+      ]
+    },
+    {
+      "dtype": "mlx.core.float32",
+      "amplitude": 1.0,
+      "pytorch_compatible": true,
+      "output": [
+        -0.9999949932098389,
+        0.9999949932098389,
+        -0.9999949932098389,
+        0.9999949932098389
+      ],
+      "output_dtype": "mlx.core.float32",
+      "expected": [
+        -0.9999950000374997,
+        0.9999950000374997,
+        -0.9999950000374997,
+        0.9999950000374997
+      ]
+    },
+    {
+      "dtype": "mlx.core.float32",
+      "amplitude": 128.0,
+      "pytorch_compatible": false,
+      "output": [
+        -1.0,
+        1.0,
+        -1.0,
+        1.0
+      ],
+      "output_dtype": "mlx.core.float32",
+      "expected": [
+        -0.9999999996948243,
+        0.9999999996948243,
+        -0.9999999996948243,
+        0.9999999996948243
+      ]
+    },
+    {
+      "dtype": "mlx.core.float32",
+      "amplitude": 128.0,
+      "pytorch_compatible": true,
+      "output": [
+        -1.0,
+        1.0,
+        -1.0,
+        1.0
+      ],
+      "output_dtype": "mlx.core.float32",
+      "expected": [
+        -0.9999999996948243,
+        0.9999999996948243,
+        -0.9999999996948243,
+        0.9999999996948243
+      ]
+    },
+    {
+      "dtype": "mlx.core.float32",
+      "amplitude": 256.0,
+      "pytorch_compatible": false,
+      "output": [
+        -1.0,
+        1.0,
+        -1.0,
+        1.0
+      ],
+      "output_dtype": "mlx.core.float32",
+      "expected": [
+        -0.9999999999237061,
+        0.9999999999237061,
+        -0.9999999999237061,
+        0.9999999999237061
+      ]
+    },
+    {
+      "dtype": "mlx.core.float32",
+      "amplitude": 256.0,
+      "pytorch_compatible": true,
+      "output": [
+        -1.0,
+        1.0,
+        -1.0,
+        1.0
+      ],
+      "output_dtype": "mlx.core.float32",
+      "expected": [
+        -0.9999999999237061,
+        0.9999999999237061,
+        -0.9999999999237061,
+        0.9999999999237061
+      ]
+    },
+    {
+      "dtype": "mlx.core.float64",
+      "amplitude": 1.0,
+      "pytorch_compatible": false,
+      "output": [
+        -0.9999950000374997,
+        0.9999950000374997,
+        -0.9999950000374997,
+        0.9999950000374997
+      ],
+      "output_dtype": "mlx.core.float64",
+      "expected": [
+        -0.9999950000374997,
+        0.9999950000374997,
+        -0.9999950000374997,
+        0.9999950000374997
+      ]
+    },
+    {
+      "dtype": "mlx.core.float64",
+      "amplitude": 1.0,
+      "pytorch_compatible": true,
+      "output": [
+        -0.9999949932098389,
+        0.9999949932098389,
+        -0.9999949932098389,
+        0.9999949932098389
+      ],
+      "output_dtype": "mlx.core.float64",
+      "expected": [
+        -0.9999950000374997,
+        0.9999950000374997,
+        -0.9999950000374997,
+        0.9999950000374997
+      ]
+    },
+    {
+      "dtype": "mlx.core.float64",
+      "amplitude": 128.0,
+      "pytorch_compatible": false,
+      "output": [
+        -0.9999999996948243,
+        0.9999999996948243,
+        -0.9999999996948243,
+        0.9999999996948243
+      ],
+      "output_dtype": "mlx.core.float64",
+      "expected": [
+        -0.9999999996948243,
+        0.9999999996948243,
+        -0.9999999996948243,
+        0.9999999996948243
+      ]
+    },
+    {
+      "dtype": "mlx.core.float64",
+      "amplitude": 128.0,
+      "pytorch_compatible": true,
+      "output": [
+        -1.0,
+        1.0,
+        -1.0,
+        1.0
+      ],
+      "output_dtype": "mlx.core.float64",
+      "expected": [
+        -0.9999999996948243,
+        0.9999999996948243,
+        -0.9999999996948243,
+        0.9999999996948243
+      ]
+    },
+    {
+      "dtype": "mlx.core.float64",
+      "amplitude": 256.0,
+      "pytorch_compatible": false,
+      "output": [
+        -0.9999999999237061,
+        0.9999999999237061,
+        -0.9999999999237061,
+        0.9999999999237061
+      ],
+      "output_dtype": "mlx.core.float64",
+      "expected": [
+        -0.9999999999237061,
+        0.9999999999237061,
+        -0.9999999999237061,
+        0.9999999999237061
+      ]
+    },
+    {
+      "dtype": "mlx.core.float64",
+      "amplitude": 256.0,
+      "pytorch_compatible": true,
+      "output": [
+        -1.0,
+        1.0,
+        -1.0,
+        1.0
+      ],
+      "output_dtype": "mlx.core.float64",
+      "expected": [
+        -0.9999999999237061,
+        0.9999999999237061,
+        -0.9999999999237061,
+        0.9999999999237061
+      ]
+    }
+  ],
+  "gradient_example": {
+    "input": [
+      [
+        [
+          -256.0,
+          0.0,
+          512.0
+        ]
+      ]
+    ],
+    "forward": [
+      [
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    ],
+    "loss": 0.0,
+    "gamma_gradient": [
+      0.0,
+      -0.0,
+      -0.0
+    ]
+  }
+}

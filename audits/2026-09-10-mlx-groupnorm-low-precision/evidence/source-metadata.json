@@ -1,0 +1,24 @@
+{
+  "checked_at_utc": "2026-09-10T16:41:31Z",
+  "files": [
+    {
+      "path": "python/mlx/nn/layers/normalization.py",
+      "url": "https://raw.githubusercontent.com/ml-explore/mlx/81ba1c6a0e50a9268b931579c2d4f1158b9aab5a/python/mlx/nn/layers/normalization.py",
+      "reused_from": "/Users/khamit/Documents/math/software-audits/mlx-batchnorm-low-precision-state-2026-09-10/upstream-python_mlx_nn_layers_normalization.py",
+      "sha256": "0873ca425d5de6dd462d336ff45a2563f945abeebef3f5146bfc7c83af54be83"
+    },
+    {
+      "path": "python/tests/test_nn.py",
+      "url": "https://raw.githubusercontent.com/ml-explore/mlx/81ba1c6a0e50a9268b931579c2d4f1158b9aab5a/python/tests/test_nn.py",
+      "reused_from": "/Users/khamit/Documents/math/software-audits/mlx-batchnorm-low-precision-state-2026-09-10/upstream-python_tests_test_nn.py",
+      "sha256": "bb4124dc2bedd2c62bb044f641e7923bbb01a37c13fe26e02e177c7cff8605bc"
+    },
+    {
+      "path": "mlx/fast.cpp",
+      "url": "https://raw.githubusercontent.com/ml-explore/mlx/81ba1c6a0e50a9268b931579c2d4f1158b9aab5a/mlx/fast.cpp",
+      "sha256": "29b31f96bdb02afdadbde3f2bcf42cf458fc69385a908bbde9fc3a14d23de077"
+    }
+  ],
+  "errors": [],
+  "upstream_revision": "81ba1c6a0e50a9268b931579c2d4f1158b9aab5a"
+}

@@ -1,0 +1,1268 @@
+{
+  "version": "0.32.2",
+  "device": "Device(cpu, 0)",
+  "cpu_seconds": 0.018102999999999994,
+  "summary": {
+    "before": {
+      "checks": 25,
+      "failed": 0
+    },
+    "after": {
+      "checks": 41,
+      "failed": 0
+    }
+  },
+  "checks": [
+    {
+      "name": "public/test_group_norm",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "group_membership/mlx.core.float16/compatibleFalse",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        -1.0,
+        -1.0,
+        1.0,
+        1.0,
+        1.0,
+        -1.0
+      ],
+      "expected": [
+        -0.9999999777777785,
+        -0.9999950000374996,
+        0.999999911111123,
+        0.9999999777777785,
+        0.9999950000374996,
+        -0.999999911111123
+      ],
+      "rtol": 0.004,
+      "atol": 4e-06
+    },
+    {
+      "name": "group_membership/mlx.core.float16/compatibleTrue",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        -1.0,
+        1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        1.0
+      ],
+      "expected": [
+        -0.99998000059998,
+        0.99998000059998,
+        -0.99999980000006,
+        0.99999980000006,
+        -0.9999950000374996,
+        0.9999950000374996
+      ],
+      "rtol": 0.004,
+      "atol": 4e-06
+    },
+    {
+      "name": "group_membership/mlx.core.float16/modes_are_distinct",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "equal_membership/mlx.core.float16/G1",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        -0.8759765625,
+        -0.78662109375,
+        0.90625,
+        1.7978515625,
+        -0.6083984375,
+        -0.43017578125
+      ],
+      "expected": [
+        -0.87646484375,
+        -0.78759765625,
+        0.90625,
+        1.7978515625,
+        -0.609375,
+        -0.430908203125
+      ],
+      "rtol": 0.004,
+      "atol": 1e-06
+    },
+    {
+      "name": "equal_membership/mlx.core.float16/G6",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rtol": 0.004,
+      "atol": 1e-06
+    },
+    {
+      "name": "group_membership/mlx.core.bfloat16/compatibleFalse",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        -1.0,
+        -1.0,
+        1.0,
+        1.0,
+        1.0,
+        -1.0
+      ],
+      "expected": [
+        -0.9999999777777785,
+        -0.9999950000374996,
+        0.999999911111123,
+        0.9999999777777785,
+        0.9999950000374996,
+        -0.999999911111123
+      ],
+      "rtol": 0.025,
+      "atol": 2.5e-05
+    },
+    {
+      "name": "group_membership/mlx.core.bfloat16/compatibleTrue",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        -1.0,
+        1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        1.0
+      ],
+      "expected": [
+        -0.99998000059998,
+        0.99998000059998,
+        -0.99999980000006,
+        0.99999980000006,
+        -0.9999950000374996,
+        0.9999950000374996
+      ],
+      "rtol": 0.025,
+      "atol": 2.5e-05
+    },
+    {
+      "name": "group_membership/mlx.core.bfloat16/modes_are_distinct",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "equal_membership/mlx.core.bfloat16/G1",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        -0.87890625,
+        -0.7890625,
+        0.8984375,
+        1.7890625,
+        -0.609375,
+        -0.43359375
+      ],
+      "expected": [
+        -0.875,
+        -0.7890625,
+        0.90625,
+        1.796875,
+        -0.609375,
+        -0.431640625
+      ],
+      "rtol": 0.025,
+      "atol": 1e-06
+    },
+    {
+      "name": "equal_membership/mlx.core.bfloat16/G6",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rtol": 0.025,
+      "atol": 1e-06
+    },
+    {
+      "name": "group_membership/mlx.core.float32/compatibleFalse",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        -0.9999999403953552,
+        -0.9999949932098389,
+        0.9999998211860657,
+        0.9999999403953552,
+        0.9999949932098389,
+        -0.9999998211860657
+      ],
+      "expected": [
+        -0.9999999777777785,
+        -0.9999950000374996,
+        0.999999911111123,
+        0.9999999777777785,
+        0.9999950000374996,
+        -0.999999911111123
+      ],
+      "rtol": 5e-06,
+      "atol": 5e-09
+    },
+    {
+      "name": "group_membership/mlx.core.float32/compatibleTrue",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        -0.9999799728393555,
+        0.9999799728393555,
+        -0.9999997615814209,
+        0.9999997615814209,
+        -0.9999949932098389,
+        0.9999949932098389
+      ],
+      "expected": [
+        -0.99998000059998,
+        0.99998000059998,
+        -0.99999980000006,
+        0.99999980000006,
+        -0.9999950000374996,
+        0.9999950000374996
+      ],
+      "rtol": 5e-06,
+      "atol": 5e-09
+    },
+    {
+      "name": "group_membership/mlx.core.float32/modes_are_distinct",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "equal_membership/mlx.core.float32/G1",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        -0.8766996264457703,
+        -0.787543773651123,
+        0.9064181447029114,
+        1.797977089881897,
+        -0.6092319488525391,
+        -0.43092018365859985
+      ],
+      "expected": [
+        -0.8766996264457703,
+        -0.787543773651123,
+        0.9064181447029114,
+        1.797977089881897,
+        -0.6092319488525391,
+        -0.43092018365859985
+      ],
+      "rtol": 5e-06,
+      "atol": 1e-06
+    },
+    {
+      "name": "equal_membership/mlx.core.float32/G6",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rtol": 5e-06,
+      "atol": 1e-06
+    },
+    {
+      "name": "group_membership/mlx.core.float64/compatibleFalse",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        -0.9999999777777786,
+        -0.9999950000374997,
+        0.9999999111111229,
+        0.9999999777777786,
+        0.9999950000374997,
+        -0.9999999111111229
+      ],
+      "expected": [
+        -0.9999999777777785,
+        -0.9999950000374996,
+        0.999999911111123,
+        0.9999999777777785,
+        0.9999950000374996,
+        -0.999999911111123
+      ],
+      "rtol": 1e-11,
+      "atol": 1e-14
+    },
+    {
+      "name": "group_membership/mlx.core.float64/compatibleTrue",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        -0.9999799728393555,
+        0.9999799728393555,
+        -0.9999997615814209,
+        0.9999997615814209,
+        -0.9999949932098389,
+        0.9999949932098389
+      ],
+      "expected": [
+        -0.99998000059998,
+        0.99998000059998,
+        -0.99999980000006,
+        0.99999980000006,
+        -0.9999950000374996,
+        0.9999950000374996
+      ],
+      "rtol": 5e-06,
+      "atol": 5e-09
+    },
+    {
+      "name": "group_membership/mlx.core.float64/modes_are_distinct",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "equal_membership/mlx.core.float64/G1",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        -0.8766996517497014,
+        -0.7875437549615962,
+        0.9064182840124034,
+        1.7979772518934558,
+        -0.6092319613853857,
+        -0.43092016780917525
+      ],
+      "expected": [
+        -0.8766996264457703,
+        -0.787543773651123,
+        0.9064181447029114,
+        1.797977089881897,
+        -0.6092319488525391,
+        -0.43092018365859985
+      ],
+      "rtol": 5e-06,
+      "atol": 1e-06
+    },
+    {
+      "name": "equal_membership/mlx.core.float64/G6",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rtol": 5e-06,
+      "atol": 1e-06
+    },
+    {
+      "name": "float64_default_large_offset",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        -1.264908534252813,
+        -0.6324542671264065,
+        0.6324542671264065,
+        1.264908534252813
+      ],
+      "expected": [
+        -1.264908534252813,
+        -0.6324542671264065,
+        0.6324542671264065,
+        1.264908534252813
+      ],
+      "rtol": 1e-11,
+      "atol": 1e-13
+    },
+    {
+      "name": "negative_or_zero_eps/0.0",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "negative_or_zero_eps/-1.0",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "negative_or_zero_eps/-1e-30",
+      "mode": "before",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "public/test_group_norm",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "group_membership/mlx.core.float16/compatibleFalse",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -1.0,
+        -1.0,
+        1.0,
+        1.0,
+        1.0,
+        -1.0
+      ],
+      "expected": [
+        -0.9999999777777785,
+        -0.9999950000374996,
+        0.999999911111123,
+        0.9999999777777785,
+        0.9999950000374996,
+        -0.999999911111123
+      ],
+      "rtol": 0.004,
+      "atol": 4e-06
+    },
+    {
+      "name": "group_membership/mlx.core.float16/compatibleTrue",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -1.0,
+        1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        1.0
+      ],
+      "expected": [
+        -0.99998000059998,
+        0.99998000059998,
+        -0.99999980000006,
+        0.99999980000006,
+        -0.9999950000374996,
+        0.9999950000374996
+      ],
+      "rtol": 0.004,
+      "atol": 4e-06
+    },
+    {
+      "name": "group_membership/mlx.core.float16/modes_are_distinct",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "equal_membership/mlx.core.float16/G1",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -0.87646484375,
+        -0.78759765625,
+        0.90625,
+        1.7978515625,
+        -0.609375,
+        -0.430908203125
+      ],
+      "expected": [
+        -0.87646484375,
+        -0.78759765625,
+        0.90625,
+        1.7978515625,
+        -0.609375,
+        -0.430908203125
+      ],
+      "rtol": 0.004,
+      "atol": 1e-06
+    },
+    {
+      "name": "equal_membership/mlx.core.float16/G6",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rtol": 0.004,
+      "atol": 1e-06
+    },
+    {
+      "name": "group_membership/mlx.core.bfloat16/compatibleFalse",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -1.0,
+        -1.0,
+        1.0,
+        1.0,
+        1.0,
+        -1.0
+      ],
+      "expected": [
+        -0.9999999777777785,
+        -0.9999950000374996,
+        0.999999911111123,
+        0.9999999777777785,
+        0.9999950000374996,
+        -0.999999911111123
+      ],
+      "rtol": 0.025,
+      "atol": 2.5e-05
+    },
+    {
+      "name": "group_membership/mlx.core.bfloat16/compatibleTrue",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -1.0,
+        1.0,
+        -1.0,
+        1.0,
+        -1.0,
+        1.0
+      ],
+      "expected": [
+        -0.99998000059998,
+        0.99998000059998,
+        -0.99999980000006,
+        0.99999980000006,
+        -0.9999950000374996,
+        0.9999950000374996
+      ],
+      "rtol": 0.025,
+      "atol": 2.5e-05
+    },
+    {
+      "name": "group_membership/mlx.core.bfloat16/modes_are_distinct",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "equal_membership/mlx.core.bfloat16/G1",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -0.875,
+        -0.7890625,
+        0.90625,
+        1.796875,
+        -0.609375,
+        -0.431640625
+      ],
+      "expected": [
+        -0.875,
+        -0.7890625,
+        0.90625,
+        1.796875,
+        -0.609375,
+        -0.431640625
+      ],
+      "rtol": 0.025,
+      "atol": 1e-06
+    },
+    {
+      "name": "equal_membership/mlx.core.bfloat16/G6",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rtol": 0.025,
+      "atol": 1e-06
+    },
+    {
+      "name": "group_membership/mlx.core.float32/compatibleFalse",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -0.9999999403953552,
+        -0.9999949932098389,
+        0.9999998211860657,
+        0.9999999403953552,
+        0.9999949932098389,
+        -0.9999998211860657
+      ],
+      "expected": [
+        -0.9999999777777785,
+        -0.9999950000374996,
+        0.999999911111123,
+        0.9999999777777785,
+        0.9999950000374996,
+        -0.999999911111123
+      ],
+      "rtol": 5e-06,
+      "atol": 5e-09
+    },
+    {
+      "name": "group_membership/mlx.core.float32/compatibleTrue",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -0.9999799728393555,
+        0.9999799728393555,
+        -0.9999997615814209,
+        0.9999997615814209,
+        -0.9999949932098389,
+        0.9999949932098389
+      ],
+      "expected": [
+        -0.99998000059998,
+        0.99998000059998,
+        -0.99999980000006,
+        0.99999980000006,
+        -0.9999950000374996,
+        0.9999950000374996
+      ],
+      "rtol": 5e-06,
+      "atol": 5e-09
+    },
+    {
+      "name": "group_membership/mlx.core.float32/modes_are_distinct",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "equal_membership/mlx.core.float32/G1",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -0.8766996264457703,
+        -0.787543773651123,
+        0.9064181447029114,
+        1.797977089881897,
+        -0.6092319488525391,
+        -0.43092018365859985
+      ],
+      "expected": [
+        -0.8766996264457703,
+        -0.787543773651123,
+        0.9064181447029114,
+        1.797977089881897,
+        -0.6092319488525391,
+        -0.43092018365859985
+      ],
+      "rtol": 5e-06,
+      "atol": 1e-06
+    },
+    {
+      "name": "equal_membership/mlx.core.float32/G6",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rtol": 5e-06,
+      "atol": 1e-06
+    },
+    {
+      "name": "group_membership/mlx.core.float64/compatibleFalse",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -0.9999999777777786,
+        -0.9999950000374997,
+        0.9999999111111229,
+        0.9999999777777786,
+        0.9999950000374997,
+        -0.9999999111111229
+      ],
+      "expected": [
+        -0.9999999777777785,
+        -0.9999950000374996,
+        0.999999911111123,
+        0.9999999777777785,
+        0.9999950000374996,
+        -0.999999911111123
+      ],
+      "rtol": 1e-11,
+      "atol": 1e-14
+    },
+    {
+      "name": "group_membership/mlx.core.float64/compatibleTrue",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -0.9999799728393555,
+        0.9999799728393555,
+        -0.9999997615814209,
+        0.9999997615814209,
+        -0.9999949932098389,
+        0.9999949932098389
+      ],
+      "expected": [
+        -0.99998000059998,
+        0.99998000059998,
+        -0.99999980000006,
+        0.99999980000006,
+        -0.9999950000374996,
+        0.9999950000374996
+      ],
+      "rtol": 5e-06,
+      "atol": 5e-09
+    },
+    {
+      "name": "group_membership/mlx.core.float64/modes_are_distinct",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "equal_membership/mlx.core.float64/G1",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -0.8766996517497014,
+        -0.7875437549615962,
+        0.9064182840124034,
+        1.7979772518934558,
+        -0.6092319613853857,
+        -0.43092016780917525
+      ],
+      "expected": [
+        -0.8766996264457703,
+        -0.787543773651123,
+        0.9064181447029114,
+        1.797977089881897,
+        -0.6092319488525391,
+        -0.43092018365859985
+      ],
+      "rtol": 5e-06,
+      "atol": 1e-06
+    },
+    {
+      "name": "equal_membership/mlx.core.float64/G6",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rtol": 5e-06,
+      "atol": 1e-06
+    },
+    {
+      "name": "float64_default_large_offset",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        -1.264908534252813,
+        -0.6324542671264065,
+        0.6324542671264065,
+        1.264908534252813
+      ],
+      "expected": [
+        -1.264908534252813,
+        -0.6324542671264065,
+        0.6324542671264065,
+        1.264908534252813
+      ],
+      "rtol": 1e-11,
+      "atol": 1e-13
+    },
+    {
+      "name": "negative_or_zero_eps/0.0",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "negative_or_zero_eps/-1.0",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "negative_or_zero_eps/-1e-30",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "unmodified_path/mlx.core.float16/compatibleTrue",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "unmodified_path/mlx.core.bfloat16/compatibleTrue",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "unmodified_path/mlx.core.float32/compatibleFalse",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "unmodified_path/mlx.core.float32/compatibleTrue",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "unmodified_path/mlx.core.float64/compatibleFalse",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "unmodified_path/mlx.core.float64/compatibleTrue",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "unmodified_path/mlx.core.int32/compatibleFalse",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "unmodified_path/mlx.core.int32/compatibleTrue",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "unmodified_path/mlx.core.complex64/compatibleFalse",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "unmodified_path/mlx.core.complex64/compatibleTrue",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "edge_behavior/mlx.core.float16/empty",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "edge_behavior/mlx.core.float16/nan",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "edge_behavior/mlx.core.float16/inf",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "edge_behavior/mlx.core.bfloat16/empty",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "edge_behavior/mlx.core.bfloat16/nan",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "name": "edge_behavior/mlx.core.bfloat16/inf",
+      "mode": "after",
+      "passed": true,
+      "actual": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "rtol": 0,
+      "atol": 0
+    }
+  ],
+  "remaining_limits": [
+    {
+      "kind": "variance_exceeds_float32",
+      "dtype": "mlx.core.bfloat16",
+      "compatible": false,
+      "output": [
+        -0.0,
+        0.0,
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "kind": "variance_exceeds_float32",
+      "dtype": "mlx.core.bfloat16",
+      "compatible": true,
+      "output": [
+        -0.0,
+        0.0,
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "kind": "variance_exceeds_float32",
+      "dtype": "mlx.core.float32",
+      "compatible": false,
+      "output": [
+        -0.0,
+        0.0,
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "kind": "variance_exceeds_float32",
+      "dtype": "mlx.core.float32",
+      "compatible": true,
+      "output": [
+        -0.0,
+        0.0,
+        -0.0,
+        0.0
+      ]
+    },
+    {
+      "kind": "unchanged_fast_path_float64_narrowing",
+      "output": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected": [
+        -1.264908534252813,
+        -0.6324542671264065,
+        0.6324542671264065,
+        1.264908534252813
+      ]
+    }
+  ]
+}

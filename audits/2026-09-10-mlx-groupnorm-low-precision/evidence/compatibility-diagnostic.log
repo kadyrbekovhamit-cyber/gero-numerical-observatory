@@ -1,0 +1,25 @@
+phase: numpy import
+phase: tests
+public test before
+membership before mlx.core.float16
+membership before mlx.core.bfloat16
+membership before mlx.core.float32
+membership before mlx.core.float64
+public test after
+membership after mlx.core.float16
+membership after mlx.core.bfloat16
+membership after mlx.core.float32
+membership after mlx.core.float64
+unchanged mlx.core.float16 False
+unchanged mlx.core.float16 True
+unchanged mlx.core.bfloat16 False
+unchanged mlx.core.bfloat16 True
+unchanged mlx.core.float32 False
+unchanged mlx.core.float32 True
+unchanged mlx.core.float64 False
+unchanged mlx.core.float64 True
+unchanged mlx.core.int32 False
+unchanged mlx.core.int32 True
+unchanged mlx.core.complex64 False
+unchanged mlx.core.complex64 True
+edge mlx.core.float16 empty

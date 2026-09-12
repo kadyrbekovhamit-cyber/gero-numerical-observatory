@@ -1,0 +1,10 @@
+{
+  "source": "Observed local tool exit statuses; these runs produced no successful compatibility result.",
+  "runs": [
+    {"run": "compatibility first", "cpu_limit_seconds": 30, "exit_code": 152},
+    {"run": "compatibility diagnostic", "cpu_limit_seconds": 5, "exit_code": 152, "log": "compatibility-diagnostic.log"},
+    {"run": "isolated empty original", "cpu_limit_seconds": 2, "exit_code": 0, "log": "empty-before.log"},
+    {"run": "isolated empty prototype v1", "cpu_limit_seconds": 2, "exit_code": 152, "log": "empty-after-v1.log"},
+    {"run": "isolated empty final prototype", "cpu_limit_seconds": 2, "exit_code": 0, "log": "empty-after-final.log"}
+  ]
+}

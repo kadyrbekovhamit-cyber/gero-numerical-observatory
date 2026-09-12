@@ -1,0 +1,370 @@
+{
+  "total": 91,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "pinned_revision",
+      "passed": true
+    },
+    {
+      "name": "source_fetch_succeeded",
+      "passed": true
+    },
+    {
+      "name": "source_hash/python/mlx/nn/layers/normalization.py",
+      "passed": true
+    },
+    {
+      "name": "source_hash/python/tests/test_nn.py",
+      "passed": true
+    },
+    {
+      "name": "source_hash/mlx/fast.cpp",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/audit_common.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/build_patch.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/compatibility-first.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/compatibility.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/empty_probe.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/fetch_comments.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/fetch_sources.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/installed-groupnorm-source.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/patched-normalization-v1.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/patched-normalization.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/probe.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/regression.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/reproduce.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/retry_comment.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/upstream-python_mlx_nn_layers_normalization.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/upstream-python_tests_test_nn.py",
+      "passed": true
+    },
+    {
+      "name": "python_syntax/validate_artifacts.py",
+      "passed": true
+    },
+    {
+      "name": "installed_class_matches_public",
+      "passed": true
+    },
+    {
+      "name": "only_default_group_norm_changed",
+      "passed": true
+    },
+    {
+      "name": "other_top_level_code_unchanged",
+      "passed": true
+    },
+    {
+      "name": "empty_input_guard_present",
+      "passed": true
+    },
+    {
+      "name": "metadata_matches_tested_source",
+      "passed": true
+    },
+    {
+      "name": "git_apply/check",
+      "passed": true
+    },
+    {
+      "name": "git_apply/apply",
+      "passed": true
+    },
+    {
+      "name": "applied_patch_matches_tested_source",
+      "passed": true
+    },
+    {
+      "name": "regression/recorded_summary",
+      "passed": true
+    },
+    {
+      "name": "regression/real_cpu_wheel",
+      "passed": true
+    },
+    {
+      "name": "regression/successful_cpu_bounded",
+      "passed": true
+    },
+    {
+      "name": "regression/recount/before",
+      "passed": true
+    },
+    {
+      "name": "regression/recount/after",
+      "passed": true
+    },
+    {
+      "name": "compatibility/recorded_summary",
+      "passed": true
+    },
+    {
+      "name": "compatibility/real_cpu_wheel",
+      "passed": true
+    },
+    {
+      "name": "compatibility/successful_cpu_bounded",
+      "passed": true
+    },
+    {
+      "name": "compatibility/recount/before",
+      "passed": true
+    },
+    {
+      "name": "compatibility/recount/after",
+      "passed": true
+    },
+    {
+      "name": "332_forward_scenarios",
+      "passed": true
+    },
+    {
+      "name": "24_gradient_scenarios",
+      "passed": true
+    },
+    {
+      "name": "428_numerical_assertions",
+      "passed": true
+    },
+    {
+      "name": "first_tolerance_flag_retained",
+      "passed": true
+    },
+    {
+      "name": "v1_nonempty_pass_retained",
+      "passed": true
+    },
+    {
+      "name": "v1_source_differs_from_final",
+      "passed": true
+    },
+    {
+      "name": "empty_original_completed",
+      "passed": true
+    },
+    {
+      "name": "empty_v1_did_not_complete",
+      "passed": true
+    },
+    {
+      "name": "empty_final_completed",
+      "passed": true
+    },
+    {
+      "name": "bounded_failures_recorded",
+      "passed": true
+    },
+    {
+      "name": "five_limit_observations_preserved",
+      "passed": true
+    },
+    {
+      "name": "float64_limit_has_nonzero_reference",
+      "passed": true
+    },
+    {
+      "name": "paired_original_zero",
+      "passed": true
+    },
+    {
+      "name": "paired_after_correct",
+      "passed": true
+    },
+    {
+      "name": "four_searches_complete",
+      "passed": true
+    },
+    {
+      "name": "six_unique_search_hits",
+      "passed": true
+    },
+    {
+      "name": "twelve_comments_retrieved",
+      "passed": true
+    },
+    {
+      "name": "one_comment_request_unavailable",
+      "passed": true
+    },
+    {
+      "name": "unavailable_comment_retry_documented",
+      "passed": true
+    },
+    {
+      "name": "search_limit_stated",
+      "passed": true
+    },
+    {
+      "name": "failed_prototype_stated",
+      "passed": true
+    },
+    {
+      "name": "report_link/wheel-reproduction.json",
+      "passed": true
+    },
+    {
+      "name": "report_link/paired-reproduction.json",
+      "passed": true
+    },
+    {
+      "name": "report_link/reproduce.py",
+      "passed": true
+    },
+    {
+      "name": "report_link/probe.py",
+      "passed": true
+    },
+    {
+      "name": "report_link/groupnorm-low-precision.patch",
+      "passed": true
+    },
+    {
+      "name": "report_link/source-metadata.json",
+      "passed": true
+    },
+    {
+      "name": "report_link/installed-groupnorm-source.py",
+      "passed": true
+    },
+    {
+      "name": "report_link/build_patch.py",
+      "passed": true
+    },
+    {
+      "name": "report_link/patched-normalization.py",
+      "passed": true
+    },
+    {
+      "name": "report_link/audit_common.py",
+      "passed": true
+    },
+    {
+      "name": "report_link/regression.py",
+      "passed": true
+    },
+    {
+      "name": "report_link/compatibility.py",
+      "passed": true
+    },
+    {
+      "name": "report_link/regression-results.json",
+      "passed": true
+    },
+    {
+      "name": "report_link/compatibility-results.json",
+      "passed": true
+    },
+    {
+      "name": "report_link/compatibility-final.log",
+      "passed": true
+    },
+    {
+      "name": "report_link/patched-normalization-v1.py",
+      "passed": true
+    },
+    {
+      "name": "report_link/groupnorm-low-precision-v1.patch",
+      "passed": true
+    },
+    {
+      "name": "report_link/regression-v1-results.json",
+      "passed": true
+    },
+    {
+      "name": "report_link/compatibility-diagnostic.log",
+      "passed": true
+    },
+    {
+      "name": "report_link/empty-before.log",
+      "passed": true
+    },
+    {
+      "name": "report_link/empty-after-v1.log",
+      "passed": true
+    },
+    {
+      "name": "report_link/empty-after-final.log",
+      "passed": true
+    },
+    {
+      "name": "report_link/bounded-failures.json",
+      "passed": true
+    },
+    {
+      "name": "report_link/regression-first-results.json",
+      "passed": true
+    },
+    {
+      "name": "report_link/harness-notes.txt",
+      "passed": true
+    },
+    {
+      "name": "report_link/duplicate-search.json",
+      "passed": true
+    },
+    {
+      "name": "report_link/duplicate-comments.json",
+      "passed": true
+    },
+    {
+      "name": "report_link/duplicate-comments-first.json",
+      "passed": true
+    },
+    {
+      "name": "report_link/artifact-validation.json",
+      "passed": true
+    },
+    {
+      "name": "report_link/SHA256SUMS.json",
+      "passed": true
+    }
+  ]
+}
