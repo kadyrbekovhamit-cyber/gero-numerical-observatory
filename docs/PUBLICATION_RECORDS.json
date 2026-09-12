@@ -1,15 +1,34 @@
 {
   "counts": {
-    "total": 66,
-    "github_catalogues": 66,
-    "gero_articles": 66,
+    "total": 67,
+    "github_catalogues": 67,
+    "gero_articles": 67,
     "linkedin_covered": 66,
-    "individual_zenodo": 39,
+    "individual_zenodo": 40,
     "huggingface_covered": 66,
     "previous_collection_members": 45,
-    "zenodo_document_coverage": 66
+    "zenodo_document_coverage": 67
   },
   "publications": [
+    {
+      "slug": "mlx-groupnorm-low-precision.html",
+      "title": "Finite FP16 Inputs Become Zero in MLX GroupNorm",
+      "publication_date": "2026-09-12",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/mlx-groupnorm-low-precision.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-groupnorm-low-precision",
+      "zenodo": [
+        "https://doi.org/10.5281/zenodo.22725987"
+      ],
+      "collection_zenodo": null,
+      "linkedin": [],
+      "huggingface": [],
+      "youtube": [],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/mlx-groupnorm-low-precision-2026-09-10.zip",
+      "archive_sha256": "c13cd241d5f98bb91bc9f008cd8d5380f1ae1242dd0f3f3e422945a7b4cf8c29"
+    },
     {
       "slug": "mlx-batchnorm-low-precision-state.html",
       "title": "One FP16 Batch Corrupts MLX BatchNorm Running Variance",

@@ -1,0 +1,339 @@
+Finite FP16 Inputs Become Zero in MLX GroupNorm — GERO Research
+
+G
+
+GERO
+
+Graph Evaluation & Reliability Orchestrator
+
+Method
+
+Live lab
+
+Research
+
+Contact
+
+← Research index
+
+INDEPENDENT NUMERICAL AUDIT
+
+12 September 2026
+
+Finite FP16 Inputs Become Zero in MLX GroupNorm
+
+Standard GroupNorm returns zeros for finite FP16 inputs because a sum of squares overflows before division. A CPU research patch preserves channel grouping: 45 main-suite failures become zero, with 41 compatibility checks passing.
+
+Xamit Kadirbekov
+
+Reproducible numerical experiments · GERO Research
+
+MLX 0.32.2
+
+GroupNorm
+
+CPU only
+
+LOCALLY REPRODUCED
+
+332 forward + 24 gradient scenarios · 45 main-suite failures → 0 · 41 compatibility checks pass.
+
+A one-minute explanation
+
+Synthetic narration by fictional Alex Vector using macOS Samantha. Original diagrams;
+
+source ledger, script and renderer
+
+. AI-assisted preparation.
+
+Independent numerical audit by Xamit Kadirbekov. Original experiments: 10 September 2026. Publication: 12 September 2026. Tested Apple MLX 0.32.2 on CPU, using saved Python modules from revision
+
+81ba1c6a0e50a9268b931579c2d4f1158b9aab5a
+
+on the installed binary runtime. This is not a full build of current main.
+
+Four finite numbers
+
+import mlx.core as mx
+import mlx.nn as nn
+mx.set_default_device(mx.cpu)
+x = mx.array([[[-128., 128., -128., 128.]]], dtype=mx.float16)
+print(nn.GroupNorm(1, 4, affine=False)(x))
+# Recorded baseline: [[[0, 0, 0, 0]]]
+# Expected after FP16 rounding: [[[-1, 1, -1, 1]]]
+
+The mean is zero and the variance is 16384. Both the variance and the expected output fit in FP16. The intermediate sum of four squares is 65536, which overflows FP16 before division by four. With the default positive epsilon of 1e-5, the real-valued outputs differ slightly from ±1 but round to those values in FP16.
+
+Installed-wheel reproduction
+
+,
+
+paired before/after reproduction
+
+, and
+
+reproducer
+
+preserve the measurements. Input gradients and gamma gradients are also incorrect in recorded cases; this is not only a display-rounding issue.
+
+Preserve the intended channel groups
+
+Simply enabling
+
+pytorch_compatible=True
+
+is not a general fix. The two modes intentionally partition channels differently. For six channels and three groups, the standard mode groups channels
+
+(0,3), (1,4), (2,5)
+
+; the compatible mode groups
+
+(0,1), (2,3), (4,5)
+
+. The groups coincide for one group or one channel per group, but need not coincide otherwise.
+
+The
+
+candidate patch
+
+changes only
+
+GroupNorm._group_norm
+
+. For nonempty FP16/BF16 arrays, it keeps the existing group assignment, transposes the group axis, calls
+
+mx.fast.layer_norm
+
+with no internal affine parameters, and restores the axes. The pinned CPU fallback computes these statistics in float32. External gamma/beta, spatial axes, output shape and dtype are preserved in the checked cases.
+
+Float32/float64, integer/complex, empty inputs and the existing compatible path retain their previous branches. See the
+
+pinned MLX source
+
+,
+
+CPU fallback
+
+,
+
+source metadata
+
+, and
+
+tested patched module
+
+.
+
+Recorded validation
+
+The independent
+
+reference
+
+assigns channels to groups directly, rather than reproducing the implementation's reshape/transpose sequence. It computes scalar means and variances with 70-digit Decimal arithmetic from already quantized inputs. Analytical group-normalization derivatives check JVP, VJP, gamma and beta.
+
+Suite
+
+Recorded coverage
+
+Before
+
+After
+
+Main
+
+332 forward scenarios and 24 gradient scenarios; 1424 assertions per variant
+
+45 failures
+
+0
+
+Common compatibility
+
+25 checks per variant
+
+0
+
+0
+
+Additional unchanged-path and edge-case compatibility
+
+16 candidate checks
+
+Not counted
+
+0
+
+The candidate therefore passes 41 compatibility checks. Of the 1424 main assertions, 428 compare numerical results; the others check dtype, shape and input preservation. The 45 baseline failures comprise 35 outputs, four input VJPs, three gamma gradients and three input JVPs; 36 involve float16 and nine bfloat16. Some are accuracy failures, so this total is neither a count of overflows nor a count of separate defects.
+
+Coverage includes both grouping modes, multiple group counts, NC/NLC/NHWC shapes, four dtypes, affine on/off, unequal gamma/beta, constant and varied inputs, positive epsilon values, transposed spatial axes, reversed channels and broadcast batches. Compatibility includes the actual pinned upstream
+
+test_group_norm
+
+, group membership, empty arrays, NaN/Inf, unchanged dtype branches, and a large common shift in the standard float64 branch.
+
+Main result rows
+
+,
+
+compatibility result rows and remaining limits
+
+, and
+
+final compatibility log
+
+are preserved. Publication preparation checks hashes, row counts, Python syntax and exact patch application; it does not perform a new numerical run. The recorded CPU times are test-suite times, not model-performance benchmarks.
+
+Failed prototypes are retained
+
+The first patch passed the nonempty main suite but sent the empty
+
+(2,0,6)
+
+input into the fast path. That computation did not finish within a bounded CPU run. Adding the
+
+x.size
+
+guard restored the original empty result. Stopped compatibility/diagnostic runs are recorded under 30-, 5- and 2-second CPU limits; they are not passing tests and do not establish an infinite loop.
+
+The
+
+first patch
+
+,
+
+first patched module
+
+,
+
+bounded-run statuses
+
+and
+
+final empty-input log
+
+remain in the archive. An earlier test-harness comparison also needed an absolute cancellation tolerance for a tiny float32 derivative residual. That harness correction is documented in
+
+notes
+
+; it is not an MLX defect and did not require changing the numerical patch.
+
+Related reports and search limits
+
+The original bounded GitHub search and comments are preserved under
+
+evidence/duplicate-*.json
+
+. A publication-time repository search for GroupNorm on 12 September returned the same six issues/PRs. The previously unavailable comment on #3613 was retrieved and contains an acknowledgement, not this counterexample. The refreshed responses accompany this report as
+
+duplicate-search-current.json
+
+and
+
+duplicate-3613-comments.json
+
+.
+
+#3653
+
+validates shapes/group counts; this input satisfies those restrictions.
+
+#4312
+
+concerns negative epsilon; this example uses positive epsilon.
+
+#3819
+
+and
+
+#3613
+
+concern documentation or another loss.
+
+#2490
+
+discusses reduced-precision memory use.
+
+#3702
+
+was traced in its discussion to a third-party custom Metal kernel, while this result is in the standard MLX Python layer on CPU.
+
+mlx-examples #1434
+
+concerns epsilon differences in a model port.
+
+The numerical mechanism is related to the public
+
+FP16 InstanceNorm report #4228
+
+and the
+
+earlier BatchNorm audit
+
+. No exact duplicate of this standard GroupNorm counterexample was found in the reviewed material. This identifies another affected layer; it does not establish absolute novelty, upstream acceptance, or eligibility for a payment.
+
+Boundaries and separate follow-up
+
+The research patch does not extend the range of float32 statistics. Recorded bfloat16/float32 inputs near 2^80 can still produce zeros. GPU, compiled execution, large-array performance and full-model training were not tested. The extra transpose and fast path need review and performance measurements before production use.
+
+A separate float64 observation remains unfinished: the existing compatible fast path loses coordinate differences after a common shift of 2^40, producing zeros for offsets
+
+[-2,-1,1,2]
+
+instead of approximately
+
+[-1.264909,-0.632454,0.632454,1.264909]
+
+. The standard float64 path passes that check. This report does not supply a separately validated fix or completed duplicate search for that observation, and does not count it as a second completed audit.
+
+Reproduction and license
+
+See
+
+portable reproduction instructions
+
+, the
+
+original report
+
+,
+
+static publication verification
+
+, and
+
+package hashes
+
+. Original evidence is copied byte for byte. Rerun in a disposable directory because the audit scripts write result files beside themselves. Run commands sequentially on CPU with one numerical thread. No physical-core affinity is claimed.
+
+Report text and original diagrams: CC BY 4.0. MLX source and derivative patches retain MIT terms and copyright notices; see
+
+license details
+
+and
+
+MLX license
+
+. Independent, AI-assisted research and publication preparation. The installed MLX and upstream repository were not modified by this publication work.
+
+Versioned evidence
+
+GitHub report, code and patch
+
+·
+
+Evidence ZIP
+
+ZIP SHA-256:
+
+c13cd241d5f98bb91bc9f008cd8d5380f1ae1242dd0f3f3e422945a7b4cf8c29
+
+GERO
+
+Independent mathematical assurance research.
+
+Edited by Xamit Kadirbekov · Tashkent ·
+
+Editorial standard
+
+RSS
