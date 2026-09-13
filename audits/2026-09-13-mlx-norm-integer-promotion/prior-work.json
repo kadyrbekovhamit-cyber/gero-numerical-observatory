@@ -1,0 +1,193 @@
+{
+  "date": "2026-09-13",
+  "searches": [
+    {
+      "file": "search-integer-norm.json",
+      "count": 3,
+      "incomplete_results": false,
+      "items": [
+        {
+          "number": 2300,
+          "title": "[Experiment] ROCm backend",
+          "url": "https://github.com/ml-explore/mlx/pull/2300"
+        },
+        {
+          "number": 3404,
+          "title": "Feature: Quantized KV cache support in scaled_dot_product_attention (TurboQuant)",
+          "url": "https://github.com/ml-explore/mlx/issues/3404"
+        },
+        {
+          "number": 1049,
+          "title": "[FEATURE] in keras LayerNorm by default is apply to last dimension only",
+          "url": "https://github.com/ml-explore/mlx/issues/1049"
+        }
+      ]
+    },
+    {
+      "file": "search-integer-overflow.json",
+      "count": 4,
+      "incomplete_results": false,
+      "items": [
+        {
+          "number": 1779,
+          "title": "Feature-Request: Matrix Exponentiation",
+          "url": "https://github.com/ml-explore/mlx/issues/1779"
+        },
+        {
+          "number": 3968,
+          "title": "Add new_thread_unsafe_stream to the devices and streams docs",
+          "url": "https://github.com/ml-explore/mlx/pull/3968"
+        },
+        {
+          "number": 2300,
+          "title": "[Experiment] ROCm backend",
+          "url": "https://github.com/ml-explore/mlx/pull/2300"
+        },
+        {
+          "number": 1271,
+          "title": "Memory Leakage Issue in MLX 0.16",
+          "url": "https://github.com/ml-explore/mlx/issues/1271"
+        }
+      ]
+    },
+    {
+      "file": "search-linalg-norm.json",
+      "count": 5,
+      "incomplete_results": false,
+      "items": [
+        {
+          "number": 4166,
+          "title": "Fix linalg.norm(x, keepdims=True) not keeping dims",
+          "url": "https://github.com/ml-explore/mlx/pull/4166"
+        },
+        {
+          "number": 3749,
+          "title": "Add matrix_norm to array API namespace",
+          "url": "https://github.com/ml-explore/mlx/pull/3749"
+        },
+        {
+          "number": 3613,
+          "title": "Correct p-norm computation in triplet_loss",
+          "url": "https://github.com/ml-explore/mlx/pull/3613"
+        },
+        {
+          "number": 187,
+          "title": " linalg.norm",
+          "url": "https://github.com/ml-explore/mlx/pull/187"
+        },
+        {
+          "number": 184,
+          "title": "Draft PR for mx.linalg module",
+          "url": "https://github.com/ml-explore/mlx/pull/184"
+        }
+      ]
+    },
+    {
+      "file": "search-minimum-norm.json",
+      "count": 13,
+      "incomplete_results": false,
+      "items": [
+        {
+          "number": 1888,
+          "title": "Feature Request: Add Weight Normalization Support (weight_norm)",
+          "url": "https://github.com/ml-explore/mlx/issues/1888"
+        },
+        {
+          "number": 4259,
+          "title": "Would new fused ops be welcome in mx.fast?",
+          "url": "https://github.com/ml-explore/mlx/issues/4259"
+        },
+        {
+          "number": 4058,
+          "title": "Reject a negative max_norm in clip_grad_norm",
+          "url": "https://github.com/ml-explore/mlx/pull/4058"
+        },
+        {
+          "number": 4312,
+          "title": "Reject a negative eps in the normalization layers",
+          "url": "https://github.com/ml-explore/mlx/pull/4312"
+        },
+        {
+          "number": 3827,
+          "title": "Fixes an axis mismatch bug in matrix norm for case -1 and 1 ",
+          "url": "https://github.com/ml-explore/mlx/pull/3827"
+        },
+        {
+          "number": 3756,
+          "title": "Fix infinite norm negative axis mismatch bug for matrices with 2 or more dimensions.",
+          "url": "https://github.com/ml-explore/mlx/pull/3756"
+        },
+        {
+          "number": 3860,
+          "title": "[BUG] fp32 matmul silently defaults to TF32-class precision (`MLX_ENABLE_TF32=1`), undocumented on both backends",
+          "url": "https://github.com/ml-explore/mlx/issues/3860"
+        },
+        {
+          "number": 2246,
+          "title": "Change layernorms to two pass algorithm",
+          "url": "https://github.com/ml-explore/mlx/pull/2246"
+        },
+        {
+          "number": 1894,
+          "title": "Adds nuclear norm support",
+          "url": "https://github.com/ml-explore/mlx/pull/1894"
+        },
+        {
+          "number": 187,
+          "title": " linalg.norm",
+          "url": "https://github.com/ml-explore/mlx/pull/187"
+        },
+        {
+          "number": 336,
+          "title": "Additoinal losses",
+          "url": "https://github.com/ml-explore/mlx/pull/336"
+        },
+        {
+          "number": 286,
+          "title": "MLX Stable Diffusion Encoding/Decoding Input Image",
+          "url": "https://github.com/ml-explore/mlx/issues/286"
+        },
+        {
+          "number": 315,
+          "title": "Feature expand nn linear",
+          "url": "https://github.com/ml-explore/mlx/pull/315"
+        }
+      ]
+    },
+    {
+      "file": "search-norm-overflow.json",
+      "count": 2,
+      "incomplete_results": false,
+      "items": [
+        {
+          "number": 4230,
+          "title": "Stabilize reduced-precision InstanceNorm",
+          "url": "https://github.com/ml-explore/mlx/pull/4230"
+        },
+        {
+          "number": 1049,
+          "title": "[FEATURE] in keras LayerNorm by default is apply to last dimension only",
+          "url": "https://github.com/ml-explore/mlx/issues/1049"
+        }
+      ]
+    }
+  ],
+  "reviewed_prs": [
+    187,
+    184,
+    3749,
+    4166,
+    3827,
+    3756,
+    1894
+  ],
+  "issue_comments_reviewed": true,
+  "inline_review_comments_and_reviews_additionally_reviewed": [
+    187,
+    1894,
+    4166
+  ],
+  "finding": "No exact integer-norm input-promotion report identified in the reviewed material; exhaustive novelty and priority not established.",
+  "own_gero_catalogue_documents_checked": 71,
+  "own_topic_matches": 0
+}

@@ -1,0 +1,43 @@
+--- a/mlx/linalg.cpp
++++ b/mlx/linalg.cpp
+@@ -174,10 +174,11 @@
+ }
+ 
+ array norm(
+-    const array& a,
++    const array& input,
+     const std::optional<std::vector<int>>& axis /* = std::nullopt */,
+     bool keepdims /* = false */,
+     StreamOrDevice s /* = {} */) {
++  auto a = astype(input, at_least_float(input.dtype()), s);
+   if (!axis) {
+     auto out = norm(flatten(a, s), std::vector<int>{0}, keepdims, s);
+     if (keepdims) {
+@@ -197,11 +198,12 @@
+ }
+ 
+ array norm(
+-    const array& a,
++    const array& input,
+     const double ord,
+     const std::optional<std::vector<int>>& axis /* = std::nullopt */,
+     bool keepdims /* = false */,
+     StreamOrDevice s /* = {} */) {
++  auto a = astype(input, at_least_float(input.dtype()), s);
+   std::vector<int> ax;
+   if (!axis) {
+     ax.resize(a.ndim());
+@@ -220,11 +222,12 @@
+ }
+ 
+ array norm(
+-    const array& a,
++    const array& input,
+     const std::string& ord,
+     const std::optional<std::vector<int>>& axis /* = std::nullopt */,
+     bool keepdims /* = false */,
+     StreamOrDevice s /* = {} */) {
++  auto a = astype(input, at_least_float(input.dtype()), s);
+   std::vector<int> ax;
+   if (!axis) {
+     ax.resize(a.ndim());
