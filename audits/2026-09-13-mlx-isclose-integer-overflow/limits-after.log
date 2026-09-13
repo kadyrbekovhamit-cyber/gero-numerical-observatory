@@ -1,0 +1,3 @@
+int64 adjacent exact original=array(false, dtype=bool) naive_float64=array(true, dtype=bool) expected=false
+int32 adjacent original=array(false, dtype=bool) naive_float32=array(true, dtype=bool) expected=false
+uint64 wrap original=array(true, dtype=bool) expected=false (outside prototype correction)

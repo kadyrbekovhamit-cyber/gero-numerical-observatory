@@ -1,0 +1,13 @@
+{
+  "source_commit": "ce916dbbcaa88e433b6fd1e60a17f766d49c27fe",
+  "version_header": "0.32.3",
+  "inspected_main": "229f5b430df7926743c5b6ac62068cae2ebc8978",
+  "ops_cpp_identical_to_main": false,
+  "isclose_function_identical_to_main": true,
+  "baseline_ops_cpp_sha256": "4e8d2ebeb80c254cda39c4f5635430f5f285ac035f89eefad0ff2e5075b94864",
+  "main_ops_cpp_sha256": "7cf1107972ae6d8e3e663efa14a881f46091504822b5e7df69588111bead35bc",
+  "source_archive_sha256": "1739e3a3d1f3c6614f28eb68bd88f3a3f057a83d697268e5c4e41a2a38a4e63e",
+  "patch_scope": "CPU only; both inputs integral or bool and no wider than 32 bits; wider integers and other devices unchanged",
+  "compiler": "Apple clang version 17.0.0",
+  "numeric_threads": 1
+}

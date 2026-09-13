@@ -1,0 +1,26 @@
+--- a/mlx/ops.cpp
++++ b/mlx/ops.cpp
+@@ -2143,6 +2143,23 @@
+     double atol /* = 1e-8 */,
+     bool equal_nan /* = false */,
+     StreamOrDevice s /* = {}*/) {
++  // CPU prototype: float64 exactly represents <=32-bit integer inputs
++  // and their differences. Wider integers and other devices are unchanged.
++  auto small_integer = [](const array& x) {
++    return (issubdtype(x.dtype(), integer) || x.dtype() == bool_) &&
++        x.itemsize() <= 4;
++  };
++  if (to_stream(s).device == Device::cpu && small_integer(a) &&
++      small_integer(b)) {
++    auto af = astype(a, float64, s);
++    auto bf = astype(b, float64, s);
++    auto rhs = add(
++        array(atol, float64),
++        multiply(array(rtol, float64), abs(bf, s), s),
++        s);
++    return less_equal(abs(subtract(af, bf, s), s), rhs, s);
++  }
++
+   // |a - b| <= atol + rtol * |b|
+   auto rhs = add(array(atol), multiply(array(rtol), abs(b, s), s), s);
+   auto lhs = abs(subtract(a, b, s), s);

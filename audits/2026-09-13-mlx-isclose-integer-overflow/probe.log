@@ -1,0 +1,7 @@
+uint8 small gap a=array([0], dtype=uint8) b=array([1], dtype=uint8) rtol=0 atol=1 isclose=array([false], dtype=bool) allclose=array(false, dtype=bool)
+uint8 wrapped gap a=array([0], dtype=uint8) b=array([255], dtype=uint8) rtol=0 atol=1 isclose=array([true], dtype=bool) allclose=array(true, dtype=bool)
+int8 minimum a=array([-128], dtype=int8) b=array([0], dtype=int8) rtol=0 atol=0 isclose=array([true], dtype=bool) allclose=array(true, dtype=bool)
+int32 minimum a=array([-2147483648], dtype=int32) b=array([0], dtype=int32) rtol=0 atol=0 isclose=array([true], dtype=bool) allclose=array(true, dtype=bool)
+int8 near min a=array([-127], dtype=int8) b=array([-128], dtype=int8) rtol=0.01 atol=0 isclose=array([false], dtype=bool) allclose=array(false, dtype=bool)
+bool a=array([false], dtype=bool) b=array([true], dtype=bool) rtol=0 atol=1 isclose=array([true], dtype=bool) allclose=array(true, dtype=bool)
+batched solve=batched solve ERROR [take_along_axis] Indices of dimension 2 does not match array of dimension 1.

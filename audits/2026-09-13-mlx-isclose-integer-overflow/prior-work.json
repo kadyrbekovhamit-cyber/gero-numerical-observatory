@@ -1,0 +1,112 @@
+{
+  "checked_at": "2026-09-13T11:16:50.049679+00:00",
+  "searches": [
+    {
+      "query": "repo:ml-explore/mlx isclose",
+      "total": 7,
+      "items": [
+        {
+          "number": 4266,
+          "title": "Fix Log and Equal is_equivalent ignoring primitive state",
+          "url": "https://github.com/ml-explore/mlx/pull/4266"
+        },
+        {
+          "number": 266,
+          "title": "2 tests failed for 0.0.6.dev20231223+f91f450",
+          "url": "https://github.com/ml-explore/mlx/issues/266"
+        },
+        {
+          "number": 2168,
+          "title": "[Feature Request - UX] Add more unary methods for mlx.core.array",
+          "url": "https://github.com/ml-explore/mlx/issues/2168"
+        },
+        {
+          "number": 1826,
+          "title": "[BUG] Incorrect gradient shapes with conv_general and flipped kernels",
+          "url": "https://github.com/ml-explore/mlx/issues/1826"
+        },
+        {
+          "number": 1569,
+          "title": "Add groups in nn.Conv2d",
+          "url": "https://github.com/ml-explore/mlx/pull/1569"
+        },
+        {
+          "number": 1424,
+          "title": "[BUG] Different outputs from PyTorch and MLX on a simple MLP",
+          "url": "https://github.com/ml-explore/mlx/issues/1424"
+        },
+        {
+          "number": 539,
+          "title": "[Fix] mx.allclose bug with infinite values",
+          "url": "https://github.com/ml-explore/mlx/pull/539"
+        }
+      ]
+    },
+    {
+      "query": "repo:ml-explore/mlx allclose integer",
+      "total": 1,
+      "items": [
+        {
+          "number": 1338,
+          "title": "[BUG] Integer overflow when gathering into very large outputs",
+          "url": "https://github.com/ml-explore/mlx/issues/1338"
+        }
+      ]
+    },
+    {
+      "query": "repo:ml-explore/mlx isclose overflow",
+      "total": 0,
+      "items": []
+    },
+    {
+      "query": "repo:ml-explore/mlx allclose uint8",
+      "total": 1,
+      "items": [
+        {
+          "number": 1405,
+          "title": "More fixes for arrays with large sizes",
+          "url": "https://github.com/ml-explore/mlx/pull/1405"
+        }
+      ]
+    },
+    {
+      "query": "repo:ml-explore/mlx allclose int32",
+      "total": 4,
+      "items": [
+        {
+          "number": 3524,
+          "title": "Detect int32 shape-product overflow at MLX compute-shape boundaries",
+          "url": "https://github.com/ml-explore/mlx/pull/3524"
+        },
+        {
+          "number": 1405,
+          "title": "More fixes for arrays with large sizes",
+          "url": "https://github.com/ml-explore/mlx/pull/1405"
+        },
+        {
+          "number": 1213,
+          "title": "Grid Sample functionality in MLX backend",
+          "url": "https://github.com/ml-explore/mlx/issues/1213"
+        },
+        {
+          "number": 181,
+          "title": "Added linspace",
+          "url": "https://github.com/ml-explore/mlx/pull/181"
+        }
+      ]
+    },
+    {
+      "query": "repo:ml-explore/mlx allclose unsigned",
+      "total": 0,
+      "items": []
+    },
+    {
+      "query": "repo:kadyrbekovhamit-cyber/gero-numerical-observatory isclose",
+      "total": 0,
+      "items": []
+    }
+  ],
+  "own_catalog_count": 75,
+  "own_matches": [],
+  "conclusion": "No exact duplicate identified in these bounded searches. PR 539 introduced isclose and fixed infinity handling; its source already contains the vulnerable integer arithmetic. Priority is not established."
+}

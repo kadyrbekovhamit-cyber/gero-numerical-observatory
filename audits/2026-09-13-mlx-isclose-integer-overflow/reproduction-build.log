@@ -1,0 +1,101 @@
+-- Building MLX for arm64 processor on Darwin
+-- Accelerate found /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/Accelerate.framework
+-- Downloading json
+-- Using the multi-header code from /Users/khamit/Documents/math/software-audits/current-stack-2026-09-07-round3/build-native/_deps/json-src/include/
+-- {fmt} version: 12.1.0
+-- Build type: Release
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/khamit/Documents/Codex/2026-09-06/remotion-plugin-remotion-openai-api-curated/work/mlx-isclose-integer-audit-2026-09-13/clean-build/build
+[1/88] Generating compiled_preamble.cpp
+[2/88] Building CXX object mlx-build/mlx/CMakeFiles/mlx_version.dir/version.cpp.o
+[3/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/array.cpp.o
+[4/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/compile.cpp.o
+[5/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/device.cpp.o
+[6/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/dtype.cpp.o
+[7/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/dtype_utils.cpp.o
+[8/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/export.cpp.o
+[9/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/einsum.cpp.o
+[10/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/fast.cpp.o
+[11/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/fft.cpp.o
+[12/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/ops.cpp.o
+[13/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/graph_utils.cpp.o
+[14/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/primitives.cpp.o
+[15/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/random.cpp.o
+[16/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/scheduler.cpp.o
+[17/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/stream.cpp.o
+[18/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/transforms.cpp.o
+[19/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/utils.cpp.o
+[20/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/linalg.cpp.o
+[21/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/memory.cpp.o
+[22/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/common/broadcasting.cpp.o
+[23/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/common/compiled.cpp.o
+[24/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/common/common.cpp.o
+[25/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/common/load.cpp.o
+[26/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/common/metal_kernel.cpp.o
+[27/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/common/reduce.cpp.o
+[28/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/common/slicing.cpp.o
+[29/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/common/utils.cpp.o
+[30/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/device_info.cpp.o
+[31/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/arg_reduce.cpp.o
+[32/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/binary.cpp.o
+[33/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/conv.cpp.o
+[34/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/copy.cpp.o
+[35/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/distributed.cpp.o
+[36/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/eig.cpp.o
+[37/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/eigh.cpp.o
+[38/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/encoder.cpp.o
+[39/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/fft.cpp.o
+[40/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/hadamard.cpp.o
+[41/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/matmul.cpp.o
+[42/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/gemms/cblas.cpp.o
+[43/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/masked_mm.cpp.o
+[44/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/primitives.cpp.o
+[45/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/quantized.cpp.o
+[46/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/reduce.cpp.o
+[47/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/scan.cpp.o
+[48/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/select.cpp.o
+[49/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/softmax.cpp.o
+[50/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/logsumexp.cpp.o
+[51/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/sort.cpp.o
+[52/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/threefry.cpp.o
+[53/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/indexing.cpp.o
+[54/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/luf.cpp.o
+[55/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/qrf.cpp.o
+[56/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/svd.cpp.o
+[57/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/inverse.cpp.o
+[58/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/cholesky.cpp.o
+[59/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/unary.cpp.o
+[60/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/eval.cpp.o
+[61/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/compiled_preamble.cpp.o
+[62/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/gemms/bnns.cpp.o
+[63/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/compiled.cpp.o
+[64/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cpu/jit_compiler.cpp.o
+[65/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/distributed/primitives.cpp.o
+[66/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/distributed/ops.cpp.o
+[67/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/distributed/distributed.cpp.o
+[68/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/distributed/utils.cpp.o
+[69/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/distributed/mpi/mpi.cpp.o
+[70/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/distributed/ring/ring.cpp.o
+[71/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/distributed/nccl/no_nccl.cpp.o
+[72/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/distributed/jaccl/no_jaccl.cpp.o
+[73/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/io/load.cpp.o
+[74/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/io/no_safetensors.cpp.o
+[75/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/io/no_gguf.cpp.o
+[76/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/metal/no_metal.cpp.o
+[77/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/cuda/no_cuda.cpp.o
+[78/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/no_gpu/allocator.cpp.o
+[79/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/no_gpu/device_info.cpp.o
+[80/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/no_gpu/event.cpp.o
+[81/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/no_gpu/fence.cpp.o
+[82/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/no_gpu/eval.cpp.o
+[83/88] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/backend/no_gpu/primitives.cpp.o
+[84/88] Building CXX object CMakeFiles/isclose_regression.dir/Users/khamit/Documents/Codex/2026-09-06/remotion-plugin-remotion-openai-api-curated/work/mlx-isclose-integer-audit-2026-09-13/native_regression.cpp.o
+[85/88] Building CXX object CMakeFiles/isclose_limits.dir/Users/khamit/Documents/Codex/2026-09-06/remotion-plugin-remotion-openai-api-curated/work/mlx-isclose-integer-audit-2026-09-13/limitations.cpp.o
+[86/88] Linking CXX static library mlx-build/libmlx.a
+[87/88] Linking CXX executable isclose_regression
+[88/88] Linking CXX executable isclose_limits
+[1/4] Building CXX object mlx-build/CMakeFiles/mlx.dir/mlx/ops.cpp.o
+[2/4] Linking CXX static library mlx-build/libmlx.a
+[3/4] Linking CXX executable isclose_regression
+[4/4] Linking CXX executable isclose_limits

@@ -1,0 +1,28 @@
+[
+  {
+    "variant": "before",
+    "exit": 1,
+    "wall_seconds": 3.413720082999987,
+    "cpu_seconds": 2.306952000000001,
+    "summary": {
+      "element_comparisons": 826670,
+      "failed_scenarios": 233,
+      "mismatches": 101188,
+      "scenarios": 351,
+      "summary": true
+    }
+  },
+  {
+    "variant": "after",
+    "exit": 0,
+    "wall_seconds": 2.668900083000011,
+    "cpu_seconds": 1.7306450000000044,
+    "summary": {
+      "element_comparisons": 826670,
+      "failed_scenarios": 0,
+      "mismatches": 0,
+      "scenarios": 351,
+      "summary": true
+    }
+  }
+]

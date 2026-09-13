@@ -1,0 +1,36 @@
+{
+  "scenarios": 351,
+  "element_comparisons": 826670,
+  "oracle": "Exact Python integers and Fraction.from_float for integer cases; documented special-value semantics for float controls",
+  "full_pair_domains": [
+    "int8 x int8",
+    "uint8 x uint8"
+  ],
+  "tolerances": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0
+    ],
+    [
+      0.0,
+      128.0
+    ],
+    [
+      0.0078125,
+      0.0
+    ],
+    [
+      0.5,
+      0.0
+    ],
+    [
+      1.0,
+      0.0
+    ]
+  ],
+  "wide_integer_scope": "64-bit types excluded from correction suite and checked separately as limitations"
+}
