@@ -1,0 +1,13 @@
+--- a/mlx/linalg.cpp
++++ b/mlx/linalg.cpp
+@@ -804,8 +804,8 @@
+   int n = input.shape(-1);
+   auto dtype = input.dtype();
+ 
+-  // Small-matrix fast path
+-  if (n <= 3) {
++  // Keep empty and scalar cases direct; avoid forming larger determinants.
++  if (n <= 1) {
+     auto raw = det_raw_small(input, s);
+     auto abs_raw = abs(raw, s);
+     auto sgn = sign(raw, s);

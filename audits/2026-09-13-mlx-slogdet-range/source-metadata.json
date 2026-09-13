@@ -1,0 +1,27 @@
+{
+  "date": "2026-09-13",
+  "source_commit": "ce916dbbcaa88e433b6fd1e60a17f766d49c27fe",
+  "source_version_header": "0.32.3",
+  "current_main_inspected": "229f5b430df7926743c5b6ac62068cae2ebc8978",
+  "linalg_cpp_identical_to_main": true,
+  "linalg_cpp_sha256": "9cece04744d1590f097ec616a0a8f14b3b4d44dcf1a24629ce09f48c536e997d",
+  "compiler": "Apple clang version 17.0.0 (clang-1700.0.13.5)",
+  "os": "ProductName:\t\tmacOS\nProductVersion:\t\t15.5\nBuildVersion:\t\t24F74\n",
+  "build": "Clean native CPU library; Release -O0; Metal and CUDA disabled; final builds --parallel 1",
+  "numeric_thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "not_executed": [
+    "Python wheel",
+    "GPU",
+    "full upstream suite",
+    "large-scale performance"
+  ],
+  "dependencies": {
+    "fmt": "407c905e45ad75fc29bf0f9bb7c5c2fd3475976f",
+    "json": "217549efd26f5f590a20d02dff186fe41c8788a8"
+  }
+}

@@ -1,0 +1,24 @@
+--- a/mlx/linalg.cpp
++++ b/mlx/linalg.cpp
+@@ -806,11 +806,16 @@
+ 
+   // Small-matrix fast path
+   if (n <= 3) {
+-    auto raw = det_raw_small(input, s);
+-    auto abs_raw = abs(raw, s);
+-    auto sgn = sign(raw, s);
+-    auto logabs = log(abs_raw, s);
+-    return std::make_pair(sgn, logabs);
++    if (n <= 1) {
++      auto raw = det_raw_small(input, s);
++      return std::make_pair(sign(raw, s), log(abs(raw, s), s));
++    }
++    auto row_scale = stop_gradient(max(abs(input, s), -1, true, s), s);
++    row_scale = where(equal(row_scale, array(0, dtype), s),
++                      array(1, dtype), row_scale, s);
++    auto raw = det_raw_small(divide(input, row_scale, s), s);
++    auto log_scale = sum(log(squeeze(row_scale, -1, s), s), -1, false, s);
++    return std::make_pair(sign(raw, s), add(log(abs(raw, s), s), log_scale, s));
+   }
+ 
+   // General LU-based path

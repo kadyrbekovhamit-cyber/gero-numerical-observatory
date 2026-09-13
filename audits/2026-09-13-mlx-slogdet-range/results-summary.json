@@ -1,0 +1,90 @@
+{
+  "before": {
+    "forward": {
+      "checks": 824,
+      "failures": 112,
+      "exceptions": 0
+    },
+    "autodiff": {
+      "checks": 32,
+      "failures": 0,
+      "exceptions": 0
+    },
+    "by_dtype": {
+      "f32": {
+        "checks": 428,
+        "failures": 56
+      },
+      "f64": {
+        "checks": 428,
+        "failures": 56
+      }
+    }
+  },
+  "widen-f32": {
+    "forward": {
+      "checks": 824,
+      "failures": 56,
+      "exceptions": 0
+    },
+    "autodiff": {
+      "checks": 32,
+      "failures": 0,
+      "exceptions": 0
+    },
+    "by_dtype": {
+      "f32": {
+        "checks": 428,
+        "failures": 0
+      },
+      "f64": {
+        "checks": 428,
+        "failures": 56
+      }
+    }
+  },
+  "row-scaling-rejected": {
+    "forward": {
+      "checks": 824,
+      "failures": 4,
+      "exceptions": 0
+    },
+    "autodiff": {
+      "checks": 32,
+      "failures": 0,
+      "exceptions": 0
+    },
+    "by_dtype": {
+      "f32": {
+        "checks": 428,
+        "failures": 2
+      },
+      "f64": {
+        "checks": 428,
+        "failures": 2
+      }
+    }
+  },
+  "lu-forward-candidate": {
+    "forward": {
+      "checks": 824,
+      "failures": 0,
+      "exceptions": 0
+    },
+    "autodiff": {
+      "checks": 32,
+      "failures": 32,
+      "exceptions": 32
+    },
+    "by_dtype": {
+      "f32": {
+        "checks": 428,
+        "failures": 16
+      },
+      "f64": {
+        "checks": 428,
+        "failures": 16
+      }
+    }
+  }
+}
