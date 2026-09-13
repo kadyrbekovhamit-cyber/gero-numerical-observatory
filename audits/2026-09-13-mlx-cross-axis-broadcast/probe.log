@@ -1,0 +1,15 @@
+axis=0 result=array([[0, -2, 3],
+       [1, 0, -3],
+       [-1, 2, 0]], dtype=float32)
+axis=-1 result=array([[0, 3, -2],
+       [-3, 0, 1],
+       [2, -1, 0]], dtype=float32)
+explicit axis0=array([[0, -3, 2],
+       [3, 0, -1],
+       [-2, 1, 0]], dtype=float32)
+parallel=array([[1, 2, 3],
+       [-2, -4, -6],
+       [1, 2, 3]], dtype=float32)
+explicit parallel=array([[0, 0, 0],
+       [0, 0, 0],
+       [0, 0, 0]], dtype=float32)

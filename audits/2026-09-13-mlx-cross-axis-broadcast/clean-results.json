@@ -1,0 +1,26 @@
+[
+  {
+    "variant": "before",
+    "exit": 1,
+    "wall_seconds": 1.3764936669904273,
+    "cpu_seconds": 0.905948000000004,
+    "summary": {
+      "failures": 594,
+      "numerical_comparisons": 69918,
+      "scenarios": 3383,
+      "summary": true
+    }
+  },
+  {
+    "variant": "after",
+    "exit": 0,
+    "wall_seconds": 1.1652432919945568,
+    "cpu_seconds": 1.079555000000001,
+    "summary": {
+      "failures": 0,
+      "numerical_comparisons": 74838,
+      "scenarios": 3383,
+      "summary": true
+    }
+  }
+]

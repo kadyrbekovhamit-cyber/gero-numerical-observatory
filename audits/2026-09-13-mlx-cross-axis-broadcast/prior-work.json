@@ -1,0 +1,84 @@
+{
+  "checked_on": "2026-09-13",
+  "queries": [
+    {
+      "query": "repo:ml-explore/mlx \"linalg.cross\"",
+      "total": 1,
+      "numbers": [
+        4118
+      ]
+    },
+    {
+      "query": "repo:ml-explore/mlx \"cross product\"",
+      "total": 3,
+      "numbers": [
+        3826,
+        1252,
+        1244
+      ]
+    },
+    {
+      "query": "repo:ml-explore/mlx cross broadcasting",
+      "total": 3,
+      "numbers": [
+        3677,
+        1921,
+        147
+      ]
+    },
+    {
+      "query": "repo:ml-explore/mlx cross axis",
+      "total": 40,
+      "numbers": [
+        4118,
+        4115,
+        4288,
+        4188,
+        3932,
+        4287,
+        4139,
+        4169,
+        4214,
+        3887,
+        3651,
+        3677,
+        3893,
+        4304,
+        3599,
+        3917,
+        4055,
+        3897,
+        3856,
+        3912,
+        2300,
+        3496,
+        3885,
+        2641,
+        321,
+        341,
+        2864,
+        1921,
+        1822,
+        1979,
+        1252,
+        1853,
+        1271,
+        1072,
+        860,
+        517,
+        1153,
+        267,
+        147,
+        188
+      ]
+    }
+  ],
+  "inspected_reports": [
+    1244,
+    1252,
+    4118
+  ],
+  "own_catalog_documents": 72,
+  "exact_duplicate_found": false,
+  "caveat": "Bounded public searches and inspected discussions do not establish priority."
+}

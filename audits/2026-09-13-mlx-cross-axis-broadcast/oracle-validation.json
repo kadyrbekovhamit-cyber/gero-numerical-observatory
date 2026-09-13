@@ -1,0 +1,7 @@
+{
+  "numpy_version": "1.23.5",
+  "cases": 320,
+  "numpy_cross_agreements": 320,
+  "host_finite_difference_checks": 162,
+  "note": "All two-component inputs are explicitly padded with a zero third component for NumPy, preserving MLX output semantics."
+}
