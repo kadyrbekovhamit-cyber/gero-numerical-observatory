@@ -22,3 +22,5 @@ This archive preserves the claims and limitations of the original report. It mak
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7501864798410895360/)
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7501706011632771072/)
 - [Hugging Face document](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/swift-numerics-hyperbolic-signs.md)
+
+- [YouTube video](https://www.youtube.com/shorts/YSJk0xWq51M)

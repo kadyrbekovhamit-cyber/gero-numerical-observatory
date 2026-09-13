@@ -23,3 +23,5 @@ This archive preserves the claims and limitations of the original report. It mak
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7501997390271533056/)
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7501245334078128128/)
 - [Hugging Face document](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/swift-numerics-nearest-or-zero-doc-error.md)
+
+- [YouTube video](https://www.youtube.com/watch?v=64saLgbDamA)

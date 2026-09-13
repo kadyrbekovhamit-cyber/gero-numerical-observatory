@@ -22,3 +22,5 @@ This archive preserves the claims and limitations of the original report. It mak
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7504617271307382784/)
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7502063498806611968/)
 - [Hugging Face document](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/moneyphp-largest-remainder-float-collapse.md)
+
+- [YouTube video](https://www.youtube.com/shorts/2J7XYz4gfio)

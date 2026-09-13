@@ -23,3 +23,5 @@ This archive preserves the claims and limitations of the original report. It mak
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7503091614219923456/)
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7502063498806611968/)
 - [Hugging Face document](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/apache-fineract-nop-inverse-error.md)
+
+- [YouTube video](https://www.youtube.com/shorts/g75P5P62hRo)

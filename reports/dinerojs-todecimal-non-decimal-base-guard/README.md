@@ -26,3 +26,5 @@ Read [the explicit erratum](ERRATUM-2026-09-13.md) with the historical article: 
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7504616775582539776/)
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7502311825464606720/)
 - [Hugging Face document](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/dinerojs-todecimal-non-decimal-base-guard.md)
+
+- [YouTube video](https://www.youtube.com/shorts/U4DTA_K9UYM)
