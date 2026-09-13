@@ -1,0 +1,34 @@
+{
+  "slug": "onnx-normalizer-finite-range-stability.html",
+  "title": "Finite ONNX Normalizer inputs overflow, underflow, or violate the output contract",
+  "publication_date": "2026-09-13",
+  "authors": [
+    "Xamit Kadirbekov"
+  ],
+  "gero": "https://www.gero.uz/research/articles/onnx-normalizer-finite-range-stability.html",
+  "github": [
+    "https://github.com/kadyrbekovhamit-cyber/gero-onnx-normalizer-stability-audit/tree/d50663511461efed70d9d58127393d627aac79cc"
+  ],
+  "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/onnx-normalizer-finite-range-stability",
+  "zenodo": [
+    "https://doi.org/10.5281/zenodo.22731718"
+  ],
+  "collection_zenodo": null,
+  "linkedin": [
+    "https://www.linkedin.com/feed/update/urn:li:share:7504740577523949569/"
+  ],
+  "huggingface": [
+    "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/onnx-normalizer-finite-range-stability.md"
+  ],
+  "youtube": [],
+  "description": "Finite extreme-scale inputs expose different numerical failures in ONNX ReferenceEvaluator and ONNX Runtime CPU Normalizer. The updated report also separates documentation errors and the unresolved MAX semantic conflict.",
+  "article_sha256": "db76632761c44e6cf94df66c8396b32351efd8d55afd56756af00056ddb47674",
+  "links": [
+    "https://github.com/onnx/onnx/pull/8450",
+    "https://github.com/onnx/onnx/pull/8451",
+    "https://github.com/microsoft/onnxruntime/pull/32573",
+    "https://github.com/onnx/onnx/issues/8452",
+    "https://github.com/kadyrbekovhamit-cyber/gero-onnx-normalizer-stability-audit/tree/d50663511461efed70d9d58127393d627aac79cc"
+  ],
+  "position": 1
+}

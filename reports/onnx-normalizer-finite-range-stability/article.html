@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Finite rows at 1e30, 1e-30, 1e300 and 1e-300 produce NaN, zero, unnormalized values, or the wrong dtype in the released reference and Runtime CPU implementations." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Finite ONNX Normalizer inputs overflow, underflow, or violate the output contract" />
+    <meta property="og:description" content="Finite rows at 1e30, 1e-30, 1e300 and 1e-300 produce NaN, zero, unnormalized values, or the wrong dtype in the released reference and Runtime CPU implementations." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/onnx-normalizer-finite-range-stability.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GERO — the verification layer for AI-generated reasoning" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Finite ONNX Normalizer inputs overflow, underflow, or violate the output contract" />
+    <meta name="twitter:description" content="Finite rows at 1e30, 1e-30, 1e300 and 1e-300 produce NaN, zero, unnormalized values, or the wrong dtype in the released reference and Runtime CPU implementations." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-cover.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/onnx-normalizer-finite-range-stability.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <title>Finite ONNX Normalizer inputs overflow, underflow, or violate the output contract — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Finite ONNX Normalizer inputs overflow, underflow, or violate the output contract", "description": "Finite rows at 1e30, 1e-30, 1e300 and 1e-300 produce NaN, zero, unnormalized values, or the wrong dtype in the released reference and Runtime CPU implementations.", "datePublished": "2026-09-13", "dateModified": "2026-09-13", "url": "https://www.gero.uz/research/articles/onnx-normalizer-finite-range-stability.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+  </head>
+  <body class="research-body">
+    
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="../../index.html#method">Method</a>
+        <a href="../../index.html#lab">Live lab</a>
+        <a class="nav-active" href="../../research/">Research</a>
+      </nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+    
+    <main>
+      <article class="article-shell audit-article">
+        <a class="back-link" href="../">← Research index</a>
+        <header class="article-header">
+          <div class="article-kicker"><span>INDEPENDENT NUMERICAL AUDIT</span><span>13 September 2026</span></div>
+          <h1>Finite ONNX Normalizer inputs overflow, underflow, or violate the output contract</h1>
+          <p class="article-dek">Finite rows at 1e30, 1e-30, 1e300 and 1e-300 produce NaN, zero, unnormalized values, or the wrong dtype in the released reference and Runtime CPU implementations.</p>
+          <div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54" /><div><strong>Xamit Kadirbekov</strong><span>Independent verification · GERO Research</span></div></div>
+          <div class="topic-row"><span>Numerical audit</span><span>ONNX</span><span>Normalization</span></div>
+        </header>
+        <div class="evidence-banner"><strong>STATUS · REPORTED UPSTREAM — THREE CORRECTIONS SUBMITTED</strong><span>Reproduced on ONNX 1.22.0 and ONNX Runtime 1.29.0; correction PRs #8450, #8451 and #32573 cover the two implementations and the published formulas; issue #8452 records a separate MAX semantic conflict.</span></div>
+        <div class="brief-source">
+          <span>UPSTREAM RECORD</span>
+          <a href="https://github.com/microsoft/onnxruntime/pull/32573" rel="noopener noreferrer">microsoft/onnxruntime#32573 ↗</a>
+        </div>
+        <div class="article-prose"><h2>Finding</h2>
+<p>The released ONNX Python <code>ReferenceEvaluator</code> and ONNX Runtime CPU kernel both mis-evaluate finite, mathematically ordinary inputs to <code>ai.onnx.ml::Normalizer</code> near the limits of their accepted data types.</p>
+<p>The failures have different causes. The reference implementation squares values directly, floors divisors at <code>1e-30</code>, assumes a two-dimensional input, and preserves the input dtype despite a float32 output contract. ONNX Runtime forms L2 squares before normalization and narrows values or accumulated norms to float.</p>
+<h2>Minimal counterexample</h2>
+<p>For two float32 rows and L2 normalization:</p>
+<pre><code class="language-text">input
+[[ 1e30,  1e30],
+ [ 1e-30, -1e-30]]
+
+exact scaled result
+[[ 0.70710677,  0.70710677],
+ [ 0.70710677, -0.70710677]]
+
+ONNX ReferenceEvaluator 1.22.0
+[[ 0,  0],
+ [ 1, -1]]
+
+ONNX Runtime CPU 1.29.0
+[[ NaN,  NaN],
+ [ 1e-30, -1e-30]]</code></pre>
+<p>Every input is finite. Every correct output component is an ordinary number near <code>±0.7071</code>.</p>
+<h2>Why the oracle is exact here</h2>
+<p>Normalization is invariant under multiplication of a row by a positive common scale. Let <code>s = max_i |x_i|</code> and <code>u = x / s</code>. Then</p>
+<pre><code class="language-text">L1(x) = u / Σ|u_i|
+L2(x) = u / sqrt(Σu_i²)</code></pre>
+<p>The components of <code>u</code> lie between -1 and 1, so neither the squares nor their sum approach the floating-point range limits in these examples. Both rows of the L2 counterexample reduce exactly to <code>[1, ±1] / sqrt(2)</code> before the final float32 rounding.</p>
+<h2>Independent verification</h2>
+<ul><li>The executable oracle first scales in float64 and only casts the final result to the schema&#x27;s float32 output type.</li><li>ONNX 1.22.0 and ONNX Runtime 1.29.0 reproduce the values above on the CPU provider.</li><li>Double inputs at <code>1e300</code> and <code>1e-300</code> expose failures in the released <code>MAX</code>, L1, and L2 paths of both implementations.</li><li>For double input, the released ReferenceEvaluator returns float64 although the operator schema declares <code>tensor(float)</code> output.</li><li>A valid rank-one int32 input fails in the released ReferenceEvaluator with <code>axis 1 is out of bounds</code>.</li><li>The defects were confirmed in ONNX main commit <code>c9f169adac34bd690bf0d628e9aae7fde3d4be85</code> and ONNX Runtime main commit <code>a7df32cf6087a11884042a2a95526d72100e3b95</code> on 13 September 2026.</li><li>Restoring each released algorithm makes the new extreme-magnitude tests fail with <code>NaN</code>, zero, or unnormalized outputs.</li></ul>
+<p>The full reproducer, pinned dependencies, expected output, and assertions are published in <a href="https://github.com/kadyrbekovhamit-cyber/gero-onnx-normalizer-stability-audit" rel="noopener noreferrer">gero-onnx-normalizer-stability-audit</a>.</p>
+<h2>Corrections</h2>
+<p>The ONNX reference correction scales finite inputs before reduction, selects the correct axis for rank one or two, and casts the result to float32. It is submitted as <a href="https://github.com/onnx/onnx/pull/8450" rel="noopener noreferrer">onnx/onnx#8450</a>.</p>
+<p>The ONNX Runtime correction computes <code>MAX</code> in double and uses the scaled L1 and L2 formulas above. It is submitted as <a href="https://github.com/microsoft/onnxruntime/pull/32573" rel="noopener noreferrer">microsoft/onnxruntime#32573</a>. The Runtime change was built from source on macOS arm64. All seven available <code>Normalizer.*</code> tests passed, including the two new extreme-range tests, and the official lintrunner reported no issues.</p>
+<h2>Separate documentation correction</h2>
+<p>The published operator documentation independently states <code>X / sum(X)</code> for L1 and <code>sqrt(X^2 / sum(X^2)}</code> for L2. The first expression omits absolute values; the second places <code>X</code> inside the square root and has a mismatched brace.</p>
+<p>The repository history shows that the earlier documentation correctly defined the divisors as <code>Σ|x_i|</code> and <code>sqrt(Σx_i²)</code>. The wrong output formulas were introduced during a 2018 documentation expansion. The focused correction is submitted as <a href="https://github.com/onnx/onnx/pull/8451" rel="noopener noreferrer">onnx/onnx#8451</a>. It does not alter the separately ambiguous <code>MAX</code> formula or operator behavior.</p>
+<h2>Separate <code>MAX</code> semantic conflict</h2>
+<p>Negative rows expose a contract-level disagreement that cannot be resolved as a numerical-stability patch. For input <code>[-2, -1]</code>, the published formula and ONNX Runtime divide by the raw maximum and return <code>[2, 1]</code>. ONNX ReferenceEvaluator divides by the maximum absolute value and returns <code>[-1, -0.5]</code>.</p>
+<p>The latter is also scikit-learn&#x27;s definition of <code>Normalizer(norm=&quot;max&quot;)</code>, and the standard sklearn-onnx converter maps that mode directly to ONNX <code>MAX</code>. Therefore conversion parity and backend conformance cannot both hold under the current operator contract. The independently asserted counterexample and pinned source links are filed as <a href="https://github.com/onnx/onnx/issues/8452" rel="noopener noreferrer">onnx/onnx#8452</a>. Because changing either meaning can affect existing models, the issue requests a specification decision before a behavioral patch.</p>
+<h2>Impact and boundary</h2>
+<p>An official reference evaluator is used as a comparison oracle, while a runtime kernel evaluates deployed models. Here both can disagree with a bounded independent calculation, but in different ways. This can produce false conformance failures, hide a backend error behind agreement on ordinary test ranges, or propagate non-finite values from finite model inputs.</p>
+<p>This is an ordinary numerical-correctness finding. It is not a security report, and no claim is made that a deployed application has encountered these exact inputs or suffered harm.</p></div>
+      </article>
+    </main>
+    
+    <footer>
+      <div class="shell footer-grid">
+        <div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div>
+        <p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p>
+        <a href="../../feed.xml">RSS</a>
+      </div>
+    </footer>
+  </body>
+</html>

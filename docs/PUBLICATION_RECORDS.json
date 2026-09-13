@@ -1,19 +1,42 @@
 {
   "counts": {
-    "total": 68,
-    "github_catalogues": 68,
-    "gero_articles": 68,
-    "linkedin_covered": 68,
-    "individual_zenodo": 68,
-    "huggingface_covered": 68,
+    "total": 69,
+    "github_catalogues": 69,
+    "gero_articles": 69,
+    "linkedin_covered": 69,
+    "individual_zenodo": 69,
+    "huggingface_covered": 69,
     "previous_collection_members": 45,
-    "zenodo_document_coverage": 68,
-    "canonical_linkedin_posts": 68,
-    "individual_huggingface_pages": 68,
-    "individual_zenodo_records": 68,
+    "zenodo_document_coverage": 69,
+    "canonical_linkedin_posts": 69,
+    "individual_huggingface_pages": 69,
+    "individual_zenodo_records": 69,
     "individual_parity_complete": true
   },
   "publications": [
+    {
+      "slug": "onnx-normalizer-finite-range-stability.html",
+      "title": "Finite ONNX Normalizer inputs overflow, underflow, or violate the output contract",
+      "publication_date": "2026-09-13",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/onnx-normalizer-finite-range-stability.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/onnx-normalizer-finite-range-stability",
+      "zenodo": [
+        "https://doi.org/10.5281/zenodo.22731718"
+      ],
+      "collection_zenodo": null,
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:share:7504740577523949569/"
+      ],
+      "huggingface": [
+        "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/onnx-normalizer-finite-range-stability.md"
+      ],
+      "youtube": [],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/onnx-normalizer-finite-range-stability-2026-09-13.zip",
+      "archive_sha256": "c5642be119c8334d7a64147ada080db17b947f45c469404679aca3e962db218f"
+    },
     {
       "slug": "mlx-layernorm-bias-dtype.html",
       "title": "MLX LayerNorm: an optional unit weight changes bias precision",
