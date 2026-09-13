@@ -1,19 +1,44 @@
 {
   "counts": {
-    "total": 67,
-    "github_catalogues": 67,
-    "gero_articles": 67,
-    "linkedin_covered": 67,
-    "individual_zenodo": 67,
-    "huggingface_covered": 67,
+    "total": 68,
+    "github_catalogues": 68,
+    "gero_articles": 68,
+    "linkedin_covered": 68,
+    "individual_zenodo": 68,
+    "huggingface_covered": 68,
     "previous_collection_members": 45,
-    "zenodo_document_coverage": 67,
-    "canonical_linkedin_posts": 67,
-    "individual_huggingface_pages": 67,
-    "individual_zenodo_records": 67,
+    "zenodo_document_coverage": 68,
+    "canonical_linkedin_posts": 68,
+    "individual_huggingface_pages": 68,
+    "individual_zenodo_records": 68,
     "individual_parity_complete": true
   },
   "publications": [
+    {
+      "slug": "mlx-layernorm-bias-dtype.html",
+      "title": "MLX LayerNorm: an optional unit weight changes bias precision",
+      "publication_date": "2026-09-13",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "gero": "https://www.gero.uz/research/articles/mlx-layernorm-bias-dtype.html",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-layernorm-bias-dtype",
+      "zenodo": [
+        "https://doi.org/10.5281/zenodo.22729207"
+      ],
+      "collection_zenodo": null,
+      "linkedin": [
+        "https://www.linkedin.com/feed/update/urn:li:share:7504625796238503936/"
+      ],
+      "huggingface": [
+        "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-layernorm-bias-dtype.md"
+      ],
+      "youtube": [
+        "https://www.youtube.com/shorts/8roG0ZS0Goc"
+      ],
+      "archive_url": "https://www.gero.uz/research/data/archival-packages/mlx-layernorm-bias-dtype-2026-09-13.zip",
+      "archive_sha256": "0e02342c2a8190ae7ac0fa3e670e70f62dd3adef9ad9a658e52068c4c7701d18"
+    },
     {
       "slug": "mlx-groupnorm-low-precision.html",
       "title": "Finite FP16 Inputs Become Zero in MLX GroupNorm",

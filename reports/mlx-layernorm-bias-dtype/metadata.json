@@ -1,0 +1,39 @@
+{
+  "slug": "mlx-layernorm-bias-dtype.html",
+  "title": "MLX LayerNorm: an optional unit weight changes bias precision",
+  "publication_date": "2026-09-13",
+  "authors": [
+    "Xamit Kadirbekov"
+  ],
+  "gero": "https://www.gero.uz/research/articles/mlx-layernorm-bias-dtype.html",
+  "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-layernorm-bias-dtype",
+  "zenodo": [
+    "https://doi.org/10.5281/zenodo.22729207"
+  ],
+  "collection_zenodo": null,
+  "linkedin": [
+    "https://www.linkedin.com/feed/update/urn:li:share:7504625796238503936/"
+  ],
+  "huggingface": [
+    "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-layernorm-bias-dtype.md"
+  ],
+  "youtube": [
+    "https://www.youtube.com/shorts/8roG0ZS0Goc"
+  ],
+  "github": [
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/3499bb92b384ae62fc79b3588915e25a9dd0323c/audits/2026-09-13-mlx-layernorm-bias-dtype"
+  ],
+  "description": "MLX LayerNorm narrows float32 bias to float16 when the optional weight is absent. A clean CPU source build reproduces the discrepancy; the candidate patch changes 106 failing assertions to zero among 385, with 16 controls unchanged. GPU, compiled execution and performance were not tested.",
+  "article_sha256": "ebbd43fb907a272ee3525ee1b2253d6b447aab7e050e02cec5b7f1d1762bb71c",
+  "links": [
+    "https://doi.org/10.5281/zenodo.22729207",
+    "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/3499bb92b384ae62fc79b3588915e25a9dd0323c/audits/2026-09-13-mlx-layernorm-bias-dtype",
+    "https://ml-explore.github.io/mlx/build/html/python/_autosummary/mlx.core.fast.layer_norm.html",
+    "https://github.com/ml-explore/mlx/blob/dfe17bafb23e66fe56596df532a497ab3611d0e5/mlx/fast.cpp#L337",
+    "https://github.com/ml-explore/mlx/blob/81ba1c6a0e50a9268b931579c2d4f1158b9aab5a/python/tests/test_fast.py#L600",
+    "https://github.com/ml-explore/mlx/blob/81ba1c6a0e50a9268b931579c2d4f1158b9aab5a/python/tests/test_fast.py#L58",
+    "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-layernorm-bias-dtype.md",
+    "https://www.linkedin.com/feed/update/urn:li:share:7504625796238503936/",
+    "https://www.youtube.com/shorts/8roG0ZS0Goc"
+  ]
+}

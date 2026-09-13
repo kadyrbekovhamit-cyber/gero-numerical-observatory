@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Clean native CPU reproduction: an absent weight narrows finite float32 bias. A one-line candidate changes 106 failed assertions out of 385 to zero; 16 controls remain unchanged." />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="GERO Research" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="MLX LayerNorm: an optional unit weight changes bias precision" />
+    <meta property="og:description" content="Clean native CPU reproduction: an absent weight narrows finite float32 bias. A one-line candidate changes 106 failed assertions out of 385 to zero; 16 controls remain unchanged." />
+    <meta property="og:url" content="https://www.gero.uz/research/articles/mlx-layernorm-bias-dtype.html" />
+    <meta property="og:image" content="https://www.gero.uz/assets/og-mlx-layernorm-bias-dtype.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="MLX LayerNorm: an optional unit weight changes bias precision" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MLX LayerNorm: an optional unit weight changes bias precision" />
+    <meta name="twitter:description" content="Clean native CPU reproduction: an absent weight narrows finite float32 bias. A one-line candidate changes 106 failed assertions out of 385 to zero; 16 controls remain unchanged." />
+    <meta name="twitter:image" content="https://www.gero.uz/assets/og-mlx-layernorm-bias-dtype.png" />
+    <link rel="canonical" href="https://www.gero.uz/research/articles/mlx-layernorm-bias-dtype.html" />
+    <link rel="alternate" type="application/rss+xml" title="GERO Research" href="../../feed.xml" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../research/research.css" />
+    <link rel="stylesheet" href="../../assets/ux.css" />
+    <meta name="keywords" content="MLX, LayerNorm, mixed precision, dtype promotion, autodiff, numerical correctness">
+    <title>MLX LayerNorm: an optional unit weight changes bias precision — GERO Research</title>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "MLX LayerNorm: an optional unit weight changes bias precision", "description": "Clean native CPU reproduction: an absent weight narrows finite float32 bias. A one-line candidate changes 106 failed assertions out of 385 to zero; 16 controls remain unchanged.", "datePublished": "2026-09-13", "dateModified": "2026-09-13", "url": "https://www.gero.uz/research/articles/mlx-layernorm-bias-dtype.html", "author": {"@type": "Person", "name": "Xamit Kadirbekov"}, "publisher": {"@type": "Organization", "name": "GERO Research"}}</script>
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <style>
+      .audit-table{overflow-x:auto;margin:1.5rem 0}.audit-table table{width:100%;min-width:620px;border-collapse:collapse}.audit-table th,.audit-table td{padding:14px 12px;text-align:left;vertical-align:top;border-bottom:1px solid #d4d9d5;font-size:14px}.article-prose code{overflow-wrap:anywhere}.article-prose pre{overflow-x:auto}.video-frame{position:relative;aspect-ratio:9/16;max-width:390px;margin:2rem auto;background:#111;border-radius:18px;overflow:hidden;box-shadow:0 18px 50px rgba(14,24,20,.18)}.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    </style>
+  </head>
+  <body class="research-body">
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="../../index.html" aria-label="GERO home"><span class="brand-mark" aria-hidden="true">G</span><span><strong>GERO</strong><small>Graph Evaluation &amp; Reliability Orchestrator</small></span></a>
+      <nav aria-label="Main navigation"><a href="../../index.html#method">Method</a><a href="../../index.html#lab">Live lab</a><a class="nav-active" href="../../research/">Research</a></nav>
+      <a class="header-cta" href="mailto:kadyrbekovhamit@gmail.com?subject=GERO%20research%20contact">Contact</a>
+    </header>
+<main><article class="article-shell"><a class="back-link" href="../">← Research index</a><header class="article-header"><div class="article-kicker"><span>INDEPENDENT NUMERICAL AUDIT</span><span>13 September 2026</span></div><h1>MLX LayerNorm: an optional unit weight changes bias precision</h1><p class="article-dek">Clean native CPU reproduction: an absent weight narrows finite float32 bias. A one-line candidate changes 106 failed assertions out of 385 to zero; 16 controls remain unchanged.</p><div class="author-block"><img src="../../assets/xamit-kadirbekov.jpg" alt="Xamit Kadirbekov" width="54" height="54"><div><strong>Xamit Kadirbekov</strong><span>Reproducible numerical experiments · GERO Research</span></div></div><div class="topic-row"><span>LayerNorm</span><span>Mixed precision</span><span>CPU only</span></div></header><div class="evidence-banner"><strong>LOCALLY REPRODUCED</strong><span>385 assertions · 106 failures → 0 · One underlying cause</span></div><div class="article-prose"><p><a href="https://doi.org/10.5281/zenodo.22729207">Permanent Zenodo archive</a> · <a href="../data/mlx-layernorm-bias-dtype-2026-09-13.zip">Download reproduction ZIP</a> · <a href="https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/3499bb92b384ae62fc79b3588915e25a9dd0323c/audits/2026-09-13-mlx-layernorm-bias-dtype">Pinned GitHub source</a></p><video controls playsinline preload="metadata" poster="../media/mlx-layernorm-bias-dtype-poster.png" width="1080" height="1920" style="display:block;width:100%;max-width:390px;height:auto;margin:24px auto;border-radius:18px"><source src="../media/mlx-layernorm-bias-dtype.mp4" type="video/mp4"><track kind="captions" src="../media/mlx-layernorm-bias-dtype.en.vtt" srclang="en" label="English"></video><p>62-second explanation. Original diagrams, synthetic Samantha narration by fictional Alex Vector. <a href="../data/mlx-layernorm-bias-dtype-video-source.zip">Script, sources and renderer</a>.</p><p><strong>Native CPU case study · 13 September 2026 · Xamit Kadirbekov / GERO Research</strong></p>
+<p>A finite float32 bias becomes infinity, loses low bits and underflows when <code>fast.layer_norm</code> receives a float16 input and no weight. Supplying a float16 unit weight preserves the same bias exactly. The two calls represent the same affine normalization formula, but select different output dtypes.</p>
+<p>A clean native CPU build reproduces this inconsistency. A one-line candidate patch changes <strong>106 failed assertions out of 385 to zero</strong>. These assertions describe one cause, not 106 independent bugs. Maintainer acceptance and model-level impact are not established.</p>
+<h2>Minimal observation</h2>
+<p>Let <code>x = [0, 0, 0, 0]</code> in float16, positive epsilon, and <code>b = [70000, 1.000244140625, 2**-30, -70000]</code> in float32. All bias values are finite and exactly representable in float32.</p>
+<div class="audit-table"><table><thead><tr><th>Native CPU call</th><th>Output dtype</th><th>Observed output</th></tr></thead><tbody>
+<tr><td>Original, <code>weight=None</code></td><td>float16</td><td><code>[inf, 1, 0, -inf]</code></td></tr>
+<tr><td>Original, float16 unit weight</td><td>float32</td><td>exactly <code>b</code></td></tr>
+<tr><td>Candidate, <code>weight=None</code></td><td>float32</td><td>exactly <code>b</code></td></tr>
+</tbody></table></div>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;optional&gt;
+#include &quot;mlx/mlx.h&quot;
+int main() {
+  namespace mx = mlx::core;
+  mx::set_default_device(mx::Device::cpu);
+  auto x = mx::zeros({4}, mx::float16);
+  auto b = mx::array({70000.f, 1.000244140625f, 0x1p-30f, -70000.f});
+  auto a = mx::fast::layer_norm(x, std::nullopt, b, 1e-5f);
+  auto c = mx::fast::layer_norm(x, mx::ones({4}, mx::float16), b, 1e-5f);
+  mx::eval(a, c);
+  std::cout &lt;&lt; a &lt;&lt; &quot;\n&quot; &lt;&lt; c &lt;&lt; &quot;\n&quot;;
+}</code></pre>
+<p>The backward pass also loses information: with zero input and zero float32 bias, a finite incoming cotangent equal to <code>b</code> should pass unchanged through the additive bias. The original bias VJP is <code>[inf, 1, 0, -inf]</code>, already labeled float32; casting back cannot recover the lost values. The candidate returns the original cotangent exactly in this test.</p>
+<h2>Formula, documented behavior and proposed policy</h2>
+<p>For each last-axis row,</p>
+<p><code>mu = mean(x)</code>, <code>v = mean((x-mu)^2)</code>, <code>y = ((x-mu) / sqrt(v+eps)) * w + b</code>.</p>
+<p>The <a href="https://ml-explore.github.io/mlx/build/html/python/_autosummary/mlx.core.fast.layer_norm.html">official API documentation</a> describes optional multiplicative weight and additive bias. With zero <code>x</code> and positive epsilon the normalized component is zero; replacing an omitted weight by one does not change this formula.</p>
+<p>That documentation does <strong>not</strong> specify a complete mixed-dtype promotion table. We therefore distinguish the observed inconsistency from the proposed repair policy: include every present affine parameter in normal MLX dtype promotion. This is not a claim that every finite mixed-precision operation must have finite output or preserve all real-number identities.</p>
+<p>In <a href="https://github.com/ml-explore/mlx/blob/dfe17bafb23e66fe56596df532a497ab3611d0e5/mlx/fast.cpp#L337">the implementation&#x27;s output-type branch</a>, bias participates in <code>result_type</code> only when weight exists. Otherwise the output type is the input type, and bias is narrowed before addition. The <a href="../data/2026-09-13-mlx-layernorm-bias-dtype/layernorm-bias-dtype.patch">candidate patch</a> changes only that last branch:</p>
+<pre><code>// no weight
+has_bias ? result_type(x, *bias) : x.dtype()</code></pre>
+<p>An input-dtype unit weight is a measured workaround for the covered CPU cases. GPU behavior and performance of that workaround remain untested.</p>
+<h2>Actual validation</h2>
+<p>The <a href="../data/2026-09-13-mlx-layernorm-bias-dtype/native_regression.cpp">native suite</a> uses the real C++ MLX runtime. It covers:</p>
+<ul><li>48 constant-input scenarios: 16 input/bias dtype pairs across float16,   bfloat16, float32 and float64, with shapes <code>(4,)</code>, <code>(2,4)</code> and <code>(2,3,4)</code>.</li><li>32 nonconstant scenarios with contiguous and strided <code>(2,4)</code> inputs.</li><li>Values, output dtype, absent/unit-weight equivalence, input/bias JVP and VJP;   one additional bias-VJP precision case.</li><li>16 same-dtype controls spanning the four weight/bias-presence combinations.</li></ul>
+<p>The original and candidate each execute 385 assertions. The original fails 106; the candidate fails zero. All 16 control records are unchanged. See <a href="../data/2026-09-13-mlx-layernorm-bias-dtype/run-before.json">original results</a>, <a href="../data/2026-09-13-mlx-layernorm-bias-dtype/run-after.json">candidate results</a>, <a href="../data/2026-09-13-mlx-layernorm-bias-dtype/run-before.log">original native log</a>, and <a href="../data/2026-09-13-mlx-layernorm-bias-dtype/run-after.log">candidate native log</a>.</p>
+<p>For a nonconstant row <code>[-1,1,-1,1]</code> and epsilon 3, the normalized row is <code>[-0.5,0.5,-0.5,0.5]</code>. The analytical JVP for <code>[1,0,0,0]</code> is <code>[.34375,-.09375,-.15625,-.09375]</code>; the analytical VJP for <code>[1,-2,3,-4]</code> is <code>[.4375,-.4375,1.4375,-1.4375]</code>. These binary-exact fixtures support exact comparisons after representation in the expected dtype. The dtype reference uses MLX&#x27;s general <code>promote_types</code>, independently of LayerNorm&#x27;s branch.</p>
+<p>Publication verification rebuilt the complete CPU library from a clean Git archive of <strong><code>ce916dbbcaa88e433b6fd1e60a17f766d49c27fe</code></strong> with AppleClang 17, Accelerate, <code>-O0</code>, Metal/CUDA disabled, and one build/numerical thread. It then applied the candidate, rebuilt the changed source and relinked. Both result sets match the earlier isolated-object experiment byte for byte as JSON data. This removes dependence on the earlier reused CPU archive. See <a href="../data/2026-09-13-mlx-layernorm-bias-dtype/verification.json">build provenance</a> and <a href="../data/2026-09-13-mlx-layernorm-bias-dtype/BUILD.md">portable instructions</a>.</p>
+<p>The same LayerNorm function text was checked against saved source at <code>81ba1c6a0e50a9268b931579c2d4f1158b9aab5a</code>. The relevant branch was also read at public commit <code>dfe17bafb23e66fe56596df532a497ab3611d0e5</code>. <strong>The complete newer commit was not built.</strong> Installed Python wheel 0.32.2 could not import because Metal was unavailable in this session; no numerical wheel or GPU result is claimed.</p>
+<h2>Existing tests and duplicate search</h2>
+<p>The <a href="https://github.com/ml-explore/mlx/blob/81ba1c6a0e50a9268b931579c2d4f1158b9aab5a/python/tests/test_fast.py#L600">upstream LayerNorm test</a> checks parameter-presence combinations using the same dtype for input and parameters. This misses the mixed-dtype condition here. Its ordinary <a href="https://github.com/ml-explore/mlx/blob/81ba1c6a0e50a9268b931579c2d4f1158b9aab5a/python/tests/test_fast.py#L58">reference helper</a> adds bias after normalization. Those Python tests were not run in this session.</p>
+<p>No exact duplicate was found in the bounded public review: the titles of 35 LayerNorm issues/PRs were inspected and the closest reports read. A fresh <code>layer_norm bias</code> search before publication still returned #3630, #3220 and #2300. <a href="../data/2026-09-13-mlx-layernorm-bias-dtype/DUPLICATES.md">Search details and distinctions</a> are retained. This is not an exhaustive novelty guarantee or a version-to-version regression claim.</p>
+<h2>Limits and reuse</h2>
+<p>The candidate is a research patch. GPU, compiled execution, higher derivatives, integer/complex parameters, empty arrays, full training and performance are outside this validation. Changing promotion may change acceptance of unsupported type combinations; maintainers should decide that policy before integration. The patch does not repair separate float64-statistics narrowing in LayerNorm.</p>
+<p>This report is independent and prepared with AI assistance. Source pins, measured failures and limitations are part of the result. Finite tests are not a formal correctness proof. See <a href="../data/2026-09-13-mlx-layernorm-bias-dtype/LICENSE.md">licenses</a>.</p><h2>Publication links</h2><p><a href="https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-layernorm-bias-dtype.md">Hugging Face report</a> · <a href="https://www.linkedin.com/feed/update/urn:li:share:7504625796238503936/">LinkedIn discussion</a> · <a href="https://www.youtube.com/shorts/8roG0ZS0Goc">YouTube with English captions</a></p></div></article></main>    <footer><div class="shell footer-grid"><div><strong>GERO</strong><p>Independent mathematical assurance research.</p></div><p>Edited by Xamit Kadirbekov · Tashkent · <a href="../../research/editorial.html">Editorial standard</a></p><a href="../../feed.xml">RSS</a></div></footer>
+  </body>
+</html>
