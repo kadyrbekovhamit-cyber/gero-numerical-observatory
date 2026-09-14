@@ -17,7 +17,7 @@ Copies, revised versions and the historical collection do not add new publicatio
 
 ## Latest audit
 
-[MLX CPU quantized matmul: avoidable accumulation error in float16 and bfloat16](reports/mlx-cpu-fp-qmm-accumulation.md) · [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505340163846275072/). Native CPU evidence and local correction; no GPU or model-impact claim. Synthetic narration disclosed.
+[MLX CPU quantized matmul: avoidable accumulation error in float16 and bfloat16](reports/mlx-cpu-fp-qmm-accumulation.md) · [YouTube Short](https://www.youtube.com/shorts/H4xsu8jJaMQ) · [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505340163846275072/). Native CPU evidence and local correction; no GPU or model-impact claim. Synthetic narration disclosed.
 
 ## Previously reviewed video
 
