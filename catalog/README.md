@@ -1,21 +1,25 @@
 # GERO — complete publication catalog
 
-Verified 14 September 2026. **The same 91 distinct publications are available on GitHub, GERO, Hugging Face and Zenodo.** These are reports, case studies, research experiments and preprints, not a count of independent software bugs. Later reports can revisit earlier findings.
+Verified 14 September 2026. **The same 92 distinct publications are available on GitHub, GERO, Hugging Face and Zenodo.** These are reports, case studies, research experiments and preprints, not a count of independent software bugs. Later reports can revisit earlier findings.
 
 Canonical GitHub account: [kadyrbekovhamit-cyber](https://github.com/kadyrbekovhamit-cyber). Publication commits use `kadyrbekovhamit@gmail.com`. Specialist source repositories and their histories remain available under the same account, including the history-preserving Collatz copy.
 
 | Platform | Distinct publications | Detail |
 |---|---:|---|
-| GitHub | 91 | All report mirrors in this catalog, plus the cone manuscript |
-| GERO | 91 | 90 article pages and one separate Fineract case-study page |
-| Hugging Face | 91 | 91 corpus rows and 91 individual report pages |
-| Zenodo | 91 | 92 public records including one additional historical collection |
+| GitHub | 92 | All report mirrors in this catalog, plus the cone manuscript |
+| GERO | 92 | 91 article pages and one separate Fineract case-study page |
+| Hugging Face | 92 | 92 corpus rows and 92 individual report pages |
+| Zenodo | 92 | 93 public records including one additional historical collection |
 
-Copies, revised versions and the historical collection do not add new publication IDs. The 45-report collection is excluded from the individual-record count. No numerical experiments were rerun for this archival synchronization.
+Copies, revised versions and the historical collection do not add new publication IDs. The 45-report collection is excluded from the individual-record count. The earlier archival synchronization did not rerun experiments. The new QuantLib report adds separately documented released/native execution, regression tests and mutation replay.
 
 [Machine-readable catalog](publications.json) · [Verification scope and platform counts](platform-status.json) · [Authorship and licenses](SOURCE_NOTICES.md).
 
 ## Latest reviewed video
+
+[QuantLib: when a probability becomes 20](https://www.youtube.com/shorts/hwBkoppgfYQ) — [report](reports/quantlib-zero-stddev-itm-probabilities.md) · [LinkedIn](https://www.linkedin.com/posts/xamit-kadirbekov-a43ba6417_quantlib-fintech-softwaretesting-activity-7505305520057090048-dG7h). Two implementation defects, one new report. Synthetic English narration is disclosed.
+
+Previous reviewed video
 
 [pyliferisk: zero growth changes the mortality assumptions](https://www.youtube.com/shorts/nFE81EVJPrE) — [technical report](reports/pyliferisk-geometric-mortality.md) · [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505220261592600577/). This 46-second English video explains the existing report; it does not add a publication ID. Synthetic narration is disclosed.
 
@@ -114,3 +118,4 @@ Copies, revised versions and the historical collection do not add new publicatio
 | 89 | [Obstructions to Low-Dimensional Natural Matrix Interpretations for a Mixed-Base Collatz Rewrite System](reports/collatz-matrix-no-go.md) | [Page](https://www.gero.uz/research/articles/collatz-matrix-no-go.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/collatz-matrix-no-go.md) | [Record](https://zenodo.org/records/22098492) | [GitHub](https://github.com/kadyrbekovhamit-cyber/collatz-matrix-no-go) |
 | 90 | [Axisymmetric p-harmonic modes in circular cones: nodal classification and two-term asymptotics](reports/axisymmetric-p-harmonic-cones.md) | [Page](https://www.gero.uz/research/articles/axisymmetric-p-harmonic-cones.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/axisymmetric-p-harmonic-cones.md) | [Record](https://zenodo.org/records/22665694) | [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/artifacts/p-harmonic-cones.pdf) |
 | 91 | [pyliferisk geometric valuations discard supplied mortality assumptions](reports/pyliferisk-geometric-mortality.md) | [Page](https://www.gero.uz/research/articles/pyliferisk-geometric-mortality.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/pyliferisk-geometric-mortality.md) | [Record](https://zenodo.org/records/22747542) | [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-pyliferisk-geometric-mortality-audit) |
+| 92 | [QuantLib: deterministic ITM probabilities and cap/floor deltas](reports/quantlib-zero-stddev-itm-probabilities.md) | [Page](https://www.gero.uz/research/articles/quantlib-zero-stddev-itm-probabilities.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/quantlib-zero-stddev-itm-probabilities.md) | [Record](https://zenodo.org/records/22754207) | [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/quantlib-zero-stddev-itm-probabilities.md) |

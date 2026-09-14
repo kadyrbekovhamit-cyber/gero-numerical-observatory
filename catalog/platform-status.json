@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-14T10:55:13.487023+00:00",
+  "checked_at": "2026-09-14T16:46:24.492675+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 91,
-    "huggingface": 91,
-    "zenodo": 91,
-    "github_catalog_report": 91,
-    "zenodo_records_including_collection": 92,
-    "unique_individual_publications": 91,
+    "gero": 92,
+    "huggingface": 92,
+    "zenodo": 92,
+    "github_catalog_report": 92,
+    "zenodo_records_including_collection": 93,
+    "unique_individual_publications": 92,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "All 91 individual report mirrors are included in the central catalog; remote publication is verified in the release receipt.",
+  "github_status": "92 individual report mirrors in the canonical catalog. The new QuantLib report bundles two implementation defects.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -25,15 +25,20 @@
     "zenodo": []
   },
   "deduplication_notes": [
-    "91 canonical publication IDs are present on all four report platforms. Counts are never summed across platforms.",
-    "GERO: 90 research article pages plus the separate Fineract calculation-contracts page.",
-    "Hugging Face: 91 distinct corpus rows and 91 individual report pages. The prior 81 corpus rows are byte-preserved; two of the ten additions mirror cases already in the financial-calculation Space.",
-    "Zenodo: 91 distinct individual records plus one historical 45-report collection. The collection contributes no additional publication IDs.",
-    "The owner-filtered query excludes other Kadirbekov accounts. Latest versions and record concepts are deduplicated.",
-    "Software audits, case studies, commentary, mathematical preprints and the labelled Spark LLM-answer experiment are distinct publication categories; no independent-defect total is asserted.",
-    "All 91 reports are mirrored in one GitHub catalog under kadyrbekovhamit-cyber. Specialist source repositories and the history-preserving Collatz copy remain under the same account.",
-    "This synchronization republishes existing materials; no new numerical runs, novelty review, peer review, production exposure or maintainer acceptance is claimed."
+    "92 canonical publication IDs; counts are never summed across platforms and are not independent-defect counts.",
+    "GERO: 91 article pages plus the separate Fineract calculation-contracts page.",
+    "Hugging Face: 92 corpus rows and 92 report pages; the prior 91 corpus rows were preserved byte for byte.",
+    "Zenodo: 92 individual records plus one historical collection. The collection contributes no additional publication ID.",
+    "The new QuantLib report contains two reproduced defects. Its executed validation is distinct from the prior archival synchronization.",
+    "Prior commentary, preprints and labelled LLM-answer experiments retain their original categories and limitations.",
+    "All publications use the same kadyrbekovhamit-cyber catalog. Specialist source repositories remain under that account."
   ],
   "parity_complete": true,
-  "github_commit_email": "kadyrbekovhamit@gmail.com"
+  "github_commit_email": "kadyrbekovhamit@gmail.com",
+  "latest_report": {
+    "id": "quantlib-zero-stddev-itm-probabilities",
+    "archive_sha256": "10d5d7b5f5d291eb6f39c0798c3a3026c99943934c2facff03127a7dd86588df",
+    "zenodo": "https://zenodo.org/records/22754207",
+    "maintainer_correspondence": "https://github.com/lballabio/QuantLib/issues/2794"
+  }
 }

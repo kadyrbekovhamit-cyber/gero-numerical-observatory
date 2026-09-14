@@ -1545,5 +1545,29 @@
     "video_url": "https://www.gero.uz/research/media/pyliferisk-geometric-mortality.mp4",
     "evidence_archive": "https://www.gero.uz/research/data/pyliferisk-geometric-mortality-v1.0.0.zip",
     "evidence_archive_sha256": "643e2016557cb418422277de77d0e20962272b62addbcdf3011c1771154a5d35"
+  },
+  {
+    "id": "quantlib-zero-stddev-itm-probabilities",
+    "title": "QuantLib: deterministic ITM probabilities and cap/floor deltas",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-14",
+    "kind": "published_report",
+    "gero": "https://www.gero.uz/research/articles/quantlib-zero-stddev-itm-probabilities.html",
+    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/quantlib-zero-stddev-itm-probabilities.md",
+    "zenodo": "https://zenodo.org/records/22754207",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/quantlib-zero-stddev-itm-probabilities.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/quantlib-zero-stddev-itm-probabilities.md",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/quantlib-zero-stddev-itm-probabilities.md",
+    "mirror_sha256": "f7133e23de32f3b39d1cb5863aac27a661a95404fd38a336b1b734909ed4809a",
+    "source_text_sha256": "f7133e23de32f3b39d1cb5863aac27a661a95404fd38a336b1b734909ed4809a",
+    "video_url": "https://www.gero.uz/research/media/quantlib-zero-stddev-itm-probabilities.mp4",
+    "evidence_archive": "https://www.gero.uz/research/data/quantlib-zero-stddev/gero-quantlib-zero-stddev-evidence-2026-09-14.zip",
+    "evidence_archive_sha256": "10d5d7b5f5d291eb6f39c0798c3a3026c99943934c2facff03127a7dd86588df",
+    "maintainer_correspondence": "https://github.com/lballabio/QuantLib/issues/2794",
+    "implementation_defects_in_this_report": 2,
+    "linkedin": "https://www.linkedin.com/posts/xamit-kadirbekov-a43ba6417_quantlib-fintech-softwaretesting-activity-7505305520057090048-dG7h",
+    "youtube": "https://www.youtube.com/shorts/hwBkoppgfYQ"
   }
 ]
