@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-14T16:46:24.492675+00:00",
+  "checked_at": "2026-09-14T17:55:01.457610+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 92,
-    "huggingface": 92,
-    "zenodo": 92,
-    "github_catalog_report": 92,
-    "zenodo_records_including_collection": 93,
-    "unique_individual_publications": 92,
+    "gero": 93,
+    "huggingface": 93,
+    "zenodo": 93,
+    "github_catalog_report": 93,
+    "zenodo_records_including_collection": 94,
+    "unique_individual_publications": 93,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "92 individual report mirrors in the canonical catalog. The new QuantLib report bundles two implementation defects.",
+  "github_status": "93 publication IDs in the canonical catalog. Latest nntrainer DivideLayer report contains one implementation defect.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -25,20 +25,19 @@
     "zenodo": []
   },
   "deduplication_notes": [
-    "92 canonical publication IDs; counts are never summed across platforms and are not independent-defect counts.",
-    "GERO: 91 article pages plus the separate Fineract calculation-contracts page.",
-    "Hugging Face: 92 corpus rows and 92 report pages; the prior 91 corpus rows were preserved byte for byte.",
-    "Zenodo: 92 individual records plus one historical collection. The collection contributes no additional publication ID.",
-    "The new QuantLib report contains two reproduced defects. Its executed validation is distinct from the prior archival synchronization.",
-    "Prior commentary, preprints and labelled LLM-answer experiments retain their original categories and limitations.",
-    "All publications use the same kadyrbekovhamit-cyber catalog. Specialist source repositories remain under that account."
+    "93 publication IDs are not independent-defect counts.",
+    "GERO:92 article pages plus separate Fineract page.",
+    "Hugging Face:93 corpus rows and report pages; prior92 corpus rows preserved byte for byte.",
+    "Zenodo:93 individual records plus one historical collection.",
+    "New nntrainer implementation defect acknowledges prior MLX numerical analogue.",
+    "Existing report categories and limitations remain unchanged."
   ],
   "parity_complete": true,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "latest_report": {
-    "id": "quantlib-zero-stddev-itm-probabilities",
-    "archive_sha256": "10d5d7b5f5d291eb6f39c0798c3a3026c99943934c2facff03127a7dd86588df",
-    "zenodo": "https://zenodo.org/records/22754207",
-    "maintainer_correspondence": "https://github.com/lballabio/QuantLib/issues/2794"
+    "id": "nntrainer-divide-gradient-extremes",
+    "archive_sha256": "a62d6f9aeb36604df043520cf2a6ce51b614734c9fe720ca7821ebbd9143862f",
+    "zenodo": "https://zenodo.org/records/22755613",
+    "maintainer_correspondence": "https://github.com/nntrainer/nntrainer/issues/4336"
   }
 }

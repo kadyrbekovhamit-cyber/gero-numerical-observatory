@@ -1569,5 +1569,29 @@
     "implementation_defects_in_this_report": 2,
     "linkedin": "https://www.linkedin.com/posts/xamit-kadirbekov-a43ba6417_quantlib-fintech-softwaretesting-activity-7505305520057090048-dG7h",
     "youtube": "https://www.youtube.com/shorts/hwBkoppgfYQ"
+  },
+  {
+    "id": "nntrainer-divide-gradient-extremes",
+    "title": "nntrainer DivideLayer: finite forward values, incorrect denominator gradients",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-14",
+    "kind": "published_report",
+    "gero": "https://www.gero.uz/research/articles/nntrainer-divide-gradient-extremes.html",
+    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/nntrainer-divide-gradient-extremes.md",
+    "zenodo": "https://zenodo.org/records/22755613",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/nntrainer-divide-gradient-extremes.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/nntrainer-divide-gradient-extremes.md",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/nntrainer-divide-gradient-extremes.md",
+    "mirror_sha256": "0b73870e1b0f0826cec4aaec74ca5c49ced8f2aade418377515e53fa555d94bc",
+    "source_text_sha256": "0b73870e1b0f0826cec4aaec74ca5c49ced8f2aade418377515e53fa555d94bc",
+    "video_url": "https://www.gero.uz/research/media/nntrainer-divide-gradient-extremes.mp4",
+    "evidence_archive": "https://www.gero.uz/research/data/nntrainer-divide/gero-nntrainer-divide-evidence-2026-09-14.zip",
+    "evidence_archive_sha256": "a62d6f9aeb36604df043520cf2a6ce51b614734c9fe720ca7821ebbd9143862f",
+    "maintainer_correspondence": "https://github.com/nntrainer/nntrainer/issues/4336",
+    "implementation_defects_in_this_report": 1,
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7505322923000389633/",
+    "youtube": "https://www.youtube.com/shorts/otSXWoHIN6A"
   }
 ]
