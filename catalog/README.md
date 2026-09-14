@@ -15,6 +15,10 @@ Copies, revised versions and the historical collection do not add new publicatio
 
 [Machine-readable catalog](publications.json) · [Verification scope and platform counts](platform-status.json) · [Authorship and licenses](SOURCE_NOTICES.md).
 
+## Latest reviewed video
+
+[pyliferisk: zero growth changes the mortality assumptions](https://www.youtube.com/shorts/nFE81EVJPrE) — [technical report](reports/pyliferisk-geometric-mortality.md) · [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505220261592600577/). This 46-second English video explains the existing report; it does not add a publication ID. Synthetic narration is disclosed.
+
 ## Individual publications
 
 | # | Publication | GERO | Hugging Face | Zenodo | Source |
