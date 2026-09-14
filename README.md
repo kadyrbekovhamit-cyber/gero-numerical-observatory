@@ -1,6 +1,12 @@
 # GERO Numerical Observatory
 
-[Publication catalogue](reports/README.md). 76 distinct documents. GitHub, Hugging Face and LinkedIn: 76 each; GERO: 75; individual Zenodo records: 74. The new MLX integer-comparison report is pending on GERO because Vercel authentication is unavailable. The cross-product and integer-norm reports now have individual Zenodo records. Two other documents still lack individual Zenodo records. Counts describe documents, not distinct defects.
+## Complete publication catalog
+
+[**All 90 published materials, in one place →**](catalog/README.md)
+
+The 14 September 2026 inventory verifies 86 GERO publications, 83 Hugging Face publications, and 79 individual Zenodo records (plus one historical collection). All 90 distinct reports, studies and preprints are now indexed in this repository. These publication counts are not counts of independent defects. [Coverage, missing platforms and counting rules](catalog/platform-status.json).
+
+[Earlier report archive](reports/README.md). Its original records remain available; use the complete catalog above for current publication coverage and missing platforms.
 
 - [Integer overflow reverses MLX isclose and allclose results](audits/2026-09-13-mlx-isclose-integer-overflow/) — 351 native scenarios, 233 original failures, zero bounded CPU-prototype failures; [Zenodo](https://zenodo.org/records/22734845) · [Hugging Face](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-isclose-integer-overflow.md) · [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7504862823433351168/). GERO pending authentication.
 

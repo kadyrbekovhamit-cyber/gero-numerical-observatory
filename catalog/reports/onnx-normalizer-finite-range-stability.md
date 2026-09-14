@@ -1,0 +1,137 @@
+> Archival mirror. [Original report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/onnx-normalizer-finite-range-stability.md). Claims, dates, authorship and licenses remain those of the original publication; this catalog update does not rerun or revalidate its numerical experiments.
+
+# Finite ONNX `Normalizer` inputs overflow, underflow, or violate the output contract
+
+Xamit Kadirbekov · First published 13 September 2026
+
+[GERO article](https://www.gero.uz/research/articles/onnx-normalizer-finite-range-stability.html) · [Frozen reproduction source](https://github.com/kadyrbekovhamit-cyber/gero-onnx-normalizer-stability-audit/tree/d50663511461efed70d9d58127393d627aac79cc) · [Zenodo DOI](https://doi.org/10.5281/zenodo.22731718) · [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7504740577523949569/) · [Evidence ZIP](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/onnx-normalizer-finite-range-stability-2026-09-13.zip)
+
+Archival presentation of existing research, including the separate documentation correction and unresolved MAX semantic conflict. No new numerical tests or builds were run for this publication. Source code retains MIT; report and archival metadata use CC BY 4.0.
+
+## Finding
+
+The released ONNX Python `ReferenceEvaluator` and ONNX Runtime CPU kernel both
+mis-evaluate finite, mathematically ordinary inputs to
+`ai.onnx.ml::Normalizer` near the limits of their accepted data types.
+
+The failures have different causes. The reference implementation squares
+values directly, floors divisors at `1e-30`, assumes a two-dimensional input,
+and preserves the input dtype despite a float32 output contract. ONNX Runtime
+forms L2 squares before normalization and narrows values or accumulated norms
+to float.
+
+## Minimal counterexample
+
+For two float32 rows and L2 normalization:
+
+```text
+input
+[[ 1e30,  1e30],
+ [ 1e-30, -1e-30]]
+
+exact scaled result
+[[ 0.70710677,  0.70710677],
+ [ 0.70710677, -0.70710677]]
+
+ONNX ReferenceEvaluator 1.22.0
+[[ 0,  0],
+ [ 1, -1]]
+
+ONNX Runtime CPU 1.29.0
+[[ NaN,  NaN],
+ [ 1e-30, -1e-30]]
+```
+
+Every input is finite. Every correct output component is an ordinary number
+near `±0.7071`.
+
+## Why the oracle is exact here
+
+Normalization is invariant under multiplication of a row by a positive common
+scale. Let `s = max_i |x_i|` and `u = x / s`. Then
+
+```text
+L1(x) = u / Σ|u_i|
+L2(x) = u / sqrt(Σu_i²)
+```
+
+The components of `u` lie between -1 and 1, so neither the squares nor their
+sum approach the floating-point range limits in these examples. Both rows of
+the L2 counterexample reduce exactly to `[1, ±1] / sqrt(2)` before the final
+float32 rounding.
+
+## Independent verification
+
+- The executable oracle first scales in float64 and only casts the final
+  result to the schema's float32 output type.
+- ONNX 1.22.0 and ONNX Runtime 1.29.0 reproduce the values above on the CPU
+  provider.
+- Double inputs at `1e300` and `1e-300` expose failures in the released `MAX`,
+  L1, and L2 paths of both implementations.
+- For double input, the released ReferenceEvaluator returns float64 although
+  the operator schema declares `tensor(float)` output.
+- A valid rank-one int32 input fails in the released ReferenceEvaluator with
+  `axis 1 is out of bounds`.
+- The defects were confirmed in ONNX main commit
+  `c9f169adac34bd690bf0d628e9aae7fde3d4be85` and ONNX Runtime main commit
+  `a7df32cf6087a11884042a2a95526d72100e3b95` on 13 September 2026.
+- Restoring each released algorithm makes the new extreme-magnitude tests fail
+  with `NaN`, zero, or unnormalized outputs.
+
+The full reproducer, pinned dependencies, expected output, and assertions are
+published in
+[gero-onnx-normalizer-stability-audit](https://github.com/kadyrbekovhamit-cyber/gero-onnx-normalizer-stability-audit).
+
+## Corrections
+
+The ONNX reference correction scales finite inputs before reduction, selects
+the correct axis for rank one or two, and casts the result to float32. It is
+submitted as [onnx/onnx#8450](https://github.com/onnx/onnx/pull/8450).
+
+The ONNX Runtime correction computes `MAX` in double and uses the scaled L1 and
+L2 formulas above. It is submitted as
+[microsoft/onnxruntime#32573](https://github.com/microsoft/onnxruntime/pull/32573).
+The Runtime change was built from source on macOS arm64. All seven available
+`Normalizer.*` tests passed, including the two new extreme-range tests, and the
+official lintrunner reported no issues.
+
+## Separate documentation correction
+
+The published operator documentation independently states `X / sum(X)` for L1
+and `sqrt(X^2 / sum(X^2)}` for L2. The first expression omits absolute values;
+the second places `X` inside the square root and has a mismatched brace.
+
+The repository history shows that the earlier documentation correctly defined
+the divisors as `Σ|x_i|` and `sqrt(Σx_i²)`. The wrong output formulas were
+introduced during a 2018 documentation expansion. The focused correction is
+submitted as [onnx/onnx#8451](https://github.com/onnx/onnx/pull/8451). It does
+not alter the separately ambiguous `MAX` formula or operator behavior.
+
+## Separate `MAX` semantic conflict
+
+Negative rows expose a contract-level disagreement that cannot be resolved as
+a numerical-stability patch. For input `[-2, -1]`, the published formula and
+ONNX Runtime divide by the raw maximum and return `[2, 1]`. ONNX
+ReferenceEvaluator divides by the maximum absolute value and returns
+`[-1, -0.5]`.
+
+The latter is also scikit-learn's definition of `Normalizer(norm="max")`, and
+the standard sklearn-onnx converter maps that mode directly to ONNX `MAX`.
+Therefore conversion parity and backend conformance cannot both hold under the
+current operator contract. The independently asserted counterexample and
+pinned source links are filed as
+[onnx/onnx#8452](https://github.com/onnx/onnx/issues/8452). Because changing
+either meaning can affect existing models, the issue requests a specification
+decision before a behavioral patch.
+
+## Impact and boundary
+
+An official reference evaluator is used as a comparison oracle, while a
+runtime kernel evaluates deployed models. Here both can disagree with a
+bounded independent calculation, but in different ways. This can produce false
+conformance failures, hide a backend error behind agreement on ordinary test
+ranges, or propagate non-finite values from finite model inputs.
+
+This is an ordinary numerical-correctness finding. It is not a security report,
+and no claim is made that a deployed application has encountered these exact
+inputs or suffered harm.

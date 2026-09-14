@@ -4,6 +4,8 @@ __pycache__/
 .hypothesis/
 *.egg-info/
 reports/
+!catalog/reports/
+!catalog/reports/**
 site/data/
 site/artifacts/
 site/observations/

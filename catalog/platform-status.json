@@ -1,0 +1,62 @@
+{
+  "checked_at": "2026-09-14T10:25:04.473384+00:00",
+  "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
+  "counts": {
+    "gero": 86,
+    "huggingface": 83,
+    "zenodo": 79,
+    "github_catalog_report": 90,
+    "zenodo_records_including_collection": 80,
+    "unique_individual_publications": 90,
+    "legacy_github_accounts_required_after_copy": 0
+  },
+  "github_status": "All 90 individual report mirrors are included in this Git commit; remote publication is verified in the local release receipt.",
+  "github_account": "kadyrbekovhamit-cyber",
+  "github_account_email_verified_in_settings": true,
+  "sources": {
+    "gero": "https://www.gero.uz/research/",
+    "hf_dataset": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09",
+    "hf_space": "https://huggingface.co/spaces/XamitK/gero-financial-calculation-checks",
+    "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
+  },
+  "missing": {
+    "gero": [
+      "mlx-isclose-integer-overflow",
+      "spark-x25-financial-arithmetic-study",
+      "collatz-matrix-no-go",
+      "axisymmetric-p-harmonic-cones"
+    ],
+    "huggingface": [
+      "financepy-baw-zero-rate",
+      "onnx-lpnormalization-finite-range",
+      "onnx-reducel2-finite-range",
+      "onnx-reducemean-finite-range",
+      "spark-x25-financial-arithmetic-study",
+      "collatz-matrix-no-go",
+      "axisymmetric-p-harmonic-cones"
+    ],
+    "zenodo": [
+      "nntrainer-pow-zero-exponent",
+      "financepy-fx-digital-payout-currency",
+      "financepy-act365l-missing-reference-end",
+      "pyxirr-rate-vector-convergence",
+      "financepy-equity-vector-expiry-pricing",
+      "financepy-baw-zero-rate",
+      "financepy-bond-principal-face-scaling",
+      "onnx-lpnormalization-finite-range",
+      "onnx-reducel2-finite-range",
+      "onnx-reducemean-finite-range",
+      "spark-x25-financial-arithmetic-study"
+    ]
+  },
+  "deduplication_notes": [
+    "81 catalog reports plus five GERO articles absent from that catalog, the separate Fineract software case study, the Spark arithmetic experiment, and two older mathematical works = 90.",
+    "GERO: 85 article pages plus one separate Fineract page. The MLX isclose article returns 404.",
+    "Hugging Face: 81 report files in one dataset plus two distinct cases (Fineract and FinancePy bond principal) with source/evidence in one Space.",
+    "Zenodo: 79 individual records plus one historical 45-report collection. The collection does not add45 new reports and is excluded from the90 individual-publication union.",
+    "The owner-filtered Zenodo query covers80 public latest-version records with80 distinct concept identifiers. Search hits by other Kadirbekovs are excluded.",
+    "Several case-study publications revisit or combine the same underlying defects. No independent-defect total is asserted.",
+    "The Spark study evaluates generated answers; it is not counted as a confirmed implementation bug. Mathematical preprints and commentaries are likewise not software bugs.",
+    "The primary account has32 public research repositories before the legacy Collatz copy; repository counts are not report counts."
+  ]
+}

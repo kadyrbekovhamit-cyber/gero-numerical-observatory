@@ -1,5 +1,7 @@
 # GERO publication catalogue
 
+This earlier archive is retained for continuity. The [complete publication catalog](../catalog/README.md), verified on 14 September 2026, covers 90 distinct reports, studies and preprints and records actual availability on each platform. Historical counts below describe this older snapshot.
+
 76 distinct documents. GitHub, Hugging Face and LinkedIn: 76 each; GERO: 75; individual Zenodo records: 74. The new MLX integer-comparison report is pending on GERO because Vercel authentication is unavailable. The cross-product and integer-norm reports now have individual Zenodo records. Two other documents still lack individual Zenodo records. Counts describe documents, not distinct defects.
 
 Verified YouTube coverage: **41 of 76** catalogue documents. Earlier video links remain unchanged.
