@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-14T17:55:01.457610+00:00",
+  "checked_at": "2026-09-14T19:02:49.490125+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 93,
-    "huggingface": 93,
-    "zenodo": 93,
-    "github_catalog_report": 93,
-    "zenodo_records_including_collection": 94,
-    "unique_individual_publications": 93,
+    "gero": 94,
+    "huggingface": 94,
+    "zenodo": 94,
+    "github_catalog_report": 94,
+    "zenodo_records_including_collection": 95,
+    "unique_individual_publications": 94,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "93 publication IDs in the canonical catalog. Latest nntrainer DivideLayer report contains one implementation defect.",
+  "github_status": "94 publication IDs in the canonical catalog. Latest MLX CPU accumulation report contains one implementation issue.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -25,19 +25,17 @@
     "zenodo": []
   },
   "deduplication_notes": [
-    "93 publication IDs are not independent-defect counts.",
-    "GERO:92 article pages plus separate Fineract page.",
-    "Hugging Face:93 corpus rows and report pages; prior92 corpus rows preserved byte for byte.",
-    "Zenodo:93 individual records plus one historical collection.",
-    "New nntrainer implementation defect acknowledges prior MLX numerical analogue.",
-    "Existing report categories and limitations remain unchanged."
+    "94 publication IDs are not independent-defect counts.",
+    "GERO:93 article pages plus separate Fineract page.",
+    "Hugging Face:94 corpus rows and report pages; prior93 rows byte-preserved.",
+    "Zenodo:94 individual records plus one historical collection.",
+    "Latest report documents the current CPU fp_qmm path and acknowledges established accumulation prior work."
   ],
   "parity_complete": true,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "latest_report": {
-    "id": "nntrainer-divide-gradient-extremes",
-    "archive_sha256": "a62d6f9aeb36604df043520cf2a6ce51b614734c9fe720ca7821ebbd9143862f",
-    "zenodo": "https://zenodo.org/records/22755613",
-    "maintainer_correspondence": "https://github.com/nntrainer/nntrainer/issues/4336"
+    "id": "mlx-cpu-fp-qmm-accumulation",
+    "archive_sha256": "6b169485ff661e0bd1a35de3722e81bfcb4d8dbcbe1f6574b9f9281b10d0a142",
+    "zenodo": "https://zenodo.org/records/22756546"
   }
 }

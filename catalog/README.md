@@ -1,21 +1,25 @@
 # GERO — complete publication catalog
 
-Verified 14 September 2026. **The same 93 distinct publications are available on GitHub, GERO, Hugging Face and Zenodo.** These are reports, case studies, research experiments and preprints, not a count of independent software bugs. Later reports can revisit earlier findings.
+Verified 14 September 2026. **The same 94 distinct publications are available on GitHub, GERO, Hugging Face and Zenodo.** These are reports, case studies, research experiments and preprints, not a count of independent software bugs. Later reports can revisit earlier findings.
 
 Canonical GitHub account: [kadyrbekovhamit-cyber](https://github.com/kadyrbekovhamit-cyber). Publication commits use `kadyrbekovhamit@gmail.com`. Specialist source repositories and their histories remain available under the same account, including the history-preserving Collatz copy.
 
 | Platform | Distinct publications | Detail |
 |---|---:|---|
-| GitHub | 93 | All report mirrors in this catalog, plus the cone manuscript |
-| GERO | 93 | 92 article pages and one separate Fineract case-study page |
-| Hugging Face | 93 | 93 corpus rows and 93 individual report pages |
-| Zenodo | 93 | 94 public records including one additional historical collection |
+| GitHub | 94 | All report mirrors in this catalog, plus the cone manuscript |
+| GERO | 94 | 93 article pages and one separate Fineract case-study page |
+| Hugging Face | 94 | 94 corpus rows and 94 individual report pages |
+| Zenodo | 94 | 95 public records including one additional historical collection |
 
 Copies, revised versions and the historical collection do not add new publication IDs. The 45-report collection is excluded from the individual-record count. The earlier archival synchronization did not rerun experiments. The new QuantLib report adds separately documented released/native execution, regression tests and mutation replay.
 
 [Machine-readable catalog](publications.json) · [Verification scope and platform counts](platform-status.json) · [Authorship and licenses](SOURCE_NOTICES.md).
 
-## Latest reviewed video
+## Latest audit
+
+[MLX CPU quantized matmul: avoidable accumulation error in float16 and bfloat16](reports/mlx-cpu-fp-qmm-accumulation.md) · [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505340163846275072/). Native CPU evidence and local correction; no GPU or model-impact claim. Synthetic narration disclosed.
+
+## Previously reviewed video
 
 [nntrainer: forward is 1, gradient is infinity](https://www.youtube.com/shorts/otSXWoHIN6A) — [report](reports/nntrainer-divide-gradient-extremes.md) · [LinkedIn](https://www.linkedin.com/feed/update/urn:li:ugcPost:7505322923000389633/). One newly documented nntrainer implementation defect; earlier MLX analogue acknowledged. Synthetic narration disclosed.
 
@@ -124,3 +128,4 @@ Previous reviewed video
 | 91 | [pyliferisk geometric valuations discard supplied mortality assumptions](reports/pyliferisk-geometric-mortality.md) | [Page](https://www.gero.uz/research/articles/pyliferisk-geometric-mortality.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/pyliferisk-geometric-mortality.md) | [Record](https://zenodo.org/records/22747542) | [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-pyliferisk-geometric-mortality-audit) |
 | 92 | [QuantLib: deterministic ITM probabilities and cap/floor deltas](reports/quantlib-zero-stddev-itm-probabilities.md) | [Page](https://www.gero.uz/research/articles/quantlib-zero-stddev-itm-probabilities.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/quantlib-zero-stddev-itm-probabilities.md) | [Record](https://zenodo.org/records/22754207) | [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/quantlib-zero-stddev-itm-probabilities.md) |
 | 93 | [nntrainer DivideLayer: finite forward values, incorrect denominator gradients](reports/nntrainer-divide-gradient-extremes.md) | [Page](https://www.gero.uz/research/articles/nntrainer-divide-gradient-extremes.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/nntrainer-divide-gradient-extremes.md) | [Record](https://zenodo.org/records/22755613) | [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/nntrainer-divide-gradient-extremes.md) |
+| 94 | [MLX CPU quantized matmul: avoidable accumulation error in float16 and bfloat16](reports/mlx-cpu-fp-qmm-accumulation.md) | [Page](https://www.gero.uz/research/articles/mlx-cpu-fp-qmm-accumulation.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-cpu-fp-qmm-accumulation.md) | [Record](https://zenodo.org/records/22756546) | [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-cpu-fp-qmm-accumulation.md) |

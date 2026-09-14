@@ -1593,5 +1593,27 @@
     "implementation_defects_in_this_report": 1,
     "linkedin": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7505322923000389633/",
     "youtube": "https://www.youtube.com/shorts/otSXWoHIN6A"
+  },
+  {
+    "id": "mlx-cpu-fp-qmm-accumulation",
+    "title": "MLX CPU quantized matmul: avoidable accumulation error in float16 and bfloat16",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-14",
+    "kind": "published_report",
+    "gero": "https://www.gero.uz/research/articles/mlx-cpu-fp-qmm-accumulation.html",
+    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-cpu-fp-qmm-accumulation.md",
+    "zenodo": "https://zenodo.org/records/22756546",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-cpu-fp-qmm-accumulation.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-cpu-fp-qmm-accumulation.md",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-cpu-fp-qmm-accumulation.md",
+    "mirror_sha256": "194e8cb4fe8495bc15ee01483f0e732017060dd5834fe8fc23203b7188fff768",
+    "source_text_sha256": "194e8cb4fe8495bc15ee01483f0e732017060dd5834fe8fc23203b7188fff768",
+    "video_url": "https://www.gero.uz/research/media/mlx-cpu-fp-qmm-accumulation.mp4",
+    "evidence_archive": "https://www.gero.uz/research/data/mlx-cpu-accumulation/gero-mlx-cpu-accumulation-evidence-2026-09-14.zip",
+    "evidence_archive_sha256": "6b169485ff661e0bd1a35de3722e81bfcb4d8dbcbe1f6574b9f9281b10d0a142",
+    "implementation_defects_in_this_report": 1,
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7505340163846275072/"
   }
 ]
