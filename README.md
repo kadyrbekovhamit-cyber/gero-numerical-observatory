@@ -2,9 +2,12 @@
 
 ## Complete publication catalog
 
-[**All 91 published materials, in one place →**](catalog/README.md)
+Latest audit: [QuantLib deterministic probabilities and cap/floor deltas](catalog/reports/quantlib-zero-stddev-itm-probabilities.md). Two defects; candidate corrections remove 90 mismatches across 660 helper inputs.
 
-The 14 September 2026 synchronization verifies the same **91 distinct publications on GERO, Hugging Face, Zenodo and this GitHub catalog**. Zenodo also has one historical collection, excluded from the 91 individual-record count. Publication counts are not counts of independent defects. [Coverage and counting rules](catalog/platform-status.json).
+
+[**All 92 published materials, in one place →**](catalog/README.md)
+
+The 14 September 2026 synchronization verifies the same **92 distinct publications on GERO, Hugging Face, Zenodo and this GitHub catalog**. Zenodo also has one historical collection, excluded from the 92 individual-record count. Publication counts are not counts of independent defects. [Coverage and counting rules](catalog/platform-status.json).
 
 [Earlier report archive](reports/README.md). Its original records remain available; use the complete catalog above for current publication coverage and missing platforms.
 
