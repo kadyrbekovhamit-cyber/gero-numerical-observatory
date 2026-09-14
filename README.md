@@ -2,13 +2,13 @@
 
 ## Complete publication catalog
 
-[**All 90 published materials, in one place →**](catalog/README.md)
+[**All 91 published materials, in one place →**](catalog/README.md)
 
-The 14 September 2026 inventory verifies 86 GERO publications, 83 Hugging Face publications, and 79 individual Zenodo records (plus one historical collection). All 90 distinct reports, studies and preprints are now indexed in this repository. These publication counts are not counts of independent defects. [Coverage, missing platforms and counting rules](catalog/platform-status.json).
+The 14 September 2026 synchronization verifies the same **91 distinct publications on GERO, Hugging Face, Zenodo and this GitHub catalog**. Zenodo also has one historical collection, excluded from the 91 individual-record count. Publication counts are not counts of independent defects. [Coverage and counting rules](catalog/platform-status.json).
 
 [Earlier report archive](reports/README.md). Its original records remain available; use the complete catalog above for current publication coverage and missing platforms.
 
-- [Integer overflow reverses MLX isclose and allclose results](audits/2026-09-13-mlx-isclose-integer-overflow/) — 351 native scenarios, 233 original failures, zero bounded CPU-prototype failures; [Zenodo](https://zenodo.org/records/22734845) · [Hugging Face](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-isclose-integer-overflow.md) · [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7504862823433351168/). GERO pending authentication.
+- [Integer overflow reverses MLX isclose and allclose results](audits/2026-09-13-mlx-isclose-integer-overflow/) — 351 native scenarios, 233 original failures, zero bounded CPU-prototype failures; [Zenodo](https://zenodo.org/records/22734845) · [Hugging Face](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-isclose-integer-overflow.md) · [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7504862823433351168/). [GERO](https://www.gero.uz/research/articles/mlx-isclose-integer-overflow.html).
 
 - [Parallel vectors produce nonzero cross products in Apple MLX](audits/2026-09-13-mlx-cross-axis-broadcast/) — Clean CPU build: 3,383 scenarios, 594 original failures and zero candidate failures. All 2,789 control records unchanged. [GERO](https://www.gero.uz/research/articles/mlx-cross-axis-broadcast.html) · [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7504814771909668864/) · [Hugging Face](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-cross-axis-broadcast.md). [Zenodo](https://doi.org/10.5281/zenodo.22734883).
 
