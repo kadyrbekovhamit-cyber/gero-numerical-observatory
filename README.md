@@ -2,12 +2,15 @@
 
 ## Complete publication catalog
 
-Latest audit: [QuantLib deterministic probabilities and cap/floor deltas](catalog/reports/quantlib-zero-stddev-itm-probabilities.md). Two defects; candidate corrections remove 90 mismatches across 660 helper inputs.
+Latest audit: [nntrainer DivideLayer finite-input gradients](catalog/reports/nntrainer-divide-gradient-extremes.md). One implementation defect; local correction removes 1,302 failures on 4,096 selected inputs.
 
 
-[**All 92 published materials, in one place →**](catalog/README.md)
+Previous audit: [QuantLib deterministic probabilities and cap/floor deltas](catalog/reports/quantlib-zero-stddev-itm-probabilities.md). Two defects; candidate corrections remove 90 mismatches across 660 helper inputs.
 
-The 14 September 2026 synchronization verifies the same **92 distinct publications on GERO, Hugging Face, Zenodo and this GitHub catalog**. Zenodo also has one historical collection, excluded from the 92 individual-record count. Publication counts are not counts of independent defects. [Coverage and counting rules](catalog/platform-status.json).
+
+[**All 93 published materials, in one place →**](catalog/README.md)
+
+The 14 September 2026 synchronization verifies the same **93 distinct publications on GERO, Hugging Face, Zenodo and this GitHub catalog**. Zenodo also has one historical collection, excluded from the 93 individual-record count. Publication counts are not counts of independent defects. [Coverage and counting rules](catalog/platform-status.json).
 
 [Earlier report archive](reports/README.md). Its original records remain available; use the complete catalog above for current publication coverage and missing platforms.
 
