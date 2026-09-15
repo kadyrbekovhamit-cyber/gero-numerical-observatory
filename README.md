@@ -2,7 +2,10 @@
 
 ## Complete publication catalog
 
-Latest audit: [MLX CPU accumulation](catalog/reports/mlx-cpu-fp-qmm-accumulation.md). Exactly representable inputs, avoidable precision loss, local correction and byte-identical precision-reversion control.
+Latest audit: [FinancePy Merton monetary units](catalog/reports/financepy-merton-monetary-scale.md). The same synthetic firm changes calculated probability under unit conversion; normalization removes the selected-grid failures.
+
+
+Previous audit: [MLX CPU accumulation](catalog/reports/mlx-cpu-fp-qmm-accumulation.md). Exactly representable inputs, avoidable precision loss, local correction and byte-identical precision-reversion control.
 
 
 Previous audit: [nntrainer DivideLayer finite-input gradients](catalog/reports/nntrainer-divide-gradient-extremes.md). One implementation defect; local correction removes 1,302 failures on 4,096 selected inputs.
@@ -11,9 +14,9 @@ Previous audit: [nntrainer DivideLayer finite-input gradients](catalog/reports/n
 Previous audit: [QuantLib deterministic probabilities and cap/floor deltas](catalog/reports/quantlib-zero-stddev-itm-probabilities.md). Two defects; candidate corrections remove 90 mismatches across 660 helper inputs.
 
 
-[**All 94 published materials, in one place →**](catalog/README.md)
+[**All 95 published materials, in one place →**](catalog/README.md)
 
-The 14 September 2026 synchronization verifies the same **94 distinct publications on GERO, Hugging Face, Zenodo and this GitHub catalog**. Zenodo also has one historical collection, excluded from the 94 individual-record count. Publication counts are not counts of independent defects. [Coverage and counting rules](catalog/platform-status.json).
+As of 15 September 2026, **95 distinct publications are available on GERO, Zenodo and this GitHub catalog; Hugging Face has 94 pending its owner login for the Merton addition**. Zenodo also has one historical collection, excluded from the 95 individual-record count. Publication counts are not counts of independent defects. [Coverage and counting rules](catalog/platform-status.json).
 
 [Earlier report archive](reports/README.md). Its original records remain available; use the complete catalog above for current publication coverage and missing platforms.
 
@@ -289,3 +292,5 @@ The static dashboard supports filters, search, sorting, pagination, shareable st
 Primary specifications: [ReferenceEvaluator](https://onnx.ai/onnx/api/reference.html), [LayerNormalization](https://onnx.ai/onnx/operators/onnx__LayerNormalization.html), [LogSoftmax](https://onnx.ai/onnx/operators/onnx__LogSoftmax.html), [ORT optimization settings](https://onnxruntime.ai/docs/performance/model-optimizations/graph-optimizations.html).
 
 - [MLX gather_qmm: missing transpose in scale/bias gradients](audits/2026-09-09-mlx-gather-qmm-transpose-vjp/) — fresh CPU reproduction, exact loss example and C++ repair; 205 scenarios / 379 checks.
+
+Current coverage after the Merton addition: 95 individual publications on GitHub, GERO and Zenodo; 94 on Hugging Face pending its owner login. The historical Zenodo collection is counted separately.
