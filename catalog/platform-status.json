@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-14T19:14:00.940767+00:00",
+  "checked_at": "2026-09-15T02:11:24.865389+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 94,
+    "gero": 95,
     "huggingface": 94,
-    "zenodo": 94,
-    "github_catalog_report": 94,
-    "zenodo_records_including_collection": 95,
-    "unique_individual_publications": 94,
+    "zenodo": 95,
+    "github_catalog_report": 95,
+    "zenodo_records_including_collection": 96,
+    "unique_individual_publications": 95,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "94 publication IDs in the canonical catalog. Latest MLX CPU accumulation report contains one implementation issue.",
+  "github_status": "95 publication IDs in the canonical catalog; not independent-defect counts.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -25,18 +25,16 @@
     "zenodo": []
   },
   "deduplication_notes": [
-    "94 publication IDs are not independent-defect counts.",
-    "GERO:93 article pages plus separate Fineract page.",
-    "Hugging Face:94 corpus rows and report pages; prior93 rows byte-preserved.",
-    "Zenodo:94 individual records plus one historical collection.",
-    "Latest report documents the current CPU fp_qmm path and acknowledges established accumulation prior work."
+    "95 publication IDs in GitHub, GERO and individual Zenodo records.",
+    "Hugging Face has the previous 94 IDs; Merton upload requires the XamitK archive owner.",
+    "Zenodo also retains one historical collection, counted separately.",
+    "Counts are reports, not independent defects."
   ],
   "parity_complete": true,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "latest_report": {
-    "id": "mlx-cpu-fp-qmm-accumulation",
-    "archive_sha256": "6b169485ff661e0bd1a35de3722e81bfcb4d8dbcbe1f6574b9f9281b10d0a142",
-    "zenodo": "https://zenodo.org/records/22756546",
-    "youtube": "https://www.youtube.com/shorts/H4xsu8jJaMQ"
+    "id": "financepy-merton-monetary-scale",
+    "archive_sha256": "026fb5188cd696896daf068e648ba730bc80d5b160a81f051c9164bb003326fa",
+    "zenodo": "https://zenodo.org/records/22757428"
   }
 }

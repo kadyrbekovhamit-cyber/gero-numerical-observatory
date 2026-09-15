@@ -1,21 +1,21 @@
 # GERO — complete publication catalog
 
-Verified 14 September 2026. **The same 94 distinct publications are available on GitHub, GERO, Hugging Face and Zenodo.** These are reports, case studies, research experiments and preprints, not a count of independent software bugs. Later reports can revisit earlier findings.
+Updated 15 September 2026. **95 distinct publications are available on GitHub, GERO and Zenodo; Hugging Face currently has 94.** The Merton upload there is pending archive-owner login. These are reports, case studies, research experiments and preprints, not a count of independent software bugs. Later reports can revisit earlier findings.
 
 Canonical GitHub account: [kadyrbekovhamit-cyber](https://github.com/kadyrbekovhamit-cyber). Publication commits use `kadyrbekovhamit@gmail.com`. Specialist source repositories and their histories remain available under the same account, including the history-preserving Collatz copy.
 
 | Platform | Distinct publications | Detail |
 |---|---:|---|
-| GitHub | 94 | All report mirrors in this catalog, plus the cone manuscript |
-| GERO | 94 | 93 article pages and one separate Fineract case-study page |
-| Hugging Face | 94 | 94 corpus rows and 94 individual report pages |
-| Zenodo | 94 | 95 public records including one additional historical collection |
+| GitHub | 95 | All report mirrors in this catalog, plus the cone manuscript |
+| GERO | 95 | 94 article pages and one separate Fineract case-study page |
+| Hugging Face | 94 | 94 corpus rows and 94 individual report pages; Merton pending |
+| Zenodo | 95 | 96 public records including one additional historical collection |
 
 Copies, revised versions and the historical collection do not add new publication IDs. The 45-report collection is excluded from the individual-record count. The earlier archival synchronization did not rerun experiments. The new QuantLib report adds separately documented released/native execution, regression tests and mutation replay.
 
 [Machine-readable catalog](publications.json) · [Verification scope and platform counts](platform-status.json) · [Authorship and licenses](SOURCE_NOTICES.md).
 
-## Latest audit
+## Previous audit
 
 [MLX CPU quantized matmul: avoidable accumulation error in float16 and bfloat16](reports/mlx-cpu-fp-qmm-accumulation.md) · [YouTube Short](https://www.youtube.com/shorts/H4xsu8jJaMQ) · [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505340163846275072/). Native CPU evidence and local correction; no GPU or model-impact claim. Synthetic narration disclosed.
 
@@ -30,6 +30,9 @@ Previous reviewed video
 Previous reviewed video
 
 [pyliferisk: zero growth changes the mortality assumptions](https://www.youtube.com/shorts/nFE81EVJPrE) — [technical report](reports/pyliferisk-geometric-mortality.md) · [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505220261592600577/). This 46-second English video explains the existing report; it does not add a publication ID. Synthetic narration is disclosed.
+
+
+Latest calibration audit: [FinancePy Merton calibration depends on the monetary unit](reports/financepy-merton-monetary-scale.md) · [DOI](https://zenodo.org/records/22757428). Native synthetic evidence; no production-loss claim.
 
 ## Individual publications
 
@@ -129,3 +132,6 @@ Previous reviewed video
 | 92 | [QuantLib: deterministic ITM probabilities and cap/floor deltas](reports/quantlib-zero-stddev-itm-probabilities.md) | [Page](https://www.gero.uz/research/articles/quantlib-zero-stddev-itm-probabilities.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/quantlib-zero-stddev-itm-probabilities.md) | [Record](https://zenodo.org/records/22754207) | [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/quantlib-zero-stddev-itm-probabilities.md) |
 | 93 | [nntrainer DivideLayer: finite forward values, incorrect denominator gradients](reports/nntrainer-divide-gradient-extremes.md) | [Page](https://www.gero.uz/research/articles/nntrainer-divide-gradient-extremes.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/nntrainer-divide-gradient-extremes.md) | [Record](https://zenodo.org/records/22755613) | [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/nntrainer-divide-gradient-extremes.md) |
 | 94 | [MLX CPU quantized matmul: avoidable accumulation error in float16 and bfloat16](reports/mlx-cpu-fp-qmm-accumulation.md) | [Page](https://www.gero.uz/research/articles/mlx-cpu-fp-qmm-accumulation.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-cpu-fp-qmm-accumulation.md) | [Record](https://zenodo.org/records/22756546) | [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-cpu-fp-qmm-accumulation.md) |
+| 95 | [FinancePy Merton calibration depends on the monetary unit](reports/financepy-merton-monetary-scale.md) | [Page](https://www.gero.uz/research/articles/financepy-merton-monetary-scale.html) | Pending owner login | [Record](https://zenodo.org/records/22757428) | [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-merton-monetary-scale.md) |
+
+Merton publication status: GitHub, GERO, Zenodo and LinkedIn are public. Its Hugging Face upload is pending archive-owner login; the previous 94 entries remain available there.
