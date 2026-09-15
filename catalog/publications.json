@@ -1673,7 +1673,7 @@
     "publication_date": "2026-09-15",
     "kind": "published_report",
     "gero": "https://www.gero.uz/research/articles/mlx-median-finite-midpoint-overflow.html",
-    "huggingface": null,
+    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-median-finite-midpoint-overflow.md",
     "zenodo": null,
     "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-median-finite-midpoint-overflow.md",
     "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-median-finite-midpoint-overflow.md",
@@ -1686,5 +1686,28 @@
     "maintainer_issue": null,
     "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7505620381605658624/",
     "youtube": "https://www.youtube.com/shorts/zhaCjP2ZEUQ"
+  },
+  {
+    "id": "financepy-cir-zero-price-stability",
+    "title": "FinancePy CIR pricing loses its finite range and small-volatility limit",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-15",
+    "kind": "published_report",
+    "gero": "https://www.gero.uz/research/articles/financepy-cir-zero-price-stability.html",
+    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-cir-zero-price-stability.md",
+    "zenodo": null,
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-cir-zero-price-stability.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-cir-zero-price-stability.md",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-cir-zero-price-stability.md",
+    "mirror_sha256": "591c943cc5cb97ba37e974237956cb5bbd36e459802ec1cd2e525308a712d960",
+    "source_text_sha256": "591c943cc5cb97ba37e974237956cb5bbd36e459802ec1cd2e525308a712d960",
+    "evidence_archive": "https://www.gero.uz/research/data/financepy-cir-zero-price-stability/gero-financepy-cir-zero-price-research-2026-09-15.zip",
+    "evidence_archive_sha256": "1500cda3ca46ddfc02e19099b8b57c12b5c674936e219a27bc4e9f06de5bb3db",
+    "implementation_defects_in_this_report": 1,
+    "maintainer_issue": "https://github.com/domokane/FinancePy/issues/264",
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7505637773324976128/",
+    "youtube": "https://www.youtube.com/shorts/yyDsUwfKW70"
   }
 ]
