@@ -2,10 +2,13 @@
 
 ## Complete publication catalog
 
-Latest audit: [ConstantForce whole-life insurance ignores the benefit amount](catalog/reports/actuarialmath-constantforce-benefit-scaling.md). Canonical catalog: 96 reports; per-platform status is in [platform-status.json](catalog/platform-status.json).
+Latest audit: [MLX median overflows while averaging finite central values](catalog/reports/mlx-median-finite-midpoint-overflow.md). Native C++ CPU evidence, exact oracle and a bounded local correction.
 
 
-Latest audit: [FinancePy Merton monetary units](catalog/reports/financepy-merton-monetary-scale.md). The same synthetic firm changes calculated probability under unit conversion; normalization removes the selected-grid failures.
+Previous audit: [ConstantForce whole-life insurance ignores the benefit amount](catalog/reports/actuarialmath-constantforce-benefit-scaling.md). Canonical catalog: 97 reports; per-platform status is in [platform-status.json](catalog/platform-status.json).
+
+
+Previous audit: [FinancePy Merton monetary units](catalog/reports/financepy-merton-monetary-scale.md). The same synthetic firm changes calculated probability under unit conversion; normalization removes the selected-grid failures.
 
 
 Previous audit: [MLX CPU accumulation](catalog/reports/mlx-cpu-fp-qmm-accumulation.md). Exactly representable inputs, avoidable precision loss, local correction and byte-identical precision-reversion control.
@@ -17,9 +20,9 @@ Previous audit: [nntrainer DivideLayer finite-input gradients](catalog/reports/n
 Previous audit: [QuantLib deterministic probabilities and cap/floor deltas](catalog/reports/quantlib-zero-stddev-itm-probabilities.md). Two defects; candidate corrections remove 90 mismatches across 660 helper inputs.
 
 
-[**All 96 published materials, in one place →**](catalog/README.md)
+[**All 97 published materials, in one place →**](catalog/README.md)
 
-As of 15 September 2026, the catalog contains **96 distinct publications**: GitHub and GERO 96; Hugging Face 96; individual Zenodo records 96. One historical Zenodo collection is excluded. These are report counts, not independent-defect counts. [Coverage and counting rules](catalog/platform-status.json).
+As of 15 September 2026, the catalog contains **97 distinct publications**: GitHub and GERO 97; Hugging Face 96; individual Zenodo records 96. One historical Zenodo collection is excluded. These are report counts, not independent-defect counts. [Coverage and counting rules](catalog/platform-status.json).
 
 [Earlier report archive](reports/README.md). Its original records remain available; use the complete catalog above for current publication coverage and missing platforms.
 
@@ -296,4 +299,4 @@ Primary specifications: [ReferenceEvaluator](https://onnx.ai/onnx/api/reference.
 
 - [MLX gather_qmm: missing transpose in scale/bias gradients](audits/2026-09-09-mlx-gather-qmm-transpose-vjp/) — fresh CPU reproduction, exact loss example and C++ repair; 205 scenarios / 379 checks.
 
-Current coverage: 96 catalog reports. Pending platform copies are listed in [platform-status.json](catalog/platform-status.json). The historical Zenodo collection is counted separately.
+Current coverage: 97 catalog reports. Pending platform copies are listed in [platform-status.json](catalog/platform-status.json). The historical Zenodo collection is counted separately.
