@@ -102,7 +102,7 @@ preserved in the source archive.
 
 ## Publication links
 
-[GERO](https://www.gero.uz/research/articles/actuarialmath-constantforce-benefit-scaling.html) · [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-constantforce-benefit-scaling.md) · [Maintainer issue](https://github.com/terence-lim/actuarialmath/issues/4)
+[GERO](https://www.gero.uz/research/articles/actuarialmath-constantforce-benefit-scaling.html) · [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-constantforce-benefit-scaling.md) · [Hugging Face](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/actuarialmath-constantforce-benefit-scaling.md) · [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505516093306814464/) · [Maintainer issue](https://github.com/terence-lim/actuarialmath/issues/4)
 
 [Evidence archive](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/artifacts/gero-actuarialmath-constantforce-benefit-evidence-2026-09-15-v1.0.1.zip)
 
