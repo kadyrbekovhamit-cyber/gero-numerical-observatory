@@ -1,15 +1,15 @@
 # GERO — complete publication catalog
 
-Updated 15 September 2026. **95 distinct publications are available on GitHub, GERO, Hugging Face and Zenodo.** These are reports, case studies, research experiments and preprints, not a count of independent software bugs. Later reports can revisit earlier findings.
+Updated 15 September 2026. **96 distinct publications in the canonical catalog.** GitHub and GERO: 96; Hugging Face: 95; individual Zenodo records: 95. These are reports, not independent-defect counts. Pending platform copies are marked below.
 
 Canonical GitHub account: [kadyrbekovhamit-cyber](https://github.com/kadyrbekovhamit-cyber). Publication commits use `kadyrbekovhamit@gmail.com`. Specialist source repositories and their histories remain available under the same account, including the history-preserving Collatz copy.
 
 | Platform | Distinct publications | Detail |
 |---|---:|---|
-| GitHub | 95 | All report mirrors in this catalog, plus the cone manuscript |
-| GERO | 95 | 94 article pages and one separate Fineract case-study page |
-| Hugging Face | 95 | 95 corpus rows and 95 individual report pages; Merton files verified |
-| Zenodo | 95 | 96 public records including one additional historical collection |
+| GitHub | 96 | Report mirrors and evidence |
+| GERO | 96 | 95 articles and one separate case-study page |
+| Hugging Face | 95 | Individual report pages |
+| Zenodo | 95 | Individual records; one historical collection excluded |
 
 Copies, revised versions and the historical collection do not add new publication IDs. The 45-report collection is excluded from the individual-record count. The earlier archival synchronization did not rerun experiments. The new QuantLib report adds separately documented released/native execution, regression tests and mutation replay.
 
@@ -33,6 +33,8 @@ Previous reviewed video
 
 
 Latest calibration audit: [FinancePy Merton calibration depends on the monetary unit](reports/financepy-merton-monetary-scale.md) · [DOI](https://zenodo.org/records/22757428). Native synthetic evidence; no production-loss claim.
+
+Latest insurance audit: [ConstantForce whole-life insurance ignores the benefit amount](reports/actuarialmath-constantforce-benefit-scaling.md). [Merton video](https://www.youtube.com/shorts/3hyRhsmPKGY).
 
 ## Individual publications
 
@@ -133,5 +135,6 @@ Latest calibration audit: [FinancePy Merton calibration depends on the monetary 
 | 93 | [nntrainer DivideLayer: finite forward values, incorrect denominator gradients](reports/nntrainer-divide-gradient-extremes.md) | [Page](https://www.gero.uz/research/articles/nntrainer-divide-gradient-extremes.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/nntrainer-divide-gradient-extremes.md) | [Record](https://zenodo.org/records/22755613) | [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/nntrainer-divide-gradient-extremes.md) |
 | 94 | [MLX CPU quantized matmul: avoidable accumulation error in float16 and bfloat16](reports/mlx-cpu-fp-qmm-accumulation.md) | [Page](https://www.gero.uz/research/articles/mlx-cpu-fp-qmm-accumulation.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-cpu-fp-qmm-accumulation.md) | [Record](https://zenodo.org/records/22756546) | [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-cpu-fp-qmm-accumulation.md) |
 | 95 | [FinancePy Merton calibration depends on the monetary unit](reports/financepy-merton-monetary-scale.md) | [Page](https://www.gero.uz/research/articles/financepy-merton-monetary-scale.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-merton-monetary-scale.md) | [Record](https://zenodo.org/records/22757428) | [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-merton-monetary-scale.md) |
+| 96 | [ConstantForce whole-life insurance ignores the benefit amount](reports/actuarialmath-constantforce-benefit-scaling.md) | [Page](https://www.gero.uz/research/articles/actuarialmath-constantforce-benefit-scaling.html) | Pending | Pending | [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-constantforce-benefit-scaling.md) |
 
 Merton publication status: GitHub, GERO, Zenodo, Hugging Face and LinkedIn are public. All 12 Hugging Face release files were verified by SHA-256; the previous 94 corpus rows are byte-preserved. YouTube upload remains pending.
