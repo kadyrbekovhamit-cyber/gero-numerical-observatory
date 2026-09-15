@@ -56,6 +56,6 @@ See `DUPLICATE_REVIEW.md`, `REPRODUCE.md`, `SOURCE.json`, the local patch, raw r
 
 ## Publication links
 
-[GERO](https://www.gero.uz/research/articles/financepy-merton-monetary-scale.html) · [Zenodo](https://zenodo.org/records/22757428) · [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505354627723431938/)
+[Hugging Face](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-merton-monetary-scale.md) · [GERO](https://www.gero.uz/research/articles/financepy-merton-monetary-scale.html) · [Zenodo](https://zenodo.org/records/22757428) · [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505354627723431938/)
 
 Evidence SHA-256: `026fb5188cd696896daf068e648ba730bc80d5b160a81f051c9164bb003326fa`.
