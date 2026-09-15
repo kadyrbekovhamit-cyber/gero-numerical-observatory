@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-15T04:32:48.543975+00:00",
+  "checked_at": "2026-09-15T06:27:13.546617+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 95,
+    "gero": 96,
     "huggingface": 95,
     "zenodo": 95,
-    "github_catalog_report": 95,
+    "github_catalog_report": 96,
     "zenodo_records_including_collection": 96,
-    "unique_individual_publications": 95,
+    "unique_individual_publications": 96,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "95 publication IDs in the canonical catalog; not independent-defect counts.",
+  "github_status": "96 publication IDs in the canonical catalog; not independent-defect counts.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -21,22 +21,39 @@
   },
   "missing": {
     "gero": [],
-    "huggingface": [],
-    "zenodo": []
+    "huggingface": [
+      "actuarialmath-constantforce-benefit-scaling"
+    ],
+    "zenodo": [
+      "actuarialmath-constantforce-benefit-scaling"
+    ]
   },
   "deduplication_notes": [
-    "95 publication IDs in GitHub, GERO and individual Zenodo records.",
-    "Hugging Face has the same 95 publication IDs; the Merton release files match all 12 recorded SHA-256 hashes and the previous 94 corpus rows are byte-preserved.",
-    "Zenodo also retains one historical collection, counted separately.",
-    "Counts are reports, not independent defects."
+    "95 previous reports retained; one ConstantForce benefit-scaling report added.",
+    "The Merton YouTube video is public; media do not add publication IDs.",
+    "Pending platform copies are excluded from their verified counts."
   ],
-  "parity_complete": true,
+  "parity_complete": false,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "latest_report": {
-    "id": "financepy-merton-monetary-scale",
-    "archive_sha256": "026fb5188cd696896daf068e648ba730bc80d5b160a81f051c9164bb003326fa",
-    "zenodo": "https://zenodo.org/records/22757428",
-    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-merton-monetary-scale.md",
-    "huggingface_revision": "c9e2bfc8c8cff1723ded5189959698acbe0c04fe"
+    "id": "actuarialmath-constantforce-benefit-scaling",
+    "title": "ConstantForce whole-life insurance ignores the benefit amount",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-15",
+    "kind": "published_report",
+    "gero": "https://www.gero.uz/research/articles/actuarialmath-constantforce-benefit-scaling.html",
+    "huggingface": null,
+    "zenodo": null,
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-constantforce-benefit-scaling.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-constantforce-benefit-scaling.md",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-constantforce-benefit-scaling.md",
+    "mirror_sha256": "e03e2fb2e657301cff728d2a0f3c18736656e9236335123d3114873afd44fd97",
+    "source_text_sha256": "e03e2fb2e657301cff728d2a0f3c18736656e9236335123d3114873afd44fd97",
+    "evidence_archive": "https://www.gero.uz/research/data/actuarialmath-constantforce-benefit-scaling/gero-actuarialmath-constantforce-benefit-evidence-2026-09-15-v1.0.1.zip",
+    "evidence_archive_sha256": "f9c41cdf7e788b0aab2f3c1c4c52b26a6b63959a59cbda0d68893fb202bf3d1b",
+    "implementation_defects_in_this_report": 1,
+    "maintainer_issue": "https://github.com/terence-lim/actuarialmath/issues/4"
   }
 }
