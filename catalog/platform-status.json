@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-15T11:49:21.211725+00:00",
+  "checked_at": "2026-09-15T13:23:35.188752+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 96,
+    "gero": 97,
     "huggingface": 96,
     "zenodo": 96,
-    "github_catalog_report": 96,
+    "github_catalog_report": 97,
     "zenodo_records_including_collection": 97,
-    "unique_individual_publications": 96,
+    "unique_individual_publications": 97,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "96 publication IDs in the canonical catalog; not independent-defect counts.",
+  "github_status": "97 report IDs in the canonical catalog; not independent-defect counts.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -21,37 +21,39 @@
   },
   "missing": {
     "gero": [],
-    "huggingface": [],
-    "zenodo": []
+    "huggingface": [
+      "mlx-median-finite-midpoint-overflow"
+    ],
+    "zenodo": [
+      "mlx-median-finite-midpoint-overflow"
+    ]
   },
   "deduplication_notes": [
-    "95 previous reports retained; one ConstantForce benefit-scaling report added.",
-    "The Merton YouTube video is public; media do not add publication IDs.",
-    "Pending platform copies are excluded from their verified counts."
+    "All 96 previous reports preserved; one MLX median report appended.",
+    "Media and mirrored editions do not add report IDs.",
+    "Pending copies excluded from verified platform counts."
   ],
-  "parity_complete": true,
+  "parity_complete": false,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "latest_report": {
-    "id": "actuarialmath-constantforce-benefit-scaling",
-    "title": "ConstantForce whole-life insurance ignores the benefit amount",
+    "id": "mlx-median-finite-midpoint-overflow",
+    "title": "MLX median overflows while averaging finite central values",
     "authors": [
       "Xamit Kadirbekov"
     ],
     "publication_date": "2026-09-15",
     "kind": "published_report",
-    "gero": "https://www.gero.uz/research/articles/actuarialmath-constantforce-benefit-scaling.html",
-    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/actuarialmath-constantforce-benefit-scaling.md",
-    "zenodo": "https://zenodo.org/records/22763443",
-    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-constantforce-benefit-scaling.md",
-    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-constantforce-benefit-scaling.md",
-    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-constantforce-benefit-scaling.md",
-    "mirror_sha256": "daa97d98c82172ed092f2bf09bfa3fc81f51c298f631a5bbbf23ad5fe416584d",
-    "source_text_sha256": "daa97d98c82172ed092f2bf09bfa3fc81f51c298f631a5bbbf23ad5fe416584d",
-    "evidence_archive": "https://www.gero.uz/research/data/actuarialmath-constantforce-benefit-scaling/gero-actuarialmath-constantforce-benefit-evidence-2026-09-15-v1.0.1.zip",
-    "evidence_archive_sha256": "f9c41cdf7e788b0aab2f3c1c4c52b26a6b63959a59cbda0d68893fb202bf3d1b",
+    "gero": "https://www.gero.uz/research/articles/mlx-median-finite-midpoint-overflow.html",
+    "huggingface": null,
+    "zenodo": null,
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-median-finite-midpoint-overflow.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-median-finite-midpoint-overflow.md",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-median-finite-midpoint-overflow.md",
+    "mirror_sha256": "d7bc1a1e99fa7e6973a8b38116b441d6891ff660b3cb4081cac2b851872523f3",
+    "source_text_sha256": "d7bc1a1e99fa7e6973a8b38116b441d6891ff660b3cb4081cac2b851872523f3",
+    "evidence_archive": "https://www.gero.uz/research/data/mlx-median-finite-midpoint-overflow/gero-mlx-median-finite-midpoint-evidence-2026-09-15.zip",
+    "evidence_archive_sha256": "45ea7c88dc7ddd9bc951a0f860dcda04803fb11d611d3eaf9082b636e8285630",
     "implementation_defects_in_this_report": 1,
-    "maintainer_issue": "https://github.com/terence-lim/actuarialmath/issues/4",
-    "youtube": "https://www.youtube.com/shorts/us9M4K1lcjM",
-    "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7505516093306814464/"
+    "maintainer_issue": null
   }
 }

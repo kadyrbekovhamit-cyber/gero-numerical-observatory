@@ -1,13 +1,13 @@
 # GERO — complete publication catalog
 
-Updated 15 September 2026. **96 distinct publications in the canonical catalog.** GitHub and GERO: 96; Hugging Face: 96; individual Zenodo records: 96. These are reports, not independent-defect counts. Pending platform copies are marked below.
+Updated 15 September 2026. **97 distinct publications in the canonical catalog.** GitHub and GERO: 97; Hugging Face: 96; individual Zenodo records: 96. These are reports, not independent-defect counts. Pending platform copies are marked below.
 
 Canonical GitHub account: [kadyrbekovhamit-cyber](https://github.com/kadyrbekovhamit-cyber). Publication commits use `kadyrbekovhamit@gmail.com`. Specialist source repositories and their histories remain available under the same account, including the history-preserving Collatz copy.
 
 | Platform | Distinct publications | Detail |
 |---|---:|---|
-| GitHub | 96 | Report mirrors and evidence |
-| GERO | 96 | 95 articles and one separate case-study page |
+| GitHub | 97 | Report mirrors and evidence |
+| GERO | 97 | 96 articles and one separate case-study page |
 | Hugging Face | 96 | Individual report pages |
 | Zenodo | 96 | Individual records; one historical collection excluded |
 
@@ -35,6 +35,8 @@ Previous reviewed video
 Latest calibration audit: [FinancePy Merton calibration depends on the monetary unit](reports/financepy-merton-monetary-scale.md) · [DOI](https://zenodo.org/records/22757428). Native synthetic evidence; no production-loss claim.
 
 Latest insurance audit: [ConstantForce whole-life insurance ignores the benefit amount](reports/actuarialmath-constantforce-benefit-scaling.md). [Merton video](https://www.youtube.com/shorts/3hyRhsmPKGY).
+
+Latest numerical audit: [MLX median overflows while averaging finite central values](reports/mlx-median-finite-midpoint-overflow.md).
 
 ## Individual publications
 
@@ -136,5 +138,6 @@ Latest insurance audit: [ConstantForce whole-life insurance ignores the benefit 
 | 94 | [MLX CPU quantized matmul: avoidable accumulation error in float16 and bfloat16](reports/mlx-cpu-fp-qmm-accumulation.md) | [Page](https://www.gero.uz/research/articles/mlx-cpu-fp-qmm-accumulation.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-cpu-fp-qmm-accumulation.md) | [Record](https://zenodo.org/records/22756546) | [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-cpu-fp-qmm-accumulation.md) |
 | 95 | [FinancePy Merton calibration depends on the monetary unit](reports/financepy-merton-monetary-scale.md) | [Page](https://www.gero.uz/research/articles/financepy-merton-monetary-scale.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-merton-monetary-scale.md) | [Record](https://zenodo.org/records/22757428) | [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-merton-monetary-scale.md) |
 | 96 | [ConstantForce whole-life insurance ignores the benefit amount](reports/actuarialmath-constantforce-benefit-scaling.md) | [Page](https://www.gero.uz/research/articles/actuarialmath-constantforce-benefit-scaling.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/actuarialmath-constantforce-benefit-scaling.md) | [Record](https://zenodo.org/records/22763443) | [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-constantforce-benefit-scaling.md) |
+| 97 | [MLX median overflows while averaging finite central values](reports/mlx-median-finite-midpoint-overflow.md) | [Page](https://www.gero.uz/research/articles/mlx-median-finite-midpoint-overflow.html) | Pending | Pending | [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-median-finite-midpoint-overflow.md) |
 
 Merton publication status: GitHub, GERO, Zenodo, Hugging Face and LinkedIn are public. All 12 Hugging Face release files were verified by SHA-256; the previous 94 corpus rows are byte-preserved. YouTube upload remains pending.

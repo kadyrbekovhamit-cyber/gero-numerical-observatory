@@ -1663,5 +1663,26 @@
     "maintainer_issue": "https://github.com/terence-lim/actuarialmath/issues/4",
     "youtube": "https://www.youtube.com/shorts/us9M4K1lcjM",
     "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7505516093306814464/"
+  },
+  {
+    "id": "mlx-median-finite-midpoint-overflow",
+    "title": "MLX median overflows while averaging finite central values",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-15",
+    "kind": "published_report",
+    "gero": "https://www.gero.uz/research/articles/mlx-median-finite-midpoint-overflow.html",
+    "huggingface": null,
+    "zenodo": null,
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-median-finite-midpoint-overflow.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-median-finite-midpoint-overflow.md",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-median-finite-midpoint-overflow.md",
+    "mirror_sha256": "d7bc1a1e99fa7e6973a8b38116b441d6891ff660b3cb4081cac2b851872523f3",
+    "source_text_sha256": "d7bc1a1e99fa7e6973a8b38116b441d6891ff660b3cb4081cac2b851872523f3",
+    "evidence_archive": "https://www.gero.uz/research/data/mlx-median-finite-midpoint-overflow/gero-mlx-median-finite-midpoint-evidence-2026-09-15.zip",
+    "evidence_archive_sha256": "45ea7c88dc7ddd9bc951a0f860dcda04803fb11d611d3eaf9082b636e8285630",
+    "implementation_defects_in_this_report": 1,
+    "maintainer_issue": null
   }
 ]
