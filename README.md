@@ -2,6 +2,9 @@
 
 ## Complete publication catalog
 
+Latest audit: [ConstantForce whole-life insurance ignores the benefit amount](catalog/reports/actuarialmath-constantforce-benefit-scaling.md). Canonical catalog: 96 reports; per-platform status is in [platform-status.json](catalog/platform-status.json).
+
+
 Latest audit: [FinancePy Merton monetary units](catalog/reports/financepy-merton-monetary-scale.md). The same synthetic firm changes calculated probability under unit conversion; normalization removes the selected-grid failures.
 
 
@@ -14,9 +17,9 @@ Previous audit: [nntrainer DivideLayer finite-input gradients](catalog/reports/n
 Previous audit: [QuantLib deterministic probabilities and cap/floor deltas](catalog/reports/quantlib-zero-stddev-itm-probabilities.md). Two defects; candidate corrections remove 90 mismatches across 660 helper inputs.
 
 
-[**All 95 published materials, in one place →**](catalog/README.md)
+[**All 96 published materials, in one place →**](catalog/README.md)
 
-As of 15 September 2026, **95 distinct publications are available on GERO, Zenodo, Hugging Face and this GitHub catalog**. Zenodo also has one historical collection, excluded from the 95 individual-record count. Publication counts are not counts of independent defects. [Coverage and counting rules](catalog/platform-status.json).
+As of 15 September 2026, the catalog contains **96 distinct publications**: GitHub and GERO 96; Hugging Face 95; individual Zenodo records 95. One historical Zenodo collection is excluded. These are report counts, not independent-defect counts. [Coverage and counting rules](catalog/platform-status.json).
 
 [Earlier report archive](reports/README.md). Its original records remain available; use the complete catalog above for current publication coverage and missing platforms.
 
@@ -293,4 +296,4 @@ Primary specifications: [ReferenceEvaluator](https://onnx.ai/onnx/api/reference.
 
 - [MLX gather_qmm: missing transpose in scale/bias gradients](audits/2026-09-09-mlx-gather-qmm-transpose-vjp/) — fresh CPU reproduction, exact loss example and C++ repair; 205 scenarios / 379 checks.
 
-Current coverage after the verified Merton mirror: 95 individual publications on GitHub, GERO, Hugging Face and Zenodo. The historical Zenodo collection is counted separately.
+Current coverage: 96 catalog reports. Pending platform copies are listed in [platform-status.json](catalog/platform-status.json). The historical Zenodo collection is counted separately.
