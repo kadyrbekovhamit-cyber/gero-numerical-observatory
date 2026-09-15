@@ -1,12 +1,12 @@
 {
-  "checked_at": "2026-09-15T06:46:36.364333+00:00",
+  "checked_at": "2026-09-15T11:19:38.434060+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 96,
     "huggingface": 96,
-    "zenodo": 95,
+    "zenodo": 96,
     "github_catalog_report": 96,
-    "zenodo_records_including_collection": 96,
+    "zenodo_records_including_collection": 97,
     "unique_individual_publications": 96,
     "legacy_github_accounts_required_after_copy": 0
   },
@@ -22,16 +22,14 @@
   "missing": {
     "gero": [],
     "huggingface": [],
-    "zenodo": [
-      "actuarialmath-constantforce-benefit-scaling"
-    ]
+    "zenodo": []
   },
   "deduplication_notes": [
     "95 previous reports retained; one ConstantForce benefit-scaling report added.",
     "The Merton YouTube video is public; media do not add publication IDs.",
     "Pending platform copies are excluded from their verified counts."
   ],
-  "parity_complete": false,
+  "parity_complete": true,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "latest_report": {
     "id": "actuarialmath-constantforce-benefit-scaling",
@@ -43,12 +41,12 @@
     "kind": "published_report",
     "gero": "https://www.gero.uz/research/articles/actuarialmath-constantforce-benefit-scaling.html",
     "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/actuarialmath-constantforce-benefit-scaling.md",
-    "zenodo": null,
+    "zenodo": "https://zenodo.org/records/22763443",
     "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-constantforce-benefit-scaling.md",
     "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-constantforce-benefit-scaling.md",
     "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-constantforce-benefit-scaling.md",
-    "mirror_sha256": "a1ce6fd48a6f78e40da45f7fc9e08a33dbb16a3133adde6e1cd677d539c81a2c",
-    "source_text_sha256": "a1ce6fd48a6f78e40da45f7fc9e08a33dbb16a3133adde6e1cd677d539c81a2c",
+    "mirror_sha256": "2972eb50c5c2a16610047031f9b85bfff457001a39e1427f0b8cfd8cfb47ac57",
+    "source_text_sha256": "2972eb50c5c2a16610047031f9b85bfff457001a39e1427f0b8cfd8cfb47ac57",
     "evidence_archive": "https://www.gero.uz/research/data/actuarialmath-constantforce-benefit-scaling/gero-actuarialmath-constantforce-benefit-evidence-2026-09-15-v1.0.1.zip",
     "evidence_archive_sha256": "f9c41cdf7e788b0aab2f3c1c4c52b26a6b63959a59cbda0d68893fb202bf3d1b",
     "implementation_defects_in_this_report": 1,
