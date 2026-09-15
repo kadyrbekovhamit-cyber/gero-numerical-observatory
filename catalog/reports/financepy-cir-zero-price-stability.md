@@ -86,7 +86,7 @@ The frozen research ZIP retains its preparation-time statement that publication 
 
 ## Publication links
 
-[GERO](https://www.gero.uz/research/articles/financepy-cir-zero-price-stability.html) · [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-cir-zero-price-stability.md)
+[GERO](https://www.gero.uz/research/articles/financepy-cir-zero-price-stability.html) · [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-cir-zero-price-stability.md) · [Hugging Face](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-cir-zero-price-stability.md) · [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505637773324976128/) · [YouTube](https://www.youtube.com/shorts/yyDsUwfKW70) · [Maintainer issue](https://github.com/domokane/FinancePy/issues/264)
 
 [Immutable evidence archive](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/artifacts/gero-financepy-cir-zero-price-research-2026-09-15.zip)
 
