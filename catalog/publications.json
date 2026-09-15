@@ -1638,6 +1638,28 @@
     "evidence_archive_sha256": "026fb5188cd696896daf068e648ba730bc80d5b160a81f051c9164bb003326fa",
     "implementation_defects_in_this_report": 1,
     "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7505354627723431938/",
-    "huggingface_status": "Public mirror verified; 12 file hashes match and 94 prior corpus rows are unchanged."
+    "huggingface_status": "Public mirror verified; 12 file hashes match and 94 prior corpus rows are unchanged.",
+    "youtube": "https://www.youtube.com/shorts/3hyRhsmPKGY"
+  },
+  {
+    "id": "actuarialmath-constantforce-benefit-scaling",
+    "title": "ConstantForce whole-life insurance ignores the benefit amount",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-15",
+    "kind": "published_report",
+    "gero": "https://www.gero.uz/research/articles/actuarialmath-constantforce-benefit-scaling.html",
+    "huggingface": null,
+    "zenodo": null,
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-constantforce-benefit-scaling.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-constantforce-benefit-scaling.md",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-constantforce-benefit-scaling.md",
+    "mirror_sha256": "e03e2fb2e657301cff728d2a0f3c18736656e9236335123d3114873afd44fd97",
+    "source_text_sha256": "e03e2fb2e657301cff728d2a0f3c18736656e9236335123d3114873afd44fd97",
+    "evidence_archive": "https://www.gero.uz/research/data/actuarialmath-constantforce-benefit-scaling/gero-actuarialmath-constantforce-benefit-evidence-2026-09-15-v1.0.1.zip",
+    "evidence_archive_sha256": "f9c41cdf7e788b0aab2f3c1c4c52b26a6b63959a59cbda0d68893fb202bf3d1b",
+    "implementation_defects_in_this_report": 1,
+    "maintainer_issue": "https://github.com/terence-lim/actuarialmath/issues/4"
   }
 ]
