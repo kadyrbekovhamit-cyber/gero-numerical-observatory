@@ -100,10 +100,10 @@ Research: Xamit Kadirbekov / GERO. AI-assisted preparation, with executed public
 Python code and an independent mathematical oracle. Upstream MIT license is
 preserved in the source archive.
 
-## Reproduction and evidence
+## Publication links
 
-[Portable source, raw results, independent oracle and candidate patch](../artifacts/gero-actuarialmath-constantforce-benefit-evidence-2026-09-15-v1.0.1.zip).
+[GERO](https://www.gero.uz/research/articles/actuarialmath-constantforce-benefit-scaling.html) · [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-constantforce-benefit-scaling.md) · [Maintainer issue](https://github.com/terence-lim/actuarialmath/issues/4)
 
-Evidence SHA-256: `f9c41cdf7e788b0aab2f3c1c4c52b26a6b63959a59cbda0d68893fb202bf3d1b`.
+[Evidence archive](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/artifacts/gero-actuarialmath-constantforce-benefit-evidence-2026-09-15-v1.0.1.zip)
 
-[Maintainer report #4](https://github.com/terence-lim/actuarialmath/issues/4) was submitted; upstream acceptance is not claimed.
+SHA-256: `f9c41cdf7e788b0aab2f3c1c4c52b26a6b63959a59cbda0d68893fb202bf3d1b`.
