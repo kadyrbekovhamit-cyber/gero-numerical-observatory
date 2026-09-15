@@ -16,7 +16,7 @@ Previous audit: [QuantLib deterministic probabilities and cap/floor deltas](cata
 
 [**All 95 published materials, in one place →**](catalog/README.md)
 
-As of 15 September 2026, **95 distinct publications are available on GERO, Zenodo and this GitHub catalog; Hugging Face has 94 pending its owner login for the Merton addition**. Zenodo also has one historical collection, excluded from the 95 individual-record count. Publication counts are not counts of independent defects. [Coverage and counting rules](catalog/platform-status.json).
+As of 15 September 2026, **95 distinct publications are available on GERO, Zenodo, Hugging Face and this GitHub catalog**. Zenodo also has one historical collection, excluded from the 95 individual-record count. Publication counts are not counts of independent defects. [Coverage and counting rules](catalog/platform-status.json).
 
 [Earlier report archive](reports/README.md). Its original records remain available; use the complete catalog above for current publication coverage and missing platforms.
 
@@ -293,4 +293,4 @@ Primary specifications: [ReferenceEvaluator](https://onnx.ai/onnx/api/reference.
 
 - [MLX gather_qmm: missing transpose in scale/bias gradients](audits/2026-09-09-mlx-gather-qmm-transpose-vjp/) — fresh CPU reproduction, exact loss example and C++ repair; 205 scenarios / 379 checks.
 
-Current coverage after the Merton addition: 95 individual publications on GitHub, GERO and Zenodo; 94 on Hugging Face pending its owner login. The historical Zenodo collection is counted separately.
+Current coverage after the verified Merton mirror: 95 individual publications on GitHub, GERO, Hugging Face and Zenodo. The historical Zenodo collection is counted separately.
