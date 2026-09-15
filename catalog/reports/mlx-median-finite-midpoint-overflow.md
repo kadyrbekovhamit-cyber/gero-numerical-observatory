@@ -119,7 +119,7 @@ retained in the source and copied implementation files.
 
 ## Publication links
 
-[GERO](https://www.gero.uz/research/articles/mlx-median-finite-midpoint-overflow.html) · [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-median-finite-midpoint-overflow.md)
+[GERO](https://www.gero.uz/research/articles/mlx-median-finite-midpoint-overflow.html) · [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-median-finite-midpoint-overflow.md) · [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505620381605658624/) · [YouTube](https://www.youtube.com/shorts/zhaCjP2ZEUQ)
 
 [Evidence archive](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/artifacts/gero-mlx-median-finite-midpoint-evidence-2026-09-15.zip)
 
