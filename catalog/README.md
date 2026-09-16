@@ -1,17 +1,17 @@
 # GERO — publication catalogue
 
-Updated 17 September 2026. **102 distinct catalogue publications.** Report counts are not independent-defect counts. All 100 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
+Updated 17 September 2026. **102 distinct catalogue publications.** Report counts are not independent-defect counts. All 102 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
 
 [Machine-readable catalogue](publications.json) · [Coverage](platform-status.json) · [Checksums](SHA256SUMS).
 
 |Platform|Verified catalogue reports|
 |---|---:|
 |gero|102|
-|huggingface|99|
-|zenodo|99|
+|huggingface|101|
+|zenodo|101|
 |github_catalog_report|102|
 
-The two newest reports have GERO, GitHub, LinkedIn and YouTube publications; their Zenodo/Hugging Face copies await account access. No complete platform parity is claimed.
+The FinancePy FXForward and MLX sigmoid reports each have GERO, GitHub, LinkedIn, Zenodo, Hugging Face and YouTube publications. Overall coverage is shown above; no equal count across all external account collections is claimed.
 
 | # | Publication | GERO | Hugging Face | Zenodo | GitHub |
 |---|---|---|---|---|---|
@@ -115,5 +115,5 @@ The two newest reports have GERO, GitHub, LinkedIn and YouTube publications; the
 | 98 | [FinancePy CIR pricing loses its finite range and small-volatility limit](reports/financepy-cir-zero-price-stability.md) | [Page](https://www.gero.uz/research/articles/financepy-cir-zero-price-stability.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-cir-zero-price-stability.md) | [DOI](https://zenodo.org/records/22794596) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-cir-zero-price-stability.md) |
 | 99 | [FinancePy annuity pricing depends on prior payment calls](reports/financepy-annuity-call-order-face-cache.md) | [Page](https://www.gero.uz/research/articles/financepy-annuity-call-order-face-cache.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-annuity-call-order-face-cache.md) | [DOI](https://zenodo.org/records/22791449) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-annuity-call-order-face-cache.md) |
 | 100 | [FinancePy Vasicek pricing loses the small-mean-reversion limit](reports/financepy-vasicek-small-mean-reversion.md) | [Page](https://www.gero.uz/research/articles/financepy-vasicek-small-mean-reversion.html) | Pending | Pending | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-vasicek-small-mean-reversion.md) |
-| 101 | [FinancePy FXForward converts today's NPV using a future exchange rate](reports/financepy-fx-forward-spot-conversion.md) | [Page](https://www.gero.uz/research/articles/financepy-fx-forward-spot-conversion.html) | Pending | Pending | [Source](https://github.com/kadyrbekovhamit-cyber/gero-financepy-fx-forward-npv-audit) |
-| 102 | [Apple MLX sigmoid derivatives lose a representable positive tail](reports/mlx-sigmoid-tail-gradient.md) | [Page](https://www.gero.uz/research/articles/mlx-sigmoid-tail-gradient.html) | Pending | Pending | [Source](https://github.com/kadyrbekovhamit-cyber/gero-mlx-sigmoid-tail-audit) |
+| 101 | [FinancePy FXForward converts today's NPV using a future exchange rate](reports/financepy-fx-forward-spot-conversion.md) | [Page](https://www.gero.uz/research/articles/financepy-fx-forward-spot-conversion.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-fx-forward-spot-conversion.md) | [DOI](https://zenodo.org/records/22801504) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-financepy-fx-forward-npv-audit) |
+| 102 | [Apple MLX sigmoid derivatives lose a representable positive tail](reports/mlx-sigmoid-tail-gradient.md) | [Page](https://www.gero.uz/research/articles/mlx-sigmoid-tail-gradient.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-sigmoid-tail-gradient.md) | [DOI](https://zenodo.org/records/22801587) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-mlx-sigmoid-tail-audit) |

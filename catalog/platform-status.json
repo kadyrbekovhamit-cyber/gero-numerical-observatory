@@ -1,12 +1,12 @@
 {
-  "checked_at": "2026-09-16T19:09:39.627310+00:00",
+  "checked_at": "2026-09-16T19:31:23.129828+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 102,
-    "huggingface": 99,
-    "zenodo": 99,
+    "huggingface": 101,
+    "zenodo": 101,
     "github_catalog_report": 102,
-    "zenodo_records_including_collection": 100,
+    "zenodo_records_including_collection": 102,
     "unique_individual_publications": 102,
     "legacy_github_accounts_required_after_copy": 0
   },
@@ -22,21 +22,18 @@
   "missing": {
     "gero": [],
     "huggingface": [
-      "financepy-vasicek-small-mean-reversion",
-      "financepy-fx-forward-spot-conversion",
-      "mlx-sigmoid-tail-gradient"
+      "financepy-vasicek-small-mean-reversion"
     ],
     "zenodo": [
-      "financepy-vasicek-small-mean-reversion",
-      "financepy-fx-forward-spot-conversion",
-      "mlx-sigmoid-tail-gradient"
+      "financepy-vasicek-small-mean-reversion"
     ]
   },
   "deduplication_notes": [
     "All 97 previous report IDs preserved; one CIR pricing component report appended.",
     "Media and mirrored editions do not add report IDs.",
     "Only verified copies enter platform counts.",
-    "Two source-pinned reports appended on 17 September 2026; all previous IDs preserved. Zenodo and HF additions await account login."
+    "Two source-pinned reports appended on 17 September 2026; all previous IDs preserved. Zenodo and HF additions await account login.",
+    "FinancePy FXForward and MLX sigmoid reports now have verified individual Zenodo and Hugging Face copies, with public English YouTube videos. Updated 17 September 2026; all previous IDs preserved."
   ],
   "parity_complete": false,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
@@ -58,8 +55,8 @@
       "publication_date": "2026-09-16",
       "kind": "published_report",
       "gero": "https://www.gero.uz/research/articles/financepy-fx-forward-spot-conversion.html",
-      "huggingface": null,
-      "zenodo": null,
+      "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-fx-forward-spot-conversion.md",
+      "zenodo": "https://zenodo.org/records/22801504",
       "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-financepy-fx-forward-npv-audit",
       "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-financepy-fx-forward-npv-audit/blob/main/README.md",
       "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-fx-forward-spot-conversion.md",
@@ -79,8 +76,8 @@
       "publication_date": "2026-09-16",
       "kind": "published_report",
       "gero": "https://www.gero.uz/research/articles/mlx-sigmoid-tail-gradient.html",
-      "huggingface": null,
-      "zenodo": null,
+      "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-sigmoid-tail-gradient.md",
+      "zenodo": "https://zenodo.org/records/22801587",
       "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-mlx-sigmoid-tail-audit",
       "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-mlx-sigmoid-tail-audit/blob/main/README.md",
       "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-sigmoid-tail-gradient.md",
