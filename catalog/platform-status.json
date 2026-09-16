@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-15T14:45:45.408151+00:00",
+  "checked_at": "2026-09-16T05:47:26.084996+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 98,
-    "huggingface": 98,
+    "huggingface": 99,
     "zenodo": 96,
-    "github_catalog_report": 98,
+    "github_catalog_report": 99,
     "zenodo_records_including_collection": 97,
-    "unique_individual_publications": 98,
+    "unique_individual_publications": 99,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "98 report IDs in the canonical catalog; not independent-defect counts.",
+  "github_status": "99 distinct report IDs, not independent-defect counts.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -20,11 +20,14 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [],
+    "gero": [
+      "financepy-annuity-call-order-face-cache"
+    ],
     "huggingface": [],
     "zenodo": [
       "mlx-median-finite-midpoint-overflow",
-      "financepy-cir-zero-price-stability"
+      "financepy-cir-zero-price-stability",
+      "financepy-annuity-call-order-face-cache"
     ]
   },
   "deduplication_notes": [
@@ -35,26 +38,24 @@
   "parity_complete": false,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "latest_report": {
-    "id": "financepy-cir-zero-price-stability",
-    "title": "FinancePy CIR pricing loses its finite range and small-volatility limit",
+    "id": "financepy-annuity-call-order-face-cache",
+    "title": "FinancePy annuity pricing depends on prior payment calls",
     "authors": [
       "Xamit Kadirbekov"
     ],
-    "publication_date": "2026-09-15",
+    "publication_date": "2026-09-16",
     "kind": "published_report",
-    "gero": "https://www.gero.uz/research/articles/financepy-cir-zero-price-stability.html",
-    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-cir-zero-price-stability.md",
+    "gero": null,
+    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-annuity-call-order-face-cache.md",
     "zenodo": null,
-    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-cir-zero-price-stability.md",
-    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-cir-zero-price-stability.md",
-    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-cir-zero-price-stability.md",
-    "mirror_sha256": "591c943cc5cb97ba37e974237956cb5bbd36e459802ec1cd2e525308a712d960",
-    "source_text_sha256": "591c943cc5cb97ba37e974237956cb5bbd36e459802ec1cd2e525308a712d960",
-    "evidence_archive": "https://www.gero.uz/research/data/financepy-cir-zero-price-stability/gero-financepy-cir-zero-price-research-2026-09-15.zip",
-    "evidence_archive_sha256": "1500cda3ca46ddfc02e19099b8b57c12b5c674936e219a27bc4e9f06de5bb3db",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-annuity-call-order-face-cache.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-annuity-call-order-face-cache.md",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-annuity-call-order-face-cache.md",
+    "mirror_sha256": "9f8ada6119f54b8db0cc76156998181396b4ad8d5006488163e722d64cb254a2",
+    "source_text_sha256": "9f8ada6119f54b8db0cc76156998181396b4ad8d5006488163e722d64cb254a2",
+    "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/artifacts/gero-financepy-annuity-call-order-research-2026-09-16.zip",
+    "evidence_archive_sha256": "b2b673aa86e3d6a0184011e961977f221850fa87b2dd005b229f20e4afe94340",
     "implementation_defects_in_this_report": 1,
-    "maintainer_issue": "https://github.com/domokane/FinancePy/issues/264",
-    "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7505637773324976128/",
-    "youtube": "https://www.youtube.com/shorts/yyDsUwfKW70"
+    "maintainer_issue": "https://github.com/domokane/FinancePy/issues/268"
   }
 }

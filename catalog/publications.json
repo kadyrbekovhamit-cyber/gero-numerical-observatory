@@ -1709,5 +1709,26 @@
     "maintainer_issue": "https://github.com/domokane/FinancePy/issues/264",
     "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7505637773324976128/",
     "youtube": "https://www.youtube.com/shorts/yyDsUwfKW70"
+  },
+  {
+    "id": "financepy-annuity-call-order-face-cache",
+    "title": "FinancePy annuity pricing depends on prior payment calls",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-16",
+    "kind": "published_report",
+    "gero": null,
+    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-annuity-call-order-face-cache.md",
+    "zenodo": null,
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-annuity-call-order-face-cache.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-annuity-call-order-face-cache.md",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-annuity-call-order-face-cache.md",
+    "mirror_sha256": "9f8ada6119f54b8db0cc76156998181396b4ad8d5006488163e722d64cb254a2",
+    "source_text_sha256": "9f8ada6119f54b8db0cc76156998181396b4ad8d5006488163e722d64cb254a2",
+    "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/artifacts/gero-financepy-annuity-call-order-research-2026-09-16.zip",
+    "evidence_archive_sha256": "b2b673aa86e3d6a0184011e961977f221850fa87b2dd005b229f20e4afe94340",
+    "implementation_defects_in_this_report": 1,
+    "maintainer_issue": "https://github.com/domokane/FinancePy/issues/268"
   }
 ]

@@ -1,17 +1,15 @@
 # GERO — complete publication catalog
 
-Updated 15 September 2026. **98 distinct publications.** These are reports, case studies, experiments and preprints, not independent-defect counts. Previous 97 IDs are preserved.
+Updated 16 September 2026. **99 distinct publications.** Report counts are not independent-defect counts. All prior IDs are preserved.
 
 | Platform | Verified reports |
 |---|---:|
-| GitHub | 98 |
-| GERO | 98 |
-| Hugging Face | 98 |
-| Zenodo | 96 |
+| gero | 98 |
+| huggingface | 99 |
+| zenodo | 96 |
+| github_catalog_report | 99 |
 
-One historical Zenodo collection is excluded from individual-record counts. Pending copies are marked below. [Machine-readable catalog](publications.json) · [Coverage and counting rules](platform-status.json) · [Checksums](SHA256SUMS).
-
-## Individual publications
+One historical Zenodo collection is excluded. [Machine-readable catalog](publications.json) · [Coverage](platform-status.json) · [Checksums](SHA256SUMS).
 
 | # | Publication | GERO | Hugging Face | Zenodo | GitHub |
 |---|---|---|---|---|---|
@@ -113,3 +111,4 @@ One historical Zenodo collection is excluded from individual-record counts. Pend
 | 96 | [ConstantForce whole-life insurance ignores the benefit amount](reports/actuarialmath-constantforce-benefit-scaling.md) | [Page](https://www.gero.uz/research/articles/actuarialmath-constantforce-benefit-scaling.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/actuarialmath-constantforce-benefit-scaling.md) | [Record](https://zenodo.org/records/22763443) | [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-constantforce-benefit-scaling.md) |
 | 97 | [MLX median overflows while averaging finite central values](reports/mlx-median-finite-midpoint-overflow.md) | [Page](https://www.gero.uz/research/articles/mlx-median-finite-midpoint-overflow.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-median-finite-midpoint-overflow.md) | Pending | [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-median-finite-midpoint-overflow.md) |
 | 98 | [FinancePy CIR pricing loses its finite range and small-volatility limit](reports/financepy-cir-zero-price-stability.md) | [Page](https://www.gero.uz/research/articles/financepy-cir-zero-price-stability.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-cir-zero-price-stability.md) | Pending | [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-cir-zero-price-stability.md) |
+| 99 | [FinancePy annuity pricing depends on prior payment calls](reports/financepy-annuity-call-order-face-cache.md) | Pending | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-annuity-call-order-face-cache.md) | Pending | [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-annuity-call-order-face-cache.md) |
