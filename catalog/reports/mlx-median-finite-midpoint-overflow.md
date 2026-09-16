@@ -124,3 +124,7 @@ retained in the source and copied implementation files.
 [Evidence archive](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/artifacts/gero-mlx-median-finite-midpoint-evidence-2026-09-15.zip)
 
 SHA-256: `45ea7c88dc7ddd9bc951a0f860dcda04803fb11d611d3eaf9082b636e8285630`.
+
+[Zenodo archival record — DOI 10.5281/zenodo.22794694](https://zenodo.org/records/22794694). Added 16 September 2026; no new numerical runs. The frozen evidence archive is unchanged.
+
+[Hugging Face evidence mirror](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-median-finite-midpoint-overflow.md).

@@ -91,3 +91,5 @@ The frozen research ZIP retains its preparation-time statement that publication 
 [Immutable evidence archive](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/artifacts/gero-financepy-cir-zero-price-research-2026-09-15.zip)
 
 SHA-256: `1500cda3ca46ddfc02e19099b8b57c12b5c674936e219a27bc4e9f06de5bb3db`.
+
+[Zenodo archival record — DOI 10.5281/zenodo.22794596](https://zenodo.org/records/22794596). Added 16 September 2026; no new numerical runs. The frozen evidence archive is unchanged.

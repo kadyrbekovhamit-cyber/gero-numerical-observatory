@@ -1,12 +1,12 @@
 {
-  "checked_at": "2026-09-16T05:59:36.350101+00:00",
+  "checked_at": "2026-09-16T11:37:02.099365+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 99,
     "huggingface": 99,
-    "zenodo": 97,
+    "zenodo": 99,
     "github_catalog_report": 99,
-    "zenodo_records_including_collection": 98,
+    "zenodo_records_including_collection": 100,
     "unique_individual_publications": 99,
     "legacy_github_accounts_required_after_copy": 0
   },
@@ -22,17 +22,14 @@
   "missing": {
     "gero": [],
     "huggingface": [],
-    "zenodo": [
-      "mlx-median-finite-midpoint-overflow",
-      "financepy-cir-zero-price-stability"
-    ]
+    "zenodo": []
   },
   "deduplication_notes": [
     "All 97 previous report IDs preserved; one CIR pricing component report appended.",
     "Media and mirrored editions do not add report IDs.",
     "Only verified copies enter platform counts."
   ],
-  "parity_complete": false,
+  "parity_complete": true,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "latest_report": {
     "id": "financepy-annuity-call-order-face-cache",
@@ -56,5 +53,13 @@
     "maintainer_issue": "https://github.com/domokane/FinancePy/issues/268",
     "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7505866824627081217/",
     "youtube": "https://youtube.com/shorts/BZ3oSwTksaI"
+  },
+  "archival_backfill": {
+    "date": "2026-09-16",
+    "records": {
+      "financepy-cir-zero-price-stability": 22794596,
+      "mlx-median-finite-midpoint-overflow": 22794694
+    },
+    "fresh_numerical_runs": false
   }
 }
