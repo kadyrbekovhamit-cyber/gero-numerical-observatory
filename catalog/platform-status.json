@@ -1,12 +1,12 @@
 {
-  "checked_at": "2026-09-16T19:31:23.129828+00:00",
+  "checked_at": "2026-09-16T19:35:11.452391+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 102,
-    "huggingface": 101,
-    "zenodo": 101,
+    "huggingface": 102,
+    "zenodo": 102,
     "github_catalog_report": 102,
-    "zenodo_records_including_collection": 102,
+    "zenodo_records_including_collection": 103,
     "unique_individual_publications": 102,
     "legacy_github_accounts_required_after_copy": 0
   },
@@ -21,21 +21,18 @@
   },
   "missing": {
     "gero": [],
-    "huggingface": [
-      "financepy-vasicek-small-mean-reversion"
-    ],
-    "zenodo": [
-      "financepy-vasicek-small-mean-reversion"
-    ]
+    "huggingface": [],
+    "zenodo": []
   },
   "deduplication_notes": [
     "All 97 previous report IDs preserved; one CIR pricing component report appended.",
     "Media and mirrored editions do not add report IDs.",
     "Only verified copies enter platform counts.",
     "Two source-pinned reports appended on 17 September 2026; all previous IDs preserved. Zenodo and HF additions await account login.",
-    "FinancePy FXForward and MLX sigmoid reports now have verified individual Zenodo and Hugging Face copies, with public English YouTube videos. Updated 17 September 2026; all previous IDs preserved."
+    "FinancePy FXForward and MLX sigmoid reports now have verified individual Zenodo and Hugging Face copies, with public English YouTube videos. Updated 17 September 2026; all previous IDs preserved.",
+    "Vasicek now public on all six channels; Zenodo22801595 and HFf2932b2 file checksums verified. Original archive immutable; no new numerical run in this distribution update."
   ],
-  "parity_complete": false,
+  "parity_complete": true,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "archival_backfill": {
     "date": "2026-09-16",
@@ -88,5 +85,16 @@
       "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506064138360549376/",
       "youtube": "https://www.youtube.com/shorts/HWh85logbkc"
     }
-  ]
+  ],
+  "coverage_scope": "102canonicalcatalogue IDs; separate Collatz research map remains outside this subset. No claim that every external account has only102records.",
+  "latest_completed_distribution": {
+    "id": "financepy-vasicek-small-mean-reversion",
+    "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-vasicek-small-mean-reversion.md",
+    "gero": "https://www.gero.uz/research/articles/financepy-vasicek-small-mean-reversion.html",
+    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-vasicek-small-mean-reversion.md",
+    "zenodo": "https://zenodo.org/records/22801595",
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506071696911609857/",
+    "youtube": "https://youtube.com/shorts/k-VGcx7o_LM",
+    "archive_sha256": "73ae765799146c338fd253ded1c385375d4abf6362188625abda0a2836f101f5"
+  }
 }

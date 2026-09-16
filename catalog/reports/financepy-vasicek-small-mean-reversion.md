@@ -164,3 +164,14 @@ Maintainer report: https://github.com/domokane/FinancePy/issues/269 . The issue 
 [Download the frozen reproduction archive](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/artifacts/gero-financepy-vasicek-small-mean-reversion-research-2026-09-16.zip). SHA-256: `73ae765799146c338fd253ded1c385375d4abf6362188625abda0a2836f101f5`.
 
 Original GERO explanatory text: CC BY 4.0. FinancePy and derivative code retain GPLv3 and their original notices.
+
+## Publication links
+
+- [Github](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-vasicek-small-mean-reversion.md)
+- [Gero](https://www.gero.uz/research/articles/financepy-vasicek-small-mean-reversion.html)
+- [Huggingface](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-vasicek-small-mean-reversion.md)
+- [Zenodo](https://zenodo.org/records/22801595)
+- [Linkedin](https://www.linkedin.com/feed/update/urn:li:share:7506071696911609857/)
+- [Youtube](https://youtube.com/shorts/k-VGcx7o_LM)
+
+Zenodo DOI: **10.5281/zenodo.22801595**. The public34.09-second overview uses synthetic JennyNeural narration and actual speech-timed English captions. Publication links do not represent a new numerical experiment or upstream acceptance.
