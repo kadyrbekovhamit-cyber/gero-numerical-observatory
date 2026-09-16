@@ -27,7 +27,7 @@ Previous audit: [QuantLib deterministic probabilities and cap/floor deltas](cata
 
 [**All 99 published materials, in one place →**](catalog/README.md)
 
-As of 16 September 2026, the catalog contains **99 distinct publications**: GitHub 99; GERO 98; Hugging Face 99; individual Zenodo records 96. One historical collection is counted separately. [Coverage and counting rules](catalog/platform-status.json).
+As of 16 September 2026, the catalog contains **99 distinct publications**: GitHub 99; GERO 99; Hugging Face 99; individual Zenodo records 97. One historical collection is counted separately. [Coverage and counting rules](catalog/platform-status.json).
 
 [Earlier report archive](reports/README.md). Its original records remain available; use the complete catalog above for current publication coverage and missing platforms.
 
