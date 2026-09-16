@@ -1,13 +1,13 @@
 # GERO — complete publication catalog
 
-Updated 16 September 2026. **99 distinct publications.** Report counts are not independent-defect counts. All prior IDs are preserved.
+Updated 16 September 2026. **100 distinct publications.** Report counts are not independent-defect counts. All prior IDs are preserved.
 
 | Platform | Verified reports |
 |---|---:|
 | gero | 99 |
 | huggingface | 99 |
 | zenodo | 99 |
-| github_catalog_report | 99 |
+| github_catalog_report | 100 |
 
 One historical Zenodo collection is excluded. [Machine-readable catalog](publications.json) · [Coverage](platform-status.json) · [Checksums](SHA256SUMS).
 
@@ -112,3 +112,4 @@ One historical Zenodo collection is excluded. [Machine-readable catalog](publica
 | 97 | [MLX median overflows while averaging finite central values](reports/mlx-median-finite-midpoint-overflow.md) | [Page](https://www.gero.uz/research/articles/mlx-median-finite-midpoint-overflow.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-median-finite-midpoint-overflow.md) | [Record](https://zenodo.org/records/22794694) | [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-median-finite-midpoint-overflow.md) |
 | 98 | [FinancePy CIR pricing loses its finite range and small-volatility limit](reports/financepy-cir-zero-price-stability.md) | [Page](https://www.gero.uz/research/articles/financepy-cir-zero-price-stability.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-cir-zero-price-stability.md) | [Record](https://zenodo.org/records/22794596) | [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-cir-zero-price-stability.md) |
 | 99 | [FinancePy annuity pricing depends on prior payment calls](reports/financepy-annuity-call-order-face-cache.md) | [Page](https://www.gero.uz/research/articles/financepy-annuity-call-order-face-cache.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-annuity-call-order-face-cache.md) | [Record](https://zenodo.org/records/22791449) | [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-annuity-call-order-face-cache.md) |
+| 100 | [FinancePy Vasicek pricing loses the small-mean-reversion limit](reports/financepy-vasicek-small-mean-reversion.md) | Pending | Pending | Pending | [GitHub](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-vasicek-small-mean-reversion.md) |

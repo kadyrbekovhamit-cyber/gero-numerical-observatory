@@ -1732,5 +1732,28 @@
     "maintainer_issue": "https://github.com/domokane/FinancePy/issues/268",
     "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7505866824627081217/",
     "youtube": "https://youtube.com/shorts/BZ3oSwTksaI"
+  },
+  {
+    "id": "financepy-vasicek-small-mean-reversion",
+    "title": "FinancePy Vasicek pricing loses the small-mean-reversion limit",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-16",
+    "kind": "published_report",
+    "gero": null,
+    "huggingface": null,
+    "zenodo": null,
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-vasicek-small-mean-reversion.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-vasicek-small-mean-reversion.md",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-vasicek-small-mean-reversion.md",
+    "mirror_sha256": "faca21c17fbaef895689de57d66c247956684614e2cff315b670008624e51675",
+    "source_text_sha256": "faca21c17fbaef895689de57d66c247956684614e2cff315b670008624e51675",
+    "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/artifacts/gero-financepy-vasicek-small-mean-reversion-research-2026-09-16.zip",
+    "evidence_archive_sha256": "73ae765799146c338fd253ded1c385375d4abf6362188625abda0a2836f101f5",
+    "implementation_defects_in_this_report": 1,
+    "maintainer_issue": "https://github.com/domokane/FinancePy/issues/269",
+    "linkedin": null,
+    "youtube": null
   }
 ]

@@ -1,0 +1,53 @@
+--- a/financepy/models/vasicek_mc.py
++++ b/financepy/models/vasicek_mc.py
+@@ -1,6 +1,6 @@
+ # Copyright (C) 2018, 2019, 2020 Dominic O'Kane
+ 
+-from math import sqrt, exp
++from math import sqrt, exp, expm1
+ from numba import njit, float64, int64
+ import numba as nb
+ import numpy as np
+@@ -79,6 +79,42 @@
+     t: float
+ ) -> float:
+     """Generate zero price analytically using Vasicek model"""
++    # For small a*t the conventional affine expression cancels large terms.
++    # Integrating the Gaussian short rate gives log(P) = -mean + variance/2.
++    x = a * t
++    if abs(x) < 0.5:
++        bb = t if x == 0.0 else -t * expm1(-x) / x
++        # Integral_0^t B(s)^2 ds / t^3, in powers of x = a*t.
++        # Coefficient n: ((-2)^(n+2)-2*(-1)^(n+2))/((n+2)!*(n+3)).
++        coefficients = (
++            0.3333333333333333,
++            -0.25,
++            0.11666666666666667,
++            -0.041666666666666664,
++            0.012301587301587301,
++            -0.003125,
++            0.0006999559082892416,
++            -0.00014054232804232804,
++            2.5603254769921436e-05,
++            -4.2713844797178134e-06,
++            6.574572546794769e-07,
++            -9.394540644540644e-08,
++            1.2527583625467223e-08,
++            -1.5660435427300506e-09,
++            1.8424603970627936e-10,
++            -2.0472094573725967e-11,
++            2.1549737648205952e-12,
++            -2.1549819854558418e-13,
++            2.052367710260443e-14,
++            -1.865790606867772e-15,
++        )
++        integral_factor = coefficients[-1]
++        for i in range(len(coefficients) - 2, -1, -1):
++            integral_factor = coefficients[i] + x * integral_factor
++        variance = sigma * sigma * t * t * t * integral_factor
++        mean = b * t + (r0 - b) * bb
++        return exp(-mean + 0.5 * variance)
++
+     bb = (1.0 - exp(-a * t)) / a
+     aa = exp(
+         (b - sigma * sigma / 2.0 / a / a) * (bb - t) - bb * bb * sigma * sigma / 4.0 / a

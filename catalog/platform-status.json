@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-16T11:37:02.099365+00:00",
+  "checked_at": "2026-09-16T18:40:35.690377+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 99,
     "huggingface": 99,
     "zenodo": 99,
-    "github_catalog_report": 99,
+    "github_catalog_report": 100,
     "zenodo_records_including_collection": 100,
-    "unique_individual_publications": 99,
+    "unique_individual_publications": 100,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "99 distinct report IDs, not independent-defect counts.",
+  "github_status": "100 distinct report IDs, not independent-defect counts.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -20,39 +20,45 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [],
-    "huggingface": [],
-    "zenodo": []
+    "gero": [
+      "financepy-vasicek-small-mean-reversion"
+    ],
+    "huggingface": [
+      "financepy-vasicek-small-mean-reversion"
+    ],
+    "zenodo": [
+      "financepy-vasicek-small-mean-reversion"
+    ]
   },
   "deduplication_notes": [
     "All 97 previous report IDs preserved; one CIR pricing component report appended.",
     "Media and mirrored editions do not add report IDs.",
     "Only verified copies enter platform counts."
   ],
-  "parity_complete": true,
+  "parity_complete": false,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "latest_report": {
-    "id": "financepy-annuity-call-order-face-cache",
-    "title": "FinancePy annuity pricing depends on prior payment calls",
+    "id": "financepy-vasicek-small-mean-reversion",
+    "title": "FinancePy Vasicek pricing loses the small-mean-reversion limit",
     "authors": [
       "Xamit Kadirbekov"
     ],
     "publication_date": "2026-09-16",
     "kind": "published_report",
-    "gero": "https://www.gero.uz/research/articles/financepy-annuity-call-order-face-cache.html",
-    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-annuity-call-order-face-cache.md",
-    "zenodo": "https://zenodo.org/records/22791449",
-    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-annuity-call-order-face-cache.md",
-    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-annuity-call-order-face-cache.md",
-    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-annuity-call-order-face-cache.md",
-    "mirror_sha256": "cb5c45bd9ffc3a74ded0960a7b1db695ecc3abce16fc66db1d54324126f75ac9",
-    "source_text_sha256": "cb5c45bd9ffc3a74ded0960a7b1db695ecc3abce16fc66db1d54324126f75ac9",
-    "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/artifacts/gero-financepy-annuity-call-order-research-2026-09-16.zip",
-    "evidence_archive_sha256": "b2b673aa86e3d6a0184011e961977f221850fa87b2dd005b229f20e4afe94340",
+    "gero": null,
+    "huggingface": null,
+    "zenodo": null,
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-vasicek-small-mean-reversion.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-vasicek-small-mean-reversion.md",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-vasicek-small-mean-reversion.md",
+    "mirror_sha256": "faca21c17fbaef895689de57d66c247956684614e2cff315b670008624e51675",
+    "source_text_sha256": "faca21c17fbaef895689de57d66c247956684614e2cff315b670008624e51675",
+    "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/artifacts/gero-financepy-vasicek-small-mean-reversion-research-2026-09-16.zip",
+    "evidence_archive_sha256": "73ae765799146c338fd253ded1c385375d4abf6362188625abda0a2836f101f5",
     "implementation_defects_in_this_report": 1,
-    "maintainer_issue": "https://github.com/domokane/FinancePy/issues/268",
-    "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7505866824627081217/",
-    "youtube": "https://youtube.com/shorts/BZ3oSwTksaI"
+    "maintainer_issue": "https://github.com/domokane/FinancePy/issues/269",
+    "linkedin": null,
+    "youtube": null
   },
   "archival_backfill": {
     "date": "2026-09-16",
