@@ -110,4 +110,4 @@ artifact preparation were AI-assisted; the numerical results were executed.
 
 ## Verified publication links
 
-
+[github](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-annuity-call-order-face-cache.md) · [huggingface](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-annuity-call-order-face-cache.md) · [linkedin](https://www.linkedin.com/feed/update/urn:li:share:7505866824627081217/) · [youtube](https://youtube.com/shorts/BZ3oSwTksaI)
