@@ -1741,7 +1741,7 @@
     ],
     "publication_date": "2026-09-16",
     "kind": "published_report",
-    "gero": null,
+    "gero": "https://www.gero.uz/research/articles/financepy-vasicek-small-mean-reversion.html",
     "huggingface": null,
     "zenodo": null,
     "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-vasicek-small-mean-reversion.md",
@@ -1755,5 +1755,47 @@
     "maintainer_issue": "https://github.com/domokane/FinancePy/issues/269",
     "linkedin": null,
     "youtube": null
+  },
+  {
+    "id": "financepy-fx-forward-spot-conversion",
+    "title": "FinancePy FXForward converts today's NPV using a future exchange rate",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-16",
+    "kind": "published_report",
+    "gero": "https://www.gero.uz/research/articles/financepy-fx-forward-spot-conversion.html",
+    "huggingface": null,
+    "zenodo": null,
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-financepy-fx-forward-npv-audit",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-financepy-fx-forward-npv-audit/blob/main/README.md",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-fx-forward-spot-conversion.md",
+    "mirror_sha256": "0657c838ad334fea589ee8b518d6635d72bccaa1a750e9b769e4c9954068dba7",
+    "source_text_sha256": "0657c838ad334fea589ee8b518d6635d72bccaa1a750e9b769e4c9954068dba7",
+    "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-financepy-fx-forward-npv-audit/releases/download/v1.0.0/financepy-fx-forward-spot-conversion-v1.0.0.zip",
+    "evidence_archive_sha256": "3520f92c04a2ebcacc2672521b4bd8f1ecba02bce27b95e14bd681aa559911fe",
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506063875079823362/",
+    "youtube": "https://www.youtube.com/shorts/94_NOnXjUDI"
+  },
+  {
+    "id": "mlx-sigmoid-tail-gradient",
+    "title": "Apple MLX sigmoid derivatives lose a representable positive tail",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-16",
+    "kind": "published_report",
+    "gero": "https://www.gero.uz/research/articles/mlx-sigmoid-tail-gradient.html",
+    "huggingface": null,
+    "zenodo": null,
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-mlx-sigmoid-tail-audit",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-mlx-sigmoid-tail-audit/blob/main/README.md",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-sigmoid-tail-gradient.md",
+    "mirror_sha256": "0cf1e5e3c5ff1b093fe59beeaca2515ffbc1b76b8d42dfef54060e39c1956bae",
+    "source_text_sha256": "0cf1e5e3c5ff1b093fe59beeaca2515ffbc1b76b8d42dfef54060e39c1956bae",
+    "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-mlx-sigmoid-tail-audit/releases/download/v1.0.0/mlx-sigmoid-tail-gradient-v1.0.0.zip",
+    "evidence_archive_sha256": "329e8dbe9c35d2644d0425c297d1a25420c2004c1316aaf625636c0ac488e76f",
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506064138360549376/",
+    "youtube": "https://www.youtube.com/shorts/HWh85logbkc"
   }
 ]

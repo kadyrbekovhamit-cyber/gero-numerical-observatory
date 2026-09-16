@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-16T18:40:35.690377+00:00",
+  "checked_at": "2026-09-16T19:09:39.627310+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 99,
+    "gero": 102,
     "huggingface": 99,
     "zenodo": 99,
-    "github_catalog_report": 100,
+    "github_catalog_report": 102,
     "zenodo_records_including_collection": 100,
-    "unique_individual_publications": 100,
+    "unique_individual_publications": 102,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "100 distinct report IDs, not independent-defect counts.",
+  "github_status": "102 distinct catalogue report IDs, not independent defects. The separately published Collatz research map is outside this catalogue subset.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -20,46 +20,26 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [
-      "financepy-vasicek-small-mean-reversion"
-    ],
+    "gero": [],
     "huggingface": [
-      "financepy-vasicek-small-mean-reversion"
+      "financepy-vasicek-small-mean-reversion",
+      "financepy-fx-forward-spot-conversion",
+      "mlx-sigmoid-tail-gradient"
     ],
     "zenodo": [
-      "financepy-vasicek-small-mean-reversion"
+      "financepy-vasicek-small-mean-reversion",
+      "financepy-fx-forward-spot-conversion",
+      "mlx-sigmoid-tail-gradient"
     ]
   },
   "deduplication_notes": [
     "All 97 previous report IDs preserved; one CIR pricing component report appended.",
     "Media and mirrored editions do not add report IDs.",
-    "Only verified copies enter platform counts."
+    "Only verified copies enter platform counts.",
+    "Two source-pinned reports appended on 17 September 2026; all previous IDs preserved. Zenodo and HF additions await account login."
   ],
   "parity_complete": false,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
-  "latest_report": {
-    "id": "financepy-vasicek-small-mean-reversion",
-    "title": "FinancePy Vasicek pricing loses the small-mean-reversion limit",
-    "authors": [
-      "Xamit Kadirbekov"
-    ],
-    "publication_date": "2026-09-16",
-    "kind": "published_report",
-    "gero": null,
-    "huggingface": null,
-    "zenodo": null,
-    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-vasicek-small-mean-reversion.md",
-    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-vasicek-small-mean-reversion.md",
-    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-vasicek-small-mean-reversion.md",
-    "mirror_sha256": "faca21c17fbaef895689de57d66c247956684614e2cff315b670008624e51675",
-    "source_text_sha256": "faca21c17fbaef895689de57d66c247956684614e2cff315b670008624e51675",
-    "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/artifacts/gero-financepy-vasicek-small-mean-reversion-research-2026-09-16.zip",
-    "evidence_archive_sha256": "73ae765799146c338fd253ded1c385375d4abf6362188625abda0a2836f101f5",
-    "implementation_defects_in_this_report": 1,
-    "maintainer_issue": "https://github.com/domokane/FinancePy/issues/269",
-    "linkedin": null,
-    "youtube": null
-  },
   "archival_backfill": {
     "date": "2026-09-16",
     "records": {
@@ -67,5 +47,49 @@
       "mlx-median-finite-midpoint-overflow": 22794694
     },
     "fresh_numerical_runs": false
-  }
+  },
+  "latest_reports": [
+    {
+      "id": "financepy-fx-forward-spot-conversion",
+      "title": "FinancePy FXForward converts today's NPV using a future exchange rate",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "publication_date": "2026-09-16",
+      "kind": "published_report",
+      "gero": "https://www.gero.uz/research/articles/financepy-fx-forward-spot-conversion.html",
+      "huggingface": null,
+      "zenodo": null,
+      "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-financepy-fx-forward-npv-audit",
+      "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-financepy-fx-forward-npv-audit/blob/main/README.md",
+      "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-fx-forward-spot-conversion.md",
+      "mirror_sha256": "0657c838ad334fea589ee8b518d6635d72bccaa1a750e9b769e4c9954068dba7",
+      "source_text_sha256": "0657c838ad334fea589ee8b518d6635d72bccaa1a750e9b769e4c9954068dba7",
+      "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-financepy-fx-forward-npv-audit/releases/download/v1.0.0/financepy-fx-forward-spot-conversion-v1.0.0.zip",
+      "evidence_archive_sha256": "3520f92c04a2ebcacc2672521b4bd8f1ecba02bce27b95e14bd681aa559911fe",
+      "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506063875079823362/",
+      "youtube": "https://www.youtube.com/shorts/94_NOnXjUDI"
+    },
+    {
+      "id": "mlx-sigmoid-tail-gradient",
+      "title": "Apple MLX sigmoid derivatives lose a representable positive tail",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "publication_date": "2026-09-16",
+      "kind": "published_report",
+      "gero": "https://www.gero.uz/research/articles/mlx-sigmoid-tail-gradient.html",
+      "huggingface": null,
+      "zenodo": null,
+      "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-mlx-sigmoid-tail-audit",
+      "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-mlx-sigmoid-tail-audit/blob/main/README.md",
+      "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-sigmoid-tail-gradient.md",
+      "mirror_sha256": "0cf1e5e3c5ff1b093fe59beeaca2515ffbc1b76b8d42dfef54060e39c1956bae",
+      "source_text_sha256": "0cf1e5e3c5ff1b093fe59beeaca2515ffbc1b76b8d42dfef54060e39c1956bae",
+      "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-mlx-sigmoid-tail-audit/releases/download/v1.0.0/mlx-sigmoid-tail-gradient-v1.0.0.zip",
+      "evidence_archive_sha256": "329e8dbe9c35d2644d0425c297d1a25420c2004c1316aaf625636c0ac488e76f",
+      "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506064138360549376/",
+      "youtube": "https://www.youtube.com/shorts/HWh85logbkc"
+    }
+  ]
 }
