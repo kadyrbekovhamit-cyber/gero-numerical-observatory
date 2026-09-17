@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-17T05:01:45.845390+00:00",
+  "checked_at": "2026-09-17T06:51:39.084796+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 104,
     "huggingface": 104,
     "zenodo": 104,
-    "github_catalog_report": 104,
+    "github_catalog_report": 105,
     "zenodo_records_including_collection": 105,
-    "unique_individual_publications": 104,
+    "unique_individual_publications": 105,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "104 canonical report IDs archived. Double no-touch distribution is complete on all six requested channels.",
+  "github_status": "105 canonical report IDs. Adjusted-binomial report is archived on GitHub; pre-existing YouTube video is retained. Four remaining channels pending.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -20,9 +20,15 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [],
-    "huggingface": [],
-    "zenodo": []
+    "gero": [
+      "financepy-adjusted-binomial-support-bracketing"
+    ],
+    "huggingface": [
+      "financepy-adjusted-binomial-support-bracketing"
+    ],
+    "zenodo": [
+      "financepy-adjusted-binomial-support-bracketing"
+    ]
   },
   "deduplication_notes": [
     "All 97 previous report IDs preserved; one CIR pricing component report appended.",
@@ -34,9 +40,10 @@
     "SplitLayer is an archival report of existing own nntrainer issue4337; the clean portable replay matches4320→0→4320 coordinate discrepancies. Not a newly discovered defect on17September.",
     "SplitLayer distribution completed: existing own issue4337, fresh standalone replay and frozen archive. One implementation defect, not4320independentbugs; no model/device impact measurement.",
     "17 September double no-touch archive: existing own issue266 and proposed PR270; original report15September. 360 failing scenarios are not360 independent bugs.",
-    "17 September double no-touch completion: all six channels public. This closes its pending mirror states above; canonical104-report subset preserved. Collatz remains outside this subset."
+    "17 September double no-touch completion: all six channels public. This closes its pending mirror states above; canonical104-report subset preserved. Collatz remains outside this subset.",
+    "17 September adjusted-binomial source replay:295→0→295/2844; existing issue265 and pre-existing YouTube weirECBnxW4 retained. GitHub archive only at this checkpoint; four browser channels pending. No new discovery or duplicate video claim."
   ],
-  "parity_complete": true,
+  "parity_complete": false,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "archival_backfill": {
     "date": "2026-09-16",
@@ -48,35 +55,32 @@
   },
   "latest_reports": [
     {
-      "id": "financepy-double-no-touch-series-truncation",
-      "title": "FinancePy: premature series truncation produces an invalid option price",
+      "id": "financepy-adjusted-binomial-support-bracketing",
+      "title": "FinancePy adjusted binomial: invalid support points produce negative probabilities and shift the mean",
       "authors": [
         "Xamit Kadirbekov"
       ],
       "publication_date": "2026-09-17",
       "kind": "published_report",
-      "gero": "https://www.gero.uz/research/articles/financepy-double-no-touch-series-truncation.html",
-      "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-double-no-touch-series-truncation.md",
-      "zenodo": "https://zenodo.org/records/22805090",
-      "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/financepy-double-no-touch-series-truncation",
-      "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-double-no-touch-series-truncation.md",
-      "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-double-no-touch-series-truncation.md",
-      "source_text_sha256": "e9b787883196051947ec6c0fcc8ed9b7967c0ccc1957f094028c4b4a3aa6671f",
-      "mirror_sha256": "e9b787883196051947ec6c0fcc8ed9b7967c0ccc1957f094028c4b4a3aa6671f",
-      "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/financepy-double-no-touch-series-truncation/gero-financepy-double-no-touch-research-2026-09-17.zip",
-      "evidence_archive_sha256": "2da5da96c0f8a06c3a0d19df094a9769c8b1584c00cd8a3ac5a5a24aaca6d962",
-      "linkedin": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7506212381824315392/",
-      "youtube": "https://youtube.com/shorts/DbnhzRiMV1s",
-      "maintainer_issue": "https://github.com/domokane/FinancePy/issues/266",
-      "proposed_fix": "https://github.com/domokane/FinancePy/pull/270",
-      "implementation_defects_proposed": 2,
-      "publication_status": "Public on GitHub, GERO, Hugging Face, Zenodo, LinkedIn and YouTube; file hashes verified where available.",
-      "maintainer_followup": "https://github.com/domokane/FinancePy/issues/266#issuecomment-5708929233",
-      "upstream_status": "PR270 open and unmerged as checked on17September2026.",
-      "local_video_status": "Master and four local video intermediates deleted after verified YouTube and LinkedIn publication; scripts, captions, timings, hashes and evidence retained."
+      "gero": null,
+      "huggingface": null,
+      "zenodo": null,
+      "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/financepy-adjusted-binomial-support-bracketing",
+      "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-adjusted-binomial-support-bracketing.md",
+      "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-adjusted-binomial-support-bracketing.md",
+      "source_text_sha256": "33d438c3a21b0b92514d5a496270397c84430a518f56816b563ad0d68d771393",
+      "mirror_sha256": "33d438c3a21b0b92514d5a496270397c84430a518f56816b563ad0d68d771393",
+      "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/financepy-adjusted-binomial-support-bracketing/gero-financepy-adjusted-binomial-research-2026-09-17.zip",
+      "evidence_archive_sha256": "45637af8cf3c1399639c98c8748e8e5ad2df1e8c4c10b139628d27d0ad42edab",
+      "linkedin": null,
+      "youtube": "https://youtube.com/shorts/weirECBnxW4",
+      "maintainer_issue": "https://github.com/domokane/FinancePy/issues/265",
+      "implementation_defects_in_this_report": 1,
+      "publication_status": "GitHub archival report and pre-existing YouTube video; GERO, Hugging Face, Zenodo and LinkedIn pending. Existing issue265, not a new discovery on publication date.",
+      "limits": "Equal loss sizes only; corrected method remains approximate for general portfolios. No bank/customer loss or full-suite claim."
     }
   ],
-  "coverage_scope": "104 canonical catalogue IDs; the separate Collatz research map is outside this subset. No assertion that external account totals equal this count.",
+  "coverage_scope": "105 canonical catalogue IDs; the separate Collatz research map is outside this subset. External account totals and independent defects are not implied by this count.",
   "latest_completed_distribution": {
     "id": "financepy-double-no-touch-series-truncation",
     "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-double-no-touch-series-truncation.md",

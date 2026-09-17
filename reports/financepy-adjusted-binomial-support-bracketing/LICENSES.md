@@ -1,0 +1,1 @@
+Original GERO report and evidence descriptions:CC BY 4.0, Xamit Kadirbekov. FinancePy source, copied test, patches and derived executable material:GPL 3.0, original copyright notices retained. See FINANCEPY_LICENSE.txt and the full source/wheel licenses. Existing algorithm credited to Dominic O'Kane; no new mathematical method claimed.

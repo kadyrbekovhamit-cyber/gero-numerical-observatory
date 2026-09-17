@@ -1,0 +1,17 @@
+--- a/financepy/models/loss_dbn_builder.py
++++ b/financepy/models/loss_dbn_builder.py
+@@ -47,11 +47,9 @@
+         v_exact += loss_ratio2 * cond_probs[i_credit] * (1.0 - cond_probs[i_credit])
+ 
+     mean_loss = p * num_credits
+-    mean_above = round(mean_loss + 1)
+-    mean_below = round(mean_loss)
+-
+-    if mean_above > num_credits:
+-        mean_above = num_credits
++    # Use adjacent support points bracketing the mean, including endpoints.
++    mean_below = min(int(np.floor(mean_loss)), num_credits - 1)
++    mean_above = mean_below + 1
+ 
+     diff_above = mean_above - mean_loss
+     diff_below = mean_below - mean_loss
