@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-17T03:47:05.650589+00:00",
+  "checked_at": "2026-09-17T04:50:13.571245+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 103,
     "huggingface": 103,
-    "zenodo": 103,
-    "github_catalog_report": 103,
-    "zenodo_records_including_collection": 104,
-    "unique_individual_publications": 103,
+    "zenodo": 104,
+    "github_catalog_report": 104,
+    "zenodo_records_including_collection": 105,
+    "unique_individual_publications": 104,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "103 distinct catalogue report IDs. SplitLayer archival distribution complete on all six channels.",
+  "github_status": "104 report IDs; double no-touch archive and four channels published. GERO and Hugging Face mirrors pending.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -20,8 +20,12 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [],
-    "huggingface": [],
+    "gero": [
+      "financepy-double-no-touch-series-truncation"
+    ],
+    "huggingface": [
+      "financepy-double-no-touch-series-truncation"
+    ],
     "zenodo": []
   },
   "deduplication_notes": [
@@ -32,9 +36,10 @@
     "FinancePy FXForward and MLX sigmoid reports now have verified individual Zenodo and Hugging Face copies, with public English YouTube videos. Updated 17 September 2026; all previous IDs preserved.",
     "Vasicek now public on all six channels; Zenodo22801595 and HFf2932b2 file checksums verified. Original archive immutable; no new numerical run in this distribution update.",
     "SplitLayer is an archival report of existing own nntrainer issue4337; the clean portable replay matches4320→0→4320 coordinate discrepancies. Not a newly discovered defect on17September.",
-    "SplitLayer distribution completed: existing own issue4337, fresh standalone replay and frozen archive. One implementation defect, not4320independentbugs; no model/device impact measurement."
+    "SplitLayer distribution completed: existing own issue4337, fresh standalone replay and frozen archive. One implementation defect, not4320independentbugs; no model/device impact measurement.",
+    "17 September double no-touch archive: existing own issue266 and proposed PR270; original report15September. 360 failing scenarios are not360 independent bugs."
   ],
-  "parity_complete": true,
+  "parity_complete": false,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "archival_backfill": {
     "date": "2026-09-16",
@@ -46,70 +51,29 @@
   },
   "latest_reports": [
     {
-      "id": "financepy-fx-forward-spot-conversion",
-      "title": "FinancePy FXForward converts today's NPV using a future exchange rate",
-      "authors": [
-        "Xamit Kadirbekov"
-      ],
-      "publication_date": "2026-09-16",
-      "kind": "published_report",
-      "gero": "https://www.gero.uz/research/articles/financepy-fx-forward-spot-conversion.html",
-      "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-fx-forward-spot-conversion.md",
-      "zenodo": "https://zenodo.org/records/22801504",
-      "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-financepy-fx-forward-npv-audit",
-      "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-financepy-fx-forward-npv-audit/blob/main/README.md",
-      "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-fx-forward-spot-conversion.md",
-      "mirror_sha256": "0657c838ad334fea589ee8b518d6635d72bccaa1a750e9b769e4c9954068dba7",
-      "source_text_sha256": "0657c838ad334fea589ee8b518d6635d72bccaa1a750e9b769e4c9954068dba7",
-      "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-financepy-fx-forward-npv-audit/releases/download/v1.0.0/financepy-fx-forward-spot-conversion-v1.0.0.zip",
-      "evidence_archive_sha256": "3520f92c04a2ebcacc2672521b4bd8f1ecba02bce27b95e14bd681aa559911fe",
-      "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506063875079823362/",
-      "youtube": "https://www.youtube.com/shorts/94_NOnXjUDI"
-    },
-    {
-      "id": "mlx-sigmoid-tail-gradient",
-      "title": "Apple MLX sigmoid derivatives lose a representable positive tail",
-      "authors": [
-        "Xamit Kadirbekov"
-      ],
-      "publication_date": "2026-09-16",
-      "kind": "published_report",
-      "gero": "https://www.gero.uz/research/articles/mlx-sigmoid-tail-gradient.html",
-      "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-sigmoid-tail-gradient.md",
-      "zenodo": "https://zenodo.org/records/22801587",
-      "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-mlx-sigmoid-tail-audit",
-      "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-mlx-sigmoid-tail-audit/blob/main/README.md",
-      "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-sigmoid-tail-gradient.md",
-      "mirror_sha256": "0cf1e5e3c5ff1b093fe59beeaca2515ffbc1b76b8d42dfef54060e39c1956bae",
-      "source_text_sha256": "0cf1e5e3c5ff1b093fe59beeaca2515ffbc1b76b8d42dfef54060e39c1956bae",
-      "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-mlx-sigmoid-tail-audit/releases/download/v1.0.0/mlx-sigmoid-tail-gradient-v1.0.0.zip",
-      "evidence_archive_sha256": "329e8dbe9c35d2644d0425c297d1a25420c2004c1316aaf625636c0ac488e76f",
-      "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506064138360549376/",
-      "youtube": "https://www.youtube.com/shorts/HWh85logbkc"
-    },
-    {
-      "id": "nntrainer-split-incremental-channels",
-      "title": "nntrainer SplitLayer leaves later channels unwritten during full-prefill incremental execution",
+      "id": "financepy-double-no-touch-series-truncation",
+      "title": "FinancePy: premature series truncation produces an invalid option price",
       "authors": [
         "Xamit Kadirbekov"
       ],
       "publication_date": "2026-09-17",
       "kind": "published_report",
-      "gero": "https://www.gero.uz/research/articles/nntrainer-split-incremental-channels.html",
-      "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/nntrainer-split-incremental-channels.md",
-      "zenodo": "https://zenodo.org/records/22804489",
-      "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/catalog/evidence/nntrainer-split-incremental-channels",
-      "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/nntrainer-split-incremental-channels.md",
-      "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/nntrainer-split-incremental-channels.md",
-      "mirror_sha256": "e554646fef9c454d33dddc9c6239013bcc8456c14516ef973df644701918a50e",
-      "source_text_sha256": "e554646fef9c454d33dddc9c6239013bcc8456c14516ef973df644701918a50e",
-      "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/evidence/nntrainer-split-incremental-channels/gero-nntrainer-split-incremental-channels-research-2026-09-17.zip",
-      "evidence_archive_sha256": "072dbfd6967d765fc7091a30ab1de80c9d9bb9609e155cdbf4750e71557685be",
-      "maintainer_issue": "https://github.com/nntrainer/nntrainer/issues/4337",
-      "implementation_defects_in_this_report": 1,
-      "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506196132293795840/",
-      "youtube": "https://youtube.com/shorts/V48hcIrGq-M",
-      "publication_note": "Archival report of the 15 September issue, replayed 17 September. All six distribution records verified; local candidate, no released-version defect or measured model/device impact claimed."
+      "gero": "https://www.gero.uz/research/articles/financepy-double-no-touch-series-truncation.html",
+      "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-double-no-touch-series-truncation.md",
+      "zenodo": "https://zenodo.org/records/22805090",
+      "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/financepy-double-no-touch-series-truncation",
+      "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-double-no-touch-series-truncation.md",
+      "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-double-no-touch-series-truncation.md",
+      "source_text_sha256": "e9b787883196051947ec6c0fcc8ed9b7967c0ccc1957f094028c4b4a3aa6671f",
+      "mirror_sha256": "e9b787883196051947ec6c0fcc8ed9b7967c0ccc1957f094028c4b4a3aa6671f",
+      "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/financepy-double-no-touch-series-truncation/gero-financepy-double-no-touch-research-2026-09-17.zip",
+      "evidence_archive_sha256": "2da5da96c0f8a06c3a0d19df094a9769c8b1584c00cd8a3ac5a5a24aaca6d962",
+      "linkedin": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7506212381824315392/",
+      "youtube": "https://youtube.com/shorts/DbnhzRiMV1s",
+      "maintainer_issue": "https://github.com/domokane/FinancePy/issues/266",
+      "proposed_fix": "https://github.com/domokane/FinancePy/pull/270",
+      "implementation_defects_proposed": 2,
+      "publication_status": "GitHub, Zenodo, LinkedIn and YouTube verified; GERO and Hugging Face links reserved pending upload."
     }
   ],
   "coverage_scope": "103 canonical catalogue IDs; the separate Collatz research map is outside this subset. No assertion that external account totals equal this count.",

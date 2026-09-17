@@ -1821,5 +1821,30 @@
     "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506196132293795840/",
     "youtube": "https://youtube.com/shorts/V48hcIrGq-M",
     "publication_note": "Archival report of the 15 September issue, replayed 17 September. All six distribution records verified; local candidate, no released-version defect or measured model/device impact claimed."
+  },
+  {
+    "id": "financepy-double-no-touch-series-truncation",
+    "title": "FinancePy: premature series truncation produces an invalid option price",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-17",
+    "kind": "published_report",
+    "gero": "https://www.gero.uz/research/articles/financepy-double-no-touch-series-truncation.html",
+    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-double-no-touch-series-truncation.md",
+    "zenodo": "https://zenodo.org/records/22805090",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/financepy-double-no-touch-series-truncation",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-double-no-touch-series-truncation.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-double-no-touch-series-truncation.md",
+    "source_text_sha256": "e9b787883196051947ec6c0fcc8ed9b7967c0ccc1957f094028c4b4a3aa6671f",
+    "mirror_sha256": "e9b787883196051947ec6c0fcc8ed9b7967c0ccc1957f094028c4b4a3aa6671f",
+    "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/financepy-double-no-touch-series-truncation/gero-financepy-double-no-touch-research-2026-09-17.zip",
+    "evidence_archive_sha256": "2da5da96c0f8a06c3a0d19df094a9769c8b1584c00cd8a3ac5a5a24aaca6d962",
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7506212381824315392/",
+    "youtube": "https://youtube.com/shorts/DbnhzRiMV1s",
+    "maintainer_issue": "https://github.com/domokane/FinancePy/issues/266",
+    "proposed_fix": "https://github.com/domokane/FinancePy/pull/270",
+    "implementation_defects_proposed": 2,
+    "publication_status": "GitHub, Zenodo, LinkedIn and YouTube verified; GERO and Hugging Face links reserved pending upload."
   }
 ]

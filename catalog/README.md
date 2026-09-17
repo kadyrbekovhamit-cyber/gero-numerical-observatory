@@ -1,6 +1,6 @@
 # GERO — publication catalogue
 
-Updated 17 September 2026. **103 distinct catalogue publications.** Report counts are not independent-defect counts. All 102 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
+Updated 17 September 2026. **104 distinct catalogue publications.** Report counts are not independent-defect counts. All 103 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
 
 [Machine-readable catalogue](publications.json) · [Coverage](platform-status.json) · [Checksums](SHA256SUMS).
 
@@ -8,8 +8,8 @@ Updated 17 September 2026. **103 distinct catalogue publications.** Report count
 |---|---:|
 |gero|103|
 |huggingface|103|
-|zenodo|103|
-|github_catalog_report|103|
+|zenodo|104|
+|github_catalog_report|104|
 
 The FinancePy FXForward and MLX sigmoid reports each have GERO, GitHub, LinkedIn, Zenodo, Hugging Face and YouTube publications. Overall coverage is shown above; no equal count across all external account collections is claimed.
 
@@ -118,8 +118,12 @@ The FinancePy FXForward and MLX sigmoid reports each have GERO, GitHub, LinkedIn
 | 101 | [FinancePy FXForward converts today's NPV using a future exchange rate](reports/financepy-fx-forward-spot-conversion.md) | [Page](https://www.gero.uz/research/articles/financepy-fx-forward-spot-conversion.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-fx-forward-spot-conversion.md) | [DOI](https://zenodo.org/records/22801504) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-financepy-fx-forward-npv-audit) |
 | 102 | [Apple MLX sigmoid derivatives lose a representable positive tail](reports/mlx-sigmoid-tail-gradient.md) | [Page](https://www.gero.uz/research/articles/mlx-sigmoid-tail-gradient.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-sigmoid-tail-gradient.md) | [DOI](https://zenodo.org/records/22801587) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-mlx-sigmoid-tail-audit) |
 | 103 | [nntrainer SplitLayer leaves later channels unwritten during full-prefill incremental execution](reports/nntrainer-split-incremental-channels.md) | [Page](https://www.gero.uz/research/articles/nntrainer-split-incremental-channels.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/nntrainer-split-incremental-channels.md) | [DOI](https://zenodo.org/records/22804489) | [Report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/nntrainer-split-incremental-channels.md) |
+| 104 | [FinancePy: premature series truncation produces an invalid option price](reports/financepy-double-no-touch-series-truncation.md) | [Page](https://www.gero.uz/research/articles/financepy-double-no-touch-series-truncation.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-double-no-touch-series-truncation.md) | [DOI](https://zenodo.org/records/22805090) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/financepy-double-no-touch-series-truncation) |
 
 Vasicek distribution completed on six channels: [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506071696911609857/) · [English Short](https://youtube.com/shorts/k-VGcx7o_LM).
 
 
 SplitLayer is now public on all six channels: [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506196132293795840/) · [English Short](https://youtube.com/shorts/V48hcIrGq-M). All 103 canonical IDs have individual report coverage on GERO, GitHub, Hugging Face and Zenodo. The separate Collatz map is outside this subset. This is the archival release of existing issue4337, not a new discovery.
+
+
+The double no-touch report is now in this repository. GERO and Hugging Face publication are pending; their canonical links are reserved. [Video](https://youtube.com/shorts/DbnhzRiMV1s) · [Native LinkedIn video](https://www.linkedin.com/feed/update/urn:li:ugcPost:7506212381824315392/).
