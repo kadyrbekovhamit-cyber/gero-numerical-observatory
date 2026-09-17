@@ -1,0 +1,11 @@
+--- a/financepy/products/bonds/bond_zero.py
++++ b/financepy/products/bonds/bond_zero.py
+@@ -363,7 +363,7 @@
+ 
+         dd = self.dollar_duration(settle_dt, ytm, convention)
+         fp = self.dirty_price_from_ytm(settle_dt, ytm, convention)
+-        md = dd / fp * 10000
++        md = dd / fp
+         return md
+ 
+     ###########################################################################

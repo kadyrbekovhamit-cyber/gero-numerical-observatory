@@ -1,4 +1,4 @@
-e604d62eeab7da71379b00cd17b9f92ed3af2dd6fea16c18e2e05606a70bf50e  README.md
+9c88bd8652ed983df5fcc69edbaccdb990bada5d5d17e95aca004b2ad88cad7d  README.md
 0c1c962a48fa367ebdfb48f47b6af56b612339d12db1d765f9e2b726d13343d1  SOURCE_NOTICES.md
 55487fd0a4770daa87c7f1d9288d4aa499d1e698e50978b3a07f2a9aa3b41369  artifacts/collatz-source-LICENSE.txt
 ae2310410d17d7a25932ea0852a1a34e358002959cb212ef56c3281b3baf1bc7  artifacts/financepy-vasicek-small-mean-reversion-LICENSES.md
@@ -13,8 +13,8 @@ b2b673aa86e3d6a0184011e961977f221850fa87b2dd005b229f20e4afe94340  artifacts/gero
 a62d6f9aeb36604df043520cf2a6ce51b614734c9fe720ca7821ebbd9143862f  artifacts/gero-nntrainer-divide-evidence-2026-09-14.zip
 10d5d7b5f5d291eb6f39c0798c3a3026c99943934c2facff03127a7dd86588df  artifacts/gero-quantlib-zero-stddev-evidence-2026-09-14.zip
 387af6a3c538d440f283e591aea9c03774db21db7e9602d2743a8bc819d12d4d  artifacts/p-harmonic-cones.pdf
-0a854f74260409324ac29c33f95e47d8055d80f0ffbc23f5ac979c4533687c49  platform-status.json
-e9c099d9490a98746e5e8c522e6a8b322766004a9023cbea73bd7bc18d48671d  publications.json
+faed5339640c9730ed3162098869d995e1a0322f6ead9d98a864671b9062f6c3  platform-status.json
+3152bfaa1debafc1f882e7b554d49847cb652708b83554683d3e1a23807f4085  publications.json
 e9b787883196051947ec6c0fcc8ed9b7967c0ccc1957f094028c4b4a3aa6671f  reports/financepy-double-no-touch-series-truncation.md
 d27f7d8701b09c2ba66521f6f07d410423972130fdeea47680b0b3212ca43c5f  evidence/nntrainer-split-incremental-channels/LICENSES.md
 c86c2dab07b680694776134676aaeff88093e1d7caa966b4e528999e4f2f51f4  evidence/nntrainer-split-incremental-channels/REPRODUCE.md
@@ -153,3 +153,14 @@ a69cdc5a5a4943425d715c0a97b4bf97eaf2c97c7f04957733cec9b8bff819d0  ../reports/act
 e2ea71809707a578ca728969deaf01657d8e21e69f43759183628b6780dbbeb7  ../reports/actuarialmath-beta-density/reproduce.py
 521102727521a4e50e85e5f114e99bab3baf19f5df39b8ee1062fd687891720a  ../reports/actuarialmath-beta-density/requirements-repro.txt
 8924008e3fd1a469895c294a738151625c75913db0ca10676cef20edc5aad854  ../reports/actuarialmath-beta-density/PUBLICATION_RECEIPT.json
+b0fae7a2c7bfb96a937b31dcc538bd5af620769fa8d474d734a22af7945a2bb4  reports/financepy-bond-zero-modified-duration-scale.md
+ab429ca38f71409d42c4bf2ceb789ce6bd91d0823a85c857fd608458845818c5  ../reports/financepy-bond-zero-modified-duration-scale/ARCHIVE_RECEIPT.json
+4ba822f65851f199f6418f321bc2568b3f8f7b3e409baae6ebc3dc6429c3ac3f  ../reports/financepy-bond-zero-modified-duration-scale/LICENSES.md
+b0fae7a2c7bfb96a937b31dcc538bd5af620769fa8d474d734a22af7945a2bb4  ../reports/financepy-bond-zero-modified-duration-scale/README.md
+b0fae7a2c7bfb96a937b31dcc538bd5af620769fa8d474d734a22af7945a2bb4  ../reports/financepy-bond-zero-modified-duration-scale/REPORT_EN.md
+602b52adba5ad2dceb3ff67c0bdf2dcc2203b0b0496fbfad61cf6c596f2be9d7  ../reports/financepy-bond-zero-modified-duration-scale/SOURCE_LEDGER.md
+4700b9dab0ed211071b3fc6a8939f7558ce782b192fe9383d161b15f70320447  ../reports/financepy-bond-zero-modified-duration-scale/gero-financepy-bond-zero-duration-research-2026-09-17.zip
+fa992b8d978da5922be66e672d448bcf7a27b8952d62f8ccf4ef90b8b3944dfe  ../reports/financepy-bond-zero-modified-duration-scale/historical-correction.patch
+c2999790e0ae7f6e00d81089ff8702dc2fb4efc3a09b19591cf5b8a88bb36c52  ../reports/financepy-bond-zero-modified-duration-scale/minimal.py
+fbeaf352a7cf226e5af86cfbca70023fbc1519926a72dc2ef9cb86ae732e90f4  ../reports/financepy-bond-zero-modified-duration-scale/reproduce.py
+e6f27c571f9372d966fdcf58d308f54301c33d128ff754dc4625f3fe5754863a  ../reports/financepy-bond-zero-modified-duration-scale/requirements-repro.txt

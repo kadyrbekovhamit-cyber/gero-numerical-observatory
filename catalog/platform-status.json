@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-17T10:54:16.603555+00:00",
+  "checked_at": "2026-09-17T13:02:38.438348+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 106,
     "huggingface": 106,
     "zenodo": 106,
-    "github_catalog_report": 106,
+    "github_catalog_report": 107,
     "zenodo_records_including_collection": 107,
-    "unique_individual_publications": 106,
+    "unique_individual_publications": 107,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "106 canonical report IDs archived. Beta density distribution is complete on all six requested channels.",
+  "github_status": "107 canonical report IDs. BondZero resolved-case archive is public on GitHub; remaining five channels pending.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -20,9 +20,15 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [],
-    "huggingface": [],
-    "zenodo": []
+    "gero": [
+      "financepy-bond-zero-modified-duration-scale"
+    ],
+    "huggingface": [
+      "financepy-bond-zero-modified-duration-scale"
+    ],
+    "zenodo": [
+      "financepy-bond-zero-modified-duration-scale"
+    ]
   },
   "deduplication_notes": [
     "All 97 previous report IDs preserved; one CIR pricing component report appended.",
@@ -39,7 +45,7 @@
     "17 September: adjusted-binomial archival distribution complete on six channels. Existing issue 265 and YouTube weirECBnxW4 reused; no second discovery. All 104 previous canonical publication objects preserved; Collatz remains outside the 105-report subset.",
     "17 September: Beta density archival distribution completed on six channels. Existing issue 5 retained; no second discovery. All 105 previous canonical publication objects preserved; Collatz remains outside the 106-report subset."
   ],
-  "parity_complete": true,
+  "parity_complete": false,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "archival_backfill": {
     "date": "2026-09-16",
@@ -51,34 +57,34 @@
   },
   "latest_reports": [
     {
-      "id": "actuarialmath-beta-density",
-      "title": "actuarialmath Beta: a missing survival factor changes expected insurance benefits",
+      "id": "financepy-bond-zero-modified-duration-scale",
+      "title": "FinancePy BondZero: verifying the upstream fix for a 10,000-fold duration error",
       "authors": [
         "Xamit Kadirbekov"
       ],
       "publication_date": "2026-09-17",
       "kind": "published_report",
-      "gero": "https://www.gero.uz/research/articles/actuarialmath-beta-density.html",
-      "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/actuarialmath-beta-density.md",
-      "zenodo": "https://zenodo.org/records/22810874",
-      "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/actuarialmath-beta-density",
-      "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-beta-density.md",
-      "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-beta-density.md",
-      "source_text_sha256": "2d6ab31d36d9f9e6329bf0f82783096f6dc19ab3c0500181548c5923852f6251",
-      "mirror_sha256": "2d6ab31d36d9f9e6329bf0f82783096f6dc19ab3c0500181548c5923852f6251",
-      "evidence_archive": "https://raw.githubusercontent.com/kadyrbekovhamit-cyber/gero-numerical-observatory/9298b3aafbe5056eabb7caf274efcacbe36f1337/reports/actuarialmath-beta-density/gero-actuarialmath-beta-density-research-2026-09-17.zip",
-      "evidence_archive_sha256": "a69cdc5a5a4943425d715c0a97b4bf97eaf2c97c7f04957733cec9b8bff819d0",
-      "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506303089675710464/",
-      "youtube": "https://youtube.com/shorts/faLB656CM4o",
-      "maintainer_issue": "https://github.com/terence-lim/actuarialmath/issues/5",
+      "gero": null,
+      "huggingface": null,
+      "zenodo": null,
+      "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/financepy-bond-zero-modified-duration-scale",
+      "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-bond-zero-modified-duration-scale.md",
+      "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-bond-zero-modified-duration-scale.md",
+      "source_text_sha256": "b0fae7a2c7bfb96a937b31dcc538bd5af620769fa8d474d734a22af7945a2bb4",
+      "mirror_sha256": "b0fae7a2c7bfb96a937b31dcc538bd5af620769fa8d474d734a22af7945a2bb4",
+      "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/financepy-bond-zero-modified-duration-scale/gero-financepy-bond-zero-duration-research-2026-09-17.zip",
+      "evidence_archive_sha256": "4700b9dab0ed211071b3fc6a8939f7558ce782b192fe9383d161b15f70320447",
+      "linkedin": null,
+      "youtube": null,
+      "maintainer_issue": "https://github.com/domokane/FinancePy/issues/267",
       "implementation_defects_in_this_report": 1,
-      "publication_status": "Public on GitHub, GERO, Hugging Face, Zenodo, LinkedIn and YouTube. Current-source archival replay of the 15 September finding; no duplicate video or new discovery claim.",
-      "limits": "Synthetic continuous benefits at zero interest. No full-suite, higher-moment, insurer/policyholder impact or upstream acceptance claim.",
-      "maintainer_followup": "https://github.com/terence-lim/actuarialmath/issues/5#issuecomment-5713168772",
-      "upstream_status": "Issue 5 open; archival follow-up sent 17 September. No maintainer acknowledgment or merged fix claimed."
+      "publication_status": "GitHub archival report public; other five channels pending. Existing September16 issue267 is fixed upstream in bb10c393; official PyPI1.1.2 remains affected. Not a new discovery on publication date.",
+      "limits": "Synthetic zero-coupon-bond price-to-risk identity under stated yield/day-count conventions. Corrected upstream source verified separately from affected release. No full-suite, performance or bank/customer-impact claim.",
+      "upstream_fix_commit": "bb10c3936e078a5212694d017746453175151c09",
+      "upstream_verification_followup": "https://github.com/domokane/FinancePy/issues/267#issuecomment-5713269134"
     }
   ],
-  "coverage_scope": "106 canonical catalogue IDs; the separate Collatz research map is outside this subset. No assertion that external account totals equal this count.",
+  "coverage_scope": "107 canonical IDs. Separate Collatz research map is outside this subset; counts are reports, not defects or all external account totals.",
   "latest_completed_distribution": {
     "id": "actuarialmath-beta-density",
     "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-beta-density.md",

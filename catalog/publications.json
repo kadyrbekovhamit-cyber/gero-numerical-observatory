@@ -1903,5 +1903,32 @@
     "limits": "Synthetic continuous benefits at zero interest. No full-suite, higher-moment, insurer/policyholder impact or upstream acceptance claim.",
     "maintainer_followup": "https://github.com/terence-lim/actuarialmath/issues/5#issuecomment-5713168772",
     "upstream_status": "Issue 5 open; archival follow-up sent 17 September. No maintainer acknowledgment or merged fix claimed."
+  },
+  {
+    "id": "financepy-bond-zero-modified-duration-scale",
+    "title": "FinancePy BondZero: verifying the upstream fix for a 10,000-fold duration error",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-17",
+    "kind": "published_report",
+    "gero": null,
+    "huggingface": null,
+    "zenodo": null,
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/financepy-bond-zero-modified-duration-scale",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-bond-zero-modified-duration-scale.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-bond-zero-modified-duration-scale.md",
+    "source_text_sha256": "b0fae7a2c7bfb96a937b31dcc538bd5af620769fa8d474d734a22af7945a2bb4",
+    "mirror_sha256": "b0fae7a2c7bfb96a937b31dcc538bd5af620769fa8d474d734a22af7945a2bb4",
+    "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/financepy-bond-zero-modified-duration-scale/gero-financepy-bond-zero-duration-research-2026-09-17.zip",
+    "evidence_archive_sha256": "4700b9dab0ed211071b3fc6a8939f7558ce782b192fe9383d161b15f70320447",
+    "linkedin": null,
+    "youtube": null,
+    "maintainer_issue": "https://github.com/domokane/FinancePy/issues/267",
+    "implementation_defects_in_this_report": 1,
+    "publication_status": "GitHub archival report public; other five channels pending. Existing September16 issue267 is fixed upstream in bb10c393; official PyPI1.1.2 remains affected. Not a new discovery on publication date.",
+    "limits": "Synthetic zero-coupon-bond price-to-risk identity under stated yield/day-count conventions. Corrected upstream source verified separately from affected release. No full-suite, performance or bank/customer-impact claim.",
+    "upstream_fix_commit": "bb10c3936e078a5212694d017746453175151c09",
+    "upstream_verification_followup": "https://github.com/domokane/FinancePy/issues/267#issuecomment-5713269134"
   }
 ]
