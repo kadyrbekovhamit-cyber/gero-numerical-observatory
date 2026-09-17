@@ -1,0 +1,13 @@
+--- a/src/actuarialmath/mortalitylaws.py
++++ b/src/actuarialmath/mortalitylaws.py
+@@ -112,7 +112,9 @@
+             return ((omega-(x+s+t))/(omega-(x+s)))**alpha
+ 
+         def _f(x: int, s,t : float) -> float:
+-            return alpha / (omega - (x+s))
++            remaining = omega - (x+s)
++            return (alpha / remaining
++                    * ((remaining - t) / remaining)**(alpha - 1))
+ 
+         self.set_survival(mu=_mu, l=_l, S=_S, f=_f, minage=0, maxage=omega)
+         self.omega_ = omega  # store omega parameter

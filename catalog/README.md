@@ -1,6 +1,6 @@
 # GERO — publication catalogue
 
-Updated 17 September 2026. **105 distinct catalogue publications.** Report counts are not independent-defect counts. All 104 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
+Updated 17 September 2026. **106 distinct catalogue publications.** Report counts are not independent-defect counts. All 105 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
 
 [Machine-readable catalogue](publications.json) · [Coverage](platform-status.json) · [Checksums](SHA256SUMS).
 
@@ -9,7 +9,7 @@ Updated 17 September 2026. **105 distinct catalogue publications.** Report count
 |gero|105|
 |huggingface|105|
 |zenodo|105|
-|github_catalog_report|105|
+|github_catalog_report|106|
 
 The FinancePy FXForward and MLX sigmoid reports each have GERO, GitHub, LinkedIn, Zenodo, Hugging Face and YouTube publications. Overall coverage is shown above; no equal count across all external account collections is claimed.
 
@@ -120,6 +120,7 @@ The FinancePy FXForward and MLX sigmoid reports each have GERO, GitHub, LinkedIn
 | 103 | [nntrainer SplitLayer leaves later channels unwritten during full-prefill incremental execution](reports/nntrainer-split-incremental-channels.md) | [Page](https://www.gero.uz/research/articles/nntrainer-split-incremental-channels.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/nntrainer-split-incremental-channels.md) | [DOI](https://zenodo.org/records/22804489) | [Report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/nntrainer-split-incremental-channels.md) |
 | 104 | [FinancePy: premature series truncation produces an invalid option price](reports/financepy-double-no-touch-series-truncation.md) | [Page](https://www.gero.uz/research/articles/financepy-double-no-touch-series-truncation.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-double-no-touch-series-truncation.md) | [DOI](https://zenodo.org/records/22805090) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/financepy-double-no-touch-series-truncation) |
 | 105 | [FinancePy adjusted binomial: invalid support points produce negative probabilities and shift the mean](reports/financepy-adjusted-binomial-support-bracketing.md) | [Page](https://www.gero.uz/research/articles/financepy-adjusted-binomial-support-bracketing.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-adjusted-binomial-support-bracketing.md) | [DOI](https://zenodo.org/records/22807027) | [Report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-adjusted-binomial-support-bracketing.md) |
+| 106 | [actuarialmath Beta: a missing survival factor changes expected insurance benefits](reports/actuarialmath-beta-density.md) | Pending | Pending | Pending | [Report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-beta-density.md) |
 
 Vasicek distribution completed on six channels: [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506071696911609857/) · [English Short](https://youtube.com/shorts/k-VGcx7o_LM).
 
