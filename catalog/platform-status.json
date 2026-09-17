@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-17T03:22:45.631516+00:00",
+  "checked_at": "2026-09-17T03:47:05.650589+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 102,
-    "huggingface": 102,
-    "zenodo": 102,
+    "gero": 103,
+    "huggingface": 103,
+    "zenodo": 103,
     "github_catalog_report": 103,
-    "zenodo_records_including_collection": 103,
+    "zenodo_records_including_collection": 104,
     "unique_individual_publications": 103,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "103 distinct catalogue report IDs. SplitLayer archive published on GitHub; remaining distributions pending.",
+  "github_status": "103 distinct catalogue report IDs. SplitLayer archival distribution complete on all six channels.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -20,15 +20,9 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [
-      "nntrainer-split-incremental-channels"
-    ],
-    "huggingface": [
-      "nntrainer-split-incremental-channels"
-    ],
-    "zenodo": [
-      "nntrainer-split-incremental-channels"
-    ]
+    "gero": [],
+    "huggingface": [],
+    "zenodo": []
   },
   "deduplication_notes": [
     "All 97 previous report IDs preserved; one CIR pricing component report appended.",
@@ -37,9 +31,10 @@
     "Two source-pinned reports appended on 17 September 2026; all previous IDs preserved. Zenodo and HF additions await account login.",
     "FinancePy FXForward and MLX sigmoid reports now have verified individual Zenodo and Hugging Face copies, with public English YouTube videos. Updated 17 September 2026; all previous IDs preserved.",
     "Vasicek now public on all six channels; Zenodo22801595 and HFf2932b2 file checksums verified. Original archive immutable; no new numerical run in this distribution update.",
-    "SplitLayer is an archival report of existing own nntrainer issue4337; the clean portable replay matches4320→0→4320 coordinate discrepancies. Not a newly discovered defect on17September."
+    "SplitLayer is an archival report of existing own nntrainer issue4337; the clean portable replay matches4320→0→4320 coordinate discrepancies. Not a newly discovered defect on17September.",
+    "SplitLayer distribution completed: existing own issue4337, fresh standalone replay and frozen archive. One implementation defect, not4320independentbugs; no model/device impact measurement."
   ],
-  "parity_complete": false,
+  "parity_complete": true,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "archival_backfill": {
     "date": "2026-09-16",
@@ -100,32 +95,32 @@
       ],
       "publication_date": "2026-09-17",
       "kind": "published_report",
-      "gero": null,
-      "huggingface": null,
-      "zenodo": null,
+      "gero": "https://www.gero.uz/research/articles/nntrainer-split-incremental-channels.html",
+      "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/nntrainer-split-incremental-channels.md",
+      "zenodo": "https://zenodo.org/records/22804489",
       "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/catalog/evidence/nntrainer-split-incremental-channels",
       "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/nntrainer-split-incremental-channels.md",
       "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/nntrainer-split-incremental-channels.md",
-      "mirror_sha256": "30911c21614bead416f5bb6f1a135942edb7e12af83d2c0c1d632989e1a85642",
-      "source_text_sha256": "30911c21614bead416f5bb6f1a135942edb7e12af83d2c0c1d632989e1a85642",
+      "mirror_sha256": "e554646fef9c454d33dddc9c6239013bcc8456c14516ef973df644701918a50e",
+      "source_text_sha256": "e554646fef9c454d33dddc9c6239013bcc8456c14516ef973df644701918a50e",
       "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/evidence/nntrainer-split-incremental-channels/gero-nntrainer-split-incremental-channels-research-2026-09-17.zip",
       "evidence_archive_sha256": "072dbfd6967d765fc7091a30ab1de80c9d9bb9609e155cdbf4750e71557685be",
       "maintainer_issue": "https://github.com/nntrainer/nntrainer/issues/4337",
       "implementation_defects_in_this_report": 1,
-      "linkedin": null,
-      "youtube": null,
-      "publication_note": "Archival report of the15September issue, replayed17September. Remaining platform uploads pending; no released-version/device impact claimed."
+      "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506196132293795840/",
+      "youtube": "https://youtube.com/shorts/V48hcIrGq-M",
+      "publication_note": "Archival report of the 15 September issue, replayed 17 September. All six distribution records verified; local candidate, no released-version defect or measured model/device impact claimed."
     }
   ],
-  "coverage_scope": "103 canonical catalogue IDs; separate Collatz research map outside this subset.",
+  "coverage_scope": "103 canonical catalogue IDs; the separate Collatz research map is outside this subset. No assertion that external account totals equal this count.",
   "latest_completed_distribution": {
-    "id": "financepy-vasicek-small-mean-reversion",
-    "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-vasicek-small-mean-reversion.md",
-    "gero": "https://www.gero.uz/research/articles/financepy-vasicek-small-mean-reversion.html",
-    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-vasicek-small-mean-reversion.md",
-    "zenodo": "https://zenodo.org/records/22801595",
-    "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506071696911609857/",
-    "youtube": "https://youtube.com/shorts/k-VGcx7o_LM",
-    "archive_sha256": "73ae765799146c338fd253ded1c385375d4abf6362188625abda0a2836f101f5"
+    "id": "nntrainer-split-incremental-channels",
+    "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/nntrainer-split-incremental-channels.md",
+    "gero": "https://www.gero.uz/research/articles/nntrainer-split-incremental-channels.html",
+    "zenodo": "https://zenodo.org/records/22804489",
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506196132293795840/",
+    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/nntrainer-split-incremental-channels.md",
+    "youtube": "https://youtube.com/shorts/V48hcIrGq-M",
+    "archive_sha256": "072dbfd6967d765fc7091a30ab1de80c9d9bb9609e155cdbf4750e71557685be"
   }
 }

@@ -77,3 +77,14 @@ Independent GERO research by Xamit Kadirbekov. Investigation and preparation wer
 ## Evidence archive
 
 [Download the frozen standalone reproduction ZIP](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/catalog/evidence/nntrainer-split-incremental-channels/gero-nntrainer-split-incremental-channels-research-2026-09-17.zip). SHA256: `072dbfd6967d765fc7091a30ab1de80c9d9bb9609e155cdbf4750e71557685be`. Unzip and run the included reproduction guide. The ZIP remains immutable.
+
+## Publication links
+
+- [Github](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/nntrainer-split-incremental-channels.md)
+- [Gero](https://www.gero.uz/research/articles/nntrainer-split-incremental-channels.html)
+- [Zenodo](https://zenodo.org/records/22804489)
+- [Linkedin](https://www.linkedin.com/feed/update/urn:li:share:7506196132293795840/)
+- [Huggingface](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/nntrainer-split-incremental-channels.md)
+- [Youtube](https://youtube.com/shorts/V48hcIrGq-M)
+
+Zenodo DOI: **10.5281/zenodo.22804489**. The 30.86-second English Short uses synthetic Jenny narration and captions from actual speech timings. These distribution records do not imply a new discovery or upstream acceptance. The frozen archive remains unchanged.
