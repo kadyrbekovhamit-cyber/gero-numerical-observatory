@@ -142,3 +142,6 @@ research patch, not an accepted upstream change.
 The frozen archive retains source, oracle, native probes, a research patch, raw observations and limitations. Later publication links and maintainer status are tracked separately in the mutable GERO catalog.
 
 Independent GERO research by Xamit Kadirbekov; AI-assisted research and preparation.
+
+
+Publication update, 17 September 2026: [32-second English video](https://youtube.com/shorts/d9Mdhyou1Rw). Original diagrams and disclosed synthetic narration. Sent to Apple’s open-source routing address; no maintainer acknowledgment or upstream acceptance claimed.

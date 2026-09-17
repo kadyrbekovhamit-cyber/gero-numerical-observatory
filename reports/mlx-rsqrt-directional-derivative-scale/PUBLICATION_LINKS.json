@@ -4,12 +4,16 @@
     "gero": "https://www.gero.uz/research/articles/mlx-rsqrt-directional-derivative-scale.html",
     "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-rsqrt-directional-derivative-scale.md",
     "zenodo": "https://zenodo.org/records/22817495",
-    "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506404244862865409/"
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506404244862865409/",
+    "youtube": "https://youtube.com/shorts/d9Mdhyou1Rw"
   },
   "archive_sha256": "3daa70771459d21cbbe2fc694517294acb29b4b8d68fd1384cc1a8c291505040",
-  "pending": [
-    "youtube",
-    "maintainer_routing_email"
-  ],
-  "verified_at": "2026-09-17T17:36:19.822482+00:00"
+  "pending": [],
+  "maintainer_routing": {
+    "status": "sent",
+    "date": "2026-09-17",
+    "recipient": "opensource@apple.com",
+    "acknowledged": false
+  },
+  "verified_at": "2026-09-17T18:51:37.171568+00:00"
 }

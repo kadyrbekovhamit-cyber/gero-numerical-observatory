@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-17T17:36:19.822482+00:00",
+  "checked_at": "2026-09-17T18:51:37.171568+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 108,
@@ -10,7 +10,7 @@
     "unique_individual_publications": 108,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "108 canonical reports on GitHub, GERO and Hugging Face;107 on Zenodo. BondZero Zenodo remains queued. MLX rsqrt has five verified public channels; YouTube pending.",
+  "github_status": "108 canonical reports on GitHub, GERO and Hugging Face;107 on Zenodo. BondZero Zenodo remains queued. MLX rsqrt has six verified public channels; Apple routing email sent, acknowledgment pending.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -72,10 +72,10 @@
       "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/mlx-rsqrt-directional-derivative-scale/gero-mlx-rsqrt-directional-scale-research-2026-09-17.zip",
       "evidence_archive_sha256": "3daa70771459d21cbbe2fc694517294acb29b4b8d68fd1384cc1a8c291505040",
       "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506404244862865409/",
-      "youtube": null,
+      "youtube": "https://youtube.com/shorts/d9Mdhyou1Rw",
       "maintainer_issue": null,
       "implementation_defects_in_this_report": 1,
-      "publication_status": "GitHub, GERO, Hugging Face, Zenodo and LinkedIn public and verified. YouTube master in preparation; Studio table/upload inaccessible. Maintainer routing email prepared, not sent. No upstream acceptance claim.",
+      "publication_status": "GitHub, GERO, Hugging Face, Zenodo and LinkedIn public and verified. YouTube Short also public. Report sent to Apple open-source routing address; no maintainer acknowledgment. No upstream acceptance claim.",
       "limits": "CPU float32 JVP/VJP on 2136 synthetic input/seed pairs:443 to0 to443 failures per layout. Three layouts agree. Release methods source-identical but release runtime not executed. No GPU, full-suite, performance or model/device/customer impact claim.",
       "source_pin": "59d600b5e64c238427d0f8d897ab7c682ef4d3d2",
       "zenodo_doi": "10.5281/zenodo.22817495"
