@@ -6,9 +6,9 @@ Updated 17 September 2026. **105 distinct catalogue publications.** Report count
 
 |Platform|Verified catalogue reports|
 |---|---:|
-|gero|104|
-|huggingface|104|
-|zenodo|104|
+|gero|105|
+|huggingface|105|
+|zenodo|105|
 |github_catalog_report|105|
 
 The FinancePy FXForward and MLX sigmoid reports each have GERO, GitHub, LinkedIn, Zenodo, Hugging Face and YouTube publications. Overall coverage is shown above; no equal count across all external account collections is claimed.
@@ -119,7 +119,7 @@ The FinancePy FXForward and MLX sigmoid reports each have GERO, GitHub, LinkedIn
 | 102 | [Apple MLX sigmoid derivatives lose a representable positive tail](reports/mlx-sigmoid-tail-gradient.md) | [Page](https://www.gero.uz/research/articles/mlx-sigmoid-tail-gradient.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-sigmoid-tail-gradient.md) | [DOI](https://zenodo.org/records/22801587) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-mlx-sigmoid-tail-audit) |
 | 103 | [nntrainer SplitLayer leaves later channels unwritten during full-prefill incremental execution](reports/nntrainer-split-incremental-channels.md) | [Page](https://www.gero.uz/research/articles/nntrainer-split-incremental-channels.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/nntrainer-split-incremental-channels.md) | [DOI](https://zenodo.org/records/22804489) | [Report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/nntrainer-split-incremental-channels.md) |
 | 104 | [FinancePy: premature series truncation produces an invalid option price](reports/financepy-double-no-touch-series-truncation.md) | [Page](https://www.gero.uz/research/articles/financepy-double-no-touch-series-truncation.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-double-no-touch-series-truncation.md) | [DOI](https://zenodo.org/records/22805090) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/financepy-double-no-touch-series-truncation) |
-| 105 | [FinancePy adjusted binomial: invalid support points produce negative probabilities and shift the mean](reports/financepy-adjusted-binomial-support-bracketing.md) | Pending | Pending | Pending | [Report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-adjusted-binomial-support-bracketing.md) |
+| 105 | [FinancePy adjusted binomial: invalid support points produce negative probabilities and shift the mean](reports/financepy-adjusted-binomial-support-bracketing.md) | [Page](https://www.gero.uz/research/articles/financepy-adjusted-binomial-support-bracketing.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-adjusted-binomial-support-bracketing.md) | [DOI](https://zenodo.org/records/22807027) | [Report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-adjusted-binomial-support-bracketing.md) |
 
 Vasicek distribution completed on six channels: [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506071696911609857/) · [English Short](https://youtube.com/shorts/k-VGcx7o_LM).
 
@@ -131,4 +131,4 @@ The double no-touch report is public on all six requested channels. Its portable
 
 The double no-touch archive was [sent to the maintainer in the existing issue](https://github.com/domokane/FinancePy/issues/266#issuecomment-5708929233). [PR270](https://github.com/domokane/FinancePy/pull/270) remains proposed and unmerged. Local video files were removed after verified publication; reproducibility evidence is retained.
 
-Adjusted-binomial archival report: pristine current-source replay reproduces the15September finding; existing [issue265](https://github.com/domokane/FinancePy/issues/265) and [34-second video](https://youtube.com/shorts/weirECBnxW4) retained. GERO, Hugging Face, Zenodo and LinkedIn archival distribution is pending; no duplicate upload or new-discovery claim.
+Adjusted-binomial archival report: pristine current-source replay reproduces the15September finding; existing [issue265](https://github.com/domokane/FinancePy/issues/265) and [34-second video](https://youtube.com/shorts/weirECBnxW4) retained. All six requested channels are public. [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506246477925707777/) · [DOI](https://zenodo.org/records/22807027) · [Maintainer follow-up](https://github.com/domokane/FinancePy/issues/265#issuecomment-5710467642). The archive includes a fresh portable replay, while the existing video is reused. No duplicate upload or new-discovery claim.
