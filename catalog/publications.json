@@ -1912,7 +1912,7 @@
     ],
     "publication_date": "2026-09-17",
     "kind": "published_report",
-    "gero": null,
+    "gero": "https://www.gero.uz/research/articles/financepy-bond-zero-modified-duration-scale.html",
     "huggingface": null,
     "zenodo": null,
     "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/financepy-bond-zero-modified-duration-scale",
@@ -1926,7 +1926,7 @@
     "youtube": null,
     "maintainer_issue": "https://github.com/domokane/FinancePy/issues/267",
     "implementation_defects_in_this_report": 1,
-    "publication_status": "GitHub archival report public; other five channels pending. Existing September16 issue267 is fixed upstream in bb10c393; official PyPI1.1.2 remains affected. Not a new discovery on publication date.",
+    "publication_status": "GitHub and GERO public. Portable archive verifies already-fixed upstream source and still-affected1.1.2release. Hugging Face, Zenodo, LinkedIn and YouTube pending browser access; no video exists yet. No new discovery claim.",
     "limits": "Synthetic zero-coupon-bond price-to-risk identity under stated yield/day-count conventions. Corrected upstream source verified separately from affected release. No full-suite, performance or bank/customer-impact claim.",
     "upstream_fix_commit": "bb10c3936e078a5212694d017746453175151c09",
     "upstream_verification_followup": "https://github.com/domokane/FinancePy/issues/267#issuecomment-5713269134"

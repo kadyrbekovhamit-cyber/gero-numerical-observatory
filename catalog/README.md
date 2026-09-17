@@ -6,7 +6,7 @@ Updated 17 September 2026. **107 distinct catalogue publications.** Report count
 
 |Platform|Verified catalogue reports|
 |---|---:|
-|gero|106|
+|gero|107|
 |huggingface|106|
 |zenodo|106|
 |github_catalog_report|107|
@@ -121,7 +121,7 @@ The FinancePy FXForward and MLX sigmoid reports each have GERO, GitHub, LinkedIn
 | 104 | [FinancePy: premature series truncation produces an invalid option price](reports/financepy-double-no-touch-series-truncation.md) | [Page](https://www.gero.uz/research/articles/financepy-double-no-touch-series-truncation.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-double-no-touch-series-truncation.md) | [DOI](https://zenodo.org/records/22805090) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/financepy-double-no-touch-series-truncation) |
 | 105 | [FinancePy adjusted binomial: invalid support points produce negative probabilities and shift the mean](reports/financepy-adjusted-binomial-support-bracketing.md) | [Page](https://www.gero.uz/research/articles/financepy-adjusted-binomial-support-bracketing.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-adjusted-binomial-support-bracketing.md) | [DOI](https://zenodo.org/records/22807027) | [Report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-adjusted-binomial-support-bracketing.md) |
 | 106 | [actuarialmath Beta: a missing survival factor changes expected insurance benefits](reports/actuarialmath-beta-density.md) | [Page](https://www.gero.uz/research/articles/actuarialmath-beta-density.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/actuarialmath-beta-density.md) | [DOI](https://zenodo.org/records/22810874) | [Report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-beta-density.md) |
-| 107 | [FinancePy BondZero: verifying the upstream fix for a 10,000-fold duration error](reports/financepy-bond-zero-modified-duration-scale.md) | Pending | Pending | Pending | [Report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-bond-zero-modified-duration-scale.md) |
+| 107 | [FinancePy BondZero: verifying the upstream fix for a 10,000-fold duration error](reports/financepy-bond-zero-modified-duration-scale.md) | [Page](https://www.gero.uz/research/articles/financepy-bond-zero-modified-duration-scale.html) | Pending | Pending | [Report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-bond-zero-modified-duration-scale.md) |
 
 Vasicek distribution completed on six channels: [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506071696911609857/) · [English Short](https://youtube.com/shorts/k-VGcx7o_LM).
 
@@ -136,3 +136,5 @@ The double no-touch archive was [sent to the maintainer in the existing issue](h
 Adjusted-binomial archival report: pristine current-source replay reproduces the15September finding; existing [issue265](https://github.com/domokane/FinancePy/issues/265) and [34-second video](https://youtube.com/shorts/weirECBnxW4) retained. All six requested channels are public. [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506246477925707777/) · [DOI](https://zenodo.org/records/22807027) · [Maintainer follow-up](https://github.com/domokane/FinancePy/issues/265#issuecomment-5710467642). The archive includes a fresh portable replay, while the existing video is reused. No duplicate upload or new-discovery claim.
 
 Beta density archival distribution is complete on all six channels: [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506303089675710464/) · [29-second video](https://youtube.com/shorts/faLB656CM4o) · [Maintainer archive follow-up](https://github.com/terence-lim/actuarialmath/issues/5#issuecomment-5713168772). The September15 finding was independently replayed September17; no real insurer impact or upstream acceptance is claimed.
+
+BondZero archives an already corrected upstream issue. [Source fix](https://github.com/domokane/FinancePy/commit/bb10c3936e078a5212694d017746453175151c09) and [independent verification](https://github.com/domokane/FinancePy/issues/267#issuecomment-5713269134) are public. Four distribution channels remain pending; no video publication is claimed.
