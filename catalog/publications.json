@@ -1930,5 +1930,31 @@
     "limits": "Synthetic zero-coupon-bond price-to-risk identity under stated yield/day-count conventions. Corrected upstream source verified separately from affected release. No full-suite, performance or bank/customer-impact claim.",
     "upstream_fix_commit": "bb10c3936e078a5212694d017746453175151c09",
     "upstream_verification_followup": "https://github.com/domokane/FinancePy/issues/267#issuecomment-5713269134"
+  },
+  {
+    "id": "mlx-rsqrt-directional-derivative-scale",
+    "title": "MLX rsqrt: finite directional derivatives lost to an intermediate ratio",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-17",
+    "kind": "published_report",
+    "gero": null,
+    "huggingface": null,
+    "zenodo": null,
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-rsqrt-directional-derivative-scale",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-rsqrt-directional-derivative-scale.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-rsqrt-directional-derivative-scale.md",
+    "source_text_sha256": "570fb8a7dead464e838554fe9d83302356b3cf4b47c5f36e638aa5ee2e5bc407",
+    "mirror_sha256": "570fb8a7dead464e838554fe9d83302356b3cf4b47c5f36e638aa5ee2e5bc407",
+    "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/mlx-rsqrt-directional-derivative-scale/gero-mlx-rsqrt-directional-scale-research-2026-09-17.zip",
+    "evidence_archive_sha256": "3daa70771459d21cbbe2fc694517294acb29b4b8d68fd1384cc1a8c291505040",
+    "linkedin": null,
+    "youtube": null,
+    "maintainer_issue": null,
+    "implementation_defects_in_this_report": 1,
+    "publication_status": "GitHub report and frozen evidence public; five other channels and maintainer notification pending. Candidate correction not accepted upstream.",
+    "limits": "CPU float32 JVP/VJP on 2136 synthetic input/seed pairs:443 to0 to443 failures per layout. Three layouts agree. Release methods source-identical but release runtime not executed. No GPU, full-suite, performance or model/device/customer impact claim.",
+    "source_pin": "59d600b5e64c238427d0f8d897ab7c682ef4d3d2"
   }
 ]

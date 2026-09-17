@@ -1,0 +1,21 @@
+--- a/mlx/primitives.cpp
++++ b/mlx/primitives.cpp
+@@ -5602,6 +5602,18 @@
+   assert(cotangents.size() == 1);
+   auto dtype = primals[0].dtype();
+   if (recip_) {
++    if (!issubdtype(dtype, complexfloating)) {
++      // Scale the cotangent before forming the reciprocal derivative.
++      // Detach the scale to preserve higher derivatives at the split point.
++      auto one = array(1.0, dtype);
++      auto scale = stop_gradient(
++          where(isfinite(primals[0], stream()),
++                maximum(primals[0], one, stream()), one, stream()), stream());
++      auto weighted = multiply(
++          divide(cotangents[0], scale, stream()),
++          multiply(array(-0.5, dtype), outputs[0], stream()), stream());
++      return {divide(weighted, divide(primals[0], scale, stream()), stream())};
++    }
+     auto one_over_x_root_x = divide(outputs[0], primals[0], stream());
+     return {multiply(
+         multiply(array(-0.5, dtype), cotangents[0], stream()),
