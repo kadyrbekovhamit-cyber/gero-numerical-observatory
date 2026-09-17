@@ -1,6 +1,6 @@
 # GERO — publication catalogue
 
-Updated 17 September 2026. **102 distinct catalogue publications.** Report counts are not independent-defect counts. All 102 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
+Updated 17 September 2026. **103 distinct catalogue publications.** Report counts are not independent-defect counts. All 102 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
 
 [Machine-readable catalogue](publications.json) · [Coverage](platform-status.json) · [Checksums](SHA256SUMS).
 
@@ -9,7 +9,7 @@ Updated 17 September 2026. **102 distinct catalogue publications.** Report count
 |gero|102|
 |huggingface|102|
 |zenodo|102|
-|github_catalog_report|102|
+|github_catalog_report|103|
 
 The FinancePy FXForward and MLX sigmoid reports each have GERO, GitHub, LinkedIn, Zenodo, Hugging Face and YouTube publications. Overall coverage is shown above; no equal count across all external account collections is claimed.
 
@@ -117,5 +117,9 @@ The FinancePy FXForward and MLX sigmoid reports each have GERO, GitHub, LinkedIn
 | 100 | [FinancePy Vasicek pricing loses the small-mean-reversion limit](reports/financepy-vasicek-small-mean-reversion.md) | [Page](https://www.gero.uz/research/articles/financepy-vasicek-small-mean-reversion.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-vasicek-small-mean-reversion.md) | [Record](https://zenodo.org/records/22801595) | [Report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-vasicek-small-mean-reversion.md) |
 | 101 | [FinancePy FXForward converts today's NPV using a future exchange rate](reports/financepy-fx-forward-spot-conversion.md) | [Page](https://www.gero.uz/research/articles/financepy-fx-forward-spot-conversion.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-fx-forward-spot-conversion.md) | [DOI](https://zenodo.org/records/22801504) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-financepy-fx-forward-npv-audit) |
 | 102 | [Apple MLX sigmoid derivatives lose a representable positive tail](reports/mlx-sigmoid-tail-gradient.md) | [Page](https://www.gero.uz/research/articles/mlx-sigmoid-tail-gradient.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-sigmoid-tail-gradient.md) | [DOI](https://zenodo.org/records/22801587) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-mlx-sigmoid-tail-audit) |
+| 103 | [nntrainer SplitLayer leaves later channels unwritten during full-prefill incremental execution](reports/nntrainer-split-incremental-channels.md) | Pending | Pending | Pending | [Report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/nntrainer-split-incremental-channels.md) |
 
 Vasicek distribution completed on six channels: [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506071696911609857/) · [English Short](https://youtube.com/shorts/k-VGcx7o_LM). All102catalogue IDs have individual report coverage on the four report platforms; the separate Collatz map is not included in these subset counts.
+
+
+SplitLayer is public on GitHub; distribution to the other channels is pending. This archival report concerns the existing own issue4337 and is not a new discovery.
