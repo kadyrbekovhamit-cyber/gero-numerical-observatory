@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-17T04:50:13.571245+00:00",
+  "checked_at": "2026-09-17T05:01:45.845390+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 103,
-    "huggingface": 103,
+    "gero": 104,
+    "huggingface": 104,
     "zenodo": 104,
     "github_catalog_report": 104,
     "zenodo_records_including_collection": 105,
     "unique_individual_publications": 104,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "104 report IDs; double no-touch archive and four channels published. GERO and Hugging Face mirrors pending.",
+  "github_status": "104 canonical report IDs archived. Double no-touch distribution is complete on all six requested channels.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -20,12 +20,8 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [
-      "financepy-double-no-touch-series-truncation"
-    ],
-    "huggingface": [
-      "financepy-double-no-touch-series-truncation"
-    ],
+    "gero": [],
+    "huggingface": [],
     "zenodo": []
   },
   "deduplication_notes": [
@@ -37,9 +33,10 @@
     "Vasicek now public on all six channels; Zenodo22801595 and HFf2932b2 file checksums verified. Original archive immutable; no new numerical run in this distribution update.",
     "SplitLayer is an archival report of existing own nntrainer issue4337; the clean portable replay matches4320→0→4320 coordinate discrepancies. Not a newly discovered defect on17September.",
     "SplitLayer distribution completed: existing own issue4337, fresh standalone replay and frozen archive. One implementation defect, not4320independentbugs; no model/device impact measurement.",
-    "17 September double no-touch archive: existing own issue266 and proposed PR270; original report15September. 360 failing scenarios are not360 independent bugs."
+    "17 September double no-touch archive: existing own issue266 and proposed PR270; original report15September. 360 failing scenarios are not360 independent bugs.",
+    "17 September double no-touch completion: all six channels public. This closes its pending mirror states above; canonical104-report subset preserved. Collatz remains outside this subset."
   ],
-  "parity_complete": false,
+  "parity_complete": true,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "archival_backfill": {
     "date": "2026-09-16",
@@ -73,18 +70,26 @@
       "maintainer_issue": "https://github.com/domokane/FinancePy/issues/266",
       "proposed_fix": "https://github.com/domokane/FinancePy/pull/270",
       "implementation_defects_proposed": 2,
-      "publication_status": "GitHub, Zenodo, LinkedIn and YouTube verified; GERO and Hugging Face links reserved pending upload."
+      "publication_status": "Public on GitHub, GERO, Hugging Face, Zenodo, LinkedIn and YouTube; file hashes verified where available.",
+      "maintainer_followup": "https://github.com/domokane/FinancePy/issues/266#issuecomment-5708929233",
+      "upstream_status": "PR270 open and unmerged as checked on17September2026.",
+      "local_video_status": "Master and four local video intermediates deleted after verified YouTube and LinkedIn publication; scripts, captions, timings, hashes and evidence retained."
     }
   ],
-  "coverage_scope": "103 canonical catalogue IDs; the separate Collatz research map is outside this subset. No assertion that external account totals equal this count.",
+  "coverage_scope": "104 canonical catalogue IDs; the separate Collatz research map is outside this subset. No assertion that external account totals equal this count.",
   "latest_completed_distribution": {
-    "id": "nntrainer-split-incremental-channels",
-    "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/nntrainer-split-incremental-channels.md",
-    "gero": "https://www.gero.uz/research/articles/nntrainer-split-incremental-channels.html",
-    "zenodo": "https://zenodo.org/records/22804489",
-    "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506196132293795840/",
-    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/nntrainer-split-incremental-channels.md",
-    "youtube": "https://youtube.com/shorts/V48hcIrGq-M",
-    "archive_sha256": "072dbfd6967d765fc7091a30ab1de80c9d9bb9609e155cdbf4750e71557685be"
+    "id": "financepy-double-no-touch-series-truncation",
+    "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-double-no-touch-series-truncation.md",
+    "gero": "https://www.gero.uz/research/articles/financepy-double-no-touch-series-truncation.html",
+    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-double-no-touch-series-truncation.md",
+    "zenodo": "https://zenodo.org/records/22805090",
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7506212381824315392/",
+    "youtube": "https://youtube.com/shorts/DbnhzRiMV1s",
+    "archive_sha256": "2da5da96c0f8a06c3a0d19df094a9769c8b1584c00cd8a3ac5a5a24aaca6d962",
+    "maintainer_followup": "https://github.com/domokane/FinancePy/issues/266#issuecomment-5708929233",
+    "github_archive_commit": "9dab830ec77ba5c7ded6110a47e5317df54f4206",
+    "huggingface_commit": "e5ef7a40e29cf91dc3eac02e3443e1e95727d18c",
+    "zenodo_doi": "10.5281/zenodo.22805090",
+    "gero_deployment": "dpl_HmgB396BU1kiaDsSVUKveCMDuNws"
   }
 }

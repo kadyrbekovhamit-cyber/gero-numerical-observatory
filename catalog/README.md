@@ -6,8 +6,8 @@ Updated 17 September 2026. **104 distinct catalogue publications.** Report count
 
 |Platform|Verified catalogue reports|
 |---|---:|
-|gero|103|
-|huggingface|103|
+|gero|104|
+|huggingface|104|
 |zenodo|104|
 |github_catalog_report|104|
 
@@ -126,4 +126,6 @@ Vasicek distribution completed on six channels: [LinkedIn](https://www.linkedin.
 SplitLayer is now public on all six channels: [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506196132293795840/) · [English Short](https://youtube.com/shorts/V48hcIrGq-M). All 103 canonical IDs have individual report coverage on GERO, GitHub, Hugging Face and Zenodo. The separate Collatz map is outside this subset. This is the archival release of existing issue4337, not a new discovery.
 
 
-The double no-touch report is now in this repository. GERO and Hugging Face publication are pending; their canonical links are reserved. [Video](https://youtube.com/shorts/DbnhzRiMV1s) · [Native LinkedIn video](https://www.linkedin.com/feed/update/urn:li:ugcPost:7506212381824315392/).
+The double no-touch report is public on all six requested channels. Its portable archive is identical on GitHub, Hugging Face and Zenodo; GERO provides the report and source links. [Video](https://youtube.com/shorts/DbnhzRiMV1s) · [Native LinkedIn video](https://www.linkedin.com/feed/update/urn:li:ugcPost:7506212381824315392/).
+
+The double no-touch archive was [sent to the maintainer in the existing issue](https://github.com/domokane/FinancePy/issues/266#issuecomment-5708929233). [PR270](https://github.com/domokane/FinancePy/pull/270) remains proposed and unmerged. Local video files were removed after verified publication; reproducibility evidence is retained.
