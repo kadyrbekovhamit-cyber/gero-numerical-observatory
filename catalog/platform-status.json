@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-17T10:45:19.185596+00:00",
+  "checked_at": "2026-09-17T10:54:16.603555+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 105,
-    "huggingface": 105,
-    "zenodo": 105,
+    "gero": 106,
+    "huggingface": 106,
+    "zenodo": 106,
     "github_catalog_report": 106,
-    "zenodo_records_including_collection": 106,
+    "zenodo_records_including_collection": 107,
     "unique_individual_publications": 106,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "106 canonical report IDs. Beta archive and YouTube are public; remaining four distribution channels pending.",
+  "github_status": "106 canonical report IDs archived. Beta density distribution is complete on all six requested channels.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -20,15 +20,9 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [
-      "actuarialmath-beta-density"
-    ],
-    "huggingface": [
-      "actuarialmath-beta-density"
-    ],
-    "zenodo": [
-      "actuarialmath-beta-density"
-    ]
+    "gero": [],
+    "huggingface": [],
+    "zenodo": []
   },
   "deduplication_notes": [
     "All 97 previous report IDs preserved; one CIR pricing component report appended.",
@@ -42,9 +36,10 @@
     "17 September double no-touch archive: existing own issue266 and proposed PR270; original report15September. 360 failing scenarios are not360 independent bugs.",
     "17 September double no-touch completion: all six channels public. This closes its pending mirror states above; canonical104-report subset preserved. Collatz remains outside this subset.",
     "17 September adjusted-binomial source replay:295→0→295/2844; existing issue265 and pre-existing YouTube weirECBnxW4 retained. GitHub archive only at this checkpoint; four browser channels pending. No new discovery or duplicate video claim.",
-    "17 September: adjusted-binomial archival distribution complete on six channels. Existing issue 265 and YouTube weirECBnxW4 reused; no second discovery. All 104 previous canonical publication objects preserved; Collatz remains outside the 105-report subset."
+    "17 September: adjusted-binomial archival distribution complete on six channels. Existing issue 265 and YouTube weirECBnxW4 reused; no second discovery. All 104 previous canonical publication objects preserved; Collatz remains outside the 105-report subset.",
+    "17 September: Beta density archival distribution completed on six channels. Existing issue 5 retained; no second discovery. All 105 previous canonical publication objects preserved; Collatz remains outside the 106-report subset."
   ],
-  "parity_complete": false,
+  "parity_complete": true,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "archival_backfill": {
     "date": "2026-09-16",
@@ -63,44 +58,46 @@
       ],
       "publication_date": "2026-09-17",
       "kind": "published_report",
-      "gero": null,
-      "huggingface": null,
-      "zenodo": null,
+      "gero": "https://www.gero.uz/research/articles/actuarialmath-beta-density.html",
+      "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/actuarialmath-beta-density.md",
+      "zenodo": "https://zenodo.org/records/22810874",
       "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/actuarialmath-beta-density",
       "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-beta-density.md",
       "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-beta-density.md",
       "source_text_sha256": "2d6ab31d36d9f9e6329bf0f82783096f6dc19ab3c0500181548c5923852f6251",
       "mirror_sha256": "2d6ab31d36d9f9e6329bf0f82783096f6dc19ab3c0500181548c5923852f6251",
-      "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/actuarialmath-beta-density/gero-actuarialmath-beta-density-research-2026-09-17.zip",
+      "evidence_archive": "https://raw.githubusercontent.com/kadyrbekovhamit-cyber/gero-numerical-observatory/9298b3aafbe5056eabb7caf274efcacbe36f1337/reports/actuarialmath-beta-density/gero-actuarialmath-beta-density-research-2026-09-17.zip",
       "evidence_archive_sha256": "a69cdc5a5a4943425d715c0a97b4bf97eaf2c97c7f04957733cec9b8bff819d0",
-      "linkedin": null,
+      "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506303089675710464/",
       "youtube": "https://youtube.com/shorts/faLB656CM4o",
       "maintainer_issue": "https://github.com/terence-lim/actuarialmath/issues/5",
       "implementation_defects_in_this_report": 1,
-      "publication_status": "GitHub archive and YouTube public; GERO, Hugging Face, Zenodo and LinkedIn pending. Archive of existing September15 issue5, not a new discovery on publication date.",
-      "limits": "Synthetic continuous benefits at zero interest. No full-suite, higher-moment, insurer/policyholder impact or upstream acceptance claim."
+      "publication_status": "Public on GitHub, GERO, Hugging Face, Zenodo, LinkedIn and YouTube. Current-source archival replay of the 15 September finding; no duplicate video or new discovery claim.",
+      "limits": "Synthetic continuous benefits at zero interest. No full-suite, higher-moment, insurer/policyholder impact or upstream acceptance claim.",
+      "maintainer_followup": "https://github.com/terence-lim/actuarialmath/issues/5#issuecomment-5713168772",
+      "upstream_status": "Issue 5 open; archival follow-up sent 17 September. No maintainer acknowledgment or merged fix claimed."
     }
   ],
-  "coverage_scope": "106 canonical IDs. Separate Collatz research map is outside this subset; counts are reports, not defects or all external account totals.",
+  "coverage_scope": "106 canonical catalogue IDs; the separate Collatz research map is outside this subset. No assertion that external account totals equal this count.",
   "latest_completed_distribution": {
-    "id": "financepy-adjusted-binomial-support-bracketing",
-    "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-adjusted-binomial-support-bracketing.md",
-    "zenodo": "https://zenodo.org/records/22807027",
-    "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506246477925707777/",
-    "youtube": "https://youtube.com/shorts/weirECBnxW4",
-    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-adjusted-binomial-support-bracketing.md",
-    "gero": "https://www.gero.uz/research/articles/financepy-adjusted-binomial-support-bracketing.html",
-    "archive_sha256": "45637af8cf3c1399639c98c8748e8e5ad2df1e8c4c10b139628d27d0ad42edab",
-    "archive_bytes": 21504501,
-    "maintainer_followup": "https://github.com/domokane/FinancePy/issues/265#issuecomment-5710467642",
-    "github_archive_commit": "23e9ffa7e3c9a566f1527cc5ad1f8d232a520a04",
-    "huggingface_commit": "1d363d171c9a56024f02725e63644515ee712d1b",
-    "zenodo_doi": "10.5281/zenodo.22807027",
-    "gero_deployment": "dpl_3zCCrmVjTgymiwxx7FnDpKi5xKnb",
-    "verified_at": "2026-09-17T07:10:13.373886+00:00",
+    "id": "actuarialmath-beta-density",
+    "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-beta-density.md",
+    "gero": "https://www.gero.uz/research/articles/actuarialmath-beta-density.html",
+    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/actuarialmath-beta-density.md",
+    "zenodo": "https://zenodo.org/records/22810874",
+    "youtube": "https://youtube.com/shorts/faLB656CM4o",
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506303089675710464/",
+    "archive_sha256": "a69cdc5a5a4943425d715c0a97b4bf97eaf2c97c7f04957733cec9b8bff819d0",
+    "archive_bytes": 681807,
+    "maintainer_followup": "https://github.com/terence-lim/actuarialmath/issues/5#issuecomment-5713168772",
+    "github_archive_commit": "9298b3aafbe5056eabb7caf274efcacbe36f1337",
+    "huggingface_commit": "165ddca29e438c9afcb7e7f95756d9a2c5e0f0e3",
+    "zenodo_doi": "10.5281/zenodo.22810874",
+    "gero_deployment": "dpl_8Y3ro6pEtBHhpzikXDMyJLNpchUR",
+    "verified_at": "2026-09-17T10:54:16.603555+00:00",
     "original_finding_date": "2026-09-15",
     "current_source_replay_date": "2026-09-17",
-    "youtube_reused": true,
+    "youtube_reused": false,
     "no_media_binary_in_research_archives": true,
     "no_new_discovery_claim": true
   }
