@@ -1,0 +1,21 @@
+{
+  "filename": "gero-pyloan-explicit-payment-evidence-2026-09-18.zip",
+  "sha256": "6be9658bd28e6bf72d9dac8add77319a703f4d6c7fedcacefee069604dfcc0a9",
+  "bytes": 825926,
+  "files": 70,
+  "created_at": "2026-09-18T17:36:33.223772+00:00",
+  "portable_replay_passed": true,
+  "scenario_count": 864,
+  "payment_cap_failures_release_current_candidate_restored": [
+    408,
+    408,
+    0,
+    408
+  ],
+  "retained_exact_oracle_candidate_discrepancies": 24,
+  "retained_upstream_failure_reports": 3,
+  "vendor_report": "https://github.com/darius-lesch/pyloan/issues/70",
+  "vendor_report_before_publication": true,
+  "license": "MIT; upstream notices retained",
+  "video_included": false
+}

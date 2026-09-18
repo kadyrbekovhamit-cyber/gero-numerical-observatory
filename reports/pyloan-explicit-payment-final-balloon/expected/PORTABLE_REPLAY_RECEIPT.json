@@ -1,0 +1,18 @@
+{
+  "status": "portable_replay_passed",
+  "grid_files_byte_identical_to_recorded": 5,
+  "scenario_count": 864,
+  "payment_cap_failures_current_release_candidate_restored": [
+    408,
+    408,
+    0,
+    408
+  ],
+  "prior_release_failures": 0,
+  "candidate_exact_oracle_residuals": 24,
+  "unchanged_control_schedules": 60,
+  "focused_tests_candidate_pass": 5,
+  "upstream_failure_reports_in_all_three_states": 3,
+  "full_upstream_suite_green": false,
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]"
+}

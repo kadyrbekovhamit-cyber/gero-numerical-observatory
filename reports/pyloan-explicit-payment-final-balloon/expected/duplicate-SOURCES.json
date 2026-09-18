@@ -1,0 +1,1126 @@
+{
+  "schema_version": 1,
+  "updated_at_utc": "2026-09-18T16:34:00Z",
+  "status": "source_and_contract_review_completed_numerics_owned_by_parent",
+  "conclusion": "Strong explicit-payment contract regression candidate introduced by PR68 and retained by PR69; not a new discovery of the deliberately added final-payment adjustment itself. Runtime results are not claimed here.",
+  "repository": "https://github.com/darius-lesch/pyloan",
+  "current": {
+    "master_commit": "73a052cb40f9c23963fbc1ec4370aa7ac9c3efc1",
+    "develop_commit": "e94537c5679e6c22757a1ce2b1f73c35a8b06249",
+    "source_blob": "d742b696b6cba5892229186fe164756cf469b8c0",
+    "same_source_in": [
+      "master",
+      "develop",
+      "v0.7.2"
+    ],
+    "docs_blob": "3292105a3ff5cb8256bd2474e6c84053f38ef858",
+    "docs_same_in": [
+      "master",
+      "develop"
+    ],
+    "method": "Loan.get_payment_schedule",
+    "line_final_condition": 515,
+    "line_assignment": 516,
+    "source_url": "https://github.com/darius-lesch/pyloan/blob/73a052cb40f9c23963fbc1ec4370aa7ac9c3efc1/src/pyloan/pyloan.py#L515"
+  },
+  "contract": {
+    "pinned_url": "https://github.com/darius-lesch/pyloan/blob/73a052cb40f9c23963fbc1ec4370aa7ac9c3efc1/docs/docsrc/source/quickstart.rst#L70",
+    "live_urls": [
+      "https://pyloan.readthedocs.io/en/latest/quickstart.html#specify-payment-amount",
+      "https://pyloan.readthedocs.io/en/stable/quickstart.html#specify-payment-amount"
+    ],
+    "summary": "Explicit payment_amount supplies periodic principal-plus-interest payments for annuity loans; the documentation permits full or incomplete amortization depending on that chosen amount. Automatic full amortization is the payment_amount=None mode.",
+    "documented_example": "Loan(loan_amount=160000,interest_rate=1.1,loan_term=10,start_date='2020-06-15',payment_amount=888.33)",
+    "historical_support_issue15": {
+      "body": "**Is your feature request related to a problem? Please describe.**\r\nWhen payment_amount is not specified explicitly, then calculate payment_amount that would fully amortize the loan_amount over the loan_term.\r\n\r\n**Describe the solution you'd like**\r\n\r\n1. Allows payment_amount to take value of None.\r\n2. When payment_amount is None, then fully amortize the loan_amount over the loan_term. To do so, introduce a calculate payment amount that would fully amortize the loan as\r\n\r\nloan_amount*((interest_rate/annual_payments)*(1+(interest_rate/annual_payments))**(no_of_payments))/((1+(interest_rate/annual_payments))**(no_of_payments)-1)\r\n",
+      "comments": 0,
+      "html_url": "https://github.com/darius-lesch/pyloan/issues/15",
+      "number": 15,
+      "state": "closed",
+      "title": "Fully amortize loan when payment_amount is none [FEATURE]"
+    },
+    "caveats": [
+      "PR68 deliberately adds a final balance-clearing adjustment; do not claim that generic adjustment is previously unknown.",
+      "PR69 says user-specified payments unaffected, but its base is already PR68. That statement alone cannot prove preservation of pre-0.7.1 behavior.",
+      "For annuity-only synthetic inputs without special payments, use fixed payment constraints and recurrence to avoid linear-loan principal/gross-payment ambiguity.",
+      "No commercial product deployment, bank usage or borrower loss established."
+    ]
+  },
+  "history": {
+    "issue67": {
+      "body": "pyloan.Loan(\n    loan_amount=108000,\n    interest_rate=3,\n    loan_term=40,\n    start_date=\"2025-03-01\",\n    payment_end_of_month=True,\n    compounding_method=pyloan.CompoundingMethod.ACTUAL_365.value,\n    loan_type='annuity'\n)\nthis produces a schedule that ends with following payment:\nPayment(\n  date=datetime.datetime(2065, 2, 28, 0, 0),\n  payment_amount=Decimal('386.62'),\n  interest_amount=Decimal('1.15'),\n  principal_amount=Decimal('385.47'),\n  special_principal_amount=Decimal('0.00'),\n  total_principal_amount=Decimal('385.47'),\n  loan_balance_amount=Decimal('115.42')\n)\nwhich I think is wrong because the balance is not 0 ?\n\n",
+      "comments": 1,
+      "created_at": "2025-11-20T18:53:08Z",
+      "html_url": "https://github.com/darius-lesch/pyloan/issues/67",
+      "number": 67,
+      "state": "closed",
+      "title": "[BUG] loan's last payment ends with non-zero balance",
+      "updated_at": "2025-11-20T23:08:39Z"
+    },
+    "comments67": [
+      {
+        "body": "Hi @davidszkl,\n\nThank you for reporting the issue. Indeed there was an issue, but there is also an issue with the loan configuration your have used. Please use version 0.7.2, which fixes the residual non-zero amount at the last payment.\n\nMoreover, please note that to reproduce your loan schedule you need to use the following configurations:\n\n```\nloan = Loan(\nloan_amount=108000,\ninterest_rate=2.95956,\nloan_term=40,\nstart_date=\"2025-03-31\", # start loans at the end of the previous month, this allows for the full interest rate accrual for a given month\npayment_end_of_month=True,\ncompounding_method=CompoundingMethod.THIRTY_E_360_ISDA.value, # your loan does not have A/A compounding method, \nloan_type='annuity',\npayment_amount=384.11 # your loan has a fixed payment amount\n)\n```\n\nwith these configurations you can replicate the loan repayment schedule:\n\n<img width=\"995\" height=\"373\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/026db80d-c8f5-4c19-a6f1-54e9fc15d977\" />\n\nI hope this helps your use-case. If you have any additional feedback, please let me know.",
+        "created_at": "2025-11-20T23:08:39Z",
+        "html_url": "https://github.com/darius-lesch/pyloan/issues/67#issuecomment-3560543121",
+        "user": "darius-lesch"
+      }
+    ],
+    "pr68": {
+      "base": {
+        "ref": "master",
+        "sha": "59ee87b1a5481eb34e2640ed60d70657b6d3c4c9"
+      },
+      "body": "This PR addresses an issue where annuity loans using 'Actual' day count methods (e.g., ACTUAL_365, ACTUAL_ACTUAL) failed to amortize to exactly zero, leaving a residual balance on the final payment.\r\n\r\nThe root cause is a discrepancy between the fixed payment calculation and the daily interest accrual:\r\n1. The annuity formula assumes constant time intervals (standard 30/360 model).\r\n2. 'Actual' methods use variable month lengths (28, 30, 31 days), causing the actual interest accrued to drift slightly from the formula's prediction.\r\n\r\nOver long loan terms (e.g., 40 years), this interest drift accumulates. This patch implements a standard industry resolution by forcing the final principal payment to match the remaining balance exactly. This avoids the heavy computational cost of Newtonian root-finding algorithms required to calculate a \"perfect\" annuity payment for uneven time periods.\r\n\r\nAdditionally, this commit removes a redundant code block in `get_payment_schedule` that was accidentally overwriting the fix.\r\n\r\nResolves Issue #67",
+      "changed_files": 4,
+      "commits": 5,
+      "head": {
+        "ref": "develop",
+        "sha": "b0817fc6f1fc35c43a4e88c8dccc419009815e92"
+      },
+      "html_url": "https://github.com/darius-lesch/pyloan/pull/68",
+      "merge_commit_sha": "1801d5eb628caa153a638a73b4dac261844add0b",
+      "merged": true,
+      "merged_at": "2025-11-20T21:32:42Z",
+      "number": 68,
+      "title": "Fix residual balance on final payment for 'Actual' day count conventions"
+    },
+    "diff68": [
+      {
+        "filename": ".gitignore",
+        "patch": "@@ -33,3 +33,4 @@ htmlcov/\n \n # Jupyter\n *.ipynb\n+*.ipynb_checkpoints",
+        "sha": "6b746bf640bc352b5fcd7bffaccf45cb63af4c47",
+        "status": "modified"
+      },
+      {
+        "filename": "AGENTS.md",
+        "patch": "@@ -1,18 +1,47 @@\n # AGENTS\n \n ## Project Overview\n-This is a Python package intended for defining and analyzing mortgage and/or loand payment schedules, including periodic and ad-hoc repayments. The objective is to have a lean and robust mortage and/or loan payment schedule comparison tool that would allow users to make informed decisions about mortgages and/or loans.\n+This is a Python package intended for defining and analyzing mortgage and/or loan payment schedules, including periodic and ad-hoc repayments. The objective is to have a lean and robust mortage and/or loan payment schedule comparison tool that would allow users to make informed decisions about mortgages and/or loans.\n \n ## Technology Stack\n * **Code:** all code is writeen in Python.\n * **Testing:** The project uses the `unittest` framework for testing.\n \n ## Code Structure\n The core logic is located in `src/pyloan`. The main class is `Loan` in `src/pyloan/pyloan.py`. The code is structured as follows:\n-- `pyloan.py`: Contains the main `Loan` class and its methods.\n-- `_validators.py`: Contains validation functions for the `Loan` class inputs.\n-- `_enums.py`: Contains `Enum` classes for loan types and compounding methods.\n-- `_models.py`: Contains `dataclasses` for data structures like `Payment`, `SpecialPayment`, and `LoanSummary`.\n+-   `pyloan.py`: Contains the main `Loan` class and its methods.\n+-   `_validators.py`: Contains validation functions for the `Loan` class inputs.\n+-   `_enums.py`: Contains `Enum` classes for loan types and compounding methods.\n+-   `_models.py`: Contains `dataclasses` for data structures like `Payment`, `SpecialPayment`, and `LoanSummary`.\n+-   `_day_count.py`: Implements various day count conventions for interest calculation.\n+\n+## Key Classes and Methods\n+\n+### `Loan` Class\n+The `Loan` class is the central component of the `pyloan` package. It is used to create a loan object and perform all related calculations.\n+\n+**Key `Loan` Methods:**\n+* `get_payment_schedule()`: Calculates and returns the full payment schedule for the loan.\n+* `add_special_payment()`: Adds a special payment to the loan schedule.\n+* `get_loan_summary()`: Returns a summary of the loan, including total interest and principal paid.\n+\n+## Data Models and Enums\n+\n+### Data Models (`_models.py`)\n+* **`Payment`**: Represents a single payment in the loan schedule, detailing interest, principal, and the remaining balance.\n+* **`SpecialPayment`**: Represents a special, ad-hoc payment to be made on the loan.\n+* **`LoanSummary`**: Provides a high-level summary of the loan, including total amounts paid.\n+\n+### Enumerations (`_enums.py`)\n+* **`LoanType`**: Defines the type of loan, such as `ANNUITY`, `LINEAR`, or `INTEREST_ONLY`.\n+* **`CompoundingMethod`**: Defines the method for calculating interest, with options like `30E/360 ISDA` and `ACTUAL_ACTUAL`.\n+\n+## Documentation\n+For more detailed information, please refer to the documentation in the `docs/docsrc/source/` directory. The key files are:\n+* **`index.rst`**: The main entry point for the documentation.\n+* **`installation.rst`**: Instructions for installing the package.\n+* **`quickstart.rst`**: A guide to getting started with the package.\n+* **`contributing.rst`**: Guidelines for contributing to the project.\n \n ## Common Tasks:\n * **Feature Development:** Create python-based methods enhance `pyloan` package features. All new features should be accompanied by unit tests.\n@@ -21,5 +50,7 @@ The core logic is located in `src/pyloan`. The main class is `Loan` in `src/pylo\n \n ## Important Notes:\n * When working on new features, create a separate branch from the `develop` branch ad submit a pull request for review. Follow the `gitflow` model.\n-* Use the helper modules (`_validators.py`, `_enums.py`, `_models.py`) when adding new features or modifying existing ones.\n+* Use the helper modules (`_validators.py`, `_enums.py`, `_models.py`, `_day_count.py`) when adding new features or modifying existing ones.\n * Write unit tests for all new code and ensure that all tests pass before submitting a pull request.\n+* Always update the `docs/docsrc/source/quickstart.rst` file with any changes that affect the user-facing examples, arguments, or functionality.\n+",
+        "sha": "5fe87b01545d2695d367bad202d0ae36d4581108",
+        "status": "modified"
+      },
+      {
+        "filename": "setup.cfg",
+        "patch": "@@ -1,6 +1,6 @@\n [metadata]\n name = pyloan\n-version = 0.7.0\n+version = 0.7.1\n author = Darius Lesch, Da.Ki.X\n author_email = darius.lesch@proton.me, dakix@protonmail.com\n description = A package for mortgage/loan calculations.",
+        "sha": "8ebfcdee36742f398c081e0a0578a34377e43598",
+        "status": "modified"
+      },
+      {
+        "filename": "src/pyloan/pyloan.py",
+        "patch": "@@ -371,13 +371,22 @@ def get_payment_schedule(self) -> List[Payment]:\n                 balance_at_period_start = next(p.loan_balance_amount for p in reversed(payment_schedule) if p.date == last_regular_date)\n \n                 interest_amount = self._calculate_interest_for_period(last_regular_date, date, balance_at_period_start, special_payments_in_period)\n-                interest_since_last_regular_payment = Decimal('0')\n \n-                if interest_only_payments_left <= 0:\n+                # --- ISSUE #67 PATH BEGIN ---\n+                # check if this is the last payment in the schedule\n+                is_last_payment = (date == payment_timeline[-1])\n+                # Only force the balance to 0 if it is the last payment AND NOT an Interest Only loan.\n+                if is_last_payment and self.loan_type != LoanType.INTEREST_ONLY:\n+                    principal_amount = balance_bop\n+                elif interest_only_payments_left <= 0:\n+                    # Standard amortization logic for non-final payments\n                     if self.loan_type == LoanType.ANNUITY:\n                         principal_amount = min(regular_payment_amount - interest_amount, balance_bop)\n                     else: # LINEAR\n                         principal_amount = min(regular_payment_amount, balance_bop)\n+                # --- ISSUE #67 PATH END ---\n+\n+                interest_since_last_regular_payment = Decimal('0')\n                 interest_only_payments_left -= 1\n \n             if is_special_day:",
+        "sha": "fe309ccd3e8a8914e5d387bc7f4a65da0d69394e",
+        "status": "modified"
+      }
+    ],
+    "pr69": {
+      "base": {
+        "ref": "master",
+        "sha": "1801d5eb628caa153a638a73b4dac261844add0b"
+      },
+      "body": "### 2\\. Pull Request Description\r\n\r\n**Title:** Fix residual loan balances via Newton-Raphson payment calculation\r\n\r\n**Summary**\r\nThis PR addresses a calculation inaccuracy where `ANNUITY` type loans using \"Actual\" day count conventions (e.g., `ACTUAL_365`, `ACTUAL_ACTUAL`) failed to amortize to zero.\r\n\r\n**The Problem**\r\nThe previous implementation relied on the standard closed-form annuity formula:\r\n$$P = L \\cdot \\frac{r(1+r)^n}{(1+r)^n - 1}$$\r\nThis formula assumes that every payment period is identical in length (e.g., 30 days). However, under \"Actual\" day count conventions, months vary (28, 30, 31 days). This mismatch caused the actual accrued interest to drift from the formula's prediction, resulting in a non-zero residual balance at the end of the loan term.\r\n\r\n**The Solution**\r\nWe have implemented a numerical solver to calculate the precise periodic payment required to zero out the loan.\r\n\r\n1.  **`_simulate_schedule`**: A helper method that simulates the full loan term to determine the final balance for a specific payment guess.\r\n2.  **`calculate_precise_payment`**: Uses the **Newton-Raphson method** (specifically the Secant variant) to iteratively refine the payment amount until the final residual balance is within a tolerance of 0.01.\r\n\r\n**Impact**\r\n\r\n  * **Accuracy:** Long-term loans (e.g., 40 years) with Actual day counts now amortize perfectly to 0.\r\n  * **Performance:** The solver typically converges in 2-3 iterations, adding negligible overhead compared to the accuracy gained.\r\n  * **Backward Compatibility:** Loans using `30/360` or user-specified payment amounts are unaffected.\r\n\r\n**Fixed Code:**\r\n\r\n  * `src/pyloan/pyloan.py`: Implementation of solver and integration into `get_payment_schedule`.",
+      "changed_files": 2,
+      "commits": 1,
+      "head": {
+        "ref": "develop",
+        "sha": "e94537c5679e6c22757a1ce2b1f73c35a8b06249"
+      },
+      "html_url": "https://github.com/darius-lesch/pyloan/pull/69",
+      "merge_commit_sha": "73a052cb40f9c23963fbc1ec4370aa7ac9c3efc1",
+      "merged": true,
+      "merged_at": "2025-11-20T23:02:17Z",
+      "number": 69,
+      "title": "Fix annuity calculation for Actual day counts using Newton-Raphson so\u2026"
+    },
+    "diff69": [
+      {
+        "filename": "setup.cfg",
+        "patch": "@@ -1,6 +1,6 @@\n [metadata]\n name = pyloan\n-version = 0.7.1\n+version = 0.7.2\n author = Darius Lesch, Da.Ki.X\n author_email = darius.lesch@proton.me, dakix@protonmail.com\n description = A package for mortgage/loan calculations.",
+        "sha": "62e89f15e4d3e93ddffd319c3dafdba5f7016ede",
+        "status": "modified"
+      },
+      {
+        "filename": "src/pyloan/pyloan.py",
+        "patch": "@@ -64,7 +64,7 @@ def __init__(self,\n         self._validate_inputs(loan_amount, interest_rate, loan_term, start_date, loan_term_period, payment_amount, first_payment_date, payment_end_of_month, annual_payments, interest_only_period, compounding_method, loan_type)\n \n         self.loan_amount: Decimal = Decimal(str(loan_amount))\n-        self.interest_rate: Decimal = Decimal(str(interest_rate / 100)).quantize(Decimal('0.0001'))\n+        self.interest_rate: Decimal = Decimal(str(interest_rate / 100)).quantize(Decimal('0.00000001'))\n \n         if loan_term_period.upper() == 'M':\n             self.loan_term: Union[int, float] = loan_term / 12\n@@ -194,6 +194,135 @@ def _calculate_regular_principal_payment(self) -> Union[Decimal, int]:\n             return self.loan_amount * (periodic_interest_rate * factor) / (factor - 1)\n         return 0\n \n+    def calculate_precise_payment(self, max_iterations=10, tolerance=Decimal('0.01')):\n+        \"\"\"\n+        Calculates the exact annuity payment required to zero out the loan\n+        using the Newton-Raphson (Secant) method.\n+        \"\"\"\n+        \n+        # 1. Initial Guess: Use the standard formula (O(1) calculation)\n+        # This gets us close, usually within a few dollars.\n+        current_payment = self._calculate_regular_principal_payment()\n+        current_payment = Decimal(str(current_payment))\n+        \n+        for i in range(max_iterations):\n+            # 2. Calculate the Residual (f(x))\n+            # Run the full schedule with the current guess\n+            final_balance = self._simulate_schedule(payment_override=current_payment)\n+            \n+            # Check if we are close enough (e.g., less than 1 cent off)\n+            if abs(final_balance) < tolerance:\n+                return current_payment\n+\n+            # 3. Calculate the Derivative (f'(x)) - The \"Sensitivity\"\n+            # How much does the final balance drop if we pay $1.00 more?\n+            # We use a small delta (e.g., 0.01) to \"step over\" rounding noise.\n+            delta = Decimal('1.00') \n+            balance_with_delta = self._simulate_schedule(payment_override=current_payment + delta)\n+            \n+            # Slope = (Change in Balance) / (Change in Payment)\n+            # Ideally, this is roughly equal to -1 * (sum of compounding factors)\n+            slope = (balance_with_delta - final_balance) / delta\n+            \n+            if slope == 0:\n+                # Prevent division by zero if the function is locally flat\n+                slope = Decimal('-480') # Fallback estimate (approx -1 * num_payments)\n+\n+            # 4. Newton Step: x_new = x_old - f(x) / f'(x)\n+            # Since slope is negative (higher payment = lower balance), this adds to the payment.\n+            adjustment = final_balance / slope\n+            current_payment = current_payment - adjustment\n+            \n+            # Round to 2 decimals for the next valid currency attempt\n+            current_payment = self._quantize(current_payment)\n+\n+        return current_payment\n+\n+    def _simulate_schedule(self, payment_override: Decimal) -> Decimal:\n+        \"\"\"\n+        Helper function: Runs the amortization loop but returns ONLY the final balance.\n+        Computationally lighter than generating the full list of objects.\n+        \"\"\"\n+        interest_only_payments_left = self.interest_only_period\n+        if self.loan_type == LoanType.INTEREST_ONLY:\n+            interest_only_payments_left = self.no_of_payments\n+\n+        regular_payment_amount = payment_override\n+        special_payments = self._consolidate_special_payments()\n+        payment_timeline = self._get_payment_timeline(special_payments)\n+        regular_payment_dates = self._get_regular_payment_dates()\n+\n+        all_regular_dates = [self.start_date] + regular_payment_dates\n+\n+        balance = self._quantize(self.loan_amount)\n+        # Helper to track balance dates to calc interest\n+        last_date = self.start_date\n+\n+        # We need to track a minimal schedule to calc interest accurately between periods\n+        # However, for simulation, we can simplify slightly by just tracking the last event date\n+        # and the running balance.\n+        \n+        # Because _calculate_interest_for_period needs the balance at the *start* of the period \n+        # (which might be different if special payments occurred inside the period), \n+        # we must replicate the logic carefully.\n+\n+        # Since this is an internal simulation for the Payment Amount, we can assume \n+        # standard behavior for the variables not being optimized.\n+        \n+        for date in payment_timeline:\n+            balance_bop = balance\n+            if balance_bop <= 0:\n+                continue\n+\n+            days, year = DAY_COUNT_METHODS[self.compounding_method.value](last_date, date)\n+            compounding_factor = Decimal(str(days / year))\n+            period_interest = self._quantize(balance_bop * self.interest_rate * compounding_factor)\n+\n+            is_regular_day = date in regular_payment_dates\n+            is_special_day = date in special_payments\n+\n+            interest_amount = Decimal('0')\n+            principal_amount = Decimal('0')\n+            special_principal_amount = Decimal('0')\n+\n+            if is_regular_day:\n+                # Recalculate interest for the specific regular period to match get_payment_schedule logic\n+                last_regular_date = next(d for d in reversed(all_regular_dates) if d < date)\n+                special_payments_in_period = {\n+                    p_date: p_amount for p_date, p_amount in special_payments.items() if last_regular_date < p_date < date\n+                }\n+                \n+                # Note: In simulation, we might drift slightly if we don't have exact history \n+                # of balances for special payments in period. \n+                # However, since simulate is usually run before special payments dominate, \n+                # we use balance_bop as a proxy for the start if no intervening events, \n+                # or we rely on the loop structure.\n+                \n+                # For the sake of the Newton method finding the REGULAR payment, \n+                # we assume the interest calculation here is \"good enough\" \n+                # or we must be exact. To be exact, we use the loop variables.\n+                interest_amount = period_interest # Approximated for simulation speed or precise? \n+                # The main loop calculates interest from last_date to date.\n+                # If we just use that, it's consistent.\n+\n+                if interest_only_payments_left <= 0:\n+                    if self.loan_type == LoanType.ANNUITY:\n+                        principal_amount = min(regular_payment_amount - period_interest, balance_bop)\n+                    else: # LINEAR\n+                        principal_amount = min(regular_payment_amount, balance_bop)\n+                \n+                interest_only_payments_left -= 1\n+\n+            if is_special_day:\n+                special_principal_amount = min(balance_bop - principal_amount, special_payments[date])\n+\n+            total_principal_amount = self._quantize(principal_amount + special_principal_amount)\n+            balance = self._quantize(balance_bop - total_principal_amount)\n+            \n+            last_date = date\n+\n+        return balance\n+\n     def _get_schedule_base_date(self) -> dt.datetime:\n         \"\"\"\n         Determines the base date for the payment schedule calculation.\n@@ -329,7 +458,14 @@ def get_payment_schedule(self) -> List[Payment]:\n         if self.loan_type == LoanType.INTEREST_ONLY:\n             interest_only_payments_left = self.no_of_payments\n \n-        regular_payment_amount = self._calculate_regular_principal_payment()\n+        # Determine the regular payment amount\n+        if self.loan_type == LoanType.ANNUITY and self.payment_amount is None:\n+            # Use Newton-Raphson to find precise annuity payment for 'Actual' day counts\n+            regular_payment_amount = self.calculate_precise_payment()\n+        else:\n+            # Standard formula or user-provided amount\n+            regular_payment_amount = self._calculate_regular_principal_payment()\n+\n         special_payments = self._consolidate_special_payments()\n         payment_timeline = self._get_payment_timeline(special_payments)\n         regular_payment_dates = self._get_regular_payment_dates()\n@@ -372,7 +508,7 @@ def get_payment_schedule(self) -> List[Payment]:\n \n                 interest_amount = self._calculate_interest_for_period(last_regular_date, date, balance_at_period_start, special_payments_in_period)\n \n-                # --- ISSUE #67 PATH BEGIN ---\n+                # --- FINAL ADJUSTMENT CHECK ---\n                 # check if this is the last payment in the schedule\n                 is_last_payment = (date == payment_timeline[-1])\n                 # Only force the balance to 0 if it is the last payment AND NOT an Interest Only loan.\n@@ -384,7 +520,6 @@ def get_payment_schedule(self) -> List[Payment]:\n                         principal_amount = min(regular_payment_amount - interest_amount, balance_bop)\n                     else: # LINEAR\n                         principal_amount = min(regular_payment_amount, balance_bop)\n-                # --- ISSUE #67 PATH END ---\n \n                 interest_since_last_regular_payment = Decimal('0')\n                 interest_only_payments_left -= 1",
+        "sha": "d742b696b6cba5892229186fe164756cf469b8c0",
+        "status": "modified"
+      }
+    ],
+    "branches": [
+      {
+        "name": "develop",
+        "sha": "e94537c5679e6c22757a1ce2b1f73c35a8b06249"
+      },
+      {
+        "name": "master",
+        "sha": "73a052cb40f9c23963fbc1ec4370aa7ac9c3efc1"
+      }
+    ],
+    "releases": [
+      {
+        "body": "### 3\\. Release Notes (Changelog)\r\n\r\n**New Features & Improvements**\r\n\r\n  * **Precise Annuity Calculation:** Implemented a Newton-Raphson numerical solver for calculating annuity payments. This ensures that loans using \"Actual\" day count conventions (e.g., `ACTUAL_365`, `ACTUAL/ACTUAL`) amortize exactly to zero, resolving issues where variable month lengths caused residual balances on the final payment.\r\n\r\n**Bug Fixes**\r\n\r\n  * Fixed a logic error in `get_payment_schedule` where the final principal adjustment was being overwritten by standard amortization logic.\r\n  * Eliminated the \"balloon payment\" effect on the final month for loans with irregular day counts by distributing the difference evenly across the loan term.",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.7.2",
+        "published_at": "2025-11-20T23:03:19Z",
+        "tag_name": "v0.7.2",
+        "target_commitish": "master"
+      },
+      {
+        "body": "This release addresses an issue where annuity loans using 'Actual' day count methods (e.g., ACTUAL_365, ACTUAL_ACTUAL) failed to amortize to exactly zero, leaving a residual balance on the final payment.\r\n\r\nThe root cause is a discrepancy between the fixed payment calculation and the daily interest accrual:\r\n1. The annuity formula assumes constant time intervals (standard 30/360 model).\r\n2. 'Actual' methods use variable month lengths (28, 30, 31 days), causing the actual interest accrued to drift slightly from the formula's prediction.\r\n\r\nOver long loan terms (e.g., 40 years), this interest drift accumulates. This patch implements a standard industry resolution by forcing the final principal payment to match the remaining balance exactly. This avoids the heavy computational cost of Newtonian root-finding algorithms required to calculate a \"perfect\" annuity payment for uneven time periods.\r\n\r\nAdditionally, this commit removes a redundant code block in `get_payment_schedule` that was accidentally overwriting the fix.",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.7.1",
+        "published_at": "2025-11-20T21:34:34Z",
+        "tag_name": "v0.7.1",
+        "target_commitish": "master"
+      },
+      {
+        "body": "## What's Changed\r\n* Added debug functiionality by @darius-lesch in https://github.com/darius-lesch/pyloan/pull/65\r\n* Removed 30U/360 day count method\r\n* Corrected 30E/360 ISDA (a.k.a. 30E German) day count method\r\n* Added 30E/360 day count method\r\n* Adjusted documentation to reflect changes in the day count methods\r\n\r\n\r\n**Full Changelog**: https://github.com/darius-lesch/pyloan/compare/v0.6.9...v0.7.0",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.7.0",
+        "published_at": "2025-09-09T21:01:05Z",
+        "tag_name": "v0.7.0",
+        "target_commitish": "master"
+      },
+      {
+        "body": "- added debug logging functionality",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.6.9",
+        "published_at": "2025-09-09T06:06:41Z",
+        "tag_name": "v0.6.9",
+        "target_commitish": "master"
+      },
+      {
+        "body": "",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.6.8",
+        "published_at": "2025-09-08T20:41:02Z",
+        "tag_name": "v0.6.8",
+        "target_commitish": "master"
+      },
+      {
+        "body": "## What's Changed\r\n* Fix: Correct interest calculation for special payments by @darius-lesch in https://github.com/darius-lesch/pyloan/pull/60\r\n\r\n\r\n**Full Changelog**: https://github.com/darius-lesch/pyloan/compare/v0.6.4...v0.6.7",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.6.7",
+        "published_at": "2025-09-08T06:06:30Z",
+        "tag_name": "v0.6.7",
+        "target_commitish": "master"
+      },
+      {
+        "body": "",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.6.4",
+        "published_at": "2025-09-07T21:08:04Z",
+        "tag_name": "v0.6.4",
+        "target_commitish": "master"
+      },
+      {
+        "body": "Bumping to v0.6.3",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.6.3",
+        "published_at": "2025-09-07T20:26:55Z",
+        "tag_name": "v0.6.3",
+        "target_commitish": "master"
+      },
+      {
+        "body": "Correction and simplification of day count methods",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.6.2",
+        "published_at": "2025-09-07T20:01:42Z",
+        "tag_name": "v0.6.2",
+        "target_commitish": "master"
+      },
+      {
+        "body": "## What's Changed\r\n* Fixes a bug in the loan calculation logic where special payments made\u2026 by @darius-lesch in https://github.com/darius-lesch/pyloan/pull/53\r\n\r\n\r\n**Full Changelog**: https://github.com/darius-lesch/pyloan/compare/v0.6.0...v0.6.1",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.6.1",
+        "published_at": "2025-09-07T15:44:46Z",
+        "tag_name": "v0.6.1",
+        "target_commitish": "master"
+      },
+      {
+        "body": "## What's Changed\r\n* Refactor and Improve PyLoan Codebase.\r\n* Update quickstart.rst to align with refactored code.",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.6.0",
+        "published_at": "2025-09-01T22:20:45Z",
+        "tag_name": "v0.6.0",
+        "target_commitish": "master"
+      },
+      {
+        "body": "## What's Changed\r\n* Code Refactoring and Resolving Issues by @darius-lesch in https://github.com/darius-lesch/pyloan/pull/46",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.5.0",
+        "published_at": "2025-08-25T22:16:35Z",
+        "tag_name": "v0.5.0",
+        "target_commitish": "master"
+      },
+      {
+        "body": "This release fixes issues related to the attribute first_payment_date. Specifically, date offsetting of payment dates was working incorrectly when first_payment_date was set either equal to start_date or start_date plus one N days within the subsequent month. ",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.4.5",
+        "published_at": "2022-06-08T21:06:25Z",
+        "tag_name": "v0.4.5",
+        "target_commitish": "master"
+      },
+      {
+        "body": "The release include a missing requirement related to the python-dateutil package.",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.3.5",
+        "published_at": "2022-05-12T20:00:27Z",
+        "tag_name": "v0.3.5",
+        "target_commitish": "master"
+      },
+      {
+        "body": "Release of version 0.3.4 with fixed README.rst reference in setup.py",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.3.4",
+        "published_at": "2022-04-12T20:13:40Z",
+        "tag_name": "v0.3.4",
+        "target_commitish": "master"
+      },
+      {
+        "body": "Main changes:\r\n\r\n- Validation rules for Loan arguments.\r\n- Enhanced documentation.",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.3.3",
+        "published_at": "2022-04-11T20:28:30Z",
+        "tag_name": "v0.3.3",
+        "target_commitish": "master"
+      },
+      {
+        "body": "Changes include:\r\n- New Loan class argument `loan_type` to differentiate between annuity, linear and interest-only loan/mortgage types.\r\n- Fixed external link rendering in README.rst.",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.2.3",
+        "published_at": "2021-06-29T20:52:16Z",
+        "tag_name": "v0.2.3",
+        "target_commitish": "master"
+      },
+      {
+        "body": "",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.1.3",
+        "published_at": "2021-06-28T20:11:09Z",
+        "tag_name": "v0.1.3",
+        "target_commitish": "master"
+      },
+      {
+        "body": "",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.1.2",
+        "published_at": "2021-06-24T21:09:21Z",
+        "tag_name": "v0.1.2",
+        "target_commitish": "master"
+      },
+      {
+        "body": "",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.1.1",
+        "published_at": "2021-06-24T21:01:53Z",
+        "tag_name": "v0.1.1",
+        "target_commitish": "master"
+      },
+      {
+        "body": "Documentation has been further restructured and updated. Main changes allow to build the GitHub Page site for PyLoan in the /docs folder (for now the folder is populated with the ReadTheDocs template that contains PyLoan documentation).",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.1.0",
+        "published_at": "2021-06-24T20:35:30Z",
+        "tag_name": "v0.1.0",
+        "target_commitish": "master"
+      },
+      {
+        "body": "Main changes include restructuring of the /docs folder, specifically:\r\n\r\n- Documentation has been moved to /docs/docsrc folder in order to enable use of /docs for GitHub Pages.\r\n- ReadTheDocs configuration file .readthedocs.yaml has been introduced. It points ReadTheDocs to /docs/docsrc/source/conf.py file for configurations.\r\n- Sphinx method `make github` has been introduced in order to generate the documentation on the /docs/docsrc/build and then copy-paste it to /docs for GitHub Pages.\r\n",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.0.9",
+        "published_at": "2021-06-23T20:12:06Z",
+        "tag_name": "v0.0.9",
+        "target_commitish": "master"
+      },
+      {
+        "body": "Enhance documentation, especially comparison between different day count methods and their impact on the total interest paid on a mortgage/loan over its term.",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.0.8",
+        "published_at": "2021-06-22T18:29:50Z",
+        "tag_name": "v0.0.8",
+        "target_commitish": "master"
+      },
+      {
+        "body": "",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.0.7",
+        "published_at": "2021-06-21T18:56:35Z",
+        "tag_name": "v0.0.7",
+        "target_commitish": "master"
+      },
+      {
+        "body": "",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.0.6",
+        "published_at": "2021-06-12T19:08:56Z",
+        "tag_name": "v0.0.6",
+        "target_commitish": "master"
+      },
+      {
+        "body": "This release introduce a `get_julian_day_count` method under the _get_day_count method, which calculates converting Gregorian calendar date to Julian Day Number. This method is used during the day count calculation of \"A/A ISDA\" (short for Actual/Actual ISDA).",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.0.5",
+        "published_at": "2021-06-12T18:32:45Z",
+        "tag_name": "v0.0.5",
+        "target_commitish": "master"
+      },
+      {
+        "body": "This release includes a new method for interest rate compounding method: 'A/A ISDA' (short for Actual/Actual ISDA).",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.0.4",
+        "published_at": "2021-06-10T21:34:41Z",
+        "tag_name": "v0.0.4",
+        "target_commitish": "master"
+      },
+      {
+        "body": "",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.0.3",
+        "published_at": "2021-06-09T20:59:19Z",
+        "tag_name": "v0.0.3",
+        "target_commitish": "master"
+      },
+      {
+        "body": "* Include special payments.\r\n* Extend documentation.",
+        "html_url": "https://github.com/darius-lesch/pyloan/releases/tag/v0.0.2",
+        "published_at": "2021-06-08T21:07:02Z",
+        "tag_name": "v0.0.2",
+        "target_commitish": "master"
+      }
+    ]
+  },
+  "branch_and_docs_evidence": {
+    "develop": {
+      "excerpt": "        \"\"\"\n        Calculates the payment schedule for the loan.\n        :return: A list of Payment objects.\n        \"\"\"\n        payment_schedule = self._initialize_payment_schedule()\n\n        interest_only_payments_left = self.interest_only_period\n        if self.loan_type == LoanType.INTEREST_ONLY:\n            interest_only_payments_left = self.no_of_payments\n\n        # Determine the regular payment amount\n        if self.loan_type == LoanType.ANNUITY and self.payment_amount is None:\n            # Use Newton-Raphson to find precise annuity payment for 'Actual' day counts\n            regular_payment_amount = self.calculate_precise_payment()\n        else:\n            # Standard formula or user-provided amount\n            regular_payment_amount = self._calculate_regular_principal_payment()\n\n        special_payments = self._consolidate_special_payments()\n        payment_timeline = self._get_payment_timeline(special_payments)\n        regular_payment_dates = self._get_regular_payment_dates()\n\n        all_regular_dates = [self.start_date] + regular_payment_dates\n\n        accrued_interest = Decimal('0')\n        interest_since_last_regular_payment = Decimal('0')\n\n        for date in payment_timeline:\n            last_payment = payment_schedule[-1]\n            balance_bop = self._quantize(last_payment.loan_balance_amount)\n\n            if balance_bop <= 0:\n                continue\n\n            bop_date = last_payment.date\n            days, year = DAY_COUNT_METHODS[self.compounding_method.value](bop_date, date)\n            logger.debug(f\"Event on {date.strftime('%Y-%m-%d')}: Days since last event: {days}\")\n            compounding_factor = Decimal(str(days / year))\n            period_interest = self._quantize(balance_bop * self.interest_rate * compounding_factor)\n            accrued_interest += period_interest\n            interest_since_last_regular_payment += period_interest\n\n            is_regular_day = date in regular_payment_dates\n            is_special_day = date in special_payments\n\n            interest_amount = Decimal('0')\n            principal_amount = Decimal('0')\n            special_principal_amount = Decimal('0')\n\n            if is_regular_day:\n                last_regular_date = next(d for d in reversed(all_regular_dates) if d < date)\n\n                special_payments_in_period = {\n                    p_date: p_amount for p_date, p_amount in special_payments.items() if last_regular_date < p_date < date\n                }\n\n                balance_at_period_start = next(p.loan_balance_amount for p in reversed(payment_schedule) if p.date == last_regular_date)\n\n                interest_amount = self._calculate_interest_for_period(last_regular_date, date, balance_at_period_start, special_payments_in_period)\n\n                # --- FINAL ADJUSTMENT CHECK ---\n                # check if this is the last payment in the schedule\n                is_last_payment = (date == payment_timeline[-1])\n                # Only force the balance to 0 if it is the last payment AND NOT an Interest Only loan.\n                if is_last_payment and self.loan_type != LoanType.INTEREST_ONLY:\n                    principal_amount = balance_bop\n                elif interest_only_payments_left <= 0:\n                    # Standard amortization logic for non-final payments\n                    if self.loan_type == LoanType.ANNUITY:\n                        principal_amount = min(regular_payment_amount - interest_amount, balance_bop)\n                    else: # LINEAR\n                        principal_amount = min(regular_payment_amount, balance_bop)\n\n                interest_since_last_regular_payment = Decimal('0')\n                interest_only_payments_left -= 1\n\n            if is_special_day:\n                logger.debug(f\"Special payment on {date.strftime('%Y-%m-%d')}: Accrued interest since last regular payment: {interest_since_last_regular_payment}\")\n                special_principal_amount = min(balance_bop - principal_amount, special_payments[date])\n\n            total_principal_amount = self._quantize(principal_amount + special_principal_amount)\n            total_payment_amount = self._quantize(total_principal_amount + interest_amount)\n            balance_eop = self._quantize(balance_bop - total_principal_amount)\n\n            if balance_eop < Decimal('0.01') and balance_eop > Decimal('0'):\n                total_principal_amount += balance_eop\n                total_payment_amount += balance_eop\n                balance_eop = Decimal('0')\n\n            payment = Payment(\n                date=date,\n                payment_amount=total_payment_amount,\n                interest_amount=self._quantize(interest_amount),\n                principal_amount=self._quantize(principal_amount),\n                special_principal_amount=self._quantize(special_principal_amount),\n                total_principal_amount=total_principal_amount,\n                loan_balance_amount=balance_eop\n            )\n            payment_schedule.append(payment)\n\n        return payment_schedule",
+      "path": "src/pyloan/pyloan.py",
+      "sha": "d742b696b6cba5892229186fe164756cf469b8c0",
+      "size": 28492
+    },
+    "master": {
+      "excerpt": "        \"\"\"\n        Calculates the payment schedule for the loan.\n        :return: A list of Payment objects.\n        \"\"\"\n        payment_schedule = self._initialize_payment_schedule()\n\n        interest_only_payments_left = self.interest_only_period\n        if self.loan_type == LoanType.INTEREST_ONLY:\n            interest_only_payments_left = self.no_of_payments\n\n        # Determine the regular payment amount\n        if self.loan_type == LoanType.ANNUITY and self.payment_amount is None:\n            # Use Newton-Raphson to find precise annuity payment for 'Actual' day counts\n            regular_payment_amount = self.calculate_precise_payment()\n        else:\n            # Standard formula or user-provided amount\n            regular_payment_amount = self._calculate_regular_principal_payment()\n\n        special_payments = self._consolidate_special_payments()\n        payment_timeline = self._get_payment_timeline(special_payments)\n        regular_payment_dates = self._get_regular_payment_dates()\n\n        all_regular_dates = [self.start_date] + regular_payment_dates\n\n        accrued_interest = Decimal('0')\n        interest_since_last_regular_payment = Decimal('0')\n\n        for date in payment_timeline:\n            last_payment = payment_schedule[-1]\n            balance_bop = self._quantize(last_payment.loan_balance_amount)\n\n            if balance_bop <= 0:\n                continue\n\n            bop_date = last_payment.date\n            days, year = DAY_COUNT_METHODS[self.compounding_method.value](bop_date, date)\n            logger.debug(f\"Event on {date.strftime('%Y-%m-%d')}: Days since last event: {days}\")\n            compounding_factor = Decimal(str(days / year))\n            period_interest = self._quantize(balance_bop * self.interest_rate * compounding_factor)\n            accrued_interest += period_interest\n            interest_since_last_regular_payment += period_interest\n\n            is_regular_day = date in regular_payment_dates\n            is_special_day = date in special_payments\n\n            interest_amount = Decimal('0')\n            principal_amount = Decimal('0')\n            special_principal_amount = Decimal('0')\n\n            if is_regular_day:\n                last_regular_date = next(d for d in reversed(all_regular_dates) if d < date)\n\n                special_payments_in_period = {\n                    p_date: p_amount for p_date, p_amount in special_payments.items() if last_regular_date < p_date < date\n                }\n\n                balance_at_period_start = next(p.loan_balance_amount for p in reversed(payment_schedule) if p.date == last_regular_date)\n\n                interest_amount = self._calculate_interest_for_period(last_regular_date, date, balance_at_period_start, special_payments_in_period)\n\n                # --- FINAL ADJUSTMENT CHECK ---\n                # check if this is the last payment in the schedule\n                is_last_payment = (date == payment_timeline[-1])\n                # Only force the balance to 0 if it is the last payment AND NOT an Interest Only loan.\n                if is_last_payment and self.loan_type != LoanType.INTEREST_ONLY:\n                    principal_amount = balance_bop\n                elif interest_only_payments_left <= 0:\n                    # Standard amortization logic for non-final payments\n                    if self.loan_type == LoanType.ANNUITY:\n                        principal_amount = min(regular_payment_amount - interest_amount, balance_bop)\n                    else: # LINEAR\n                        principal_amount = min(regular_payment_amount, balance_bop)\n\n                interest_since_last_regular_payment = Decimal('0')\n                interest_only_payments_left -= 1\n\n            if is_special_day:\n                logger.debug(f\"Special payment on {date.strftime('%Y-%m-%d')}: Accrued interest since last regular payment: {interest_since_last_regular_payment}\")\n                special_principal_amount = min(balance_bop - principal_amount, special_payments[date])\n\n            total_principal_amount = self._quantize(principal_amount + special_principal_amount)\n            total_payment_amount = self._quantize(total_principal_amount + interest_amount)\n            balance_eop = self._quantize(balance_bop - total_principal_amount)\n\n            if balance_eop < Decimal('0.01') and balance_eop > Decimal('0'):\n                total_principal_amount += balance_eop\n                total_payment_amount += balance_eop\n                balance_eop = Decimal('0')\n\n            payment = Payment(\n                date=date,\n                payment_amount=total_payment_amount,\n                interest_amount=self._quantize(interest_amount),\n                principal_amount=self._quantize(principal_amount),\n                special_principal_amount=self._quantize(special_principal_amount),\n                total_principal_amount=total_principal_amount,\n                loan_balance_amount=balance_eop\n            )\n            payment_schedule.append(payment)\n\n        return payment_schedule",
+      "path": "src/pyloan/pyloan.py",
+      "sha": "d742b696b6cba5892229186fe164756cf469b8c0",
+      "size": 28492
+    },
+    "v072": {
+      "path": "src/pyloan/pyloan.py",
+      "sha": "d742b696b6cba5892229186fe164756cf469b8c0",
+      "size": 28492
+    },
+    "v070": {
+      "excerpt": "    def get_payment_schedule(self) -> List[Payment]:\n        \"\"\"\n        Calculates the payment schedule for the loan.\n        :return: A list of Payment objects.\n        \"\"\"\n        payment_schedule = self._initialize_payment_schedule()\n\n        interest_only_payments_left = self.interest_only_period\n        if self.loan_type == LoanType.INTEREST_ONLY:\n            interest_only_payments_left = self.no_of_payments\n\n        regular_payment_amount = self._calculate_regular_principal_payment()\n        special_payments = self._consolidate_special_payments()\n        payment_timeline = self._get_payment_timeline(special_payments)\n        regular_payment_dates = self._get_regular_payment_dates()\n\n        all_regular_dates = [self.start_date] + regular_payment_dates\n\n        accrued_interest = Decimal('0')\n        interest_since_last_regular_payment = Decimal('0')\n\n        for date in payment_timeline:\n            last_payment = payment_schedule[-1]\n            balance_bop = self._quantize(last_payment.loan_balance_amount)\n\n            if balance_bop <= 0:\n                continue\n\n            bop_date = last_payment.date\n            days, year = DAY_COUNT_METHODS[self.compounding_method.value](bop_date, date)\n            logger.debug(f\"Event on {date.strftime('%Y-%m-%d')}: Days since last event: {days}\")\n            compounding_factor = Decimal(str(days / year))\n            period_interest = self._quantize(balance_bop * self.interest_rate * compounding_factor)\n            accrued_interest += period_interest\n            interest_since_last_regular_payment += period_interest\n\n            is_regular_day = date in regular_payment_dates\n            is_special_day = date in special_payments\n\n            interest_amount = Decimal('0')\n            principal_amount = Decimal('0')\n            special_principal_amount = Decimal('0')\n\n            if is_regular_day:\n                last_regular_date = next(d for d in reversed(all_regular_dates) if d < date)\n\n                special_payments_in_period = {\n                    p_date: p_amount for p_date, p_amount in special_payments.items() if last_regular_date < p_date < date\n                }\n\n                balance_at_period_start = next(p.loan_balance_amount for p in reversed(payment_schedule) if p.date == last_regular_date)\n\n                interest_amount = self._calculate_interest_for_period(last_regular_date, date, balance_at_period_start, special_payments_in_period)\n                interest_since_last_regular_payment = Decimal('0')\n\n                if interest_only_payments_left <= 0:\n                    if self.loan_type == LoanType.ANNUITY:\n                        principal_amount = min(regular_payment_amount - interest_amount, balance_bop)\n                    else: # LINEAR\n                        principal_amount = min(regular_payment_amount, balance_bop)\n                interest_only_payments_left -= 1\n\n            if is_special_day:\n                logger.debug(f\"Special payment on {date.strftime('%Y-%m-%d')}: Accrued interest since last regular payment: {interest_since_last_regular_payment}\")\n                special_principal_amount = min(balance_bop - principal_amount, special_payments[date])\n\n            total_principal_amount = self._quantize(principal_amount + special_principal_amount)\n            total_payment_amount = self._quantize(total_principal_amount + interest_amount)\n            balance_eop = self._quantize(balance_bop - total_principal_amount)\n\n            if balance_eop < Decimal('0.01') and balance_eop > Decimal('0'):\n                total_principal_amount += balance_eop\n                total_payment_amount += balance_eop\n                balance_eop = Decimal('0')\n\n            payment = Payment(\n                date=date,\n                payment_amount=total_payment_amount,\n                interest_amount=self._quantize(interest_amount),\n                principal_amount=self._quantize(principal_amount),\n                special_principal_amount=self._quantize(special_principal_amount),\n                total_principal_amount=total_principal_amount,\n                loan_balance_amount=balance_eop\n            )\n            payment_schedule.append(payment)",
+      "path": "src/pyloan/pyloan.py",
+      "sha": "72708e8c203e1d554d706d08c0743171a0833ea5",
+      "size": 21238
+    },
+    "docs": {
+      "excerpt": "==========\nQuickstart\n==========\nEverything you need to know to get started with PyLoan - a mortgage/loan calculation tool.\n\nDefine a loan\n=============\nDefining a loan with PyLoan is very simple. Begin by importing the PyLoan module::\n\n from pyloan import Loan\n\nNext define a loan::\n\n  loan = Loan(loan_amount=160000,interest_rate=1.1,loan_term=10,start_date='2020-06-15')\n\nThe above defines a 10-year mortgage/loan of 160,000 EUR with annual interest of 1.1% starting on the 15th of June 2020. By default, monthly payment amount will be calculated to amortize the loan amount fully over the given loan term. Also, by default, monthly payments fall on the last day of the month.\n\nLoan arguments\n--------------\nThe loan has the following **required arguments**:\n\n* ``loan_amount``: the amount of money being borrowed. Input must be greater than zero.\n* ``interest_rate``: the annual interest paid on the loan/mortgage. Input must be greater than zero.\n* ``loan_term``: the number of years/months of the loan/mortgage. Input must be an integer greater or equal than 1.\n* ``start_date``: the date as of which the loan/mortgage begins. Input format must be YYYY-MM-DD.\n\nIn addition, the loan has the following **optional argument**:\n\n* ``loan_term_period``: the period of the loan term, 'Y' for years or 'M' for months. Default value is 'Y'.\n* ``payment_amount``: the amount used to repay loan/interest. Default value is None. When the value is set to other than None, the specified amount will be used to cover interest and principal repayments.\n* ``first_payment_date``: the date as at which first payment on the loan/mortget is made. Input format must be YYYY-MM-DD and greater than the start date. Default value is None.\n* ``payment_end_of_month``: boolean argument that defines whether loan/mortgage repayments fall on month-end or not. Default value is True. If set to False, and ``first_payment_date`` is None then loan/mortgage payments will fall on the day specified in the ``start_date``.\n* ``annual_payments``: the number of annual payments on the loan/mortgage. The argument can be set to either 12 (monthly), 4 (quarterly), 2 (semi-annual), and 1 (annual). The default value is 12 (monthly).\n* ``interest_only_period``: the number of interest-only payments on the loan/mortgage. The default value is 0.\n* ``compounding_method``: the compounding method used to accrue interest on the loan/mortgage. The default value is '30E/360 ISDA (a.k.a. 30E/360 German)'. For more details on other alternatives, see :ref:`Section on interest rate compounding`.\n* ``loan_type``: type of loan/mortgage. Default value is annuity. Alternative values are: linear and interest-only.\n\nGet payment schedule\n====================\nTo view the payment schedule and loan amortization use the ``get_payment_schedule`` method::\n\n  payment_schedule = loan.get_payment_schedule()\n\nThe above outputs a list of dataclasses with the following fields per row:\n\n* ``date``: date of payment.\n* ``payment_amount``: periodic payment amount of principal and interest.\n* ``interest_amount``: part of periodic payment amount that is interest.\n* ``principal_amount``: part of periodic payment amount that is principal.\n* ``special_principal_amount``: part of periodic payment amount that is ad-hoc/special principal.\n* ``total_principal_amount``: sum of `principal_amount` and `special_principal_amount` (if applicable).\n* ``loan_balance_amount``: amount of loan balance as at end of payment `date`.\n\nThe first row represents the loan start with the 'loan_balance_column' equal to the loan amount. Each subsequent row represents loan repayment.\n\n.. tip::\n   To define payment schedule as `pandas` DataFrame, covert a list of Payments object into a list of dictionaries::\n    \n    data = [p.__dict__ for p in payment_schedule]\n    df=pd.DataFrame.from_records(data)\n\n   This will generate a familiar DataFrame with named tuple fields as columns.\n\n   .. image:: _static/pandas_df_output.png\n      :alt: Pandas DataFrame output of the payment schedule\n\n.. _Section on payment amount:\n\nSpecify payment amount\n======================\nThe example above calculated the payment amount that fully amortized the loan amount over its term. It is possible to specify a payment amount. Depending on the payment amount, the loan may be fully amortized over the loan term of not. To specify the payment amount use ``Loan`` argument ``payment_amount``. Using the example above, add payment amount of 888.33 EUR per month::\n\n  loan = Loan(loan_amount=160000,interest_rate=1.1,loan_term=10,start_date='2020-06-15',payment_amount=888.33)\n\n.. image:: _static/specify_payment_amount.png\n   :alt: Pandas DataFrame output of the payment schedule with the specified payment amount.\n\nSpecify payment frequency\n=========================\nThe example above defines a loan with monthly repayment basis. It is possible to change this to quarterly, semi-annual or annual payments by setting value of the ``Loan`` argument ``annual_payments`` to 4, 2 or 1, respectively. Default argument value is 12 (monthly payments).\n\nIn addition, the payment schedule above assumes that payments are made at month end, with the first payment starting on the 30th of June 2020. In case repayments are not made at month end, this can be adjusted by setting the ``Loan`` argument ``payment_end_of_month`` to ``False`` and setting the argument ``first_payment_date`` to the date of the first payment date.\n\nBelow is an example of the same loan that is paid on quarterly basis, on the 15th of every month::\n\n loan = Loan(loan_amount=160000,interest_rate=1.1,loan_term=10,start_date='2020-06-15',payment_amount=888.33,annual_payments=4)\n\n.. image:: _static/loan_quarterly_payments.png\n   :alt: Pandas DataFrame output of the payment schedule on quarterly basis.\n\nSpecify payment date\n====================\nIn the examples above, payments were made on month end. It is possible to change this to a particular day of the month by setting of the ``Loan`` argument ``first_payment_date`` to a particular date. This will make the first and all subsequent payments fall on the specified day of the ``first_payment_date`` argument.\n\nFollowing the example above, make first payment fall on the 17th of September. Each subsequent payment will fall on the 17th day of the month on which the payment is due.\n\n.. image:: _static/first_payment_date.png\n   :alt: Specify payment date other than month end date.\n\n.. note::\n   When attribute ``first_payment_date`` is set, then attribute  ``payment_end_of_month`` will be ignored.\n\nAdd special payments\n====================\nTo add special payments to the loan, use the ``add_special_payment`` method. This method has the following arguments:\n\n* ``payment_amount``: the amount of the special payment.\n* ``first_payment_date``: the date of the first special payment in YYYY-MM-DD format.\n* ``special_payment_term``: the term of the special payment in years or months.\n* ``annual_payments``: the number of special payments per year.\n* ``special_payment_term_period``: the period of the special payment term, 'Y' for years or 'M' for months. Default value is 'Y'.\n\nFor instance, following the example above, add special payment of 5000 EUR first paid on 2021-03-15 for next 8 years paid annually::\n\n  loan.add_special_payment(\n    payment_amount=5000,\n    first_payment_date='2021-03-17',\n    special_payment_term=8,\n    annual_payments=1,\n    special_payment_term_period='Y'\n    )\n\nNext, recalculate payment schedule considering special payments as defined above::\n\n  payment_schedule = loan.get_payment_schedule()",
+      "path": "docs/docsrc/source/quickstart.rst",
+      "sha": "3292105a3ff5cb8256bd2474e6c84053f38ef858",
+      "size": 13802
+    },
+    "comments68": [],
+    "review68": [],
+    "comments69": [],
+    "review69": []
+  },
+  "tags": [
+    {
+      "name": "v0.7.2",
+      "sha": "e94537c5679e6c22757a1ce2b1f73c35a8b06249"
+    },
+    {
+      "name": "v0.7.1",
+      "sha": "b0817fc6f1fc35c43a4e88c8dccc419009815e92"
+    },
+    {
+      "name": "v0.7.0",
+      "sha": "a14916d39d02cb46c686a2fbf81c33a65ea1fef9"
+    }
+  ],
+  "pypi": {
+    "url": "https://pypi.org/project/pyloan/",
+    "identified_latest_version": "0.7.2",
+    "release_date": "2025-11-20",
+    "project_page_observed_via": "web open, cached source reports last-month crawl; fresh PyPI JSON fetch returned Cache miss.",
+    "artifacts": [
+      {
+        "filename": "pyloan-0.7.2.tar.gz",
+        "sha256": "53950ac525ea8e82909bebff98711e6e68c675d38f5540e53c386395406c83e8",
+        "approx_size_kb": 13.7
+      },
+      {
+        "filename": "pyloan-0.7.2-py3-none-any.whl",
+        "sha256": "a0a24cb9b545d05d49e61186d7dded865511f95be20703031de79b7b0f0d16cb",
+        "approx_size_kb": 12.7
+      }
+    ],
+    "artifact_downloaded_by_this_agent": false,
+    "artifact_content_compared_by_this_agent": false,
+    "note": "Current GitHub v0.7.2 source is verified equal to master/develop. Equality of the PyPI artifact contents must be checked by the parent's actual artifact replay, not inferred from version string."
+  },
+  "duplication": {
+    "searches": [
+      {
+        "query": "repo:darius-lesch/pyloan \"payment_amount\" in:title,body,comments",
+        "result": {
+          "incomplete_results": false,
+          "items": [
+            {
+              "body": "pyloan.Loan(\n    loan_amount=108000,\n    interest_rate=3,\n    loan_term=40,\n    start_date=\"2025-03-01\",\n    payment_end_of_month=True,\n    compounding_method=pyloan.CompoundingMethod.ACTUAL_365.value,\n    loan_type='annuity'\n)\nthis produces a schedule that ends with following payment:\nPayment(\n  date=datetime.datetime(2065, 2, 28, 0, 0),\n  payment_amount=Decimal('386.62'),\n  interest_amount=Decimal('1.15'),\n  principal_amount=Decimal('385.47'),\n  special_principal_amount=Decimal('0.00'),\n  total_principal_amount=Decimal('385.47'),\n  loan_balance_amount=Decimal('115.42')\n)\nwhich I think is wrong because the balance is not 0 ?\n\n",
+              "html_url": "https://github.com/darius-lesch/pyloan/issues/67",
+              "number": 67,
+              "pull_request": null,
+              "state": "closed",
+              "title": "[BUG] loan's last payment ends with non-zero balance"
+            },
+            {
+              "body": "**Is your feature request related to a problem? Please describe.**\r\nWhen payment_amount is not specified explicitly, then calculate payment_amount that would fully amortize the loan_amount over the loan_term.\r\n\r\n**Describe the solution you'd like**\r\n\r\n1. Allows payment_amount to take value of None.\r\n2. When payment_amount is None, then fully amortize the loan_amount over the loan_term. To do so, introduce a calculate payment amount that would fully amortize the loan as\r\n\r\nloan_amount*((interest_rate/annual_payments)*(1+(interest_rate/annual_payments))**(no_of_payments))/((1+(interest_rate/annual_payments))**(no_of_payments)-1)\r\n",
+              "html_url": "https://github.com/darius-lesch/pyloan/issues/15",
+              "number": 15,
+              "pull_request": null,
+              "state": "closed",
+              "title": "Fully amortize loan when payment_amount is none [FEATURE]"
+            }
+          ],
+          "total_count": 2
+        }
+      },
+      {
+        "query": "repo:darius-lesch/pyloan \"balloon\" in:title,body,comments",
+        "result": {
+          "incomplete_results": false,
+          "items": [],
+          "total_count": 0
+        }
+      },
+      {
+        "query": "repo:darius-lesch/pyloan \"residual\" in:title,body,comments",
+        "result": {
+          "incomplete_results": false,
+          "items": [
+            {
+              "body": "### 2\\. Pull Request Description\r\n\r\n**Title:** Fix residual loan balances via Newton-Raphson payment calculation\r\n\r\n**Summary**\r\nThis PR addresses a calculation inaccuracy where `ANNUITY` type loans using \"Actual\" day count conventions (e.g., `ACTUAL_365`, `ACTUAL_ACTUAL`) failed to amortize to zero.\r\n\r\n**The Problem**\r\nThe previous implementation relied on the standard closed-form annuity formula:\r\n$$P = L \\cdot \\frac{r(1+r)^n}{(1+r)^n - 1}$$\r\nThis formula assumes that every payment period is identical in length (e.g., 30 days). However, under \"Actual\" day count conventions, months vary (28, 30, 31 days). This mismatch caused the actual accrued interest to drift from the formula's prediction, resulting in a non-zero residual balance at the end of the loan term.\r\n\r\n**The Solution**\r\nWe have implemented a numerical solver to calculate the precise periodic payment required to zero out the loan.\r\n\r\n1.  **`_simulate_schedule`**: A helper method that simulates the full loan term to determine the final balance for a specific payment guess.\r\n2.  **`calculate_precise_payment`**: Uses the **Newton-Raphson method** (specifically the Secant variant) to iteratively refine the payment amount until the final residual balance is within a tolerance of 0.01.\r\n\r\n**Impact**\r\n\r\n  * **Accuracy:** Long-term loans (e.g., 40 years) with Actual day counts now amortize perfectly to 0.\r\n  * **Performance:** The solver typically converges in 2-3 iterations, adding negligible overhead compared to the accuracy gained.\r\n  * **Backward Compatibility:** Loans using `30/360` or user-specified payment amounts are unaffected.\r\n\r\n**Fixed Code:**\r\n\r\n  * `src/pyloan/pyloan.py`: Implementation of solver and integration into `get_payment_schedule`.",
+              "html_url": "https://github.com/darius-lesch/pyloan/pull/69",
+              "number": 69,
+              "pull_request": {
+                "diff_url": "https://github.com/darius-lesch/pyloan/pull/69.diff",
+                "html_url": "https://github.com/darius-lesch/pyloan/pull/69",
+                "merged_at": "2025-11-20T23:02:17Z",
+                "patch_url": "https://github.com/darius-lesch/pyloan/pull/69.patch",
+                "url": "https://api.github.com/repos/darius-lesch/pyloan/pulls/69"
+              },
+              "state": "closed",
+              "title": "Fix annuity calculation for Actual day counts using Newton-Raphson so\u2026"
+            },
+            {
+              "body": "This PR addresses an issue where annuity loans using 'Actual' day count methods (e.g., ACTUAL_365, ACTUAL_ACTUAL) failed to amortize to exactly zero, leaving a residual balance on the final payment.\r\n\r\nThe root cause is a discrepancy between the fixed payment calculation and the daily interest accrual:\r\n1. The annuity formula assumes constant time intervals (standard 30/360 model).\r\n2. 'Actual' methods use variable month lengths (28, 30, 31 days), causing the actual interest accrued to drift slightly from the formula's prediction.\r\n\r\nOver long loan terms (e.g., 40 years), this interest drift accumulates. This patch implements a standard industry resolution by forcing the final principal payment to match the remaining balance exactly. This avoids the heavy computational cost of Newtonian root-finding algorithms required to calculate a \"perfect\" annuity payment for uneven time periods.\r\n\r\nAdditionally, this commit removes a redundant code block in `get_payment_schedule` that was accidentally overwriting the fix.\r\n\r\nResolves Issue #67",
+              "html_url": "https://github.com/darius-lesch/pyloan/pull/68",
+              "number": 68,
+              "pull_request": {
+                "diff_url": "https://github.com/darius-lesch/pyloan/pull/68.diff",
+                "html_url": "https://github.com/darius-lesch/pyloan/pull/68",
+                "merged_at": "2025-11-20T21:32:42Z",
+                "patch_url": "https://github.com/darius-lesch/pyloan/pull/68.patch",
+                "url": "https://api.github.com/repos/darius-lesch/pyloan/pulls/68"
+              },
+              "state": "closed",
+              "title": "Fix residual balance on final payment for 'Actual' day count conventions"
+            },
+            {
+              "body": "pyloan.Loan(\n    loan_amount=108000,\n    interest_rate=3,\n    loan_term=40,\n    start_date=\"2025-03-01\",\n    payment_end_of_month=True,\n    compounding_method=pyloan.CompoundingMethod.ACTUAL_365.value,\n    loan_type='annuity'\n)\nthis produces a schedule that ends with following payment:\nPayment(\n  date=datetime.datetime(2065, 2, 28, 0, 0),\n  payment_amount=Decimal('386.62'),\n  interest_amount=Decimal('1.15'),\n  principal_amount=Decimal('385.47'),\n  special_principal_amount=Decimal('0.00'),\n  total_principal_amount=Decimal('385.47'),\n  loan_balance_amount=Decimal('115.42')\n)\nwhich I think is wrong because the balance is not 0 ?\n\n",
+              "html_url": "https://github.com/darius-lesch/pyloan/issues/67",
+              "number": 67,
+              "pull_request": null,
+              "state": "closed",
+              "title": "[BUG] loan's last payment ends with non-zero balance"
+            }
+          ],
+          "total_count": 3
+        }
+      },
+      {
+        "query": "repo:darius-lesch/pyloan \"final payment\" in:title,body,comments",
+        "result": {
+          "incomplete_results": false,
+          "items": [
+            {
+              "body": "### 2\\. Pull Request Description\r\n\r\n**Title:** Fix residual loan balances via Newton-Raphson payment calculation\r\n\r\n**Summary**\r\nThis PR addresses a calculation inaccuracy where `ANNUITY` type loans using \"Actual\" day count conventions (e.g., `ACTUAL_365`, `ACTUAL_ACTUAL`) failed to amortize to zero.\r\n\r\n**The Problem**\r\nThe previous implementation relied on the standard closed-form annuity formula:\r\n$$P = L \\cdot \\frac{r(1+r)^n}{(1+r)^n - 1}$$\r\nThis formula assumes that every payment period is identical in length (e.g., 30 days). However, under \"Actual\" day count conventions, months vary (28, 30, 31 days). This mismatch caused the actual accrued interest to drift from the formula's prediction, resulting in a non-zero residual balance at the end of the loan term.\r\n\r\n**The Solution**\r\nWe have implemented a numerical solver to calculate the precise periodic payment required to zero out the loan.\r\n\r\n1.  **`_simulate_schedule`**: A helper method that simulates the full loan term to determine the final balance for a specific payment guess.\r\n2.  **`calculate_precise_payment`**: Uses the **Newton-Raphson method** (specifically the Secant variant) to iteratively refine the payment amount until the final residual balance is within a tolerance of 0.01.\r\n\r\n**Impact**\r\n\r\n  * **Accuracy:** Long-term loans (e.g., 40 years) with Actual day counts now amortize perfectly to 0.\r\n  * **Performance:** The solver typically converges in 2-3 iterations, adding negligible overhead compared to the accuracy gained.\r\n  * **Backward Compatibility:** Loans using `30/360` or user-specified payment amounts are unaffected.\r\n\r\n**Fixed Code:**\r\n\r\n  * `src/pyloan/pyloan.py`: Implementation of solver and integration into `get_payment_schedule`.",
+              "html_url": "https://github.com/darius-lesch/pyloan/pull/69",
+              "number": 69,
+              "pull_request": {
+                "diff_url": "https://github.com/darius-lesch/pyloan/pull/69.diff",
+                "html_url": "https://github.com/darius-lesch/pyloan/pull/69",
+                "merged_at": "2025-11-20T23:02:17Z",
+                "patch_url": "https://github.com/darius-lesch/pyloan/pull/69.patch",
+                "url": "https://api.github.com/repos/darius-lesch/pyloan/pulls/69"
+              },
+              "state": "closed",
+              "title": "Fix annuity calculation for Actual day counts using Newton-Raphson so\u2026"
+            },
+            {
+              "body": "This PR addresses an issue where annuity loans using 'Actual' day count methods (e.g., ACTUAL_365, ACTUAL_ACTUAL) failed to amortize to exactly zero, leaving a residual balance on the final payment.\r\n\r\nThe root cause is a discrepancy between the fixed payment calculation and the daily interest accrual:\r\n1. The annuity formula assumes constant time intervals (standard 30/360 model).\r\n2. 'Actual' methods use variable month lengths (28, 30, 31 days), causing the actual interest accrued to drift slightly from the formula's prediction.\r\n\r\nOver long loan terms (e.g., 40 years), this interest drift accumulates. This patch implements a standard industry resolution by forcing the final principal payment to match the remaining balance exactly. This avoids the heavy computational cost of Newtonian root-finding algorithms required to calculate a \"perfect\" annuity payment for uneven time periods.\r\n\r\nAdditionally, this commit removes a redundant code block in `get_payment_schedule` that was accidentally overwriting the fix.\r\n\r\nResolves Issue #67",
+              "html_url": "https://github.com/darius-lesch/pyloan/pull/68",
+              "number": 68,
+              "pull_request": {
+                "diff_url": "https://github.com/darius-lesch/pyloan/pull/68.diff",
+                "html_url": "https://github.com/darius-lesch/pyloan/pull/68",
+                "merged_at": "2025-11-20T21:32:42Z",
+                "patch_url": "https://github.com/darius-lesch/pyloan/pull/68.patch",
+                "url": "https://api.github.com/repos/darius-lesch/pyloan/pulls/68"
+              },
+              "state": "closed",
+              "title": "Fix residual balance on final payment for 'Actual' day count conventions"
+            }
+          ],
+          "total_count": 2
+        }
+      },
+      {
+        "query": "repo:darius-lesch/pyloan \"last payment\" in:title,body,comments",
+        "result": {
+          "incomplete_results": false,
+          "items": [
+            {
+              "body": "pyloan.Loan(\n    loan_amount=108000,\n    interest_rate=3,\n    loan_term=40,\n    start_date=\"2025-03-01\",\n    payment_end_of_month=True,\n    compounding_method=pyloan.CompoundingMethod.ACTUAL_365.value,\n    loan_type='annuity'\n)\nthis produces a schedule that ends with following payment:\nPayment(\n  date=datetime.datetime(2065, 2, 28, 0, 0),\n  payment_amount=Decimal('386.62'),\n  interest_amount=Decimal('1.15'),\n  principal_amount=Decimal('385.47'),\n  special_principal_amount=Decimal('0.00'),\n  total_principal_amount=Decimal('385.47'),\n  loan_balance_amount=Decimal('115.42')\n)\nwhich I think is wrong because the balance is not 0 ?\n\n",
+              "html_url": "https://github.com/darius-lesch/pyloan/issues/67",
+              "number": 67,
+              "pull_request": null,
+              "state": "closed",
+              "title": "[BUG] loan's last payment ends with non-zero balance"
+            }
+          ],
+          "total_count": 1
+        }
+      },
+      {
+        "query": "repo:darius-lesch/pyloan \"specified\" in:title,body,comments",
+        "result": {
+          "incomplete_results": false,
+          "items": [
+            {
+              "body": "### 2\\. Pull Request Description\r\n\r\n**Title:** Fix residual loan balances via Newton-Raphson payment calculation\r\n\r\n**Summary**\r\nThis PR addresses a calculation inaccuracy where `ANNUITY` type loans using \"Actual\" day count conventions (e.g., `ACTUAL_365`, `ACTUAL_ACTUAL`) failed to amortize to zero.\r\n\r\n**The Problem**\r\nThe previous implementation relied on the standard closed-form annuity formula:\r\n$$P = L \\cdot \\frac{r(1+r)^n}{(1+r)^n - 1}$$\r\nThis formula assumes that every payment period is identical in length (e.g., 30 days). However, under \"Actual\" day count conventions, months vary (28, 30, 31 days). This mismatch caused the actual accrued interest to drift from the formula's prediction, resulting in a non-zero residual balance at the end of the loan term.\r\n\r\n**The Solution**\r\nWe have implemented a numerical solver to calculate the precise periodic payment required to zero out the loan.\r\n\r\n1.  **`_simulate_schedule`**: A helper method that simulates the full loan term to determine the final balance for a specific payment guess.\r\n2.  **`calculate_precise_payment`**: Uses the **Newton-Raphson method** (specifically the Secant variant) to iteratively refine the payment amount until the final residual balance is within a tolerance of 0.01.\r\n\r\n**Impact**\r\n\r\n  * **Accuracy:** Long-term loans (e.g., 40 years) with Actual day counts now amortize perfectly to 0.\r\n  * **Performance:** The solver typically converges in 2-3 iterations, adding negligible overhead compared to the accuracy gained.\r\n  * **Backward Compatibility:** Loans using `30/360` or user-specified payment amounts are unaffected.\r\n\r\n**Fixed Code:**\r\n\r\n  * `src/pyloan/pyloan.py`: Implementation of solver and integration into `get_payment_schedule`.",
+              "html_url": "https://github.com/darius-lesch/pyloan/pull/69",
+              "number": 69,
+              "pull_request": {
+                "diff_url": "https://github.com/darius-lesch/pyloan/pull/69.diff",
+                "html_url": "https://github.com/darius-lesch/pyloan/pull/69",
+                "merged_at": "2025-11-20T23:02:17Z",
+                "patch_url": "https://github.com/darius-lesch/pyloan/pull/69.patch",
+                "url": "https://api.github.com/repos/darius-lesch/pyloan/pulls/69"
+              },
+              "state": "closed",
+              "title": "Fix annuity calculation for Actual day counts using Newton-Raphson so\u2026"
+            },
+            {
+              "body": "**Is your feature request related to a problem? Please describe.**\r\nWhen payment_amount is not specified explicitly, then calculate payment_amount that would fully amortize the loan_amount over the loan_term.\r\n\r\n**Describe the solution you'd like**\r\n\r\n1. Allows payment_amount to take value of None.\r\n2. When payment_amount is None, then fully amortize the loan_amount over the loan_term. To do so, introduce a calculate payment amount that would fully amortize the loan as\r\n\r\nloan_amount*((interest_rate/annual_payments)*(1+(interest_rate/annual_payments))**(no_of_payments))/((1+(interest_rate/annual_payments))**(no_of_payments)-1)\r\n",
+              "html_url": "https://github.com/darius-lesch/pyloan/issues/15",
+              "number": 15,
+              "pull_request": null,
+              "state": "closed",
+              "title": "Fully amortize loan when payment_amount is none [FEATURE]"
+            }
+          ],
+          "total_count": 2
+        }
+      }
+    ],
+    "all_state": true,
+    "exact_prior_explicit_underpayment_report_found": false,
+    "all_issue_inventory": {
+      "count": 69,
+      "latest": {
+        "number": 69,
+        "title": "Fix annuity calculation for Actual day counts using Newton-Raphson so\u2026",
+        "updated_at": "2026-06-08T14:55:38Z"
+      },
+      "numbers": [
+        69,
+        68,
+        67,
+        66,
+        65,
+        64,
+        63,
+        62,
+        61,
+        60,
+        59,
+        58,
+        57,
+        56,
+        55,
+        54,
+        53,
+        52,
+        51,
+        50,
+        49,
+        48,
+        47,
+        46,
+        45,
+        44,
+        43,
+        42,
+        41,
+        40,
+        39,
+        38,
+        37,
+        36,
+        35,
+        34,
+        33,
+        32,
+        31,
+        30,
+        29,
+        28,
+        27,
+        26,
+        25,
+        24,
+        23,
+        22,
+        21,
+        20,
+        19,
+        18,
+        17,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "open": []
+    },
+    "all_issue_titles": [
+      {
+        "number": 69,
+        "title": "Fix annuity calculation for Actual day counts using Newton-Raphson so\u2026",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 68,
+        "title": "Fix residual balance on final payment for 'Actual' day count conventions",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 67,
+        "title": "[BUG] loan's last payment ends with non-zero balance",
+        "state": "closed",
+        "pr": false
+      },
+      {
+        "number": 66,
+        "title": "Rework Day Count Methods & Update Docs",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 65,
+        "title": "Added debug functiionality",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 64,
+        "title": "Develop",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 63,
+        "title": "Fix/respect first payment date",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 62,
+        "title": "Update to ReadTheDocs documentation",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 61,
+        "title": "Prepare for Release v0.6.7",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 60,
+        "title": "Fix: Correct interest calculation for special payments",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 59,
+        "title": "Fixed bug related to day count refactoring",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 58,
+        "title": "Refactor: Make codebase consistent with _day_count.py",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 57,
+        "title": "Bumping version",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 56,
+        "title": "Correction of the Release Config",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 55,
+        "title": "Correction and simplification of day count methods",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 54,
+        "title": "Fixing Bug Related to Special Payments on Non-Regular Payment Dates",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 53,
+        "title": "Fixes a bug in the loan calculation logic where special payments made\u2026",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 52,
+        "title": "Updated ReadTheDocs Configurations",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 51,
+        "title": "Releasing v0.6.0",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 50,
+        "title": "Update quickstart.rst to align with refactored code",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 49,
+        "title": "Refactor and Improve PyLoan Codebase",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 48,
+        "title": "Untrack Irrelevant Files",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 47,
+        "title": "Merging v0.5.0 into master",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 46,
+        "title": "Code Refactoring and Resolving Issues",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 45,
+        "title": "Refactor pyloan",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 44,
+        "title": "Allow to set loan_term in terms of months instead of years [FEATURE]",
+        "state": "closed",
+        "pr": false
+      },
+      {
+        "number": 43,
+        "title": "Minor Typo Correction",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 42,
+        "title": "Pull request related to version v0.4.5",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 41,
+        "title": "Included requirements",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 40,
+        "title": "Develop",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 39,
+        "title": "Remove time from date varialbe in the loan_schedule [FEATURE]",
+        "state": "closed",
+        "pr": false
+      },
+      {
+        "number": 38,
+        "title": "Removed old versions from dist.",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 37,
+        "title": "Added skip existing option to python-publish.yml",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 36,
+        "title": "Release of version 0.3.4 with fixed README.rst reference in setup.py",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 35,
+        "title": "Develop",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 34,
+        "title": "Adds loan_type argument to Loan class. Fixes #27",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 33,
+        "title": "Fixes missing documentation links",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 32,
+        "title": "Realse v0.1.2",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 31,
+        "title": "Fixes rendering of README.rst on PyPI",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 30,
+        "title": "Fixes long_description file reference",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 29,
+        "title": "Develop",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 28,
+        "title": "Changes to Documentation Folder Structure",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 27,
+        "title": "Allow linear and interest-only mortgage types [FEATURE]",
+        "state": "closed",
+        "pr": false
+      },
+      {
+        "number": 26,
+        "title": "Develop",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 25,
+        "title": "New method that summarizes loan details.",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 24,
+        "title": "Added interest rate compounding methods 'Actual/Actual AFB'",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 23,
+        "title": "Introduce method 'get_julian_day_number' which fixes #22",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 22,
+        "title": "Improve computation of the julian day difference calculation [FEATURE]",
+        "state": "closed",
+        "pr": false
+      },
+      {
+        "number": 21,
+        "title": "Added 'A/A ISDA' interest rate comounding method",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 20,
+        "title": "Introduce interest-only period. Fixes #18",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 19,
+        "title": "Introduce validation rules for Loan arguments [FEATURE]",
+        "state": "closed",
+        "pr": false
+      },
+      {
+        "number": 18,
+        "title": "Add interest only period functionality [FEATURE]",
+        "state": "closed",
+        "pr": false
+      },
+      {
+        "number": 17,
+        "title": "Release v0.0.2",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 16,
+        "title": "Develop",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 15,
+        "title": "Fully amortize loan when payment_amount is none [FEATURE]",
+        "state": "closed",
+        "pr": false
+      },
+      {
+        "number": 14,
+        "title": "Version 0.0.1.8",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 13,
+        "title": "Issue Templates",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 12,
+        "title": "Update issue templates",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 11,
+        "title": "version 0.0.1.7",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 10,
+        "title": "fixed special payment issue for Python v.3.9 and higher",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 9,
+        "title": "fix a typo",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 8,
+        "title": "special payment fix",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 7,
+        "title": "extend documentation for special payments",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 6,
+        "title": "version 0.0.1.5 upload to PyPI",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 5,
+        "title": "implementation of special repayments",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 4,
+        "title": "Added get_loan_summary() method",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 3,
+        "title": "Develop",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 2,
+        "title": "Develop",
+        "state": "closed",
+        "pr": true
+      },
+      {
+        "number": 1,
+        "title": "Added 30/360 methods for interest rate compounding",
+        "state": "closed",
+        "pr": true
+      }
+    ],
+    "result": "Six fresh all-state title/body/comment searches found only issue15, issue67 and PR68/69; relevant bodies, full returned diffs and comments were read. No exact earlier proposed guard for explicit payment_amount or exact report of the documented-partial-amortization regression found. No claim of exhaustive private/unindexed coverage.",
+    "prior_gero_filename_check": [],
+    "catalog_scope": "Report filenames only: pyloan match empty; parent must retain its full catalog check."
+  },
+  "independent_validation_plan": {
+    "restriction": "Agent did not execute numerical code; root has the single configured numerical worker.",
+    "invariant": "For an explicit annuity payment P exceeding current period interest and below remaining balance plus interest, with no special payment, each regular gross payment must equal P; recurring balance follows B_next = B + rounded_interest - P. At term, a positive residual is allowed by the documented contract.",
+    "comparisons": [
+      "Run current master and official PyPI0.7.2 with the same under-amortizing explicit annuity input.",
+      "Run v0.7.0 control and v0.7.1 introduction point to show the regression boundary.",
+      "Use a simple rate exactly representable in both old and new rate quantization (e.g.1.1% or12%) and conventional full monthly30E/360ISDA periods to avoid mixing rate-precision/day-count changes.",
+      "Check auto-payment annuity and interest-only controls so a targeted explicit-payment guard does not undo issue67.",
+      "Keep a test with normal complete repayment/early repayment where final payment can be less than P; the invariant is not that every possible final payment must always equal P."
+    ]
+  },
+  "vendor_route": {
+    "url": "https://github.com/darius-lesch/pyloan/issues/new?template=bug_report.md",
+    "template": {
+      "content": "---\nname: Bug report\nabout: Create a report to help us improve\ntitle: \"[BUG]\"\nlabels: bug\nassignees: sudo-dakix\n\n---\n\n**Describe the bug**\nA clear and concise description of what the bug is.\n\n**To Reproduce**\nSteps to reproduce the behavior.\n\n**Expected behavior**\nA clear and concise description of what you expected to happen.\n\n**Screenshots**\nIf applicable, add screenshots to help explain your problem.\n\n**Desktop (please complete the following information):**\n - OS: [e.g. Windows, macOS, Linux]\n - Python version [e.g. v3.6, v3.7, v3.8, v3.9]\n - PyLoan version [e.g. v0.0.1.7, v0.0.1.8]\n\n**Additional context**\nAdd any other context about the problem here.\n",
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "sha": "2011d4b179b0e494175d2a46a1b30489aa6997dc"
+    },
+    "contribution_rules": "AGENTS requests tests for bug fixes and docs updates for user-facing changes. Official tracker is the bug route; no no-AI attestation found in inspected bug template/CONTRIBUTING. No message sent."
+  },
+  "limits": [
+    "No numerical execution/build/install/download by this agent.",
+    "PyPI current JSON unavailable through web cache; do not overstate artifact content verification.",
+    "Source reveals intended balloon adjustment, but not an explicit contract decision abolishing partially amortizing user-set payments.",
+    "Publication/newness depends on root's actual reproducer and fresh pre-disclosure checks."
+  ]
+}

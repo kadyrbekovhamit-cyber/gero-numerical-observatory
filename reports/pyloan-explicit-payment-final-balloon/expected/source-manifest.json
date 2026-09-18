@@ -1,0 +1,89 @@
+{
+  "pin": "73a052cb40f9c23963fbc1ec4370aa7ac9c3efc1",
+  "files": {
+    "LICENSE": {
+      "git_blob": "b96e833931367d41b370ca185ef54f6f3c4edacf",
+      "sha256": "05a5741ae612d1c227a978deb886999cf24c8381799acbc15adaa3c66619d82d"
+    },
+    "requirements.txt": {
+      "git_blob": "0f08daace31c63d82bcedba38ea6cdf9ed5d6215",
+      "sha256": "a748b565200145753ec20af3f76293b7b9093db03af7d0845e2d289b51013511"
+    },
+    "CONTRIBUTING.rst": {
+      "git_blob": "c557e357f84e925ad6edf5ba281689907ab35cb3",
+      "sha256": "ccdc30f479abcc59ef7dc7e425573394d9c2b3ae6580b0ee5a79a5ddfafdf893"
+    },
+    "setup.cfg": {
+      "git_blob": "62e89f15e4d3e93ddffd319c3dafdba5f7016ede",
+      "sha256": "9ed95ac4375ad591b009af48ea2afd629d9677d77119ac292d0b89c02b1a5ab3"
+    },
+    "AGENTS.md": {
+      "git_blob": "5fe87b01545d2695d367bad202d0ae36d4581108",
+      "sha256": "3dc90fbe20beb8e3f93890a1b53c9da1068612bb194024a45fa49e860fcb9491"
+    },
+    "tests/test_loan_scenarios.py": {
+      "git_blob": "d1d041ebc40835c6d879d4db3b0490666ddd7702",
+      "sha256": "da1cd8dcfa724998948ded82ed3a994f434ee67046ed9198b664e0628d3231a2"
+    },
+    "tests/scenarios.json": {
+      "git_blob": "df88742da0674ef32713874d509595933a346c89",
+      "sha256": "05f91409a2e275846f524b573aaa16b3d9f60085af763476d365505abf318a19"
+    },
+    "tests/snapshot_helper.py": {
+      "git_blob": "32a36098a0dd07c505dbfae3c71721f57a25d837",
+      "sha256": "1caf263e5ad00504b4bc741e56827f08db45472e26c04fb57cc5a4064299bd75"
+    },
+    "tests/test_pyloan.py": {
+      "git_blob": "008996efcee27a30c02f9a46a45b936a6c683587",
+      "sha256": "bce996f45e1b456c1f5af84df7986bf9c22cd5b6ab9d3d1f54b47a6ab2c4a048"
+    },
+    "tests/snapshots/bug_special_payment_on_odd_date.json": {
+      "git_blob": "813a97a88004f1b62602a43f2a3b06cc68844ad6",
+      "sha256": "77c9b610857310cad2ad6649be4a0bd53df70ee5be6199a626551cefe934708e"
+    },
+    "tests/snapshots/annuity_with_special_payment.json": {
+      "git_blob": "999687b7a08bfe3be01e3c194744b1afc7d8f073",
+      "sha256": "c7d2a229f82f6d908739b4166c6094c57359b3f3823979f4d6f4bacf0ae57153"
+    },
+    "tests/snapshots/linear_loan_with_interest_only.json": {
+      "git_blob": "4c5d7acc3a29da813e3da33ee0536182752a8dac",
+      "sha256": "28cc3bf55a78b6bff331db46a927f0e7e6904b5acd7921b0051ce13890142c88"
+    },
+    "tests/snapshots/standard_annuity_loan.json": {
+      "git_blob": "5541806b372a46b8486e6345d413e7f18513b11c",
+      "sha256": "df8b4eec065d2d9155b31dfde01e8bd460e1918178d8d1cb39bbb72b373f8dc4"
+    },
+    "tests/snapshots/annuity_loan_term_in_months.json": {
+      "git_blob": "5541806b372a46b8486e6345d413e7f18513b11c",
+      "sha256": "df8b4eec065d2d9155b31dfde01e8bd460e1918178d8d1cb39bbb72b373f8dc4"
+    },
+    "src/__init__.py": {
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/pyloan/_validators.py": {
+      "git_blob": "10bdcc04e04aa08604b5302bd5e905e028d03125",
+      "sha256": "94f910625910ce14c3902af9c204cf39232322086c9616870db9e1aa88ffb510"
+    },
+    "src/pyloan/__init__.py": {
+      "git_blob": "eb9008e8df579bc220b647fea888951e6cf4ac8f",
+      "sha256": "abc7cef6950e6dbc568b7c0fa5f9cf5b08c058c89c085d836ec5c08bc0694702"
+    },
+    "src/pyloan/_enums.py": {
+      "git_blob": "5e9e9de22e444bc3e9422d268e12bc31ed7837d7",
+      "sha256": "6486873462bc0243e3c229c5b6d61f485e11c545d6a8bc0ae257d0828a592544"
+    },
+    "src/pyloan/pyloan.py": {
+      "git_blob": "d742b696b6cba5892229186fe164756cf469b8c0",
+      "sha256": "b288641f5cfaecaabfd2308ddd4ee35f21c0634ec48a2766902d8b4596cc4bde"
+    },
+    "src/pyloan/_day_count.py": {
+      "git_blob": "19115ef735fa6a140c4d6b974417bc1596124d28",
+      "sha256": "3fc1d93580e56087591d04386a9f89e7ebbdabe12efbe6decd157e834b74b6be"
+    },
+    "src/pyloan/_models.py": {
+      "git_blob": "53acad1da5fff9cf4a5e487b79324683e55b5376",
+      "sha256": "8dd81afc253ee0c00166901e285ec31aa7376a1bf190525a803acbae0270fcd6"
+    }
+  }
+}

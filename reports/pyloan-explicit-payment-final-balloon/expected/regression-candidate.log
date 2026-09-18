@@ -1,0 +1,10 @@
+test_automatic_annuity_still_closes_balance (__main__.ExplicitPaymentRegression.test_automatic_annuity_still_closes_balance) ... ok
+test_early_repayment_caps_payment_to_debt (__main__.ExplicitPaymentRegression.test_early_repayment_caps_payment_to_debt) ... ok
+test_interest_only_retains_principal (__main__.ExplicitPaymentRegression.test_interest_only_retains_principal) ... ok
+test_partial_amortization_preserves_final_payment (__main__.ExplicitPaymentRegression.test_partial_amortization_preserves_final_payment) ... ok
+test_summary_reports_positive_residual (__main__.ExplicitPaymentRegression.test_summary_reports_positive_residual) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.004s
+
+OK

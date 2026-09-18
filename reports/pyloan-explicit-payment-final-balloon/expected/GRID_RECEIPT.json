@@ -1,0 +1,46 @@
+{
+  "current": {
+    "cases": 864,
+    "payment_cap_failures": 408,
+    "exact_oracle_mismatches": 420,
+    "controls": 60,
+    "grid_sha256": "43593868e259175a8ca611ecb6523b3ffa3b61f7dbf7047bc0bd16767045c117"
+  },
+  "release": {
+    "cases": 864,
+    "payment_cap_failures": 408,
+    "exact_oracle_mismatches": 420,
+    "controls": 60,
+    "grid_sha256": "43593868e259175a8ca611ecb6523b3ffa3b61f7dbf7047bc0bd16767045c117"
+  },
+  "prior_release": {
+    "cases": 864,
+    "payment_cap_failures": 0,
+    "exact_oracle_mismatches": 24,
+    "controls": 60,
+    "grid_sha256": "12504094346271280298f917f14ceeebbc911a18f50a2ec85f196a60986dcedc"
+  },
+  "candidate": {
+    "cases": 864,
+    "payment_cap_failures": 0,
+    "exact_oracle_mismatches": 24,
+    "controls": 60,
+    "grid_sha256": "12504094346271280298f917f14ceeebbc911a18f50a2ec85f196a60986dcedc"
+  },
+  "restored": {
+    "cases": 864,
+    "payment_cap_failures": 408,
+    "exact_oracle_mismatches": 420,
+    "controls": 60,
+    "grid_sha256": "43593868e259175a8ca611ecb6523b3ffa3b61f7dbf7047bc0bd16767045c117"
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "platform": "macOS-15.5-arm64-arm-64bit",
+    "precision": 28,
+    "rounding": "ROUND_HALF_EVEN"
+  },
+  "current_release_byte_identical": true,
+  "current_restored_byte_identical": true,
+  "candidate_controls_identical": true
+}

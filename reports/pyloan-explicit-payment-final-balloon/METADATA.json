@@ -1,0 +1,12 @@
+{
+  "id": "pyloan-explicit-payment-final-balloon",
+  "title": "PyLoan replaces an explicit 100 payment with a 919.10 final payment",
+  "summary": "PyLoan 0.7.2 overrides a specified annuity payment at maturity. A synthetic schedule pays 919.10 instead of 100; a targeted candidate removes 408 payment-cap violations in 864 scenarios. Separate rounding differences and unchanged upstream test failures are retained.",
+  "source_pin": "73a052cb40f9c23963fbc1ec4370aa7ac9c3efc1",
+  "release": "0.7.2",
+  "publication_date": "2026-09-18",
+  "author": "Xamit Kadirbekov",
+  "maintainer_issue": "https://github.com/darius-lesch/pyloan/issues/70",
+  "implementation_defects": 1,
+  "limitations": "Synthetic library schedules; no bank deployment or customer harm claim. 24 exact-oracle rounding differences remain; upstream unittest suite retains three baseline failure reports. Candidate only, not accepted upstream."
+}

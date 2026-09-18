@@ -1,0 +1,68 @@
+{
+  "upstream-current": {
+    "exit_code": 1,
+    "log": "<WORKSPACE>/evidence/upstream-current.log",
+    "tail": [
+      "",
+      "----------------------------------------------------------------------",
+      "Ran 16 tests in 0.238s",
+      "",
+      "FAILED (failures=3)"
+    ]
+  },
+  "regression-current": {
+    "exit_code": 1,
+    "log": "<WORKSPACE>/evidence/regression-current.log",
+    "tail": [
+      "",
+      "----------------------------------------------------------------------",
+      "Ran 5 tests in 0.004s",
+      "",
+      "FAILED (failures=2)"
+    ]
+  },
+  "upstream-candidate": {
+    "exit_code": 1,
+    "log": "<WORKSPACE>/evidence/upstream-candidate.log",
+    "tail": [
+      "",
+      "----------------------------------------------------------------------",
+      "Ran 16 tests in 0.239s",
+      "",
+      "FAILED (failures=3)"
+    ]
+  },
+  "regression-candidate": {
+    "exit_code": 0,
+    "log": "<WORKSPACE>/evidence/regression-candidate.log",
+    "tail": [
+      "",
+      "----------------------------------------------------------------------",
+      "Ran 5 tests in 0.004s",
+      "",
+      "OK"
+    ]
+  },
+  "upstream-restored": {
+    "exit_code": 1,
+    "log": "<WORKSPACE>/evidence/upstream-restored.log",
+    "tail": [
+      "",
+      "----------------------------------------------------------------------",
+      "Ran 16 tests in 0.240s",
+      "",
+      "FAILED (failures=3)"
+    ]
+  },
+  "regression-restored": {
+    "exit_code": 1,
+    "log": "<WORKSPACE>/evidence/regression-restored.log",
+    "tail": [
+      "",
+      "----------------------------------------------------------------------",
+      "Ran 5 tests in 0.005s",
+      "",
+      "FAILED (failures=2)"
+    ]
+  }
+}

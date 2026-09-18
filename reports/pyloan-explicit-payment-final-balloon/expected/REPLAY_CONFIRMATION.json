@@ -1,0 +1,14 @@
+{
+  "previously_passing_cap_controls_unchanged": 456,
+  "candidate_explicit_outputs_equal_prior_0_7_0": true,
+  "upstream_test_output_identical_except_paths_and_time": true,
+  "official_source_files_after_tests": 21,
+  "pypi_source_modules_equal_current": true,
+  "primary_invariant": "explicit annuity payment cap",
+  "secondary_exact_oracle_residuals": {
+    "candidate_scenarios": 24,
+    "maximum_difference": "0.02",
+    "status": "also present in0.7.0; outside this correction; retained not suppressed"
+  },
+  "full_upstream_suite_green": false
+}

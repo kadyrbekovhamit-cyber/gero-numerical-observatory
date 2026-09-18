@@ -1,0 +1,20 @@
+{
+  "reviewed_at": "2026-09-18T17:34:20.808082+00:00",
+  "current_pin": "73a052cb40f9c23963fbc1ec4370aa7ac9c3efc1",
+  "upstream": "https://github.com/darius-lesch/pyloan",
+  "source_manifest": "expected/source-manifest.json",
+  "release_metadata": [
+    "expected/pypi-0.7.0.json",
+    "expected/pypi-0.7.2.json"
+  ],
+  "prior_work": [
+    "https://github.com/darius-lesch/pyloan/issues/15",
+    "https://github.com/darius-lesch/pyloan/issues/67",
+    "https://github.com/darius-lesch/pyloan/pull/68",
+    "https://github.com/darius-lesch/pyloan/pull/69"
+  ],
+  "contract": "https://github.com/darius-lesch/pyloan/blob/73a052cb40f9c23963fbc1ec4370aa7ac9c3efc1/docs/docsrc/source/quickstart.rst#L69",
+  "vendor_report": "https://github.com/darius-lesch/pyloan/issues/70",
+  "duplicate_review": "expected/duplicate-SOURCES.json",
+  "source_license": "MIT; original notice retained in LICENSE and source/LICENSE"
+}

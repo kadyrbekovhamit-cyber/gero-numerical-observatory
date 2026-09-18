@@ -1,0 +1,52 @@
+{
+  "inputs": {
+    "loan_amount": 1000,
+    "interest_rate": 12,
+    "months": 2,
+    "payment_amount": 100,
+    "start_date": "2026-01-01",
+    "method": "30E/360 ISDA"
+  },
+  "actual": [
+    {
+      "date": "2026-01-01 00:00:00",
+      "payment_amount": "0.00",
+      "interest_amount": "0.00",
+      "principal_amount": "0.00",
+      "special_principal_amount": "0.00",
+      "total_principal_amount": "0.00",
+      "loan_balance_amount": "1000.00"
+    },
+    {
+      "date": "2026-02-01 00:00:00",
+      "payment_amount": "100.00",
+      "interest_amount": "10.00",
+      "principal_amount": "90.00",
+      "special_principal_amount": "0.00",
+      "total_principal_amount": "90.00",
+      "loan_balance_amount": "910.00"
+    },
+    {
+      "date": "2026-03-01 00:00:00",
+      "payment_amount": "919.10",
+      "interest_amount": "9.10",
+      "principal_amount": "910.00",
+      "special_principal_amount": "0.00",
+      "total_principal_amount": "910.00",
+      "loan_balance_amount": "0.00"
+    }
+  ],
+  "reference": [
+    {
+      "payment": "100.00",
+      "interest": "10.00",
+      "balance": "910.00"
+    },
+    {
+      "payment": "100.00",
+      "interest": "9.10",
+      "balance": "819.10"
+    }
+  ],
+  "claim_scope": "current master source, two synthetic monthly payments"
+}
