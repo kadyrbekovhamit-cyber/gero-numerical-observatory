@@ -97,3 +97,6 @@ Review covered 260 public issue/PR title-body records, 30 target-file history en
 This establishes the corrected duration identity for the stated synthetic scenarios and the continued defect in the tested released wheel. Other yield conventions, invalid inputs, all vector/batch shapes, performance, the full test suite, bank deployment and actual financial losses are outside the evidence. The report does not recommend an investment or replace a production risk-model review.
 
 Original source and tests retain GPL-3.0-or-later and their notices. Original GERO prose is CC BY 4.0. AI assisted source review, harness preparation and editing; quantitative claims come from recorded executions and independent mathematical references. No affiliation with FinancePy is implied.
+
+
+Publication update, 18 September 2026: [Reproduction archive and DOI](https://zenodo.org/records/22820394), [LinkedIn discussion](https://www.linkedin.com/feed/update/urn:li:share:7506530627228160000/), [33-second English video](https://youtube.com/shorts/1_uu1wAUD38). Original diagrams and disclosed synthetic narration. This verifies the existing upstream correction; no bank deployment or customer-loss claim.
