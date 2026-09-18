@@ -70,3 +70,15 @@ Research and report preparation were AI-assisted. The reported outputs came from
 
 
 [Complete reproduction archive](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/mlflow-ndcg-document-id-collision/gero-mlflow-ndcg-id-collision-evidence-2026-09-18.zip) (SHA-256 `0e9ccf4cf38ad9140b81914c1f34c916054b07ca5563597d4073b3b8d68473c0`). Includes executed scripts, original and candidate source, observations, frozen dependencies, prior-work review and submission receipt. Video and other mirrors will be linked after verification.
+
+
+## Publication update — 18 September 2026
+
+- [github](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlflow-ndcg-document-id-collision.md)
+- [gero](https://www.gero.uz/research/articles/mlflow-ndcg-document-id-collision.html)
+- [youtube](https://youtube.com/shorts/vYrG6uPEIUE)
+- [zenodo](https://zenodo.org/records/22827379)
+- [linkedin](https://www.linkedin.com/feed/update/urn:li:share:7506638239110385664/)
+- [huggingface](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlflow-ndcg-document-id-collision.md)
+
+The public 34-second video uses original diagrams and disclosed synthetic narration. The vendor report preceded publication. No upstream acceptance is claimed.

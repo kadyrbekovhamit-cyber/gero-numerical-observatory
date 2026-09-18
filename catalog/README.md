@@ -1,14 +1,14 @@
 # GERO — publication catalogue
 
-Updated 17 September 2026. **109 distinct catalogue publications.** Report counts are not independent-defect counts. All 108 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
+Updated 18 September 2026. **109 distinct catalogue publications.** Report counts are not independent-defect counts. All 108 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
 
 [Machine-readable catalogue](publications.json) · [Coverage](platform-status.json) · [Checksums](SHA256SUMS).
 
 |Platform|Verified catalogue reports|
 |---|---:|
-|gero|108|
-|huggingface|108|
-|zenodo|108|
+|gero|109|
+|huggingface|109|
+|zenodo|109|
 |github_catalog_report|109|
 
 The FinancePy FXForward and MLX sigmoid reports each have GERO, GitHub, LinkedIn, Zenodo, Hugging Face and YouTube publications. Overall coverage is shown above; no equal count across all external account collections is claimed.
@@ -123,7 +123,7 @@ The FinancePy FXForward and MLX sigmoid reports each have GERO, GitHub, LinkedIn
 | 106 | [actuarialmath Beta: a missing survival factor changes expected insurance benefits](reports/actuarialmath-beta-density.md) | [Page](https://www.gero.uz/research/articles/actuarialmath-beta-density.html) | [Report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/actuarialmath-beta-density.md) | [DOI](https://zenodo.org/records/22810874) | [Report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-beta-density.md) |
 | 107 | [FinancePy BondZero: verifying the upstream fix for a 10,000-fold duration error](reports/financepy-bond-zero-modified-duration-scale.md) | [GERO](https://www.gero.uz/research/articles/financepy-bond-zero-modified-duration-scale.html) | [Hugging Face](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-bond-zero-modified-duration-scale.md) | [Zenodo](https://zenodo.org/records/22820394) | [Report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-bond-zero-modified-duration-scale.md) |
 | 108 | [MLX rsqrt: finite directional derivatives lost to an intermediate ratio](reports/mlx-rsqrt-directional-derivative-scale.md) | [GERO](https://www.gero.uz/research/articles/mlx-rsqrt-directional-derivative-scale.html) | [Hugging Face](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-rsqrt-directional-derivative-scale.md) | [Zenodo](https://zenodo.org/records/22817495) | [Report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-rsqrt-directional-derivative-scale.md) |
-| 109 | [MLflow NDCG: irrelevant retrievals score above zero after a document-ID collision](reports/mlflow-ndcg-document-id-collision.md) | Pending | Pending | Pending | [Report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlflow-ndcg-document-id-collision.md) |
+| 109 | [MLflow NDCG: irrelevant retrievals score above zero after a document-ID collision](reports/mlflow-ndcg-document-id-collision.md) | [GERO](https://www.gero.uz/research/articles/mlflow-ndcg-document-id-collision.html) | [Hugging Face](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlflow-ndcg-document-id-collision.md) | [Zenodo](https://zenodo.org/records/22827379) | [Report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlflow-ndcg-document-id-collision.md) |
 
 Vasicek distribution completed on six channels: [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506071696911609857/) · [English Short](https://youtube.com/shorts/k-VGcx7o_LM).
 

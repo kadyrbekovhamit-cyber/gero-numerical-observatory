@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-18T08:46:16.117879+00:00",
+  "checked_at": "2026-09-18T09:03:36.655025+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 108,
-    "huggingface": 108,
-    "zenodo": 108,
+    "gero": 109,
+    "huggingface": 109,
+    "zenodo": 109,
     "github_catalog_report": 109,
-    "zenodo_records_including_collection": 109,
+    "zenodo_records_including_collection": 110,
     "unique_individual_publications": 109,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "109 canonical reports. MLflow vendor-first archive public onGitHub, five other channels pending.",
+  "github_status": "109 canonical reports have verified GitHub, GERO, Hugging Face and Zenodo copies. MLflow publication completed on all six channels after vendor notification. Social/video coverage is not global parity.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -20,15 +20,9 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [
-      "mlflow-ndcg-document-id-collision"
-    ],
-    "huggingface": [
-      "mlflow-ndcg-document-id-collision"
-    ],
-    "zenodo": [
-      "mlflow-ndcg-document-id-collision"
-    ]
+    "gero": [],
+    "huggingface": [],
+    "zenodo": []
   },
   "deduplication_notes": [
     "All 97 previous report IDs preserved; one CIR pricing component report appended.",
@@ -46,7 +40,7 @@
     "17 September: Beta density archival distribution completed on six channels. Existing issue 5 retained; no second discovery. All 105 previous canonical publication objects preserved; Collatz remains outside the 106-report subset.",
     "17September: portable BondZero archive published onGitHub andGERO as a resolved-case verification. Current source fixed inbb10c393; official1.1.2stillaffected.106prior canonical objects preserved. No second issue, new-discovery claim or video upload. Four remaining channels queued."
   ],
-  "parity_complete": false,
+  "parity_complete": true,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "archival_backfill": {
     "date": "2026-09-16",
@@ -65,46 +59,40 @@
       ],
       "publication_date": "2026-09-18",
       "kind": "published_report",
-      "gero": null,
-      "huggingface": null,
-      "zenodo": null,
+      "gero": "https://www.gero.uz/research/articles/mlflow-ndcg-document-id-collision.html",
+      "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlflow-ndcg-document-id-collision.md",
+      "zenodo": "https://zenodo.org/records/22827379",
       "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlflow-ndcg-document-id-collision",
       "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlflow-ndcg-document-id-collision.md",
       "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlflow-ndcg-document-id-collision.md",
       "source_text_sha256": "61850913d9b5a336b9d303e81869706dc96f05e126d47897d0e42e8c8bab11f1",
-      "mirror_sha256": "61850913d9b5a336b9d303e81869706dc96f05e126d47897d0e42e8c8bab11f1",
+      "mirror_sha256": "c7eca077ce3101ab7cf935efbfce884d96bc11d183d8315a607ed38b90d83940",
       "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/mlflow-ndcg-document-id-collision/gero-mlflow-ndcg-id-collision-evidence-2026-09-18.zip",
       "evidence_archive_sha256": "0e9ccf4cf38ad9140b81914c1f34c916054b07ca5563597d4073b3b8d68473c0",
-      "linkedin": null,
-      "youtube": null,
+      "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506638239110385664/",
+      "youtube": "https://youtube.com/shorts/vYrG6uPEIUE",
       "maintainer_issue": "https://github.com/mlflow/mlflow/issues/25965",
       "implementation_defects_in_this_report": 1,
-      "publication_status": "Vendor notified first; GitHub report public. Other five channels pending. Local candidate, no upstream acceptance.",
+      "publication_status": "Verified public on all six channels after vendor report25965. Candidate correction only; no upstream acceptance or production impact claimed.",
       "limits": "Deprecated ndcg_at_k API in3.16.1 and byte-identical pinned module;1810synthetic cases214→0→214. No full-suite, hosted Databricks, real retrieval-model, customer-loss or performance claim.",
-      "source_pin": "35758a9a954422200034b949176879c2cbbe4a8a"
+      "source_pin": "35758a9a954422200034b949176879c2cbbe4a8a",
+      "zenodo_doi": "10.5281/zenodo.22827379"
     }
   ],
-  "coverage_scope": "108 canonical IDs. Separate Collatz research map is outside this subset; counts are reports, not defects or all external account totals.",
+  "coverage_scope": "109 canonical report IDs. Separate Collatz research map is outside this subset; HF and GERO list110 with it. Counts are reports, not independent defects or total account objects.",
   "latest_completed_distribution": {
-    "id": "actuarialmath-beta-density",
-    "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-beta-density.md",
-    "gero": "https://www.gero.uz/research/articles/actuarialmath-beta-density.html",
-    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/actuarialmath-beta-density.md",
-    "zenodo": "https://zenodo.org/records/22810874",
-    "youtube": "https://youtube.com/shorts/faLB656CM4o",
-    "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506303089675710464/",
-    "archive_sha256": "a69cdc5a5a4943425d715c0a97b4bf97eaf2c97c7f04957733cec9b8bff819d0",
-    "archive_bytes": 681807,
-    "maintainer_followup": "https://github.com/terence-lim/actuarialmath/issues/5#issuecomment-5713168772",
-    "github_archive_commit": "9298b3aafbe5056eabb7caf274efcacbe36f1337",
-    "huggingface_commit": "165ddca29e438c9afcb7e7f95756d9a2c5e0f0e3",
-    "zenodo_doi": "10.5281/zenodo.22810874",
-    "gero_deployment": "dpl_8Y3ro6pEtBHhpzikXDMyJLNpchUR",
-    "verified_at": "2026-09-17T10:54:16.603555+00:00",
-    "original_finding_date": "2026-09-15",
-    "current_source_replay_date": "2026-09-17",
-    "youtube_reused": false,
-    "no_media_binary_in_research_archives": true,
-    "no_new_discovery_claim": true
+    "id": "mlflow-ndcg-document-id-collision",
+    "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlflow-ndcg-document-id-collision.md",
+    "gero": "https://www.gero.uz/research/articles/mlflow-ndcg-document-id-collision.html",
+    "youtube": "https://youtube.com/shorts/vYrG6uPEIUE",
+    "zenodo": "https://zenodo.org/records/22827379",
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506638239110385664/",
+    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlflow-ndcg-document-id-collision.md",
+    "archive_sha256": "0e9ccf4cf38ad9140b81914c1f34c916054b07ca5563597d4073b3b8d68473c0",
+    "zenodo_doi": "10.5281/zenodo.22827379",
+    "huggingface_commit": "b19bacc29636e2e6a1b190f3bd20b4b1b6a106d0",
+    "maintainer_issue": "https://github.com/mlflow/mlflow/issues/25965",
+    "verified_at": "2026-09-18T09:03:36.655025+00:00",
+    "no_media_binary_in_research_archives": true
   }
 }
