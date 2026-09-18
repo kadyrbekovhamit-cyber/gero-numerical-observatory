@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "verified_at": "2026-09-18T18:49:33.696461+00:00",
+  "extracted_frozen_archive_replayed": true,
+  "matched_files": {
+    "CHAIN_RESULT.json": "c0d820593d14929164c82199b38b41962879ab6c4e692fc9acedb71cfa4395ef",
+    "candidate/documents/budget-decision.json": "86f1b85b540651b24e6d3645f1701d0f06477ff760310c8d64eb153408237508",
+    "candidate/documents/payment-notice.html": "c9b02f7a9e740b3c487219b3a48353ef59a79169e08ad3c164cbc105b6dcf612",
+    "candidate/documents/payment-notice.json": "3087d4accaa1254c768929e22853dd9686ad93eb66e43a2f3b70c2e1ff3f96ad",
+    "current/documents/budget-decision.json": "b9a6ed7ca083376010a4d090639de92745220e65116581f0d11ccf4c77e88781",
+    "current/documents/payment-notice.html": "70add168bfc8bc88f10cf117eb227372fad65228192c71a242118c8cf125c2ce",
+    "current/documents/payment-notice.json": "0f52fb8da43b0cc012aa9fc8ecb9a9c50e7f958bd8e0104230c2edc38b03b314",
+    "reference/documents/budget-decision.json": "86f1b85b540651b24e6d3645f1701d0f06477ff760310c8d64eb153408237508",
+    "reference/documents/payment-notice.html": "e50e1d77701b0837803201555d63dc7f7c766741114fbb529785f9992507ddc5",
+    "reference/documents/payment-notice.json": "3087d4accaa1254c768929e22853dd9686ad93eb66e43a2f3b70c2e1ff3f96ad",
+    "release/documents/budget-decision.json": "b9a6ed7ca083376010a4d090639de92745220e65116581f0d11ccf4c77e88781",
+    "release/documents/payment-notice.html": "70add168bfc8bc88f10cf117eb227372fad65228192c71a242118c8cf125c2ce",
+    "release/documents/payment-notice.json": "0f52fb8da43b0cc012aa9fc8ecb9a9c50e7f958bd8e0104230c2edc38b03b314",
+    "restored/documents/budget-decision.json": "b9a6ed7ca083376010a4d090639de92745220e65116581f0d11ccf4c77e88781",
+    "restored/documents/payment-notice.html": "70add168bfc8bc88f10cf117eb227372fad65228192c71a242118c8cf125c2ce",
+    "restored/documents/payment-notice.json": "0f52fb8da43b0cc012aa9fc8ecb9a9c50e7f958bd8e0104230c2edc38b03b314"
+  },
+  "new_defects": 0
+}

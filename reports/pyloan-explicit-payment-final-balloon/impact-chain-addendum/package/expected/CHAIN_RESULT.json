@@ -1,0 +1,122 @@
+{
+  "case_id": "pyloan-explicit-payment-final-balloon",
+  "evidence_type": "synthetic downstream demonstration",
+  "new_independent_defect_count": 0,
+  "inputs": {
+    "principal": "1000.00",
+    "annual_interest_percent": "12",
+    "term_months": 2,
+    "configured_payment": "100.00",
+    "available_budget": "150.00",
+    "day_count": "30E/360 ISDA"
+  },
+  "chain": [
+    "PyLoan final-payment override",
+    "serialized synthetic payment notice",
+    "budget comparison on notice amount"
+  ],
+  "extra_amount_requested": "819.10",
+  "requested_amount_multiple": "9.191",
+  "cash_above_example_budget": "769.10",
+  "decision_flip": "WITHIN_BUDGET \u2192 EXCEEDS_BUDGET",
+  "candidate_restores_document_and_decision": true,
+  "restoring_original_restores_difference": true,
+  "results": {
+    "reference": {
+      "decision": {
+        "available_budget": "150.00",
+        "cash_above_budget": "0.00",
+        "result": "WITHIN_BUDGET",
+        "rule": "amount_requested <= available_budget",
+        "scope": "GERO demonstration budget check; not a credit decision or a PyLoan feature."
+      },
+      "notice": {
+        "amount_requested": "100.00",
+        "currency": "unspecified currency units",
+        "document_type": "synthetic_payment_notice",
+        "due_date": "2026-03-01",
+        "interest_component": "9.10",
+        "remaining_principal_in_schedule": "819.10",
+        "scope": "Synthetic demonstration only; no real borrower, invoice, collection or bank integration."
+      }
+    },
+    "release": {
+      "decision": {
+        "available_budget": "150.00",
+        "cash_above_budget": "769.10",
+        "result": "EXCEEDS_BUDGET",
+        "rule": "amount_requested <= available_budget",
+        "scope": "GERO demonstration budget check; not a credit decision or a PyLoan feature."
+      },
+      "notice": {
+        "amount_requested": "919.10",
+        "currency": "unspecified currency units",
+        "document_type": "synthetic_payment_notice",
+        "due_date": "2026-03-01",
+        "interest_component": "9.10",
+        "remaining_principal_in_schedule": "0.00",
+        "scope": "Synthetic demonstration only; no real borrower, invoice, collection or bank integration."
+      }
+    },
+    "current": {
+      "decision": {
+        "available_budget": "150.00",
+        "cash_above_budget": "769.10",
+        "result": "EXCEEDS_BUDGET",
+        "rule": "amount_requested <= available_budget",
+        "scope": "GERO demonstration budget check; not a credit decision or a PyLoan feature."
+      },
+      "notice": {
+        "amount_requested": "919.10",
+        "currency": "unspecified currency units",
+        "document_type": "synthetic_payment_notice",
+        "due_date": "2026-03-01",
+        "interest_component": "9.10",
+        "remaining_principal_in_schedule": "0.00",
+        "scope": "Synthetic demonstration only; no real borrower, invoice, collection or bank integration."
+      }
+    },
+    "candidate": {
+      "decision": {
+        "available_budget": "150.00",
+        "cash_above_budget": "0.00",
+        "result": "WITHIN_BUDGET",
+        "rule": "amount_requested <= available_budget",
+        "scope": "GERO demonstration budget check; not a credit decision or a PyLoan feature."
+      },
+      "notice": {
+        "amount_requested": "100.00",
+        "currency": "unspecified currency units",
+        "document_type": "synthetic_payment_notice",
+        "due_date": "2026-03-01",
+        "interest_component": "9.10",
+        "remaining_principal_in_schedule": "819.10",
+        "scope": "Synthetic demonstration only; no real borrower, invoice, collection or bank integration."
+      }
+    },
+    "restored": {
+      "decision": {
+        "available_budget": "150.00",
+        "cash_above_budget": "769.10",
+        "result": "EXCEEDS_BUDGET",
+        "rule": "amount_requested <= available_budget",
+        "scope": "GERO demonstration budget check; not a credit decision or a PyLoan feature."
+      },
+      "notice": {
+        "amount_requested": "919.10",
+        "currency": "unspecified currency units",
+        "document_type": "synthetic_payment_notice",
+        "due_date": "2026-03-01",
+        "interest_component": "9.10",
+        "remaining_principal_in_schedule": "0.00",
+        "scope": "Synthetic demonstration only; no real borrower, invoice, collection or bank integration."
+      }
+    }
+  },
+  "interpretation": "Additional requested cash is accelerated principal in this schedule, not a measured fee, extra interest or borrower loss.",
+  "limitations": [
+    "GERO authored the notice and budget adapter; these are not built-in PyLoan features.",
+    "No bank integration, real borrower, executed collection, credit eligibility decision or production prevalence was tested.",
+    "This one downstream scenario supplements the original 864-case grid; the original rounding and upstream-test limitations remain."
+  ]
+}

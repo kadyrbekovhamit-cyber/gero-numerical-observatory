@@ -79,21 +79,3 @@ A bounded review covered the current source, develop, release artifacts, all 69 
 Execution used Python 3.12.14 and python-dateutil 2.9.0.post0 on macOS arm64, one configured CPU worker. Evidence concerns synthetic library schedules. No bank deployment, borrower loss, production usage, performance or legal conclusion was measured. Test/report preparation was AI-assisted.
 
 Vendor report sent before external publication: [https://github.com/darius-lesch/pyloan/issues/70](https://github.com/darius-lesch/pyloan/issues/70). No response or upstream acceptance is claimed.
-
-
-[Complete portable evidence archive](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/pyloan-explicit-payment-final-balloon/gero-pyloan-explicit-payment-evidence-2026-09-18.zip) · SHA-256 `6be9658bd28e6bf72d9dac8add77319a703f4d6c7fedcacefee069604dfcc0a9`. Other verified mirrors will be linked when available. Video is queued under the channel cadence and is not yet produced.
-
-
-## Publication update — 18 September 2026
-
-- [github](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/pyloan-explicit-payment-final-balloon.md)
-- [gero](https://www.gero.uz/research/articles/pyloan-explicit-payment-final-balloon.html)
-- [linkedin](https://www.linkedin.com/feed/update/urn:li:share:7506770311233818625/)
-- [zenodo](https://zenodo.org/records/22834912)
-- [huggingface](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/pyloan-explicit-payment-final-balloon.md)
-
-These five publications follow the vendor report. The video is not yet produced; no YouTube publication is claimed. No upstream acceptance or deployed-user impact is claimed.
-
-## Downstream evidence addendum (version 1.1.0)
-
-[Executable adapter, documents and checksums](../../reports/pyloan-explicit-payment-final-balloon/impact-chain-addendum/). Addendum ZIP SHA-256: `63e6b8dcc6d7bb2b3ed1179897e869b87a9754392b8099b1dcb0e4fc567010cf`. The original evidence ZIP and report remain retained.

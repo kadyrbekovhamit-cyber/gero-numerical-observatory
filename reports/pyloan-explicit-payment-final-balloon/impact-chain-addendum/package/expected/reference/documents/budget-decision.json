@@ -1,0 +1,7 @@
+{
+  "rule": "amount_requested <= available_budget",
+  "available_budget": "150.00",
+  "result": "WITHIN_BUDGET",
+  "cash_above_budget": "0.00",
+  "scope": "GERO demonstration budget check; not a credit decision or a PyLoan feature."
+}
