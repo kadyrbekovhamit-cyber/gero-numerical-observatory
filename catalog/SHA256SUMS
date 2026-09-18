@@ -1,4 +1,4 @@
-b4bcfddbc7f8897882a84b5efe7944908084751e7a2856e80a1e6d9436fc543f  README.md
+6d95a4d5a271281d050b40806e4693db89b85a68ec8d168ed1c668da353e643b  README.md
 0c1c962a48fa367ebdfb48f47b6af56b612339d12db1d765f9e2b726d13343d1  SOURCE_NOTICES.md
 55487fd0a4770daa87c7f1d9288d4aa499d1e698e50978b3a07f2a9aa3b41369  artifacts/collatz-source-LICENSE.txt
 ae2310410d17d7a25932ea0852a1a34e358002959cb212ef56c3281b3baf1bc7  artifacts/financepy-vasicek-small-mean-reversion-LICENSES.md
@@ -13,8 +13,8 @@ b2b673aa86e3d6a0184011e961977f221850fa87b2dd005b229f20e4afe94340  artifacts/gero
 a62d6f9aeb36604df043520cf2a6ce51b614734c9fe720ca7821ebbd9143862f  artifacts/gero-nntrainer-divide-evidence-2026-09-14.zip
 10d5d7b5f5d291eb6f39c0798c3a3026c99943934c2facff03127a7dd86588df  artifacts/gero-quantlib-zero-stddev-evidence-2026-09-14.zip
 387af6a3c538d440f283e591aea9c03774db21db7e9602d2743a8bc819d12d4d  artifacts/p-harmonic-cones.pdf
-ebf85544c45ffc359b986b908a78f1adfbafe81cffacaf4303926247af97ff88  platform-status.json
-c6ed567786614649dcc8039af559b00f383eb3f61fc6243cdc2f5ee33e0b9701  publications.json
+87157159e2ec879597e3a9befee4d0ccd761293f0d1179eace5e550f3f5d60a3  platform-status.json
+a706824492cb610cc46df0e6f8dd35a8e95bc366019b1374ff0c5c1422a8ff6e  publications.json
 e9b787883196051947ec6c0fcc8ed9b7967c0ccc1957f094028c4b4a3aa6671f  reports/financepy-double-no-touch-series-truncation.md
 d27f7d8701b09c2ba66521f6f07d410423972130fdeea47680b0b3212ca43c5f  evidence/nntrainer-split-incremental-channels/LICENSES.md
 c86c2dab07b680694776134676aaeff88093e1d7caa966b4e528999e4f2f51f4  evidence/nntrainer-split-incremental-channels/REPRODUCE.md
@@ -227,7 +227,7 @@ a81577e70386f538ae7f1884c928ea7c43c4c765be829eef8e7ce7bd2825fba1  ../reports/str
 cc1d41c1370c8fab203c9c8092af772259470e6f74e85c4d8ae0d63b86b3a3b3  ../reports/strata-normal-implied-volatility-initial-guess/source/NormalFormulaRepositoryImpliedVolatilityTest.java
 385cf16695f738085055d4df9953b944dce28a38af04f30b0079c1ece5ebe442  ../reports/strata-normal-implied-volatility-initial-guess/strata-initial-guess.patch
 6178010f85ae93579cc24c5fd9c43b80021527798158f756748f00f93ecf2dbc  ../reports/strata-normal-implied-volatility-initial-guess/PUBLICATION_LINKS.json
-3be12bb774d033cedf7dc41b5b4d875aa974c303fc432d26043b29743d952f73  reports/pyloan-explicit-payment-final-balloon.md
+b081db10f8f3c083224231b876a06b5f29004dd8c3d2ef93bacc5b7c8af9bb5a  reports/pyloan-explicit-payment-final-balloon.md
 4eaff0f0ee50e4260bc0a2941b3891775cae95c17f3799dda15fb52d1c3f4917  ../reports/pyloan-explicit-payment-final-balloon/ARCHIVE_RECEIPT.json
 05a5741ae612d1c227a978deb886999cf24c8381799acbc15adaa3c66619d82d  ../reports/pyloan-explicit-payment-final-balloon/LICENSE
 73beea5280c0be1f6679f5aa60196cec39945e68fb326e98cfb359ed45beea3a  ../reports/pyloan-explicit-payment-final-balloon/METADATA.json
@@ -300,3 +300,4 @@ df8b4eec065d2d9155b31dfde01e8bd460e1918178d8d1cb39bbb72b373f8dc4  ../reports/pyl
 da1cd8dcfa724998948ded82ed3a994f434ee67046ed9198b664e0628d3231a2  ../reports/pyloan-explicit-payment-final-balloon/source/tests/test_loan_scenarios.py
 bce996f45e1b456c1f5af84df7986bf9c22cd5b6ab9d3d1f54b47a6ab2c4a048  ../reports/pyloan-explicit-payment-final-balloon/source/tests/test_pyloan.py
 e6b702b104587e734283a85082b14f4cad65d3847150d59800fb17452247cb82  ../reports/pyloan-explicit-payment-final-balloon/test_explicit_payment.py
+8f2892a10bda5f7d1575cc7fe9ba00a6e733f4b59b54da50a631150077a66ad7  ../reports/pyloan-explicit-payment-final-balloon/PUBLICATION_LINKS.json

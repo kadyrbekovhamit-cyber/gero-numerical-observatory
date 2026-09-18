@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-18T17:37:11.224778+00:00",
+  "checked_at": "2026-09-18T17:49:12.487745+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 110,
-    "huggingface": 110,
-    "zenodo": 110,
+    "gero": 111,
+    "huggingface": 111,
+    "zenodo": 111,
     "github_catalog_report": 111,
-    "zenodo_records_including_collection": 111,
+    "zenodo_records_including_collection": 112,
     "unique_individual_publications": 111,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "111 canonical reports; PyLoan archive public after vendor disclosure, other mirrors pending.",
+  "github_status": "111 canonical reports have GitHub, GERO, Hugging Face and Zenodo copies. PyLoan is also public on LinkedIn after vendor notification; its video remains pending. Social/video coverage is not global parity.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -20,15 +20,9 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [
-      "pyloan-explicit-payment-final-balloon"
-    ],
-    "huggingface": [
-      "pyloan-explicit-payment-final-balloon"
-    ],
-    "zenodo": [
-      "pyloan-explicit-payment-final-balloon"
-    ]
+    "gero": [],
+    "huggingface": [],
+    "zenodo": []
   },
   "deduplication_notes": [
     "All 97 previous report IDs preserved; one CIR pricing component report appended.",
@@ -46,7 +40,7 @@
     "17 September: Beta density archival distribution completed on six channels. Existing issue 5 retained; no second discovery. All 105 previous canonical publication objects preserved; Collatz remains outside the 106-report subset.",
     "17September: portable BondZero archive published onGitHub andGERO as a resolved-case verification. Current source fixed inbb10c393; official1.1.2stillaffected.106prior canonical objects preserved. No second issue, new-discovery claim or video upload. Four remaining channels queued."
   ],
-  "parity_complete": false,
+  "parity_complete": true,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "archival_backfill": {
     "date": "2026-09-16",
@@ -65,26 +59,27 @@
       ],
       "publication_date": "2026-09-18",
       "kind": "published_report",
-      "gero": null,
-      "huggingface": null,
-      "zenodo": null,
+      "gero": "https://www.gero.uz/research/articles/pyloan-explicit-payment-final-balloon.html",
+      "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/pyloan-explicit-payment-final-balloon.md",
+      "zenodo": "https://zenodo.org/records/22834912",
       "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/pyloan-explicit-payment-final-balloon",
       "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/pyloan-explicit-payment-final-balloon.md",
       "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/pyloan-explicit-payment-final-balloon.md",
       "source_text_sha256": "3be12bb774d033cedf7dc41b5b4d875aa974c303fc432d26043b29743d952f73",
-      "mirror_sha256": "3be12bb774d033cedf7dc41b5b4d875aa974c303fc432d26043b29743d952f73",
+      "mirror_sha256": "b081db10f8f3c083224231b876a06b5f29004dd8c3d2ef93bacc5b7c8af9bb5a",
       "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/pyloan-explicit-payment-final-balloon/gero-pyloan-explicit-payment-evidence-2026-09-18.zip",
       "evidence_archive_sha256": "6be9658bd28e6bf72d9dac8add77319a703f4d6c7fedcacefee069604dfcc0a9",
-      "linkedin": null,
+      "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506770311233818625/",
       "youtube": null,
       "maintainer_issue": "https://github.com/darius-lesch/pyloan/issues/70",
       "implementation_defects_in_this_report": 1,
-      "publication_status": "Vendor report sent first. GitHub public; other platforms pending. Candidate not accepted upstream.",
+      "publication_status": "Verified public on GitHub, GERO, Hugging Face, Zenodo and LinkedIn after vendor report70. Video not produced; queued for the next available slot from 19 September. Candidate only; no upstream acceptance or production impact claimed.",
       "limits": "Synthetic library schedules; no bank deployment or customer harm claim. 24 exact-oracle rounding differences remain; upstream unittest suite retains three baseline failure reports. Candidate only, not accepted upstream.",
-      "source_pin": "73a052cb40f9c23963fbc1ec4370aa7ac9c3efc1"
+      "source_pin": "73a052cb40f9c23963fbc1ec4370aa7ac9c3efc1",
+      "zenodo_doi": "10.5281/zenodo.22834912"
     }
   ],
-  "coverage_scope": "111 canonical report IDs; the separate Collatz map is outside this subset. Reports are not independent bugs.",
+  "coverage_scope": "111 canonical report IDs. Separate Collatz research map is outside this subset; HF and GERO list112 with it. Counts are reports, not independent defects or total account objects.",
   "latest_completed_distribution": {
     "id": "mlflow-ndcg-document-id-collision",
     "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlflow-ndcg-document-id-collision.md",
@@ -101,17 +96,17 @@
     "no_media_binary_in_research_archives": true
   },
   "latest_distribution_progress": {
-    "id": "strata-normal-implied-volatility-initial-guess",
-    "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/strata-normal-implied-volatility-initial-guess.md",
-    "gero": "https://www.gero.uz/research/articles/strata-normal-implied-volatility-initial-guess.html",
-    "zenodo": "https://zenodo.org/records/22827735",
-    "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506643504564154368/",
-    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/strata-normal-implied-volatility-initial-guess.md",
-    "archive_sha256": "5590298a94cda06cb5f1de33d17a85753f4938b7e533d4359dfae716b0084153",
-    "zenodo_doi": "10.5281/zenodo.22827735",
-    "huggingface_commit": "a8ee9bd577a0fa78f90c1d6f6565d90399c2c445",
-    "maintainer_issue": "https://github.com/OpenGamma/Strata/issues/2796",
-    "verified_at": "2026-09-18T09:26:02.885795+00:00",
+    "id": "pyloan-explicit-payment-final-balloon",
+    "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/pyloan-explicit-payment-final-balloon.md",
+    "gero": "https://www.gero.uz/research/articles/pyloan-explicit-payment-final-balloon.html",
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506770311233818625/",
+    "zenodo": "https://zenodo.org/records/22834912",
+    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/pyloan-explicit-payment-final-balloon.md",
+    "archive_sha256": "6be9658bd28e6bf72d9dac8add77319a703f4d6c7fedcacefee069604dfcc0a9",
+    "zenodo_doi": "10.5281/zenodo.22834912",
+    "huggingface_commit": "31510bab08cba96c2fbee1aa9a6b70a5d6851a00",
+    "maintainer_issue": "https://github.com/darius-lesch/pyloan/issues/70",
+    "verified_at": "2026-09-18T17:49:12.487745+00:00",
     "no_media_binary_in_research_archives": true
   }
 }
