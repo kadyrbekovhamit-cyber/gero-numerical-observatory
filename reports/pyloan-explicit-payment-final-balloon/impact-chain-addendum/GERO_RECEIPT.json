@@ -1,0 +1,23 @@
+{
+  "status": "public_verified",
+  "base_deployment": "dpl_7MjYyN4gDRHpeYHAVxsaQL59tTAm",
+  "old_paths_preserved": 1103,
+  "unchanged_paths": 1100,
+  "unchanged_catalog_entries": 111,
+  "changed": {
+    "research/publication-records.html": {
+      "sha1": "28beb7295ffc764f0660be6c0094f532ad29770e",
+      "sha256": "24e7ceff63187150aa449e6190a45ef409d19212ba40e119d84cebfead054c1e"
+    },
+    "research/articles/pyloan-explicit-payment-final-balloon.html": {
+      "sha1": "cf15adad8b967fe67c9fb0f3bed8dfdd353ed434",
+      "sha256": "c0e31da0d8757a513d7e48cfa027650384839ed4dd2d03f1dcccd71c1540c5f9"
+    },
+    "research/data/publication-records.json": {
+      "sha1": "4fea653b48f6dd231cb0f638b16131effe51bc7c",
+      "sha256": "5cab9ecd57d4a8d74a7aa84c965be093842036f4ca811d15af26b8896608a65d"
+    }
+  },
+  "verified_at": "2026-09-18T18:58:14.249407+00:00",
+  "deployment": "dpl_2ruKcDURsckLeMWcpi1JJM829MwL"
+}

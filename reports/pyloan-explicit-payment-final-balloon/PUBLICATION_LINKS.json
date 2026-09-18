@@ -3,7 +3,7 @@
     "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/pyloan-explicit-payment-final-balloon.md",
     "gero": "https://www.gero.uz/research/articles/pyloan-explicit-payment-final-balloon.html",
     "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506770311233818625/",
-    "zenodo": "https://zenodo.org/records/22834912",
+    "zenodo": "https://zenodo.org/records/22836495",
     "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/pyloan-explicit-payment-final-balloon.md"
   },
   "pending": [
@@ -11,5 +11,18 @@
   ],
   "maintainer_issue": "https://github.com/darius-lesch/pyloan/issues/70",
   "archive_sha256": "6be9658bd28e6bf72d9dac8add77319a703f4d6c7fedcacefee069604dfcc0a9",
-  "verified_at": "2026-09-18T17:49:12.487745+00:00"
+  "addendum_sha256": "63e6b8dcc6d7bb2b3ed1179897e869b87a9754392b8099b1dcb0e4fc567010cf",
+  "zenodo_versions": [
+    {
+      "version": "1.0.0",
+      "url": "https://zenodo.org/records/22834912",
+      "doi": "10.5281/zenodo.22834912"
+    },
+    {
+      "version": "1.1.0",
+      "url": "https://zenodo.org/records/22836495",
+      "doi": "10.5281/zenodo.22836495"
+    }
+  ],
+  "verified_at": "2026-09-18T18:59:51.354038+00:00"
 }
