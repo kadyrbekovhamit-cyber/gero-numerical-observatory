@@ -1,0 +1,105 @@
+{
+  "at": "2026-09-18T09:14:02.563513+00:00",
+  "java_version": "openjdk version \"25.0.4.1\" 2026-08-18 LTS\nOpenJDK Runtime Environment Temurin-25.0.4.1+1 (build 25.0.4.1+1-LTS)\nOpenJDK 64-Bit Server VM Temurin-25.0.4.1+1 (build 25.0.4.1+1-LTS, interpreted mode, sharing)",
+  "platform": "Darwin",
+  "machine": "arm64",
+  "java_flags": [
+    "-XX:ActiveProcessorCount=1",
+    "-XX:+UseSerialGC",
+    "-Xint"
+  ],
+  "source_pin": "987932ee95bf53e2baaff9a6b8e738a00f558b10",
+  "release": "2.12.74",
+  "release_zip_sha256": "42be9278993782e7b44c616a13c9bd1f34892ed05af32e854f107e28de3db4f3",
+  "jar_sha256": "0fb4c6c778f25b7c6fe13c001f47a4e404868df55e4dd9841c752128bb864125",
+  "source_sha256": "a81577e70386f538ae7f1884c928ea7c43c4c765be829eef8e7ce7bd2825fba1",
+  "results": {
+    "release": {
+      "minimal_example_stdout": "actual normal volatility: 0.0\nATM analytical value: 2.5066282746310002\nrepriced option: 0.0\n",
+      "observations": 1750,
+      "failures": 864,
+      "sha256": "3979eb45c38406cbc12f737b86d5b7d12092a15d57db90a8d4d4d971065ee382",
+      "matches_archived_csv": true,
+      "groups": {
+        "ATM_analytic": {
+          "observations": 1728,
+          "failures": 864
+        },
+        "intrinsic_control": {
+          "observations": 18,
+          "failures": 0
+        },
+        "upstream_negative_forward": {
+          "observations": 4,
+          "failures": 0
+        }
+      }
+    },
+    "current": {
+      "minimal_example_stdout": "actual normal volatility: 0.0\nATM analytical value: 2.5066282746310002\nrepriced option: 0.0\n",
+      "observations": 1750,
+      "failures": 864,
+      "sha256": "3979eb45c38406cbc12f737b86d5b7d12092a15d57db90a8d4d4d971065ee382",
+      "matches_archived_csv": true,
+      "groups": {
+        "ATM_analytic": {
+          "observations": 1728,
+          "failures": 864
+        },
+        "intrinsic_control": {
+          "observations": 18,
+          "failures": 0
+        },
+        "upstream_negative_forward": {
+          "observations": 4,
+          "failures": 0
+        }
+      }
+    },
+    "candidate": {
+      "minimal_example_stdout": "actual normal volatility: 2.5066282746310002\nATM analytical value: 2.5066282746310002\nrepriced option: 1.0\n",
+      "observations": 1750,
+      "failures": 0,
+      "sha256": "0d914f081f4e2ac69c4f02cc3b5bcda9a93a929985142f57503b467b997c1ebd",
+      "matches_archived_csv": true,
+      "groups": {
+        "ATM_analytic": {
+          "observations": 1728,
+          "failures": 0
+        },
+        "intrinsic_control": {
+          "observations": 18,
+          "failures": 0
+        },
+        "upstream_negative_forward": {
+          "observations": 4,
+          "failures": 0
+        }
+      }
+    },
+    "restored": {
+      "minimal_example_stdout": "actual normal volatility: 0.0\nATM analytical value: 2.5066282746310002\nrepriced option: 0.0\n",
+      "observations": 1750,
+      "failures": 864,
+      "sha256": "3979eb45c38406cbc12f737b86d5b7d12092a15d57db90a8d4d4d971065ee382",
+      "matches_archived_csv": true,
+      "groups": {
+        "ATM_analytic": {
+          "observations": 1728,
+          "failures": 864
+        },
+        "intrinsic_control": {
+          "observations": 18,
+          "failures": 0
+        },
+        "upstream_negative_forward": {
+          "observations": 4,
+          "failures": 0
+        }
+      }
+    }
+  },
+  "full_project_build": false,
+  "full_upstream_test_suite": false,
+  "note": "Official released jar and separately compiled target class with the same released dependencies. CSV exact matching is recorded; validation tolerances are explicit in StrataGrid.java."
+}

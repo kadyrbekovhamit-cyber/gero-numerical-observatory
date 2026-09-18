@@ -1,0 +1,14 @@
+{
+  "total_observations": 1750,
+  "failures_release_current_candidate_restored": [
+    864,
+    864,
+    0,
+    864
+  ],
+  "previously_passing": 886,
+  "candidate_still_passing": 886,
+  "exactly_unchanged_actual_strings": 450,
+  "old_good_changed_within_tolerance": 436,
+  "cross_compilation_is_not_full_source_build": true
+}

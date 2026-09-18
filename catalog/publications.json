@@ -1985,5 +1985,31 @@
     "limits": "Deprecated ndcg_at_k API in3.16.1 and byte-identical pinned module;1810synthetic cases214→0→214. No full-suite, hosted Databricks, real retrieval-model, customer-loss or performance claim.",
     "source_pin": "35758a9a954422200034b949176879c2cbbe4a8a",
     "zenodo_doi": "10.5281/zenodo.22827379"
+  },
+  {
+    "id": "strata-normal-implied-volatility-initial-guess",
+    "title": "Strata returns zero implied volatility for a positive option price",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-18",
+    "kind": "published_report",
+    "gero": null,
+    "huggingface": null,
+    "zenodo": null,
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/strata-normal-implied-volatility-initial-guess",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/strata-normal-implied-volatility-initial-guess.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/strata-normal-implied-volatility-initial-guess.md",
+    "source_text_sha256": "21fa61cd558fa5a40071aca0f21ae60705b43635405e351941d24cc31caa8070",
+    "mirror_sha256": "21fa61cd558fa5a40071aca0f21ae60705b43635405e351941d24cc31caa8070",
+    "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/strata-normal-implied-volatility-initial-guess/gero-strata-normal-iv-initial-guess-evidence-2026-09-18.zip",
+    "evidence_archive_sha256": "5590298a94cda06cb5f1de33d17a85753f4938b7e533d4359dfae716b0084153",
+    "linkedin": null,
+    "youtube": null,
+    "maintainer_issue": "https://github.com/OpenGamma/Strata/issues/2796",
+    "implementation_defects_in_this_report": 1,
+    "publication_status": "Vendor report sent first. GitHub public; other platforms pending. Candidate not accepted upstream.",
+    "limits": "Official2.12.74 and separately compiled pinned target class with released dependencies;1750observations864→0→864. Not a full main build or full suite. No deployed bank/customer loss or performance claim.",
+    "source_pin": "987932ee95bf53e2baaff9a6b8e738a00f558b10"
   }
 ]

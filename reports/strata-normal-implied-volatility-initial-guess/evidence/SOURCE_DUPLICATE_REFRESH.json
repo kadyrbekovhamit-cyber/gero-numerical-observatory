@@ -1,0 +1,99 @@
+{
+  "checked_at": "2026-09-18T09:09:59.289320+00:00",
+  "current_pin": "987932ee95bf53e2baaff9a6b8e738a00f558b10",
+  "source_sha256": "a81577e70386f538ae7f1884c928ea7c43c4c765be829eef8e7ce7bd2825fba1",
+  "local_tested_source_identical": true,
+  "latest_release": {
+    "tag": "v2.12.74",
+    "url": "https://github.com/OpenGamma/Strata/releases/tag/v2.12.74",
+    "published_at": "2026-08-25T08:10:53Z"
+  },
+  "existing_own_issue": {
+    "url": "https://github.com/OpenGamma/Strata/issues/2796",
+    "number": 2796,
+    "state": "open",
+    "comments_count": 0
+  },
+  "comments": [],
+  "duplicate_searches": [
+    {
+      "query": "repo:OpenGamma/Strata initialNormalVol in:title,body,comments",
+      "total_count": 1,
+      "incomplete_results": false,
+      "items": [
+        {
+          "number": 2796,
+          "title": "Normal implied volatility returns zero for a positive ATM price with initialNormalVol=0",
+          "url": "https://github.com/OpenGamma/Strata/issues/2796",
+          "state": "open",
+          "updated_at": "2026-09-18T08:41:46Z"
+        }
+      ]
+    },
+    {
+      "query": "repo:OpenGamma/Strata \"zero initial\" in:title,body,comments",
+      "total_count": 1,
+      "incomplete_results": false,
+      "items": [
+        {
+          "number": 2796,
+          "title": "Normal implied volatility returns zero for a positive ATM price with initialNormalVol=0",
+          "url": "https://github.com/OpenGamma/Strata/issues/2796",
+          "state": "open",
+          "updated_at": "2026-09-18T08:41:46Z"
+        }
+      ]
+    },
+    {
+      "query": "repo:OpenGamma/Strata \"NormalFormulaRepository\" in:title,body,comments",
+      "total_count": 3,
+      "incomplete_results": false,
+      "items": [
+        {
+          "number": 2796,
+          "title": "Normal implied volatility returns zero for a positive ATM price with initialNormalVol=0",
+          "url": "https://github.com/OpenGamma/Strata/issues/2796",
+          "state": "open",
+          "updated_at": "2026-09-18T08:41:46Z"
+        },
+        {
+          "number": 2372,
+          "title": "Correct bug for negative forward price in NormalFormulaRepository",
+          "url": "https://github.com/OpenGamma/Strata/pull/2372",
+          "state": "closed",
+          "updated_at": "2022-01-05T14:27:04Z"
+        },
+        {
+          "number": 2238,
+          "title": "NormalFormulaRepository: bug in impliedVolatility",
+          "url": "https://github.com/OpenGamma/Strata/issues/2238",
+          "state": "closed",
+          "updated_at": "2021-11-01T18:18:40Z"
+        }
+      ]
+    },
+    {
+      "query": "repo:OpenGamma/Strata \"initial guess\" in:title,body,comments",
+      "total_count": 2,
+      "incomplete_results": false,
+      "items": [
+        {
+          "number": 2796,
+          "title": "Normal implied volatility returns zero for a positive ATM price with initialNormalVol=0",
+          "url": "https://github.com/OpenGamma/Strata/issues/2796",
+          "state": "open",
+          "updated_at": "2026-09-18T08:41:46Z"
+        },
+        {
+          "number": 710,
+          "title": "Added method to compute Black implied volatility from normal implied volatility",
+          "url": "https://github.com/OpenGamma/Strata/pull/710",
+          "state": "closed",
+          "updated_at": "2016-01-29T16:23:46Z"
+        }
+      ]
+    }
+  ],
+  "gero_related_entries": [],
+  "limits": "Bounded all-state public search, not proof of absence. Own2796 and prior2238/2372 are explicitly credited."
+}

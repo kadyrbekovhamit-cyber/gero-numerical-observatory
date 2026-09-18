@@ -1,0 +1,53 @@
+{
+  "at": "2026-09-18T08:39:27.878336+00:00",
+  "mode": "released fatjar and current single compiled class against same official dependencies; not full project build",
+  "java_flags": [
+    "-XX:ActiveProcessorCount=1",
+    "-XX:+UseSerialGC",
+    "-Xint"
+  ],
+  "candidate": "min to max positive initial sigma",
+  "results": {
+    "release": {
+      "count": 1750,
+      "failures": 864,
+      "groups": {
+        "ATM_analytic": 864,
+        "intrinsic_control": 0,
+        "upstream_negative_forward": 0
+      },
+      "sha256": "3979eb45c38406cbc12f737b86d5b7d12092a15d57db90a8d4d4d971065ee382"
+    },
+    "current": {
+      "count": 1750,
+      "failures": 864,
+      "groups": {
+        "ATM_analytic": 864,
+        "intrinsic_control": 0,
+        "upstream_negative_forward": 0
+      },
+      "sha256": "3979eb45c38406cbc12f737b86d5b7d12092a15d57db90a8d4d4d971065ee382"
+    },
+    "candidate": {
+      "count": 1750,
+      "failures": 0,
+      "groups": {
+        "ATM_analytic": 0,
+        "intrinsic_control": 0,
+        "upstream_negative_forward": 0
+      },
+      "sha256": "0d914f081f4e2ac69c4f02cc3b5bcda9a93a929985142f57503b467b997c1ebd"
+    },
+    "restored": {
+      "count": 1750,
+      "failures": 864,
+      "groups": {
+        "ATM_analytic": 864,
+        "intrinsic_control": 0,
+        "upstream_negative_forward": 0
+      },
+      "sha256": "3979eb45c38406cbc12f737b86d5b7d12092a15d57db90a8d4d4d971065ee382"
+    }
+  },
+  "source_pin": "987932ee95bf53e2baaff9a6b8e738a00f558b10"
+}

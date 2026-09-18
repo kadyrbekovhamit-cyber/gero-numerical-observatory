@@ -1,0 +1,260 @@
+{
+  "case_id": "strata-normal-implied-volatility-initial-guess",
+  "prepared_date": "2026-09-18",
+  "timezone": "Asia/Tashkent",
+  "editorial_status": "reviewed_against_executed_evidence_before_publication",
+  "external_actions_by_editorial_agent": 0,
+  "numerical_jobs_by_editorial_agent": 0,
+  "media_status": "Not produced; scheduled production remains subject to current channel cadence and QA.",
+  "canonical_vendor_issue": "https://github.com/OpenGamma/Strata/issues/2796",
+  "source_pin": "987932ee95bf53e2baaff9a6b8e738a00f558b10",
+  "release": "2.12.74",
+  "release_pin": "57531129c8c8903c649c08b4e1632eba3b30fae1",
+  "source_refresh_timestamp": "2026-09-18T09:09:59.289320+00:00",
+  "sources": [
+    {
+      "id": "S1",
+      "type": "primary implementation and Javadoc",
+      "publisher": "OpenGamma Strata",
+      "url": "https://github.com/OpenGamma/Strata/blob/987932ee95bf53e2baaff9a6b8e738a00f558b10/modules/pricer/src/main/java/com/opengamma/strata/pricer/impl/option/NormalFormulaRepository.java#L251",
+      "local_path": "source/NormalFormulaRepository.java",
+      "lines": "251\u2013316",
+      "supports": "Argument order, lack of positive-initial-guess precondition, min initializer, step cap and stopping condition.",
+      "verification": "Local preserved source read by this editor; fresh source identity recorded by root receipt."
+    },
+    {
+      "id": "S2",
+      "type": "prior primary issue",
+      "publisher": "OpenGamma Strata",
+      "url": "https://github.com/OpenGamma/Strata/issues/2238",
+      "supports": "Earlier negative-forward initialization defect.",
+      "verification": "Earlier primary review read from banking/B01_FINAL_DUPLICATE_REVIEW.md; not freshly fetched by this editor."
+    },
+    {
+      "id": "S3",
+      "type": "prior primary patch and review",
+      "publisher": "OpenGamma Strata",
+      "url": "https://github.com/OpenGamma/Strata/pull/2372",
+      "review_url": "https://github.com/OpenGamma/Strata/pull/2372#discussion_r740326917",
+      "supports": "Origin and discussion of the current initializer; related prior work must be credited.",
+      "verification": "Reviewed historical evidence retained by research agent; no claim of independent new web check here."
+    },
+    {
+      "id": "E1",
+      "type": "minimal executed reproducer and report",
+      "publisher": "GERO",
+      "local_path": "VENDOR_REPORT.md",
+      "supports": "Observed implied volatility0 and repriced price0 versus input1; tiny-start examples.",
+      "limitation": "Original minimal observations are in this report; the candidate minimal execution is independently recorded in E4."
+    },
+    {
+      "id": "E2",
+      "type": "recorded grid execution",
+      "publisher": "GERO",
+      "local_path": "evidence/GRID_RECEIPT.json",
+      "supports": "1750 observations; release/current/candidate/restored864/864/0/864; CSV hashes."
+    },
+    {
+      "id": "E3",
+      "type": "focused control review",
+      "publisher": "GERO",
+      "local_path": "evidence/FOCUSED_RESULTS_REVIEW.json",
+      "supports": "886 prior passing cases remain passing;450 same actual-output strings;436 changed within tolerance."
+    },
+    {
+      "id": "E4",
+      "type": "fresh portable replay receipt",
+      "publisher": "GERO",
+      "local_path": "evidence/PORTABLE_REPLAY_RECEIPT.json",
+      "archive_path": "evidence/PORTABLE_REPLAY_RECEIPT.json",
+      "timestamp": "2026-09-18T09:14:02.563513+00:00",
+      "supports": "All four CSVs match archived originals; same1750 and864/864/0/864. Minimal example was executed in all four modes: release/current/restored volatility0.0 and repriced0.0; candidate volatility2.5066282746310002 and repriced1.0. Platform/JDK/flags and source/asset hashes recorded.",
+      "limitation": "Recorded root execution, not rerun by this editorial agent. No cross-platform identity claim."
+    },
+    {
+      "id": "E5",
+      "type": "transparent test harness",
+      "publisher": "GERO",
+      "local_path": "StrataGrid.java",
+      "supports": "Analytical input grid,1728+18+4 composition, explicit tolerances, four upstream-derived scenarios run as direct calls."
+    },
+    {
+      "id": "E6",
+      "type": "source and duplicate refresh",
+      "publisher": "GERO",
+      "local_path": "evidence/SOURCE_DUPLICATE_REFRESH.json",
+      "supports": "Current head/source unchanged, latest release2.12.74, own issue2796 open with0comments at refresh, bounded searches and no existing GERO entry."
+    },
+    {
+      "id": "E7",
+      "type": "vendor submission receipt",
+      "publisher": "GERO",
+      "url": "https://github.com/OpenGamma/Strata/issues/2796",
+      "local_path": "evidence/STRATA_VENDOR_SENT_RECEIPT.json",
+      "created_at": "2026-09-18T08:41:46Z",
+      "body_sha256": "8d3820e2245a3151188a01a3a1e8cf06a7d1063f88c9581fee81c6f94e51c58a",
+      "supports": "Issue sent before publication, authorkadyrbekovhamit-cyber; no acknowledgement/acceptance/PR recorded.",
+      "limitation": "Do not create a duplicate issue; refresh the existing thread for any later reply."
+    },
+    {
+      "id": "E8",
+      "type": "official release artifact and digest receipt",
+      "publisher": "OpenGamma release; GERO digest verification",
+      "url": "https://github.com/OpenGamma/Strata/releases/download/v2.12.74/strata-report-tool-2.12.74.zip",
+      "local_path": "evidence/DOWNLOAD_RECEIPT.json",
+      "supports": "Exact official archive and publisher-matching SHA256; no new JDK installation claim."
+    },
+    {
+      "id": "E9",
+      "type": "candidate patch",
+      "publisher": "GERO",
+      "local_path": "strata-initial-guess.patch",
+      "supports": "Local one-line min-to-max candidate only.",
+      "limitation": "No full-suite or universal-correctness conclusion."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "classification": "observed implementation result",
+      "statement": "Price1,forward=strike100,T1,numeraire1,initial0,CALL returns impliedvol0 and repriced price0.",
+      "sources": [
+        "E1",
+        "S1"
+      ],
+      "public_report_section": "Minimal example",
+      "limits": "Synthetic local component behavior."
+    },
+    {
+      "id": "C2",
+      "classification": "independent mathematical identity",
+      "statement": "At the money, price=N*sigma*sqrt(T)/sqrt(2*pi); these inputs require sigma=sqrt(2*pi).",
+      "sources": [
+        "E1",
+        "E5"
+      ],
+      "unit_convention": "Normal sigma is in forward units per square-root time. IfT isyears, it is forward units/sqrt(year), not a Black percentage volatility."
+    },
+    {
+      "id": "C3",
+      "classification": "observed minimal reproduction and derived price residual",
+      "statement": "Observed original repricing0 versus input1 gives absolute residual1; candidate minimal execution returns volatility2.5066282746310002 and reprices to1.0, residual0.0. Restoring original reproduces0.0.",
+      "sources": [
+        "C1",
+        "C2",
+        "E4"
+      ],
+      "limits": "Measured only for this synthetic minimal example; do not call1 a dollar/customer loss or generalize exact repricing to every input."
+    },
+    {
+      "id": "C4",
+      "classification": "source-supported causal explanation",
+      "statement": "A zero initial guess produces zero sigma and zero step cap, causing termination before matching positive price.",
+      "sources": [
+        "S1",
+        "E1"
+      ],
+      "limits": "Current zero/tiny-start case; not rediscovery of the entire earlier negative-forward issue."
+    },
+    {
+      "id": "C5",
+      "classification": "finite synthetic verification",
+      "statement": "1750 observations yielded release/current/candidate/restored failure counts864/864/0/864.",
+      "sources": [
+        "E2",
+        "E4",
+        "E5"
+      ],
+      "limits": "One root cause; not864separate bugs. Candidate results depend on explicit numerical tolerances."
+    },
+    {
+      "id": "C6",
+      "classification": "finite controls with precise change accounting",
+      "statement": "All886 previously passing observations remain passing;450 actual-output strings are identical and436 change within tolerance.",
+      "sources": [
+        "E3"
+      ],
+      "limits": "Do not say all886controls unchanged or bit-identical."
+    },
+    {
+      "id": "C7",
+      "classification": "test coverage definition",
+      "statement": "1728ATM analytical scenarios,18zero-intrinsic controls,4negative-forward controls transcribed from upstream tests.",
+      "sources": [
+        "E5",
+        "E2",
+        "E4"
+      ],
+      "tolerances": {
+        "atm_absolute": "1e-9*max(1,expected_sigma)",
+        "negative_forward_absolute": "1e-8",
+        "zero_intrinsic_absolute": "0"
+      },
+      "limits": "Four direct regression calls; full original test class/full JUnit suite not run."
+    },
+    {
+      "id": "C8",
+      "classification": "reproduction confirmation",
+      "statement": "Portable replay matched all four archived CSV files byte-for-byte on the recorded platform.",
+      "sources": [
+        "E4"
+      ],
+      "limits": "No claim of cross-platform bit identity."
+    },
+    {
+      "id": "C9",
+      "classification": "provenance and current-source scope",
+      "statement": "Official release and a separately compiled pinned class were exercised; tested source matches refreshedmain.",
+      "sources": [
+        "E2",
+        "E4",
+        "E6"
+      ],
+      "limits": "Not a complete build/install of current main."
+    },
+    {
+      "id": "C10",
+      "classification": "prior-work attribution and bounded novelty review",
+      "statement": "Credit issue2238/PR2372; own2796already sent; no additional exact case found in bounded searches.",
+      "sources": [
+        "S2",
+        "S3",
+        "E6",
+        "E7"
+      ],
+      "limits": "No universal novelty claim; no duplicate issue."
+    },
+    {
+      "id": "C11",
+      "classification": "candidate and vendor status",
+      "statement": "The proposed change is local. No upstream acceptance is claimed.",
+      "sources": [
+        "E7",
+        "E9"
+      ],
+      "limits": "Status may change; refresh before downstream publication updates."
+    }
+  ],
+  "integrity": {
+    "release_zip_sha256": "42be9278993782e7b44c616a13c9bd1f34892ed05af32e854f107e28de3db4f3",
+    "dependency_jar_sha256": "0fb4c6c778f25b7c6fe13c001f47a4e404868df55e4dd9841c752128bb864125",
+    "source_sha256": "a81577e70386f538ae7f1884c928ea7c43c4c765be829eef8e7ce7bd2825fba1",
+    "release_current_restored_csv_sha256": "3979eb45c38406cbc12f737b86d5b7d12092a15d57db90a8d4d4d971065ee382",
+    "candidate_csv_sha256": "0d914f081f4e2ac69c4f02cc3b5bcda9a93a929985142f57503b467b997c1ebd",
+    "editorial_note": "Copied from inspected receipts; this editor did not recompute hashes or rerun calculations."
+  },
+  "editorial_risks": [
+    "Distinguish normal-volatility absolute units from percent/Black volatility.",
+    "886controls remain passing, but only450output strings are unchanged.",
+    "The candidate minimal repricing residual0.0 is now recorded, but applies only to the stated synthetic example; it is not a general exact-pricing claim.",
+    "Credit prior2238/2372 and link existing2796; no second submission.",
+    "Do not imply fullmain build/fullsuite, non-ATM coverage, universal fix, hosted-service or bank deployment.",
+    "No customer/model losses, fraud, regulatory misconduct or financial impact are established.",
+    "No video today; latest root-provided max2technical releases supersedes earlier unlimited cadence for this task."
+  ],
+  "handoff": {
+    "local_status": "REPORT_EN.md and CLAIMS.json prepared; no shared state modified",
+    "published_status": "No publication by editorial agent; root owns scientific publication and receipts.",
+    "next_step": "Root review these two files, merge into package, preserve immutable evidence and actual outgoing URLs/status. Maintain existing issue2796 and media queue policy."
+  }
+}
