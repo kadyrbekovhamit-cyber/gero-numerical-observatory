@@ -92,3 +92,14 @@ No full JUnit suite, complete non-at-the-money survey, performance study, actual
 
 
 [Complete portable evidence archive](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/strata-normal-implied-volatility-initial-guess/gero-strata-normal-iv-initial-guess-evidence-2026-09-18.zip) · SHA-256 `5590298a94cda06cb5f1de33d17a85753f4938b7e533d4359dfae716b0084153`. Other verified mirrors will be linked when available. Video is queued under the channel cadence and is not yet produced.
+
+
+## Publication update — 18 September 2026
+
+- [github](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/strata-normal-implied-volatility-initial-guess.md)
+- [gero](https://www.gero.uz/research/articles/strata-normal-implied-volatility-initial-guess.html)
+- [zenodo](https://zenodo.org/records/22827735)
+- [linkedin](https://www.linkedin.com/feed/update/urn:li:share:7506643504564154368/)
+- [huggingface](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/strata-normal-implied-volatility-initial-guess.md)
+
+These five publications follow the vendor report. The video is not yet produced; no YouTube publication is claimed. No upstream acceptance or deployed-user impact is claimed.

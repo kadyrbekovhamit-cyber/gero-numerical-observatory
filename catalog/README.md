@@ -6,9 +6,9 @@ Updated 18 September 2026. **110 distinct catalogue publications.** Report count
 
 |Platform|Verified catalogue reports|
 |---|---:|
-|gero|109|
-|huggingface|109|
-|zenodo|109|
+|gero|110|
+|huggingface|110|
+|zenodo|110|
 |github_catalog_report|110|
 
 The FinancePy FXForward and MLX sigmoid reports each have GERO, GitHub, LinkedIn, Zenodo, Hugging Face and YouTube publications. Overall coverage is shown above; no equal count across all external account collections is claimed.
@@ -124,7 +124,7 @@ The FinancePy FXForward and MLX sigmoid reports each have GERO, GitHub, LinkedIn
 | 107 | [FinancePy BondZero: verifying the upstream fix for a 10,000-fold duration error](reports/financepy-bond-zero-modified-duration-scale.md) | [GERO](https://www.gero.uz/research/articles/financepy-bond-zero-modified-duration-scale.html) | [Hugging Face](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-bond-zero-modified-duration-scale.md) | [Zenodo](https://zenodo.org/records/22820394) | [Report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-bond-zero-modified-duration-scale.md) |
 | 108 | [MLX rsqrt: finite directional derivatives lost to an intermediate ratio](reports/mlx-rsqrt-directional-derivative-scale.md) | [GERO](https://www.gero.uz/research/articles/mlx-rsqrt-directional-derivative-scale.html) | [Hugging Face](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-rsqrt-directional-derivative-scale.md) | [Zenodo](https://zenodo.org/records/22817495) | [Report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-rsqrt-directional-derivative-scale.md) |
 | 109 | [MLflow NDCG: irrelevant retrievals score above zero after a document-ID collision](reports/mlflow-ndcg-document-id-collision.md) | [GERO](https://www.gero.uz/research/articles/mlflow-ndcg-document-id-collision.html) | [Hugging Face](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlflow-ndcg-document-id-collision.md) | [Zenodo](https://zenodo.org/records/22827379) | [Report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlflow-ndcg-document-id-collision.md) |
-| 110 | [Strata returns zero implied volatility for a positive option price](reports/strata-normal-implied-volatility-initial-guess.md) | Pending | Pending | Pending | [Report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/strata-normal-implied-volatility-initial-guess.md) |
+| 110 | [Strata returns zero implied volatility for a positive option price](reports/strata-normal-implied-volatility-initial-guess.md) | [GERO](https://www.gero.uz/research/articles/strata-normal-implied-volatility-initial-guess.html) | [Hugging Face](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/strata-normal-implied-volatility-initial-guess.md) | [Zenodo](https://zenodo.org/records/22827735) | [Report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/strata-normal-implied-volatility-initial-guess.md) |
 
 Vasicek distribution completed on six channels: [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506071696911609857/) · [English Short](https://youtube.com/shorts/k-VGcx7o_LM).
 

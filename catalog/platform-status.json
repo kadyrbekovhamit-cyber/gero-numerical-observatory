@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-18T09:16:18.883215+00:00",
+  "checked_at": "2026-09-18T09:26:02.885795+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 109,
-    "huggingface": 109,
-    "zenodo": 109,
+    "gero": 110,
+    "huggingface": 110,
+    "zenodo": 110,
     "github_catalog_report": 110,
-    "zenodo_records_including_collection": 110,
+    "zenodo_records_including_collection": 111,
     "unique_individual_publications": 110,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "110 canonical reports; Strata archive public on GitHub after vendor disclosure, other mirrors pending.",
+  "github_status": "110 canonical reports have GitHub, GERO, Hugging Face and Zenodo copies. Strata is also public on LinkedIn after vendor notification; its video remains pending. Social/video coverage is not global parity.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -20,15 +20,9 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [
-      "strata-normal-implied-volatility-initial-guess"
-    ],
-    "huggingface": [
-      "strata-normal-implied-volatility-initial-guess"
-    ],
-    "zenodo": [
-      "strata-normal-implied-volatility-initial-guess"
-    ]
+    "gero": [],
+    "huggingface": [],
+    "zenodo": []
   },
   "deduplication_notes": [
     "All 97 previous report IDs preserved; one CIR pricing component report appended.",
@@ -46,7 +40,7 @@
     "17 September: Beta density archival distribution completed on six channels. Existing issue 5 retained; no second discovery. All 105 previous canonical publication objects preserved; Collatz remains outside the 106-report subset.",
     "17September: portable BondZero archive published onGitHub andGERO as a resolved-case verification. Current source fixed inbb10c393; official1.1.2stillaffected.106prior canonical objects preserved. No second issue, new-discovery claim or video upload. Four remaining channels queued."
   ],
-  "parity_complete": false,
+  "parity_complete": true,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "archival_backfill": {
     "date": "2026-09-16",
@@ -65,26 +59,27 @@
       ],
       "publication_date": "2026-09-18",
       "kind": "published_report",
-      "gero": null,
-      "huggingface": null,
-      "zenodo": null,
+      "gero": "https://www.gero.uz/research/articles/strata-normal-implied-volatility-initial-guess.html",
+      "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/strata-normal-implied-volatility-initial-guess.md",
+      "zenodo": "https://zenodo.org/records/22827735",
       "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/strata-normal-implied-volatility-initial-guess",
       "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/strata-normal-implied-volatility-initial-guess.md",
       "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/strata-normal-implied-volatility-initial-guess.md",
       "source_text_sha256": "21fa61cd558fa5a40071aca0f21ae60705b43635405e351941d24cc31caa8070",
-      "mirror_sha256": "21fa61cd558fa5a40071aca0f21ae60705b43635405e351941d24cc31caa8070",
+      "mirror_sha256": "c2d641a4331048153125b3bd82356dc31f2dd7bc8dcf05b6eab2fafd3a9a2dc4",
       "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/strata-normal-implied-volatility-initial-guess/gero-strata-normal-iv-initial-guess-evidence-2026-09-18.zip",
       "evidence_archive_sha256": "5590298a94cda06cb5f1de33d17a85753f4938b7e533d4359dfae716b0084153",
-      "linkedin": null,
+      "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506643504564154368/",
       "youtube": null,
       "maintainer_issue": "https://github.com/OpenGamma/Strata/issues/2796",
       "implementation_defects_in_this_report": 1,
-      "publication_status": "Vendor report sent first. GitHub public; other platforms pending. Candidate not accepted upstream.",
+      "publication_status": "Verified public on GitHub, GERO, Hugging Face, Zenodo and LinkedIn after vendor report2796. Video not produced; queued for the next available slot from 19 September. Candidate only; no upstream acceptance or production impact claimed.",
       "limits": "Official2.12.74 and separately compiled pinned target class with released dependencies;1750observations864→0→864. Not a full main build or full suite. No deployed bank/customer loss or performance claim.",
-      "source_pin": "987932ee95bf53e2baaff9a6b8e738a00f558b10"
+      "source_pin": "987932ee95bf53e2baaff9a6b8e738a00f558b10",
+      "zenodo_doi": "10.5281/zenodo.22827735"
     }
   ],
-  "coverage_scope": "110 canonical report IDs; the separate Collatz map is outside this subset. Reports are not independent bugs.",
+  "coverage_scope": "110 canonical report IDs. Separate Collatz research map is outside this subset; HF and GERO list111 with it. Counts are reports, not independent defects or total account objects.",
   "latest_completed_distribution": {
     "id": "mlflow-ndcg-document-id-collision",
     "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlflow-ndcg-document-id-collision.md",
@@ -98,6 +93,20 @@
     "huggingface_commit": "b19bacc29636e2e6a1b190f3bd20b4b1b6a106d0",
     "maintainer_issue": "https://github.com/mlflow/mlflow/issues/25965",
     "verified_at": "2026-09-18T09:03:36.655025+00:00",
+    "no_media_binary_in_research_archives": true
+  },
+  "latest_distribution_progress": {
+    "id": "strata-normal-implied-volatility-initial-guess",
+    "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/strata-normal-implied-volatility-initial-guess.md",
+    "gero": "https://www.gero.uz/research/articles/strata-normal-implied-volatility-initial-guess.html",
+    "zenodo": "https://zenodo.org/records/22827735",
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506643504564154368/",
+    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/strata-normal-implied-volatility-initial-guess.md",
+    "archive_sha256": "5590298a94cda06cb5f1de33d17a85753f4938b7e533d4359dfae716b0084153",
+    "zenodo_doi": "10.5281/zenodo.22827735",
+    "huggingface_commit": "a8ee9bd577a0fa78f90c1d6f6565d90399c2c445",
+    "maintainer_issue": "https://github.com/OpenGamma/Strata/issues/2796",
+    "verified_at": "2026-09-18T09:26:02.885795+00:00",
     "no_media_binary_in_research_archives": true
   }
 }

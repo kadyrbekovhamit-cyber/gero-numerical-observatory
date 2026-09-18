@@ -1,4 +1,4 @@
-6bd179ee279c3ef27d99a088e2329777a2d1ae902f4942418e71d3f6f54cf94b  README.md
+6e5458d00bd8392099a8984bb023d65b11ee069f53b152c026b3f2a1dbf73b49  README.md
 0c1c962a48fa367ebdfb48f47b6af56b612339d12db1d765f9e2b726d13343d1  SOURCE_NOTICES.md
 55487fd0a4770daa87c7f1d9288d4aa499d1e698e50978b3a07f2a9aa3b41369  artifacts/collatz-source-LICENSE.txt
 ae2310410d17d7a25932ea0852a1a34e358002959cb212ef56c3281b3baf1bc7  artifacts/financepy-vasicek-small-mean-reversion-LICENSES.md
@@ -13,8 +13,8 @@ b2b673aa86e3d6a0184011e961977f221850fa87b2dd005b229f20e4afe94340  artifacts/gero
 a62d6f9aeb36604df043520cf2a6ce51b614734c9fe720ca7821ebbd9143862f  artifacts/gero-nntrainer-divide-evidence-2026-09-14.zip
 10d5d7b5f5d291eb6f39c0798c3a3026c99943934c2facff03127a7dd86588df  artifacts/gero-quantlib-zero-stddev-evidence-2026-09-14.zip
 387af6a3c538d440f283e591aea9c03774db21db7e9602d2743a8bc819d12d4d  artifacts/p-harmonic-cones.pdf
-87e734658d17f1b07f2248ee772fe211e342ec718a8b4cda64bfe8414c745a0a  platform-status.json
-2f72d1853006613f8549f0ef9f3e9edb761290c7a8472a1948cd870bfa1ae23c  publications.json
+d31401e368f19fac32ab261d3f7e028bc79b727574f3fe9fcae457699b4c4819  platform-status.json
+3cb04c48f7d00423121a4669c16fb034089359662ddc1df0712056c9537ec530  publications.json
 e9b787883196051947ec6c0fcc8ed9b7967c0ccc1957f094028c4b4a3aa6671f  reports/financepy-double-no-touch-series-truncation.md
 d27f7d8701b09c2ba66521f6f07d410423972130fdeea47680b0b3212ca43c5f  evidence/nntrainer-split-incremental-channels/LICENSES.md
 c86c2dab07b680694776134676aaeff88093e1d7caa966b4e528999e4f2f51f4  evidence/nntrainer-split-incremental-channels/REPRODUCE.md
@@ -192,7 +192,7 @@ a458d65c74c51b7ee89573cde304a7254b8088886b71b0a1058a90e2f0ba85c2  ../reports/mlf
 e5d6a63f6be1513022ca10876df297e8c87534f11f3fca0d8dd082458e05749d  ../reports/mlflow-ndcg-document-id-collision/mlflow_minimal_repro.py
 8dd7529d0a714c8c94f32c484e4472c92e16c13a6f8bdc614bd70f8fcce42fd5  ../reports/mlflow-ndcg-document-id-collision/requirements-repro.txt
 8d9c349a33b4e94092a20808b2859f694d9462185c5c1cb1919cc5cc30ede0e3  ../reports/mlflow-ndcg-document-id-collision/PUBLICATION_LINKS.json
-21fa61cd558fa5a40071aca0f21ae60705b43635405e351941d24cc31caa8070  reports/strata-normal-implied-volatility-initial-guess.md
+c2d641a4331048153125b3bd82356dc31f2dd7bc8dcf05b6eab2fafd3a9a2dc4  reports/strata-normal-implied-volatility-initial-guess.md
 2e835d2699533961d9d1e30d384cf7a8a72fb3228dd6a29fd1f7f5d27e5f0e43  ../reports/strata-normal-implied-volatility-initial-guess/ARCHIVE_RECEIPT.json
 f34b93f010cfc7378e141ab79a763dd749f6aaef2378019002656ee38769608c  ../reports/strata-normal-implied-volatility-initial-guess/CLAIMS.json
 cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30  ../reports/strata-normal-implied-volatility-initial-guess/LICENSE
@@ -226,3 +226,4 @@ cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30  ../reports/str
 a81577e70386f538ae7f1884c928ea7c43c4c765be829eef8e7ce7bd2825fba1  ../reports/strata-normal-implied-volatility-initial-guess/source/NormalFormulaRepository.java
 cc1d41c1370c8fab203c9c8092af772259470e6f74e85c4d8ae0d63b86b3a3b3  ../reports/strata-normal-implied-volatility-initial-guess/source/NormalFormulaRepositoryImpliedVolatilityTest.java
 385cf16695f738085055d4df9953b944dce28a38af04f30b0079c1ece5ebe442  ../reports/strata-normal-implied-volatility-initial-guess/strata-initial-guess.patch
+6178010f85ae93579cc24c5fd9c43b80021527798158f756748f00f93ecf2dbc  ../reports/strata-normal-implied-volatility-initial-guess/PUBLICATION_LINKS.json
