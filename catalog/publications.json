@@ -2023,33 +2023,48 @@
     "kind": "published_report",
     "gero": "https://www.gero.uz/research/articles/pyloan-explicit-payment-final-balloon.html",
     "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/pyloan-explicit-payment-final-balloon.md",
-    "zenodo": "https://zenodo.org/records/22834912",
+    "zenodo": "https://zenodo.org/records/22836495",
     "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/pyloan-explicit-payment-final-balloon",
     "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/pyloan-explicit-payment-final-balloon.md",
     "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/pyloan-explicit-payment-final-balloon.md",
-    "source_text_sha256": "3be12bb774d033cedf7dc41b5b4d875aa974c303fc432d26043b29743d952f73",
-    "mirror_sha256": "30bafbf03661af2e480dbbedb0a0cff2855d392c8e690c3a27f3129bbd86fc41",
+    "source_text_sha256": "ac04a04f00be37189a7b08179867e084a6f8cf318b7f5808d1522c0fcc4831e1",
+    "mirror_sha256": "cdbc122db56444c6a65bc9ad3674e35a95e63f02095211ac7230521e85af7842",
     "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/pyloan-explicit-payment-final-balloon/gero-pyloan-explicit-payment-evidence-2026-09-18.zip",
     "evidence_archive_sha256": "6be9658bd28e6bf72d9dac8add77319a703f4d6c7fedcacefee069604dfcc0a9",
     "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506770311233818625/",
     "youtube": null,
     "maintainer_issue": "https://github.com/darius-lesch/pyloan/issues/70",
     "implementation_defects_in_this_report": 1,
-    "publication_status": "Verified public on GitHub, GERO, Hugging Face, Zenodo and LinkedIn after vendor report70. Video not produced; queued for the next available slot from 19 September. Candidate only; no upstream acceptance or production impact claimed.",
+    "publication_status": "Version 1.1 downstream-chain addendum verified on GitHub, GERO, Hugging Face, Zenodo and existing LinkedIn post. One synthetic document/budget scenario in five states; same defect ID. Video not produced; queued.",
     "limits": "Synthetic library schedules; no bank deployment or customer harm claim. 24 exact-oracle rounding differences remain; upstream unittest suite retains three baseline failure reports. Candidate only, not accepted upstream.",
     "source_pin": "73a052cb40f9c23963fbc1ec4370aa7ac9c3efc1",
-    "zenodo_doi": "10.5281/zenodo.22834912",
+    "zenodo_doi": "10.5281/zenodo.22836495",
     "downstream_evidence": {
       "version": "1.1.0",
-      "type": "synthetic document and budget-check demonstration",
-      "extra_cash_requested": "819.10",
+      "date": "2026-09-18",
+      "chain": "final-payment override -> generated payment notice -> changed budget-check decision",
+      "notice_expected": "100.00",
+      "notice_actual": "919.10",
+      "additional_cash_requested": "819.10",
       "example_budget": "150.00",
-      "cash_above_budget": "769.10",
-      "decision_flip": "WITHIN_BUDGET to EXCEEDS_BUDGET",
-      "adapter_author": "GERO",
-      "real_payment_or_customer_impact_measured": false,
-      "archive_sha256": "63e6b8dcc6d7bb2b3ed1179897e869b87a9754392b8099b1dcb0e4fc567010cf",
-      "archive_path": "reports/pyloan-explicit-payment-final-balloon/impact-chain-addendum/gero-pyloan-downstream-chain-addendum-2026-09-18.zip"
-    }
+      "cash_above_budget_actual": "769.10",
+      "candidate_and_restoration_verified": true,
+      "scope": "One synthetic GERO adapter scenario in five states; no real invoice, payment or bank integration; accelerated principal, not extra interest or measured borrower loss.",
+      "new_independent_defects": 0,
+      "archive_url": "https://raw.githubusercontent.com/kadyrbekovhamit-cyber/gero-numerical-observatory/7a4cd53399082e8886f830c92ac70011c7b0e921/reports/pyloan-explicit-payment-final-balloon/impact-chain-addendum/gero-pyloan-downstream-chain-addendum-2026-09-18.zip",
+      "archive_sha256": "63e6b8dcc6d7bb2b3ed1179897e869b87a9754392b8099b1dcb0e4fc567010cf"
+    },
+    "zenodo_versions": [
+      {
+        "version": "1.0.0",
+        "url": "https://zenodo.org/records/22834912",
+        "doi": "10.5281/zenodo.22834912"
+      },
+      {
+        "version": "1.1.0",
+        "url": "https://zenodo.org/records/22836495",
+        "doi": "10.5281/zenodo.22836495"
+      }
+    ]
   }
 ]
