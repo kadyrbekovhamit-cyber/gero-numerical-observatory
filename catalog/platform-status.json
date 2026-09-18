@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-18T01:54:31.096295+00:00",
+  "checked_at": "2026-09-18T08:46:16.117879+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 108,
     "huggingface": 108,
     "zenodo": 108,
-    "github_catalog_report": 108,
+    "github_catalog_report": 109,
     "zenodo_records_including_collection": 109,
-    "unique_individual_publications": 108,
+    "unique_individual_publications": 109,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "108 canonical reports have links on GitHub, GERO, Hugging Face and Zenodo. BondZero six-channel archival verification completed. Historical collection is counted separately; social/video coverage is not global parity.",
+  "github_status": "109 canonical reports. MLflow vendor-first archive public onGitHub, five other channels pending.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -20,9 +20,15 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [],
-    "huggingface": [],
-    "zenodo": []
+    "gero": [
+      "mlflow-ndcg-document-id-collision"
+    ],
+    "huggingface": [
+      "mlflow-ndcg-document-id-collision"
+    ],
+    "zenodo": [
+      "mlflow-ndcg-document-id-collision"
+    ]
   },
   "deduplication_notes": [
     "All 97 previous report IDs preserved; one CIR pricing component report appended.",
@@ -40,7 +46,7 @@
     "17 September: Beta density archival distribution completed on six channels. Existing issue 5 retained; no second discovery. All 105 previous canonical publication objects preserved; Collatz remains outside the 106-report subset.",
     "17September: portable BondZero archive published onGitHub andGERO as a resolved-case verification. Current source fixed inbb10c393; official1.1.2stillaffected.106prior canonical objects preserved. No second issue, new-discovery claim or video upload. Four remaining channels queued."
   ],
-  "parity_complete": true,
+  "parity_complete": false,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "archival_backfill": {
     "date": "2026-09-16",
@@ -52,32 +58,30 @@
   },
   "latest_reports": [
     {
-      "id": "financepy-bond-zero-modified-duration-scale",
-      "title": "FinancePy BondZero: verifying the upstream fix for a 10,000-fold duration error",
+      "id": "mlflow-ndcg-document-id-collision",
+      "title": "MLflow NDCG: irrelevant retrievals score above zero after a document-ID collision",
       "authors": [
         "Xamit Kadirbekov"
       ],
-      "publication_date": "2026-09-17",
+      "publication_date": "2026-09-18",
       "kind": "published_report",
-      "gero": "https://www.gero.uz/research/articles/financepy-bond-zero-modified-duration-scale.html",
-      "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-bond-zero-modified-duration-scale.md",
-      "zenodo": "https://zenodo.org/records/22820394",
-      "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/financepy-bond-zero-modified-duration-scale",
-      "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-bond-zero-modified-duration-scale.md",
-      "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-bond-zero-modified-duration-scale.md",
-      "source_text_sha256": "b0fae7a2c7bfb96a937b31dcc538bd5af620769fa8d474d734a22af7945a2bb4",
-      "mirror_sha256": "6e182db8679f0c2ed7fb8f228a546d3e2c8e47c8c45c3d6e19c5886dd5a531c4",
-      "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/financepy-bond-zero-modified-duration-scale/gero-financepy-bond-zero-duration-research-2026-09-17.zip",
-      "evidence_archive_sha256": "4700b9dab0ed211071b3fc6a8939f7558ce782b192fe9383d161b15f70320447",
-      "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506530627228160000/",
-      "youtube": "https://youtube.com/shorts/1_uu1wAUD38",
-      "maintainer_issue": "https://github.com/domokane/FinancePy/issues/267",
+      "gero": null,
+      "huggingface": null,
+      "zenodo": null,
+      "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlflow-ndcg-document-id-collision",
+      "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlflow-ndcg-document-id-collision.md",
+      "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlflow-ndcg-document-id-collision.md",
+      "source_text_sha256": "61850913d9b5a336b9d303e81869706dc96f05e126d47897d0e42e8c8bab11f1",
+      "mirror_sha256": "61850913d9b5a336b9d303e81869706dc96f05e126d47897d0e42e8c8bab11f1",
+      "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/mlflow-ndcg-document-id-collision/gero-mlflow-ndcg-id-collision-evidence-2026-09-18.zip",
+      "evidence_archive_sha256": "0e9ccf4cf38ad9140b81914c1f34c916054b07ca5563597d4073b3b8d68473c0",
+      "linkedin": null,
+      "youtube": null,
+      "maintainer_issue": "https://github.com/mlflow/mlflow/issues/25965",
       "implementation_defects_in_this_report": 1,
-      "publication_status": "All six channels public and verified. Existing issue267, upstream source correction verified; official PyPI1.1.2 affected as checked18September. This archive is not a new finding.",
-      "limits": "Synthetic zero-coupon-bond price-to-risk identity under stated yield/day-count conventions. Corrected upstream source verified separately from affected release. No full-suite, performance or bank/customer-impact claim.",
-      "upstream_fix_commit": "bb10c3936e078a5212694d017746453175151c09",
-      "upstream_verification_followup": "https://github.com/domokane/FinancePy/issues/267#issuecomment-5713269134",
-      "zenodo_doi": "10.5281/zenodo.22820394"
+      "publication_status": "Vendor notified first; GitHub report public. Other five channels pending. Local candidate, no upstream acceptance.",
+      "limits": "Deprecated ndcg_at_k API in3.16.1 and byte-identical pinned module;1810synthetic cases214→0→214. No full-suite, hosted Databricks, real retrieval-model, customer-loss or performance claim.",
+      "source_pin": "35758a9a954422200034b949176879c2cbbe4a8a"
     }
   ],
   "coverage_scope": "108 canonical IDs. Separate Collatz research map is outside this subset; counts are reports, not defects or all external account totals.",

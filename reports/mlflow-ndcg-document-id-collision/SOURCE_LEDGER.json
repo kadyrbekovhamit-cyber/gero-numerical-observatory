@@ -1,0 +1,246 @@
+{
+  "case_id": "mlflow-ndcg-document-id-collision",
+  "prepared_date": "2026-09-18",
+  "timezone": "Asia/Tashkent",
+  "editorial_scope": "Existing saved synthetic execution evidence only. This agent did not rerun numerical tests, synthesize narration, render, upload, or contact maintainers.",
+  "live_recheck_limit": "The web reader failed to fetch issue25965 (404) and pinned GitHub source blobs (cache miss). This does not contradict root's verified sent receipt. Do not claim this agent freshly verified their live availability; root should refresh before publication.",
+  "sources": [
+    {
+      "id": "E01",
+      "title": "MLflow replay receipt",
+      "publisher": "GERO local research",
+      "date": "2026-09-18",
+      "local_path": "/Users/khamit/Documents/Codex/gero-continuous-research/research/corporate-products-2026-09-18/evidence/MLFLOW_REPLAY_RECEIPT.json",
+      "public_url": null,
+      "type": "saved execution evidence",
+      "supports": [
+        "Official release version 3.16.1; pinned module commit 35758a9a954422200034b949176879c2cbbe4a8a",
+        "Core all-irrelevant score 0.6309297535714574; independent expected score0",
+        "1,810 scenarios;905 renaming pairs",
+        "214 release/current failures;0 candidate;214 restored",
+        "Current/release module SHA256 equivalence",
+        "No production service test; one configured worker"
+      ],
+      "limits": "Readback of existing receipt, not a fresh agent execution. Does not establish frequency in real systems."
+    },
+    {
+      "id": "E02",
+      "title": "Fresh-process replay confirmation",
+      "publisher": "GERO local research",
+      "date": "2026-09-18",
+      "local_path": "/Users/khamit/Documents/Codex/gero-continuous-research/research/corporate-products-2026-09-18/evidence/MLFLOW_REPLAY_CONFIRMATION.json",
+      "public_url": null,
+      "type": "saved execution evidence",
+      "supports": [
+        "Second process with PYTHONHASHSEED=17 reproduced all four output files byte-for-byte",
+        "1,596 previously passing scenarios unchanged exactly"
+      ],
+      "limits": "These are finite synthetic controls; they are not all accepted input cases or a full performance test."
+    },
+    {
+      "id": "E03",
+      "title": "Candidate patch",
+      "publisher": "GERO local research",
+      "date": "2026-09-18",
+      "local_path": "/Users/khamit/Documents/Codex/gero-continuous-research/research/corporate-products-2026-09-18/mlflow-candidate.patch",
+      "public_url": null,
+      "type": "local proposed code change",
+      "supports": [
+        "Represent all document occurrences as (original_id,occurrence_number)",
+        "Determine relevance from an immutable original target set"
+      ],
+      "limits": "Local candidate only; no PR, merge or vendor acceptance is established by this file."
+    },
+    {
+      "id": "E04",
+      "title": "Focused existing upstream test receipt",
+      "publisher": "GERO local research",
+      "date": "2026-09-18",
+      "local_path": "/Users/khamit/Documents/Codex/gero-continuous-research/research/corporate-products-2026-09-18/evidence/disclosure-review/MLFLOW_UPSTREAM_TEST_RECEIPT.json",
+      "public_url": null,
+      "type": "saved execution evidence",
+      "supports": [
+        "One unchanged upstream test_ndcg_at_k function passes original/candidate/restored"
+      ],
+      "limits": "Full pytest module, conftest and full MLflow suite were not run. Root-level path stated in earlier handoff was missing; this nested path is correct."
+    },
+    {
+      "id": "S01",
+      "title": "Pinned ndcg_at_k factory and contract",
+      "publisher": "MLflow project",
+      "date": "Pinned source inspected 2026-09-18",
+      "url": "https://github.com/mlflow/mlflow/blob/35758a9a954422200034b949176879c2cbbe4a8a/mlflow/metrics/__init__.py#L300",
+      "local_path": "/Users/khamit/Documents/Codex/gero-continuous-research/research/corporate-products-2026-09-18/evidence/mlflow-source/mlflow/metrics/__init__.py",
+      "lines": "300–326",
+      "type": "primary source documentation",
+      "supports": [
+        "Deprecated since 3.4.0",
+        "Binary relevance from ground-truth IDs",
+        "Repeated relevant IDs treated as separate occurrences",
+        "Public metric factory"
+      ],
+      "limits": "Pinned source was read locally; fresh browser/source retrieval failed. No statement about new GenAI scorers."
+    },
+    {
+      "id": "S02",
+      "title": "Pinned duplicate expansion and row preparation",
+      "publisher": "MLflow project",
+      "date": "Pinned source inspected 2026-09-18",
+      "url": "https://github.com/mlflow/mlflow/blob/35758a9a954422200034b949176879c2cbbe4a8a/mlflow/metrics/metric_definitions.py#L409",
+      "local_path": "/Users/khamit/Documents/Codex/gero-continuous-research/research/corporate-products-2026-09-18/evidence/mlflow-source/mlflow/metrics/metric_definitions.py",
+      "lines": "409–460",
+      "type": "primary implementation",
+      "supports": [
+        "Repeated IDs are expanded with deterministic _bc574ae_ occurrence suffix",
+        "Generated IDs and real IDs share a namespace",
+        "Expanded IDs feed relevance and score indexing"
+      ],
+      "limits": "Mechanism describes this local evaluation path. No hosted Databricks or downstream deployment inference."
+    },
+    {
+      "id": "D01",
+      "title": "Maintainer issue sent receipt",
+      "publisher": "GERO saved GitHub receipt",
+      "date": "2026-09-18T07:52:54Z",
+      "url": "https://github.com/mlflow/mlflow/issues/25965",
+      "local_path": "/Users/khamit/Documents/Codex/gero-continuous-research/research/corporate-products-2026-09-18/evidence/disclosure-review/MLFLOW_VENDOR_SENT_RECEIPT.json",
+      "type": "saved disclosure receipt",
+      "supports": [
+        "Issue25965 sent through official MLflow GitHub tracker",
+        "Author kadyrbekovhamit-cyber",
+        "Saved receipt records no acknowledgement or acceptance; no PR created"
+      ],
+      "body_sha256": "40b911c712b50c175c5fb224e158d97a777658e172b640e781fd7b1e85139545",
+      "limits": "This agent could not independently fetch the live issue; refresh thread before release and update any material new maintainer response."
+    },
+    {
+      "id": "D02",
+      "title": "Prepared factual maintainer report and related-history review",
+      "publisher": "GERO local research",
+      "date": "2026-09-18",
+      "local_path": "/Users/khamit/Documents/Codex/gero-continuous-research/research/corporate-products-2026-09-18/MLFLOW_VENDOR_REPORT.md",
+      "url": "https://github.com/mlflow/mlflow/issues/25965",
+      "type": "research report",
+      "supports": [
+        "Distinguishes issue12361/PR12447 from ID collision",
+        "Distinguishes short-retrieval issue24541 and proposals24543/24545/24550/24551/24553",
+        "Nonempty main cases use k no greater than retrieved length",
+        "AI-assisted preparation disclosed"
+      ],
+      "limits": "Bounded prior review, not a proof of universal novelty. This agent did not repeat all issue searches."
+    }
+  ],
+  "claim_ledger": [
+    {
+      "id": "C01",
+      "statement": "The all-irrelevant synthetic example returned0.6309297535714574 instead of0.",
+      "classification": "measured fact from saved local run",
+      "sources": [
+        "E01",
+        "E02",
+        "S01"
+      ],
+      "video_scenes": [
+        1
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Opaque IDs should not change a relevance-based ranking score when identity relationships are preserved.",
+      "classification": "mathematical invariant inferred from binary-relevance contract",
+      "sources": [
+        "S01"
+      ],
+      "video_scenes": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "A generated duplicate name can collide with a real ID and alter relevance indexing.",
+      "classification": "implementation explanation supported by source and experiment",
+      "sources": [
+        "S02",
+        "E01"
+      ],
+      "video_scenes": [
+        2
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "The candidate changes214 failures to0; restoring original code restores214, across1810 scenarios.",
+      "classification": "measured finite-test result",
+      "sources": [
+        "E01",
+        "E03"
+      ],
+      "video_scenes": [
+        3
+      ]
+    },
+    {
+      "id": "C05",
+      "statement": "1596 previously passing cases are exactly unchanged.",
+      "classification": "measured finite-control result",
+      "sources": [
+        "E02"
+      ],
+      "video_scenes": [
+        3
+      ]
+    },
+    {
+      "id": "C06",
+      "statement": "The metric is deprecated since3.4.0, but available in tested3.16.1.",
+      "classification": "source fact plus executed-API fact",
+      "sources": [
+        "S01",
+        "E01"
+      ],
+      "video_scenes": [
+        4
+      ]
+    },
+    {
+      "id": "C07",
+      "statement": "The maintainer report was sent; the correction remains local and no acceptance is claimed.",
+      "classification": "disclosure status from saved receipt",
+      "sources": [
+        "D01",
+        "E03"
+      ],
+      "video_scenes": [
+        4
+      ]
+    },
+    {
+      "id": "C08",
+      "statement": "No hosted-service or customer impact was tested.",
+      "classification": "explicit evidence limitation",
+      "sources": [
+        "E01",
+        "D02"
+      ],
+      "video_scenes": [
+        4
+      ]
+    }
+  ],
+  "forbidden_extensions": [
+    "Not214independentbugs",
+    "Not evidence that Databricks hosted services mis-score production models",
+    "Not financial/customer losses, fraud, regulatory misconduct or security compromise",
+    "Not proof all possible inputs are fixed",
+    "Not upstream acceptance or full-suite validation",
+    "Not a fresh rerun or freshly verified live source by the editorial agent"
+  ],
+  "source_integrity": {
+    "metric_definitions_sha256": "46e0959ead2326979dbee897d500ad0bb72275eeee037c773b5ce70438fbb282",
+    "wheel_sha256_from_root_report": "41ec1697710b91d001f8951bdc2d00391a277065ed82268c81706238fa2b918e",
+    "release_current_restored_output_sha256": "af2c123bedda6ddc1796f87d56a3c435ed5d6a9886a19c8ca368155c913b876c",
+    "candidate_output_sha256": "81260c1c9c50a018155043370938e2d9d5c10957730741ed4e28192c89fb22a4",
+    "note": "Values copied from existing report/receipts, not independently recomputed by this editorial agent."
+  }
+}

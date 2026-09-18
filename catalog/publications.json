@@ -1958,5 +1958,31 @@
     "limits": "CPU float32 JVP/VJP on 2136 synthetic input/seed pairs:443 to0 to443 failures per layout. Three layouts agree. Release methods source-identical but release runtime not executed. No GPU, full-suite, performance or model/device/customer impact claim.",
     "source_pin": "59d600b5e64c238427d0f8d897ab7c682ef4d3d2",
     "zenodo_doi": "10.5281/zenodo.22817495"
+  },
+  {
+    "id": "mlflow-ndcg-document-id-collision",
+    "title": "MLflow NDCG: irrelevant retrievals score above zero after a document-ID collision",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-18",
+    "kind": "published_report",
+    "gero": null,
+    "huggingface": null,
+    "zenodo": null,
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlflow-ndcg-document-id-collision",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlflow-ndcg-document-id-collision.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlflow-ndcg-document-id-collision.md",
+    "source_text_sha256": "61850913d9b5a336b9d303e81869706dc96f05e126d47897d0e42e8c8bab11f1",
+    "mirror_sha256": "61850913d9b5a336b9d303e81869706dc96f05e126d47897d0e42e8c8bab11f1",
+    "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/mlflow-ndcg-document-id-collision/gero-mlflow-ndcg-id-collision-evidence-2026-09-18.zip",
+    "evidence_archive_sha256": "0e9ccf4cf38ad9140b81914c1f34c916054b07ca5563597d4073b3b8d68473c0",
+    "linkedin": null,
+    "youtube": null,
+    "maintainer_issue": "https://github.com/mlflow/mlflow/issues/25965",
+    "implementation_defects_in_this_report": 1,
+    "publication_status": "Vendor notified first; GitHub report public. Other five channels pending. Local candidate, no upstream acceptance.",
+    "limits": "Deprecated ndcg_at_k API in3.16.1 and byte-identical pinned module;1810synthetic cases214→0→214. No full-suite, hosted Databricks, real retrieval-model, customer-loss or performance claim.",
+    "source_pin": "35758a9a954422200034b949176879c2cbbe4a8a"
   }
 ]

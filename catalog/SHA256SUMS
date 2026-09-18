@@ -1,4 +1,4 @@
-d457e22973684fd08f62b245119e2d991191e6e8da7fa1c647e0fc7db1532c90  README.md
+c2df95c97abb61312496572868c3d14953d593fce8dd11cdbbde8753ba08f0af  README.md
 0c1c962a48fa367ebdfb48f47b6af56b612339d12db1d765f9e2b726d13343d1  SOURCE_NOTICES.md
 55487fd0a4770daa87c7f1d9288d4aa499d1e698e50978b3a07f2a9aa3b41369  artifacts/collatz-source-LICENSE.txt
 ae2310410d17d7a25932ea0852a1a34e358002959cb212ef56c3281b3baf1bc7  artifacts/financepy-vasicek-small-mean-reversion-LICENSES.md
@@ -13,8 +13,8 @@ b2b673aa86e3d6a0184011e961977f221850fa87b2dd005b229f20e4afe94340  artifacts/gero
 a62d6f9aeb36604df043520cf2a6ce51b614734c9fe720ca7821ebbd9143862f  artifacts/gero-nntrainer-divide-evidence-2026-09-14.zip
 10d5d7b5f5d291eb6f39c0798c3a3026c99943934c2facff03127a7dd86588df  artifacts/gero-quantlib-zero-stddev-evidence-2026-09-14.zip
 387af6a3c538d440f283e591aea9c03774db21db7e9602d2743a8bc819d12d4d  artifacts/p-harmonic-cones.pdf
-003f420fb0b6f883f7c8148b9d776f420c33b1c468a5a2601c81c6d507641f23  platform-status.json
-c0bf1f74015618b370b69d99ba447e2ddad5a0ecc5514ccf89f79a0b5de930c7  publications.json
+d0fbe4b3679d09d8223dcebeda05f454f61a6134662b62fdc118ce8adae44047  platform-status.json
+9361bd3273a6f547f5b9b522764485e23aa85bbbda063e6a3a00833fa1e7fd59  publications.json
 e9b787883196051947ec6c0fcc8ed9b7967c0ccc1957f094028c4b4a3aa6671f  reports/financepy-double-no-touch-series-truncation.md
 d27f7d8701b09c2ba66521f6f07d410423972130fdeea47680b0b3212ca43c5f  evidence/nntrainer-split-incremental-channels/LICENSES.md
 c86c2dab07b680694776134676aaeff88093e1d7caa966b4e528999e4f2f51f4  evidence/nntrainer-split-incremental-channels/REPRODUCE.md
@@ -180,3 +180,14 @@ ef357d540422d41ceba5e8a4900d68b58e16471545e615b2fe89e4df0ffc1132  ../reports/mlx
 17713833dc1339743fe474026c1a52640d9fd86178dd5942f7ec2621aa5db2d7  ../reports/mlx-rsqrt-directional-derivative-scale/rsqrt_probe.cpp
 e1052b2d58e71c9c5c757841a8e83aba5ae11f1e18b91965607fe75b2a169459  ../reports/mlx-rsqrt-directional-derivative-scale/PUBLICATION_LINKS.json
 4b994e6c0d98385f86a294ba2ceb61cb6c6adbf39a69aba83d47ac6fb7b07663  ../reports/financepy-bond-zero-modified-duration-scale/PUBLICATION_LINKS.json
+61850913d9b5a336b9d303e81869706dc96f05e126d47897d0e42e8c8bab11f1  reports/mlflow-ndcg-document-id-collision.md
+5996e82d4b67fd15d7ff40e97e03fc4247ca350af4cf2f6f597651bc74d1870f  ../reports/mlflow-ndcg-document-id-collision/ARCHIVE_RECEIPT.json
+6395355de6f391afff35996a30fb41b189b4991a4cb54993ace35ab69a0bfa28  ../reports/mlflow-ndcg-document-id-collision/LICENSE.txt
+0656a44742dcc3e528c28e740114892d446447b24e3e2ff91d7ed1f520992a04  ../reports/mlflow-ndcg-document-id-collision/LICENSES.md
+83b8ebceb4b429901d21b0d748076be4d77c3b61c3621f2fb316c39f3036f8e1  ../reports/mlflow-ndcg-document-id-collision/README.md
+03c2d2775689e1d4e459b5250be78c47875333aac6805a00e114dfd2f9d59696  ../reports/mlflow-ndcg-document-id-collision/REPORT_EN.md
+a458d65c74c51b7ee89573cde304a7254b8088886b71b0a1058a90e2f0ba85c2  ../reports/mlflow-ndcg-document-id-collision/SOURCE_LEDGER.json
+0e9ccf4cf38ad9140b81914c1f34c916054b07ca5563597d4073b3b8d68473c0  ../reports/mlflow-ndcg-document-id-collision/gero-mlflow-ndcg-id-collision-evidence-2026-09-18.zip
+465c44b39ef65b0f4071cb621e8c1cd720dd13fd03178d008cea48400ee80b8b  ../reports/mlflow-ndcg-document-id-collision/mlflow-candidate.patch
+e5d6a63f6be1513022ca10876df297e8c87534f11f3fca0d8dd082458e05749d  ../reports/mlflow-ndcg-document-id-collision/mlflow_minimal_repro.py
+8dd7529d0a714c8c94f32c484e4472c92e16c13a6f8bdc614bd70f8fcce42fd5  ../reports/mlflow-ndcg-document-id-collision/requirements-repro.txt
