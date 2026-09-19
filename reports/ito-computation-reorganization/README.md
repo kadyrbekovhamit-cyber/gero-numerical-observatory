@@ -128,8 +128,11 @@ Results distinguish identities, theoretical errors, observed timings, hypotheses
 
 External papers are referenced, not bundled or relicensed. GERO-authored text and figures: CC BY4.0. Original code: MIT. Separate notices accompany the package. Video and verified publication links are supplied with the release metadata.
 
-## Release files
+## Release links
 
-[Watch or download the 43-second English video](https://raw.githubusercontent.com/kadyrbekovhamit-cyber/gero-numerical-observatory/refs/heads/main/reports/ito-computation-reorganization/media/ito-computation.mp4) · [Evidence archive](https://raw.githubusercontent.com/kadyrbekovhamit-cyber/gero-numerical-observatory/refs/heads/main/reports/ito-computation-reorganization/gero-ito-computation-evidence-v1-2026-09-19.zip) · [Canonical release](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/ito-computation-reorganization).
+- [github](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/ito-computation-reorganization)
+- [gero](https://www.gero.uz/research/articles/ito-computation-reorganization.html)
+- [43-second English video](https://www.gero.uz/research/media/ito-computation-reorganization.mp4)
+- [Evidence archive](https://raw.githubusercontent.com/kadyrbekovhamit-cyber/gero-numerical-observatory/refs/heads/main/reports/ito-computation-reorganization/gero-ito-computation-evidence-v1-2026-09-19.zip)
 
-The video is hosted with the evidence. A YouTube upload and additional platform mirrors are pending; no unverified platform URLs are listed.
+Additional mirrors pending: youtube, zenodo, linkedin, huggingface, reddit.

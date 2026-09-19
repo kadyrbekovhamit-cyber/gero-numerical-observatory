@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-09-19T16:08:44.348591+00:00",
+  "checked_at": "2026-09-19T16:18:00.180846+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 114,
+    "gero": 115,
     "huggingface": 114,
     "zenodo": 114,
     "github_catalog_report": 115,
@@ -20,9 +20,7 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [
-      "ito-computation-reorganization"
-    ],
+    "gero": [],
     "huggingface": [
       "ito-computation-reorganization"
     ],
@@ -149,21 +147,19 @@
   "latest_distribution_progress": {
     "case_id": "ito-computation-reorganization",
     "public": [
-      "github"
+      "github",
+      "gero"
     ],
     "pending": [
-      "gero",
+      "youtube",
       "zenodo",
       "linkedin",
       "huggingface",
-      "reddit",
-      "youtube"
+      "reddit"
     ],
     "links": {
       "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/ito-computation-reorganization",
-      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/ito-computation-reorganization.md",
-      "video": "https://raw.githubusercontent.com/kadyrbekovhamit-cyber/gero-numerical-observatory/refs/heads/main/reports/ito-computation-reorganization/media/ito-computation.mp4",
-      "archive": "https://raw.githubusercontent.com/kadyrbekovhamit-cyber/gero-numerical-observatory/refs/heads/main/reports/ito-computation-reorganization/gero-ito-computation-evidence-v1-2026-09-19.zip"
+      "gero": "https://www.gero.uz/research/articles/ito-computation-reorganization.html"
     },
     "archive_sha256": "1bc4903eff9eea6c9f92d485caa442c9435d243f286a63f0621a447005efbaf6"
   },

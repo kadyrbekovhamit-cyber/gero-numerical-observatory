@@ -146,4 +146,4 @@ Beta density archival distribution is complete on all six channels: [LinkedIn](h
 
 BondZero archives an already corrected upstream issue. [Source fix](https://github.com/domokane/FinancePy/commit/bb10c3936e078a5212694d017746453175151c09) and [independent verification](https://github.com/domokane/FinancePy/issues/267#issuecomment-5713269134) are public. Four distribution channels remain pending; no video publication is claimed.
 
-| 115 | [Same Itô integral, fewer operations: a reproducible computational study](reports/ito-computation-reorganization.md) | Pending | Pending | Pending | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/ito-computation-reorganization) |
+| 115 | [Same Itô integral, fewer operations: a reproducible computational study](reports/ito-computation-reorganization.md) | [Page](https://www.gero.uz/research/articles/ito-computation-reorganization.html) | Pending | Pending | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/ito-computation-reorganization) |
