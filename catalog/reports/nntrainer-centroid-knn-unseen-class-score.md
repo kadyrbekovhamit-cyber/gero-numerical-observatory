@@ -102,3 +102,12 @@ The bounded review covered current source, the current-path history, the canonic
 The tested policy is nearest-centroid selection over at least one observed class. An entirely untrained model requires an explicit policy; this audit does not resolve it. Rejection of partially trained models would be an alternative API policy to a sentinel-based mask.
 
 The one-line candidate is validated for the stated finite input/distance range. Extreme or nonfinite distances, ties at the most negative float, other dtypes, larger batches and full application integrations are outside scope. No complete upstream suite or cross-platform correctness claim is made. The primary evidence is a score-ordering violation and its measured synthetic classification consequence.
+
+## Public records and delivery status
+
+- [github](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/nntrainer-centroid-knn-unseen-class-score.md)
+- [gero](https://www.gero.uz/research/articles/nntrainer-centroid-knn-unseen-class-score.html)
+
+[Complete evidence ZIP](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/nntrainer-centroid-knn-unseen-class-score/gero-nntrainer-centroid-unseen-class-evidence-2026-09-20.zip). SHA-256: `b9d7b22a70a1cb6c7069c153198c29280b6ffcc8fc706b6624155144d4c2943f`.
+
+Zenodo, Hugging Face, LinkedIn and YouTube delivery remains pending; no public record, DOI or video on those destinations is claimed yet. The verified developer report is [nntrainer #4341](https://github.com/nntrainer/nntrainer/issues/4341).
