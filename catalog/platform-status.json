@@ -1,10 +1,10 @@
 {
-  "checked_at": "2026-09-19T16:25:46.966757+00:00",
+  "checked_at": "2026-09-19T16:56:59.773692+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 115,
-    "huggingface": 114,
-    "zenodo": 114,
+    "huggingface": 115,
+    "zenodo": 115,
     "github_catalog_report": 115,
     "zenodo_records_including_collection": 115,
     "unique_individual_publications": 115,
@@ -21,12 +21,8 @@
   },
   "missing": {
     "gero": [],
-    "huggingface": [
-      "ito-computation-reorganization"
-    ],
-    "zenodo": [
-      "ito-computation-reorganization"
-    ]
+    "huggingface": [],
+    "zenodo": []
   },
   "deduplication_notes": [
     "All 97 previous report IDs preserved; one CIR pricing component report appended.",
@@ -49,7 +45,7 @@
     "19September: Endowment variance benefit-scale report completes six-platform distribution. 483/1300 original variance mismatches become0 with local candidate and return on restoration. Native normal approximation -> GERO synthetic JSON -> example limit changes; no actual insurer losses measured. All112 prior canonical objects preserved. Counts track reports, not bugs.",
     "19 September 2026: MLX erf adds one source-pinned report. 372 = 368 nonzero-x and 4 zero-boundary primary failures become 0 with the balanced local candidate; tail and second-derivative limits remain. All earlier canonical objects preserved. Upstream report not sent."
   ],
-  "parity_complete": false,
+  "parity_complete": true,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "archival_backfill": {
     "date": "2026-09-16",
@@ -155,18 +151,21 @@
     "public": [
       "github",
       "gero",
-      "linkedin"
-    ],
-    "pending": [
-      "youtube",
       "zenodo",
+      "linkedin",
       "huggingface",
       "reddit"
+    ],
+    "pending": [
+      "youtube"
     ],
     "links": {
       "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/ito-computation-reorganization",
       "gero": "https://www.gero.uz/research/articles/ito-computation-reorganization.html",
-      "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7507110937569419264/"
+      "zenodo": "https://zenodo.org/records/22847733",
+      "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7507110937569419264/",
+      "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/ito-computation-reorganization.md",
+      "reddit": "https://www.reddit.com/user/ClimateNo3442/comments/1wkrbeu/same_it%C3%B4_estimate_fewer_operations_code_timings/"
     },
     "archive_sha256": "1bc4903eff9eea6c9f92d485caa442c9435d243f286a63f0621a447005efbaf6"
   },

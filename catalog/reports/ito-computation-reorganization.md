@@ -132,8 +132,11 @@ External papers are referenced, not bundled or relicensed. GERO-authored text an
 
 - [github](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/ito-computation-reorganization)
 - [gero](https://www.gero.uz/research/articles/ito-computation-reorganization.html)
+- [zenodo](https://zenodo.org/records/22847733)
 - [linkedin](https://www.linkedin.com/feed/update/urn:li:share:7507110937569419264/)
+- [huggingface](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/ito-computation-reorganization.md)
+- [reddit](https://www.reddit.com/user/ClimateNo3442/comments/1wkrbeu/same_it%C3%B4_estimate_fewer_operations_code_timings/)
 - [43-second English video](https://www.gero.uz/research/media/ito-computation-reorganization.mp4)
 - [Evidence archive](https://raw.githubusercontent.com/kadyrbekovhamit-cyber/gero-numerical-observatory/refs/heads/main/reports/ito-computation-reorganization/gero-ito-computation-evidence-v1-2026-09-19.zip)
 
-Additional mirrors pending: youtube, zenodo, huggingface, reddit.
+Additional mirrors pending: youtube.
