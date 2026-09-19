@@ -1,0 +1,11 @@
+--- a/src/actuarialmath/insurance.py
++++ b/src/actuarialmath/insurance.py
+@@ -195,7 +195,7 @@
+                                           b=b, moment=2, discrete=discrete)
+             A1 = self.endowment_insurance(x, s=s, t=t, endowment=endowment,
+                                           b=b, discrete=discrete)
+-            return self.insurance_variance(A2=A2, A1=A1, b=b)
++            return self.insurance_variance(A2=A2, A1=A1, b=1)
+         E = self.E_x(x, s=s, t=t, moment=moment)
+         A = self.term_insurance(x, s=s, t=t, b=b, moment=moment,
+                                 discrete=discrete)

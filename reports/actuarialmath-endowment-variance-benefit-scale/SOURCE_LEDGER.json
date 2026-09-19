@@ -1,0 +1,19 @@
+{
+  "author": "Xamit Kadirbekov",
+  "date": "2026-09-19",
+  "source_commit": "7d18f11ad304898f177b7922b3c53f70e4c2b4f4",
+  "version": "official PyPI1.1.0; source project metadata1.0.1",
+  "urls": [
+    "https://github.com/terence-lim/actuarialmath/blob/7d18f11ad304898f177b7922b3c53f70e4c2b4f4/src/actuarialmath/insurance.py",
+    "https://github.com/terence-lim/actuarialmath/blob/7d18f11ad304898f177b7922b3c53f70e4c2b4f4/src/actuarialmath/life.py",
+    "https://pypi.org/project/actuarialmath/1.1.0/",
+    "https://actuarialmath-guide.readthedocs.io/en/latest/insurance.html",
+    "https://github.com/terence-lim/actuarialmath/issues/6"
+  ],
+  "execution_receipts": [
+    "GRID_RECEIPT.json",
+    "DOWNSTREAM_RECEIPT.json",
+    "PORTABLE_REPLAY_RECEIPT.json"
+  ],
+  "limitations": "Discrete synthetic LifeTable cases; native portfolio normal approximation plus GERO document/limit adapter; no production insurer or customer-loss claim."
+}

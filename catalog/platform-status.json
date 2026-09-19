@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-19T05:40:00.192438+00:00",
+  "checked_at": "2026-09-19T09:42:46.981924+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 112,
     "huggingface": 112,
-    "zenodo": 112,
-    "github_catalog_report": 112,
+    "zenodo": 113,
+    "github_catalog_report": 113,
     "zenodo_records_including_collection": 113,
-    "unique_individual_publications": 112,
+    "unique_individual_publications": 113,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "112 canonical reports with GERO, Hugging Face, Zenodo and GitHub report coverage; the separate Collatz map remains outside this subset. Strata Hessian video is queued, not produced.",
+  "github_status": "113 canonical reports; endowment variance archive added after vendor disclosure.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -20,8 +20,12 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [],
-    "huggingface": [],
+    "gero": [
+      "actuarialmath-endowment-variance-benefit-scale"
+    ],
+    "huggingface": [
+      "actuarialmath-endowment-variance-benefit-scale"
+    ],
     "zenodo": []
   },
   "deduplication_notes": [
@@ -43,7 +47,7 @@
     "19September: Strata Black Hessian adds one distinct report. Its six native pricing failures use a GERO constant-zero custom provider; default Hagan/CMS exposure and customer loss are not demonstrated. All111 prior canonical objects preserved. Counts track document coverage, not bugs or raw Zenodo versions.",
     "19 September: added the existing Strata Normal-IV report video link. No new report, test run, issue, DOI or LinkedIn post created. Scientific archive remains unchanged. Other canonical report objects preserved."
   ],
-  "parity_complete": true,
+  "parity_complete": false,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "archival_backfill": {
     "date": "2026-09-16",
@@ -55,32 +59,31 @@
   },
   "latest_reports": [
     {
-      "id": "strata-black-adjoint2-zero-volatility-hessian",
-      "title": "Strata: a zero-volatility Hessian prevents custom-model option pricing",
+      "id": "actuarialmath-endowment-variance-benefit-scale",
+      "title": "Endowment variance scales the benefit twice in actuarialmath",
       "authors": [
         "Xamit Kadirbekov"
       ],
       "publication_date": "2026-09-19",
       "kind": "published_report",
-      "gero": "https://www.gero.uz/research/articles/strata-black-adjoint2-zero-volatility-hessian.html",
-      "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/strata-black-adjoint2-zero-volatility-hessian.md",
-      "zenodo": "https://zenodo.org/records/22840914",
-      "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/strata-black-adjoint2-zero-volatility-hessian",
-      "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/strata-black-adjoint2-zero-volatility-hessian.md",
-      "source_document_url": "https://www.gero.uz/research/articles/strata-black-adjoint2-zero-volatility-hessian.html",
-      "source_text_sha256": "8c3d16bb7a02683adb48aeeeb02069ad60aecf663b54e510d9c2800570e353c3",
-      "mirror_sha256": "26e0598488fad39cecdeabe4a7be078348dc44a8567c059a25cf8d06fd83d4c9",
-      "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/strata-black-adjoint2-zero-volatility-hessian/gero-strata-black-zero-volatility-evidence-2026-09-19.zip",
-      "evidence_archive_sha256": "3a6a81f884c71c72d76a93540140ec12ce2ad9f65e67267a50bce4fb3e93eff5",
-      "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506941906036334592/",
+      "gero": null,
+      "huggingface": null,
+      "zenodo": "https://zenodo.org/records/22843200",
+      "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/actuarialmath-endowment-variance-benefit-scale",
+      "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-endowment-variance-benefit-scale.md",
+      "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-endowment-variance-benefit-scale.md",
+      "source_text_sha256": "2a0ff7a3f6307ec2839d8613f2d07e3b8dd2a8ac7fc15812da0ccf2561ff3fce",
+      "mirror_sha256": "2a0ff7a3f6307ec2839d8613f2d07e3b8dd2a8ac7fc15812da0ccf2561ff3fce",
+      "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/actuarialmath-endowment-variance-benefit-scale/gero-actuarialmath-endowment-variance-evidence-2026-09-19.zip",
+      "evidence_archive_sha256": "59f6da29073136146139e9feade3fa504eec7c1ff37c7c2ffd16b8f65c041c2c",
+      "linkedin": null,
       "youtube": null,
-      "maintainer_issue": "https://github.com/OpenGamma/Strata/issues/2797",
+      "maintainer_issue": "https://github.com/terence-lim/actuarialmath/issues/6",
       "implementation_defects_in_this_report": 1,
-      "publication_status": "Public on GitHub, GERO, Hugging Face, Zenodo and LinkedIn after vendor disclosure; video queued, not produced.",
-      "limits": "NaN second derivatives interrupt the native price extrapolator through a documented custom-model interface. Direct failures180->0->180 in866 input rows; downstream constructor failures6->0->6 in21 input rows. Synthetic constant-volatility fixture; default Hagan/CMS path excluded; no bank/customer loss measured. No full upstream build/JUnit or acceptance claimed.",
-      "source_pin": "987932ee95bf53e2baaff9a6b8e738a00f558b10",
-      "measured_chain": "NaN Black Hessian -> native small-price fallback skipped -> root-bracketing exception; custom-zero provider produces6/6 failures ->0/6 after correction ->6/6 restored. Default Hagan/CMS impact excluded.",
-      "zenodo_doi": "10.5281/zenodo.22840914"
+      "publication_status": "Vendor issue6 sent first; GitHub and Zenodo evidence public. Other mirrors/video pending.",
+      "limits": "Synthetic discrete LifeTable distributions and GERO report/limit adapter. Native normal approximation is distinguished from the exact binomial percentile. No full upstream-suite or insurer/customer-loss claim.",
+      "source_pin": "7d18f11ad304898f177b7922b3c53f70e4c2b4f4",
+      "measured_chain": "Extra benefit scale -> native portfolio estimate41862.13 instead of6606.12 -> synthetic JSON -> example7000-limit decision flips; opposite-direction control retained."
     }
   ],
   "coverage_scope": "Canonical report IDs; separate Collatz map outside this subset. Report counts are not independent bugs or raw Zenodo version-object counts.",
@@ -110,27 +113,17 @@
     "new_case": false
   },
   "latest_distribution_progress": {
-    "case_id": "strata-black-adjoint2-zero-volatility-hessian",
+    "case_id": "actuarialmath-endowment-variance-benefit-scale",
     "public": [
       "github",
-      "gero",
-      "zenodo",
-      "linkedin",
-      "huggingface"
+      "zenodo"
     ],
     "pending": [
+      "gero",
+      "huggingface",
+      "linkedin",
       "youtube"
-    ],
-    "links": {
-      "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/strata-black-adjoint2-zero-volatility-hessian.md",
-      "gero": "https://www.gero.uz/research/articles/strata-black-adjoint2-zero-volatility-hessian.html",
-      "zenodo": "https://zenodo.org/records/22840914",
-      "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506941906036334592/",
-      "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/strata-black-adjoint2-zero-volatility-hessian.md"
-    },
-    "hf_commit": "a7d82e55f72285492fa3a7817f1cbe7a380f45d0",
-    "zenodo_doi": "10.5281/zenodo.22840914",
-    "archive_sha256": "3a6a81f884c71c72d76a93540140ec12ce2ad9f65e67267a50bce4fb3e93eff5"
+    ]
   },
   "latest_evidence_addendum": {
     "case_id": "pyloan-explicit-payment-final-balloon",
