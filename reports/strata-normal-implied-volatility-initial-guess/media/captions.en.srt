@@ -1,0 +1,31 @@
+1
+00:00:00,102 --> 00:00:03,594
+Strata returned zero volatility for an option priced at one.
+
+2
+00:00:04,852 --> 00:00:08,099
+Starting at zero also made the solver's step limit zero.
+
+3
+00:00:09,352 --> 00:00:12,599
+Reprice its answer: zero comes back, not one.
+
+4
+00:00:13,852 --> 00:00:16,326
+Our candidate adds a positive starting floor.
+
+5
+00:00:17,216 --> 00:00:20,335
+Volatility becomes about two point five zero seven,
+
+6
+00:00:20,554 --> 00:00:22,010
+restoring the price to one.
+
+7
+00:00:23,268 --> 00:00:28,075
+Eight hundred sixty-four failures fell to zero across seventeen hundred fifty tests.
+
+8
+00:00:28,966 --> 00:00:31,942
+Synthetic inputs; customer impact unmeasured.

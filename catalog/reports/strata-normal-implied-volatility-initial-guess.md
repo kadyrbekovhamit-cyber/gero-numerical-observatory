@@ -91,7 +91,7 @@ The duplicate review found the related #2238/#2372 history and the already-submi
 No full JUnit suite, complete non-at-the-money survey, performance study, actual bank deployment, production model or customer outcome was tested. Passing this finite grid does not establish correctness for every input. Research and report preparation were AI-assisted; actual Java executions produced the recorded outputs.
 
 
-[Complete portable evidence archive](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/strata-normal-implied-volatility-initial-guess/gero-strata-normal-iv-initial-guess-evidence-2026-09-18.zip) · SHA-256 `5590298a94cda06cb5f1de33d17a85753f4938b7e533d4359dfae716b0084153`. Other verified mirrors will be linked when available. Video is queued under the channel cadence and is not yet produced.
+[Complete portable evidence archive](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/strata-normal-implied-volatility-initial-guess/gero-strata-normal-iv-initial-guess-evidence-2026-09-18.zip) · SHA-256 `5590298a94cda06cb5f1de33d17a85753f4938b7e533d4359dfae716b0084153`. 
 
 
 ## Publication update — 18 September 2026
@@ -102,4 +102,8 @@ No full JUnit suite, complete non-at-the-money survey, performance study, actual
 - [linkedin](https://www.linkedin.com/feed/update/urn:li:share:7506643504564154368/)
 - [huggingface](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/strata-normal-implied-volatility-initial-guess.md)
 
-These five publications follow the vendor report. The video is not yet produced; no YouTube publication is claimed. No upstream acceptance or deployed-user impact is claimed.
+The publications follow the vendor report.  No upstream acceptance or deployed-user impact is claimed.
+
+## Video explanation — 19 September 2026
+
+[Watch the 33-second animated explanation](https://youtube.com/shorts/sXnQ7zmC8uc). It illustrates the existing 18 September results; it is not a new finding or new numerical run. Original GERO cartoon, synthetic English narration (edge-tts en-US-JennyNeural, -3%) and eight timed English captions. Synthetic inputs; customer impact remains unmeasured. The scientific archive and its checksums are unchanged.

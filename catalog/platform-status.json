@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-19T05:12:13.945563+00:00",
+  "checked_at": "2026-09-19T05:40:00.192438+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 112,
@@ -40,7 +40,8 @@
     "17 September: Beta density archival distribution completed on six channels. Existing issue 5 retained; no second discovery. All 105 previous canonical publication objects preserved; Collatz remains outside the 106-report subset.",
     "17September: portable BondZero archive published onGitHub andGERO as a resolved-case verification. Current source fixed inbb10c393; official1.1.2stillaffected.106prior canonical objects preserved. No second issue, new-discovery claim or video upload. Four remaining channels queued.",
     "PyLoan v1.1.0 adds a generated-document and budget-check demonstration; version records do not add canonical report IDs. Historic raw Zenodo object totals are not a fresh account-wide enumeration.",
-    "19September: Strata Black Hessian adds one distinct report. Its six native pricing failures use a GERO constant-zero custom provider; default Hagan/CMS exposure and customer loss are not demonstrated. All111 prior canonical objects preserved. Counts track document coverage, not bugs or raw Zenodo versions."
+    "19September: Strata Black Hessian adds one distinct report. Its six native pricing failures use a GERO constant-zero custom provider; default Hagan/CMS exposure and customer loss are not demonstrated. All111 prior canonical objects preserved. Counts track document coverage, not bugs or raw Zenodo versions.",
+    "19 September: added the existing Strata Normal-IV report video link. No new report, test run, issue, DOI or LinkedIn post created. Scientific archive remains unchanged. Other canonical report objects preserved."
   ],
   "parity_complete": true,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
@@ -84,19 +85,29 @@
   ],
   "coverage_scope": "Canonical report IDs; separate Collatz map outside this subset. Report counts are not independent bugs or raw Zenodo version-object counts.",
   "latest_completed_distribution": {
-    "id": "mlflow-ndcg-document-id-collision",
-    "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlflow-ndcg-document-id-collision.md",
-    "gero": "https://www.gero.uz/research/articles/mlflow-ndcg-document-id-collision.html",
-    "youtube": "https://youtube.com/shorts/vYrG6uPEIUE",
-    "zenodo": "https://zenodo.org/records/22827379",
-    "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506638239110385664/",
-    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlflow-ndcg-document-id-collision.md",
-    "archive_sha256": "0e9ccf4cf38ad9140b81914c1f34c916054b07ca5563597d4073b3b8d68473c0",
-    "zenodo_doi": "10.5281/zenodo.22827379",
-    "huggingface_commit": "b19bacc29636e2e6a1b190f3bd20b4b1b6a106d0",
-    "maintainer_issue": "https://github.com/mlflow/mlflow/issues/25965",
-    "verified_at": "2026-09-18T09:03:36.655025+00:00",
-    "no_media_binary_in_research_archives": true
+    "case_id": "strata-normal-implied-volatility-initial-guess",
+    "public": [
+      "github",
+      "gero",
+      "zenodo",
+      "linkedin",
+      "huggingface",
+      "youtube"
+    ],
+    "pending": [],
+    "links": {
+      "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/strata-normal-implied-volatility-initial-guess.md",
+      "gero": "https://www.gero.uz/research/articles/strata-normal-implied-volatility-initial-guess.html",
+      "zenodo": "https://zenodo.org/records/22827735",
+      "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506643504564154368/",
+      "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/strata-normal-implied-volatility-initial-guess.md",
+      "youtube": "https://youtube.com/shorts/sXnQ7zmC8uc"
+    },
+    "zenodo_doi": "10.5281/zenodo.22827735",
+    "archive_sha256": "5590298a94cda06cb5f1de33d17a85753f4938b7e533d4359dfae716b0084153",
+    "video_sha256": "788e817ebc6a7dae3c3f648b32904a068475d57d74e6bb0cc2d8761b93befa56",
+    "video_published_at": "2026-09-19T05:35:21.222516+00:00",
+    "new_case": false
   },
   "latest_distribution_progress": {
     "case_id": "strata-black-adjoint2-zero-volatility-hessian",

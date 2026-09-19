@@ -194,7 +194,7 @@ cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30  ../reports/str
 f34b93f010cfc7378e141ab79a763dd749f6aaef2378019002656ee38769608c  ../reports/strata-normal-implied-volatility-initial-guess/CLAIMS.json
 cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30  ../reports/strata-normal-implied-volatility-initial-guess/LICENSE
 106a6c7721f5868d1068fc239b84050659e41e9da5e9e2f48cbb6fd4717d6fc5  ../reports/strata-normal-implied-volatility-initial-guess/NOTICE
-6178010f85ae93579cc24c5fd9c43b80021527798158f756748f00f93ecf2dbc  ../reports/strata-normal-implied-volatility-initial-guess/PUBLICATION_LINKS.json
+3b1748aa568fa2e0e006d8bd4e779fbfb94431ab7bcb2cd7925e1802789e8c32  ../reports/strata-normal-implied-volatility-initial-guess/PUBLICATION_LINKS.json
 03f7d4be0981d41af2f14080361e9bc8a4770ba06a022b70523e2468bf552710  ../reports/strata-normal-implied-volatility-initial-guess/README.md
 0ce6a5c34cdd17d3d001cfdf4b325c57058eef942442d9c08fc0b8b196397895  ../reports/strata-normal-implied-volatility-initial-guess/REPORT_EN.md
 c0a9d3acc270b80a52df2c3c08dc6c92e286fa3319ff43be4e53a9b675d2e2ec  ../reports/strata-normal-implied-volatility-initial-guess/Repro.java
@@ -210,6 +210,9 @@ edc9426c1d13d287b5ea4be6bbea7b61934b05b125067a6a305010787f595575  ../reports/str
 3f71faaafb621c2a5d449374238f4a3ccd92182d7c28c94b5bac8089af39fdc4  ../reports/strata-normal-implied-volatility-initial-guess/evidence/SOURCE_DUPLICATE_REFRESH.json
 1903bced7654f5d6771c5edb7d30ac380aaef27ba48fd5e6c0c8339b3468dd7f  ../reports/strata-normal-implied-volatility-initial-guess/evidence/STRATA_VENDOR_SENT_RECEIPT.json
 5590298a94cda06cb5f1de33d17a85753f4938b7e533d4359dfae716b0084153  ../reports/strata-normal-implied-volatility-initial-guess/gero-strata-normal-iv-initial-guess-evidence-2026-09-18.zip
+1919bdf6d0c7159efccb51a0407d141c92818f0980db5fb453dfe512cb8aaba1  ../reports/strata-normal-implied-volatility-initial-guess/media/YOUTUBE_RECEIPT.json
+44fa827ffcb5a52c2b250e212287d20eee7e7033670edbdee5a39a3e7aee3335  ../reports/strata-normal-implied-volatility-initial-guess/media/captions.en.srt
+82b4f4f4a3fa15b7321805f92a6b0e9b5b79d781fdd16481415ecdebb8a36aef  ../reports/strata-normal-implied-volatility-initial-guess/media/script.md
 0d914f081f4e2ac69c4f02cc3b5bcda9a93a929985142f57503b467b997c1ebd  ../reports/strata-normal-implied-volatility-initial-guess/observations/candidate-grid.csv
 a8ba5f88f1da9e3f2b71223c2e1fdfaa3a2f019f24a52c4a03fcbcbdfb04abea  ../reports/strata-normal-implied-volatility-initial-guess/observations/candidate-minimal.txt
 3979eb45c38406cbc12f737b86d5b7d12092a15d57db90a8d4d4d971065ee382  ../reports/strata-normal-implied-volatility-initial-guess/observations/current-grid.csv
@@ -244,8 +247,8 @@ c86c2dab07b680694776134676aaeff88093e1d7caa966b4e528999e4f2f51f4  evidence/nntra
 20cac1f6cd80b5308092ed80f70672d37621a819ce3c062596d259ad137b1207  evidence/nntrainer-split-incremental-channels/SOURCE_LEDGER.md
 6215fe381282fa4d95074ce4dffd4bbf1dc56ba43ade2894578ffe18a24b805d  evidence/nntrainer-split-incremental-channels/candidate.patch
 072dbfd6967d765fc7091a30ab1de80c9d9bb9609e155cdbf4750e71557685be  evidence/nntrainer-split-incremental-channels/gero-nntrainer-split-incremental-channels-research-2026-09-17.zip
-5c041ccc3bf12c2a340b4532677d44436b2663f60cd4769408ab867e185ab026  platform-status.json
-3580df5c53c54a80779f621a392bdef7380f14702306ff914ed16f7271ee57ac  publications.json
+7f2a72d7b4d1477df677d52fdfdb8baaa042601e8489cc43a94d9beaad8fe135  platform-status.json
+64d3623cc792af9a179b9ab92670423593636a452ef06672fe13fa2bcaf6deea  publications.json
 2d6ab31d36d9f9e6329bf0f82783096f6dc19ab3c0500181548c5923852f6251  reports/actuarialmath-beta-density.md
 daa97d98c82172ed092f2bf09bfa3fc81f51c298f631a5bbbf23ad5fe416584d  reports/actuarialmath-constantforce-benefit-scaling.md
 928f09b1b8d14a83afeaff5c1233beac4a15f0febd5fd636d6a18bb705a9443b  reports/actuarialmath-whole-life-variance.md
@@ -348,7 +351,7 @@ b6c153e7dad22d4e63ef0649e4e589540d3f137b905c2682e20dfff668839785  reports/resear
 78b67bd144d66a672c0caee062061a8960622cb5eb6e773314bfe0fa58ccf1b6  reports/smoke-benchmark-reproduction.md
 867768e9fed48845dad880b9ffb3ccf153d207b2d76b00a35556a4b4fffb96fc  reports/spark-x25-financial-arithmetic-study.md
 26e0598488fad39cecdeabe4a7be078348dc44a8567c059a25cf8d06fd83d4c9  reports/strata-black-adjoint2-zero-volatility-hessian.md
-c2d641a4331048153125b3bd82356dc31f2dd7bc8dcf05b6eab2fafd3a9a2dc4  reports/strata-normal-implied-volatility-initial-guess.md
+3366879223d52c462df223c91761f849b6267fd5b5f4d5101a5fc1c7e71d57fb  reports/strata-normal-implied-volatility-initial-guess.md
 fb974a00661a1abd6f2b4fe38a9abe4c124d35573862baa16edfe8a194b33443  reports/swift-numerics-complex-reciprocal-contract.md
 8ccd3f6fcb1bf46dba07de843c9f401ed65cadadbad172e111888427a144a2bd  reports/swift-numerics-double-root-one-ulp-counterexample.md
 f488ecffe61efd29f10ee8d12a0c16ca3bf8a0cc8509aa3c4ecdd969296b5700  reports/swift-numerics-hyperbolic-signs.md
