@@ -1,0 +1,17 @@
+{
+  "id": "nntrainer-centroid-knn-unseen-class-score",
+  "title": "nntrainer CentroidKNN chooses an unobserved class over an exact centroid match",
+  "publication_date": "2026-09-20",
+  "research_origin_date": "2026-09-19",
+  "author": "Xamit Kadirbekov",
+  "version": "1.0.0",
+  "source_pin": "2d1e4974ae84e1e6d37784416bdfb52b647919a6",
+  "summary": "A positive zero-sample sentinel outranks every finite negative distance. Native component and public model execution verify wrong class decisions, a one-line candidate and restoration.",
+  "limits": "CPU FP32 NCHW batch1; synthetic finite modest features; at least one observed class. No real-image benchmark, device, customer, all-unseen policy, full-suite or released-binary validation.",
+  "measured_chain": "Positive score for an unobserved class -> it outranks an exact-match centroid -> two synthetic public-model queries get the wrong class; candidate fixes both, restoration reproduces both; three fully trained controls unchanged.",
+  "vendor_issue": "https://github.com/nntrainer/nntrainer/issues/4341",
+  "upstream_status": "submitted_not_acknowledged",
+  "independent_defects": 1,
+  "ai_assistance": true,
+  "archive_license": "Original GERO text CC BY 4.0; original code MIT; upstream sources retain original licenses."
+}

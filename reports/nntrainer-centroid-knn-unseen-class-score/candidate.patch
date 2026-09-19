@@ -1,0 +1,11 @@
+--- a/nntrainer/layers/centroid_knn.cpp
++++ b/nntrainer/layers/centroid_knn.cpp
+@@ -116,7 +116,7 @@
+       auto current_feature = input_.getBatchSlice(b, 1);
+ 
+       if (num_sample == 0) {
+-        hidden_.setValue(b, 0, 0, i, std::numeric_limits<float>::min());
++        hidden_.setValue(b, 0, 0, i, std::numeric_limits<float>::lowest());
+       } else {
+         hidden_.setValue(b, 0, 0, i,
+                          get_distance(current_feature, saved_feature));

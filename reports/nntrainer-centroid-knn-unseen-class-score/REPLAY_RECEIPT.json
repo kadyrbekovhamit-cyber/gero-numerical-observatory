@@ -1,0 +1,210 @@
+{
+  "at": "2026-09-19T20:19:25.310269+00:00",
+  "status": "clean_full_native_cpu_replay_verified",
+  "source_pin": "2d1e4974ae84e1e6d37784416bdfb52b647919a6",
+  "verified_source_files": 2005,
+  "results": {
+    "original": {
+      "grid_rows": 1728,
+      "grid_sha256": "86d88e100c45561e53aa1fc82aecd137a85e72fdaa5b03778e27504be1799a06",
+      "grid_byte_identical": true,
+      "model_rows": [
+        {
+          "observed_classes": 2,
+          "query_class": 0,
+          "scores": [
+            0,
+            -5,
+            1.17549435e-38
+          ],
+          "predicted": 2,
+          "expected": 0
+        },
+        {
+          "observed_classes": 2,
+          "query_class": 1,
+          "scores": [
+            -5,
+            0,
+            1.17549435e-38
+          ],
+          "predicted": 2,
+          "expected": 1
+        },
+        {
+          "observed_classes": 3,
+          "query_class": 0,
+          "scores": [
+            0,
+            -5,
+            -10
+          ],
+          "predicted": 0,
+          "expected": 0
+        },
+        {
+          "observed_classes": 3,
+          "query_class": 1,
+          "scores": [
+            -5,
+            0,
+            -5
+          ],
+          "predicted": 1,
+          "expected": 1
+        },
+        {
+          "observed_classes": 3,
+          "query_class": 2,
+          "scores": [
+            -10,
+            -5,
+            0
+          ],
+          "predicted": 2,
+          "expected": 2
+        }
+      ],
+      "model_rows_identical": true,
+      "library_sha256": "a01a8fcb6d45e5c77b1fc0959a7ba90114fba94d88087aa21701903838750403",
+      "source_sha256": "e0d06d603bf2c31b97e08d5fcb2d18c93b7a2c451974acf703a3d4683ddeb7ed"
+    },
+    "candidate": {
+      "grid_rows": 1728,
+      "grid_sha256": "3badcdb0e30257cbfa13f4ea179e1d2e633b534681a13864421e206c59b96259",
+      "grid_byte_identical": true,
+      "model_rows": [
+        {
+          "observed_classes": 2,
+          "query_class": 0,
+          "scores": [
+            0,
+            -5,
+            -3.40282347e+38
+          ],
+          "predicted": 0,
+          "expected": 0
+        },
+        {
+          "observed_classes": 2,
+          "query_class": 1,
+          "scores": [
+            -5,
+            0,
+            -3.40282347e+38
+          ],
+          "predicted": 1,
+          "expected": 1
+        },
+        {
+          "observed_classes": 3,
+          "query_class": 0,
+          "scores": [
+            0,
+            -5,
+            -10
+          ],
+          "predicted": 0,
+          "expected": 0
+        },
+        {
+          "observed_classes": 3,
+          "query_class": 1,
+          "scores": [
+            -5,
+            0,
+            -5
+          ],
+          "predicted": 1,
+          "expected": 1
+        },
+        {
+          "observed_classes": 3,
+          "query_class": 2,
+          "scores": [
+            -10,
+            -5,
+            0
+          ],
+          "predicted": 2,
+          "expected": 2
+        }
+      ],
+      "model_rows_identical": true,
+      "library_sha256": "8d96d53deec0f1c7b47d960afe35990c2f8deeb874a44ad331a254c4095819e5",
+      "source_sha256": "5a6c3a428bfbd5c1d06a00453630454e1508dc4bc103aed73311cbc497aef5c9"
+    },
+    "restored": {
+      "grid_rows": 1728,
+      "grid_sha256": "86d88e100c45561e53aa1fc82aecd137a85e72fdaa5b03778e27504be1799a06",
+      "grid_byte_identical": true,
+      "model_rows": [
+        {
+          "observed_classes": 2,
+          "query_class": 0,
+          "scores": [
+            0,
+            -5,
+            1.17549435e-38
+          ],
+          "predicted": 2,
+          "expected": 0
+        },
+        {
+          "observed_classes": 2,
+          "query_class": 1,
+          "scores": [
+            -5,
+            0,
+            1.17549435e-38
+          ],
+          "predicted": 2,
+          "expected": 1
+        },
+        {
+          "observed_classes": 3,
+          "query_class": 0,
+          "scores": [
+            0,
+            -5,
+            -10
+          ],
+          "predicted": 0,
+          "expected": 0
+        },
+        {
+          "observed_classes": 3,
+          "query_class": 1,
+          "scores": [
+            -5,
+            0,
+            -5
+          ],
+          "predicted": 1,
+          "expected": 1
+        },
+        {
+          "observed_classes": 3,
+          "query_class": 2,
+          "scores": [
+            -10,
+            -5,
+            0
+          ],
+          "predicted": 2,
+          "expected": 2
+        }
+      ],
+      "model_rows_identical": true,
+      "library_sha256": "4188368ab858821e861ce9152305326da7ceb3b9ff32bf6189ca61afb77bfff8",
+      "source_sha256": "e0d06d603bf2c31b97e08d5fcb2d18c93b7a2c451974acf703a3d4683ddeb7ed"
+    }
+  },
+  "source_unchanged": true,
+  "platform": "macOS-15.5-arm64-arm-64bit",
+  "python": "3.12.14",
+  "gpu": false,
+  "audio_playback": false,
+  "configured_workers": 1,
+  "limits": "macOS ARM64 FP32 batch1 synthetic features; no released-binary, real-image, full suite or device validation"
+}

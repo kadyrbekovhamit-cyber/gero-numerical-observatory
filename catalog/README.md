@@ -1,15 +1,15 @@
 # GERO — publication catalogue
 
-Updated 19 September 2026. **114 distinct catalogue publications.** Report counts are not independent-defect counts. All 113 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
+Updated 19 September 2026. **116 distinct catalogue publications.** Report counts are not independent-defect counts. All 115 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
 
 [Machine-readable catalogue](publications.json) · [Coverage](platform-status.json) · [Checksums](SHA256SUMS).
 
 |Platform|Verified catalogue reports|
 |---|---:|
-|gero|114|
-|huggingface|114|
-|zenodo|114|
-|github_catalog_report|114|
+|gero|115|
+|huggingface|115|
+|zenodo|115|
+|github_catalog_report|116|
 
 The FinancePy FXForward and MLX sigmoid reports each have GERO, GitHub, LinkedIn, Zenodo, Hugging Face and YouTube publications. Overall coverage is shown above; no equal count across all external account collections is claimed.
 
@@ -147,3 +147,4 @@ Beta density archival distribution is complete on all six channels: [LinkedIn](h
 BondZero archives an already corrected upstream issue. [Source fix](https://github.com/domokane/FinancePy/commit/bb10c3936e078a5212694d017746453175151c09) and [independent verification](https://github.com/domokane/FinancePy/issues/267#issuecomment-5713269134) are public. Four distribution channels remain pending; no video publication is claimed.
 
 | 115 | [Same Itô integral, fewer operations: a reproducible computational study](reports/ito-computation-reorganization.md) | [Page](https://www.gero.uz/research/articles/ito-computation-reorganization.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/ito-computation-reorganization.md) | [DOI](https://zenodo.org/records/22847733) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/ito-computation-reorganization) |
+| 116 | [nntrainer CentroidKNN chooses an unobserved class over an exact centroid match](reports/nntrainer-centroid-knn-unseen-class-score.md) | Pending | Pending | Pending | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/nntrainer-centroid-knn-unseen-class-score) |

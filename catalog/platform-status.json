@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-19T19:05:48.578443+00:00",
+  "checked_at": "2026-09-19T20:21:59.823087+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 115,
     "huggingface": 115,
     "zenodo": 115,
-    "github_catalog_report": 115,
+    "github_catalog_report": 116,
     "zenodo_records_including_collection": 115,
-    "unique_individual_publications": 115,
+    "unique_individual_publications": 116,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "115 canonical reports; Itô computational note added, no new defect claimed.",
+  "github_status": "116 canonical reports; CentroidKNN report included. Counts track reports, not independent bugs.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -20,9 +20,15 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [],
-    "huggingface": [],
-    "zenodo": []
+    "gero": [
+      "nntrainer-centroid-knn-unseen-class-score"
+    ],
+    "huggingface": [
+      "nntrainer-centroid-knn-unseen-class-score"
+    ],
+    "zenodo": [
+      "nntrainer-centroid-knn-unseen-class-score"
+    ]
   },
   "deduplication_notes": [
     "All 97 previous report IDs preserved; one CIR pricing component report appended.",
@@ -43,9 +49,10 @@
     "19September: Strata Black Hessian adds one distinct report. Its six native pricing failures use a GERO constant-zero custom provider; default Hagan/CMS exposure and customer loss are not demonstrated. All111 prior canonical objects preserved. Counts track document coverage, not bugs or raw Zenodo versions.",
     "19 September: added the existing Strata Normal-IV report video link. No new report, test run, issue, DOI or LinkedIn post created. Scientific archive remains unchanged. Other canonical report objects preserved.",
     "19September: Endowment variance benefit-scale report completes six-platform distribution. 483/1300 original variance mismatches become0 with local candidate and return on restoration. Native normal approximation -> GERO synthetic JSON -> example limit changes; no actual insurer losses measured. All112 prior canonical objects preserved. Counts track reports, not bugs.",
-    "19 September 2026: MLX erf adds one source-pinned report. 372 = 368 nonzero-x and 4 zero-boundary primary failures become 0 with the balanced local candidate; tail and second-derivative limits remain. All earlier canonical objects preserved. Upstream report not sent."
+    "19 September 2026: MLX erf adds one source-pinned report. 372 = 368 nonzero-x and 4 zero-boundary primary failures become 0 with the balanced local candidate; tail and second-derivative limits remain. All earlier canonical objects preserved. Upstream report not sent.",
+    "20 September 2026: CentroidKNN zero-sample positive score; one source-pinned implementation report, 1548/0/1548 component mismatches and 2/0/2 public-model decision mismatches. Bounded prior-art review retains ambiguity of historical issue1521. Developer report4341 verified before distribution."
   ],
-  "parity_complete": true,
+  "parity_complete": false,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "archival_backfill": {
     "date": "2026-09-16",
@@ -118,6 +125,35 @@
         "measured": "Synthetic finite-value guard skips native proposed update; saved parameter1 rather than0.95848924.",
         "conditional_not_measured": "Training progress, non-finite parameter/optimizer propagation, recovery/debugging time, model quality and monetary cost."
       }
+    },
+    {
+      "id": "nntrainer-centroid-knn-unseen-class-score",
+      "title": "nntrainer CentroidKNN chooses an unobserved class over an exact centroid match",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "publication_date": "2026-09-20",
+      "kind": "published_report",
+      "gero": null,
+      "huggingface": null,
+      "zenodo": null,
+      "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/nntrainer-centroid-knn-unseen-class-score",
+      "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/nntrainer-centroid-knn-unseen-class-score.md",
+      "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/nntrainer-centroid-knn-unseen-class-score.md",
+      "source_text_sha256": "2ee68d5ba07a63e59f5a136b08d607d9830413915fb93d2202c1b4dde5b9c04c",
+      "mirror_sha256": "2ee68d5ba07a63e59f5a136b08d607d9830413915fb93d2202c1b4dde5b9c04c",
+      "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/nntrainer-centroid-knn-unseen-class-score/gero-nntrainer-centroid-unseen-class-evidence-2026-09-20.zip",
+      "evidence_archive_sha256": "b9d7b22a70a1cb6c7069c153198c29280b6ffcc8fc706b6624155144d4c2943f",
+      "linkedin": null,
+      "youtube": null,
+      "maintainer_issue": "https://github.com/nntrainer/nntrainer/issues/4341",
+      "upstream_report_sent": true,
+      "upstream_acceptance_claimed": false,
+      "implementation_defects_in_this_report": 1,
+      "publication_status": "partial_distribution_in_progress",
+      "source_pin": "2d1e4974ae84e1e6d37784416bdfb52b647919a6",
+      "limits": "CPU FP32 NCHW batch1; synthetic finite modest features; at least one observed class. No real-image benchmark, device, customer, all-unseen policy, full-suite or released-binary validation.",
+      "measured_chain": "Positive score for an unobserved class -> it outranks an exact-match centroid -> two synthetic public-model queries get the wrong class; candidate fixes both, restoration reproduces both; three fully trained controls unchanged."
     }
   ],
   "coverage_scope": "Canonical report IDs; separate Collatz map outside this subset. Report counts are not independent bugs or raw Zenodo version-object counts.",
@@ -209,6 +245,25 @@
       "upstream_report_sent": false,
       "zenodo_doi": "10.5281/zenodo.22845404",
       "hf_commit": "069e4ebb4f2566043001d10e882df03189d004a4"
+    },
+    "nntrainer-centroid-knn-unseen-class-score": {
+      "case_id": "nntrainer-centroid-knn-unseen-class-score",
+      "public": [
+        "github"
+      ],
+      "pending": [
+        "zenodo",
+        "gero",
+        "huggingface",
+        "linkedin",
+        "youtube"
+      ],
+      "links": {
+        "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/nntrainer-centroid-knn-unseen-class-score.md"
+      },
+      "archive_sha256": "b9d7b22a70a1cb6c7069c153198c29280b6ffcc8fc706b6624155144d4c2943f",
+      "upstream_report_sent": true,
+      "vendor_issue": "https://github.com/nntrainer/nntrainer/issues/4341"
     }
   }
 }

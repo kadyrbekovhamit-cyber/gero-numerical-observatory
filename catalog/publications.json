@@ -2220,5 +2220,34 @@
     "publication_status": "Public: github, gero, youtube, zenodo, linkedin, huggingface, reddit. Pending: none. Known-methods computational note; not peer reviewed.",
     "limits": "Known estimators; implementation-specific timings, single-query slowdowns and rounding counterexample retained. No new Itô integral, market-pricing improvement or independent vendor defect.",
     "zenodo_doi": "10.5281/zenodo.22847733"
+  },
+  {
+    "id": "nntrainer-centroid-knn-unseen-class-score",
+    "title": "nntrainer CentroidKNN chooses an unobserved class over an exact centroid match",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-20",
+    "kind": "published_report",
+    "gero": null,
+    "huggingface": null,
+    "zenodo": null,
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/nntrainer-centroid-knn-unseen-class-score",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/nntrainer-centroid-knn-unseen-class-score.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/nntrainer-centroid-knn-unseen-class-score.md",
+    "source_text_sha256": "2ee68d5ba07a63e59f5a136b08d607d9830413915fb93d2202c1b4dde5b9c04c",
+    "mirror_sha256": "2ee68d5ba07a63e59f5a136b08d607d9830413915fb93d2202c1b4dde5b9c04c",
+    "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/nntrainer-centroid-knn-unseen-class-score/gero-nntrainer-centroid-unseen-class-evidence-2026-09-20.zip",
+    "evidence_archive_sha256": "b9d7b22a70a1cb6c7069c153198c29280b6ffcc8fc706b6624155144d4c2943f",
+    "linkedin": null,
+    "youtube": null,
+    "maintainer_issue": "https://github.com/nntrainer/nntrainer/issues/4341",
+    "upstream_report_sent": true,
+    "upstream_acceptance_claimed": false,
+    "implementation_defects_in_this_report": 1,
+    "publication_status": "partial_distribution_in_progress",
+    "source_pin": "2d1e4974ae84e1e6d37784416bdfb52b647919a6",
+    "limits": "CPU FP32 NCHW batch1; synthetic finite modest features; at least one observed class. No real-image benchmark, device, customer, all-unseen policy, full-suite or released-binary validation.",
+    "measured_chain": "Positive score for an unobserved class -> it outranks an exact-match centroid -> two synthetic public-model queries get the wrong class; candidate fixes both, restoration reproduces both; three fully trained controls unchanged."
   }
 ]
