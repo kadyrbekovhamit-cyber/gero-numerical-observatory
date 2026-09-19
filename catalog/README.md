@@ -1,14 +1,14 @@
 # GERO — publication catalogue
 
-Updated 18 September 2026. **112 distinct catalogue publications.** Report counts are not independent-defect counts. All 111 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
+Updated 19 September 2026. **112 distinct catalogue publications.** Report counts are not independent-defect counts. All 111 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
 
 [Machine-readable catalogue](publications.json) · [Coverage](platform-status.json) · [Checksums](SHA256SUMS).
 
 |Platform|Verified catalogue reports|
 |---|---:|
-|gero|111|
-|huggingface|111|
-|zenodo|111|
+|gero|112|
+|huggingface|112|
+|zenodo|112|
 |github_catalog_report|112|
 
 The FinancePy FXForward and MLX sigmoid reports each have GERO, GitHub, LinkedIn, Zenodo, Hugging Face and YouTube publications. Overall coverage is shown above; no equal count across all external account collections is claimed.
@@ -126,7 +126,7 @@ The FinancePy FXForward and MLX sigmoid reports each have GERO, GitHub, LinkedIn
 | 109 | [MLflow NDCG: irrelevant retrievals score above zero after a document-ID collision](reports/mlflow-ndcg-document-id-collision.md) | [GERO](https://www.gero.uz/research/articles/mlflow-ndcg-document-id-collision.html) | [Hugging Face](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlflow-ndcg-document-id-collision.md) | [Zenodo](https://zenodo.org/records/22827379) | [Report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlflow-ndcg-document-id-collision.md) |
 | 110 | [Strata returns zero implied volatility for a positive option price](reports/strata-normal-implied-volatility-initial-guess.md) | [GERO](https://www.gero.uz/research/articles/strata-normal-implied-volatility-initial-guess.html) | [Hugging Face](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/strata-normal-implied-volatility-initial-guess.md) | [Zenodo](https://zenodo.org/records/22827735) | [Report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/strata-normal-implied-volatility-initial-guess.md) |
 | 111 | [PyLoan replaces an explicit 100 payment with a 919.10 final payment](reports/pyloan-explicit-payment-final-balloon.md) | [GERO](https://www.gero.uz/research/articles/pyloan-explicit-payment-final-balloon.html) | [Hugging Face](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/pyloan-explicit-payment-final-balloon.md) | [Zenodo](https://zenodo.org/records/22834912) | [Report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/pyloan-explicit-payment-final-balloon.md) |
-| 112 | [Strata: a zero-volatility Hessian prevents custom-model option pricing](reports/strata-black-adjoint2-zero-volatility-hessian.md) | Pending | Pending | Pending | [Report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/strata-black-adjoint2-zero-volatility-hessian.md) |
+| 112 | [Strata: a zero-volatility Hessian prevents custom-model option pricing](reports/strata-black-adjoint2-zero-volatility-hessian.md) | [Page](https://www.gero.uz/research/articles/strata-black-adjoint2-zero-volatility-hessian.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/strata-black-adjoint2-zero-volatility-hessian.md) | [DOI](https://zenodo.org/records/22840914) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/strata-black-adjoint2-zero-volatility-hessian) |
 
 Vasicek distribution completed on six channels: [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506071696911609857/) · [English Short](https://youtube.com/shorts/k-VGcx7o_LM).
 

@@ -70,4 +70,14 @@ Bounded all-state searches included issue/PR titles, bodies and comments, actual
 **Vendor-first report:** [OpenGamma Strata issue2797](https://github.com/OpenGamma/Strata/issues/2797). Sent and publicly verified before distribution of this report. No acknowledgment or acceptance is claimed. Source review, test/code preparation and documentation were AI-assisted.
 
 
-[Complete offline reproducibility archive](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/strata-black-adjoint2-zero-volatility-hessian/gero-strata-black-zero-volatility-evidence-2026-09-19.zip) · SHA-256 `3a6a81f884c71c72d76a93540140ec12ce2ad9f65e67267a50bce4fb3e93eff5`. The ZIP includes the official JAR, pinned source, oracle and all output sets. Other verified mirrors will be linked when available. Video has not yet been produced.
+[Complete offline reproducibility archive](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/strata-black-adjoint2-zero-volatility-hessian/gero-strata-black-zero-volatility-evidence-2026-09-19.zip) · SHA-256 `3a6a81f884c71c72d76a93540140ec12ce2ad9f65e67267a50bce4fb3e93eff5`. The ZIP includes the official JAR, pinned source, oracle and all output sets. Video has not yet been produced.
+
+## Verified publication links
+
+- [github](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/strata-black-adjoint2-zero-volatility-hessian.md)
+- [gero](https://www.gero.uz/research/articles/strata-black-adjoint2-zero-volatility-hessian.html)
+- [zenodo](https://zenodo.org/records/22840914)
+- [linkedin](https://www.linkedin.com/feed/update/urn:li:share:7506941906036334592/)
+- [huggingface](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/strata-black-adjoint2-zero-volatility-hessian.md)
+
+Zenodo DOI: `10.5281/zenodo.22840914`. YouTube: queued, not produced or uploaded.
