@@ -1,4 +1,6 @@
-> Archival mirror. [Original report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/moneyphp-largest-remainder-float-collapse.md). Claims, dates, authorship and licenses remain those of the original publication; this catalog update does not rerun or revalidate its numerical experiments.
+> **Editorial update — 20 September 2026.** A dated consequences, practical-response and correction note follows the historical archive below. It corrects the PR #509 attribution and qualifies the historical CI and patch-scope statements. The marked original corpus and its original hash remain unchanged.
+
+> Archival mirror. [Original report](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/moneyphp-largest-remainder-float-collapse.md). Claims, dates, authorship and licenses remain those of the original publication; the original archival import did not rerun or revalidate its numerical experiments. Later dated updates are identified separately.
 
 # MoneyPHP loses largest-remainder ordering above float precision
 
@@ -219,3 +221,30 @@ remainders into a false tie.
 <!-- END UNCHANGED CORPUS TEXT -->
 
 Original report text: CC BY 4.0; code and third-party material retain their original licenses. AI-assisted archival presentation.
+
+## Update — 20 September 2026: consequences and practical response
+
+The published counterexample was rechecked with MoneyPHP v4.9.0 (commit `d49ee625c6ba79b9d7a228ce153b02fc1032152b`), PHP 8.5.10 and BCMath. For `7000000000000000` minor units and ratios `[1, 2]`, the observed allocation was `[2333333333333334, 4666666666666666]`; exact largest-remainder allocation is `[2333333333333333, 4666666666666667]`. Both conserve the total. One share receives one minor unit too much and the other one too little. At `7000` units, the same library returned the expected `[2333, 4667]`.
+
+### Engineering assessment: what this could affect
+
+If an application uses an affected allocation to determine recipients' balances, the residual unit could go to the wrong recipient. Depending on the application, that could affect commission splits, revenue distribution or cost allocation. A downstream system using exact remainder ranking could then disagree with the application's per-recipient records, requiring reconciliation or explanation. These are conditional consequences inferred from the demonstrated calculation; they were not observed in a bank, payment processor or customer account.
+
+A check that only verifies `sum(parts) == amount` will pass this example. That creates a testing blind spot: an apparently balanced result can still allocate value incorrectly. Repetition could accumulate recipient-level discrepancies if affected inputs recur, but this study has not measured occurrence rates, cumulative losses or production exposure.
+
+The tested input is exceptionally large. This finding does not establish incorrect rounding of ordinary purchases, widespread customer losses, a security exploit, or failure of other versions and operations. It is a bounded correctness defect in the tested library behavior.
+
+### Practical response
+
+- Add a regression that checks each expected share, alongside conservation of the total.
+- Cover ordinary amounts, large precision-boundary cases, reversed ratios and genuine exact ties.
+- In the proposed correction, normalize ratios to common-scale integer weights, compute exact remainder numerators with the configured calculator, and preserve input order for exact ties. Avoid binary floating-point ranking of those remainders.
+- Reproduce the relevant case in the application's own supported environment and review the proposed patch before adopting it. Do not infer that a submitted patch is already included in an installed release.
+
+[Proposed fix and regression: MoneyPHP PR #832](https://github.com/moneyphp/money/pull/832). The live check at approximately 00:07 Asia/Tashkent on 20 September 2026 showed the PR open. No merged or released fix is claimed here.
+
+Historical attribution correction: issue #506 and the unmerged proposal #509 predate the policy actually merged in [PR #526](https://github.com/moneyphp/money/pull/526). The earlier attribution to #509 as the introducing merge was imprecise. This correction does not change the reproduced numerical counterexample. The bounded recheck also does not establish that every other input is unaffected by the proposed patch.
+
+Disclosure: GERO's own research; AI-assisted analysis and writing, checked against actual library output. Potential business consequences above are an engineering assessment, not measured customer harm.
+
+Editorial status clarification — 20 September 2026: The earlier undated sentence saying that all CI, static-analysis, documentation and benchmark jobs pass is a historical statement, not a fresh verification. Those checks were not rerun for this update. The earlier statement that the proposed correction changes only the large-value case is not established by the bounded recheck and should not be read as a guarantee for every other input.
