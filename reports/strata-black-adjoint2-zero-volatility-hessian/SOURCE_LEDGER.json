@@ -1,0 +1,19 @@
+{
+  "pinned_source": "987932ee95bf53e2baaff9a6b8e738a00f558b10",
+  "release": "2.12.74",
+  "release_download": {
+    "url": "https://github.com/OpenGamma/Strata/releases/download/v2.12.74/strata-report-tool-2.12.74.zip",
+    "sha256": "42be9278993782e7b44c616a13c9bd1f34892ed05af32e854f107e28de3db4f3",
+    "bytes": 12739994,
+    "publisher_digest": "sha256:42be9278993782e7b44c616a13c9bd1f34892ed05af32e854f107e28de3db4f3"
+  },
+  "jar_sha256": "0fb4c6c778f25b7c6fe13c001f47a4e404868df55e4dd9841c752128bb864125",
+  "vendor_report": "https://github.com/OpenGamma/Strata/issues/2797",
+  "code_origin": "GERO test fixtures/candidate; OpenGamma original implementation; mpmath independent arithmetic",
+  "source_notices": "source/LICENSE.txt and source/NOTICE.txt; bundled JAR META-INF; mpmath dist-info LICENSE",
+  "new_independent_implementation_defects": 1,
+  "new_test_scenarios_not_defects": [
+    866,
+    21
+  ]
+}

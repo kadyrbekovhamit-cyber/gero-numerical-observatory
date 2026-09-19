@@ -2066,5 +2066,32 @@
         "doi": "10.5281/zenodo.22836495"
       }
     ]
+  },
+  {
+    "id": "strata-black-adjoint2-zero-volatility-hessian",
+    "title": "Strata: a zero-volatility Hessian prevents custom-model option pricing",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-19",
+    "kind": "published_report",
+    "gero": null,
+    "huggingface": null,
+    "zenodo": null,
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/strata-black-adjoint2-zero-volatility-hessian",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/strata-black-adjoint2-zero-volatility-hessian.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/strata-black-adjoint2-zero-volatility-hessian.md",
+    "source_text_sha256": "8c3d16bb7a02683adb48aeeeb02069ad60aecf663b54e510d9c2800570e353c3",
+    "mirror_sha256": "8c3d16bb7a02683adb48aeeeb02069ad60aecf663b54e510d9c2800570e353c3",
+    "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/strata-black-adjoint2-zero-volatility-hessian/gero-strata-black-zero-volatility-evidence-2026-09-19.zip",
+    "evidence_archive_sha256": "3a6a81f884c71c72d76a93540140ec12ce2ad9f65e67267a50bce4fb3e93eff5",
+    "linkedin": null,
+    "youtube": null,
+    "maintainer_issue": "https://github.com/OpenGamma/Strata/issues/2797",
+    "implementation_defects_in_this_report": 1,
+    "publication_status": "Vendor issue2797 sent first. GitHub report and frozen evidence public; other platforms pending.",
+    "limits": "NaN second derivatives interrupt the native price extrapolator through a documented custom-model interface. Direct failures180->0->180 in866 input rows; downstream constructor failures6->0->6 in21 input rows. Synthetic constant-volatility fixture; default Hagan/CMS path excluded; no bank/customer loss measured. No full upstream build/JUnit or acceptance claimed.",
+    "source_pin": "987932ee95bf53e2baaff9a6b8e738a00f558b10",
+    "measured_chain": "NaN Black Hessian -> native small-price fallback skipped -> root-bracketing exception; custom-zero provider produces6/6 failures ->0/6 after correction ->6/6 restored. Default Hagan/CMS impact excluded."
   }
 ]

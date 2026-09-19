@@ -1,0 +1,23 @@
+--- a/modules/pricer/src/main/java/com/opengamma/strata/pricer/impl/option/BlackFormulaRepository.java
++++ b/modules/pricer/src/main/java/com/opengamma/strata/pricer/impl/option/BlackFormulaRepository.java
+@@ -220,6 +220,20 @@
+       double timeToExpiry,
+       double lognormalVol,
+       boolean isCall) {
++    // At zero volatility and away from the payoff kink, the deterministic
++    // payoff is locally linear in forward/strike; volatility derivatives
++    // tend to zero as volatility approaches zero from above.
++    if (lognormalVol == 0d && forward != strike &&
++        forward > 0d && strike > 0d && timeToExpiry > 0d &&
++        forward <= LARGE && strike <= LARGE && Math.abs(forward - strike) >= SMALL &&
++        Double.isFinite(forward) && Double.isFinite(strike) && Double.isFinite(timeToExpiry)) {
++      double sign = isCall ? 1d : -1d;
++      double intrinsic = sign * (forward - strike);
++      double delta = intrinsic > 0d ? sign : 0d;
++      return Pair.of(
++          ValueDerivatives.of(Math.max(intrinsic, 0d), DoubleArray.of(delta, -delta, 0d, 0d)),
++          new double[3][3]);
++    }
+     // Forward sweep
+     double discountFactor = 1.0;
+     double sqrttheta = Math.sqrt(timeToExpiry);

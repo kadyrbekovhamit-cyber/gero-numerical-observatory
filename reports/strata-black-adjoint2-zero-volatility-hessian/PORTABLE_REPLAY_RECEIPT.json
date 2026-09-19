@@ -1,0 +1,29 @@
+{
+  "status": "portable_replay_passed",
+  "at": "2026-09-19T01:50:04.346831+00:00",
+  "direct_rows_per_state": 866,
+  "downstream_rows_per_state": 21,
+  "output_files_matching_expected": {
+    "evidence/grid/release.csv": "80ddb0850d32e30cd4b8a80f6b6db09496ca70f645fc0056f5f6a8a9b9310919",
+    "downstream/outputs/release.csv": "5c1bab7998b8a412c555e07376dfa693dc6d516c5fd7381b925ba399fe313b9d",
+    "evidence/grid/current.csv": "80ddb0850d32e30cd4b8a80f6b6db09496ca70f645fc0056f5f6a8a9b9310919",
+    "downstream/outputs/current.csv": "5c1bab7998b8a412c555e07376dfa693dc6d516c5fd7381b925ba399fe313b9d",
+    "evidence/grid/candidate.csv": "156dd8201b6bd4f2c1ed186e2074c7eab7fef9ca64739ac2310af1427a39a424",
+    "downstream/outputs/candidate.csv": "152c0267bf88cb389419bbfeb8705363569983183fd96c26a7e45384a73ce3b5",
+    "evidence/grid/restored.csv": "80ddb0850d32e30cd4b8a80f6b6db09496ca70f645fc0056f5f6a8a9b9310919",
+    "downstream/outputs/restored.csv": "5c1bab7998b8a412c555e07376dfa693dc6d516c5fd7381b925ba399fe313b9d"
+  },
+  "candidate_patch_sha256": "037104b2fa7d8b6f5099e3b272d71f769f4d0d57a8f67ef39f50575005920699",
+  "commands": [
+    [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/khamit/Documents/Codex/gero-continuous-research/pending-publication/strata-black-adjoint2-zero-volatility-hessian/package/run_grid.py"
+    ],
+    [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/khamit/Documents/Codex/gero-continuous-research/pending-publication/strata-black-adjoint2-zero-volatility-hessian/package/downstream/run_downstream.py"
+    ]
+  ],
+  "full_build_or_junit": false,
+  "production_customer_impact_measured": false
+}

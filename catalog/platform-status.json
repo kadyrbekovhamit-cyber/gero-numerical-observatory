@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-18T18:59:51.354038+00:00",
+  "checked_at": "2026-09-19T05:01:34.572748+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 111,
     "huggingface": 111,
     "zenodo": 111,
-    "github_catalog_report": 111,
+    "github_catalog_report": 112,
     "zenodo_records_including_collection": 112,
-    "unique_individual_publications": 111,
+    "unique_individual_publications": 112,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "111 canonical reports have GitHub, GERO, Hugging Face and Zenodo copies. PyLoan is also public on LinkedIn after vendor notification; its video remains pending. Social/video coverage is not global parity.",
+  "github_status": "112 canonical reports; Strata Black Hessian report and archive public on GitHub after vendor disclosure; other mirrors pending.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -20,9 +20,15 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [],
-    "huggingface": [],
-    "zenodo": []
+    "gero": [
+      "strata-black-adjoint2-zero-volatility-hessian"
+    ],
+    "huggingface": [
+      "strata-black-adjoint2-zero-volatility-hessian"
+    ],
+    "zenodo": [
+      "strata-black-adjoint2-zero-volatility-hessian"
+    ]
   },
   "deduplication_notes": [
     "All 97 previous report IDs preserved; one CIR pricing component report appended.",
@@ -41,7 +47,7 @@
     "17September: portable BondZero archive published onGitHub andGERO as a resolved-case verification. Current source fixed inbb10c393; official1.1.2stillaffected.106prior canonical objects preserved. No second issue, new-discovery claim or video upload. Four remaining channels queued.",
     "PyLoan v1.1.0 adds a generated-document and budget-check demonstration; version records do not add canonical report IDs. Historic raw Zenodo object totals are not a fresh account-wide enumeration."
   ],
-  "parity_complete": true,
+  "parity_complete": false,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "archival_backfill": {
     "date": "2026-09-16",
@@ -53,34 +59,34 @@
   },
   "latest_reports": [
     {
-      "id": "pyloan-explicit-payment-final-balloon",
-      "title": "PyLoan replaces an explicit 100 payment with a 919.10 final payment",
+      "id": "strata-black-adjoint2-zero-volatility-hessian",
+      "title": "Strata: a zero-volatility Hessian prevents custom-model option pricing",
       "authors": [
         "Xamit Kadirbekov"
       ],
-      "publication_date": "2026-09-18",
+      "publication_date": "2026-09-19",
       "kind": "published_report",
-      "gero": "https://www.gero.uz/research/articles/pyloan-explicit-payment-final-balloon.html",
-      "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/pyloan-explicit-payment-final-balloon.md",
-      "zenodo": "https://zenodo.org/records/22834912",
-      "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/pyloan-explicit-payment-final-balloon",
-      "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/pyloan-explicit-payment-final-balloon.md",
-      "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/pyloan-explicit-payment-final-balloon.md",
-      "source_text_sha256": "3be12bb774d033cedf7dc41b5b4d875aa974c303fc432d26043b29743d952f73",
-      "mirror_sha256": "b081db10f8f3c083224231b876a06b5f29004dd8c3d2ef93bacc5b7c8af9bb5a",
-      "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/pyloan-explicit-payment-final-balloon/gero-pyloan-explicit-payment-evidence-2026-09-18.zip",
-      "evidence_archive_sha256": "6be9658bd28e6bf72d9dac8add77319a703f4d6c7fedcacefee069604dfcc0a9",
-      "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506770311233818625/",
+      "gero": null,
+      "huggingface": null,
+      "zenodo": null,
+      "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/strata-black-adjoint2-zero-volatility-hessian",
+      "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/strata-black-adjoint2-zero-volatility-hessian.md",
+      "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/strata-black-adjoint2-zero-volatility-hessian.md",
+      "source_text_sha256": "8c3d16bb7a02683adb48aeeeb02069ad60aecf663b54e510d9c2800570e353c3",
+      "mirror_sha256": "8c3d16bb7a02683adb48aeeeb02069ad60aecf663b54e510d9c2800570e353c3",
+      "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/strata-black-adjoint2-zero-volatility-hessian/gero-strata-black-zero-volatility-evidence-2026-09-19.zip",
+      "evidence_archive_sha256": "3a6a81f884c71c72d76a93540140ec12ce2ad9f65e67267a50bce4fb3e93eff5",
+      "linkedin": null,
       "youtube": null,
-      "maintainer_issue": "https://github.com/darius-lesch/pyloan/issues/70",
+      "maintainer_issue": "https://github.com/OpenGamma/Strata/issues/2797",
       "implementation_defects_in_this_report": 1,
-      "publication_status": "Verified public on GitHub, GERO, Hugging Face, Zenodo and LinkedIn after vendor report70. Video not produced; queued for the next available slot from 19 September. Candidate only; no upstream acceptance or production impact claimed.",
-      "limits": "Synthetic library schedules; no bank deployment or customer harm claim. 24 exact-oracle rounding differences remain; upstream unittest suite retains three baseline failure reports. Candidate only, not accepted upstream.",
-      "source_pin": "73a052cb40f9c23963fbc1ec4370aa7ac9c3efc1",
-      "zenodo_doi": "10.5281/zenodo.22834912"
+      "publication_status": "Vendor issue2797 sent first. GitHub report and frozen evidence public; other platforms pending.",
+      "limits": "NaN second derivatives interrupt the native price extrapolator through a documented custom-model interface. Direct failures180->0->180 in866 input rows; downstream constructor failures6->0->6 in21 input rows. Synthetic constant-volatility fixture; default Hagan/CMS path excluded; no bank/customer loss measured. No full upstream build/JUnit or acceptance claimed.",
+      "source_pin": "987932ee95bf53e2baaff9a6b8e738a00f558b10",
+      "measured_chain": "NaN Black Hessian -> native small-price fallback skipped -> root-bracketing exception; custom-zero provider produces6/6 failures ->0/6 after correction ->6/6 restored. Default Hagan/CMS impact excluded."
     }
   ],
-  "coverage_scope": "111 canonical report IDs. Separate Collatz research map is outside this subset; HF and GERO list112 with it. Counts are reports, not independent defects or total account objects.",
+  "coverage_scope": "Canonical report IDs; separate Collatz map outside this subset. Report counts are not independent bugs or raw Zenodo version-object counts.",
   "latest_completed_distribution": {
     "id": "mlflow-ndcg-document-id-collision",
     "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlflow-ndcg-document-id-collision.md",
@@ -97,18 +103,17 @@
     "no_media_binary_in_research_archives": true
   },
   "latest_distribution_progress": {
-    "id": "pyloan-explicit-payment-final-balloon",
-    "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/pyloan-explicit-payment-final-balloon.md",
-    "gero": "https://www.gero.uz/research/articles/pyloan-explicit-payment-final-balloon.html",
-    "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506770311233818625/",
-    "zenodo": "https://zenodo.org/records/22834912",
-    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/pyloan-explicit-payment-final-balloon.md",
-    "archive_sha256": "6be9658bd28e6bf72d9dac8add77319a703f4d6c7fedcacefee069604dfcc0a9",
-    "zenodo_doi": "10.5281/zenodo.22834912",
-    "huggingface_commit": "31510bab08cba96c2fbee1aa9a6b70a5d6851a00",
-    "maintainer_issue": "https://github.com/darius-lesch/pyloan/issues/70",
-    "verified_at": "2026-09-18T17:49:12.487745+00:00",
-    "no_media_binary_in_research_archives": true
+    "case_id": "strata-black-adjoint2-zero-volatility-hessian",
+    "public": [
+      "github"
+    ],
+    "pending": [
+      "gero",
+      "huggingface",
+      "zenodo",
+      "linkedin",
+      "youtube"
+    ]
   },
   "latest_evidence_addendum": {
     "case_id": "pyloan-explicit-payment-final-balloon",

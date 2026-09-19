@@ -1,4 +1,4 @@
-6d95a4d5a271281d050b40806e4693db89b85a68ec8d168ed1c668da353e643b  README.md
+c9ca06dfaf1c3a556f30bd06d82715afd67d03c42cb695b0f8984e36869e6421  README.md
 0c1c962a48fa367ebdfb48f47b6af56b612339d12db1d765f9e2b726d13343d1  SOURCE_NOTICES.md
 55487fd0a4770daa87c7f1d9288d4aa499d1e698e50978b3a07f2a9aa3b41369  artifacts/collatz-source-LICENSE.txt
 ae2310410d17d7a25932ea0852a1a34e358002959cb212ef56c3281b3baf1bc7  artifacts/financepy-vasicek-small-mean-reversion-LICENSES.md
@@ -13,8 +13,8 @@ b2b673aa86e3d6a0184011e961977f221850fa87b2dd005b229f20e4afe94340  artifacts/gero
 a62d6f9aeb36604df043520cf2a6ce51b614734c9fe720ca7821ebbd9143862f  artifacts/gero-nntrainer-divide-evidence-2026-09-14.zip
 10d5d7b5f5d291eb6f39c0798c3a3026c99943934c2facff03127a7dd86588df  artifacts/gero-quantlib-zero-stddev-evidence-2026-09-14.zip
 387af6a3c538d440f283e591aea9c03774db21db7e9602d2743a8bc819d12d4d  artifacts/p-harmonic-cones.pdf
-2f1f51d0ee27ecb8b9128228e8e9111433c32953f88da0f69868731b8d666c67  platform-status.json
-ed7b56ea24054d241ecdae24e51d4c0bb465ad91035338c825592e30ed5fc48d  publications.json
+a778fb4f6f35d8190a7622e37bbe537d5e4ab6890c10d9b4fead30f8fb773f25  platform-status.json
+576408071672f37f3c4e5367755f5ad7a133a3935d60ee91c9343755597dd317  publications.json
 e9b787883196051947ec6c0fcc8ed9b7967c0ccc1957f094028c4b4a3aa6671f  reports/financepy-double-no-touch-series-truncation.md
 d27f7d8701b09c2ba66521f6f07d410423972130fdeea47680b0b3212ca43c5f  evidence/nntrainer-split-incremental-channels/LICENSES.md
 c86c2dab07b680694776134676aaeff88093e1d7caa966b4e528999e4f2f51f4  evidence/nntrainer-split-incremental-channels/REPRODUCE.md
@@ -341,3 +341,19 @@ abc7cef6950e6dbc568b7c0fa5f9cf5b08c058c89c085d836ec5c08bc0694702  ../reports/pyl
 8dd81afc253ee0c00166901e285ec31aa7376a1bf190525a803acbae0270fcd6  ../reports/pyloan-explicit-payment-final-balloon/impact-chain-addendum/package/source/pyloan/_models.py
 94f910625910ce14c3902af9c204cf39232322086c9616870db9e1aa88ffb510  ../reports/pyloan-explicit-payment-final-balloon/impact-chain-addendum/package/source/pyloan/_validators.py
 b288641f5cfaecaabfd2308ddd4ee35f21c0634ec48a2766902d8b4596cc4bde  ../reports/pyloan-explicit-payment-final-balloon/impact-chain-addendum/package/source/pyloan/pyloan.py
+8c3d16bb7a02683adb48aeeeb02069ad60aecf663b54e510d9c2800570e353c3  reports/strata-black-adjoint2-zero-volatility-hessian.md
+5e7d8dd67b6f42104bd16061795f87e1ffbf5eb9902d2122f6788f62f6b3825a  ../reports/strata-black-adjoint2-zero-volatility-hessian/REPORT_EN.md
+037104b2fa7d8b6f5099e3b272d71f769f4d0d57a8f67ef39f50575005920699  ../reports/strata-black-adjoint2-zero-volatility-hessian/candidate.patch
+f769f6b83925cb0848b34ae631ea9189bf82a6f497d46a1984bf615d5d0ebcd1  ../reports/strata-black-adjoint2-zero-volatility-hessian/MinimalReproducer.java
+cffb3c7c6b92cb841e3026249842d5d8c6ebaeba44da5f63c9359910ca6022c2  ../reports/strata-black-adjoint2-zero-volatility-hessian/ExtrapolationProbe.java
+b2f14dc7c9639409255fece600241720b145f7bcb21cebc672d6f8353692e9cc  ../reports/strata-black-adjoint2-zero-volatility-hessian/SOURCE_LEDGER.json
+b51554420d610daa0e97ce864c38a4cf973497413535345f2bfc54edb52a23f0  ../reports/strata-black-adjoint2-zero-volatility-hessian/ARCHIVE_RECEIPT.json
+e6209db48a399ce0f478124911fd9465f0098bf8d68aceec9a2a4b2bc12f25c1  ../reports/strata-black-adjoint2-zero-volatility-hessian/PORTABLE_REPLAY_RECEIPT.json
+5c5e947c6f484e8c901c08ff21646b34f286b4613dc619296dc01354edf823c2  ../reports/strata-black-adjoint2-zero-volatility-hessian/VENDOR_RECEIPT.json
+27f59decd97b1e66df558b1041519140f5ce1b61139727486bf0abea75268216  ../reports/strata-black-adjoint2-zero-volatility-hessian/INDEPENDENT_DOWNSTREAM_REVIEW.md
+cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30  ../reports/strata-black-adjoint2-zero-volatility-hessian/LICENSE
+be1c82089a40275f852a5c0b0fdae18796c8f3a4b898e42a5590103138c9e7a2  ../reports/strata-black-adjoint2-zero-volatility-hessian/NOTICE
+cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30  ../reports/strata-black-adjoint2-zero-volatility-hessian/source/LICENSE.txt
+0dd2a6eb5fb7ae15dfc893a81aaef2db5c66de20fb205730f8e9bbfbe905f1e2  ../reports/strata-black-adjoint2-zero-volatility-hessian/source/NOTICE.txt
+6d4825aa43edcd03d734af0fa4cb9ba02a72ec72abab863de1f270d7f6fecbea  ../reports/strata-black-adjoint2-zero-volatility-hessian/README.md
+3a6a81f884c71c72d76a93540140ec12ce2ad9f65e67267a50bce4fb3e93eff5  ../reports/strata-black-adjoint2-zero-volatility-hessian/gero-strata-black-zero-volatility-evidence-2026-09-19.zip
