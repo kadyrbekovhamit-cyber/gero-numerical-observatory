@@ -132,7 +132,8 @@ External papers are referenced, not bundled or relicensed. GERO-authored text an
 
 - [github](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/ito-computation-reorganization)
 - [gero](https://www.gero.uz/research/articles/ito-computation-reorganization.html)
+- [linkedin](https://www.linkedin.com/feed/update/urn:li:share:7507110937569419264/)
 - [43-second English video](https://www.gero.uz/research/media/ito-computation-reorganization.mp4)
 - [Evidence archive](https://raw.githubusercontent.com/kadyrbekovhamit-cyber/gero-numerical-observatory/refs/heads/main/reports/ito-computation-reorganization/gero-ito-computation-evidence-v1-2026-09-19.zip)
 
-Additional mirrors pending: youtube, zenodo, linkedin, huggingface, reddit.
+Additional mirrors pending: youtube, zenodo, huggingface, reddit.

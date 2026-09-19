@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-19T16:22:07.904155+00:00",
+  "checked_at": "2026-09-19T16:25:46.966757+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 115,
@@ -154,18 +154,19 @@
     "case_id": "ito-computation-reorganization",
     "public": [
       "github",
-      "gero"
+      "gero",
+      "linkedin"
     ],
     "pending": [
       "youtube",
       "zenodo",
-      "linkedin",
       "huggingface",
       "reddit"
     ],
     "links": {
       "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/ito-computation-reorganization",
-      "gero": "https://www.gero.uz/research/articles/ito-computation-reorganization.html"
+      "gero": "https://www.gero.uz/research/articles/ito-computation-reorganization.html",
+      "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7507110937569419264/"
     },
     "archive_sha256": "1bc4903eff9eea6c9f92d485caa442c9435d243f286a63f0621a447005efbaf6"
   },
