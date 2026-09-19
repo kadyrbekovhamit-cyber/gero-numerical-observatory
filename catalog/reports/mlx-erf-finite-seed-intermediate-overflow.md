@@ -76,6 +76,19 @@ PR #4227 adds unit-cotangent gradient tests; #3025 concerns near-zero forward er
 
 MLX's issue template prohibits AI-written issues and requests a personal authorship declaration. No issue, PR or maintainer email has been submitted for this case. This is an independent GERO publication with disclosed AI assistance, not an upstream contribution or an accepted fix. On 19 September 2026 the author explicitly authorized this public edition before any eligible upstream report. Historical research receipts describe the earlier local state; the numerical evidence is unchanged.
 
+<!-- GERO_IMPACT_EXPLANATION_20260919 -->
+## What this could mean in practice
+
+Explanation added 19 September 2026. This explains the existing experiment; it is not a new defect or a new numerical run.
+
+**Measured in our synthetic example:** a parameter should move from 1 to 0.95848924. Intermediate overflow instead makes the proposed update negative infinity. Our GERO finite-value guard skips it, so the saved parameter stays at 1. The guard and decision document are demonstration code; the loss, gradient and proposed update are computed by the native MLX core.
+
+**Possible in a training system:** if non-finite values are allowed into model parameters or optimizer state, later calculations could become unusable and the run could require recovery or a restart. If protective checks repeatedly skip valid updates, learning could make less progress. These are conditional consequences, not effects measured in a real model by this audit.
+
+**Practical concern:** avoidable computation, debugging time and unpredictable progress. Their frequency, effect on model quality and monetary cost have not been measured. This case uses an extreme but finite float32 gradient seed; it does not establish a problem in typical workloads or a defect in a deployed Apple device.
+
+The local candidate corrects the primary first-derivative cases but still has tail and higher-derivative limitations. No upstream submission or acceptance is claimed.
+
 <!-- GERO_PUBLICATION_LINKS_BEGIN -->
 ## Verified publication and reproduction links
 

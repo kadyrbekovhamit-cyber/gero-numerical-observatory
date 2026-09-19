@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-19T16:18:00.180846+00:00",
+  "checked_at": "2026-09-19T16:22:07.904155+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 115,
@@ -103,7 +103,7 @@
       "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-erf-finite-seed-intermediate-overflow.md",
       "source_document_url": "https://www.gero.uz/research/articles/mlx-erf-finite-seed-intermediate-overflow.html",
       "source_text_sha256": "1092cf5112eb9e1df29e3bc4e898b3bdf1274430efe33c156c0f3193b8f4220c",
-      "mirror_sha256": "4568e29f28c443e6436ce4b3288f0cc9d3244af5426d7dcacd9c97db76426a9a",
+      "mirror_sha256": "ec566d7a11b730ab3261a2c4fe1c953b1364107ba5fe664af493a06e23eadfb2",
       "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/mlx-erf-finite-seed-intermediate-overflow/gero-mlx-erf-finite-seed-publication-2026-09-19.zip",
       "evidence_archive_sha256": "9b75d95fd7b45217d54977d46e06e43db4f482b834f05dbc6fcfe746241dfbb6",
       "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7507063710302244865/",
@@ -115,7 +115,13 @@
       "limits": "Extreme finite float32 seeds; native CPU eager execution only. The balanced first-derivative candidate retains tail and extreme higher-derivative failures. Synthetic GERO update guard and documents; no real model, device or customer impact measured. No released binary, GPU, other dtype, fused transform or full upstream test suite was tested. No upstream submission or acceptance claimed.",
       "source_pin": "59d600b5e64c238427d0f8d897ab7c682ef4d3d2",
       "measured_chain": "Native finite weighted erf loss -> overflowing derivative intermediate -> non-finite normalized-step proposal -> synthetic GERO guard skips the update. The balanced candidate changes 4 of 8 scalar decisions, with 4 controls unchanged; headline saved parameter 1.0 becomes 0.9584892392158508.",
-      "zenodo_doi": "10.5281/zenodo.22845404"
+      "zenodo_doi": "10.5281/zenodo.22845404",
+      "impact_explanation": {
+        "date": "2026-09-19",
+        "new_experiments": false,
+        "measured": "Synthetic finite-value guard skips native proposed update; saved parameter1 rather than0.95848924.",
+        "conditional_not_measured": "Training progress, non-finite parameter/optimizer propagation, recovery/debugging time, model quality and monetary cost."
+      }
     }
   ],
   "coverage_scope": "Canonical report IDs; separate Collatz map outside this subset. Report counts are not independent bugs or raw Zenodo version-object counts.",
