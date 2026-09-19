@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-19T09:42:46.981924+00:00",
+  "checked_at": "2026-09-19T09:57:52.189821+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 112,
-    "huggingface": 112,
+    "gero": 113,
+    "huggingface": 113,
     "zenodo": 113,
     "github_catalog_report": 113,
-    "zenodo_records_including_collection": 113,
+    "zenodo_records_including_collection": 114,
     "unique_individual_publications": 113,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "113 canonical reports; endowment variance archive added after vendor disclosure.",
+  "github_status": "113 canonical reports; endowment benefit-scale case verified on six platforms. The separate Collatz map remains outside this subset.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -20,12 +20,8 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [
-      "actuarialmath-endowment-variance-benefit-scale"
-    ],
-    "huggingface": [
-      "actuarialmath-endowment-variance-benefit-scale"
-    ],
+    "gero": [],
+    "huggingface": [],
     "zenodo": []
   },
   "deduplication_notes": [
@@ -45,9 +41,10 @@
     "17September: portable BondZero archive published onGitHub andGERO as a resolved-case verification. Current source fixed inbb10c393; official1.1.2stillaffected.106prior canonical objects preserved. No second issue, new-discovery claim or video upload. Four remaining channels queued.",
     "PyLoan v1.1.0 adds a generated-document and budget-check demonstration; version records do not add canonical report IDs. Historic raw Zenodo object totals are not a fresh account-wide enumeration.",
     "19September: Strata Black Hessian adds one distinct report. Its six native pricing failures use a GERO constant-zero custom provider; default Hagan/CMS exposure and customer loss are not demonstrated. All111 prior canonical objects preserved. Counts track document coverage, not bugs or raw Zenodo versions.",
-    "19 September: added the existing Strata Normal-IV report video link. No new report, test run, issue, DOI or LinkedIn post created. Scientific archive remains unchanged. Other canonical report objects preserved."
+    "19 September: added the existing Strata Normal-IV report video link. No new report, test run, issue, DOI or LinkedIn post created. Scientific archive remains unchanged. Other canonical report objects preserved.",
+    "19September: Endowment variance benefit-scale report completes six-platform distribution. 483/1300 original variance mismatches become0 with local candidate and return on restoration. Native normal approximation -> GERO synthetic JSON -> example limit changes; no actual insurer losses measured. All112 prior canonical objects preserved. Counts track reports, not bugs."
   ],
-  "parity_complete": false,
+  "parity_complete": true,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "archival_backfill": {
     "date": "2026-09-16",
@@ -66,24 +63,25 @@
       ],
       "publication_date": "2026-09-19",
       "kind": "published_report",
-      "gero": null,
-      "huggingface": null,
+      "gero": "https://www.gero.uz/research/articles/actuarialmath-endowment-variance-benefit-scale.html",
+      "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/actuarialmath-endowment-variance-benefit-scale.md",
       "zenodo": "https://zenodo.org/records/22843200",
       "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/actuarialmath-endowment-variance-benefit-scale",
       "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-endowment-variance-benefit-scale.md",
-      "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-endowment-variance-benefit-scale.md",
+      "source_document_url": "https://www.gero.uz/research/articles/actuarialmath-endowment-variance-benefit-scale.html",
       "source_text_sha256": "2a0ff7a3f6307ec2839d8613f2d07e3b8dd2a8ac7fc15812da0ccf2561ff3fce",
-      "mirror_sha256": "2a0ff7a3f6307ec2839d8613f2d07e3b8dd2a8ac7fc15812da0ccf2561ff3fce",
+      "mirror_sha256": "6c0f7f00c409f25fe3f681be980af8ea413a35f119d07b2669b2bbb9056bfad3",
       "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/actuarialmath-endowment-variance-benefit-scale/gero-actuarialmath-endowment-variance-evidence-2026-09-19.zip",
       "evidence_archive_sha256": "59f6da29073136146139e9feade3fa504eec7c1ff37c7c2ffd16b8f65c041c2c",
-      "linkedin": null,
-      "youtube": null,
+      "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7507014387195531264/",
+      "youtube": "https://youtube.com/shorts/h8JZ-kw4Ot0",
       "maintainer_issue": "https://github.com/terence-lim/actuarialmath/issues/6",
       "implementation_defects_in_this_report": 1,
-      "publication_status": "Vendor issue6 sent first; GitHub and Zenodo evidence public. Other mirrors/video pending.",
+      "publication_status": "Public verified on all six platforms after vendor issue6 disclosure; local candidate, no upstream acceptance claimed.",
       "limits": "Synthetic discrete LifeTable distributions and GERO report/limit adapter. Native normal approximation is distinguished from the exact binomial percentile. No full upstream-suite or insurer/customer-loss claim.",
       "source_pin": "7d18f11ad304898f177b7922b3c53f70e4c2b4f4",
-      "measured_chain": "Extra benefit scale -> native portfolio estimate41862.13 instead of6606.12 -> synthetic JSON -> example7000-limit decision flips; opposite-direction control retained."
+      "measured_chain": "Extra benefit scale -> native portfolio estimate41862.13 instead of6606.12 -> synthetic JSON -> example7000-limit decision flips; opposite-direction control retained.",
+      "zenodo_doi": "10.5281/zenodo.22843200"
     }
   ],
   "coverage_scope": "Canonical report IDs; separate Collatz map outside this subset. Report counts are not independent bugs or raw Zenodo version-object counts.",
@@ -115,15 +113,25 @@
   "latest_distribution_progress": {
     "case_id": "actuarialmath-endowment-variance-benefit-scale",
     "public": [
+      "zenodo",
       "github",
-      "zenodo"
-    ],
-    "pending": [
       "gero",
-      "huggingface",
+      "youtube",
       "linkedin",
-      "youtube"
-    ]
+      "huggingface"
+    ],
+    "pending": [],
+    "links": {
+      "zenodo": "https://zenodo.org/records/22843200",
+      "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-endowment-variance-benefit-scale.md",
+      "gero": "https://www.gero.uz/research/articles/actuarialmath-endowment-variance-benefit-scale.html",
+      "youtube": "https://youtube.com/shorts/h8JZ-kw4Ot0",
+      "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7507014387195531264/",
+      "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/actuarialmath-endowment-variance-benefit-scale.md"
+    },
+    "hf_commit": "3a8ade44335ca4e4131ba195960ad8ef9705f2a9",
+    "zenodo_doi": "10.5281/zenodo.22843200",
+    "archive_sha256": "59f6da29073136146139e9feade3fa504eec7c1ff37c7c2ffd16b8f65c041c2c"
   },
   "latest_evidence_addendum": {
     "case_id": "pyloan-explicit-payment-final-balloon",

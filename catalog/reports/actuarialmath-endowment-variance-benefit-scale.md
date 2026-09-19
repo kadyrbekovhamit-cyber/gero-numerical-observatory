@@ -64,3 +64,14 @@ Developer report sent and independently read back on 19 September 2026: https://
 ## Publication and reproduction
 
 [Zenodo / DOI10.5281/zenodo.22843200](https://zenodo.org/records/22843200) · [Complete reproducibility ZIP](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/actuarialmath-endowment-variance-benefit-scale/gero-actuarialmath-endowment-variance-evidence-2026-09-19.zip). SHA-256 `59f6da29073136146139e9feade3fa504eec7c1ff37c7c2ffd16b8f65c041c2c`. Other platform/video links will be added after verified publication.
+
+## Verified publication links
+
+- [zenodo](https://zenodo.org/records/22843200)
+- [github](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-endowment-variance-benefit-scale.md)
+- [gero](https://www.gero.uz/research/articles/actuarialmath-endowment-variance-benefit-scale.html)
+- [youtube](https://youtube.com/shorts/h8JZ-kw4Ot0)
+- [linkedin](https://www.linkedin.com/feed/update/urn:li:share:7507014387195531264/)
+- [huggingface](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/actuarialmath-endowment-variance-benefit-scale.md)
+
+Zenodo DOI: `10.5281/zenodo.22843200`. YouTube: public, 32-second English Short.
