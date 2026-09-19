@@ -1,0 +1,8 @@
+{
+  "title": "MLX erf: a finite gradient becomes infinity before damping is applied",
+  "summary": "Native MLX CPU float32 execution returns an infinite derivative action where 1.32834399e38 is representable. A synthetic guarded update is skipped; a bounded first-derivative candidate permits it. Extreme tails and second derivatives remain limited.",
+  "source_pin": "59d600b5e64c238427d0f8d897ab7c682ef4d3d2",
+  "version": "1.0.0",
+  "publication_date": "2026-09-19",
+  "author": "Xamit Kadirbekov"
+}

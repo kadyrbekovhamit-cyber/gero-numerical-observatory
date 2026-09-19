@@ -1,0 +1,161 @@
+{
+  "completed_at": "2026-09-19T12:33:23.247686+00:00",
+  "fresh_full_cpu_build": true,
+  "source_git_blobs_verified": {
+    "mlx": 958,
+    "fmt": 128,
+    "json": 1090
+  },
+  "unique_pairs": 1292,
+  "primary_finite_pairs": 944,
+  "primary_failures_original_simple_balanced_restored": [
+    372,
+    4,
+    0,
+    372
+  ],
+  "csvs_byte_reproduced": 48,
+  "oracle_100_150_digits_identical": true,
+  "source_restored": true,
+  "tail_and_higher_derivative_residuals_retained": true,
+  "device": "CPU",
+  "gpu": false,
+  "audio_playback": false,
+  "commands": [
+    {
+      "label": "configure",
+      "command": [
+        "/Users/khamit/Documents/math/software-audits/current-stack-2026-09-07/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake",
+        "-S",
+        "/Users/khamit/Documents/Codex/gero-continuous-research/research/mlx-invariants-2026-09-19/portable-replay/driver",
+        "-B",
+        "/Users/khamit/Documents/Codex/gero-continuous-research/research/mlx-invariants-2026-09-19/portable-replay/build",
+        "-G",
+        "Ninja",
+        "-DCMAKE_MAKE_PROGRAM=/Users/khamit/Documents/math/software-audits/current-stack-2026-09-07/.venv/bin/ninja",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DFETCHCONTENT_SOURCE_DIR_FMT=/Users/khamit/Documents/Codex/gero-continuous-research/research/mlx-invariants-2026-09-19/portable-replay/sources/fmt-407c905e45ad75fc29bf0f9bb7c5c2fd3475976f",
+        "-DFETCHCONTENT_SOURCE_DIR_JSON=/Users/khamit/Documents/Codex/gero-continuous-research/research/mlx-invariants-2026-09-19/portable-replay/sources/json-9cca280a4d0ccf0c08f47a99aa71d1b0e52f8d03",
+        "-DMLX_BUILD_CPU=ON",
+        "-DMLX_BUILD_METAL=OFF",
+        "-DMLX_BUILD_CUDA=OFF",
+        "-DMLX_BUILD_TESTS=OFF",
+        "-DMLX_BUILD_EXAMPLES=OFF",
+        "-DMLX_BUILD_GGUF=OFF",
+        "-DMLX_BUILD_SAFETENSORS=OFF",
+        "-DMLX_BUILD_PYTHON_BINDINGS=OFF",
+        "-DMLX_USE_CCACHE=OFF"
+      ]
+    },
+    {
+      "label": "oracle",
+      "command": [
+        "/Users/khamit/Documents/Codex/2026-09-14/financepy-merton-scale-triage/.venv/bin/python",
+        "/Users/khamit/Documents/Codex/gero-continuous-research/research/mlx-invariants-2026-09-19/portable-replay/driver/check_erf.py",
+        "prepare"
+      ]
+    },
+    {
+      "label": "build-original",
+      "command": [
+        "/Users/khamit/Documents/math/software-audits/current-stack-2026-09-07/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake",
+        "--build",
+        "/Users/khamit/Documents/Codex/gero-continuous-research/research/mlx-invariants-2026-09-19/portable-replay/build",
+        "--target",
+        "erf_probe",
+        "--parallel",
+        "1"
+      ]
+    },
+    {
+      "label": "grid-original",
+      "command": [
+        "/Users/khamit/Documents/Codex/2026-09-14/financepy-merton-scale-triage/.venv/bin/python",
+        "/Users/khamit/Documents/Codex/gero-continuous-research/research/mlx-invariants-2026-09-19/portable-replay/driver/check_erf.py",
+        "original"
+      ]
+    },
+    {
+      "label": "apply-candidate",
+      "command": [
+        "patch",
+        "-p1",
+        "-d",
+        "/Users/khamit/Documents/Codex/gero-continuous-research/research/mlx-invariants-2026-09-19/portable-replay/sources/mlx-59d600b5e64c238427d0f8d897ab7c682ef4d3d2",
+        "-i",
+        "/Users/khamit/Documents/Codex/gero-continuous-research/research/mlx-invariants-2026-09-19/package/erf-candidate.patch"
+      ]
+    },
+    {
+      "label": "build-candidate",
+      "command": [
+        "/Users/khamit/Documents/math/software-audits/current-stack-2026-09-07/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake",
+        "--build",
+        "/Users/khamit/Documents/Codex/gero-continuous-research/research/mlx-invariants-2026-09-19/portable-replay/build",
+        "--target",
+        "erf_probe",
+        "--parallel",
+        "1"
+      ]
+    },
+    {
+      "label": "grid-candidate",
+      "command": [
+        "/Users/khamit/Documents/Codex/2026-09-14/financepy-merton-scale-triage/.venv/bin/python",
+        "/Users/khamit/Documents/Codex/gero-continuous-research/research/mlx-invariants-2026-09-19/portable-replay/driver/check_erf.py",
+        "candidate"
+      ]
+    },
+    {
+      "label": "apply-balanced",
+      "command": [
+        "patch",
+        "-p1",
+        "-d",
+        "/Users/khamit/Documents/Codex/gero-continuous-research/research/mlx-invariants-2026-09-19/portable-replay/sources/mlx-59d600b5e64c238427d0f8d897ab7c682ef4d3d2",
+        "-i",
+        "/Users/khamit/Documents/Codex/gero-continuous-research/research/mlx-invariants-2026-09-19/package/erf-balanced-candidate.patch"
+      ]
+    },
+    {
+      "label": "build-balanced",
+      "command": [
+        "/Users/khamit/Documents/math/software-audits/current-stack-2026-09-07/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake",
+        "--build",
+        "/Users/khamit/Documents/Codex/gero-continuous-research/research/mlx-invariants-2026-09-19/portable-replay/build",
+        "--target",
+        "erf_probe",
+        "--parallel",
+        "1"
+      ]
+    },
+    {
+      "label": "grid-balanced",
+      "command": [
+        "/Users/khamit/Documents/Codex/2026-09-14/financepy-merton-scale-triage/.venv/bin/python",
+        "/Users/khamit/Documents/Codex/gero-continuous-research/research/mlx-invariants-2026-09-19/portable-replay/driver/check_erf.py",
+        "balanced"
+      ]
+    },
+    {
+      "label": "build-restored",
+      "command": [
+        "/Users/khamit/Documents/math/software-audits/current-stack-2026-09-07/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake",
+        "--build",
+        "/Users/khamit/Documents/Codex/gero-continuous-research/research/mlx-invariants-2026-09-19/portable-replay/build",
+        "--target",
+        "erf_probe",
+        "--parallel",
+        "1"
+      ]
+    },
+    {
+      "label": "grid-restored",
+      "command": [
+        "/Users/khamit/Documents/Codex/2026-09-14/financepy-merton-scale-triage/.venv/bin/python",
+        "/Users/khamit/Documents/Codex/gero-continuous-research/research/mlx-invariants-2026-09-19/portable-replay/driver/check_erf.py",
+        "restored"
+      ]
+    }
+  ]
+}

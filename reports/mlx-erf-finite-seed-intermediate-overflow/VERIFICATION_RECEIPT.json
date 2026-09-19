@@ -1,0 +1,79 @@
+{
+  "case_id": "mlx-erf-finite-seed-intermediate-overflow",
+  "status": "confirmed_local_vendor_human_authorship_pending",
+  "verified_at": "2026-09-19T12:34:08.733065+00:00",
+  "source_pin": "59d600b5e64c238427d0f8d897ab7c682ef4d3d2",
+  "release_source_identical": "v0.32.2",
+  "release_runtime_tested": false,
+  "fresh_full_cpu_build": true,
+  "source_git_blobs_verified": {
+    "mlx": 958,
+    "fmt": 128,
+    "json": 1090
+  },
+  "unique_pairs": 1292,
+  "layouts": 3,
+  "primary_finite_pairs": 944,
+  "primary_failure_counts_original_coefficientfirst_balanced_restored": [
+    372,
+    4,
+    0,
+    372
+  ],
+  "primary_nonzero_x_original_failures": 368,
+  "primary_zero_boundary_original_failures": 4,
+  "tail_pairs": 304,
+  "tail_failure_counts_original_coefficientfirst_balanced_restored": [
+    216,
+    184,
+    60,
+    216
+  ],
+  "legitimate_overflow_controls": 44,
+  "legitimate_overflow_controls_passed_all_variants": true,
+  "first_and_second_small_seed_primary_controls_passed": 208,
+  "primary_second_failures_original_balanced": [
+    488,
+    292
+  ],
+  "forward_bits_unchanged": true,
+  "all_layout_bits_identical": true,
+  "restored_csvs_byte_identical": true,
+  "portable_csvs_byte_reproduced": 48,
+  "oracle_digits": [
+    100,
+    150
+  ],
+  "oracle_rounding": "binary32 ties-to-even from high precision, exact input reconstruction",
+  "tolerance": "3e-6*abs(reference)+4*2^-149",
+  "downstream_scalar_cases": 8,
+  "downstream_decision_changes": 4,
+  "downstream_unchanged_controls": 4,
+  "headline_proposed_step_original": "-Infinity",
+  "headline_proposed_step_balanced": 0.9584892392158508,
+  "headline_guard_saved_parameter_original": 1.0,
+  "headline_guard_saved_parameter_balanced": 0.9584892392158508,
+  "boundary_x_13_267_expected": "1.306178691462218601291858114595400118215398626573267227403246894e-38",
+  "boundary_x_13_267_balanced_result": 0,
+  "gpu": false,
+  "audio_playback": false,
+  "vendor_sent": false,
+  "publications": {},
+  "limitations": [
+    "Extreme finite float32 seeds; CPU eager execution only.",
+    "Balanced candidate retains tail and extreme higher-derivative failures.",
+    "No full upstream test suite, other dtypes, fused transforms or GPU tested.",
+    "Synthetic GERO update guard/documents; no real model/device/customer impact.",
+    "Official release methods checked, released binary not executed.",
+    "Current MLX issue templates prohibit AI-written issues; human-authored vendor report pending."
+  ],
+  "sha256": {
+    "erf_probe.cpp": "583303a8d83119bcd4b0bb944b32dc805c2b878e4a01777242b433a67d66a07e",
+    "check_erf.py": "83438a44a166fb968fb83ee6783e14d2c340551ac5dcbb8aec21a48e71b19324",
+    "erf-balanced-candidate.patch": "cba4452a71eb8f6fa0fb7a970e6bea356984afed25504d81d666e80037ebb7b5",
+    "inputs.txt": "1d4e984e39106c3272344194685ff0d96c2d954122b4d815c49febcc0a8c0263",
+    "oracle.json": "48bc7c5526e279ca673b300cde67a0248d3cbc6491a534882a1178c1fc23a8f0",
+    "DOWNSTREAM_RECEIPT.json": "55d07df4b5d8f80f0b0772869caa484c582f8122f5a323da2326299bc15bf82d",
+    "REPLAY_RECEIPT.json": "0e3a5828a7f1d141b86ad5a48c62a9b7642f96719e3d36f5d70ed178489fe21e"
+  }
+}

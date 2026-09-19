@@ -1,0 +1,82 @@
+{
+  "original": {
+    "primary": {
+      "cases": 944,
+      "first_failures": 372,
+      "forward_failures": 0,
+      "second_failures": 488
+    },
+    "tail_limit": {
+      "cases": 304,
+      "first_failures": 216,
+      "forward_failures": 0,
+      "second_failures": 220
+    },
+    "legitimate_overflow": {
+      "cases": 44,
+      "first_failures": 0,
+      "forward_failures": 0,
+      "second_failures": 44
+    }
+  },
+  "candidate": {
+    "primary": {
+      "cases": 944,
+      "first_failures": 4,
+      "forward_failures": 0,
+      "second_failures": 488
+    },
+    "tail_limit": {
+      "cases": 304,
+      "first_failures": 184,
+      "forward_failures": 0,
+      "second_failures": 220
+    },
+    "legitimate_overflow": {
+      "cases": 44,
+      "first_failures": 0,
+      "forward_failures": 0,
+      "second_failures": 44
+    }
+  },
+  "balanced": {
+    "primary": {
+      "cases": 944,
+      "first_failures": 0,
+      "forward_failures": 0,
+      "second_failures": 292
+    },
+    "tail_limit": {
+      "cases": 304,
+      "first_failures": 60,
+      "forward_failures": 0,
+      "second_failures": 64
+    },
+    "legitimate_overflow": {
+      "cases": 44,
+      "first_failures": 0,
+      "forward_failures": 0,
+      "second_failures": 44
+    }
+  },
+  "restored": {
+    "primary": {
+      "cases": 944,
+      "first_failures": 372,
+      "forward_failures": 0,
+      "second_failures": 488
+    },
+    "tail_limit": {
+      "cases": 304,
+      "first_failures": 216,
+      "forward_failures": 0,
+      "second_failures": 220
+    },
+    "legitimate_overflow": {
+      "cases": 44,
+      "first_failures": 0,
+      "forward_failures": 0,
+      "second_failures": 44
+    }
+  }
+}

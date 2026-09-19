@@ -1,0 +1,17 @@
+--- a/mlx/primitives.cpp
++++ b/mlx/primitives.cpp
+@@ -1981,11 +1981,9 @@
+   assert(primals.size() == 1);
+   assert(argnums.size() == 1);
+   auto dtype = primals[0].dtype();
+-  auto scale = multiply(array(M_2_SQRTPI, dtype), tangents[0], stream());
+-  return {multiply(
+-      scale,
+-      exp(negative(square(primals[0], stream()), stream()), stream()),
+-      stream())};
++  auto half_exponent = multiply(array(-0.5, dtype), square(primals[0], stream()), stream());
++  auto factor = multiply(array(std::sqrt(M_2_SQRTPI), dtype), exp(half_exponent, stream()), stream());
++  return {multiply(multiply(tangents[0], factor, stream()), factor, stream())};
+ }
+ 
+ std::pair<std::vector<array>, std::vector<int>> Erf::vmap(
