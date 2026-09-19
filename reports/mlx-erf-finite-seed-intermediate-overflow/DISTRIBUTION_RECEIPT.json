@@ -1,0 +1,65 @@
+{
+  "case_id": "mlx-erf-finite-seed-intermediate-overflow",
+  "status": "public_verified",
+  "links": {
+    "zenodo": "https://zenodo.org/records/22845404",
+    "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-erf-finite-seed-intermediate-overflow.md",
+    "gero": "https://www.gero.uz/research/articles/mlx-erf-finite-seed-intermediate-overflow.html",
+    "youtube": "https://www.youtube.com/shorts/DQ1XiJh29H0",
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7507063710302244865/",
+    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-erf-finite-seed-intermediate-overflow.md"
+  },
+  "archive_sha256": "9b75d95fd7b45217d54977d46e06e43db4f482b834f05dbc6fcfe746241dfbb6",
+  "zenodo_doi": "10.5281/zenodo.22845404",
+  "hf_commit": "069e4ebb4f2566043001d10e882df03189d004a4",
+  "hf_archive_mirror_status": "pending_network_upload_error",
+  "upstream_report_sent": false,
+  "maintainer_issue": null,
+  "upstream_acceptance_claimed": false,
+  "platform_receipts": {
+    "zenodo": {
+      "url": "https://zenodo.org/records/22845404",
+      "status": "public_verified",
+      "record": 22845404,
+      "doi": "10.5281/zenodo.22845404",
+      "file_checksums_matched": true
+    },
+    "github": {
+      "url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-erf-finite-seed-intermediate-overflow.md",
+      "status": "public_verified",
+      "revision": "9718af07d7c19b75c9da629d317e4cf908be3b81",
+      "at": "2026-09-19T13:07:18.008177+00:00"
+    },
+    "gero": {
+      "url": "https://www.gero.uz/research/articles/mlx-erf-finite-seed-intermediate-overflow.html",
+      "status": "public_verified",
+      "deployment": "dpl_7tGoYs9zCQKjGYvmumiBprQgnZnc",
+      "verified_at": "2026-09-19T13:25:33.399297+00:00"
+    },
+    "youtube": {
+      "url": "https://www.youtube.com/shorts/DQ1XiJh29H0",
+      "status": "public_verified",
+      "video_id": "DQ1XiJh29H0",
+      "master_sha256": "93d7bc4b38ddf3e0aa2692c346734d9e5d3572abdb3e052e43c1340b951f2f33",
+      "caption_sha256": "a4b76ba5f735656c59b7ea3c1a6bfd862bc86c90659a40e08ca019bf8d441e0a",
+      "duration_seconds": 31.521333,
+      "verified_at": "2026-09-19T13:09:25.436909+00:00"
+    },
+    "linkedin": {
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7507063710302244865/",
+      "status": "public_verified",
+      "verified_at": "2026-09-19T13:13:40.226449+00:00",
+      "visibility": "Global / Anyone",
+      "video_mode": "YouTube link and preview card; no native upload",
+      "post_text_sha256": "a44c573bb5b3b200cc414917a83584ac299397b29d18e905421684f2bfb55ffb"
+    },
+    "huggingface": {
+      "url": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-erf-finite-seed-intermediate-overflow.md",
+      "status": "public_verified",
+      "commit": "069e4ebb4f2566043001d10e882df03189d004a4",
+      "verified_at": "2026-09-19T13:24:03.423747+00:00",
+      "archive_mirror_status": "pending_network_upload_error"
+    }
+  },
+  "checked_at": "2026-09-19T13:25:47.127496+00:00"
+}
