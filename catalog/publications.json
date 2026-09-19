@@ -2026,22 +2026,22 @@
     "kind": "published_report",
     "gero": "https://www.gero.uz/research/articles/pyloan-explicit-payment-final-balloon.html",
     "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/pyloan-explicit-payment-final-balloon.md",
-    "zenodo": "https://zenodo.org/records/22836495",
+    "zenodo": "https://zenodo.org/records/22843503",
     "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/pyloan-explicit-payment-final-balloon",
     "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/pyloan-explicit-payment-final-balloon.md",
     "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/pyloan-explicit-payment-final-balloon.md",
     "source_text_sha256": "ac04a04f00be37189a7b08179867e084a6f8cf318b7f5808d1522c0fcc4831e1",
-    "mirror_sha256": "cdbc122db56444c6a65bc9ad3674e35a95e63f02095211ac7230521e85af7842",
+    "mirror_sha256": "4a15d11121cd31260ae2f36947d5ec4b50e2750c3895b4dcee6f6e87424b0c03",
     "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/pyloan-explicit-payment-final-balloon/gero-pyloan-explicit-payment-evidence-2026-09-18.zip",
     "evidence_archive_sha256": "6be9658bd28e6bf72d9dac8add77319a703f4d6c7fedcacefee069604dfcc0a9",
     "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506770311233818625/",
     "youtube": null,
     "maintainer_issue": "https://github.com/darius-lesch/pyloan/issues/70",
     "implementation_defects_in_this_report": 1,
-    "publication_status": "Version 1.1 downstream-chain addendum verified on GitHub, GERO, Hugging Face, Zenodo and existing LinkedIn post. One synthetic document/budget scenario in five states; same defect ID. Video not produced; queued.",
+    "publication_status": "Existing case updated after maintainer acceptance and verified official0.7.3 release; five text/archive destinations, first video pending.",
     "limits": "Synthetic library schedules; no bank deployment or customer harm claim. 24 exact-oracle rounding differences remain; upstream unittest suite retains three baseline failure reports. Candidate only, not accepted upstream.",
     "source_pin": "73a052cb40f9c23963fbc1ec4370aa7ac9c3efc1",
-    "zenodo_doi": "10.5281/zenodo.22836495",
+    "zenodo_doi": "10.5281/zenodo.22843503",
     "downstream_evidence": {
       "version": "1.1.0",
       "date": "2026-09-18",
@@ -2067,8 +2067,38 @@
         "version": "1.1.0",
         "url": "https://zenodo.org/records/22836495",
         "doi": "10.5281/zenodo.22836495"
+      },
+      {
+        "version": "1.2.0",
+        "url": "https://zenodo.org/records/22843503",
+        "doi": "10.5281/zenodo.22843503"
       }
-    ]
+    ],
+    "upstream_fix": {
+      "status": "released_and_independently_verified",
+      "release": "0.7.3",
+      "release_date_utc": "2026-09-18",
+      "source_pin": "12772f720b432bc1e8d76ca0dda5bad68e2c3450",
+      "maintainer_response": "https://github.com/darius-lesch/pyloan/issues/70#issuecomment-5736689028",
+      "merged_pr": "https://github.com/darius-lesch/pyloan/pull/71",
+      "fix_commit": "d5229ad8c0fedfd85339db76bf6af941d2ccda10",
+      "payment_cap_failures_prior_release_release_current_restored": [
+        408,
+        0,
+        0,
+        408
+      ],
+      "scenarios": 864,
+      "remaining_decimal_mismatch_scenarios": 24,
+      "max_decimal_difference": "0.02",
+      "upstream_test_methods": 17,
+      "upstream_baseline_failure_reports": 3,
+      "verification_archive": "https://zenodo.org/records/22843503/files/gero-pyloan-0.7.3-verified-fix-2026-09-19.zip?download=1",
+      "verification_sha256": "a1e5851cc8d8ed0a183a1b1dd3c6456044c841005784a6e4f87cc894a6dd2f8d",
+      "new_independent_defects": 0,
+      "scope": "Synthetic schedules and disclosed GERO notice/budget adapter; no real collection, borrower losses or bank integration."
+    },
+    "upstream_status": "Fixed in official PyLoan0.7.3; current source and release independently replayed. Separate rounding/test failures retained."
   },
   {
     "id": "strata-black-adjoint2-zero-volatility-hessian",

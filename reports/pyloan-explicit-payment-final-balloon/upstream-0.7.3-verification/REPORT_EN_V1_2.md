@@ -109,12 +109,3 @@ A bounded review covered the current source, develop, release artifacts, all 69 
 Execution used Python 3.12.14 and python-dateutil 2.9.0.post0 on macOS arm64, one configured CPU worker. Evidence concerns synthetic library schedules. No bank deployment, borrower loss, production usage, performance or legal conclusion was measured. Test/report preparation was AI-assisted.
 
 Vendor report sent before external publication: [https://github.com/darius-lesch/pyloan/issues/70](https://github.com/darius-lesch/pyloan/issues/70). No response or upstream acceptance is claimed.
-
-
-## Publication and version links
-
-[github](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/pyloan-explicit-payment-final-balloon.md) · [gero](https://www.gero.uz/research/articles/pyloan-explicit-payment-final-balloon.html) · [linkedin](https://www.linkedin.com/feed/update/urn:li:share:7506770311233818625/) · [zenodo](https://zenodo.org/records/22843503) · [huggingface](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/pyloan-explicit-payment-final-balloon.md)
-
-[Released-fix verification ZIP](https://zenodo.org/records/22843503/files/gero-pyloan-0.7.3-verified-fix-2026-09-19.zip?download=1). SHA-256 `a1e5851cc8d8ed0a183a1b1dd3c6456044c841005784a6e4f87cc894a6dd2f8d`. [Original v1.0](https://zenodo.org/records/22834912) and [synthetic-chain v1.1](https://zenodo.org/records/22836495) remain unchanged. The first PyLoan video is not yet produced.
-
-Editorial clarification: the living report counts the 24 remaining Decimal discrepancies as scenarios and gives the release date in UTC. The already frozen v1.2 ZIP retains its initial prose; no numerical evidence has changed.

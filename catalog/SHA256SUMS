@@ -187,6 +187,13 @@ df8b4eec065d2d9155b31dfde01e8bd460e1918178d8d1cb39bbb72b373f8dc4  ../reports/pyl
 da1cd8dcfa724998948ded82ed3a994f434ee67046ed9198b664e0628d3231a2  ../reports/pyloan-explicit-payment-final-balloon/source/tests/test_loan_scenarios.py
 bce996f45e1b456c1f5af84df7986bf9c22cd5b6ab9d3d1f54b47a6ab2c4a048  ../reports/pyloan-explicit-payment-final-balloon/source/tests/test_pyloan.py
 e6b702b104587e734283a85082b14f4cad65d3847150d59800fb17452247cb82  ../reports/pyloan-explicit-payment-final-balloon/test_explicit_payment.py
+152b49f618eeeb845a76b9b87cfb453491e08a33207cf66f51f78d6cf72f708d  ../reports/pyloan-explicit-payment-final-balloon/upstream-0.7.3-verification/MAINTAINER_COMMENTS.json
+955ed23fa28211a060a8ea6cfb84f8c3812920dd9ea1688600367033179fe8bf  ../reports/pyloan-explicit-payment-final-balloon/upstream-0.7.3-verification/PORTABLE_REPLAY_RECEIPT.json
+24e3493b077ef48e33a8a66ce071df2cac0cede27ac082745f3b7633f5dd5076  ../reports/pyloan-explicit-payment-final-balloon/upstream-0.7.3-verification/REPORT_EN_V1_2.md
+525910a36001b68e572591e66ec31855ba91ffe6d185cc3b37f041ea459e5db2  ../reports/pyloan-explicit-payment-final-balloon/upstream-0.7.3-verification/SOURCE_MANIFEST.json
+1853d55e752b978fb9e4b09283e706c75c46da43cb6517497ece059345289c68  ../reports/pyloan-explicit-payment-final-balloon/upstream-0.7.3-verification/UPSTREAM_FIX_UPDATE.md
+188d8975e962b900a12a5e378efef10aae8ba89d95b8b1785e141a040d105b86  ../reports/pyloan-explicit-payment-final-balloon/upstream-0.7.3-verification/VERIFICATION_RECEIPT.json
+a1e5851cc8d8ed0a183a1b1dd3c6456044c841005784a6e4f87cc894a6dd2f8d  ../reports/pyloan-explicit-payment-final-balloon/upstream-0.7.3-verification/gero-pyloan-0.7.3-verified-fix-2026-09-19.zip
 b51554420d610daa0e97ce864c38a4cf973497413535345f2bfc54edb52a23f0  ../reports/strata-black-adjoint2-zero-volatility-hessian/ARCHIVE_RECEIPT.json
 12693a3124c92a9abdfa44663ac3d1dcf6d12672f5d557df22708facbc56f324  ../reports/strata-black-adjoint2-zero-volatility-hessian/DISTRIBUTION_RECEIPT.json
 cffb3c7c6b92cb841e3026249842d5d8c6ebaeba44da5f63c9359910ca6022c2  ../reports/strata-black-adjoint2-zero-volatility-hessian/ExtrapolationProbe.java
@@ -261,8 +268,8 @@ c86c2dab07b680694776134676aaeff88093e1d7caa966b4e528999e4f2f51f4  evidence/nntra
 20cac1f6cd80b5308092ed80f70672d37621a819ce3c062596d259ad137b1207  evidence/nntrainer-split-incremental-channels/SOURCE_LEDGER.md
 6215fe381282fa4d95074ce4dffd4bbf1dc56ba43ade2894578ffe18a24b805d  evidence/nntrainer-split-incremental-channels/candidate.patch
 072dbfd6967d765fc7091a30ab1de80c9d9bb9609e155cdbf4750e71557685be  evidence/nntrainer-split-incremental-channels/gero-nntrainer-split-incremental-channels-research-2026-09-17.zip
-612a63bad21bb7d725d8796a753d937c75884cc138f77f809546131e0cbf115b  platform-status.json
-d33ba6329ebe15a33ad8fb979ec2403ac61ddbb0da8223aed52ed8a773907c2c  publications.json
+b8a1300e128ffb39928383c6f048c227ae84d9fc7e54ea293c1c61f3b8f81328  platform-status.json
+440f0f15455f9760abc072ab13db94e63e4d0b6f904d09da01e2488f67a3c497  publications.json
 2d6ab31d36d9f9e6329bf0f82783096f6dc19ab3c0500181548c5923852f6251  reports/actuarialmath-beta-density.md
 daa97d98c82172ed092f2bf09bfa3fc81f51c298f631a5bbbf23ad5fe416584d  reports/actuarialmath-constantforce-benefit-scaling.md
 c50f5211f40741509313e1c91a08f5c010db9c6bdf2e9b1a2002ca893b700b7c  reports/actuarialmath-endowment-variance-benefit-scale.md
@@ -357,7 +364,7 @@ d451feee1521d6e167dd6d5ea1bff7a59aa3ed48b31307142fe395074626b283  reports/onnx-r
 830dc58c9900b45bdd9da8a4c0b6c16022a256fdb16b97381fd779166be2d600  reports/onnx-reference-unique-unsorted-nonzero-axis.md
 d5d940a016d14b6eeb5d73714a775551621dc2a899f2caa00cc79d37b474ecad  reports/onnx-runtime-float16-quantizelinear-rounding.md
 b3bed8f89f2cf8818ad9b71eb7ec3913ab2d39715ce7e440001eb7b8b51e651a  reports/pyliferisk-geometric-mortality.md
-cdbc122db56444c6a65bc9ad3674e35a95e63f02095211ac7230521e85af7842  reports/pyloan-explicit-payment-final-balloon.md
+4a15d11121cd31260ae2f36947d5ec4b50e2750c3895b4dcee6f6e87424b0c03  reports/pyloan-explicit-payment-final-balloon.md
 651e7bf452ab6391f99bfea4a418d501bd01a67a1f518829d29cd00198e11849  reports/pyxirr-rate-vector-convergence.md
 f7133e23de32f3b39d1cb5863aac27a661a95404fd38a336b1b734909ed4809a  reports/quantlib-zero-stddev-itm-probabilities.md
 4f686d82f8bf291507039c06dc0a20c5f988d217ccec3baffe1c189d65a36df6  reports/research-acceleration-causal-contract.md

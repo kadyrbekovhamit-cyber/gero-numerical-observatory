@@ -1,0 +1,152 @@
+{
+  "status": "upstream_release_fix_verified",
+  "verified_at": "2026-09-19T08:02:26.244751+00:00",
+  "version": "0.7.3",
+  "source_pin": "12772f720b432bc1e8d76ca0dda5bad68e2c3450",
+  "scenarios_per_grid": 864,
+  "payment_cap_failures": {
+    "current": 0,
+    "release": 0,
+    "prior_release": 408,
+    "restored": 408
+  },
+  "prior_passing_schedules_unchanged": 456,
+  "other_control_schedules_unchanged": 60,
+  "release_matches_original_candidate_byte_for_byte": true,
+  "separate_decimal_mismatches": 24,
+  "max_decimal_difference": "0.02",
+  "chain": {
+    "current": {
+      "notice": "100.00",
+      "remaining_principal": "819.10",
+      "budget_decision": "WITHIN_BUDGET"
+    },
+    "release": {
+      "notice": "100.00",
+      "remaining_principal": "819.10",
+      "budget_decision": "WITHIN_BUDGET"
+    },
+    "prior_release": {
+      "notice": "919.10",
+      "remaining_principal": "0.00",
+      "budget_decision": "EXCEEDS_BUDGET"
+    },
+    "restored": {
+      "notice": "919.10",
+      "remaining_principal": "0.00",
+      "budget_decision": "EXCEEDS_BUDGET"
+    },
+    "reference": {
+      "notice": "100.00",
+      "remaining_principal": "819.10",
+      "budget_decision": "WITHIN_BUDGET"
+    }
+  },
+  "tests": {
+    "regression-current": {
+      "exit_code": 0,
+      "tail": [
+        "----------------------------------------------------------------------",
+        "Ran 5 tests in 0.004s",
+        "",
+        "OK"
+      ]
+    },
+    "regression-release": {
+      "exit_code": 0,
+      "tail": [
+        "----------------------------------------------------------------------",
+        "Ran 5 tests in 0.004s",
+        "",
+        "OK"
+      ]
+    },
+    "regression-prior_release": {
+      "exit_code": 1,
+      "tail": [
+        "----------------------------------------------------------------------",
+        "Ran 5 tests in 0.004s",
+        "",
+        "FAILED (failures=2)"
+      ]
+    },
+    "regression-restored": {
+      "exit_code": 1,
+      "tail": [
+        "----------------------------------------------------------------------",
+        "Ran 5 tests in 0.004s",
+        "",
+        "FAILED (failures=2)"
+      ]
+    },
+    "upstream": {
+      "exit_code": 1,
+      "tail": [
+        "",
+        "----------------------------------------------------------------------",
+        "Ran 17 tests in 0.265s",
+        "",
+        "FAILED (failures=3)"
+      ]
+    },
+    "upstream-restored": {
+      "exit_code": 1,
+      "tail": [
+        "",
+        "----------------------------------------------------------------------",
+        "Ran 17 tests in 0.354s",
+        "",
+        "FAILED (failures=4)"
+      ]
+    }
+  },
+  "restored_only_new_guard": true,
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "threads": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "audio_playback": false,
+  "gpu": false,
+  "limitations": [
+    "Synthetic loan schedules; generated notice/budget rule are GERO adapter, not built-in PyLoan functionality.",
+    "No real borrower, collected payment, fee, extra interest, bank integration or legal violation demonstrated.",
+    "Separate exact-oracle differences and upstream test failures are retained, not silently treated as passing."
+  ],
+  "files_sha256": {
+    "evidence/CHAIN_RESULTS.json": "c0230e682cb2a049fc554dc110738890920bc6bed6c28ed88ad58d3ad6f90693",
+    "evidence/GRID_RECEIPT.json": "01528354965f0d3bb08ec9cc2dbf2acfb72a82c6f9265327603097be83dfb98f",
+    "evidence/TEST_RESULTS.json": "7a37e11b81d31ba00b88b0546a547c31e9e778c7d5af35e187a32f699a5820e1",
+    "evidence/UPSTREAM_COMPARE.json": "83dddb55cc4cecefb0808602357eada307a3bd22ee348b9b98171f8fdc4c6909",
+    "evidence/controls-current.json": "173786f971c81b6e0b91543dd92b27f05c635258e18c4e6f7049718e0c776953",
+    "evidence/controls-prior_release.json": "173786f971c81b6e0b91543dd92b27f05c635258e18c4e6f7049718e0c776953",
+    "evidence/controls-release.json": "173786f971c81b6e0b91543dd92b27f05c635258e18c4e6f7049718e0c776953",
+    "evidence/controls-restored.json": "173786f971c81b6e0b91543dd92b27f05c635258e18c4e6f7049718e0c776953",
+    "evidence/documents/current/budget-decision.json": "86f1b85b540651b24e6d3645f1701d0f06477ff760310c8d64eb153408237508",
+    "evidence/documents/current/payment-notice.html": "c9b02f7a9e740b3c487219b3a48353ef59a79169e08ad3c164cbc105b6dcf612",
+    "evidence/documents/current/payment-notice.json": "3087d4accaa1254c768929e22853dd9686ad93eb66e43a2f3b70c2e1ff3f96ad",
+    "evidence/documents/prior_release/budget-decision.json": "b9a6ed7ca083376010a4d090639de92745220e65116581f0d11ccf4c77e88781",
+    "evidence/documents/prior_release/payment-notice.html": "70add168bfc8bc88f10cf117eb227372fad65228192c71a242118c8cf125c2ce",
+    "evidence/documents/prior_release/payment-notice.json": "0f52fb8da43b0cc012aa9fc8ecb9a9c50e7f958bd8e0104230c2edc38b03b314",
+    "evidence/documents/reference/budget-decision.json": "86f1b85b540651b24e6d3645f1701d0f06477ff760310c8d64eb153408237508",
+    "evidence/documents/reference/payment-notice.html": "e50e1d77701b0837803201555d63dc7f7c766741114fbb529785f9992507ddc5",
+    "evidence/documents/reference/payment-notice.json": "3087d4accaa1254c768929e22853dd9686ad93eb66e43a2f3b70c2e1ff3f96ad",
+    "evidence/documents/release/budget-decision.json": "86f1b85b540651b24e6d3645f1701d0f06477ff760310c8d64eb153408237508",
+    "evidence/documents/release/payment-notice.html": "c9b02f7a9e740b3c487219b3a48353ef59a79169e08ad3c164cbc105b6dcf612",
+    "evidence/documents/release/payment-notice.json": "3087d4accaa1254c768929e22853dd9686ad93eb66e43a2f3b70c2e1ff3f96ad",
+    "evidence/documents/restored/budget-decision.json": "b9a6ed7ca083376010a4d090639de92745220e65116581f0d11ccf4c77e88781",
+    "evidence/documents/restored/payment-notice.html": "70add168bfc8bc88f10cf117eb227372fad65228192c71a242118c8cf125c2ce",
+    "evidence/documents/restored/payment-notice.json": "0f52fb8da43b0cc012aa9fc8ecb9a9c50e7f958bd8e0104230c2edc38b03b314",
+    "evidence/grid-current.json": "12504094346271280298f917f14ceeebbc911a18f50a2ec85f196a60986dcedc",
+    "evidence/grid-prior_release.json": "43593868e259175a8ca611ecb6523b3ffa3b61f7dbf7047bc0bd16767045c117",
+    "evidence/grid-release.json": "12504094346271280298f917f14ceeebbc911a18f50a2ec85f196a60986dcedc",
+    "evidence/grid-restored.json": "43593868e259175a8ca611ecb6523b3ffa3b61f7dbf7047bc0bd16767045c117",
+    "evidence/regression-current.log": "03528888ee46a65ba589c3994acbfd7f82a1af9a65401aa5f9e233a4e0fc80f3",
+    "evidence/regression-prior_release.log": "a95ce025f54a76790d0d7147e4a4b7c96aa8c5a9af2b750a260b825c87bf8685",
+    "evidence/regression-release.log": "03528888ee46a65ba589c3994acbfd7f82a1af9a65401aa5f9e233a4e0fc80f3",
+    "evidence/regression-restored.log": "a95ce025f54a76790d0d7147e4a4b7c96aa8c5a9af2b750a260b825c87bf8685",
+    "evidence/upstream-restored.log": "2c4ef370d5632c06e4fa421ef0b9179769a45862c2ac11c93040dfe085a35356",
+    "evidence/upstream.log": "e7efc2f0faefb7e0730e439f1fb68362a4ae969ef6bf2db35a884307d17cf0f7"
+  }
+}

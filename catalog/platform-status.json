@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-19T09:57:52.189821+00:00",
+  "checked_at": "2026-09-19T10:07:36.247124+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 113,
@@ -140,5 +140,13 @@
     "counts_unchanged": true,
     "new_independent_defects": 0,
     "youtube": "Not produced; brief updated in existing queue."
+  },
+  "latest_release_verification": {
+    "case_id": "pyloan-explicit-payment-final-balloon",
+    "version": "0.7.3",
+    "report_version": "1.2.0",
+    "doi": "10.5281/zenodo.22843503",
+    "new_independent_defects": 0,
+    "published_at": "2026-09-19T10:07:36.247124+00:00"
   }
 }
