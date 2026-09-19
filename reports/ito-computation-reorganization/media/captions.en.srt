@@ -1,0 +1,47 @@
+1
+00:00:00,102 --> 00:00:04,446
+Can the same stochastic estimate take less work We tested two
+
+2
+00:00:04,459 --> 00:00:07,101
+equal formulas on the same Brownian paths
+
+3
+00:00:08,352 --> 00:00:12,966
+One repeats local products The other cancels intermediate terms
+
+4
+00:00:13,095 --> 00:00:14,487
+keeping one final cube
+
+5
+00:00:15,685 --> 00:00:19,345
+Our small Python benchmark ran about three times faster with
+
+6
+00:00:19,358 --> 00:00:23,844
+unchanged mathematical error Including test data preparation
+
+7
+00:00:23,857 --> 00:00:24,991
+made the gain smaller
+
+8
+00:00:26,185 --> 00:00:30,077
+Reusing moments also helped batches but slowed single requests
+
+9
+00:00:30,089 --> 00:00:31,468
+and could worsen rounding
+
+10
+00:00:32,685 --> 00:00:36,448
+These are optimizations of known methods not a new Itô integral
+
+11
+00:00:36,461 --> 00:00:40,625
+or a correction to Black Scholes The code and limitations are
+
+12
+00:00:40,637 --> 00:00:41,449
+linked below

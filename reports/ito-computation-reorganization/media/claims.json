@@ -1,0 +1,7 @@
+[
+ {"id":"C1","type":"proved_under_conditions","text":"Two estimates use the same deterministic Brownian endpoints and equal the same conditional expectation for integral W^2 dW.","source":"../../programme/CONSTRUCTION.md","limit":"Fixed deterministic grids, polynomial integrand, post-observation reconstruction; not a trading strategy."},
+ {"id":"C2","type":"known_algebra","text":"Cubic endpoint differences telescope, eliminating repeated local products.","source":"../../programme/CONSTRUCTION.md","limit":"Linear reading cost remains. This identity is not new."},
+ {"id":"C3","type":"observed_in_experiment","text":"Paired median kernel ratios2.79–3.77; accounted harness ratio1.45 atn64; same theoretical MSE.","source":"../../programme/benchmark-results.json","limit":"Specific small Python implementation; no best-known-method or deployment speed guarantee."},
+ {"id":"C4","type":"observed_and_negative_control","text":"Batch moment reuse helps8/32queries, loses for1; monomial cancellation can destroy relative precision.","source":"../../programme/batch-results.json","limit":"Left sums, five paths per scenario, baseline coefficient slicing, deterministic rounding stress."},
+ {"id":"C5","type":"scope_statement","text":"No new Ito integral, BSM correction, established novelty or market improvement.","source":"../REPORT_EN.md","limit":"Internal AI-assisted review is not external peer review."}
+]

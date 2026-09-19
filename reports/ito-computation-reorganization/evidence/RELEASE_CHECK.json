@@ -1,0 +1,46 @@
+{
+  "checks": [
+    {
+      "source": "verify.py",
+      "result": "verification.json",
+      "source_sha256_matches": true
+    },
+    {
+      "source": "research_group_experiment.py",
+      "result": "research-group/experiment.json",
+      "source_sha256_matches": true
+    },
+    {
+      "source": "bridge_moment_check.py",
+      "result": "research-group/bridge-moments.json",
+      "source_sha256_matches": true
+    },
+    {
+      "source": "polynomial_projection.py",
+      "result": "research-group/polynomial-projection.json",
+      "source_sha256_matches": true
+    },
+    {
+      "source": "doeblin_clock_check.py",
+      "result": "research-group/doeblin-clock.json",
+      "source_sha256_matches": true
+    },
+    {
+      "source": "area_enriched_check.py",
+      "result": "research-group/area-enriched-check.json",
+      "source_sha256_matches": true
+    },
+    {
+      "source": "programme/benchmark.py",
+      "result": "programme/benchmark-results.json",
+      "source_sha256_matches": true
+    },
+    {
+      "source": "programme/batch_moments.py",
+      "result": "programme/batch-results.json",
+      "source_sha256_matches": true
+    }
+  ],
+  "result": "PASS",
+  "scope": "Saved source hashes; no new benchmark run. Public allowlist only."
+}

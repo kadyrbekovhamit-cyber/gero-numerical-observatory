@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-19T13:25:47.130700+00:00",
+  "checked_at": "2026-09-19T16:08:44.348591+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 114,
     "huggingface": 114,
     "zenodo": 114,
-    "github_catalog_report": 114,
+    "github_catalog_report": 115,
     "zenodo_records_including_collection": 115,
-    "unique_individual_publications": 114,
+    "unique_individual_publications": 115,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "114 canonical reports; MLX erf report included. Counts track reports, not independent bugs.",
+  "github_status": "115 canonical reports; Itô computational note added, no new defect claimed.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -20,9 +20,15 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [],
-    "huggingface": [],
-    "zenodo": []
+    "gero": [
+      "ito-computation-reorganization"
+    ],
+    "huggingface": [
+      "ito-computation-reorganization"
+    ],
+    "zenodo": [
+      "ito-computation-reorganization"
+    ]
   },
   "deduplication_notes": [
     "All 97 previous report IDs preserved; one CIR pricing component report appended.",
@@ -45,7 +51,7 @@
     "19September: Endowment variance benefit-scale report completes six-platform distribution. 483/1300 original variance mismatches become0 with local candidate and return on restoration. Native normal approximation -> GERO synthetic JSON -> example limit changes; no actual insurer losses measured. All112 prior canonical objects preserved. Counts track reports, not bugs.",
     "19 September 2026: MLX erf adds one source-pinned report. 372 = 368 nonzero-x and 4 zero-boundary primary failures become 0 with the balanced local candidate; tail and second-derivative limits remain. All earlier canonical objects preserved. Upstream report not sent."
   ],
-  "parity_complete": true,
+  "parity_complete": false,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "archival_backfill": {
     "date": "2026-09-16",
@@ -141,27 +147,25 @@
     "new_case": false
   },
   "latest_distribution_progress": {
-    "case_id": "actuarialmath-endowment-variance-benefit-scale",
+    "case_id": "ito-computation-reorganization",
     "public": [
-      "zenodo",
-      "github",
-      "gero",
-      "youtube",
-      "linkedin",
-      "huggingface"
+      "github"
     ],
-    "pending": [],
+    "pending": [
+      "gero",
+      "zenodo",
+      "linkedin",
+      "huggingface",
+      "reddit",
+      "youtube"
+    ],
     "links": {
-      "zenodo": "https://zenodo.org/records/22843200",
-      "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-endowment-variance-benefit-scale.md",
-      "gero": "https://www.gero.uz/research/articles/actuarialmath-endowment-variance-benefit-scale.html",
-      "youtube": "https://youtube.com/shorts/h8JZ-kw4Ot0",
-      "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7507014387195531264/",
-      "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/actuarialmath-endowment-variance-benefit-scale.md"
+      "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/ito-computation-reorganization",
+      "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/ito-computation-reorganization.md",
+      "video": "https://raw.githubusercontent.com/kadyrbekovhamit-cyber/gero-numerical-observatory/refs/heads/main/reports/ito-computation-reorganization/media/ito-computation.mp4",
+      "archive": "https://raw.githubusercontent.com/kadyrbekovhamit-cyber/gero-numerical-observatory/refs/heads/main/reports/ito-computation-reorganization/gero-ito-computation-evidence-v1-2026-09-19.zip"
     },
-    "hf_commit": "3a8ade44335ca4e4131ba195960ad8ef9705f2a9",
-    "zenodo_doi": "10.5281/zenodo.22843200",
-    "archive_sha256": "59f6da29073136146139e9feade3fa504eec7c1ff37c7c2ffd16b8f65c041c2c"
+    "archive_sha256": "1bc4903eff9eea6c9f92d485caa442c9435d243f286a63f0621a447005efbaf6"
   },
   "latest_evidence_addendum": {
     "case_id": "pyloan-explicit-payment-final-balloon",

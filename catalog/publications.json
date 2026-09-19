@@ -2184,5 +2184,32 @@
     "source_pin": "59d600b5e64c238427d0f8d897ab7c682ef4d3d2",
     "measured_chain": "Native finite weighted erf loss -> overflowing derivative intermediate -> non-finite normalized-step proposal -> synthetic GERO guard skips the update. The balanced candidate changes 4 of 8 scalar decisions, with 4 controls unchanged; headline saved parameter 1.0 becomes 0.9584892392158508.",
     "zenodo_doi": "10.5281/zenodo.22845404"
+  },
+  {
+    "id": "ito-computation-reorganization",
+    "title": "Same Itô integral, fewer operations: a reproducible computational study",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-19",
+    "kind": "technical_note",
+    "gero": null,
+    "huggingface": null,
+    "zenodo": null,
+    "linkedin": null,
+    "youtube": null,
+    "reddit": null,
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/ito-computation-reorganization",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/ito-computation-reorganization.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/ito-computation-reorganization.md",
+    "source_text_sha256": "462c81291e6d68d581d76ae1ca2ddf84f9ca03512d337fa816db2126a8fb0017",
+    "mirror_sha256": "462c81291e6d68d581d76ae1ca2ddf84f9ca03512d337fa816db2126a8fb0017",
+    "evidence_archive": "https://raw.githubusercontent.com/kadyrbekovhamit-cyber/gero-numerical-observatory/refs/heads/main/reports/ito-computation-reorganization/gero-ito-computation-evidence-v1-2026-09-19.zip",
+    "evidence_archive_sha256": "1bc4903eff9eea6c9f92d485caa442c9435d243f286a63f0621a447005efbaf6",
+    "video": "https://raw.githubusercontent.com/kadyrbekovhamit-cyber/gero-numerical-observatory/refs/heads/main/reports/ito-computation-reorganization/media/ito-computation.mp4",
+    "video_sha256": "315c0c91d2a93245c0bbd635d5a90f4c0d480fc4b7d38f175e500a406fbf4f92",
+    "implementation_defects_in_this_report": 0,
+    "publication_status": "GitHub research note and video; other platforms pending. Not peer reviewed.",
+    "limits": "Known estimators; implementation-specific timings, single-query slowdowns and rounding counterexample retained. No new Itô integral, market-pricing improvement or independent vendor defect."
   }
 ]

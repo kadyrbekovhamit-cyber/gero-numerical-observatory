@@ -145,3 +145,5 @@ Adjusted-binomial archival report: pristine current-source replay reproduces the
 Beta density archival distribution is complete on all six channels: [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506303089675710464/) · [29-second video](https://youtube.com/shorts/faLB656CM4o) · [Maintainer archive follow-up](https://github.com/terence-lim/actuarialmath/issues/5#issuecomment-5713168772). The September15 finding was independently replayed September17; no real insurer impact or upstream acceptance is claimed.
 
 BondZero archives an already corrected upstream issue. [Source fix](https://github.com/domokane/FinancePy/commit/bb10c3936e078a5212694d017746453175151c09) and [independent verification](https://github.com/domokane/FinancePy/issues/267#issuecomment-5713269134) are public. Four distribution channels remain pending; no video publication is claimed.
+
+| 115 | [Same Itô integral, fewer operations: a reproducible computational study](reports/ito-computation-reorganization.md) | Pending | Pending | Pending | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/ito-computation-reorganization) |

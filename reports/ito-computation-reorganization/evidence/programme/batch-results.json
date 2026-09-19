@@ -1,0 +1,1715 @@
+{
+  "status": "PASS",
+  "workers": 1,
+  "python": "3.9.6",
+  "platform": "macOS-15.5-arm64-arm-64bit",
+  "created_utc": "2026-09-19T13:24:54.098535+00:00",
+  "total_elapsed_seconds_before_json_write": 0.412920833,
+  "script_sha256": "c26eea219320433b3de7943091e1962679572524ea6c5aed0fbde3ccb0992ac1",
+  "records": [
+    {
+      "n": 64,
+      "polynomial_degree": 4,
+      "queries": 1,
+      "integrand_evaluations_direct": 64,
+      "polynomial_basis_terms_cache": 320,
+      "query_dot_terms_cache": 5,
+      "ratio_mean_across_seeds": 0.3242934975091985,
+      "ratio_approx95_t_interval": [
+        0.31002168519282763,
+        0.33856530982556937
+      ],
+      "accounted_ratio_with_common_input_setup_mean": 0.541242553630674,
+      "accounted_ratio_with_common_input_setup_approx95_t_interval": [
+        0.5244293883276019,
+        0.5580557189337461
+      ],
+      "seeds": [
+        {
+          "seed": 17,
+          "common_input_setup_ns": 27125,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                21208,
+                18125,
+                16917,
+                17917,
+                17542
+              ],
+              "median_ns": 17917,
+              "min_ns": 16917,
+              "max_ns": 21208,
+              "end_to_end_with_common_input_setup_ns": 45042
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                61750,
+                57292,
+                56375,
+                59500,
+                56750
+              ],
+              "median_ns": 57292,
+              "min_ns": 56375,
+              "max_ns": 61750,
+              "end_to_end_with_common_input_setup_ns": 84417
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                56209,
+                52625,
+                52541,
+                54833,
+                54125
+              ],
+              "median_ns": 54125,
+              "min_ns": 52541,
+              "max_ns": 56209,
+              "end_to_end_with_common_input_setup_ns": 81250
+            }
+          },
+          "max_pairwise_absolute_difference": 2.0816681711721685e-17,
+          "decimal70_max_absolute_errors": {
+            "direct_horner": 3.786894108834115e-18,
+            "shared_feature_table": 3.786894108834115e-18,
+            "streamed_moment_cache": 2.46035758205558e-17
+          },
+          "separate_peak_traced_bytes": {
+            "direct_horner": 752,
+            "shared_feature_table": 11072,
+            "streamed_moment_cache": 688
+          },
+          "speed_ratio_direct_over_cache": 0.3310300230946882,
+          "accounted_ratio_with_common_input_setup": 0.554363076923077
+        },
+        {
+          "seed": 43,
+          "common_input_setup_ns": 27625,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                19666,
+                41250,
+                36417,
+                20917,
+                18583
+              ],
+              "median_ns": 20917,
+              "min_ns": 18583,
+              "max_ns": 41250,
+              "end_to_end_with_common_input_setup_ns": 48542
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                68041,
+                199834,
+                113042,
+                59834,
+                58208
+              ],
+              "median_ns": 68041,
+              "min_ns": 58208,
+              "max_ns": 199834,
+              "end_to_end_with_common_input_setup_ns": 95666
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                113834,
+                211583,
+                61291,
+                59917,
+                57833
+              ],
+              "median_ns": 61291,
+              "min_ns": 57833,
+              "max_ns": 211583,
+              "end_to_end_with_common_input_setup_ns": 88916
+            }
+          },
+          "max_pairwise_absolute_difference": 5.551115123125783e-17,
+          "decimal70_max_absolute_errors": null,
+          "separate_peak_traced_bytes": {},
+          "speed_ratio_direct_over_cache": 0.34127359644972344,
+          "accounted_ratio_with_common_input_setup": 0.5459309910477305
+        },
+        {
+          "seed": 101,
+          "common_input_setup_ns": 29292,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                19208,
+                20667,
+                18125,
+                18708,
+                17250
+              ],
+              "median_ns": 18708,
+              "min_ns": 17250,
+              "max_ns": 20667,
+              "end_to_end_with_common_input_setup_ns": 48000
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                59333,
+                160542,
+                71542,
+                58250,
+                58625
+              ],
+              "median_ns": 59333,
+              "min_ns": 58250,
+              "max_ns": 160542,
+              "end_to_end_with_common_input_setup_ns": 88625
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                111500,
+                56458,
+                58917,
+                56334,
+                64375
+              ],
+              "median_ns": 58917,
+              "min_ns": 56334,
+              "max_ns": 111500,
+              "end_to_end_with_common_input_setup_ns": 88209
+            }
+          },
+          "max_pairwise_absolute_difference": 0.0,
+          "decimal70_max_absolute_errors": null,
+          "separate_peak_traced_bytes": {},
+          "speed_ratio_direct_over_cache": 0.3175314425378074,
+          "accounted_ratio_with_common_input_setup": 0.5441621603237765
+        },
+        {
+          "seed": 271,
+          "common_input_setup_ns": 26834,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                18333,
+                17292,
+                17208,
+                16833,
+                16459
+              ],
+              "median_ns": 17208,
+              "min_ns": 16459,
+              "max_ns": 18333,
+              "end_to_end_with_common_input_setup_ns": 44042
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                57917,
+                56208,
+                61916,
+                55000,
+                58166
+              ],
+              "median_ns": 57917,
+              "min_ns": 55000,
+              "max_ns": 61916,
+              "end_to_end_with_common_input_setup_ns": 84751
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                56375,
+                54208,
+                53875,
+                53084,
+                54584
+              ],
+              "median_ns": 54208,
+              "min_ns": 53084,
+              "max_ns": 56375,
+              "end_to_end_with_common_input_setup_ns": 81042
+            }
+          },
+          "max_pairwise_absolute_difference": 1.1102230246251565e-16,
+          "decimal70_max_absolute_errors": null,
+          "separate_peak_traced_bytes": {},
+          "speed_ratio_direct_over_cache": 0.317443919716647,
+          "accounted_ratio_with_common_input_setup": 0.5434466079316898
+        },
+        {
+          "seed": 577,
+          "common_input_setup_ns": 23042,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                17500,
+                17292,
+                17084,
+                17000,
+                16958
+              ],
+              "median_ns": 17084,
+              "min_ns": 16958,
+              "max_ns": 17500,
+              "end_to_end_with_common_input_setup_ns": 40126
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                56750,
+                55791,
+                60084,
+                54750,
+                55125
+              ],
+              "median_ns": 55791,
+              "min_ns": 54750,
+              "max_ns": 60084,
+              "end_to_end_with_common_input_setup_ns": 78833
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                55000,
+                53875,
+                54709,
+                52958,
+                54375
+              ],
+              "median_ns": 54375,
+              "min_ns": 52958,
+              "max_ns": 55000,
+              "end_to_end_with_common_input_setup_ns": 77417
+            }
+          },
+          "max_pairwise_absolute_difference": 0.0,
+          "decimal70_max_absolute_errors": null,
+          "separate_peak_traced_bytes": {},
+          "speed_ratio_direct_over_cache": 0.3141885057471264,
+          "accounted_ratio_with_common_input_setup": 0.5183099319270961
+        }
+      ]
+    },
+    {
+      "n": 64,
+      "polynomial_degree": 4,
+      "queries": 8,
+      "integrand_evaluations_direct": 512,
+      "polynomial_basis_terms_cache": 320,
+      "query_dot_terms_cache": 40,
+      "ratio_mean_across_seeds": 2.312656616400448,
+      "ratio_approx95_t_interval": [
+        2.2734325539782807,
+        2.3518806788226154
+      ],
+      "accounted_ratio_with_common_input_setup_mean": 1.8613961857873709,
+      "accounted_ratio_with_common_input_setup_approx95_t_interval": [
+        1.8191379576181537,
+        1.903654413956588
+      ],
+      "seeds": [
+        {
+          "seed": 17,
+          "common_input_setup_ns": 30000,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                133458,
+                131709,
+                146750,
+                132459,
+                134167
+              ],
+              "median_ns": 133458,
+              "min_ns": 131709,
+              "max_ns": 146750,
+              "end_to_end_with_common_input_setup_ns": 163458
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                229292,
+                222708,
+                234292,
+                225208,
+                224250
+              ],
+              "median_ns": 225208,
+              "min_ns": 222708,
+              "max_ns": 234292,
+              "end_to_end_with_common_input_setup_ns": 255208
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                60792,
+                57375,
+                59167,
+                58375,
+                58292
+              ],
+              "median_ns": 58375,
+              "min_ns": 57375,
+              "max_ns": 60792,
+              "end_to_end_with_common_input_setup_ns": 88375
+            }
+          },
+          "max_pairwise_absolute_difference": 1.7358076781492926e-16,
+          "decimal70_max_absolute_errors": {
+            "direct_horner": 5.552405235969757e-17,
+            "shared_feature_table": 1.3576117991347016e-16,
+            "streamed_moment_cache": 3.78195879014591e-17
+          },
+          "separate_peak_traced_bytes": {
+            "direct_horner": 816,
+            "shared_feature_table": 11304,
+            "streamed_moment_cache": 752
+          },
+          "speed_ratio_direct_over_cache": 2.286218415417559,
+          "accounted_ratio_with_common_input_setup": 1.8495954738330975
+        },
+        {
+          "seed": 43,
+          "common_input_setup_ns": 30166,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                135042,
+                136583,
+                131084,
+                130875,
+                133417
+              ],
+              "median_ns": 133417,
+              "min_ns": 130875,
+              "max_ns": 136583,
+              "end_to_end_with_common_input_setup_ns": 163583
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                220625,
+                218083,
+                218208,
+                219250,
+                235458
+              ],
+              "median_ns": 219250,
+              "min_ns": 218083,
+              "max_ns": 235458,
+              "end_to_end_with_common_input_setup_ns": 249416
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                57708,
+                56750,
+                56875,
+                56625,
+                57500
+              ],
+              "median_ns": 56875,
+              "min_ns": 56625,
+              "max_ns": 57708,
+              "end_to_end_with_common_input_setup_ns": 87041
+            }
+          },
+          "max_pairwise_absolute_difference": 2.220446049250313e-16,
+          "decimal70_max_absolute_errors": null,
+          "separate_peak_traced_bytes": {},
+          "speed_ratio_direct_over_cache": 2.3457934065934065,
+          "accounted_ratio_with_common_input_setup": 1.879378683608874
+        },
+        {
+          "seed": 101,
+          "common_input_setup_ns": 29042,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                134500,
+                137292,
+                132833,
+                131250,
+                132666
+              ],
+              "median_ns": 132833,
+              "min_ns": 131250,
+              "max_ns": 137292,
+              "end_to_end_with_common_input_setup_ns": 161875
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                225792,
+                220459,
+                231959,
+                226459,
+                229875
+              ],
+              "median_ns": 226459,
+              "min_ns": 220459,
+              "max_ns": 231959,
+              "end_to_end_with_common_input_setup_ns": 255501
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                57958,
+                56792,
+                57959,
+                56833,
+                62833
+              ],
+              "median_ns": 57958,
+              "min_ns": 56792,
+              "max_ns": 62833,
+              "end_to_end_with_common_input_setup_ns": 87000
+            }
+          },
+          "max_pairwise_absolute_difference": 2.220446049250313e-16,
+          "decimal70_max_absolute_errors": null,
+          "separate_peak_traced_bytes": {},
+          "speed_ratio_direct_over_cache": 2.2918837779081405,
+          "accounted_ratio_with_common_input_setup": 1.860632183908046
+        },
+        {
+          "seed": 271,
+          "common_input_setup_ns": 33417,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                130292,
+                130709,
+                129750,
+                129500,
+                131916
+              ],
+              "median_ns": 130292,
+              "min_ns": 129500,
+              "max_ns": 131916,
+              "end_to_end_with_common_input_setup_ns": 163709
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                228542,
+                216917,
+                215500,
+                215000,
+                215834
+              ],
+              "median_ns": 215834,
+              "min_ns": 215000,
+              "max_ns": 228542,
+              "end_to_end_with_common_input_setup_ns": 249251
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                63417,
+                55958,
+                56875,
+                56708,
+                57125
+              ],
+              "median_ns": 56875,
+              "min_ns": 55958,
+              "max_ns": 63417,
+              "end_to_end_with_common_input_setup_ns": 90292
+            }
+          },
+          "max_pairwise_absolute_difference": 1.6653345369377348e-16,
+          "decimal70_max_absolute_errors": null,
+          "separate_peak_traced_bytes": {},
+          "speed_ratio_direct_over_cache": 2.2908483516483518,
+          "accounted_ratio_with_common_input_setup": 1.8131063660124929
+        },
+        {
+          "seed": 577,
+          "common_input_setup_ns": 28250,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                131834,
+                134584,
+                146125,
+                135041,
+                136375
+              ],
+              "median_ns": 135041,
+              "min_ns": 131834,
+              "max_ns": 146125,
+              "end_to_end_with_common_input_setup_ns": 163291
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                226458,
+                226917,
+                313666,
+                234458,
+                225542
+              ],
+              "median_ns": 226917,
+              "min_ns": 225542,
+              "max_ns": 313666,
+              "end_to_end_with_common_input_setup_ns": 255167
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                57500,
+                56750,
+                60000,
+                57500,
+                67500
+              ],
+              "median_ns": 57500,
+              "min_ns": 56750,
+              "max_ns": 67500,
+              "end_to_end_with_common_input_setup_ns": 85750
+            }
+          },
+          "max_pairwise_absolute_difference": 1.1102230246251565e-16,
+          "decimal70_max_absolute_errors": null,
+          "separate_peak_traced_bytes": {},
+          "speed_ratio_direct_over_cache": 2.3485391304347827,
+          "accounted_ratio_with_common_input_setup": 1.904268221574344
+        }
+      ]
+    },
+    {
+      "n": 64,
+      "polynomial_degree": 4,
+      "queries": 32,
+      "integrand_evaluations_direct": 2048,
+      "polynomial_basis_terms_cache": 320,
+      "query_dot_terms_cache": 160,
+      "ratio_mean_across_seeds": 8.054771269004183,
+      "ratio_approx95_t_interval": [
+        7.550040244135964,
+        8.559502293872402
+      ],
+      "accounted_ratio_with_common_input_setup_mean": 4.848735118070494,
+      "accounted_ratio_with_common_input_setup_approx95_t_interval": [
+        4.740973327781649,
+        4.956496908359339
+      ],
+      "seeds": [
+        {
+          "seed": 17,
+          "common_input_setup_ns": 52875,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                536917,
+                553000,
+                542875,
+                525792,
+                539208
+              ],
+              "median_ns": 539208,
+              "min_ns": 525792,
+              "max_ns": 553000,
+              "end_to_end_with_common_input_setup_ns": 592083
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                1271000,
+                858459,
+                812000,
+                799417,
+                801583
+              ],
+              "median_ns": 812000,
+              "min_ns": 799417,
+              "max_ns": 1271000,
+              "end_to_end_with_common_input_setup_ns": 864875
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                78167,
+                88333,
+                72000,
+                67875,
+                67416
+              ],
+              "median_ns": 72000,
+              "min_ns": 67416,
+              "max_ns": 88333,
+              "end_to_end_with_common_input_setup_ns": 124875
+            }
+          },
+          "max_pairwise_absolute_difference": 2.220446049250313e-16,
+          "decimal70_max_absolute_errors": {
+            "direct_horner": 1.6492527480958681e-16,
+            "shared_feature_table": 1.3576117991347016e-16,
+            "streamed_moment_cache": 3.78195879014591e-17
+          },
+          "separate_peak_traced_bytes": {
+            "direct_horner": 1008,
+            "shared_feature_table": 12072,
+            "streamed_moment_cache": 944
+          },
+          "speed_ratio_direct_over_cache": 7.489,
+          "accounted_ratio_with_common_input_setup": 4.741405405405406
+        },
+        {
+          "seed": 43,
+          "common_input_setup_ns": 54792,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                745250,
+                546833,
+                528125,
+                521500,
+                523291
+              ],
+              "median_ns": 528125,
+              "min_ns": 521500,
+              "max_ns": 745250,
+              "end_to_end_with_common_input_setup_ns": 582917
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                1037375,
+                801500,
+                789667,
+                778750,
+                798583
+              ],
+              "median_ns": 798583,
+              "min_ns": 778750,
+              "max_ns": 1037375,
+              "end_to_end_with_common_input_setup_ns": 853375
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                85166,
+                68375,
+                66250,
+                65541,
+                64833
+              ],
+              "median_ns": 66250,
+              "min_ns": 64833,
+              "max_ns": 85166,
+              "end_to_end_with_common_input_setup_ns": 121042
+            }
+          },
+          "max_pairwise_absolute_difference": 2.220446049250313e-16,
+          "decimal70_max_absolute_errors": null,
+          "separate_peak_traced_bytes": {},
+          "speed_ratio_direct_over_cache": 7.971698113207547,
+          "accounted_ratio_with_common_input_setup": 4.815824259347995
+        },
+        {
+          "seed": 101,
+          "common_input_setup_ns": 55708,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                525125,
+                541083,
+                536125,
+                537083,
+                564708
+              ],
+              "median_ns": 537083,
+              "min_ns": 525125,
+              "max_ns": 564708,
+              "end_to_end_with_common_input_setup_ns": 592791
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                807958,
+                820542,
+                800667,
+                820500,
+                817000
+              ],
+              "median_ns": 817000,
+              "min_ns": 800667,
+              "max_ns": 820542,
+              "end_to_end_with_common_input_setup_ns": 872708
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                66500,
+                65458,
+                67292,
+                68959,
+                71125
+              ],
+              "median_ns": 67292,
+              "min_ns": 65458,
+              "max_ns": 71125,
+              "end_to_end_with_common_input_setup_ns": 123000
+            }
+          },
+          "max_pairwise_absolute_difference": 2.220446049250313e-16,
+          "decimal70_max_absolute_errors": null,
+          "separate_peak_traced_bytes": {},
+          "speed_ratio_direct_over_cache": 7.981379658800452,
+          "accounted_ratio_with_common_input_setup": 4.819439024390244
+        },
+        {
+          "seed": 271,
+          "common_input_setup_ns": 57083,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                568833,
+                760709,
+                896541,
+                571083,
+                545000
+              ],
+              "median_ns": 571083,
+              "min_ns": 545000,
+              "max_ns": 896541,
+              "end_to_end_with_common_input_setup_ns": 628166
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                814791,
+                796250,
+                857625,
+                825125,
+                810500
+              ],
+              "median_ns": 814791,
+              "min_ns": 796250,
+              "max_ns": 857625,
+              "end_to_end_with_common_input_setup_ns": 871874
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                69375,
+                67792,
+                136458,
+                68375,
+                70833
+              ],
+              "median_ns": 69375,
+              "min_ns": 67792,
+              "max_ns": 136458,
+              "end_to_end_with_common_input_setup_ns": 126458
+            }
+          },
+          "max_pairwise_absolute_difference": 1.6653345369377348e-16,
+          "decimal70_max_absolute_errors": null,
+          "separate_peak_traced_bytes": {},
+          "speed_ratio_direct_over_cache": 8.231827027027027,
+          "accounted_ratio_with_common_input_setup": 4.967388381913363
+        },
+        {
+          "seed": 577,
+          "common_input_setup_ns": 62667,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                609583,
+                582875,
+                567958,
+                550000,
+                536042
+              ],
+              "median_ns": 567958,
+              "min_ns": 536042,
+              "max_ns": 609583,
+              "end_to_end_with_common_input_setup_ns": 630625
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                823625,
+                836583,
+                812708,
+                802417,
+                805250
+              ],
+              "median_ns": 812708,
+              "min_ns": 802417,
+              "max_ns": 836583,
+              "end_to_end_with_common_input_setup_ns": 875375
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                73375,
+                69916,
+                65750,
+                64667,
+                66042
+              ],
+              "median_ns": 66042,
+              "min_ns": 64667,
+              "max_ns": 73375,
+              "end_to_end_with_common_input_setup_ns": 128709
+            }
+          },
+          "max_pairwise_absolute_difference": 2.220446049250313e-16,
+          "decimal70_max_absolute_errors": null,
+          "separate_peak_traced_bytes": {},
+          "speed_ratio_direct_over_cache": 8.599951545985888,
+          "accounted_ratio_with_common_input_setup": 4.899618519295465
+        }
+      ]
+    },
+    {
+      "n": 256,
+      "polynomial_degree": 8,
+      "queries": 1,
+      "integrand_evaluations_direct": 256,
+      "polynomial_basis_terms_cache": 2304,
+      "query_dot_terms_cache": 9,
+      "ratio_mean_across_seeds": 0.2768042510113491,
+      "ratio_approx95_t_interval": [
+        0.18927301148838027,
+        0.3643354905343179
+      ],
+      "accounted_ratio_with_common_input_setup_mean": 0.44245690317043956,
+      "accounted_ratio_with_common_input_setup_approx95_t_interval": [
+        0.2868395847560456,
+        0.5980742215848336
+      ],
+      "seeds": [
+        {
+          "seed": 17,
+          "common_input_setup_ns": 285209,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                320208,
+                91708,
+                89167,
+                215125,
+                145292
+              ],
+              "median_ns": 145292,
+              "min_ns": 89167,
+              "max_ns": 320208,
+              "end_to_end_with_common_input_setup_ns": 430501
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                348542,
+                324625,
+                321292,
+                324416,
+                633583
+              ],
+              "median_ns": 324625,
+              "min_ns": 321292,
+              "max_ns": 633583,
+              "end_to_end_with_common_input_setup_ns": 609834
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                360625,
+                354416,
+                365125,
+                373542,
+                358208
+              ],
+              "median_ns": 360625,
+              "min_ns": 354416,
+              "max_ns": 373542,
+              "end_to_end_with_common_input_setup_ns": 645834
+            }
+          },
+          "max_pairwise_absolute_difference": 5.551115123125783e-17,
+          "decimal70_max_absolute_errors": {
+            "direct_horner": 4.900173155171882e-17,
+            "shared_feature_table": 6.5094196795390065e-18,
+            "streamed_moment_cache": 2.1246155936089907e-17
+          },
+          "separate_peak_traced_bytes": {
+            "direct_horner": 784,
+            "shared_feature_table": 99176,
+            "streamed_moment_cache": 752
+          },
+          "speed_ratio_direct_over_cache": 0.4028894280762565,
+          "accounted_ratio_with_common_input_setup": 0.6665815054642524
+        },
+        {
+          "seed": 43,
+          "common_input_setup_ns": 88625,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                89334,
+                89291,
+                88708,
+                100292,
+                89042
+              ],
+              "median_ns": 89291,
+              "min_ns": 88708,
+              "max_ns": 100292,
+              "end_to_end_with_common_input_setup_ns": 177916
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                332084,
+                319083,
+                323167,
+                322291,
+                323458
+              ],
+              "median_ns": 323167,
+              "min_ns": 319083,
+              "max_ns": 332084,
+              "end_to_end_with_common_input_setup_ns": 411792
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                371166,
+                362875,
+                367166,
+                365750,
+                361958
+              ],
+              "median_ns": 365750,
+              "min_ns": 361958,
+              "max_ns": 371166,
+              "end_to_end_with_common_input_setup_ns": 454375
+            }
+          },
+          "max_pairwise_absolute_difference": 1.1102230246251565e-16,
+          "decimal70_max_absolute_errors": null,
+          "separate_peak_traced_bytes": {},
+          "speed_ratio_direct_over_cache": 0.24413123718386875,
+          "accounted_ratio_with_common_input_setup": 0.39156203576341125
+        },
+        {
+          "seed": 101,
+          "common_input_setup_ns": 81458,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                91625,
+                89958,
+                91916,
+                89417,
+                89041
+              ],
+              "median_ns": 89958,
+              "min_ns": 89041,
+              "max_ns": 91916,
+              "end_to_end_with_common_input_setup_ns": 171416
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                324416,
+                324542,
+                337583,
+                322292,
+                322459
+              ],
+              "median_ns": 324416,
+              "min_ns": 322292,
+              "max_ns": 337583,
+              "end_to_end_with_common_input_setup_ns": 405874
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                364834,
+                363084,
+                368042,
+                363750,
+                366208
+              ],
+              "median_ns": 364834,
+              "min_ns": 363084,
+              "max_ns": 368042,
+              "end_to_end_with_common_input_setup_ns": 446292
+            }
+          },
+          "max_pairwise_absolute_difference": 1.1102230246251565e-16,
+          "decimal70_max_absolute_errors": null,
+          "separate_peak_traced_bytes": {},
+          "speed_ratio_direct_over_cache": 0.24657241375529693,
+          "accounted_ratio_with_common_input_setup": 0.38408934061107974
+        },
+        {
+          "seed": 271,
+          "common_input_setup_ns": 82667,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                89291,
+                89083,
+                87917,
+                101458,
+                93500
+              ],
+              "median_ns": 89291,
+              "min_ns": 87917,
+              "max_ns": 101458,
+              "end_to_end_with_common_input_setup_ns": 171958
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                339500,
+                321542,
+                320958,
+                329125,
+                382583
+              ],
+              "median_ns": 329125,
+              "min_ns": 320958,
+              "max_ns": 382583,
+              "end_to_end_with_common_input_setup_ns": 411792
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                362208,
+                365000,
+                361875,
+                361292,
+                467708
+              ],
+              "median_ns": 362208,
+              "min_ns": 361292,
+              "max_ns": 467708,
+              "end_to_end_with_common_input_setup_ns": 444875
+            }
+          },
+          "max_pairwise_absolute_difference": 8.326672684688674e-17,
+          "decimal70_max_absolute_errors": null,
+          "separate_peak_traced_bytes": {},
+          "speed_ratio_direct_over_cache": 0.24651857496245252,
+          "accounted_ratio_with_common_input_setup": 0.3865310480472043
+        },
+        {
+          "seed": 577,
+          "common_input_setup_ns": 83292,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                87583,
+                92166,
+                105709,
+                89708,
+                88708
+              ],
+              "median_ns": 89708,
+              "min_ns": 87583,
+              "max_ns": 105709,
+              "end_to_end_with_common_input_setup_ns": 173000
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                319250,
+                580917,
+                336167,
+                327709,
+                326292
+              ],
+              "median_ns": 327709,
+              "min_ns": 319250,
+              "max_ns": 580917,
+              "end_to_end_with_common_input_setup_ns": 411001
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                353917,
+                454917,
+                365959,
+                367792,
+                400417
+              ],
+              "median_ns": 367792,
+              "min_ns": 353917,
+              "max_ns": 454917,
+              "end_to_end_with_common_input_setup_ns": 451084
+            }
+          },
+          "max_pairwise_absolute_difference": 2.7755575615628914e-17,
+          "decimal70_max_absolute_errors": null,
+          "separate_peak_traced_bytes": {},
+          "speed_ratio_direct_over_cache": 0.24390960107887066,
+          "accounted_ratio_with_common_input_setup": 0.3835205859662502
+        }
+      ]
+    },
+    {
+      "n": 256,
+      "polynomial_degree": 8,
+      "queries": 8,
+      "integrand_evaluations_direct": 2048,
+      "polynomial_basis_terms_cache": 2304,
+      "query_dot_terms_cache": 72,
+      "ratio_mean_across_seeds": 1.9681798748998418,
+      "ratio_approx95_t_interval": [
+        1.9441747688138626,
+        1.992184980985821
+      ],
+      "accounted_ratio_with_common_input_setup_mean": 1.7549156339999874,
+      "accounted_ratio_with_common_input_setup_approx95_t_interval": [
+        1.7342137948836067,
+        1.775617473116368
+      ],
+      "seeds": [
+        {
+          "seed": 17,
+          "common_input_setup_ns": 105334,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                718625,
+                712375,
+                742708,
+                724833,
+                753166
+              ],
+              "median_ns": 724833,
+              "min_ns": 712375,
+              "max_ns": 753166,
+              "end_to_end_with_common_input_setup_ns": 830167
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                1224000,
+                1223125,
+                1204000,
+                1624917,
+                2061500
+              ],
+              "median_ns": 1224000,
+              "min_ns": 1204000,
+              "max_ns": 2061500,
+              "end_to_end_with_common_input_setup_ns": 1329334
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                378459,
+                363000,
+                360291,
+                367000,
+                1093333
+              ],
+              "median_ns": 367000,
+              "min_ns": 360291,
+              "max_ns": 1093333,
+              "end_to_end_with_common_input_setup_ns": 472334
+            }
+          },
+          "max_pairwise_absolute_difference": 1.1102230246251565e-16,
+          "decimal70_max_absolute_errors": {
+            "direct_horner": 6.130887495540834e-17,
+            "shared_feature_table": 8.838557639399537e-17,
+            "streamed_moment_cache": 6.038454681858268e-17
+          },
+          "separate_peak_traced_bytes": {
+            "direct_horner": 848,
+            "shared_feature_table": 99408,
+            "streamed_moment_cache": 816
+          },
+          "speed_ratio_direct_over_cache": 1.9750217983651226,
+          "accounted_ratio_with_common_input_setup": 1.7575846752509876
+        },
+        {
+          "seed": 43,
+          "common_input_setup_ns": 100333,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                785084,
+                698417,
+                696708,
+                743833,
+                719167
+              ],
+              "median_ns": 719167,
+              "min_ns": 696708,
+              "max_ns": 785084,
+              "end_to_end_with_common_input_setup_ns": 819500
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                1234875,
+                2193417,
+                1206000,
+                1968917,
+                1182708
+              ],
+              "median_ns": 1234875,
+              "min_ns": 1182708,
+              "max_ns": 2193417,
+              "end_to_end_with_common_input_setup_ns": 1335208
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                653042,
+                361750,
+                358584,
+                391959,
+                350625
+              ],
+              "median_ns": 361750,
+              "min_ns": 350625,
+              "max_ns": 653042,
+              "end_to_end_with_common_input_setup_ns": 462083
+            }
+          },
+          "max_pairwise_absolute_difference": 1.249000902703301e-16,
+          "decimal70_max_absolute_errors": null,
+          "separate_peak_traced_bytes": {},
+          "speed_ratio_direct_over_cache": 1.9880221147201105,
+          "accounted_ratio_with_common_input_setup": 1.7734909096417744
+        },
+        {
+          "seed": 101,
+          "common_input_setup_ns": 98916,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                724833,
+                704708,
+                699000,
+                679709,
+                686792
+              ],
+              "median_ns": 699000,
+              "min_ns": 679709,
+              "max_ns": 724833,
+              "end_to_end_with_common_input_setup_ns": 797916
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                1197167,
+                1232042,
+                1656750,
+                1260542,
+                1214083
+              ],
+              "median_ns": 1232042,
+              "min_ns": 1197167,
+              "max_ns": 1656750,
+              "end_to_end_with_common_input_setup_ns": 1330958
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                342459,
+                345541,
+                420208,
+                374083,
+                357000
+              ],
+              "median_ns": 357000,
+              "min_ns": 342459,
+              "max_ns": 420208,
+              "end_to_end_with_common_input_setup_ns": 455916
+            }
+          },
+          "max_pairwise_absolute_difference": 1.1102230246251565e-16,
+          "decimal70_max_absolute_errors": null,
+          "separate_peak_traced_bytes": {},
+          "speed_ratio_direct_over_cache": 1.9579831932773109,
+          "accounted_ratio_with_common_input_setup": 1.7501381833495644
+        },
+        {
+          "seed": 271,
+          "common_input_setup_ns": 103750,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                700042,
+                701042,
+                697584,
+                693333,
+                693500
+              ],
+              "median_ns": 697584,
+              "min_ns": 693333,
+              "max_ns": 701042,
+              "end_to_end_with_common_input_setup_ns": 801334
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                1203375,
+                1179084,
+                1181750,
+                1185333,
+                1377750
+              ],
+              "median_ns": 1185333,
+              "min_ns": 1179084,
+              "max_ns": 1377750,
+              "end_to_end_with_common_input_setup_ns": 1289083
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                359625,
+                347542,
+                350417,
+                370333,
+                543000
+              ],
+              "median_ns": 359625,
+              "min_ns": 347542,
+              "max_ns": 543000,
+              "end_to_end_with_common_input_setup_ns": 463375
+            }
+          },
+          "max_pairwise_absolute_difference": 8.326672684688674e-17,
+          "decimal70_max_absolute_errors": null,
+          "separate_peak_traced_bytes": {},
+          "speed_ratio_direct_over_cache": 1.9397539103232533,
+          "accounted_ratio_with_common_input_setup": 1.7293423253304558
+        },
+        {
+          "seed": 577,
+          "common_input_setup_ns": 100750,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                861625,
+                698416,
+                711125,
+                698083,
+                705334
+              ],
+              "median_ns": 705334,
+              "min_ns": 698083,
+              "max_ns": 861625,
+              "end_to_end_with_common_input_setup_ns": 806084
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                1217542,
+                1218416,
+                1216791,
+                1191292,
+                1220708
+              ],
+              "median_ns": 1217542,
+              "min_ns": 1191292,
+              "max_ns": 1220708,
+              "end_to_end_with_common_input_setup_ns": 1318292
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                360792,
+                349667,
+                356208,
+                356208,
+                366750
+              ],
+              "median_ns": 356208,
+              "min_ns": 349667,
+              "max_ns": 366750,
+              "end_to_end_with_common_input_setup_ns": 456958
+            }
+          },
+          "max_pairwise_absolute_difference": 1.1102230246251565e-16,
+          "decimal70_max_absolute_errors": null,
+          "separate_peak_traced_bytes": {},
+          "speed_ratio_direct_over_cache": 1.9801183578134123,
+          "accounted_ratio_with_common_input_setup": 1.7640220764271553
+        }
+      ]
+    },
+    {
+      "n": 256,
+      "polynomial_degree": 8,
+      "queries": 32,
+      "integrand_evaluations_direct": 8192,
+      "polynomial_basis_terms_cache": 2304,
+      "query_dot_terms_cache": 288,
+      "ratio_mean_across_seeds": 7.508621931358306,
+      "ratio_approx95_t_interval": [
+        7.0570496237058125,
+        7.960194239010799
+      ],
+      "accounted_ratio_with_common_input_setup_mean": 5.793676121368468,
+      "accounted_ratio_with_common_input_setup_approx95_t_interval": [
+        5.501709759408111,
+        6.085642483328825
+      ],
+      "seeds": [
+        {
+          "seed": 17,
+          "common_input_setup_ns": 129583,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                2810875,
+                2801334,
+                2765083,
+                2803083,
+                2834958
+              ],
+              "median_ns": 2803083,
+              "min_ns": 2765083,
+              "max_ns": 2834958,
+              "end_to_end_with_common_input_setup_ns": 2932666
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                4876125,
+                4308167,
+                4704250,
+                4232708,
+                4699792
+              ],
+              "median_ns": 4699792,
+              "min_ns": 4232708,
+              "max_ns": 4876125,
+              "end_to_end_with_common_input_setup_ns": 4829375
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                392500,
+                364834,
+                382042,
+                375458,
+                370208
+              ],
+              "median_ns": 375458,
+              "min_ns": 364834,
+              "max_ns": 392500,
+              "end_to_end_with_common_input_setup_ns": 505041
+            }
+          },
+          "max_pairwise_absolute_difference": 1.5265566588595902e-16,
+          "decimal70_max_absolute_errors": {
+            "direct_horner": 1.2226415369148223e-16,
+            "shared_feature_table": 9.54177389891925e-17,
+            "streamed_moment_cache": 6.038454681858268e-17
+          },
+          "separate_peak_traced_bytes": {
+            "direct_horner": 1040,
+            "shared_feature_table": 100176,
+            "streamed_moment_cache": 1008
+          },
+          "speed_ratio_direct_over_cache": 7.465769806476357,
+          "accounted_ratio_with_common_input_setup": 5.8067879637494775
+        },
+        {
+          "seed": 43,
+          "common_input_setup_ns": 136917,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                2757458,
+                2771333,
+                2739542,
+                2830583,
+                2805875
+              ],
+              "median_ns": 2771333,
+              "min_ns": 2739542,
+              "max_ns": 2830583,
+              "end_to_end_with_common_input_setup_ns": 2908250
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                4188750,
+                4311917,
+                4168000,
+                4778417,
+                4247208
+              ],
+              "median_ns": 4247208,
+              "min_ns": 4168000,
+              "max_ns": 4778417,
+              "end_to_end_with_common_input_setup_ns": 4384125
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                645416,
+                435917,
+                359375,
+                375000,
+                367959
+              ],
+              "median_ns": 375000,
+              "min_ns": 359375,
+              "max_ns": 645416,
+              "end_to_end_with_common_input_setup_ns": 511917
+            }
+          },
+          "max_pairwise_absolute_difference": 2.220446049250313e-16,
+          "decimal70_max_absolute_errors": null,
+          "separate_peak_traced_bytes": {},
+          "speed_ratio_direct_over_cache": 7.390221333333334,
+          "accounted_ratio_with_common_input_setup": 5.681096740291883
+        },
+        {
+          "seed": 101,
+          "common_input_setup_ns": 132042,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                2944541,
+                3624584,
+                3176292,
+                2749250,
+                2746500
+              ],
+              "median_ns": 2944541,
+              "min_ns": 2746500,
+              "max_ns": 3624584,
+              "end_to_end_with_common_input_setup_ns": 3076583
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                4932958,
+                4421208,
+                4421625,
+                4240334,
+                5254375
+              ],
+              "median_ns": 4421625,
+              "min_ns": 4240334,
+              "max_ns": 5254375,
+              "end_to_end_with_common_input_setup_ns": 4553667
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                379292,
+                370416,
+                363125,
+                369917,
+                384375
+              ],
+              "median_ns": 370416,
+              "min_ns": 363125,
+              "max_ns": 384375,
+              "end_to_end_with_common_input_setup_ns": 502458
+            }
+          },
+          "max_pairwise_absolute_difference": 2.220446049250313e-16,
+          "decimal70_max_absolute_errors": null,
+          "separate_peak_traced_bytes": {},
+          "speed_ratio_direct_over_cache": 7.94928134853786,
+          "accounted_ratio_with_common_input_setup": 6.123065012399047
+        },
+        {
+          "seed": 271,
+          "common_input_setup_ns": 142375,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                2803833,
+                2866875,
+                2801042,
+                3331875,
+                3008333
+              ],
+              "median_ns": 2866875,
+              "min_ns": 2801042,
+              "max_ns": 3331875,
+              "end_to_end_with_common_input_setup_ns": 3009250
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                4310417,
+                4904625,
+                4343791,
+                4333000,
+                4473209
+              ],
+              "median_ns": 4343791,
+              "min_ns": 4310417,
+              "max_ns": 4904625,
+              "end_to_end_with_common_input_setup_ns": 4486166
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                372917,
+                370250,
+                368125,
+                365583,
+                372667
+              ],
+              "median_ns": 370250,
+              "min_ns": 365583,
+              "max_ns": 372917,
+              "end_to_end_with_common_input_setup_ns": 512625
+            }
+          },
+          "max_pairwise_absolute_difference": 1.8041124150158794e-16,
+          "decimal70_max_absolute_errors": null,
+          "separate_peak_traced_bytes": {},
+          "speed_ratio_direct_over_cache": 7.74307900067522,
+          "accounted_ratio_with_common_input_setup": 5.870275542550598
+        },
+        {
+          "seed": 577,
+          "common_input_setup_ns": 133833,
+          "times": {
+            "direct_horner": {
+              "samples_ns": [
+                2819666,
+                2733209,
+                2741875,
+                2811042,
+                2786250
+              ],
+              "median_ns": 2786250,
+              "min_ns": 2733209,
+              "max_ns": 2819666,
+              "end_to_end_with_common_input_setup_ns": 2920083
+            },
+            "shared_feature_table": {
+              "samples_ns": [
+                4826375,
+                4360625,
+                4439000,
+                4366583,
+                4309125
+              ],
+              "median_ns": 4366583,
+              "min_ns": 4309125,
+              "max_ns": 4826375,
+              "end_to_end_with_common_input_setup_ns": 4500416
+            },
+            "streamed_moment_cache": {
+              "samples_ns": [
+                398334,
+                380167,
+                480708,
+                408834,
+                363958
+              ],
+              "median_ns": 398334,
+              "min_ns": 363958,
+              "max_ns": 480708,
+              "end_to_end_with_common_input_setup_ns": 532167
+            }
+          },
+          "max_pairwise_absolute_difference": 1.1102230246251565e-16,
+          "decimal70_max_absolute_errors": null,
+          "separate_peak_traced_bytes": {},
+          "speed_ratio_direct_over_cache": 6.994758167768757,
+          "accounted_ratio_with_common_input_setup": 5.487155347851332
+        }
+      ]
+    }
+  ],
+  "stability_negative_control": {
+    "description": "deterministic cancellation stress f=(x-1)^8 near1, not Brownian data",
+    "decimal70_reference": "8.245817024720246380608943040649489362243546410512299644219869065864260E-29",
+    "methods": {
+      "direct_horner": {
+        "value": 3.8857805862310073e-19,
+        "absolute_error": 3.8857805854064257e-19,
+        "relative_error": 4712426402.086284
+      },
+      "shared_feature_table": {
+        "value": -4.553649124439119e-18,
+        "absolute_error": 4.553649124521577e-18,
+        "relative_error": 55223746911.55686
+      },
+      "streamed_moment_cache": {
+        "value": -2.1033522146218786e-17,
+        "absolute_error": 2.1033522146301244e-17,
+        "relative_error": 255081116683.09598
+      },
+      "known_factored_polynomial": {
+        "value": 8.245817024720246e-29,
+        "absolute_error": 1.390055581491376e-45,
+        "relative_error": 1.6857705880740618e-17
+      }
+    }
+  },
+  "limitations": [
+    "same finite left sums; no reduction in discretization or Monte Carlo error",
+    "ordinary linearity/batched moment aggregation, not a new method relative to that known analogue",
+    "wall time depends on Python implementation and current machine load",
+    "all cache preparation included in timed calls; common input generation separately listed",
+    "setup-inclusive times are accounted sums of separate measurements, not contiguous runs",
+    "tracemalloc measures traced Python allocations, not total process memory or RSS",
+    "monomial coordinates can be unstable, see explicit negative control",
+    "timing intervals across five seeds are descriptive approximate t intervals"
+  ]
+}

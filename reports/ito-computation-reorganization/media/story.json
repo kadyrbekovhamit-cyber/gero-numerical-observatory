@@ -1,0 +1,19 @@
+{
+  "title": "Same stochastic estimate. Less work?",
+  "channel": "Technology Product",
+  "channel_id": "UCFGlrcs6ZfWXAXMy8wY2rXQ",
+  "voice": "en-US-JennyNeural",
+  "rate": "-3%",
+  "language": "en-US",
+  "audience": "Adults interested in numerical computing; not made for kids",
+  "premise": "An analyst tries to compute a stochastic estimate; cancelling repeated intermediate terms reduces work while preserving the answer, but setup and rounding limit the benefit.",
+  "novelty": "New original explanatory animation of this computational study, not a newly discovered mathematical method.",
+  "closest_episode_difference": "Earlier Strata and MLX clips trace implementation defects. This episode explains equal estimators and the difference between algebraic savings and statistical accuracy; no vendor defect.",
+  "scenes": [
+    {"title":"Same path. Same estimate.","voice":"Can the same stochastic estimate take less work? We tested two equal formulas on the same Brownian paths.","claim":"C1","visual":"One observed path sends identical nodes into two calculation lanes."},
+    {"title":"Cancel repeated work","voice":"One repeats local products. The other cancels intermediate terms, keeping one final cube.","claim":"C2","visual":"Adjacent positive and negative cubic endpoint terms pair and disappear; the terminal cube and trapezoid sum remain."},
+    {"title":"A measured local speedup","voice":"Our small Python benchmark ran about three times faster, with unchanged mathematical error. Including test data preparation made the gain smaller.","claim":"C3","visual":"Two timing bars converge to the same J; exact labels distinguish computation from accounted harness costs."},
+    {"title":"Reuse has trade-offs","voice":"Reusing moments also helped batches, but slowed single requests and could worsen rounding.","claim":"C4","visual":"A common cache feeds several polynomial requests; one request pays setup alone; a rounding warning remains visible."},
+    {"title":"Known methods, tested carefully","voice":"These are optimizations of known methods, not a new Itô integral or a correction to Black Scholes. The code and limitations are linked below.","claim":"C5","visual":"An evidence folder shows code, raw results and negative controls; the original integral remains unchanged."}
+  ]
+}
