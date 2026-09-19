@@ -63,7 +63,7 @@ Developer report sent and independently read back on 19 September 2026: https://
 
 ## Publication and reproduction
 
-[Zenodo / DOI10.5281/zenodo.22843200](https://zenodo.org/records/22843200) · [Complete reproducibility ZIP](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/actuarialmath-endowment-variance-benefit-scale/gero-actuarialmath-endowment-variance-evidence-2026-09-19.zip). SHA-256 `59f6da29073136146139e9feade3fa504eec7c1ff37c7c2ffd16b8f65c041c2c`. Other platform/video links will be added after verified publication.
+[Zenodo / DOI10.5281/zenodo.22843200](https://zenodo.org/records/22843200) · [Complete reproducibility ZIP](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/actuarialmath-endowment-variance-benefit-scale/gero-actuarialmath-endowment-variance-evidence-2026-09-19.zip). SHA-256 `59f6da29073136146139e9feade3fa504eec7c1ff37c7c2ffd16b8f65c041c2c`. All six verified publication links are listed below.
 
 ## Verified publication links
 
@@ -75,3 +75,5 @@ Developer report sent and independently read back on 19 September 2026: https://
 - [huggingface](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/actuarialmath-endowment-variance-benefit-scale.md)
 
 Zenodo DOI: `10.5281/zenodo.22843200`. YouTube: public, 32-second English Short.
+
+[Evidence-archive follow-up in the existing developer issue](https://github.com/terence-lim/actuarialmath/issues/6#issuecomment-5740912028) was sent and read back. No maintainer acknowledgment or acceptance is claimed.
