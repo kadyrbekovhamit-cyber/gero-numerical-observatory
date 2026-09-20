@@ -1,0 +1,50 @@
+--- a/financepy/products/equity/equity_float_lookback_option.py
++++ b/financepy/products/equity/equity_float_lookback_option.py
+@@ -3,6 +3,7 @@
+ ##############################################################################
+ 
+ import numpy as np
++from scipy.special import log_ndtr
+ 
+ 
+ from ...utils.math import normcdf
+@@ -114,8 +115,12 @@
+ 
+             if smin == s0:
+                 term = normcdf(-a1 + 2.0 * b * np.sqrt(t_exp) / v) - expbt * normcdf(-a1)
+-            elif s0 < smin and w < -100:
+-                term = -expbt * normcdf(-a1)
++            elif -w * np.log(s0 / smin) > 500.0:
++                # Combine the power and CDF before exponentiating.
++                # Each factor alone can overflow or round to zero.
++                log_weight = -w * np.log(s0 / smin)
++                z = -a1 + 2.0 * b * np.sqrt(t_exp) / v
++                term = np.exp(log_weight + log_ndtr(z)) - expbt * normcdf(-a1)
+             else:
+                 term = ((s0 / smin) ** (-w)) * normcdf(-a1 + 2.0 * b * np.sqrt(t_exp) / v) - expbt * normcdf(-a1)
+ 
+--- a/financepy/products/fx/fx_float_lookback_option.py
++++ b/financepy/products/fx/fx_float_lookback_option.py
+@@ -3,6 +3,7 @@
+ ##############################################################################
+ 
+ import numpy as np
++from scipy.special import log_ndtr
+ 
+ from ...utils.math import normcdf
+ from ...utils.global_vars import G_SMALL
+@@ -99,8 +100,12 @@
+ 
+             if s_min == s0:
+                 term = normcdf(-a1 + 2.0 * b * np.sqrt(t_exp) / v) - expbt * normcdf(-a1)
+-            elif s0 < s_min and w < -100:
+-                term = -expbt * normcdf(-a1)
++            elif -w * np.log(s0 / s_min) > 500.0:
++                # Combine the power and CDF before exponentiating.
++                # Each factor alone can overflow or round to zero.
++                log_weight = -w * np.log(s0 / s_min)
++                z = -a1 + 2.0 * b * np.sqrt(t_exp) / v
++                term = np.exp(log_weight + log_ndtr(z)) - expbt * normcdf(-a1)
+             else:
+                 term = ((s0 / s_min) ** (-w)) * normcdf(-a1 + 2.0 * b * np.sqrt(t_exp) / v) - expbt * normcdf(-a1)
+ 

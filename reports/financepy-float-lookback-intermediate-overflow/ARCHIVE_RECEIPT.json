@@ -1,0 +1,17 @@
+{
+  "filename": "gero-financepy-float-lookback-evidence-2026-09-20.zip",
+  "bytes": 6619395,
+  "sha256": "fbe433c8f98cec540e507acb1d1a7f82bb46ad3b2eda360f93773d19663e53b4",
+  "md5": "00c39935c54249e4886612868e251990",
+  "files": 1160,
+  "frozen_at": "2026-09-20T10:41:20.795563+00:00",
+  "version": "1.0.0",
+  "case_id": "financepy-float-lookback-intermediate-overflow",
+  "source_pin": "ee5749b9693f3b7c33f71e091a027402c3d3b303",
+  "native_packet_replay_verified": true,
+  "supported_current_and_release_environments": true,
+  "archive_integrity_test_passed": true,
+  "vendor_report": "https://github.com/domokane/FinancePy/issues/272",
+  "independent_implementation_defects": 1,
+  "video_created": false
+}

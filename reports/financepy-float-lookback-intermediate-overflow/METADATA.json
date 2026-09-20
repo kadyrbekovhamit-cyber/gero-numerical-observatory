@@ -1,0 +1,13 @@
+{
+  "case_id": "financepy-float-lookback-intermediate-overflow",
+  "title": "FinancePy floating lookback calls: a finite price becomes unavailable",
+  "publication_date": "2026-09-20",
+  "source_pin": "ee5749b9693f3b7c33f71e091a027402c3d3b303",
+  "summary": "A valid floating lookback call worth about 54.03 becomes unavailable because a power overflows before multiplication by a tiny probability. A local log-space candidate removes 52 failing public calls on a 600-row grid; restoration reproduces all 52.",
+  "limits": "Synthetic CPU scalar calls; no real trade, bank integration or customer loss; no full-suite or complete-stability claim. GERO quote adapter, not an upstream order subsystem.",
+  "measured_chain": "Intermediate power overflow -> actual public pricing exception/NaN -> synthetic GERO quote document UNAVAILABLE instead of READY.",
+  "independent_defects": 1,
+  "maintainer_issue": "https://github.com/domokane/FinancePy/issues/272",
+  "license": "cc-by-4.0",
+  "code_license": "GPL-3.0-or-later"
+}

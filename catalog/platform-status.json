@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-20T08:43:14.901987+00:00",
+  "checked_at": "2026-09-20T10:47:53.045414+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 116,
     "huggingface": 116,
     "zenodo": 116,
-    "github_catalog_report": 116,
+    "github_catalog_report": 117,
     "zenodo_records_including_collection": 116,
-    "unique_individual_publications": 116,
+    "unique_individual_publications": 117,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "116 canonical reports; CentroidKNN report included. Counts track reports, not independent bugs.",
+  "github_status": "117 canonical reports; FinancePy floating lookback report included. Counts track reports, not independent bugs.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -20,9 +20,15 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [],
-    "huggingface": [],
-    "zenodo": []
+    "gero": [
+      "financepy-float-lookback-intermediate-overflow"
+    ],
+    "huggingface": [
+      "financepy-float-lookback-intermediate-overflow"
+    ],
+    "zenodo": [
+      "financepy-float-lookback-intermediate-overflow"
+    ]
   },
   "deduplication_notes": [
     "All 97 previous report IDs preserved; one CIR pricing component report appended.",
@@ -44,9 +50,10 @@
     "19 September: added the existing Strata Normal-IV report video link. No new report, test run, issue, DOI or LinkedIn post created. Scientific archive remains unchanged. Other canonical report objects preserved.",
     "19September: Endowment variance benefit-scale report completes six-platform distribution. 483/1300 original variance mismatches become0 with local candidate and return on restoration. Native normal approximation -> GERO synthetic JSON -> example limit changes; no actual insurer losses measured. All112 prior canonical objects preserved. Counts track reports, not bugs.",
     "19 September 2026: MLX erf adds one source-pinned report. 372 = 368 nonzero-x and 4 zero-boundary primary failures become 0 with the balanced local candidate; tail and second-derivative limits remain. All earlier canonical objects preserved. Upstream report not sent.",
-    "20 September 2026: CentroidKNN zero-sample positive score; one source-pinned implementation report, 1548/0/1548 component mismatches and 2/0/2 public-model decision mismatches. Bounded prior-art review retains ambiguity of historical issue1521. Developer report4341 verified before distribution."
+    "20 September 2026: CentroidKNN zero-sample positive score; one source-pinned implementation report, 1548/0/1548 component mismatches and 2/0/2 public-model decision mismatches. Bounded prior-art review retains ambiguity of historical issue1521. Developer report4341 verified before distribution.",
+    "20 September 2026: one FinancePy floating-lookback intermediate-overflow defect shared by equity/FX APIs. 52/0/52/52 failures per600-call grid,548 finite rows unchanged within each current/candidate environment. Supported NumPy/Numba runtimes and bounded prior-art review retained; vendor issue272 precedes publication."
   ],
-  "parity_complete": true,
+  "parity_complete": false,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "archival_backfill": {
     "date": "2026-09-16",
@@ -150,6 +157,35 @@
       "measured_chain": "Positive score for an unobserved class -> it outranks an exact-match centroid -> two synthetic public-model queries get the wrong class; candidate fixes both, restoration reproduces both; three fully trained controls unchanged.",
       "zenodo_doi": "10.5281/zenodo.22852629",
       "youtube_status": "not_produced_or_uploaded"
+    },
+    {
+      "id": "financepy-float-lookback-intermediate-overflow",
+      "title": "FinancePy floating lookback calls: a finite price becomes unavailable",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "publication_date": "2026-09-20",
+      "kind": "published_report",
+      "gero": null,
+      "huggingface": null,
+      "zenodo": null,
+      "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/financepy-float-lookback-intermediate-overflow",
+      "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-float-lookback-intermediate-overflow.md",
+      "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-float-lookback-intermediate-overflow.md",
+      "source_text_sha256": "804a09f316ac1cf10c3fe73994d141b33e24d72901c882a29537e16abf303595",
+      "mirror_sha256": "804a09f316ac1cf10c3fe73994d141b33e24d72901c882a29537e16abf303595",
+      "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/financepy-float-lookback-intermediate-overflow/gero-financepy-float-lookback-evidence-2026-09-20.zip",
+      "evidence_archive_sha256": "fbe433c8f98cec540e507acb1d1a7f82bb46ad3b2eda360f93773d19663e53b4",
+      "linkedin": null,
+      "youtube": null,
+      "maintainer_issue": "https://github.com/domokane/FinancePy/issues/272",
+      "upstream_report_sent": true,
+      "upstream_acceptance_claimed": false,
+      "implementation_defects_in_this_report": 1,
+      "publication_status": "partial_distribution_in_progress",
+      "source_pin": "ee5749b9693f3b7c33f71e091a027402c3d3b303",
+      "limits": "Synthetic CPU scalar calls; no real trade, bank integration or customer loss; no full-suite or complete-stability claim. GERO quote adapter, not an upstream order subsystem.",
+      "measured_chain": "Intermediate power overflow -> actual public pricing exception/NaN -> synthetic GERO quote document UNAVAILABLE instead of READY."
     }
   ],
   "coverage_scope": "Canonical report IDs; separate Collatz map outside this subset. Report counts are not independent bugs or raw Zenodo version-object counts.",
@@ -264,6 +300,25 @@
       "upstream_report_sent": true,
       "vendor_issue": "https://github.com/nntrainer/nntrainer/issues/4341",
       "zenodo_doi": "10.5281/zenodo.22852629"
+    },
+    "financepy-float-lookback-intermediate-overflow": {
+      "case_id": "financepy-float-lookback-intermediate-overflow",
+      "public": [
+        "github"
+      ],
+      "pending": [
+        "zenodo",
+        "gero",
+        "huggingface",
+        "linkedin",
+        "youtube"
+      ],
+      "links": {
+        "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-float-lookback-intermediate-overflow.md"
+      },
+      "archive_sha256": "fbe433c8f98cec540e507acb1d1a7f82bb46ad3b2eda360f93773d19663e53b4",
+      "upstream_report_sent": true,
+      "vendor_issue": "https://github.com/domokane/FinancePy/issues/272"
     }
   }
 }

@@ -1,0 +1,35 @@
+{
+  "at": "2026-09-20T10:40:46.387840+00:00",
+  "status": "portable_packet_native_replay_verified",
+  "variants": {
+    "current": {
+      "rows": 600,
+      "failures": 52,
+      "stored_byte_identity": true,
+      "sha256": "8b079e8be1acfab3ca6e8c13cd576b3bd182ff56b7d05392b552cdcfbaf78347"
+    },
+    "candidate": {
+      "rows": 600,
+      "failures": 0,
+      "stored_byte_identity": true,
+      "sha256": "8c3302cea6696cba6d3adc67950d329895d1dd4234711698604c49f68bfbf356"
+    },
+    "restored": {
+      "rows": 600,
+      "failures": 52,
+      "stored_byte_identity": true,
+      "sha256": "8b079e8be1acfab3ca6e8c13cd576b3bd182ff56b7d05392b552cdcfbaf78347"
+    },
+    "release": {
+      "rows": 600,
+      "failures": 52,
+      "stored_byte_identity": true,
+      "sha256": "b99805e0a640c49a3609959858b86740cb154e535eedbf47222dbbcbb8776b4f"
+    }
+  },
+  "source_pin": "ee5749b9693f3b7c33f71e091a027402c3d3b303",
+  "oracle": "Stored independent65-digit quadrature with seven100-digit repeats used for fixed comparisons; not rerun during packet-native replay.",
+  "one_worker": true,
+  "gpu": false,
+  "audio_playback": false
+}
