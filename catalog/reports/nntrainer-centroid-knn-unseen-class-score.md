@@ -107,7 +107,10 @@ The one-line candidate is validated for the stated finite input/distance range. 
 
 - [github](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/nntrainer-centroid-knn-unseen-class-score.md)
 - [gero](https://www.gero.uz/research/articles/nntrainer-centroid-knn-unseen-class-score.html)
+- [zenodo](https://zenodo.org/records/22852629)
+- [linkedin](https://www.linkedin.com/feed/update/urn:li:share:7507299039294427137/)
+- [huggingface](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/nntrainer-centroid-knn-unseen-class-score.md)
 
 [Complete evidence ZIP](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/nntrainer-centroid-knn-unseen-class-score/gero-nntrainer-centroid-unseen-class-evidence-2026-09-20.zip). SHA-256: `b9d7b22a70a1cb6c7069c153198c29280b6ffcc8fc706b6624155144d4c2943f`.
 
-Zenodo, Hugging Face, LinkedIn and YouTube delivery remains pending; no public record, DOI or video on those destinations is claimed yet. The verified developer report is [nntrainer #4341](https://github.com/nntrainer/nntrainer/issues/4341).
+Zenodo DOI: 10.5281/zenodo.22852629. The report, candidate patch and complete evidence archive are also verified on Hugging Face. YouTube remains pending; no video is claimed. Developer report [nntrainer #4341](https://github.com/nntrainer/nntrainer/issues/4341) is submitted, with no maintainer acceptance claimed.

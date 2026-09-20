@@ -7,8 +7,8 @@ Updated 19 September 2026. **116 distinct catalogue publications.** Report count
 |Platform|Verified catalogue reports|
 |---|---:|
 |gero|116|
-|huggingface|115|
-|zenodo|115|
+|huggingface|116|
+|zenodo|116|
 |github_catalog_report|116|
 
 The FinancePy FXForward and MLX sigmoid reports each have GERO, GitHub, LinkedIn, Zenodo, Hugging Face and YouTube publications. Overall coverage is shown above; no equal count across all external account collections is claimed.
@@ -147,4 +147,4 @@ Beta density archival distribution is complete on all six channels: [LinkedIn](h
 BondZero archives an already corrected upstream issue. [Source fix](https://github.com/domokane/FinancePy/commit/bb10c3936e078a5212694d017746453175151c09) and [independent verification](https://github.com/domokane/FinancePy/issues/267#issuecomment-5713269134) are public. Four distribution channels remain pending; no video publication is claimed.
 
 | 115 | [Same Itô integral, fewer operations: a reproducible computational study](reports/ito-computation-reorganization.md) | [Page](https://www.gero.uz/research/articles/ito-computation-reorganization.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/ito-computation-reorganization.md) | [DOI](https://zenodo.org/records/22847733) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/ito-computation-reorganization) |
-| 116 | [nntrainer CentroidKNN chooses an unobserved class over an exact centroid match](reports/nntrainer-centroid-knn-unseen-class-score.md) | [Page](https://www.gero.uz/research/articles/nntrainer-centroid-knn-unseen-class-score.html) | Pending | Pending | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/nntrainer-centroid-knn-unseen-class-score) |
+| 116 | [nntrainer CentroidKNN chooses an unobserved class over an exact centroid match](reports/nntrainer-centroid-knn-unseen-class-score.md) | [Page](https://www.gero.uz/research/articles/nntrainer-centroid-knn-unseen-class-score.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/nntrainer-centroid-knn-unseen-class-score.md) | [DOI](https://zenodo.org/records/22852629) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/nntrainer-centroid-knn-unseen-class-score) |
