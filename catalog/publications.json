@@ -2262,12 +2262,12 @@
     "kind": "published_report",
     "gero": "https://www.gero.uz/research/articles/financepy-float-lookback-intermediate-overflow.html",
     "huggingface": null,
-    "zenodo": null,
+    "zenodo": "https://zenodo.org/records/22858372",
     "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/financepy-float-lookback-intermediate-overflow",
     "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-float-lookback-intermediate-overflow.md",
     "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-float-lookback-intermediate-overflow.md",
     "source_text_sha256": "804a09f316ac1cf10c3fe73994d141b33e24d72901c882a29537e16abf303595",
-    "mirror_sha256": "a6b7a02f43a144d6053a75774f2924c6ea31bccabb94d931bc416558d0b929ec",
+    "mirror_sha256": "fd6312d09fbc27fd8c59e58d426a17725e5db1b76e86910d3f46672fa4f4aa29",
     "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/financepy-float-lookback-intermediate-overflow/gero-financepy-float-lookback-evidence-2026-09-20.zip",
     "evidence_archive_sha256": "fbe433c8f98cec540e507acb1d1a7f82bb46ad3b2eda360f93773d19663e53b4",
     "linkedin": null,
@@ -2276,9 +2276,10 @@
     "upstream_report_sent": true,
     "upstream_acceptance_claimed": false,
     "implementation_defects_in_this_report": 1,
-    "publication_status": "github_gero_public_other_four_pending_browser_access",
+    "publication_status": "public_verified_3_of_six",
     "source_pin": "ee5749b9693f3b7c33f71e091a027402c3d3b303",
     "limits": "Synthetic CPU scalar calls; no real trade, bank integration or customer loss; no full-suite or complete-stability claim. GERO quote adapter, not an upstream order subsystem.",
-    "measured_chain": "Intermediate power overflow -> actual public pricing exception/NaN -> synthetic GERO quote document UNAVAILABLE instead of READY."
+    "measured_chain": "Intermediate power overflow -> actual public pricing exception/NaN -> synthetic GERO quote document UNAVAILABLE instead of READY.",
+    "zenodo_doi": "10.5281/zenodo.22858372"
   }
 ]
