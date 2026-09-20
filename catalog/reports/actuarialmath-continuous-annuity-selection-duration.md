@@ -80,3 +80,12 @@ The bounded duplicate review inspected all pre-existing six issue/PR bodies and 
 The correction is limited to this argument in `Annuity.a_x`. Other annuity convenience methods, arbitrary survival laws, variable benefits, whole-life limits and negative forces are not validated here. In particular, `Uniform.temporary_annuity` gives a separate unexpected zero-rate result that remains unchanged; it is not used as an oracle or described as repaired. Other initial candidates are excluded. No real insurer system, policyholder record, deployment, loss or regulatory breach was tested.
 
 Original report: CC BY 4.0. GERO scripts and candidate: MIT. Upstream source retains Terence Lim's MIT license. See the complete evidence archive, source ledger, executable runner, raw outputs and explicit environment requirements.
+
+## Public records and delivery status
+
+- [github](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-continuous-annuity-selection-duration.md)
+- [gero](https://www.gero.uz/research/articles/actuarialmath-continuous-annuity-selection-duration.html)
+
+[Complete evidence ZIP](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/actuarialmath-continuous-annuity-selection-duration/gero-actuarialmath-annuity-selection-evidence-2026-09-20.zip). SHA-256: `8784b39fc462e56b810752f7117da5ce8a385c4e37edebe106b7bae753073de9`.
+
+Zenodo, Hugging Face, LinkedIn and YouTube delivery remains pending; no public record, DOI or video on those destinations is claimed yet. The verified developer report is [actuarialmath #7](https://github.com/terence-lim/actuarialmath/issues/7).

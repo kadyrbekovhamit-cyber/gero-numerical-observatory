@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-09-20T16:37:38.699924+00:00",
+  "checked_at": "2026-09-20T16:42:10.358070+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 117,
+    "gero": 118,
     "huggingface": 117,
     "zenodo": 117,
     "github_catalog_report": 118,
@@ -20,9 +20,7 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [
-      "actuarialmath-continuous-annuity-selection-duration"
-    ],
+    "gero": [],
     "huggingface": [
       "actuarialmath-continuous-annuity-selection-duration"
     ],
@@ -197,14 +195,14 @@
       ],
       "publication_date": "2026-09-20",
       "kind": "published_report",
-      "gero": null,
+      "gero": "https://www.gero.uz/research/articles/actuarialmath-continuous-annuity-selection-duration.html",
       "huggingface": null,
       "zenodo": null,
       "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/actuarialmath-continuous-annuity-selection-duration",
       "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-continuous-annuity-selection-duration.md",
       "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-continuous-annuity-selection-duration.md",
       "source_text_sha256": "66904fd1cb718b4ea0efa05c2de1f095bab74b463d20f1594601c92f48127286",
-      "mirror_sha256": "66904fd1cb718b4ea0efa05c2de1f095bab74b463d20f1594601c92f48127286",
+      "mirror_sha256": "c61621071767e2a82badbd6bd05be1583c5394fcb86a1bb62e6190933af81eb2",
       "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/actuarialmath-continuous-annuity-selection-duration/gero-actuarialmath-annuity-selection-evidence-2026-09-20.zip",
       "evidence_archive_sha256": "8784b39fc462e56b810752f7117da5ce8a385c4e37edebe106b7bae753073de9",
       "linkedin": null,
@@ -213,7 +211,7 @@
       "upstream_report_sent": true,
       "upstream_acceptance_claimed": false,
       "implementation_defects_in_this_report": 1,
-      "publication_status": "partial_distribution_in_progress",
+      "publication_status": "github_gero_public_other_four_pending_browser_access",
       "source_pin": "7d18f11ad304898f177b7922b3c53f70e4c2b4f4",
       "limits": "Uniform lifetime model and finite specified inputs; no full suite or general annuity repair. Memo and ceiling are GERO adapters; no real insurer, policyholder loss or reserve requirement.",
       "measured_chain": "Elapsed-years argument replaced by zero -> incorrect library EPV -> synthetic JSON memo 9166.67 instead of 8750.00 -> read-back 9000 ceiling changes OVER_LIMIT to WITHIN_LIMIT."
@@ -359,17 +357,18 @@
     "actuarialmath-continuous-annuity-selection-duration": {
       "case_id": "actuarialmath-continuous-annuity-selection-duration",
       "public": [
-        "github"
+        "github",
+        "gero"
       ],
       "pending": [
         "zenodo",
-        "gero",
         "huggingface",
         "linkedin",
         "youtube"
       ],
       "links": {
-        "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-continuous-annuity-selection-duration.md"
+        "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-continuous-annuity-selection-duration.md",
+        "gero": "https://www.gero.uz/research/articles/actuarialmath-continuous-annuity-selection-duration.html"
       },
       "archive_sha256": "8784b39fc462e56b810752f7117da5ce8a385c4e37edebe106b7bae753073de9",
       "upstream_report_sent": true,

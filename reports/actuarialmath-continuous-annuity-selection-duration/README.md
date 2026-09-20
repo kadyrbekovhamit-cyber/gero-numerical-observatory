@@ -1,6 +1,6 @@
-# Complete reproduction packet
+# actuarialmath continuous annuity: dropping elapsed years changes a value and a decision
 
-Download and extract [gero-actuarialmath-annuity-selection-evidence-2026-09-20.zip](gero-actuarialmath-annuity-selection-evidence-2026-09-20.zip) first. The ZIP contains the runnable sources and expected outputs; loose files are browsing excerpts.
+Download and extract [gero-actuarialmath-annuity-selection-evidence-2026-09-20.zip](gero-actuarialmath-annuity-selection-evidence-2026-09-20.zip) before running the commands below. The loose repository files are browsing excerpts; the ZIP contains the complete reproducibility packet.
 
 # GERO continuous-annuity selection-duration evidence
 
