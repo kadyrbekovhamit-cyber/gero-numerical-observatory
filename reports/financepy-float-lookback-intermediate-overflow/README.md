@@ -1,3 +1,7 @@
+# FinancePy floating lookback calls: a finite price becomes unavailable
+
+Download and extract [gero-financepy-float-lookback-evidence-2026-09-20.zip](gero-financepy-float-lookback-evidence-2026-09-20.zip) before running the commands below. The loose repository files are browsing excerpts; the ZIP contains the complete reproducibility packet.
+
 # Reproduce the FinancePy floating-lookback finding
 
 This packet contains the actual pinned FinancePy package source, an executed official 1.1.2 wheel, a narrow candidate, the restored source, independent-oracle code, raw outputs, tests and a bounded duplicate review. It is one calculation defect shared by equity and FX APIs.

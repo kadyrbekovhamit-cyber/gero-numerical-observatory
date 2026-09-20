@@ -89,3 +89,12 @@ The existing source TODO about tightening the `w=100` cutoff is acknowledged. We
 Existing put cutoffs, near-equal-rate perturbation, zero-volatility behavior, ordinary CDF approximation, extreme parameter ranges and complete lookback stability are outside scope. No full upstream test suite, performance benchmark, real portfolio, bank integration or production customer impact was tested. See the README, source ledger, exact environments, raw outputs and candidate patch in the accompanying archive.
 
 Original GERO report text: CC BY 4.0. Research scripts and FinancePy-derived candidate code: GPL-3.0-or-later. Original upstream notices and licenses are retained.
+
+## Public records and delivery status
+
+- [github](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-float-lookback-intermediate-overflow.md)
+- [gero](https://www.gero.uz/research/articles/financepy-float-lookback-intermediate-overflow.html)
+
+[Complete evidence ZIP](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/financepy-float-lookback-intermediate-overflow/gero-financepy-float-lookback-evidence-2026-09-20.zip). SHA-256: `fbe433c8f98cec540e507acb1d1a7f82bb46ad3b2eda360f93773d19663e53b4`.
+
+Zenodo, Hugging Face, LinkedIn and YouTube delivery remains pending; no public record, DOI or video on those destinations is claimed yet. The verified developer report is [FinancePy #272](https://github.com/domokane/FinancePy/issues/272).
