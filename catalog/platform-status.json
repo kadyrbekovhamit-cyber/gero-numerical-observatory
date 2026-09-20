@@ -1,9 +1,9 @@
 {
-  "checked_at": "2026-09-20T13:09:54.320560+00:00",
+  "checked_at": "2026-09-20T15:15:27.135461+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 117,
-    "huggingface": 116,
+    "huggingface": 117,
     "zenodo": 117,
     "github_catalog_report": 117,
     "zenodo_records_including_collection": 117,
@@ -21,9 +21,7 @@
   },
   "missing": {
     "gero": [],
-    "huggingface": [
-      "financepy-float-lookback-intermediate-overflow"
-    ],
+    "huggingface": [],
     "zenodo": []
   },
   "deduplication_notes": [
@@ -49,7 +47,7 @@
     "20 September 2026: CentroidKNN zero-sample positive score; one source-pinned implementation report, 1548/0/1548 component mismatches and 2/0/2 public-model decision mismatches. Bounded prior-art review retains ambiguity of historical issue1521. Developer report4341 verified before distribution.",
     "20 September 2026: one FinancePy floating-lookback intermediate-overflow defect shared by equity/FX APIs. 52/0/52/52 failures per600-call grid,548 finite rows unchanged within each current/candidate environment. Supported NumPy/Numba runtimes and bounded prior-art review retained; vendor issue272 precedes publication."
   ],
-  "parity_complete": false,
+  "parity_complete": true,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "archival_backfill": {
     "date": "2026-09-16",
@@ -163,22 +161,22 @@
       "publication_date": "2026-09-20",
       "kind": "published_report",
       "gero": "https://www.gero.uz/research/articles/financepy-float-lookback-intermediate-overflow.html",
-      "huggingface": null,
+      "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-float-lookback-intermediate-overflow.md",
       "zenodo": "https://zenodo.org/records/22858372",
       "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/financepy-float-lookback-intermediate-overflow",
       "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-float-lookback-intermediate-overflow.md",
       "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-float-lookback-intermediate-overflow.md",
       "source_text_sha256": "804a09f316ac1cf10c3fe73994d141b33e24d72901c882a29537e16abf303595",
-      "mirror_sha256": "fd6312d09fbc27fd8c59e58d426a17725e5db1b76e86910d3f46672fa4f4aa29",
+      "mirror_sha256": "328f1f1063656723f0f85e1793cfe41aa49a495d0aeb67c23c7cf9c08d2b4dcc",
       "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/financepy-float-lookback-intermediate-overflow/gero-financepy-float-lookback-evidence-2026-09-20.zip",
       "evidence_archive_sha256": "fbe433c8f98cec540e507acb1d1a7f82bb46ad3b2eda360f93773d19663e53b4",
-      "linkedin": null,
+      "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7507454926776815616/",
       "youtube": null,
       "maintainer_issue": "https://github.com/domokane/FinancePy/issues/272",
       "upstream_report_sent": true,
       "upstream_acceptance_claimed": false,
       "implementation_defects_in_this_report": 1,
-      "publication_status": "public_verified_3_of_six",
+      "publication_status": "public_verified_5_of_six",
       "source_pin": "ee5749b9693f3b7c33f71e091a027402c3d3b303",
       "limits": "Synthetic CPU scalar calls; no real trade, bank integration or customer loss; no full-suite or complete-stability claim. GERO quote adapter, not an upstream order subsystem.",
       "measured_chain": "Intermediate power overflow -> actual public pricing exception/NaN -> synthetic GERO quote document UNAVAILABLE instead of READY.",
@@ -303,17 +301,19 @@
       "public": [
         "github",
         "gero",
-        "zenodo"
+        "zenodo",
+        "linkedin",
+        "huggingface"
       ],
       "pending": [
-        "huggingface",
-        "linkedin",
         "youtube"
       ],
       "links": {
         "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-float-lookback-intermediate-overflow.md",
         "gero": "https://www.gero.uz/research/articles/financepy-float-lookback-intermediate-overflow.html",
-        "zenodo": "https://zenodo.org/records/22858372"
+        "zenodo": "https://zenodo.org/records/22858372",
+        "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7507454926776815616/",
+        "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-float-lookback-intermediate-overflow.md"
       },
       "archive_sha256": "fbe433c8f98cec540e507acb1d1a7f82bb46ad3b2eda360f93773d19663e53b4",
       "upstream_report_sent": true,

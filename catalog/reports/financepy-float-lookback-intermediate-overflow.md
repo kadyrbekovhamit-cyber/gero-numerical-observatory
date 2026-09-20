@@ -95,7 +95,9 @@ Original GERO report text: CC BY 4.0. Research scripts and FinancePy-derived can
 - [github](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-float-lookback-intermediate-overflow.md)
 - [gero](https://www.gero.uz/research/articles/financepy-float-lookback-intermediate-overflow.html)
 - [zenodo](https://zenodo.org/records/22858372)
+- [linkedin](https://www.linkedin.com/feed/update/urn:li:share:7507454926776815616/)
+- [huggingface](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-float-lookback-intermediate-overflow.md)
 
 [Complete evidence ZIP](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/financepy-float-lookback-intermediate-overflow/gero-financepy-float-lookback-evidence-2026-09-20.zip). SHA-256: `fbe433c8f98cec540e507acb1d1a7f82bb46ad3b2eda360f93773d19663e53b4`.
 
-Pending distribution: huggingface, linkedin, youtube. The verified developer report is [FinancePy #272](https://github.com/domokane/FinancePy/issues/272).
+Pending distribution: youtube. The verified developer report is [FinancePy #272](https://github.com/domokane/FinancePy/issues/272).

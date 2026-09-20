@@ -7,7 +7,7 @@ Updated 19 September 2026. **117 distinct catalogue publications.** Report count
 |Platform|Verified catalogue reports|
 |---|---:|
 |gero|117|
-|huggingface|116|
+|huggingface|117|
 |zenodo|117|
 |github_catalog_report|117|
 
@@ -148,4 +148,4 @@ BondZero archives an already corrected upstream issue. [Source fix](https://gith
 
 | 115 | [Same Itô integral, fewer operations: a reproducible computational study](reports/ito-computation-reorganization.md) | [Page](https://www.gero.uz/research/articles/ito-computation-reorganization.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/ito-computation-reorganization.md) | [DOI](https://zenodo.org/records/22847733) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/ito-computation-reorganization) |
 | 116 | [nntrainer CentroidKNN chooses an unobserved class over an exact centroid match](reports/nntrainer-centroid-knn-unseen-class-score.md) | [Page](https://www.gero.uz/research/articles/nntrainer-centroid-knn-unseen-class-score.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/nntrainer-centroid-knn-unseen-class-score.md) | [DOI](https://zenodo.org/records/22852629) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/nntrainer-centroid-knn-unseen-class-score) |
-| 117 | [FinancePy floating lookback calls: a finite price becomes unavailable](reports/financepy-float-lookback-intermediate-overflow.md) | [Page](https://www.gero.uz/research/articles/financepy-float-lookback-intermediate-overflow.html) | Pending | [DOI](https://zenodo.org/records/22858372) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/financepy-float-lookback-intermediate-overflow) |
+| 117 | [FinancePy floating lookback calls: a finite price becomes unavailable](reports/financepy-float-lookback-intermediate-overflow.md) | [Page](https://www.gero.uz/research/articles/financepy-float-lookback-intermediate-overflow.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-float-lookback-intermediate-overflow.md) | [DOI](https://zenodo.org/records/22858372) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/financepy-float-lookback-intermediate-overflow) |
