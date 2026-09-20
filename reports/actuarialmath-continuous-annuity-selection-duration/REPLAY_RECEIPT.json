@@ -1,0 +1,19 @@
+{
+  "status": "portable_packet_native_replay_verified",
+  "verified_at": "2026-09-20T16:35:42.398470+00:00",
+  "cases_per_variant": 2160,
+  "failures_current_release_candidate_restored": [
+    648,
+    648,
+    0,
+    648
+  ],
+  "four_numerical_grids_match_expected": true,
+  "four_Uniform_controls_match_expected": true,
+  "four_written_memos_and_readback_decisions_match_expected": true,
+  "candidate_applied_and_reversed": true,
+  "wheel_22_modules_verified": true,
+  "audio_playback": false,
+  "gpu": false,
+  "configured_threads": 1
+}

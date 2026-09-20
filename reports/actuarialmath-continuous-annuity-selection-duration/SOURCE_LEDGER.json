@@ -1,0 +1,32 @@
+{
+  "case_id": "actuarialmath-continuous-annuity-selection-duration",
+  "source_pin": "7d18f11ad304898f177b7922b3c53f70e4c2b4f4",
+  "source_url": "https://github.com/terence-lim/actuarialmath/tree/7d18f11ad304898f177b7922b3c53f70e4c2b4f4",
+  "public_api": "Annuity.a_x(discrete=False)",
+  "released_version": "1.1.0",
+  "release_url": "https://pypi.org/project/actuarialmath/1.1.0/",
+  "wheel_sha256": "b19990e4378aaa19fe6bc1182b4269faec6617cb62b0677fea1e624fbbb3ff6f",
+  "runtime": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "pandas": "3.0.6",
+    "matplotlib": "3.10.8",
+    "ipython": "9.17.1"
+  },
+  "independent_reference": "80-digit Decimal antiderivative/discounted sum;59cases at120digits;zero-force rational polynomial",
+  "proof_files": [
+    "SOURCE_MANIFEST.json",
+    "expected/evidence/grid-current-final.json",
+    "expected/evidence/grid-release-final.json",
+    "expected/evidence/grid-candidate-final.json",
+    "expected/evidence/grid-restored-final.json",
+    "expected/DOWNSTREAM_RECEIPT.json",
+    "prior-art/",
+    "prepublication/"
+  ],
+  "upstream_source_license": "MIT",
+  "report_license": "CC-BY-4.0",
+  "script_license": "MIT",
+  "vendor_issue": "https://github.com/terence-lim/actuarialmath/issues/7",
+  "scope": "Four source variants of a 22-module package; not a full repository or full upstream test-suite replay."
+}

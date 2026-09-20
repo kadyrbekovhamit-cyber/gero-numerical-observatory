@@ -1,0 +1,13 @@
+{
+  "case_id": "actuarialmath-continuous-annuity-selection-duration",
+  "title": "actuarialmath continuous annuity: dropping elapsed years changes a value and a decision",
+  "publication_date": "2026-09-20",
+  "source_pin": "7d18f11ad304898f177b7922b3c53f70e4c2b4f4",
+  "summary": "Dropping elapsed years changes a continuous annuity factor from the correct 8.75 to 9.166666666666666. A local candidate removes 648 failures across 2,160 cases; a synthetic written value changes from 9,166.67 to 8,750.00 and flips a ceiling decision.",
+  "limits": "Uniform lifetime model and finite specified inputs; no full suite or general annuity repair. Memo and ceiling are GERO adapters; no real insurer, policyholder loss or reserve requirement.",
+  "measured_chain": "Elapsed-years argument replaced by zero -> incorrect library EPV -> synthetic JSON memo 9166.67 instead of 8750.00 -> read-back 9000 ceiling changes OVER_LIMIT to WITHIN_LIMIT.",
+  "independent_defects": 1,
+  "maintainer_issue": "https://github.com/terence-lim/actuarialmath/issues/7",
+  "license": "cc-by-4.0",
+  "code_license": "MIT"
+}

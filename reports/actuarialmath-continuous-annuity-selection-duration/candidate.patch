@@ -1,0 +1,11 @@
+--- a/src/actuarialmath/annuity.py
++++ b/src/actuarialmath/annuity.py
+@@ -33,7 +33,7 @@
+                          * self.p_x(x, s=s, t=k) for k in range(int(u), int(t+u))])
+             else:   # use continuous first principles
+                 Y = lambda t: (benefit(x+s, t+u) * self.interest.v_t(t+u) 
+-                               * self.S(x, 0, t=t+u))
++                               * self.S(x, s, t=t+u))
+                 a = self.integral(Y, 0, t)
+         except:
+             raise Exception("Failed to numerically integrate EPV of annuity")

@@ -1,0 +1,1 @@
+Original GERO report text is licensed CC BY4.0: https://creativecommons.org/licenses/by/4.0/ . GERO-authored scripts use MIT (LICENSE-GERO.txt). Upstream code and copied candidate portions retain the original Terence Lim MIT notice under source/*/LICENSE. Dependency artifacts retain their own licenses. No endorsement by the upstream author is implied.

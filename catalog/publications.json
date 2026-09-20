@@ -2281,5 +2281,34 @@
     "limits": "Synthetic CPU scalar calls; no real trade, bank integration or customer loss; no full-suite or complete-stability claim. GERO quote adapter, not an upstream order subsystem.",
     "measured_chain": "Intermediate power overflow -> actual public pricing exception/NaN -> synthetic GERO quote document UNAVAILABLE instead of READY.",
     "zenodo_doi": "10.5281/zenodo.22858372"
+  },
+  {
+    "id": "actuarialmath-continuous-annuity-selection-duration",
+    "title": "actuarialmath continuous annuity: dropping elapsed years changes a value and a decision",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-20",
+    "kind": "published_report",
+    "gero": null,
+    "huggingface": null,
+    "zenodo": null,
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/actuarialmath-continuous-annuity-selection-duration",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-continuous-annuity-selection-duration.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-continuous-annuity-selection-duration.md",
+    "source_text_sha256": "66904fd1cb718b4ea0efa05c2de1f095bab74b463d20f1594601c92f48127286",
+    "mirror_sha256": "66904fd1cb718b4ea0efa05c2de1f095bab74b463d20f1594601c92f48127286",
+    "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/actuarialmath-continuous-annuity-selection-duration/gero-actuarialmath-annuity-selection-evidence-2026-09-20.zip",
+    "evidence_archive_sha256": "8784b39fc462e56b810752f7117da5ce8a385c4e37edebe106b7bae753073de9",
+    "linkedin": null,
+    "youtube": null,
+    "maintainer_issue": "https://github.com/terence-lim/actuarialmath/issues/7",
+    "upstream_report_sent": true,
+    "upstream_acceptance_claimed": false,
+    "implementation_defects_in_this_report": 1,
+    "publication_status": "partial_distribution_in_progress",
+    "source_pin": "7d18f11ad304898f177b7922b3c53f70e4c2b4f4",
+    "limits": "Uniform lifetime model and finite specified inputs; no full suite or general annuity repair. Memo and ceiling are GERO adapters; no real insurer, policyholder loss or reserve requirement.",
+    "measured_chain": "Elapsed-years argument replaced by zero -> incorrect library EPV -> synthetic JSON memo 9166.67 instead of 8750.00 -> read-back 9000 ceiling changes OVER_LIMIT to WITHIN_LIMIT."
   }
 ]
