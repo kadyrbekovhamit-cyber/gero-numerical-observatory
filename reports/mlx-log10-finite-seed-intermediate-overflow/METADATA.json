@@ -1,0 +1,48 @@
+{
+  "case_id": "mlx-log10-finite-seed-intermediate-overflow",
+  "title": "MLX log10: finite gradients, nonfinite updates under extreme loss scaling",
+  "creators": [
+    {
+      "name": "Kadirbekov, Xamit",
+      "affiliation": "GERO independent research"
+    }
+  ],
+  "publication_date": "2026-09-21",
+  "resource_type": "publication-technicalnote",
+  "version": "1.0.0",
+  "language": "eng",
+  "keywords": [
+    "MLX",
+    "log10",
+    "automatic differentiation",
+    "numerical stability",
+    "loss scaling",
+    "reproducibility"
+  ],
+  "source_pin": "59d600b5e64c238427d0f8d897ab7c682ef4d3d2",
+  "description": "Actual MLX C++ CPU experiment: finite-seed log10 JVP/VJP intermediate overflow. Of 294 distinct inputs, 66 return nonfinite derivatives although the correctly rounded result is finite. An experimental candidate removes those 66 failures but introduces four other boundary mismatches. Three independent one-step interventions from a trained 65-parameter digit 3/8 classifier make every parameter and all 108 held-out outputs nonfinite under a deliberately extreme finite loss scale of 3.2e38. Candidate weights and predictions exactly match ordinary controls; a GERO finite-gradient guard skips the step. The archive retains native code, sources, split data, independent references, raw outputs, restoration and hashes. This is a CPU stress case; no deployment, customer loss or complete fix is claimed.",
+  "implementation_defects_in_this_report": 1,
+  "measured_chain": "Actual log10 derivative overflow → a GERO-authored SGD update makes all 65 parameters nonfinite → all 108 held-out logits and probabilities become nonfinite. A finite-gradient guard skips the step. An incomplete experimental candidate matches ordinary controls, and restoring the original code restores the failure.",
+  "limits": [
+    "Deliberately extreme finite loss scale of 3.2e38.",
+    "One small CPU classifier; three independent steps reuse the same 108 held-out images.",
+    "All three selected update points have label 8; both gradient signs are tested only in the primitive grid.",
+    "The candidate introduces four other boundary mismatches; no complete fix or full upstream test-suite claim.",
+    "Release 0.32.2 was compared by source only; importing the installed binary failed before evaluation.",
+    "No production harm, model/device prevalence or performance claim."
+  ],
+  "archive": {
+    "filename": "gero-mlx-log10-impact-evidence-2026-09-21.zip",
+    "sha256": "991a532b44d8806f237691089738daca1b51f52cc9257bc3a384cb90df38ae01",
+    "bytes": 5370562,
+    "files": 477,
+    "status": "frozen_prepublication_evidence",
+    "published": false,
+    "replay_status": "portable_packet_native_replay_verified",
+    "replay_receipt": "REPLAY_RECEIPT.json"
+  },
+  "release_status": "independent_publication_authorized_in_progress",
+  "vendor_sent": false,
+  "ai_assisted": true,
+  "summary": "In a deliberately extreme CPU loss-scaling experiment, an MLX log10 derivative overflow makes all 65 classifier parameters and 108 held-out predictions nonfinite. A guard skips the step; an incomplete experimental candidate matches ordinary updates."
+}

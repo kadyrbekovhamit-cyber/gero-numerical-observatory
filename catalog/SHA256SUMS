@@ -103,6 +103,17 @@ deeeda05339eb97c320122282f65ea894d4fa02d250437f03f29968d426a9484  ../reports/mlx
 583303a8d83119bcd4b0bb944b32dc805c2b878e4a01777242b433a67d66a07e  ../reports/mlx-erf-finite-seed-intermediate-overflow/erf_probe.cpp
 9b75d95fd7b45217d54977d46e06e43db4f482b834f05dbc6fcfe746241dfbb6  ../reports/mlx-erf-finite-seed-intermediate-overflow/gero-mlx-erf-finite-seed-publication-2026-09-19.zip
 69f3f6e9dc0ceeb75a0dfef6bffd61d70a8d35556b0c5ebff52dcc63c333e513  ../reports/mlx-erf-finite-seed-intermediate-overflow/reproduce.py
+153754d4b86ac6e14ae82c10abfbb8b79f36f946f2abb55e17f698ba4dc66999  ../reports/mlx-log10-finite-seed-intermediate-overflow/ARCHIVE_RECEIPT.json
+ee1e227012b2855ac416fbfd23447148137c2bc69fb31359acd546cae7b1f1cc  ../reports/mlx-log10-finite-seed-intermediate-overflow/CONTROL_BYTE_VERIFICATION.json
+ef86d8e22fc8257195a26f9f515bc08c8868e830c95d7b5d9c8ed581e20ae7d4  ../reports/mlx-log10-finite-seed-intermediate-overflow/LICENSE-GERO.txt
+948a0a4edca4f7d98bdfbf2c52f8a223791bdcd9b91b7a7020d3056a04b0bbc8  ../reports/mlx-log10-finite-seed-intermediate-overflow/LICENSE-NOTES.md
+940507c66a822cb9ea3aab9a422d5b48f05d168558438e496461a57862df6beb  ../reports/mlx-log10-finite-seed-intermediate-overflow/METADATA.json
+24a3e36b8067a115c3379b4c9694cd0185954c63047d77aaed91e3258ce544d2  ../reports/mlx-log10-finite-seed-intermediate-overflow/README.md
+eec556c4032670f65dfb6dffe98d5a2bac49088f7e1aee65d4e872ac8d05cc83  ../reports/mlx-log10-finite-seed-intermediate-overflow/README_PACKET.md
+3e74127b7d322c3fbbd47a702a1f4e9f5cc6a352d94b7152f6b730a3d526038f  ../reports/mlx-log10-finite-seed-intermediate-overflow/REPLAY_RECEIPT.json
+4afe3917143c14858ffc17b37f124c46be4dd490c2a30679263a64074a4e1cfd  ../reports/mlx-log10-finite-seed-intermediate-overflow/REPORT_EN.md
+ab154269bd9151d0e2ced9603190b18f67f960a72b225c81bb08a9a666606a6f  ../reports/mlx-log10-finite-seed-intermediate-overflow/SOURCE_LEDGER.md
+991a532b44d8806f237691089738daca1b51f52cc9257bc3a384cb90df38ae01  ../reports/mlx-log10-finite-seed-intermediate-overflow/gero-mlx-log10-impact-evidence-2026-09-21.zip
 a93f06080397372ad8531a19a1fc15964f4fa48164e683748c639d5f176dbf00  ../reports/mlx-rsqrt-directional-derivative-scale/ARCHIVE_RECEIPT.json
 3efcc360579e804c92e51c4b76c9c692b4c8934027922550518cb1dda5a12eee  ../reports/mlx-rsqrt-directional-derivative-scale/LICENSES.md
 2d1ab621e6a19f274836930f48b6938d605bc38d2cd772ae6980b370896334f7  ../reports/mlx-rsqrt-directional-derivative-scale/LICENSE_CODE.txt
@@ -301,7 +312,7 @@ cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30  ../reports/str
 a81577e70386f538ae7f1884c928ea7c43c4c765be829eef8e7ce7bd2825fba1  ../reports/strata-normal-implied-volatility-initial-guess/source/NormalFormulaRepository.java
 cc1d41c1370c8fab203c9c8092af772259470e6f74e85c4d8ae0d63b86b3a3b3  ../reports/strata-normal-implied-volatility-initial-guess/source/NormalFormulaRepositoryImpliedVolatilityTest.java
 385cf16695f738085055d4df9953b944dce28a38af04f30b0079c1ece5ebe442  ../reports/strata-normal-implied-volatility-initial-guess/strata-initial-guess.patch
-8f82b1479cb6c6ec466e1727529db16183a37391851b0342a9c28066ebcd1406  README.md
+21b1d4ad63d7f338e9ed12e5cee1a1cd3238c09e778c606cc7aa2df8f104ad69  README.md
 0c1c962a48fa367ebdfb48f47b6af56b612339d12db1d765f9e2b726d13343d1  SOURCE_NOTICES.md
 55487fd0a4770daa87c7f1d9288d4aa499d1e698e50978b3a07f2a9aa3b41369  artifacts/collatz-source-LICENSE.txt
 ae2310410d17d7a25932ea0852a1a34e358002959cb212ef56c3281b3baf1bc7  artifacts/financepy-vasicek-small-mean-reversion-LICENSES.md
@@ -321,8 +332,8 @@ c86c2dab07b680694776134676aaeff88093e1d7caa966b4e528999e4f2f51f4  evidence/nntra
 20cac1f6cd80b5308092ed80f70672d37621a819ce3c062596d259ad137b1207  evidence/nntrainer-split-incremental-channels/SOURCE_LEDGER.md
 6215fe381282fa4d95074ce4dffd4bbf1dc56ba43ade2894578ffe18a24b805d  evidence/nntrainer-split-incremental-channels/candidate.patch
 072dbfd6967d765fc7091a30ab1de80c9d9bb9609e155cdbf4750e71557685be  evidence/nntrainer-split-incremental-channels/gero-nntrainer-split-incremental-channels-research-2026-09-17.zip
-1a259097cdf9c2b20f838740b9c7942168f6099a1afad4ceece8dd954312cb8d  platform-status.json
-9c1104ec66f7c5f78a4b866fa9c9246d0296010a8b279abaf68ac7a0e9d98564  publications.json
+1c9807aa1845bde603ac300d6179e180576ca9a750fed791d565d511eb0164c3  platform-status.json
+8ea68fbdaea8cc19b3f76f4c5ec8678f745a8b8688ecfd43a97273ce2ba46550  publications.json
 2d6ab31d36d9f9e6329bf0f82783096f6dc19ab3c0500181548c5923852f6251  reports/actuarialmath-beta-density.md
 daa97d98c82172ed092f2bf09bfa3fc81f51c298f631a5bbbf23ad5fe416584d  reports/actuarialmath-constantforce-benefit-scaling.md
 c61621071767e2a82badbd6bd05be1583c5394fcb86a1bb62e6190933af81eb2  reports/actuarialmath-continuous-annuity-selection-duration.md
@@ -385,6 +396,7 @@ f95c34f91a989d062e2f60b1be505cf1c0af1e009e2be03d28c1d83afa80eb02  reports/mlx-gr
 257620172bdaea31b4a83ab5992f1359975219e1139c53f68a67a77f7cbdb70d  reports/mlx-inverse-hyperbolic-overflow.md
 67cd4364d73f8cb58b9e9b2a517354858917ae0fb0a421a86f3474bb09afca14  reports/mlx-isclose-integer-overflow.md
 656263bb961151bc11b9017ebad016c5d7d63b4f51432b324f0d4c672e1f241e  reports/mlx-layernorm-bias-dtype.md
+4afe3917143c14858ffc17b37f124c46be4dd490c2a30679263a64074a4e1cfd  reports/mlx-log10-finite-seed-intermediate-overflow.md
 c3b24546e5d2a10c06a02037262c7f6adafcbd85e0884f24828a2c9af722ef64  reports/mlx-logcumsumexp-hessian-at-zero.md
 23dc30a8ed81fc9f4f3402e599321dc7865ccc4d19d493a7ba02f83287409165  reports/mlx-logcumsumexp-shift-gradient.md
 bd732704e414248380c00f763a3798220fdaae35732fe53fcca29a90ffeb8950  reports/mlx-masked-assignment-batch-gradients.md

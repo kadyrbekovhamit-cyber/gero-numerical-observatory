@@ -2310,5 +2310,41 @@
     "source_pin": "7d18f11ad304898f177b7922b3c53f70e4c2b4f4",
     "limits": "Uniform lifetime model and finite specified inputs; no full suite or general annuity repair. Memo and ceiling are GERO adapters; no real insurer, policyholder loss or reserve requirement.",
     "measured_chain": "Elapsed-years argument replaced by zero -> incorrect library EPV -> synthetic JSON memo 9166.67 instead of 8750.00 -> read-back 9000 ceiling changes OVER_LIMIT to WITHIN_LIMIT."
+  },
+  {
+    "id": "mlx-log10-finite-seed-intermediate-overflow",
+    "title": "MLX log10: finite gradients, nonfinite updates under extreme loss scaling",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-21",
+    "kind": "published_report",
+    "gero": null,
+    "huggingface": null,
+    "zenodo": null,
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-log10-finite-seed-intermediate-overflow",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-log10-finite-seed-intermediate-overflow.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-log10-finite-seed-intermediate-overflow.md",
+    "source_text_sha256": "4afe3917143c14858ffc17b37f124c46be4dd490c2a30679263a64074a4e1cfd",
+    "mirror_sha256": "4afe3917143c14858ffc17b37f124c46be4dd490c2a30679263a64074a4e1cfd",
+    "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/mlx-log10-finite-seed-intermediate-overflow/gero-mlx-log10-impact-evidence-2026-09-21.zip",
+    "evidence_archive_sha256": "991a532b44d8806f237691089738daca1b51f52cc9257bc3a384cb90df38ae01",
+    "linkedin": null,
+    "youtube": null,
+    "maintainer_issue": null,
+    "upstream_report_sent": false,
+    "upstream_acceptance_claimed": false,
+    "implementation_defects_in_this_report": 1,
+    "publication_status": "partial_distribution_in_progress",
+    "source_pin": "59d600b5e64c238427d0f8d897ab7c682ef4d3d2",
+    "limits": [
+      "Deliberately extreme finite loss scale of 3.2e38.",
+      "One small CPU classifier; three independent steps reuse the same 108 held-out images.",
+      "All three selected update points have label 8; both gradient signs are tested only in the primitive grid.",
+      "The candidate introduces four other boundary mismatches; no complete fix or full upstream test-suite claim.",
+      "Release 0.32.2 was compared by source only; importing the installed binary failed before evaluation.",
+      "No production harm, model/device prevalence or performance claim."
+    ],
+    "measured_chain": "Actual log10 derivative overflow → a GERO-authored SGD update makes all 65 parameters nonfinite → all 108 held-out logits and probabilities become nonfinite. A finite-gradient guard skips the step. An incomplete experimental candidate matches ordinary controls, and restoring the original code restores the failure."
   }
 ]

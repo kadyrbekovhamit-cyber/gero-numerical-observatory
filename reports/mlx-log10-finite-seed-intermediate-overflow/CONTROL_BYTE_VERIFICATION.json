@@ -1,0 +1,352 @@
+{
+  "at": "2026-09-21T16:43:27.740887+00:00",
+  "method": "Direct read_bytes comparisons on raw archived native CSVs; includes signed zeros/NaN payloads, no numerical tolerance or class-only equality",
+  "comparisons": [
+    {
+      "left": "example0-original-scale0-step-weights.csv",
+      "right": "example0-candidate-scale0-step-weights.csv",
+      "bytes_identical": true,
+      "common_sha256": "b9395ca4fe61d1b319ad4d31e8b17b2a5c65051d9f54e60da9f1b27f2385221f"
+    },
+    {
+      "left": "example0-original-scale0-step-test-predictions.csv",
+      "right": "example0-candidate-scale0-step-test-predictions.csv",
+      "bytes_identical": true,
+      "common_sha256": "44439cbcf6927ac1eedef65bd1ca38e437e690341a41d308b163e008b829168d"
+    },
+    {
+      "left": "example0-original-scale0-step-raw-gradient.csv",
+      "right": "example0-candidate-scale0-step-raw-gradient.csv",
+      "bytes_identical": true,
+      "common_sha256": "496ba09235a984357700da58c77c5d7cfb1098e90b1df1c0eb23677abb012792"
+    },
+    {
+      "left": "example0-original-scale0-step-unscaled-gradient.csv",
+      "right": "example0-candidate-scale0-step-unscaled-gradient.csv",
+      "bytes_identical": true,
+      "common_sha256": "496ba09235a984357700da58c77c5d7cfb1098e90b1df1c0eb23677abb012792"
+    },
+    {
+      "left": "example0-original-scale0-guarded-weights.csv",
+      "right": "example0-candidate-scale0-guarded-weights.csv",
+      "bytes_identical": true,
+      "common_sha256": "b9395ca4fe61d1b319ad4d31e8b17b2a5c65051d9f54e60da9f1b27f2385221f"
+    },
+    {
+      "left": "example0-original-scale0-guarded-test-predictions.csv",
+      "right": "example0-candidate-scale0-guarded-test-predictions.csv",
+      "bytes_identical": true,
+      "common_sha256": "44439cbcf6927ac1eedef65bd1ca38e437e690341a41d308b163e008b829168d"
+    },
+    {
+      "left": "example0-original-scale0-guarded-raw-gradient.csv",
+      "right": "example0-candidate-scale0-guarded-raw-gradient.csv",
+      "bytes_identical": true,
+      "common_sha256": "496ba09235a984357700da58c77c5d7cfb1098e90b1df1c0eb23677abb012792"
+    },
+    {
+      "left": "example0-original-scale0-guarded-unscaled-gradient.csv",
+      "right": "example0-candidate-scale0-guarded-unscaled-gradient.csv",
+      "bytes_identical": true,
+      "common_sha256": "496ba09235a984357700da58c77c5d7cfb1098e90b1df1c0eb23677abb012792"
+    },
+    {
+      "left": "example0-original-scale1-step-weights.csv",
+      "right": "example0-candidate-scale1-step-weights.csv",
+      "bytes_identical": true,
+      "common_sha256": "b9395ca4fe61d1b319ad4d31e8b17b2a5c65051d9f54e60da9f1b27f2385221f"
+    },
+    {
+      "left": "example0-original-scale1-step-test-predictions.csv",
+      "right": "example0-candidate-scale1-step-test-predictions.csv",
+      "bytes_identical": true,
+      "common_sha256": "44439cbcf6927ac1eedef65bd1ca38e437e690341a41d308b163e008b829168d"
+    },
+    {
+      "left": "example0-original-scale1-step-raw-gradient.csv",
+      "right": "example0-candidate-scale1-step-raw-gradient.csv",
+      "bytes_identical": true,
+      "common_sha256": "acd8b504a4c1a781de34d6e155059e91389028a1beba1926979bcced7039817f"
+    },
+    {
+      "left": "example0-original-scale1-step-unscaled-gradient.csv",
+      "right": "example0-candidate-scale1-step-unscaled-gradient.csv",
+      "bytes_identical": true,
+      "common_sha256": "9c6731f19b168812504892a78d97148f5596674fd3f5cbc9c8921c9c53e2a562"
+    },
+    {
+      "left": "example0-original-scale1-guarded-weights.csv",
+      "right": "example0-candidate-scale1-guarded-weights.csv",
+      "bytes_identical": true,
+      "common_sha256": "b9395ca4fe61d1b319ad4d31e8b17b2a5c65051d9f54e60da9f1b27f2385221f"
+    },
+    {
+      "left": "example0-original-scale1-guarded-test-predictions.csv",
+      "right": "example0-candidate-scale1-guarded-test-predictions.csv",
+      "bytes_identical": true,
+      "common_sha256": "44439cbcf6927ac1eedef65bd1ca38e437e690341a41d308b163e008b829168d"
+    },
+    {
+      "left": "example0-original-scale1-guarded-raw-gradient.csv",
+      "right": "example0-candidate-scale1-guarded-raw-gradient.csv",
+      "bytes_identical": true,
+      "common_sha256": "acd8b504a4c1a781de34d6e155059e91389028a1beba1926979bcced7039817f"
+    },
+    {
+      "left": "example0-original-scale1-guarded-unscaled-gradient.csv",
+      "right": "example0-candidate-scale1-guarded-unscaled-gradient.csv",
+      "bytes_identical": true,
+      "common_sha256": "9c6731f19b168812504892a78d97148f5596674fd3f5cbc9c8921c9c53e2a562"
+    },
+    {
+      "left": "example0-original-scale0-step-weights.csv",
+      "right": "example0-candidate-scale2-step-weights.csv",
+      "bytes_identical": true,
+      "common_sha256": "b9395ca4fe61d1b319ad4d31e8b17b2a5c65051d9f54e60da9f1b27f2385221f"
+    },
+    {
+      "left": "example0-original-scale0-step-test-predictions.csv",
+      "right": "example0-candidate-scale2-step-test-predictions.csv",
+      "bytes_identical": true,
+      "common_sha256": "44439cbcf6927ac1eedef65bd1ca38e437e690341a41d308b163e008b829168d"
+    },
+    {
+      "left": "example1-original-scale0-step-weights.csv",
+      "right": "example1-candidate-scale0-step-weights.csv",
+      "bytes_identical": true,
+      "common_sha256": "75ce412656a4b20de84779a0e4e83226e48afa373f572bd6612a73cbe2203614"
+    },
+    {
+      "left": "example1-original-scale0-step-test-predictions.csv",
+      "right": "example1-candidate-scale0-step-test-predictions.csv",
+      "bytes_identical": true,
+      "common_sha256": "65c8776b94517e70a01b4758407f6619ef84a2427f1373d2d6a01db6800acb50"
+    },
+    {
+      "left": "example1-original-scale0-step-raw-gradient.csv",
+      "right": "example1-candidate-scale0-step-raw-gradient.csv",
+      "bytes_identical": true,
+      "common_sha256": "216ff9784cf0cdfd5a6580647c009d51c487ea4b457544ec5d197dcc8b5ed0c1"
+    },
+    {
+      "left": "example1-original-scale0-step-unscaled-gradient.csv",
+      "right": "example1-candidate-scale0-step-unscaled-gradient.csv",
+      "bytes_identical": true,
+      "common_sha256": "216ff9784cf0cdfd5a6580647c009d51c487ea4b457544ec5d197dcc8b5ed0c1"
+    },
+    {
+      "left": "example1-original-scale0-guarded-weights.csv",
+      "right": "example1-candidate-scale0-guarded-weights.csv",
+      "bytes_identical": true,
+      "common_sha256": "75ce412656a4b20de84779a0e4e83226e48afa373f572bd6612a73cbe2203614"
+    },
+    {
+      "left": "example1-original-scale0-guarded-test-predictions.csv",
+      "right": "example1-candidate-scale0-guarded-test-predictions.csv",
+      "bytes_identical": true,
+      "common_sha256": "65c8776b94517e70a01b4758407f6619ef84a2427f1373d2d6a01db6800acb50"
+    },
+    {
+      "left": "example1-original-scale0-guarded-raw-gradient.csv",
+      "right": "example1-candidate-scale0-guarded-raw-gradient.csv",
+      "bytes_identical": true,
+      "common_sha256": "216ff9784cf0cdfd5a6580647c009d51c487ea4b457544ec5d197dcc8b5ed0c1"
+    },
+    {
+      "left": "example1-original-scale0-guarded-unscaled-gradient.csv",
+      "right": "example1-candidate-scale0-guarded-unscaled-gradient.csv",
+      "bytes_identical": true,
+      "common_sha256": "216ff9784cf0cdfd5a6580647c009d51c487ea4b457544ec5d197dcc8b5ed0c1"
+    },
+    {
+      "left": "example1-original-scale1-step-weights.csv",
+      "right": "example1-candidate-scale1-step-weights.csv",
+      "bytes_identical": true,
+      "common_sha256": "75ce412656a4b20de84779a0e4e83226e48afa373f572bd6612a73cbe2203614"
+    },
+    {
+      "left": "example1-original-scale1-step-test-predictions.csv",
+      "right": "example1-candidate-scale1-step-test-predictions.csv",
+      "bytes_identical": true,
+      "common_sha256": "65c8776b94517e70a01b4758407f6619ef84a2427f1373d2d6a01db6800acb50"
+    },
+    {
+      "left": "example1-original-scale1-step-raw-gradient.csv",
+      "right": "example1-candidate-scale1-step-raw-gradient.csv",
+      "bytes_identical": true,
+      "common_sha256": "2ffd9c0fb146332c230b1119584ed4d939032a2c2604387f38f588e98069a213"
+    },
+    {
+      "left": "example1-original-scale1-step-unscaled-gradient.csv",
+      "right": "example1-candidate-scale1-step-unscaled-gradient.csv",
+      "bytes_identical": true,
+      "common_sha256": "80f15789b7cf3847927071c469e1029805cbf073aa94f87c8ffba96c5a05e247"
+    },
+    {
+      "left": "example1-original-scale1-guarded-weights.csv",
+      "right": "example1-candidate-scale1-guarded-weights.csv",
+      "bytes_identical": true,
+      "common_sha256": "75ce412656a4b20de84779a0e4e83226e48afa373f572bd6612a73cbe2203614"
+    },
+    {
+      "left": "example1-original-scale1-guarded-test-predictions.csv",
+      "right": "example1-candidate-scale1-guarded-test-predictions.csv",
+      "bytes_identical": true,
+      "common_sha256": "65c8776b94517e70a01b4758407f6619ef84a2427f1373d2d6a01db6800acb50"
+    },
+    {
+      "left": "example1-original-scale1-guarded-raw-gradient.csv",
+      "right": "example1-candidate-scale1-guarded-raw-gradient.csv",
+      "bytes_identical": true,
+      "common_sha256": "2ffd9c0fb146332c230b1119584ed4d939032a2c2604387f38f588e98069a213"
+    },
+    {
+      "left": "example1-original-scale1-guarded-unscaled-gradient.csv",
+      "right": "example1-candidate-scale1-guarded-unscaled-gradient.csv",
+      "bytes_identical": true,
+      "common_sha256": "80f15789b7cf3847927071c469e1029805cbf073aa94f87c8ffba96c5a05e247"
+    },
+    {
+      "left": "example1-original-scale0-step-weights.csv",
+      "right": "example1-candidate-scale2-step-weights.csv",
+      "bytes_identical": true,
+      "common_sha256": "75ce412656a4b20de84779a0e4e83226e48afa373f572bd6612a73cbe2203614"
+    },
+    {
+      "left": "example1-original-scale0-step-test-predictions.csv",
+      "right": "example1-candidate-scale2-step-test-predictions.csv",
+      "bytes_identical": true,
+      "common_sha256": "65c8776b94517e70a01b4758407f6619ef84a2427f1373d2d6a01db6800acb50"
+    },
+    {
+      "left": "example2-original-scale0-step-weights.csv",
+      "right": "example2-candidate-scale0-step-weights.csv",
+      "bytes_identical": true,
+      "common_sha256": "5a5c944756b2ba37c719616732ec37a98940bc4083edec09ab1cd98eaa861813"
+    },
+    {
+      "left": "example2-original-scale0-step-test-predictions.csv",
+      "right": "example2-candidate-scale0-step-test-predictions.csv",
+      "bytes_identical": true,
+      "common_sha256": "013c0afd6c34a46fd27a8aafd8c58a21445ab14611409d007e9209bcd0e489af"
+    },
+    {
+      "left": "example2-original-scale0-step-raw-gradient.csv",
+      "right": "example2-candidate-scale0-step-raw-gradient.csv",
+      "bytes_identical": true,
+      "common_sha256": "357b6ef6076be9336e09a1cf9ce06a6f6a164527cea818116451b773fe510fed"
+    },
+    {
+      "left": "example2-original-scale0-step-unscaled-gradient.csv",
+      "right": "example2-candidate-scale0-step-unscaled-gradient.csv",
+      "bytes_identical": true,
+      "common_sha256": "357b6ef6076be9336e09a1cf9ce06a6f6a164527cea818116451b773fe510fed"
+    },
+    {
+      "left": "example2-original-scale0-guarded-weights.csv",
+      "right": "example2-candidate-scale0-guarded-weights.csv",
+      "bytes_identical": true,
+      "common_sha256": "5a5c944756b2ba37c719616732ec37a98940bc4083edec09ab1cd98eaa861813"
+    },
+    {
+      "left": "example2-original-scale0-guarded-test-predictions.csv",
+      "right": "example2-candidate-scale0-guarded-test-predictions.csv",
+      "bytes_identical": true,
+      "common_sha256": "013c0afd6c34a46fd27a8aafd8c58a21445ab14611409d007e9209bcd0e489af"
+    },
+    {
+      "left": "example2-original-scale0-guarded-raw-gradient.csv",
+      "right": "example2-candidate-scale0-guarded-raw-gradient.csv",
+      "bytes_identical": true,
+      "common_sha256": "357b6ef6076be9336e09a1cf9ce06a6f6a164527cea818116451b773fe510fed"
+    },
+    {
+      "left": "example2-original-scale0-guarded-unscaled-gradient.csv",
+      "right": "example2-candidate-scale0-guarded-unscaled-gradient.csv",
+      "bytes_identical": true,
+      "common_sha256": "357b6ef6076be9336e09a1cf9ce06a6f6a164527cea818116451b773fe510fed"
+    },
+    {
+      "left": "example2-original-scale1-step-weights.csv",
+      "right": "example2-candidate-scale1-step-weights.csv",
+      "bytes_identical": true,
+      "common_sha256": "5a5c944756b2ba37c719616732ec37a98940bc4083edec09ab1cd98eaa861813"
+    },
+    {
+      "left": "example2-original-scale1-step-test-predictions.csv",
+      "right": "example2-candidate-scale1-step-test-predictions.csv",
+      "bytes_identical": true,
+      "common_sha256": "013c0afd6c34a46fd27a8aafd8c58a21445ab14611409d007e9209bcd0e489af"
+    },
+    {
+      "left": "example2-original-scale1-step-raw-gradient.csv",
+      "right": "example2-candidate-scale1-step-raw-gradient.csv",
+      "bytes_identical": true,
+      "common_sha256": "5f4a5dff3d51a05b2684228ce98b72c875d2f84b27f86c9690196a2cb44f3d59"
+    },
+    {
+      "left": "example2-original-scale1-step-unscaled-gradient.csv",
+      "right": "example2-candidate-scale1-step-unscaled-gradient.csv",
+      "bytes_identical": true,
+      "common_sha256": "452f13514e168633a6f9efebbba700b40519fb30df64f30c541bf9de4809c597"
+    },
+    {
+      "left": "example2-original-scale1-guarded-weights.csv",
+      "right": "example2-candidate-scale1-guarded-weights.csv",
+      "bytes_identical": true,
+      "common_sha256": "5a5c944756b2ba37c719616732ec37a98940bc4083edec09ab1cd98eaa861813"
+    },
+    {
+      "left": "example2-original-scale1-guarded-test-predictions.csv",
+      "right": "example2-candidate-scale1-guarded-test-predictions.csv",
+      "bytes_identical": true,
+      "common_sha256": "013c0afd6c34a46fd27a8aafd8c58a21445ab14611409d007e9209bcd0e489af"
+    },
+    {
+      "left": "example2-original-scale1-guarded-raw-gradient.csv",
+      "right": "example2-candidate-scale1-guarded-raw-gradient.csv",
+      "bytes_identical": true,
+      "common_sha256": "5f4a5dff3d51a05b2684228ce98b72c875d2f84b27f86c9690196a2cb44f3d59"
+    },
+    {
+      "left": "example2-original-scale1-guarded-unscaled-gradient.csv",
+      "right": "example2-candidate-scale1-guarded-unscaled-gradient.csv",
+      "bytes_identical": true,
+      "common_sha256": "452f13514e168633a6f9efebbba700b40519fb30df64f30c541bf9de4809c597"
+    },
+    {
+      "left": "example2-original-scale0-step-weights.csv",
+      "right": "example2-candidate-scale2-step-weights.csv",
+      "bytes_identical": true,
+      "common_sha256": "5a5c944756b2ba37c719616732ec37a98940bc4083edec09ab1cd98eaa861813"
+    },
+    {
+      "left": "example2-original-scale0-step-test-predictions.csv",
+      "right": "example2-candidate-scale2-step-test-predictions.csv",
+      "bytes_identical": true,
+      "common_sha256": "013c0afd6c34a46fd27a8aafd8c58a21445ab14611409d007e9209bcd0e489af"
+    }
+  ],
+  "invalid_output_component_counts": [
+    {
+      "trial": 0,
+      "n": 108,
+      "finite_logits": 0,
+      "finite_probabilities": 0
+    },
+    {
+      "trial": 1,
+      "n": 108,
+      "finite_logits": 0,
+      "finite_probabilities": 0
+    },
+    {
+      "trial": 2,
+      "n": 108,
+      "finite_logits": 0,
+      "finite_probabilities": 0
+    }
+  ],
+  "new_numerical_execution": false,
+  "status": "all_assertions_passed"
+}

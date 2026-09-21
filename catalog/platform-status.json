@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-20T16:42:10.358070+00:00",
+  "checked_at": "2026-09-21T16:54:39.509062+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 118,
     "huggingface": 117,
     "zenodo": 117,
-    "github_catalog_report": 118,
+    "github_catalog_report": 119,
     "zenodo_records_including_collection": 117,
-    "unique_individual_publications": 118,
+    "unique_individual_publications": 119,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "118 canonical reports; actuarialmath annuity selection-duration report included. Counts track reports, not independent bugs.",
+  "github_status": "119 canonical reports; MLX log10 measured-impact report included. Counts track reports, not independent bugs.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -20,12 +20,16 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [],
+    "gero": [
+      "mlx-log10-finite-seed-intermediate-overflow"
+    ],
     "huggingface": [
-      "actuarialmath-continuous-annuity-selection-duration"
+      "actuarialmath-continuous-annuity-selection-duration",
+      "mlx-log10-finite-seed-intermediate-overflow"
     ],
     "zenodo": [
-      "actuarialmath-continuous-annuity-selection-duration"
+      "actuarialmath-continuous-annuity-selection-duration",
+      "mlx-log10-finite-seed-intermediate-overflow"
     ]
   },
   "deduplication_notes": [
@@ -50,7 +54,8 @@
     "19 September 2026: MLX erf adds one source-pinned report. 372 = 368 nonzero-x and 4 zero-boundary primary failures become 0 with the balanced local candidate; tail and second-derivative limits remain. All earlier canonical objects preserved. Upstream report not sent.",
     "20 September 2026: CentroidKNN zero-sample positive score; one source-pinned implementation report, 1548/0/1548 component mismatches and 2/0/2 public-model decision mismatches. Bounded prior-art review retains ambiguity of historical issue1521. Developer report4341 verified before distribution.",
     "20 September 2026: one FinancePy floating-lookback intermediate-overflow defect shared by equity/FX APIs. 52/0/52/52 failures per600-call grid,548 finite rows unchanged within each current/candidate environment. Supported NumPy/Numba runtimes and bounded prior-art review retained; vendor issue272 precedes publication.",
-    "20 September 2026: one actuarialmath continuous-annuity selection-duration defect.648/648/0/648failures across2160calls current/release/candidate/restored;1512passing controls unchanged. Independent Decimal reference and synthetic memo/read-back ceiling checks retained; vendorissue7precedes publication."
+    "20 September 2026: one actuarialmath continuous-annuity selection-duration defect.648/648/0/648failures across2160calls current/release/candidate/restored;1512passing controls unchanged. Independent Decimal reference and synthetic memo/read-back ceiling checks retained; vendorissue7precedes publication.",
+    "21 September 2026: one MLX log10 derivative intermediate-overflow report; 66 of 294 distinct primitive inputs fail in each layout/direction; candidate removes those 66 but introduces 4 other boundary errors. Three independent extreme-scale classifier steps make 65 parameters and 108 predictions nonfinite. No production-harm claim. Independent publication authorized before personally authored vendor notice."
   ],
   "parity_complete": false,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
@@ -215,6 +220,42 @@
       "source_pin": "7d18f11ad304898f177b7922b3c53f70e4c2b4f4",
       "limits": "Uniform lifetime model and finite specified inputs; no full suite or general annuity repair. Memo and ceiling are GERO adapters; no real insurer, policyholder loss or reserve requirement.",
       "measured_chain": "Elapsed-years argument replaced by zero -> incorrect library EPV -> synthetic JSON memo 9166.67 instead of 8750.00 -> read-back 9000 ceiling changes OVER_LIMIT to WITHIN_LIMIT."
+    },
+    {
+      "id": "mlx-log10-finite-seed-intermediate-overflow",
+      "title": "MLX log10: finite gradients, nonfinite updates under extreme loss scaling",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "publication_date": "2026-09-21",
+      "kind": "published_report",
+      "gero": null,
+      "huggingface": null,
+      "zenodo": null,
+      "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-log10-finite-seed-intermediate-overflow",
+      "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-log10-finite-seed-intermediate-overflow.md",
+      "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-log10-finite-seed-intermediate-overflow.md",
+      "source_text_sha256": "4afe3917143c14858ffc17b37f124c46be4dd490c2a30679263a64074a4e1cfd",
+      "mirror_sha256": "4afe3917143c14858ffc17b37f124c46be4dd490c2a30679263a64074a4e1cfd",
+      "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/mlx-log10-finite-seed-intermediate-overflow/gero-mlx-log10-impact-evidence-2026-09-21.zip",
+      "evidence_archive_sha256": "991a532b44d8806f237691089738daca1b51f52cc9257bc3a384cb90df38ae01",
+      "linkedin": null,
+      "youtube": null,
+      "maintainer_issue": null,
+      "upstream_report_sent": false,
+      "upstream_acceptance_claimed": false,
+      "implementation_defects_in_this_report": 1,
+      "publication_status": "partial_distribution_in_progress",
+      "source_pin": "59d600b5e64c238427d0f8d897ab7c682ef4d3d2",
+      "limits": [
+        "Deliberately extreme finite loss scale of 3.2e38.",
+        "One small CPU classifier; three independent steps reuse the same 108 held-out images.",
+        "All three selected update points have label 8; both gradient signs are tested only in the primitive grid.",
+        "The candidate introduces four other boundary mismatches; no complete fix or full upstream test-suite claim.",
+        "Release 0.32.2 was compared by source only; importing the installed binary failed before evaluation.",
+        "No production harm, model/device prevalence or performance claim."
+      ],
+      "measured_chain": "Actual log10 derivative overflow → a GERO-authored SGD update makes all 65 parameters nonfinite → all 108 held-out logits and probabilities become nonfinite. A finite-gradient guard skips the step. An incomplete experimental candidate matches ordinary controls, and restoring the original code restores the failure."
     }
   ],
   "coverage_scope": "Canonical report IDs; separate Collatz map outside this subset. Report counts are not independent bugs or raw Zenodo version-object counts.",
@@ -373,6 +414,30 @@
       "archive_sha256": "8784b39fc462e56b810752f7117da5ce8a385c4e37edebe106b7bae753073de9",
       "upstream_report_sent": true,
       "vendor_issue": "https://github.com/terence-lim/actuarialmath/issues/7"
+    },
+    "mlx-log10-finite-seed-intermediate-overflow": {
+      "case_id": "mlx-log10-finite-seed-intermediate-overflow",
+      "public": [
+        "github"
+      ],
+      "pending": [
+        "zenodo",
+        "gero",
+        "huggingface",
+        "linkedin",
+        "youtube"
+      ],
+      "links": {
+        "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-log10-finite-seed-intermediate-overflow.md",
+        "zenodo": null,
+        "huggingface": null,
+        "gero": null,
+        "linkedin": null,
+        "youtube": null
+      },
+      "archive_sha256": "991a532b44d8806f237691089738daca1b51f52cc9257bc3a384cb90df38ae01",
+      "upstream_report_sent": false,
+      "vendor_issue": null
     }
   }
 }

@@ -1,6 +1,6 @@
 # GERO — publication catalogue
 
-Updated 19 September 2026. **118 distinct catalogue publications.** Report counts are not independent-defect counts. All 117 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
+Updated 19 September 2026. **119 distinct catalogue publications.** Report counts are not independent-defect counts. All 118 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
 
 [Machine-readable catalogue](publications.json) · [Coverage](platform-status.json) · [Checksums](SHA256SUMS).
 
@@ -9,7 +9,7 @@ Updated 19 September 2026. **118 distinct catalogue publications.** Report count
 |gero|118|
 |huggingface|117|
 |zenodo|117|
-|github_catalog_report|118|
+|github_catalog_report|119|
 
 The FinancePy FXForward and MLX sigmoid reports each have GERO, GitHub, LinkedIn, Zenodo, Hugging Face and YouTube publications. Overall coverage is shown above; no equal count across all external account collections is claimed.
 
@@ -150,3 +150,4 @@ BondZero archives an already corrected upstream issue. [Source fix](https://gith
 | 116 | [nntrainer CentroidKNN chooses an unobserved class over an exact centroid match](reports/nntrainer-centroid-knn-unseen-class-score.md) | [Page](https://www.gero.uz/research/articles/nntrainer-centroid-knn-unseen-class-score.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/nntrainer-centroid-knn-unseen-class-score.md) | [DOI](https://zenodo.org/records/22852629) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/nntrainer-centroid-knn-unseen-class-score) |
 | 117 | [FinancePy floating lookback calls: a finite price becomes unavailable](reports/financepy-float-lookback-intermediate-overflow.md) | [Page](https://www.gero.uz/research/articles/financepy-float-lookback-intermediate-overflow.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-float-lookback-intermediate-overflow.md) | [DOI](https://zenodo.org/records/22858372) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/financepy-float-lookback-intermediate-overflow) |
 | 118 | [actuarialmath continuous annuity: dropping elapsed years changes a value and a decision](reports/actuarialmath-continuous-annuity-selection-duration.md) | [Page](https://www.gero.uz/research/articles/actuarialmath-continuous-annuity-selection-duration.html) | Pending | Pending | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/actuarialmath-continuous-annuity-selection-duration) |
+| 119 | [MLX log10: finite gradients, nonfinite updates under extreme loss scaling](reports/mlx-log10-finite-seed-intermediate-overflow.md) | Pending | Pending | Pending | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-log10-finite-seed-intermediate-overflow) |
