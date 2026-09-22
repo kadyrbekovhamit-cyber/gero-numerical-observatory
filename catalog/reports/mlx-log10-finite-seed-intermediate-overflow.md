@@ -72,7 +72,8 @@ Research and editorial responsibility: Xamit Kadirbekov / GERO. AI assistance wa
 - [huggingface](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-log10-finite-seed-intermediate-overflow.md)
 - [gero](https://www.gero.uz/research/articles/mlx-log10-finite-seed-intermediate-overflow.html)
 - [linkedin](https://www.linkedin.com/feed/update/urn:li:share:7508015795780714496/)
+- [youtube](https://www.youtube.com/shorts/WQ1VgDDXSGI)
 
 [Complete evidence ZIP](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/mlx-log10-finite-seed-intermediate-overflow/gero-mlx-log10-impact-evidence-2026-09-21.zip). SHA-256: `991a532b44d8806f237691089738daca1b51f52cc9257bc3a384cb90df38ae01`.
 
-Pending distribution: youtube. Upstream notice has not been sent; independent publication was authorized before a personally authored notice. The experimental candidate is incomplete; no upstream acceptance is claimed.
+Pending distribution: none. Upstream notice has not been sent; independent publication was authorized before a personally authored notice. The experimental candidate is incomplete; no upstream acceptance is claimed.
