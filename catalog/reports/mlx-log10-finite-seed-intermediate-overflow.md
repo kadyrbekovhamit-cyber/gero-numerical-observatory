@@ -64,3 +64,13 @@ The packet includes exact split inputs, float32 bit patterns, the frozen checkpo
 Dataset: Alpaydin, E. & Kaynak, C. (1998), *Optical Recognition of Handwritten Digits*, UCI Machine Learning Repository, [DOI 10.24432/C50P49](https://doi.org/10.24432/C50P49), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The scikit-learn copy contains 1,797 images from the original UCI test subset. Our digit selection, normalization and new experimental split are transformations; this is **not the original writer-independent UCI benchmark**. Original licenses and attribution remain with MLX and included dependency headers. No endorsement by Apple, MLX, UCI or scikit-learn is implied.
 
 Research and editorial responsibility: Xamit Kadirbekov / GERO. AI assistance was used for research orchestration, code, checking and writing. The evidence supports the stated experiments and their limits; it does not establish that every possible failure has been found.
+
+## Public records and delivery status
+
+- [github](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-log10-finite-seed-intermediate-overflow.md)
+- [huggingface](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-log10-finite-seed-intermediate-overflow.md)
+- [gero](https://www.gero.uz/research/articles/mlx-log10-finite-seed-intermediate-overflow.html)
+
+[Complete evidence ZIP](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/mlx-log10-finite-seed-intermediate-overflow/gero-mlx-log10-impact-evidence-2026-09-21.zip). SHA-256: `991a532b44d8806f237691089738daca1b51f52cc9257bc3a384cb90df38ae01`.
+
+Pending distribution: zenodo, linkedin, youtube. Upstream notice has not been sent; independent publication was authorized before a personally authored notice. The experimental candidate is incomplete; no upstream acceptance is claimed.

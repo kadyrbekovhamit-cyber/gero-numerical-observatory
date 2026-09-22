@@ -1,9 +1,9 @@
 {
-  "checked_at": "2026-09-21T16:54:39.509062+00:00",
+  "checked_at": "2026-09-22T04:05:52.606016+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 118,
-    "huggingface": 117,
+    "gero": 119,
+    "huggingface": 118,
     "zenodo": 117,
     "github_catalog_report": 119,
     "zenodo_records_including_collection": 117,
@@ -20,12 +20,9 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [
-      "mlx-log10-finite-seed-intermediate-overflow"
-    ],
+    "gero": [],
     "huggingface": [
-      "actuarialmath-continuous-annuity-selection-duration",
-      "mlx-log10-finite-seed-intermediate-overflow"
+      "actuarialmath-continuous-annuity-selection-duration"
     ],
     "zenodo": [
       "actuarialmath-continuous-annuity-selection-duration",
@@ -229,14 +226,14 @@
       ],
       "publication_date": "2026-09-21",
       "kind": "published_report",
-      "gero": null,
-      "huggingface": null,
+      "gero": "https://www.gero.uz/research/articles/mlx-log10-finite-seed-intermediate-overflow.html",
+      "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-log10-finite-seed-intermediate-overflow.md",
       "zenodo": null,
       "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-log10-finite-seed-intermediate-overflow",
       "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-log10-finite-seed-intermediate-overflow.md",
       "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-log10-finite-seed-intermediate-overflow.md",
       "source_text_sha256": "4afe3917143c14858ffc17b37f124c46be4dd490c2a30679263a64074a4e1cfd",
-      "mirror_sha256": "4afe3917143c14858ffc17b37f124c46be4dd490c2a30679263a64074a4e1cfd",
+      "mirror_sha256": "dc1545799aacb03772f06392da04839ce1eb1236ce117ca923652369213a0e6e",
       "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/mlx-log10-finite-seed-intermediate-overflow/gero-mlx-log10-impact-evidence-2026-09-21.zip",
       "evidence_archive_sha256": "991a532b44d8806f237691089738daca1b51f52cc9257bc3a384cb90df38ae01",
       "linkedin": null,
@@ -245,7 +242,7 @@
       "upstream_report_sent": false,
       "upstream_acceptance_claimed": false,
       "implementation_defects_in_this_report": 1,
-      "publication_status": "partial_distribution_in_progress",
+      "publication_status": "public_verified_3_of_six",
       "source_pin": "59d600b5e64c238427d0f8d897ab7c682ef4d3d2",
       "limits": [
         "Deliberately extreme finite loss scale of 3.2e38.",
@@ -418,26 +415,24 @@
     "mlx-log10-finite-seed-intermediate-overflow": {
       "case_id": "mlx-log10-finite-seed-intermediate-overflow",
       "public": [
-        "github"
+        "github",
+        "huggingface",
+        "gero"
       ],
       "pending": [
         "zenodo",
-        "gero",
-        "huggingface",
         "linkedin",
         "youtube"
       ],
       "links": {
         "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-log10-finite-seed-intermediate-overflow.md",
-        "zenodo": null,
-        "huggingface": null,
-        "gero": null,
-        "linkedin": null,
-        "youtube": null
+        "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-log10-finite-seed-intermediate-overflow.md",
+        "gero": "https://www.gero.uz/research/articles/mlx-log10-finite-seed-intermediate-overflow.html"
       },
       "archive_sha256": "991a532b44d8806f237691089738daca1b51f52cc9257bc3a384cb90df38ae01",
       "upstream_report_sent": false,
-      "vendor_issue": null
+      "vendor_issue": null,
+      "zenodo_doi": null
     }
   }
 }

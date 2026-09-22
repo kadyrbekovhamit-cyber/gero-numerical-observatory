@@ -1,6 +1,6 @@
-# Complete reproduction packet
+# MLX log10: finite gradients, nonfinite updates under extreme loss scaling
 
-Download and extract [gero-mlx-log10-impact-evidence-2026-09-21.zip](gero-mlx-log10-impact-evidence-2026-09-21.zip) first. The ZIP contains the runnable sources and expected outputs; loose files are browsing excerpts.
+Download and extract [gero-mlx-log10-impact-evidence-2026-09-21.zip](gero-mlx-log10-impact-evidence-2026-09-21.zip) before running the commands below. The loose repository files are browsing excerpts; the ZIP contains the complete reproducibility packet.
 
 # Reproduce the MLX log10 evidence
 
