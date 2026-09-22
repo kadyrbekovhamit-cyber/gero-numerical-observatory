@@ -1,12 +1,12 @@
 {
-  "checked_at": "2026-09-22T04:28:45.658938+00:00",
+  "checked_at": "2026-09-22T09:25:00.985890+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 119,
-    "huggingface": 118,
-    "zenodo": 118,
+    "huggingface": 119,
+    "zenodo": 119,
     "github_catalog_report": 119,
-    "zenodo_records_including_collection": 118,
+    "zenodo_records_including_collection": 119,
     "unique_individual_publications": 119,
     "legacy_github_accounts_required_after_copy": 0
   },
@@ -21,12 +21,8 @@
   },
   "missing": {
     "gero": [],
-    "huggingface": [
-      "actuarialmath-continuous-annuity-selection-duration"
-    ],
-    "zenodo": [
-      "actuarialmath-continuous-annuity-selection-duration"
-    ]
+    "huggingface": [],
+    "zenodo": []
   },
   "deduplication_notes": [
     "All 97 previous report IDs preserved; one CIR pricing component report appended.",
@@ -53,7 +49,7 @@
     "20 September 2026: one actuarialmath continuous-annuity selection-duration defect.648/648/0/648failures across2160calls current/release/candidate/restored;1512passing controls unchanged. Independent Decimal reference and synthetic memo/read-back ceiling checks retained; vendorissue7precedes publication.",
     "21 September 2026: one MLX log10 derivative intermediate-overflow report; 66 of 294 distinct primitive inputs fail in each layout/direction; candidate removes those 66 but introduces 4 other boundary errors. Three independent extreme-scale classifier steps make 65 parameters and 108 predictions nonfinite. No production-harm claim. Independent publication authorized before personally authored vendor notice."
   ],
-  "parity_complete": false,
+  "parity_complete": true,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "archival_backfill": {
     "date": "2026-09-16",
@@ -197,25 +193,26 @@
       "publication_date": "2026-09-20",
       "kind": "published_report",
       "gero": "https://www.gero.uz/research/articles/actuarialmath-continuous-annuity-selection-duration.html",
-      "huggingface": null,
-      "zenodo": null,
+      "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/actuarialmath-continuous-annuity-selection-duration.md",
+      "zenodo": "https://zenodo.org/records/22894194",
       "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/actuarialmath-continuous-annuity-selection-duration",
       "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-continuous-annuity-selection-duration.md",
       "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-continuous-annuity-selection-duration.md",
       "source_text_sha256": "66904fd1cb718b4ea0efa05c2de1f095bab74b463d20f1594601c92f48127286",
-      "mirror_sha256": "c61621071767e2a82badbd6bd05be1583c5394fcb86a1bb62e6190933af81eb2",
+      "mirror_sha256": "44a7abfe4fb13b76c19c58cff8f737293a8a0add07f1ecf45edbaf117ab9636f",
       "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/actuarialmath-continuous-annuity-selection-duration/gero-actuarialmath-annuity-selection-evidence-2026-09-20.zip",
       "evidence_archive_sha256": "8784b39fc462e56b810752f7117da5ce8a385c4e37edebe106b7bae753073de9",
-      "linkedin": null,
+      "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7508092557483216896/",
       "youtube": null,
       "maintainer_issue": "https://github.com/terence-lim/actuarialmath/issues/7",
       "upstream_report_sent": true,
       "upstream_acceptance_claimed": false,
       "implementation_defects_in_this_report": 1,
-      "publication_status": "github_gero_public_other_four_pending_browser_access",
+      "publication_status": "public_verified_5_of_six",
       "source_pin": "7d18f11ad304898f177b7922b3c53f70e4c2b4f4",
       "limits": "Uniform lifetime model and finite specified inputs; no full suite or general annuity repair. Memo and ceiling are GERO adapters; no real insurer, policyholder loss or reserve requirement.",
-      "measured_chain": "Elapsed-years argument replaced by zero -> incorrect library EPV -> synthetic JSON memo 9166.67 instead of 8750.00 -> read-back 9000 ceiling changes OVER_LIMIT to WITHIN_LIMIT."
+      "measured_chain": "Elapsed-years argument replaced by zero -> incorrect library EPV -> synthetic JSON memo 9166.67 instead of 8750.00 -> read-back 9000 ceiling changes OVER_LIMIT to WITHIN_LIMIT.",
+      "zenodo_doi": "10.5281/zenodo.22894194"
     },
     {
       "id": "mlx-log10-finite-seed-intermediate-overflow",
@@ -396,21 +393,25 @@
       "case_id": "actuarialmath-continuous-annuity-selection-duration",
       "public": [
         "github",
-        "gero"
+        "gero",
+        "zenodo",
+        "linkedin",
+        "huggingface"
       ],
       "pending": [
-        "zenodo",
-        "huggingface",
-        "linkedin",
         "youtube"
       ],
       "links": {
         "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-continuous-annuity-selection-duration.md",
-        "gero": "https://www.gero.uz/research/articles/actuarialmath-continuous-annuity-selection-duration.html"
+        "gero": "https://www.gero.uz/research/articles/actuarialmath-continuous-annuity-selection-duration.html",
+        "zenodo": "https://zenodo.org/records/22894194",
+        "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7508092557483216896/",
+        "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/actuarialmath-continuous-annuity-selection-duration.md"
       },
       "archive_sha256": "8784b39fc462e56b810752f7117da5ce8a385c4e37edebe106b7bae753073de9",
       "upstream_report_sent": true,
-      "vendor_issue": "https://github.com/terence-lim/actuarialmath/issues/7"
+      "vendor_issue": "https://github.com/terence-lim/actuarialmath/issues/7",
+      "zenodo_doi": "10.5281/zenodo.22894194"
     },
     "mlx-log10-finite-seed-intermediate-overflow": {
       "case_id": "mlx-log10-finite-seed-intermediate-overflow",

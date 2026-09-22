@@ -85,7 +85,10 @@ Original report: CC BY 4.0. GERO scripts and candidate: MIT. Upstream source ret
 
 - [github](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-continuous-annuity-selection-duration.md)
 - [gero](https://www.gero.uz/research/articles/actuarialmath-continuous-annuity-selection-duration.html)
+- [zenodo](https://zenodo.org/records/22894194)
+- [linkedin](https://www.linkedin.com/feed/update/urn:li:share:7508092557483216896/)
+- [huggingface](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/actuarialmath-continuous-annuity-selection-duration.md)
 
 [Complete evidence ZIP](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/actuarialmath-continuous-annuity-selection-duration/gero-actuarialmath-annuity-selection-evidence-2026-09-20.zip). SHA-256: `8784b39fc462e56b810752f7117da5ce8a385c4e37edebe106b7bae753073de9`.
 
-Zenodo, Hugging Face, LinkedIn and YouTube delivery remains pending; no public record, DOI or video on those destinations is claimed yet. The verified developer report is [actuarialmath #7](https://github.com/terence-lim/actuarialmath/issues/7).
+Pending distribution: youtube. The verified developer report is [actuarialmath #7](https://github.com/terence-lim/actuarialmath/issues/7).
