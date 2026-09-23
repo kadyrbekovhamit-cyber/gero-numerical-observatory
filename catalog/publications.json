@@ -2406,5 +2406,40 @@
     "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7508485824913723392/",
     "zenodo_doi": "10.5281/zenodo.22916584",
     "youtube": "https://www.youtube.com/shorts/N8IdcA5YtcU"
+  },
+  {
+    "id": "bond-pricing-annuity-immediate-start",
+    "title": "bond_pricing 0.7.3 ignores immediate-start annuity payments",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-23",
+    "kind": "published_report",
+    "gero": null,
+    "huggingface": null,
+    "zenodo": null,
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/bond-pricing-annuity-immediate-start",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/bond-pricing-annuity-immediate-start.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/bond-pricing-annuity-immediate-start.md",
+    "source_text_sha256": "d6475c56cba141658e5c403cec75c34ab336f59d3b3dc5111888da753623a2b9",
+    "mirror_sha256": "d6475c56cba141658e5c403cec75c34ab336f59d3b3dc5111888da753623a2b9",
+    "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/bond-pricing-annuity-immediate-start/gero-bond-pricing-immediate-start-2026-09-23-v1.0.0.zip",
+    "evidence_archive_sha256": "04c9ba57411053ccd62223d8d74257152693ccf2aa57b23f5347d6c21b952094",
+    "linkedin": null,
+    "youtube": null,
+    "maintainer_issue": "https://github.com/jrvarma/bond_pricing/issues/8",
+    "upstream_report_sent": true,
+    "upstream_acceptance_claimed": false,
+    "implementation_defects_in_this_report": 1,
+    "publication_status": "partial_distribution_in_progress",
+    "source_pin": "8e04fd03c2594422e457e2f08b460017dc6b4993",
+    "limits": [
+      "Synthetic cash flows; no real customer loss measured.",
+      "Source-level proposed correction, not accepted by the maintainer.",
+      "No exact prior public report found within the documented review; private or unindexed reports cannot be excluded.",
+      "No applicable public bounty program found.",
+      "Reference and correction prepared with AI assistance by the same research workflow; no independent third-party audit."
+    ],
+    "measured_chain": "Immediate-start flag ignored -> instalment 121 instead of 110 -> round-trip PV 231 instead of 210 (synthetic example)"
   }
 ]

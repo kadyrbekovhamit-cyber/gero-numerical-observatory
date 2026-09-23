@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "at": "2026-09-23T13:56:30.707051+00:00",
+  "archive_sha256": "04c9ba57411053ccd62223d8d74257152693ccf2aa57b23f5347d6c21b952094",
+  "cases": 720,
+  "failed_before": 288,
+  "failed_after": 0,
+  "all_recorded_rows_reproduced": true,
+  "runtime": "3.12.13 (main, Mar  3 2026, 12:39:30) [Clang 17.0.0 (clang-1700.6.4.2)]",
+  "elapsed_seconds": 0.043954,
+  "peak_process_rss_mib": 66.671875,
+  "numerical_threads": 1,
+  "gpu": false,
+  "external_sends": 0
+}

@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-09-23T13:54:48.886323+00:00",
+  "case_id": "bond-pricing-annuity-immediate-start",
+  "conclusion": "No earlier exact report or fix found in the checked public sources; worldwide/private novelty cannot be established.",
+  "repository": "https://github.com/jrvarma/bond_pricing/tree/8e04fd03c2594422e457e2f08b460017dc6b4993",
+  "issues_reviewed": 7,
+  "comments_reviewed": 15,
+  "pull_requests_returned": 0,
+  "releases_returned": 0,
+  "security_advisories_returned": 0,
+  "file_history_commits": 3,
+  "policy_files_in_repository": [],
+  "known_near_matches": [
+    "Issue 6: cash-flow and compounding frequencies; body/comments reviewed, different issue",
+    "Issue 7: duration/npv frequency question; different issue"
+  ],
+  "web_queries": [
+    "\"bond_pricing\" \"immediate_start\" \"annuity_instalment\"",
+    "\"annuity_instalment\" \"immediate_start\" bug OR ignored OR incorrect",
+    "\"bond_pricing\" \"bug bounty\"",
+    "\"bond-pricing\" bounty HackerOne Immunefi YesWeHack Bugcrowd"
+  ],
+  "bounty_conclusion": "No applicable publicly advertised bounty program found; no qualifying payment claim established. Bond Protocol is a different project and is excluded.",
+  "route": "ordinary maintainer issue followed by public research distribution",
+  "sources": [
+    "https://api.github.com/repos/jrvarma/bond_pricing",
+    "https://api.github.com/repos/jrvarma/bond_pricing/git/trees/master?recursive=1",
+    "https://api.github.com/repos/jrvarma/bond_pricing/releases",
+    "https://api.github.com/repos/jrvarma/bond_pricing/security-advisories",
+    "https://api.github.com/repos/jrvarma/bond_pricing/issues?state=all&per_page=100"
+  ]
+}

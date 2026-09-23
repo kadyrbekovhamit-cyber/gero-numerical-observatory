@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-23T12:16:08.843796+00:00",
+  "checked_at": "2026-09-23T14:01:37.938994+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 121,
     "huggingface": 121,
     "zenodo": 121,
-    "github_catalog_report": 121,
+    "github_catalog_report": 122,
     "zenodo_records_including_collection": 121,
-    "unique_individual_publications": 121,
+    "unique_individual_publications": 122,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "121 canonical reports; Merton jump Poisson underflow added. Other platform additions are pending.",
+  "github_status": "122 canonical reports; bond_pricing immediate-start annuity audit added. Counts track reports, not independent defects.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -20,9 +20,15 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [],
-    "huggingface": [],
-    "zenodo": []
+    "gero": [
+      "bond-pricing-annuity-immediate-start"
+    ],
+    "huggingface": [
+      "bond-pricing-annuity-immediate-start"
+    ],
+    "zenodo": [
+      "bond-pricing-annuity-immediate-start"
+    ]
   },
   "deduplication_notes": [
     "All 97 previous report IDs preserved; one CIR pricing component report appended.",
@@ -49,7 +55,7 @@
     "20 September 2026: one actuarialmath continuous-annuity selection-duration defect.648/648/0/648failures across2160calls current/release/candidate/restored;1512passing controls unchanged. Independent Decimal reference and synthetic memo/read-back ceiling checks retained; vendorissue7precedes publication.",
     "21 September 2026: one MLX log10 derivative intermediate-overflow report; 66 of 294 distinct primitive inputs fail in each layout/direction; candidate removes those 66 but introduces 4 other boundary errors. Three independent extreme-scale classifier steps make 65 parameters and 108 predictions nonfinite. No production-harm claim. Independent publication authorized before personally authored vendor notice."
   ],
-  "parity_complete": true,
+  "parity_complete": false,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "archival_backfill": {
     "date": "2026-09-16",
@@ -470,6 +476,24 @@
       "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-merton-jump-poisson-underflow.md",
       "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7508485824913723392/",
       "youtube": "https://www.youtube.com/shorts/N8IdcA5YtcU"
+    },
+    "bond-pricing-annuity-immediate-start": {
+      "public": [
+        "github"
+      ],
+      "pending": [
+        "gero",
+        "zenodo",
+        "huggingface",
+        "linkedin",
+        "youtube"
+      ],
+      "links": {
+        "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/bond-pricing-annuity-immediate-start.md"
+      },
+      "archive_sha256": "04c9ba57411053ccd62223d8d74257152693ccf2aa57b23f5347d6c21b952094",
+      "upstream_report_sent": true,
+      "vendor_channel": "https://github.com/jrvarma/bond_pricing/issues/8"
     }
   }
 }

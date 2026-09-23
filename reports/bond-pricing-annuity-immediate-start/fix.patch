@@ -1,0 +1,13 @@
+--- a/bond_pricing/present_value.py
++++ b/bond_pricing/present_value.py
+@@ -434,6 +434,10 @@
+     fv, pv, n_periods = array(fv), array(pv), array(n_periods)
+     r = equiv_rate(rate, comp_freq, cf_freq)/cf_freq
+     reqd_annuity_pv = pv + (fv - terminal_payment) / (1 + r)**n_periods
++    reqd_annuity_pv = where(
++        immediate_start,
++        pv / (1 + r) + (fv / (1 + r) - terminal_payment) / (1 + r)**n_periods,
++        reqd_annuity_pv)
+     return (reqd_annuity_pv / pvaf(r, n_periods))[()]
+ 
+ 

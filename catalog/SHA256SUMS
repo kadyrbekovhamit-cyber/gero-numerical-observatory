@@ -35,6 +35,16 @@ fc8a80e0de8226dea882d54c7b11cc3f38d3f01006dab52d7516347f1c3a94b6  ../reports/act
 fd8f7bc9f522828f8c81fc6b2f801e0e8ad1ae02a455350e5750029846670544  ../reports/actuarialmath-endowment-variance-benefit-scale/minimal_repro.py
 fa09fa3cd54b8167503c66081b0f4efd272a1d8af260db751487a44b396c7d52  ../reports/actuarialmath-endowment-variance-benefit-scale/requirements-repro.txt
 c5f6ce5096e70ea6ae427d173d68a2518895982cd22b0939d8077bc349c4041e  ../reports/actuarialmath-endowment-variance-benefit-scale/test_endowment_variance.py
+d5ece24438a71dece39de3df9380dc13ca8ec501c1262bd400ffe99552026ec7  ../reports/bond-pricing-annuity-immediate-start/ARCHIVE_RECEIPT.json
+001a61e0aac3e99f3452f18b309589da63b244d5711e1f754fe4397d404e6cd5  ../reports/bond-pricing-annuity-immediate-start/LICENSE-NOTES.md
+da4915dedda2fb14ed9a8707f2f0c32cfc88e412c1dadc5866c080fd315f50ac  ../reports/bond-pricing-annuity-immediate-start/METADATA.json
+01ae9f0e65ca84362edebc85cdf11dca47c77469142a4e7b30dfb61448fc735d  ../reports/bond-pricing-annuity-immediate-start/NOVELTY_AND_BOUNTY.json
+c39094820daa5e861084c2204337226e2a393b518d32782fce1ebfb98c3778fa  ../reports/bond-pricing-annuity-immediate-start/README.md
+5f880884b2d1f31df67e7c64d42b745849b46a565b304158481653691f9764c9  ../reports/bond-pricing-annuity-immediate-start/REPLAY_RECEIPT.json
+d6475c56cba141658e5c403cec75c34ab336f59d3b3dc5111888da753623a2b9  ../reports/bond-pricing-annuity-immediate-start/REPORT_EN.md
+0770f65971cbb6bc37df1a18e1136daf047a4b25b7a5b11286d717b9fe7032bd  ../reports/bond-pricing-annuity-immediate-start/VENDOR_RECEIPT.json
+01ac4bc580cd0290dd7f571e972cee93ac24cb90aeaf07b084172b94b178ef71  ../reports/bond-pricing-annuity-immediate-start/fix.patch
+04c9ba57411053ccd62223d8d74257152693ccf2aa57b23f5347d6c21b952094  ../reports/bond-pricing-annuity-immediate-start/gero-bond-pricing-immediate-start-2026-09-23-v1.0.0.zip
 8a7736503657813828fd6642bfb892af3c3f53d7488895242f879ae36ae409a5  ../reports/commons-statistics-loguniform-narrow-interval-probabilities/ARCHIVE_RECEIPT.json
 2b00a64fc0edac04243e28736ceaa40cb2b4670e5911b958a20b04ac21ca1b98  ../reports/commons-statistics-loguniform-narrow-interval-probabilities/FROZEN_ZIP_REPLAY_RECEIPT.json
 10068aaf4d1ccfa76d51d88b65e4c2fd5668c587b1f33d9308c5fa978cae4011  ../reports/commons-statistics-loguniform-narrow-interval-probabilities/LICENSE-GERO.txt
@@ -85,6 +95,10 @@ e9aa168478b2a6d2faf8b5f04fad34aa01c116e9efebba034045b2bfec5dac98  ../reports/fin
 a02859eee9c0ba6fa592d3998cf239aebb9ba12b80b8a969f70954f3d2f68283  ../reports/financepy-float-lookback-intermediate-overflow/VENDOR_RECEIPT.json
 da9a7003e4e3a3de7ceb9b98dd7565b485126187cc9e3f1c3f726f1f48701adf  ../reports/financepy-float-lookback-intermediate-overflow/candidate.patch
 fbe433c8f98cec540e507acb1d1a7f82bb46ad3b2eda360f93773d19663e53b4  ../reports/financepy-float-lookback-intermediate-overflow/gero-financepy-float-lookback-evidence-2026-09-20.zip
+4a86d5fb13cff5b68b2b5b7915794a63aefa66cc3d3a92158662b56429940b39  ../reports/financepy-merton-jump-poisson-underflow/ARCHIVE_RECEIPT.json
+0951a091e6a78d8f7cd1338f7e964c90f46d01bb59cde94da5a103bbb70e8c07  ../reports/financepy-merton-jump-poisson-underflow/README.md
+2f27b3f45b360e27cb0be63fc26e1ec6fd5a391652644e23c1669667832960f6  ../reports/financepy-merton-jump-poisson-underflow/candidate.patch
+6b1611caee952ec8f0ed05db46c682f49de7f7f6e35149479f84fea5c57f25df  ../reports/financepy-merton-jump-poisson-underflow/gero-financepy-merton-jump-poisson-underflow-evidence-2026-09-23-v1.0.zip
 5996e82d4b67fd15d7ff40e97e03fc4247ca350af4cf2f6f597651bc74d1870f  ../reports/mlflow-ndcg-document-id-collision/ARCHIVE_RECEIPT.json
 6395355de6f391afff35996a30fb41b189b4991a4cb54993ace35ab69a0bfa28  ../reports/mlflow-ndcg-document-id-collision/LICENSE.txt
 0656a44742dcc3e528c28e740114892d446447b24e3e2ff91d7ed1f520992a04  ../reports/mlflow-ndcg-document-id-collision/LICENSES.md
@@ -326,7 +340,7 @@ cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30  ../reports/str
 a81577e70386f538ae7f1884c928ea7c43c4c765be829eef8e7ce7bd2825fba1  ../reports/strata-normal-implied-volatility-initial-guess/source/NormalFormulaRepository.java
 cc1d41c1370c8fab203c9c8092af772259470e6f74e85c4d8ae0d63b86b3a3b3  ../reports/strata-normal-implied-volatility-initial-guess/source/NormalFormulaRepositoryImpliedVolatilityTest.java
 385cf16695f738085055d4df9953b944dce28a38af04f30b0079c1ece5ebe442  ../reports/strata-normal-implied-volatility-initial-guess/strata-initial-guess.patch
-fb0ce378cb5ee7a15a156b22039d733cbf714e1e9d49a10f02463756f15d90b7  README.md
+f5a2ec43232b5c9e741250fa57aba7f44c78e81f75681862928adb1423d903d7  README.md
 0c1c962a48fa367ebdfb48f47b6af56b612339d12db1d765f9e2b726d13343d1  SOURCE_NOTICES.md
 55487fd0a4770daa87c7f1d9288d4aa499d1e698e50978b3a07f2a9aa3b41369  artifacts/collatz-source-LICENSE.txt
 ae2310410d17d7a25932ea0852a1a34e358002959cb212ef56c3281b3baf1bc7  artifacts/financepy-vasicek-small-mean-reversion-LICENSES.md
@@ -346,8 +360,8 @@ c86c2dab07b680694776134676aaeff88093e1d7caa966b4e528999e4f2f51f4  evidence/nntra
 20cac1f6cd80b5308092ed80f70672d37621a819ce3c062596d259ad137b1207  evidence/nntrainer-split-incremental-channels/SOURCE_LEDGER.md
 6215fe381282fa4d95074ce4dffd4bbf1dc56ba43ade2894578ffe18a24b805d  evidence/nntrainer-split-incremental-channels/candidate.patch
 072dbfd6967d765fc7091a30ab1de80c9d9bb9609e155cdbf4750e71557685be  evidence/nntrainer-split-incremental-channels/gero-nntrainer-split-incremental-channels-research-2026-09-17.zip
-f0c8d7cb8ee5daed0ee3d98835ede6f12a4f533b0ef7da91ea59ae7e2710b95d  platform-status.json
-3aa6b535609f23e28940905206bd0af8d0e36bb45bf88c3252be172741a79dc4  publications.json
+06570771d992e5732f68f647344914becd133ccd8fbb01c46b5e1caf8b98d8a6  platform-status.json
+de01cb10ae0c75189d65d874d70c68b82ca3c775e6e18b554ae3a27f0b539cd1  publications.json
 2d6ab31d36d9f9e6329bf0f82783096f6dc19ab3c0500181548c5923852f6251  reports/actuarialmath-beta-density.md
 daa97d98c82172ed092f2bf09bfa3fc81f51c298f631a5bbbf23ad5fe416584d  reports/actuarialmath-constantforce-benefit-scaling.md
 44a7abfe4fb13b76c19c58cff8f737293a8a0add07f1ecf45edbaf117ab9636f  reports/actuarialmath-continuous-annuity-selection-duration.md
@@ -357,6 +371,7 @@ b4393ad1e71c561679308c109d2245868d330d72f957ac48043132a005866caf  reports/alethe
 8b169a18ce8b5633c7f49f7faa38bfda5c01c866f0c48be57a877a0c723912e8  reports/apache-fineract-nop-inverse-error.md
 1cffcacf0dd6d9afaf35fbc9cbde06bf877714d72c52f72c24a6b482b6c8235e  reports/attribution-graphs-semantic-gap.md
 53a403be3f4a0ff84252c9eb2b922bac61ba2f4f8438a5cd3d58da84a35e0f7c  reports/axisymmetric-p-harmonic-cones.md
+d6475c56cba141658e5c403cec75c34ab336f59d3b3dc5111888da753623a2b9  reports/bond-pricing-annuity-immediate-start.md
 1dbac1394e363c4a118291c60f94dfc204e1d1688d6116ea5e094dfbefcc743f  reports/chain-of-thought-monitorability.md
 8d44c3602ddde31620a1f84c70b85f2b4de708d476d2da4733c9ab63a2def9e7  reports/chain-of-thought-observability.md
 ce71ea819e46ccf1aac0a23a438cbc4e823d6ed4c2696a9d97f947fab840c2a5  reports/collatz-matrix-no-go.md
@@ -379,6 +394,7 @@ e9b787883196051947ec6c0fcc8ed9b7967c0ccc1957f094028c4b4a3aa6671f  reports/financ
 328f1f1063656723f0f85e1793cfe41aa49a495d0aeb67c23c7cf9c08d2b4dcc  reports/financepy-float-lookback-intermediate-overflow.md
 4ef4660a7030da8ddb35887d5939943f7e228678a86d36822dc111f343abe4b7  reports/financepy-fx-digital-payout-currency.md
 0657c838ad334fea589ee8b518d6635d72bccaa1a750e9b769e4c9954068dba7  reports/financepy-fx-forward-spot-conversion.md
+0951a091e6a78d8f7cd1338f7e964c90f46d01bb59cde94da5a103bbb70e8c07  reports/financepy-merton-jump-poisson-underflow.md
 1f51582514917ef9d4d2f831f8bfaf6c780c3ad6a6aa63dbbdeec4774570f977  reports/financepy-merton-monetary-scale.md
 d9fde86074ff8fbf26ea67e2ffbee512d4b21d99cd4491857fcc548ca2257f1e  reports/financepy-mortgage-zero-small-rate.md
 e01560604ebf9dab408e1e5a695a8aae5f9ce9495429672052fd5e970b1e8b95  reports/financepy-vasicek-small-mean-reversion.md
@@ -469,8 +485,3 @@ c76212d1a0f5170018efa4267a8e9a7443ade4d58f711138938bc291d4213ed6  reports/swift-
 78aaa1232ad0535ffb42e90d0ddd002a54b0e2600ff70ffeecdfa28dcfd6c7a9  reports/where-mathematics-meets-ai-reliability.md
 6a46d27bc078faedfd513a71c64d464a026b68b80897be20b91b486e5bd7c51a  reports/who-certifies-ai-generated-proofs.md
 9f8357b7572ba5d2734577772c8d6fe5cfe67d0558e71402824b86e37a3434a7  reports/zero-observed-false-positives-small-sample.md
-0951a091e6a78d8f7cd1338f7e964c90f46d01bb59cde94da5a103bbb70e8c07  reports/financepy-merton-jump-poisson-underflow.md
-0951a091e6a78d8f7cd1338f7e964c90f46d01bb59cde94da5a103bbb70e8c07  ../reports/financepy-merton-jump-poisson-underflow/README.md
-2f27b3f45b360e27cb0be63fc26e1ec6fd5a391652644e23c1669667832960f6  ../reports/financepy-merton-jump-poisson-underflow/candidate.patch
-4a86d5fb13cff5b68b2b5b7915794a63aefa66cc3d3a92158662b56429940b39  ../reports/financepy-merton-jump-poisson-underflow/ARCHIVE_RECEIPT.json
-6b1611caee952ec8f0ed05db46c682f49de7f7f6e35149479f84fea5c57f25df  ../reports/financepy-merton-jump-poisson-underflow/gero-financepy-merton-jump-poisson-underflow-evidence-2026-09-23-v1.0.zip
