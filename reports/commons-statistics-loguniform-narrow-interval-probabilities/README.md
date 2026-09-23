@@ -1,3 +1,7 @@
+# Apache Commons Statistics: finite bounds, NaN probabilities, and a changed decision
+
+Download and extract [gero-commons-loguniform-evidence-2026-09-23-v1.0.1.zip](gero-commons-loguniform-evidence-2026-09-23-v1.0.1.zip) before running the commands below. The loose repository files are browsing excerpts; the ZIP contains the complete reproducibility packet.
+
 # Reproduce the Commons Statistics LogUniform report
 
 Read REPORT_EN.md for exact claims and limits. One numerical mechanism; not 48 separate bugs.

@@ -60,3 +60,12 @@ Sources: https://commons.apache.org/proper/commons-statistics/commons-statistics
 The frozen packet contains `reproducer/` (official artifacts, source, candidate and scripts), `expected/` (raw outputs, independent references, worksheets and receipts), and `review/` (bounded duplicate/source checks). A fresh temporary-directory replay of the portable packet completed successfully before publication, rerunning release, candidate, restoration and document consumers without network calls. Set `GERO_JAVA_HOME` to your JDK home and follow the archive README; Python 3.11+ with standard library and JDK 11+ are required. The recorded execution used OpenJDK 26.0.2 and Python 3.12.14; other runtimes are not claimed tested.
 
 Third-party license and notice files are retained. This report and the GERO tests were generated with an AI assistant under Xamit Kadirbekov's direction. No independent human code review or personal execution by the owner is claimed.
+
+## Public records and delivery status
+
+- [github](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/commons-statistics-loguniform-narrow-interval-probabilities.md)
+- [gero](https://www.gero.uz/research/articles/commons-statistics-loguniform-narrow-interval-probabilities.html)
+
+[Complete evidence ZIP](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/commons-statistics-loguniform-narrow-interval-probabilities/gero-commons-loguniform-evidence-2026-09-23-v1.0.1.zip). SHA-256: `523062c72ecb4090396858eab417b75b4687f8cc58a435b03bd3d3b2a49b48f7`.
+
+Pending distribution: zenodo, huggingface, linkedin, youtube. One technical email was sent to dev@commons.apache.org before publication; delivery, moderation, acknowledgment and acceptance remain unverified.

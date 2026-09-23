@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-09-23T03:54:12.688665+00:00",
+  "checked_at": "2026-09-23T03:58:51.985562+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 119,
+    "gero": 120,
     "huggingface": 119,
     "zenodo": 119,
     "github_catalog_report": 120,
@@ -20,9 +20,7 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [
-      "commons-statistics-loguniform-narrow-interval-probabilities"
-    ],
+    "gero": [],
     "huggingface": [
       "commons-statistics-loguniform-narrow-interval-probabilities"
     ],
@@ -445,21 +443,23 @@
     },
     "commons-statistics-loguniform-narrow-interval-probabilities": {
       "public": [
-        "github"
+        "github",
+        "gero"
       ],
       "pending": [
-        "gero",
         "zenodo",
         "huggingface",
         "linkedin",
         "youtube"
       ],
       "links": {
-        "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/commons-statistics-loguniform-narrow-interval-probabilities.md"
+        "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/commons-statistics-loguniform-narrow-interval-probabilities.md",
+        "gero": "https://www.gero.uz/research/articles/commons-statistics-loguniform-narrow-interval-probabilities.html"
       },
       "archive_sha256": "523062c72ecb4090396858eab417b75b4687f8cc58a435b03bd3d3b2a49b48f7",
       "upstream_report_sent": true,
-      "vendor_channel": "dev@commons.apache.org"
+      "vendor_channel": "dev@commons.apache.org",
+      "zenodo_doi": null
     }
   }
 }
