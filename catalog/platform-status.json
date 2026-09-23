@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-23T04:29:44.489837+00:00",
+  "checked_at": "2026-09-23T05:23:43.037204+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 120,
@@ -443,17 +443,17 @@
         "gero",
         "zenodo",
         "huggingface",
-        "linkedin"
-      ],
-      "pending": [
+        "linkedin",
         "youtube"
       ],
+      "pending": [],
       "links": {
         "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/commons-statistics-loguniform-narrow-interval-probabilities.md",
         "gero": "https://www.gero.uz/research/articles/commons-statistics-loguniform-narrow-interval-probabilities.html",
         "zenodo": "https://zenodo.org/records/22908994",
         "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/commons-statistics-loguniform-narrow-interval-probabilities.md",
-        "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7508381831726071809/"
+        "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7508381831726071809/",
+        "youtube": "https://www.youtube.com/shorts/k7vp7WU0III"
       },
       "archive_sha256": "523062c72ecb4090396858eab417b75b4687f8cc58a435b03bd3d3b2a49b48f7",
       "upstream_report_sent": true,
