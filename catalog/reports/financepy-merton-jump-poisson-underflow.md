@@ -66,3 +66,5 @@ Run `run_checks.py` for current/candidate/restoration and the independent oracle
 
 
 Frozen evidence: [gero-financepy-merton-jump-poisson-underflow-evidence-2026-09-23-v1.0.zip](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/reports/financepy-merton-jump-poisson-underflow/gero-financepy-merton-jump-poisson-underflow-evidence-2026-09-23-v1.0.zip). SHA256 `6b1611caee952ec8f0ed05db46c682f49de7f7f6e35149479f84fea5c57f25df`.
+
+Article: [GERO Research](https://www.gero.uz/research/articles/financepy-merton-jump-poisson-underflow.html).

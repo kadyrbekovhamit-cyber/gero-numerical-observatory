@@ -2397,8 +2397,9 @@
     "implementation_defects_in_this_report": 1,
     "released_package_affected": false,
     "maintainer_issue": "https://github.com/domokane/FinancePy/issues/273",
-    "mirror_sha256": "f529fc7be082afb5520bba61676d467851ff66cf28d0ed88b6e76a59062a4f96",
-    "distribution_status": "GitHub published; other five requested destinations pending",
-    "video_status": "not_produced"
+    "mirror_sha256": "8b417e7d3bdc66467a028b6f46531608e2da406f6985cc3aca4bf99e4de6f824",
+    "distribution_status": "GitHub and GERO public verified; Hugging Face, Zenodo, LinkedIn and YouTube pending",
+    "video_status": "not_produced",
+    "gero": "https://www.gero.uz/research/articles/financepy-merton-jump-poisson-underflow.html"
   }
 ]

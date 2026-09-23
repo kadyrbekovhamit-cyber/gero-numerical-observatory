@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-09-23T08:45:20.195997+00:00",
+  "checked_at": "2026-09-23T10:33:49.366427+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 120,
+    "gero": 121,
     "huggingface": 120,
     "zenodo": 120,
     "github_catalog_report": 121,
@@ -20,9 +20,7 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [
-      "financepy-merton-jump-poisson-underflow"
-    ],
+    "gero": [],
     "huggingface": [
       "financepy-merton-jump-poisson-underflow"
     ],
@@ -470,13 +468,13 @@
       "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-merton-jump-poisson-underflow.md",
       "vendor_issue": "https://github.com/domokane/FinancePy/issues/273",
       "remaining": [
-        "gero",
         "huggingface",
         "zenodo",
         "linkedin",
         "youtube"
       ],
-      "status": "github_verified_other_destinations_pending"
+      "status": "github_gero_verified_others_pending",
+      "gero": "https://www.gero.uz/research/articles/financepy-merton-jump-poisson-underflow.html"
     }
   }
 }
