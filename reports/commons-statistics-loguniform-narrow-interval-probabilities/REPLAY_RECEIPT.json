@@ -1,0 +1,16 @@
+{
+  "returncode": 0,
+  "elapsed_seconds": 1.9845258749992354,
+  "input_source": "portable",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "jdk": "OpenJDK26.0.2",
+  "network_during_numerical_test": false,
+  "configured_processors": 1,
+  "gpu": false,
+  "commands_log": "CLEAN_REPLAY.log",
+  "outputs": "clean-output",
+  "original_release_replayed": true,
+  "candidate_and_restoration_replayed": true,
+  "synthetic_document_consumer_replayed": true,
+  "status": "portable_packet_native_replay_verified"
+}

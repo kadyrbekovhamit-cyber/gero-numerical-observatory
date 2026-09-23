@@ -2348,5 +2348,35 @@
     ],
     "measured_chain": "Actual log10 derivative overflow → a GERO-authored SGD update makes all 65 parameters nonfinite → all 108 held-out logits and probabilities become nonfinite. A finite-gradient guard skips the step. An incomplete experimental candidate matches ordinary controls, and restoring the original code restores the failure.",
     "zenodo_doi": "10.5281/zenodo.22886851"
+  },
+  {
+    "id": "commons-statistics-loguniform-narrow-interval-probabilities",
+    "title": "Apache Commons Statistics: finite bounds, NaN probabilities, and a changed decision",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-23",
+    "kind": "published_report",
+    "gero": null,
+    "huggingface": null,
+    "zenodo": null,
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/commons-statistics-loguniform-narrow-interval-probabilities",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/commons-statistics-loguniform-narrow-interval-probabilities.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/commons-statistics-loguniform-narrow-interval-probabilities.md",
+    "source_text_sha256": "ae0ab11a09c96c244ba4b971a54f7e1548f916eeaa3b7af85664eff6e777b7ce",
+    "mirror_sha256": "ae0ab11a09c96c244ba4b971a54f7e1548f916eeaa3b7af85664eff6e777b7ce",
+    "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/commons-statistics-loguniform-narrow-interval-probabilities/gero-commons-loguniform-evidence-2026-09-23-v1.0.1.zip",
+    "evidence_archive_sha256": "523062c72ecb4090396858eab417b75b4687f8cc58a435b03bd3d3b2a49b48f7",
+    "linkedin": null,
+    "youtube": null,
+    "maintainer_issue": null,
+    "maintainer_contact": "dev@commons.apache.org",
+    "upstream_report_sent": true,
+    "upstream_acceptance_claimed": false,
+    "implementation_defects_in_this_report": 1,
+    "publication_status": "partial_distribution_in_progress",
+    "source_pin": "5d8d9e10d876d9a913a054154146f36a18490824",
+    "limits": "Official release API executed; full current master and upstream suite not built. Candidate only, no complete moments/inverse/sampling validation or correctly rounded guarantee. Synthetic consumer, no measured deployed/customer/security impact.",
+    "measured_chain": "Rounded-log cancellation -> NaN survival probability -> synthetic CSV/JSON worksheet -> 30 incorrect unguarded decisions or 30 blocked guarded calculations; candidate0, restored30."
   }
 ]

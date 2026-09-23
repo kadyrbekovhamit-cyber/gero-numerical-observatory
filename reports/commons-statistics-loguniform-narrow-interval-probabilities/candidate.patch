@@ -1,0 +1,37 @@
+--- a/LogUniformDistribution.java
++++ b/LogUniformDistribution.java
+@@ -58,8 +58,15 @@
+         this.upper = upper;
+         logA = Math.log(lower);
+         logB = Math.log(upper);
+-        logBmLogA = logB - logA;
++        logBmLogA = logRatio(upper, lower);
+         logLogBmLogA = Math.log(logBmLogA);
++    }
++
++    /** Stable log(numerator / denominator) for ordered positive inputs. */
++    private static double logRatio(double numerator, double denominator) {
++        final double r = (numerator - denominator) / denominator;
++        return Double.isFinite(r) ? Math.log1p(r) :
++            Math.log(numerator) - Math.log(denominator);
+     }
+ 
+     /**
+@@ -113,7 +120,7 @@
+         if (x >= upper) {
+             return 1;
+         }
+-        return (Math.log(x) - logA) / logBmLogA;
++        return logRatio(x, lower) / logBmLogA;
+     }
+ 
+     /** {@inheritDoc} */
+@@ -125,7 +132,7 @@
+         if (x >= upper) {
+             return 0;
+         }
+-        return (logB - Math.log(x)) / logBmLogA;
++        return logRatio(upper, x) / logBmLogA;
+     }
+ 
+     /** {@inheritDoc} */

@@ -1,0 +1,9 @@
+{
+  "case_id": "commons-statistics-loguniform-narrow-interval-probabilities",
+  "title": "Apache Commons Statistics: finite bounds, NaN probabilities, and a changed decision",
+  "summary": "Rounded-log cancellation in LogUniformDistribution 1.3 produces invalid probabilities for narrow finite intervals. Across 176 distinct inputs, a GERO synthetic worksheet makes 30 wrong threshold decisions; a local candidate removes them and restoring the original restores them.",
+  "source_pin": "5d8d9e10d876d9a913a054154146f36a18490824",
+  "release": "1.3",
+  "limits": "Official release API executed; full current master and upstream suite not built. Candidate only, no complete moments/inverse/sampling validation or correctly rounded guarantee. Synthetic consumer, no measured deployed/customer/security impact.",
+  "measured_chain": "Rounded-log cancellation -> NaN survival probability -> synthetic CSV/JSON worksheet -> 30 incorrect unguarded decisions or 30 blocked guarded calculations; candidate0, restored30."
+}

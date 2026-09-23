@@ -1,0 +1,1 @@
+Apache components and source retain Apache License2.0 and their original notices. The included JARs also contain their license/notice files. GERO test/report material is offered under MIT where copyright applies; AI-assisted preparation disclosed. No relicensing of Apache material.

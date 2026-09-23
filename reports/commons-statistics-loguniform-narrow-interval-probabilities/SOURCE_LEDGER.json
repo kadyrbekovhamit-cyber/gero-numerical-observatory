@@ -1,0 +1,263 @@
+[
+  {
+    "name": "main-commit.json",
+    "url": "https://api.github.com/repos/apache/commons-statistics/commits/master",
+    "status": 200,
+    "bytes": 12775,
+    "sha256": "8f6f6ec9fbc5dd5599d175ec0e2f1f8841298467cfdd992055dc789d75d1791f",
+    "at": "2026-09-23T03:31:22.555152+00:00"
+  },
+  {
+    "name": "release.pom",
+    "url": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-statistics-distribution/1.3/commons-statistics-distribution-1.3.pom",
+    "status": 200,
+    "bytes": 3235,
+    "sha256": "d2f44300cde69132967eca5da78a2b58877338dcdfaee134ff0e236a4f0ae483",
+    "at": "2026-09-23T03:31:22.600588+00:00"
+  },
+  {
+    "name": "parent.pom",
+    "url": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-statistics-parent/1.3/commons-statistics-parent-1.3.pom",
+    "status": 200,
+    "bytes": 24539,
+    "sha256": "7e7f8335e6349cfa0166d6b2c8f0f933b1a00593c574aac567b429e6a2bad8a1",
+    "at": "2026-09-23T03:31:23.071586+00:00"
+  },
+  {
+    "name": "jira-search.json",
+    "url": "https://issues.apache.org/jira/rest/api/2/search?jql=project+%3D+STATISTICS+AND+text+~+%22LogUniform%22&maxResults=100",
+    "status": 200,
+    "bytes": 52,
+    "sha256": "f0709c4a7fcc5e4381e6486cab3bdad0aa86429acacdf3d95e7927c776b7cc26",
+    "at": "2026-09-23T03:31:23.042884+00:00"
+  },
+  {
+    "name": "github-search.json",
+    "url": "https://api.github.com/search/issues?q=repo%3Aapache%2Fcommons-statistics+loguniform&per_page=100",
+    "status": 200,
+    "bytes": 79,
+    "sha256": "c9938edecb99d754b2d039ac9eec320a94c769b6a6417921e2dcbef9e2fe01a0",
+    "at": "2026-09-23T03:31:23.585133+00:00"
+  },
+  {
+    "name": "gero-catalog.json",
+    "url": "https://raw.githubusercontent.com/kadyrbekovhamit-cyber/gero-numerical-observatory/main/catalog/index.json",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "current-LogUniformDistribution.java",
+    "url": "https://raw.githubusercontent.com/apache/commons-statistics/5d8d9e10d876d9a913a054154146f36a18490824/commons-statistics-distribution/src/main/java/org/apache/commons/statistics/distribution/LogUniformDistribution.java",
+    "status": 200,
+    "bytes": 7583,
+    "sha256": "85a50962f9657fb86958f0447d9518109948791a8c2b61fc50ebb7331aabf7b3",
+    "at": "2026-09-23T03:32:04.507963+00:00"
+  },
+  {
+    "name": "class-history.json",
+    "url": "https://api.github.com/repos/apache/commons-statistics/commits?path=commons-statistics-distribution%2Fsrc%2Fmain%2Fjava%2Forg%2Fapache%2Fcommons%2Fstatistics%2Fdistribution%2FLogUniformDistribution.java&per_page=100",
+    "status": 200,
+    "bytes": 10478,
+    "sha256": "ae054fb7e37a4514de5050e39a10b1f325e66e1c3877ae089d7fe1693c66121f",
+    "at": "2026-09-23T03:32:04.558911+00:00"
+  },
+  {
+    "name": "jira-uniform.json",
+    "url": "https://issues.apache.org/jira/rest/api/2/search?jql=project+%3D+STATISTICS+AND+text+~+%22uniform%22&maxResults=100",
+    "status": 200,
+    "bytes": 173913,
+    "sha256": "a894fe4c9423491fdfc036f035eb9d65a5a5afbb92011409d30ee1454860267c",
+    "at": "2026-09-23T03:32:05.494912+00:00"
+  },
+  {
+    "name": "github-uniform.json",
+    "url": "https://api.github.com/search/issues?q=repo%3Aapache%2Fcommons-statistics+uniform&per_page=100",
+    "status": 200,
+    "bytes": 2630,
+    "sha256": "c0ff98114de455774f5166f97088fba902658f1b1f8085c7a201f74384a55f51",
+    "at": "2026-09-23T03:32:05.144822+00:00"
+  },
+  {
+    "name": "catalog-list.json",
+    "url": "https://api.github.com/repos/kadyrbekovhamit-cyber/gero-numerical-observatory/contents/catalog",
+    "status": 200,
+    "bytes": 7815,
+    "sha256": "a570c8ec3dcb6e6f6aae652b26f65bc04837cd4f34cdabdbdb8f8886bcdcbb9e",
+    "at": "2026-09-23T03:32:05.693807+00:00"
+  },
+  {
+    "name": "developers.html",
+    "url": "https://commons.apache.org/proper/commons-statistics/developers.html",
+    "status": 200,
+    "bytes": 25976,
+    "sha256": "c19467bd0be3332b8d992ecd2e5725355fdd7e10b529d1b41d6d586adce6560c",
+    "at": "2026-09-23T03:32:06.083346+00:00"
+  },
+  {
+    "name": "commons-statistics-distribution-1.3.jar",
+    "url": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-statistics-distribution/1.3/commons-statistics-distribution-1.3.jar",
+    "status": 200,
+    "bytes": 98884,
+    "sha256": "6bf7c94a18ef5b93bff5c9061de778176d92faffcbc59e0bdfe302ad011cd7f4",
+    "at": "2026-09-23T03:32:06.399192+00:00"
+  },
+  {
+    "name": "commons-statistics-distribution-1.3.jar.sha1",
+    "url": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-statistics-distribution/1.3/commons-statistics-distribution-1.3.jar.sha1",
+    "status": 200,
+    "bytes": 40,
+    "sha256": "cef452a370f481e1c9835bbf744e06f0dc91f33cf4000f267efcff0486fed418",
+    "at": "2026-09-23T03:32:06.750897+00:00"
+  },
+  {
+    "name": "commons-rng-client-api-1.6.jar",
+    "url": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-rng-client-api/1.6/commons-rng-client-api-1.6.jar",
+    "status": 200,
+    "bytes": 26292,
+    "sha256": "9b9cc84858789046b03636216aff2cf8062711a1d68478746e2a8cfc202be429",
+    "at": "2026-09-23T03:32:06.961878+00:00"
+  },
+  {
+    "name": "commons-rng-client-api-1.6.jar.sha1",
+    "url": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-rng-client-api/1.6/commons-rng-client-api-1.6.jar.sha1",
+    "status": 200,
+    "bytes": 40,
+    "sha256": "b5e8274fc64263fb6e21b345a280173964ad1a0974232f77ba613371c7173b34",
+    "at": "2026-09-23T03:32:07.354574+00:00"
+  },
+  {
+    "name": "commons-rng-sampling-1.6.jar",
+    "url": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-rng-sampling/1.6/commons-rng-sampling-1.6.jar",
+    "status": 200,
+    "bytes": 228970,
+    "sha256": "87c53aa15fd3a764a70d2253f417e0101af00679cb62c25d59a703a0f15675a8",
+    "at": "2026-09-23T03:32:07.801057+00:00"
+  },
+  {
+    "name": "commons-rng-sampling-1.6.jar.sha1",
+    "url": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-rng-sampling/1.6/commons-rng-sampling-1.6.jar.sha1",
+    "status": 200,
+    "bytes": 40,
+    "sha256": "2d58276cabcf65d122f6164efa3ad6f9f8cc3f350ad8f36dc769531f97ef4cbb",
+    "at": "2026-09-23T03:32:08.143117+00:00"
+  },
+  {
+    "name": "commons-numbers-core-1.3.jar",
+    "url": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-numbers-core/1.3/commons-numbers-core-1.3.jar",
+    "status": 200,
+    "bytes": 39655,
+    "sha256": "b0044350c733ed8604be101170edbae434950e3d2d21864ad228948a9daaaec8",
+    "at": "2026-09-23T03:32:08.329652+00:00"
+  },
+  {
+    "name": "commons-numbers-core-1.3.jar.sha1",
+    "url": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-numbers-core/1.3/commons-numbers-core-1.3.jar.sha1",
+    "status": 200,
+    "bytes": 40,
+    "sha256": "a420413aba1cf14a40b27bed2ce2bc3f4e8f687700df41edd50aaf49d6f02107",
+    "at": "2026-09-23T03:32:08.678576+00:00"
+  },
+  {
+    "name": "commons-numbers-combinatorics-1.3.jar",
+    "url": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-numbers-combinatorics/1.3/commons-numbers-combinatorics-1.3.jar",
+    "status": 200,
+    "bytes": 26234,
+    "sha256": "22485298bb05cae240460a5405848e0a6ba7883f95a1221144859346be0a0a1d",
+    "at": "2026-09-23T03:32:08.873747+00:00"
+  },
+  {
+    "name": "commons-numbers-combinatorics-1.3.jar.sha1",
+    "url": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-numbers-combinatorics/1.3/commons-numbers-combinatorics-1.3.jar.sha1",
+    "status": 200,
+    "bytes": 40,
+    "sha256": "fb09fa2e8a6d4023b1ce89809dc81013d7fa674f32538169f275aa69e0d8285c",
+    "at": "2026-09-23T03:32:09.389836+00:00"
+  },
+  {
+    "name": "commons-numbers-gamma-1.3.jar",
+    "url": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-numbers-gamma/1.3/commons-numbers-gamma-1.3.jar",
+    "status": 200,
+    "bytes": 66555,
+    "sha256": "62e24a9e6f446a157485ca926011550c01a0873832399a45a2ea6f9b223cba8d",
+    "at": "2026-09-23T03:32:09.421209+00:00"
+  },
+  {
+    "name": "commons-numbers-gamma-1.3.jar.sha1",
+    "url": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-numbers-gamma/1.3/commons-numbers-gamma-1.3.jar.sha1",
+    "status": 200,
+    "bytes": 40,
+    "sha256": "d12f828b6a421acb65472e3ae3966b8c59a1aa2aeff4ed4673f1b77aa4f925cd",
+    "at": "2026-09-23T03:32:09.944026+00:00"
+  },
+  {
+    "name": "commons-numbers-rootfinder-1.3.jar",
+    "url": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-numbers-rootfinder/1.3/commons-numbers-rootfinder-1.3.jar",
+    "status": 200,
+    "bytes": 11608,
+    "sha256": "8ead6ce86e0ccfc56c71006d8d59d23513b93a65d5ef4cd86cb6a2385462afd4",
+    "at": "2026-09-23T03:32:09.957539+00:00"
+  },
+  {
+    "name": "commons-numbers-rootfinder-1.3.jar.sha1",
+    "url": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-numbers-rootfinder/1.3/commons-numbers-rootfinder-1.3.jar.sha1",
+    "status": 200,
+    "bytes": 40,
+    "sha256": "7c50599e96fd449c0b5e1fbf0f4c16f6cf21f223156907667e55945fef49ba98",
+    "at": "2026-09-23T03:32:10.655001+00:00"
+  },
+  {
+    "name": "commons-statistics-distribution-1.3-sources.jar",
+    "url": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-statistics-distribution/1.3/commons-statistics-distribution-1.3-sources.jar",
+    "status": 200,
+    "bytes": 107381,
+    "sha256": "18a88803c95c0570cacb0deda482a7a214d1200636c7582d601f93ee59f7a4b7",
+    "at": "2026-09-23T03:32:10.647581+00:00"
+  },
+  {
+    "name": "gero-publications.json",
+    "url": "https://raw.githubusercontent.com/kadyrbekovhamit-cyber/gero-numerical-observatory/main/catalog/publications.json",
+    "status": 200,
+    "bytes": 171421,
+    "sha256": "13e3d1370691a598d41e9104988f7d7da89bfd7ed51c33cdf18d87061a5c28bf",
+    "at": "2026-09-23T03:33:28.090538+00:00"
+  },
+  {
+    "name": "jira-numerical.json",
+    "url": "https://issues.apache.org/jira/rest/api/2/search?jql=project+%3D+STATISTICS+AND+%28text+~+%22reciprocal%22+OR+text+~+%22cancellation%22+OR+text+~+%22log1p%22%29&maxResults=100",
+    "status": 200,
+    "bytes": 134567,
+    "sha256": "63fe751c65e31d57adaa8f497b8586da11184f67b9226ade8101e143bb050864",
+    "at": "2026-09-23T03:33:28.365766+00:00"
+  },
+  {
+    "name": "pr54.json",
+    "url": "https://api.github.com/repos/apache/commons-statistics/pulls/54",
+    "status": 200,
+    "bytes": 17444,
+    "sha256": "cbe93f43458e13c29ad3111c4d54d0ecc82ad6a9731f6a2b65fd6aea60c0015f",
+    "at": "2026-09-23T03:33:28.800567+00:00"
+  },
+  {
+    "name": "pr54.diff",
+    "url": "https://github.com/apache/commons-statistics/pull/54.diff",
+    "status": 200,
+    "bytes": 7463,
+    "sha256": "913863427730a45d6f2220cb1e4e6007db9af449bacd1f4690abcff6142eae9d",
+    "at": "2026-09-23T03:33:29.628668+00:00"
+  },
+  {
+    "name": "addition-commit.json",
+    "url": "https://api.github.com/repos/apache/commons-statistics/commits/7c6a7637e569ca3904a82b880cd290c9b662f28c",
+    "status": 200,
+    "bytes": 35808,
+    "sha256": "0b80c4e62d57f633ba3bfa289fa6a6cd1bd3f239d43781efce3b139ba47bfa53",
+    "at": "2026-09-23T03:33:29.538722+00:00"
+  },
+  {
+    "name": "jira-88-comments.json",
+    "url": "https://issues.apache.org/jira/rest/api/2/issue/STATISTICS-88/comment",
+    "status": 200,
+    "bytes": 2706,
+    "sha256": "583953248ea829dddef15616e3e99e8a915b3231a194a233f4bfb8fecac6306d",
+    "at": "2026-09-23T03:33:29.922222+00:00"
+  }
+]
