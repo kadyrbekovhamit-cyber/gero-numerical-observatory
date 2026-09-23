@@ -1,12 +1,12 @@
 {
-  "checked_at": "2026-09-23T10:33:49.366427+00:00",
+  "checked_at": "2026-09-23T11:24:05.523483+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 121,
-    "huggingface": 120,
-    "zenodo": 120,
+    "huggingface": 121,
+    "zenodo": 121,
     "github_catalog_report": 121,
-    "zenodo_records_including_collection": 120,
+    "zenodo_records_including_collection": 121,
     "unique_individual_publications": 121,
     "legacy_github_accounts_required_after_copy": 0
   },
@@ -21,12 +21,8 @@
   },
   "missing": {
     "gero": [],
-    "huggingface": [
-      "financepy-merton-jump-poisson-underflow"
-    ],
-    "zenodo": [
-      "financepy-merton-jump-poisson-underflow"
-    ]
+    "huggingface": [],
+    "zenodo": []
   },
   "deduplication_notes": [
     "All 97 previous report IDs preserved; one CIR pricing component report appended.",
@@ -53,7 +49,7 @@
     "20 September 2026: one actuarialmath continuous-annuity selection-duration defect.648/648/0/648failures across2160calls current/release/candidate/restored;1512passing controls unchanged. Independent Decimal reference and synthetic memo/read-back ceiling checks retained; vendorissue7precedes publication.",
     "21 September 2026: one MLX log10 derivative intermediate-overflow report; 66 of 294 distinct primitive inputs fail in each layout/direction; candidate removes those 66 but introduces 4 other boundary errors. Three independent extreme-scale classifier steps make 65 parameters and 108 predictions nonfinite. No production-harm claim. Independent publication authorized before personally authored vendor notice."
   ],
-  "parity_complete": false,
+  "parity_complete": true,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "archival_backfill": {
     "date": "2026-09-16",
@@ -468,13 +464,13 @@
       "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-merton-jump-poisson-underflow.md",
       "vendor_issue": "https://github.com/domokane/FinancePy/issues/273",
       "remaining": [
-        "huggingface",
-        "zenodo",
-        "linkedin",
         "youtube"
       ],
-      "status": "github_gero_verified_others_pending",
-      "gero": "https://www.gero.uz/research/articles/financepy-merton-jump-poisson-underflow.html"
+      "status": "five_destinations_verified_video_not_produced",
+      "gero": "https://www.gero.uz/research/articles/financepy-merton-jump-poisson-underflow.html",
+      "zenodo": "https://zenodo.org/records/22916584",
+      "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-merton-jump-poisson-underflow.md",
+      "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7508485824913723392/"
     }
   }
 }

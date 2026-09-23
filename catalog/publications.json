@@ -2397,9 +2397,13 @@
     "implementation_defects_in_this_report": 1,
     "released_package_affected": false,
     "maintainer_issue": "https://github.com/domokane/FinancePy/issues/273",
-    "mirror_sha256": "8b417e7d3bdc66467a028b6f46531608e2da406f6985cc3aca4bf99e4de6f824",
-    "distribution_status": "GitHub and GERO public verified; Hugging Face, Zenodo, LinkedIn and YouTube pending",
+    "mirror_sha256": "72eac07d6f39af296034249ca3c15bccbaf7cc0fbf8f3b5f250f0bc62a0f7270",
+    "distribution_status": "GitHub, GERO, Hugging Face, Zenodo and LinkedIn public verified; video not produced",
     "video_status": "not_produced",
-    "gero": "https://www.gero.uz/research/articles/financepy-merton-jump-poisson-underflow.html"
+    "gero": "https://www.gero.uz/research/articles/financepy-merton-jump-poisson-underflow.html",
+    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-merton-jump-poisson-underflow.md",
+    "zenodo": "https://zenodo.org/records/22916584",
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7508485824913723392/",
+    "zenodo_doi": "10.5281/zenodo.22916584"
   }
 ]
