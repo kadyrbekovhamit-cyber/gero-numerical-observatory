@@ -75,4 +75,4 @@ Article: [GERO Research](https://www.gero.uz/research/articles/financepy-merton-
 - [Hugging Face report and evidence](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-merton-jump-poisson-underflow.md)
 - [LinkedIn summary](https://www.linkedin.com/feed/update/urn:li:share:7508485824913723392/)
 
-Video for this case has not yet been produced or published.
+[37-second English evidence video](https://www.youtube.com/shorts/N8IdcA5YtcU). Original GERO graphics with synthetic narration; current-source experiment and synthetic worksheet only. No real customer losses established. Published 23 September 2026.
