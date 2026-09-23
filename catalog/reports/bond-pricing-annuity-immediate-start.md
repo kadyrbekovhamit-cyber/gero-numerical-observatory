@@ -68,5 +68,6 @@ Publication status, maintainer receipt and verified distribution links are recor
 - [huggingface](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/bond-pricing-annuity-immediate-start.md)
 - [linkedin](https://www.linkedin.com/feed/update/urn:li:share:7508531622317719552/)
 - [youtube](https://www.youtube.com/shorts/E-sES3VgLOA)
+- [instagram](https://www.instagram.com/gero.math.tech/reel/Ddok5Onzp-J/)
 
 Maintainer issue: https://github.com/jrvarma/bond_pricing/issues/8 . Proposed correction only; no upstream acceptance or reward is claimed.
