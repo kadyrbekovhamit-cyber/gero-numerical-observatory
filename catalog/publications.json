@@ -2358,13 +2358,13 @@
     "publication_date": "2026-09-23",
     "kind": "published_report",
     "gero": "https://www.gero.uz/research/articles/commons-statistics-loguniform-narrow-interval-probabilities.html",
-    "huggingface": null,
-    "zenodo": null,
+    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/commons-statistics-loguniform-narrow-interval-probabilities.md",
+    "zenodo": "https://zenodo.org/records/22908994",
     "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/commons-statistics-loguniform-narrow-interval-probabilities",
     "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/commons-statistics-loguniform-narrow-interval-probabilities.md",
     "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/commons-statistics-loguniform-narrow-interval-probabilities.md",
     "source_text_sha256": "ae0ab11a09c96c244ba4b971a54f7e1548f916eeaa3b7af85664eff6e777b7ce",
-    "mirror_sha256": "9446acb7b9895b2d80c2b777ad7d90f9834a1849317d8e18943013eefdaba836",
+    "mirror_sha256": "fff499c651f255e5730556672532c951977c550832c661ba38fa040ffe97bd53",
     "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/commons-statistics-loguniform-narrow-interval-probabilities/gero-commons-loguniform-evidence-2026-09-23-v1.0.1.zip",
     "evidence_archive_sha256": "523062c72ecb4090396858eab417b75b4687f8cc58a435b03bd3d3b2a49b48f7",
     "linkedin": null,
@@ -2374,10 +2374,10 @@
     "upstream_report_sent": true,
     "upstream_acceptance_claimed": false,
     "implementation_defects_in_this_report": 1,
-    "publication_status": "public_verified_2_of_six",
+    "publication_status": "public_verified_4_of_six",
     "source_pin": "5d8d9e10d876d9a913a054154146f36a18490824",
     "limits": "Official release API executed; full current master and upstream suite not built. Candidate only, no complete moments/inverse/sampling validation or correctly rounded guarantee. Synthetic consumer, no measured deployed/customer/security impact.",
     "measured_chain": "Rounded-log cancellation -> NaN survival probability -> synthetic CSV/JSON worksheet -> 30 incorrect unguarded decisions or 30 blocked guarded calculations; candidate0, restored30.",
-    "zenodo_doi": null
+    "zenodo_doi": "10.5281/zenodo.22908994"
   }
 ]

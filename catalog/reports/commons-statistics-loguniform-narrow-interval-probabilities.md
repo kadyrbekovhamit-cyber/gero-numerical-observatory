@@ -65,7 +65,9 @@ Third-party license and notice files are retained. This report and the GERO test
 
 - [github](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/commons-statistics-loguniform-narrow-interval-probabilities.md)
 - [gero](https://www.gero.uz/research/articles/commons-statistics-loguniform-narrow-interval-probabilities.html)
+- [zenodo](https://zenodo.org/records/22908994)
+- [huggingface](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/commons-statistics-loguniform-narrow-interval-probabilities.md)
 
 [Complete evidence ZIP](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/commons-statistics-loguniform-narrow-interval-probabilities/gero-commons-loguniform-evidence-2026-09-23-v1.0.1.zip). SHA-256: `523062c72ecb4090396858eab417b75b4687f8cc58a435b03bd3d3b2a49b48f7`.
 
-Pending distribution: zenodo, huggingface, linkedin, youtube. One technical email was sent to dev@commons.apache.org before publication; delivery, moderation, acknowledgment and acceptance remain unverified.
+Pending distribution: linkedin, youtube. One technical email was sent to dev@commons.apache.org before publication; delivery, moderation, acknowledgment and acceptance remain unverified.

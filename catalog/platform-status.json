@@ -1,12 +1,12 @@
 {
-  "checked_at": "2026-09-23T03:58:51.985562+00:00",
+  "checked_at": "2026-09-23T04:13:10.636556+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 120,
-    "huggingface": 119,
-    "zenodo": 119,
+    "huggingface": 120,
+    "zenodo": 120,
     "github_catalog_report": 120,
-    "zenodo_records_including_collection": 119,
+    "zenodo_records_including_collection": 120,
     "unique_individual_publications": 120,
     "legacy_github_accounts_required_after_copy": 0
   },
@@ -21,12 +21,8 @@
   },
   "missing": {
     "gero": [],
-    "huggingface": [
-      "commons-statistics-loguniform-narrow-interval-probabilities"
-    ],
-    "zenodo": [
-      "commons-statistics-loguniform-narrow-interval-probabilities"
-    ]
+    "huggingface": [],
+    "zenodo": []
   },
   "deduplication_notes": [
     "All 97 previous report IDs preserved; one CIR pricing component report appended.",
@@ -53,7 +49,7 @@
     "20 September 2026: one actuarialmath continuous-annuity selection-duration defect.648/648/0/648failures across2160calls current/release/candidate/restored;1512passing controls unchanged. Independent Decimal reference and synthetic memo/read-back ceiling checks retained; vendorissue7precedes publication.",
     "21 September 2026: one MLX log10 derivative intermediate-overflow report; 66 of 294 distinct primitive inputs fail in each layout/direction; candidate removes those 66 but introduces 4 other boundary errors. Three independent extreme-scale classifier steps make 65 parameters and 108 predictions nonfinite. No production-harm claim. Independent publication authorized before personally authored vendor notice."
   ],
-  "parity_complete": false,
+  "parity_complete": true,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "archival_backfill": {
     "date": "2026-09-16",
@@ -444,22 +440,24 @@
     "commons-statistics-loguniform-narrow-interval-probabilities": {
       "public": [
         "github",
-        "gero"
+        "gero",
+        "zenodo",
+        "huggingface"
       ],
       "pending": [
-        "zenodo",
-        "huggingface",
         "linkedin",
         "youtube"
       ],
       "links": {
         "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/commons-statistics-loguniform-narrow-interval-probabilities.md",
-        "gero": "https://www.gero.uz/research/articles/commons-statistics-loguniform-narrow-interval-probabilities.html"
+        "gero": "https://www.gero.uz/research/articles/commons-statistics-loguniform-narrow-interval-probabilities.html",
+        "zenodo": "https://zenodo.org/records/22908994",
+        "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/commons-statistics-loguniform-narrow-interval-probabilities.md"
       },
       "archive_sha256": "523062c72ecb4090396858eab417b75b4687f8cc58a435b03bd3d3b2a49b48f7",
       "upstream_report_sent": true,
       "vendor_channel": "dev@commons.apache.org",
-      "zenodo_doi": null
+      "zenodo_doi": "10.5281/zenodo.22908994"
     }
   }
 }
