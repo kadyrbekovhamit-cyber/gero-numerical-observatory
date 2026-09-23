@@ -2415,9 +2415,9 @@
     ],
     "publication_date": "2026-09-23",
     "kind": "published_report",
-    "gero": null,
-    "huggingface": null,
-    "zenodo": null,
+    "gero": "https://www.gero.uz/research/articles/bond-pricing-annuity-immediate-start.html",
+    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/bond-pricing-annuity-immediate-start.md",
+    "zenodo": "https://zenodo.org/records/22919559",
     "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/bond-pricing-annuity-immediate-start",
     "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/bond-pricing-annuity-immediate-start.md",
     "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/bond-pricing-annuity-immediate-start.md",
@@ -2425,13 +2425,13 @@
     "mirror_sha256": "d6475c56cba141658e5c403cec75c34ab336f59d3b3dc5111888da753623a2b9",
     "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/bond-pricing-annuity-immediate-start/gero-bond-pricing-immediate-start-2026-09-23-v1.0.0.zip",
     "evidence_archive_sha256": "04c9ba57411053ccd62223d8d74257152693ccf2aa57b23f5347d6c21b952094",
-    "linkedin": null,
-    "youtube": null,
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7508531622317719552/",
+    "youtube": "https://www.youtube.com/shorts/E-sES3VgLOA",
     "maintainer_issue": "https://github.com/jrvarma/bond_pricing/issues/8",
     "upstream_report_sent": true,
     "upstream_acceptance_claimed": false,
     "implementation_defects_in_this_report": 1,
-    "publication_status": "partial_distribution_in_progress",
+    "publication_status": "six_platform_public_verified",
     "source_pin": "8e04fd03c2594422e457e2f08b460017dc6b4993",
     "limits": [
       "Synthetic cash flows; no real customer loss measured.",
@@ -2440,6 +2440,7 @@
       "No applicable public bounty program found.",
       "Reference and correction prepared with AI assistance by the same research workflow; no independent third-party audit."
     ],
-    "measured_chain": "Immediate-start flag ignored -> instalment 121 instead of 110 -> round-trip PV 231 instead of 210 (synthetic example)"
+    "measured_chain": "Immediate-start flag ignored -> instalment 121 instead of 110 -> round-trip PV 231 instead of 210 (synthetic example)",
+    "zenodo_doi": "10.5281/zenodo.22919559"
   }
 ]

@@ -6,9 +6,9 @@ Updated 23 September 2026. **122 distinct catalogue publications.** Report count
 
 |Platform|Verified catalogue reports|
 |---|---:|
-|gero|121|
-|huggingface|121|
-|zenodo|121|
+|gero|122|
+|huggingface|122|
+|zenodo|122|
 |github_catalog_report|122|
 
 The FinancePy FXForward and MLX sigmoid reports each have GERO, GitHub, LinkedIn, Zenodo, Hugging Face and YouTube publications. Overall coverage is shown above; no equal count across all external account collections is claimed.
@@ -153,4 +153,4 @@ BondZero archives an already corrected upstream issue. [Source fix](https://gith
 | 119 | [MLX log10: finite gradients, nonfinite updates under extreme loss scaling](reports/mlx-log10-finite-seed-intermediate-overflow.md) | [Page](https://www.gero.uz/research/articles/mlx-log10-finite-seed-intermediate-overflow.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-log10-finite-seed-intermediate-overflow.md) | [DOI](https://zenodo.org/records/22886851) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-log10-finite-seed-intermediate-overflow) |
 | 120 | [Apache Commons Statistics: finite bounds, NaN probabilities, and a changed decision](reports/commons-statistics-loguniform-narrow-interval-probabilities.md) | [Page](https://www.gero.uz/research/articles/commons-statistics-loguniform-narrow-interval-probabilities.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/commons-statistics-loguniform-narrow-interval-probabilities.md) | [DOI](https://zenodo.org/records/22908994) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/commons-statistics-loguniform-narrow-interval-probabilities) |
 | 121 | [FinancePy Merton jump pricing: initial Poisson underflow erases positive values](reports/financepy-merton-jump-poisson-underflow.md) | [Page](https://www.gero.uz/research/articles/financepy-merton-jump-poisson-underflow.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-merton-jump-poisson-underflow.md) | [DOI](https://zenodo.org/records/22916584) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-merton-jump-poisson-underflow.md) |
-| 122 | [bond_pricing 0.7.3 ignores immediate-start annuity payments](reports/bond-pricing-annuity-immediate-start.md) | Pending | Pending | Pending | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/bond-pricing-annuity-immediate-start) |
+| 122 | [bond_pricing 0.7.3 ignores immediate-start annuity payments](reports/bond-pricing-annuity-immediate-start.md) | [Page](https://www.gero.uz/research/articles/bond-pricing-annuity-immediate-start.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/bond-pricing-annuity-immediate-start.md) | [DOI](https://zenodo.org/records/22919559) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/bond-pricing-annuity-immediate-start) |

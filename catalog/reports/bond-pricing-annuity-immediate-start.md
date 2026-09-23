@@ -59,3 +59,14 @@ The evidence package contains the pinned wheel, upstream source/license, propose
 The upstream package declares GPLv3. The derived patch and the accompanying replay code are supplied under GPLv3. Permission for later GPL versions was not established. The separate proprietary Audit Lab product is not included in this publication. Text and figures by GERO Research are CC BY 4.0; upstream material retains its own license.
 
 Publication status, maintainer receipt and verified distribution links are recorded separately. A submitted report is not an acknowledgment or an accepted fix.
+
+## Verified publication links
+
+- [github](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/bond-pricing-annuity-immediate-start.md)
+- [zenodo](https://zenodo.org/records/22919559)
+- [gero](https://www.gero.uz/research/articles/bond-pricing-annuity-immediate-start.html)
+- [huggingface](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/bond-pricing-annuity-immediate-start.md)
+- [linkedin](https://www.linkedin.com/feed/update/urn:li:share:7508531622317719552/)
+- [youtube](https://www.youtube.com/shorts/E-sES3VgLOA)
+
+Maintainer issue: https://github.com/jrvarma/bond_pricing/issues/8 . Proposed correction only; no upstream acceptance or reward is claimed.

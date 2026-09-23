@@ -1,12 +1,12 @@
 {
-  "checked_at": "2026-09-23T14:01:37.938994+00:00",
+  "checked_at": "2026-09-23T14:31:33.756978+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 121,
-    "huggingface": 121,
-    "zenodo": 121,
+    "gero": 122,
+    "huggingface": 122,
+    "zenodo": 122,
     "github_catalog_report": 122,
-    "zenodo_records_including_collection": 121,
+    "zenodo_records_including_collection": 122,
     "unique_individual_publications": 122,
     "legacy_github_accounts_required_after_copy": 0
   },
@@ -20,15 +20,9 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [
-      "bond-pricing-annuity-immediate-start"
-    ],
-    "huggingface": [
-      "bond-pricing-annuity-immediate-start"
-    ],
-    "zenodo": [
-      "bond-pricing-annuity-immediate-start"
-    ]
+    "gero": [],
+    "huggingface": [],
+    "zenodo": []
   },
   "deduplication_notes": [
     "All 97 previous report IDs preserved; one CIR pricing component report appended.",
@@ -55,7 +49,7 @@
     "20 September 2026: one actuarialmath continuous-annuity selection-duration defect.648/648/0/648failures across2160calls current/release/candidate/restored;1512passing controls unchanged. Independent Decimal reference and synthetic memo/read-back ceiling checks retained; vendorissue7precedes publication.",
     "21 September 2026: one MLX log10 derivative intermediate-overflow report; 66 of 294 distinct primitive inputs fail in each layout/direction; candidate removes those 66 but introduces 4 other boundary errors. Three independent extreme-scale classifier steps make 65 parameters and 108 predictions nonfinite. No production-harm claim. Independent publication authorized before personally authored vendor notice."
   ],
-  "parity_complete": false,
+  "parity_complete": true,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "archival_backfill": {
     "date": "2026-09-16",
@@ -479,21 +473,25 @@
     },
     "bond-pricing-annuity-immediate-start": {
       "public": [
-        "github"
-      ],
-      "pending": [
-        "gero",
+        "github",
         "zenodo",
+        "gero",
         "huggingface",
         "linkedin",
         "youtube"
       ],
+      "pending": [],
       "links": {
-        "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/bond-pricing-annuity-immediate-start.md"
+        "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/bond-pricing-annuity-immediate-start.md",
+        "zenodo": "https://zenodo.org/records/22919559",
+        "gero": "https://www.gero.uz/research/articles/bond-pricing-annuity-immediate-start.html",
+        "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/bond-pricing-annuity-immediate-start.md",
+        "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7508531622317719552/",
+        "youtube": "https://www.youtube.com/shorts/E-sES3VgLOA"
       },
-      "archive_sha256": "04c9ba57411053ccd62223d8d74257152693ccf2aa57b23f5347d6c21b952094",
       "upstream_report_sent": true,
-      "vendor_channel": "https://github.com/jrvarma/bond_pricing/issues/8"
+      "case_id": "bond-pricing-annuity-immediate-start",
+      "instagram_status": "pending"
     }
   }
 }
