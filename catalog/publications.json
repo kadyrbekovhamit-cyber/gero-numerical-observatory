@@ -2379,5 +2379,26 @@
     "limits": "Official release API executed; full current master and upstream suite not built. Candidate only, no complete moments/inverse/sampling validation or correctly rounded guarantee. Synthetic consumer, no measured deployed/customer/security impact.",
     "measured_chain": "Rounded-log cancellation -> NaN survival probability -> synthetic CSV/JSON worksheet -> 30 incorrect unguarded decisions or 30 blocked guarded calculations; candidate0, restored30.",
     "zenodo_doi": "10.5281/zenodo.22908994"
+  },
+  {
+    "id": "financepy-merton-jump-poisson-underflow",
+    "title": "FinancePy Merton jump pricing: initial Poisson underflow erases positive values",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-23",
+    "kind": "published_report",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-merton-jump-poisson-underflow.md",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-merton-jump-poisson-underflow.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-merton-jump-poisson-underflow.md",
+    "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/reports/financepy-merton-jump-poisson-underflow/gero-financepy-merton-jump-poisson-underflow-evidence-2026-09-23-v1.0.zip",
+    "evidence_archive_sha256": "6b1611caee952ec8f0ed05db46c682f49de7f7f6e35149479f84fea5c57f25df",
+    "source_pin": "7a68a8a8b3be507da6829793861d36865c98c547",
+    "implementation_defects_in_this_report": 1,
+    "released_package_affected": false,
+    "maintainer_issue": "https://github.com/domokane/FinancePy/issues/273",
+    "mirror_sha256": "f529fc7be082afb5520bba61676d467851ff66cf28d0ed88b6e76a59062a4f96",
+    "distribution_status": "GitHub published; other five requested destinations pending",
+    "video_status": "not_produced"
   }
 ]

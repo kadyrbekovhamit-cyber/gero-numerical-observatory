@@ -1,0 +1,24 @@
+--- a/financepy/models/merton_jump_diffusion.py
++++ b/financepy/models/merton_jump_diffusion.py
+@@ -20,6 +20,7 @@
+ import numpy as np
+ 
+ from scipy.optimize import least_squares
++from scipy.special import gammaln
+ 
+ from financepy.models.black_scholes_analytic import value
+ from financepy.models.black_scholes_analytic import vega
+@@ -313,7 +314,12 @@
+             #
+             # p_(n+1) = p_n lambda T / (n+1)
+             #
+-            poisson_prob *= lambda_t / (n + 1.0)
++            if lambda_t > 0.0:
++                poisson_prob = np.exp(
++                    -lambda_t + (n + 1.0) * np.log(lambda_t) - gammaln(n + 2.0)
++                )
++            else:
++                poisson_prob = 0.0
+ 
+         return float(option_value)
+ 

@@ -1,6 +1,6 @@
 # GERO — publication catalogue
 
-Updated 19 September 2026. **120 distinct catalogue publications.** Report counts are not independent-defect counts. All 119 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
+Updated 23 September 2026. **121 distinct catalogue publications.** Report counts are not independent-defect counts. All 120 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
 
 [Machine-readable catalogue](publications.json) · [Coverage](platform-status.json) · [Checksums](SHA256SUMS).
 
@@ -9,7 +9,7 @@ Updated 19 September 2026. **120 distinct catalogue publications.** Report count
 |gero|120|
 |huggingface|120|
 |zenodo|120|
-|github_catalog_report|120|
+|github_catalog_report|121|
 
 The FinancePy FXForward and MLX sigmoid reports each have GERO, GitHub, LinkedIn, Zenodo, Hugging Face and YouTube publications. Overall coverage is shown above; no equal count across all external account collections is claimed.
 
@@ -152,3 +152,5 @@ BondZero archives an already corrected upstream issue. [Source fix](https://gith
 | 118 | [actuarialmath continuous annuity: dropping elapsed years changes a value and a decision](reports/actuarialmath-continuous-annuity-selection-duration.md) | [Page](https://www.gero.uz/research/articles/actuarialmath-continuous-annuity-selection-duration.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/actuarialmath-continuous-annuity-selection-duration.md) | [DOI](https://zenodo.org/records/22894194) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/actuarialmath-continuous-annuity-selection-duration) |
 | 119 | [MLX log10: finite gradients, nonfinite updates under extreme loss scaling](reports/mlx-log10-finite-seed-intermediate-overflow.md) | [Page](https://www.gero.uz/research/articles/mlx-log10-finite-seed-intermediate-overflow.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-log10-finite-seed-intermediate-overflow.md) | [DOI](https://zenodo.org/records/22886851) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-log10-finite-seed-intermediate-overflow) |
 | 120 | [Apache Commons Statistics: finite bounds, NaN probabilities, and a changed decision](reports/commons-statistics-loguniform-narrow-interval-probabilities.md) | [Page](https://www.gero.uz/research/articles/commons-statistics-loguniform-narrow-interval-probabilities.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/commons-statistics-loguniform-narrow-interval-probabilities.md) | [DOI](https://zenodo.org/records/22908994) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/commons-statistics-loguniform-narrow-interval-probabilities) |
+
+| 121 | [FinancePy Merton jump pricing: initial Poisson underflow erases positive values](reports/financepy-merton-jump-poisson-underflow.md) | Pending | Pending | Pending | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-merton-jump-poisson-underflow.md) |

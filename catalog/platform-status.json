@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-23T05:23:43.037204+00:00",
+  "checked_at": "2026-09-23T08:45:20.195997+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 120,
     "huggingface": 120,
     "zenodo": 120,
-    "github_catalog_report": 120,
+    "github_catalog_report": 121,
     "zenodo_records_including_collection": 120,
-    "unique_individual_publications": 120,
+    "unique_individual_publications": 121,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "120 canonical reports; Commons Statistics finite-bound LogUniform audit added. Counts track reports, not independent defects.",
+  "github_status": "121 canonical reports; Merton jump Poisson underflow added. Other platform additions are pending.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -20,9 +20,15 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [],
-    "huggingface": [],
-    "zenodo": []
+    "gero": [
+      "financepy-merton-jump-poisson-underflow"
+    ],
+    "huggingface": [
+      "financepy-merton-jump-poisson-underflow"
+    ],
+    "zenodo": [
+      "financepy-merton-jump-poisson-underflow"
+    ]
   },
   "deduplication_notes": [
     "All 97 previous report IDs preserved; one CIR pricing component report appended.",
@@ -49,7 +55,7 @@
     "20 September 2026: one actuarialmath continuous-annuity selection-duration defect.648/648/0/648failures across2160calls current/release/candidate/restored;1512passing controls unchanged. Independent Decimal reference and synthetic memo/read-back ceiling checks retained; vendorissue7precedes publication.",
     "21 September 2026: one MLX log10 derivative intermediate-overflow report; 66 of 294 distinct primitive inputs fail in each layout/direction; candidate removes those 66 but introduces 4 other boundary errors. Three independent extreme-scale classifier steps make 65 parameters and 108 predictions nonfinite. No production-harm claim. Independent publication authorized before personally authored vendor notice."
   ],
-  "parity_complete": true,
+  "parity_complete": false,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "archival_backfill": {
     "date": "2026-09-16",
@@ -459,6 +465,18 @@
       "upstream_report_sent": true,
       "vendor_channel": "dev@commons.apache.org",
       "zenodo_doi": "10.5281/zenodo.22908994"
+    },
+    "financepy-merton-jump-poisson-underflow": {
+      "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-merton-jump-poisson-underflow.md",
+      "vendor_issue": "https://github.com/domokane/FinancePy/issues/273",
+      "remaining": [
+        "gero",
+        "huggingface",
+        "zenodo",
+        "linkedin",
+        "youtube"
+      ],
+      "status": "github_verified_other_destinations_pending"
     }
   }
 }
