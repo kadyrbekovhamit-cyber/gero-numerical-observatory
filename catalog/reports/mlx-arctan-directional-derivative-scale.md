@@ -88,10 +88,16 @@ Independent GERO research by Xamit Kadirbekov. AI-assisted experiment and archiv
 <!-- GERO_PUBLICATION_LINKS_BEGIN -->
 ## Verified publication and reproduction links
 
+- [GERO article](https://www.gero.uz/research/articles/mlx-arctan-directional-derivative-scale.html)
 - [GitHub report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-arctan-directional-derivative-scale.md)
+- [Hugging Face mirror](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/mlx-arctan-directional-derivative-scale.md)
+- [Zenodo record and evidence archive](https://zenodo.org/records/22938506) — DOI [`10.5281/zenodo.22938506`](https://doi.org/10.5281/zenodo.22938506)
+- [LinkedIn native video post](https://www.linkedin.com/feed/update/urn:li:ugcPost:7508854938483970049/)
+- [YouTube Short](https://www.youtube.com/shorts/Hxz1xk6k6P8)
+- [Instagram Reel](https://www.instagram.com/gero.math.tech/reel/DdqzgN2h8jK/)
 - [Complete reproducibility ZIP](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/mlx-arctan-directional-derivative-scale/gero-mlx-arctan-directional-derivative-scale-2026-09-24.zip)
 
 Archive SHA-256: `345f934d734dc65c2d88f17e096164edf136e9a8b94aa2702168bcddc1316ea0`.
 
-Apple Open Source was notified before publication; the final plain-text message was verified in Sent. No acknowledgment or accepted fix is claimed. Other platform links are pending verification.
+Apple Open Source was notified before publication; the final plain-text message was verified in Sent. No acknowledgment or accepted fix is claimed.
 <!-- GERO_PUBLICATION_LINKS_END -->
