@@ -1,6 +1,6 @@
 # GERO — publication catalogue
 
-Updated 24 September 2026. **123 distinct catalogue publications.** Report counts are not independent-defect counts. All 122 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
+Updated 24 September 2026. **124 distinct catalogue publications.** Report counts are not independent-defect counts. All 123 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
 
 [Machine-readable catalogue](publications.json) · [Coverage](platform-status.json) · [Checksums](SHA256SUMS).
 
@@ -9,7 +9,7 @@ Updated 24 September 2026. **123 distinct catalogue publications.** Report count
 |gero|122|
 |huggingface|122|
 |zenodo|122|
-|github_catalog_report|123|
+|github_catalog_report|124|
 
 The FinancePy FXForward and MLX sigmoid reports each have GERO, GitHub, LinkedIn, Zenodo, Hugging Face and YouTube publications. Overall coverage is shown above; no equal count across all external account collections is claimed.
 
@@ -155,3 +155,4 @@ BondZero archives an already corrected upstream issue. [Source fix](https://gith
 | 121 | [FinancePy Merton jump pricing: initial Poisson underflow erases positive values](reports/financepy-merton-jump-poisson-underflow.md) | [Page](https://www.gero.uz/research/articles/financepy-merton-jump-poisson-underflow.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/financepy-merton-jump-poisson-underflow.md) | [DOI](https://zenodo.org/records/22916584) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/financepy-merton-jump-poisson-underflow.md) |
 | 122 | [bond_pricing 0.7.3 ignores immediate-start annuity payments](reports/bond-pricing-annuity-immediate-start.md) | [Page](https://www.gero.uz/research/articles/bond-pricing-annuity-immediate-start.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/bond-pricing-annuity-immediate-start.md) | [DOI](https://zenodo.org/records/22919559) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/bond-pricing-annuity-immediate-start) |
 | 123 | [actuarialmath direct endowment second moments omit the benefit power](reports/actuarialmath-direct-endowment-second-moment.md) | Pending | Pending | Pending | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-direct-endowment-second-moment.md) |
+| 124 | [MLX arctan: finite weighted derivatives collapse to zero after intermediate overflow](reports/mlx-arctan-directional-derivative-scale.md) | Pending | Pending | Pending | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-arctan-directional-derivative-scale) |

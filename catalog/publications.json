@@ -2464,5 +2464,35 @@
     "mirror_sha256": "f888be49bad9b47ac7bb77c65a62e5136b81e4eefade9ca0dbdf35263f1e6e57",
     "distribution_status": "GitHub published; other five requested destinations pending",
     "video_status": "not_produced"
+  },
+  {
+    "id": "mlx-arctan-directional-derivative-scale",
+    "title": "MLX arctan: finite weighted derivatives collapse to zero after intermediate overflow",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-24",
+    "kind": "published_report",
+    "gero": null,
+    "huggingface": null,
+    "zenodo": null,
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/mlx-arctan-directional-derivative-scale",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-arctan-directional-derivative-scale.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-arctan-directional-derivative-scale.md",
+    "source_text_sha256": "6c248ec64fa4871d4d21e11d9ef7c19dfd82a450331f502db92a148b0c4f36ad",
+    "mirror_sha256": "6c248ec64fa4871d4d21e11d9ef7c19dfd82a450331f502db92a148b0c4f36ad",
+    "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/mlx-arctan-directional-derivative-scale/gero-mlx-arctan-directional-derivative-scale-2026-09-24.zip",
+    "evidence_archive_sha256": "345f934d734dc65c2d88f17e096164edf136e9a8b94aa2702168bcddc1316ea0",
+    "linkedin": null,
+    "youtube": null,
+    "maintainer_issue": null,
+    "maintainer_contact": "opensource@apple.com",
+    "upstream_report_sent": true,
+    "upstream_acceptance_claimed": false,
+    "implementation_defects_in_this_report": 1,
+    "publication_status": "github_public_vendor_notified_other_platforms_pending",
+    "source_pin": "59d600b5e64c238427d0f8d897ab7c682ef4d3d2",
+    "limits": "In Apple MLX CPU float32, arctan differentiation forms 1+x² before division. For finite x=-2^64 and seed=-2^120, x² overflows and the JVP/VJP becomes signed zero although the correctly rounded result is -0.00390625. A scale-aware research candidate reduces 352 discrepancies per tested layout to zero, with documented higher-order residuals. CPU float32 only; no real model/device/customer impact; candidate has documented higher-order residuals.",
+    "measured_chain": "v/(1+x^2) -> x*x overflows -> -0.0 instead of -0.00390625 -> synthetic update 1.0 instead of 1.5 and threshold decision flips."
   }
 ]

@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-24T02:21:37.496419+00:00",
+  "checked_at": "2026-09-24T11:28:54.289398+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 122,
     "huggingface": 122,
     "zenodo": 122,
-    "github_catalog_report": 123,
+    "github_catalog_report": 124,
     "zenodo_records_including_collection": 122,
-    "unique_individual_publications": 123,
+    "unique_individual_publications": 124,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "123 canonical reports; Direct endowment second-moment audit added. Other platform additions are pending.",
+  "github_status": "124 canonical reports; MLX arctan directional-derivative scale audit added. Counts track reports, not independent defects.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -21,13 +21,16 @@
   },
   "missing": {
     "gero": [
-      "actuarialmath-direct-endowment-second-moment"
+      "actuarialmath-direct-endowment-second-moment",
+      "mlx-arctan-directional-derivative-scale"
     ],
     "huggingface": [
-      "actuarialmath-direct-endowment-second-moment"
+      "actuarialmath-direct-endowment-second-moment",
+      "mlx-arctan-directional-derivative-scale"
     ],
     "zenodo": [
-      "actuarialmath-direct-endowment-second-moment"
+      "actuarialmath-direct-endowment-second-moment",
+      "mlx-arctan-directional-derivative-scale"
     ]
   },
   "deduplication_notes": [
@@ -512,6 +515,26 @@
         "youtube"
       ],
       "status": "github_verified_other_destinations_pending"
+    },
+    "mlx-arctan-directional-derivative-scale": {
+      "public": [
+        "github"
+      ],
+      "pending": [
+        "gero",
+        "zenodo",
+        "huggingface",
+        "linkedin",
+        "youtube"
+      ],
+      "links": {
+        "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-arctan-directional-derivative-scale.md"
+      },
+      "archive_sha256": "345f934d734dc65c2d88f17e096164edf136e9a8b94aa2702168bcddc1316ea0",
+      "upstream_report_sent": true,
+      "vendor_channel": "opensource@apple.com",
+      "vendor_message_id": "D9308A2F-D7AA-4D3F-9F4B-CD969B905FD5@icloud.com",
+      "upstream_acceptance_claimed": false
     }
   }
 }

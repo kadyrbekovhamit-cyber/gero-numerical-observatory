@@ -1,0 +1,15 @@
+{
+  "status": "sent_and_local_sent_body_verified",
+  "sent_at_local": "2026-09-24T16:27:30+05:00",
+  "recipient": "opensource@apple.com",
+  "sender": "Хамит Кадырбеков <kadirbekov@icloud.com>",
+  "preferred_reply": "kadyrbekovhamit@gmail.com",
+  "subject": "Final correction: MLX arctan finite float32 JVP/VJP overflow",
+  "message_id": "D9308A2F-D7AA-4D3F-9F4B-CD969B905FD5@icloud.com",
+  "attachment": null,
+  "archive_offered_on_request": true,
+  "sent_body_sha256": "086c47e4c54c3c587e08c91d1d1c7a89bf355f380549944001d3ea1ff235bcd1",
+  "verification": "Mail Sent content read back via local Mail scripting and matched substantive claims; two immediately preceding malformed messages were explicitly superseded in the final correction.",
+  "limitations": "No vendor acknowledgment or accepted fix claimed.",
+  "sent_body_path": "/Users/khamit/Documents/Codex/gero-continuous-research/research/mlx-arctan-invariants-2026-09-24/publication/VENDOR_EMAIL_SENT.txt"
+}

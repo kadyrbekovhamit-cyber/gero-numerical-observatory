@@ -1,0 +1,33 @@
+{
+  "case_id": "mlx-arctan-directional-derivative-scale",
+  "checked_at": "2026-09-24T16:20:56.773049+05:00",
+  "adapter": "GERO-authored synthetic scalar update and review threshold; not an MLX optimizer or production model",
+  "input": {
+    "x": -1.8446744073709552e+19,
+    "directional_seed": -1.329227995784916e+36,
+    "row_id": 1456
+  },
+  "gradient": {
+    "oracle": -0.00390625,
+    "mlx_original": -0.0,
+    "research_candidate": -0.00390625
+  },
+  "threshold": 0.001,
+  "decision": {
+    "oracle_review": true,
+    "mlx_original_review": false,
+    "candidate_review": true
+  },
+  "update": {
+    "start": 1.0,
+    "learning_rate": 128.0,
+    "oracle": 1.5,
+    "mlx_original": 1.0,
+    "candidate": 1.5
+  },
+  "limits": [
+    "Synthetic adapter only",
+    "No measured model, customer, device, or production impact",
+    "Candidate is incomplete for all higher-order/composition extremes"
+  ]
+}

@@ -1,0 +1,25 @@
+--- a/mlx/primitives.cpp
++++ b/mlx/primitives.cpp
+@@ -510,7 +510,21 @@
+   assert(argnums.size() == 1);
+   array one = array(1., primals[0].dtype());
+   array t = add(one, square(primals[0], stream()), stream());
+-  return {divide(tangents[0], t, stream())};
++  array original = divide(tangents[0], t, stream());
++  if (issubdtype(primals[0].dtype(), complexfloating)) {
++    return {original};
++  }
++  array scale = stop_gradient(
++      maximum(abs(primals[0], stream()), one, stream()), stream());
++  array scaled_x = divide(primals[0], scale, stream());
++  array inv_scale = divide(one, scale, stream());
++  array denom = add(
++      square(scaled_x, stream()), square(inv_scale, stream()), stream());
++  array stable = divide(
++      divide(divide(tangents[0], scale, stream()), denom, stream()),
++      scale,
++      stream());
++  return {where(isfinite(primals[0], stream()), stable, original, stream())};
+ }
+ 
+ std::pair<std::vector<array>, std::vector<int>> ArcTan::vmap(

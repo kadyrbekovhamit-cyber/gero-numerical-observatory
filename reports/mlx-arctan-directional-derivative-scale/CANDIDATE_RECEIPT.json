@@ -1,0 +1,119 @@
+{
+  "checked_at": "2026-09-24T16:04:24+05:00",
+  "case_id": "mlx-arctan-directional-derivative-scale",
+  "source_pin": "59d600b5e64c238427d0f8d897ab7c682ef4d3d2",
+  "device": "CPU",
+  "dtype": "float32",
+  "configured_threads": 1,
+  "rows_per_layout": 3918,
+  "layouts": [
+    "flat",
+    "row",
+    "column"
+  ],
+  "failed_rows": {
+    "original": 352,
+    "candidate": 0,
+    "restored": 352
+  },
+  "failures_with_normal_finite_x_v_expected": 256,
+  "representative": {
+    "x": -1.8446744073709552e+19,
+    "v": -1.329227995784916e+36,
+    "expected": -0.00390625,
+    "jvp": -0.0,
+    "vjp": -0.0
+  },
+  "original_restored_csv_byte_identical": {
+    "flat": true,
+    "row": true,
+    "column": true
+  },
+  "forward_bit_differences_original_candidate": {
+    "flat": 0,
+    "row": 0,
+    "column": 0
+  },
+  "special_value_row_differences_original_candidate": {
+    "flat": 0,
+    "row": 0,
+    "column": 0
+  },
+  "source_hashes": {
+    "original_restored": "6a045372433d91ec0ec00caf134ad5010fe34d8c0ae7a114496f632b24f74f09",
+    "candidate": "201f758a2638ee958617b5cb9620b422d844df775e0c27f906189cd2710fc2e5"
+  },
+  "patch_sha256": "96320a1240368c70cee43c8c6f1caa3255a9607b9954304fffc352201609cbff",
+  "patch_dry_run": true,
+  "release_source": {
+    "version": "v0.32.2",
+    "arctan_jvp_method_byte_identical_to_current": true,
+    "runtime_executed": false
+  },
+  "scope_limits": [
+    "candidate stage",
+    "no vendor contact",
+    "no release runtime",
+    "no GPU",
+    "no full suite",
+    "no model or device impact",
+    "candidate has documented higher-order/composition residuals at scales 2^64 and 2^80"
+  ],
+  "higher_order_composite": {
+    "function": "atan(2^k * t) at t=1 via reverse-mode grad",
+    "exponents": [
+      0,
+      32,
+      64,
+      80
+    ],
+    "original_restored_byte_identical": true,
+    "candidate_rows": [
+      {
+        "exponent": "0",
+        "forward_bits": "1061752795",
+        "d1_bits": "1056964608",
+        "d2_bits": "3204448256",
+        "d3_bits": "1056964608",
+        "forward": "0.785398",
+        "d1": "0.5",
+        "d2": "-0.5",
+        "d3": "0.5"
+      },
+      {
+        "exponent": "32",
+        "forward_bits": "1070141402",
+        "d1_bits": "796917760",
+        "d2_bits": "2952790016",
+        "d3_bits": "817889280",
+        "forward": "1.5708",
+        "d1": "2.32831e-10",
+        "d2": "-4.65661e-10",
+        "d3": "1.39698e-09"
+      },
+      {
+        "exponent": "64",
+        "forward_bits": "1070141402",
+        "d1_bits": "528482304",
+        "d2_bits": "2684354560",
+        "d3_bits": "4290772992",
+        "forward": "1.5708",
+        "d1": "5.42101e-20",
+        "d2": "-1.0842e-19",
+        "d3": "nan"
+      },
+      {
+        "exponent": "80",
+        "forward_bits": "1070141402",
+        "d1_bits": "0",
+        "d2_bits": "0",
+        "d3_bits": "4290772992",
+        "forward": "1.5708",
+        "d1": "0",
+        "d2": "0",
+        "d3": "nan"
+      }
+    ],
+    "interpretation": "The candidate fixes first through third derivatives at k=32 and first/second at k=64, but third remains NaN at k=64 and all derivatives remain lost by k=80. These residuals arise after an unweighted local derivative underflows before an outer chain multiplier can recover it; the candidate is not a complete higher-order/composition repair."
+  }
+}

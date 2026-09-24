@@ -1,0 +1,81 @@
+{
+  "checked_at": "2026-09-24T16:04:41+05:00",
+  "source_head": "59d600b5e64c238427d0f8d897ab7c682ef4d3d2",
+  "queries": {
+    "gradient": {
+      "total_count": 3,
+      "results": [
+        {
+          "number": 3778,
+          "title": "[BUG] Complex vjps are wrong for arcsin/arccos/arctan/arcsinh/arccosh/arctanh (missing conjugate)",
+          "url": "https://github.com/ml-explore/mlx/issues/3778"
+        },
+        {
+          "number": 3779,
+          "title": "Fix complex vjps for the inverse trig and hyperbolic ops",
+          "url": "https://github.com/ml-explore/mlx/pull/3779"
+        },
+        {
+          "number": 4227,
+          "title": "Add multi-point closed-form gradient reference tests",
+          "url": "https://github.com/ml-explore/mlx/pull/4227"
+        }
+      ]
+    },
+    "jvp": {
+      "total_count": 3,
+      "results": [
+        {
+          "number": 3779,
+          "title": "Fix complex vjps for the inverse trig and hyperbolic ops",
+          "url": "https://github.com/ml-explore/mlx/pull/3779"
+        },
+        {
+          "number": 3778,
+          "title": "[BUG] Complex vjps are wrong for arcsin/arccos/arctan/arcsinh/arccosh/arctanh (missing conjugate)",
+          "url": "https://github.com/ml-explore/mlx/issues/3778"
+        },
+        {
+          "number": 1065,
+          "title": "[Feature] arctan2",
+          "url": "https://github.com/ml-explore/mlx/issues/1065"
+        }
+      ]
+    },
+    "overflow": {
+      "total_count": 0,
+      "results": []
+    }
+  },
+  "plausible_prior_work": [
+    {
+      "url": "https://github.com/ml-explore/mlx/pull/4227",
+      "assessment": "Related closed-form arctan gradient tests, closed unmerged. Its arctan grid is restricted to [-1.5,1.5] and the body says no defect was found on that well-conditioned range. It does not cover finite x beyond the float32 square-overflow threshold or large finite directional seeds."
+    },
+    {
+      "url": "https://github.com/ml-explore/mlx/issues/3778",
+      "assessment": "Distinct complex-VJP conjugation defect; current candidate is real float32 JVP/VJP intermediate overflow."
+    },
+    {
+      "url": "https://github.com/ml-explore/mlx/pull/3779",
+      "assessment": "Distinct complex-VJP correction; no scale-overflow correction."
+    },
+    {
+      "url": "https://www.gero.uz/research/articles/mlx-arctan2-scale-autodiff.html",
+      "assessment": "Related GERO binary arctan2 scale report. The unary arctan operation uses a separate ArcTan::jvp code path; this candidate is not counted as arctan2."
+    },
+    {
+      "url": "https://www.gero.uz/research/articles/mlx-rsqrt-directional-derivative-scale.html",
+      "assessment": "Related scale-stability report for a different unary derivative and formula."
+    }
+  ],
+  "exact_duplicate_found": false,
+  "absolute_priority_claim": false,
+  "publication_approved": false,
+  "next_checks": [
+    "full current-source suite relevant to primitives",
+    "second- and third-order derivative behavior of candidate",
+    "release runtime if feasible",
+    "vendor routing under honest authorship rules"
+  ]
+}

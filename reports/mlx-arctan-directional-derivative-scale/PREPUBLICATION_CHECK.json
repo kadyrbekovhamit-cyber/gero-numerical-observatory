@@ -1,0 +1,82 @@
+{
+  "checked_at": "2026-09-24T16:21:11.909394+05:00",
+  "mlx_main": "59d600b5e64c238427d0f8d897ab7c682ef4d3d2",
+  "expected_pin": "59d600b5e64c238427d0f8d897ab7c682ef4d3d2",
+  "pin_unchanged": true,
+  "arctan_method_sha256": "ca024ac14ec87a368923473c47a880adeb6fbc3b8f6cda42d45919aeca99d3a2",
+  "queries": {
+    "gradient": {
+      "total_count": 3,
+      "items": [
+        {
+          "number": 3778,
+          "title": "[BUG] Complex vjps are wrong for arcsin/arccos/arctan/arcsinh/arccosh/arctanh (missing conjugate)",
+          "url": "https://github.com/ml-explore/mlx/issues/3778",
+          "state": "open"
+        },
+        {
+          "number": 3779,
+          "title": "Fix complex vjps for the inverse trig and hyperbolic ops",
+          "url": "https://github.com/ml-explore/mlx/pull/3779",
+          "state": "open"
+        },
+        {
+          "number": 4227,
+          "title": "Add multi-point closed-form gradient reference tests",
+          "url": "https://github.com/ml-explore/mlx/pull/4227",
+          "state": "closed"
+        }
+      ]
+    },
+    "jvp": {
+      "total_count": 3,
+      "items": [
+        {
+          "number": 3779,
+          "title": "Fix complex vjps for the inverse trig and hyperbolic ops",
+          "url": "https://github.com/ml-explore/mlx/pull/3779",
+          "state": "open"
+        },
+        {
+          "number": 3778,
+          "title": "[BUG] Complex vjps are wrong for arcsin/arccos/arctan/arcsinh/arccosh/arctanh (missing conjugate)",
+          "url": "https://github.com/ml-explore/mlx/issues/3778",
+          "state": "open"
+        },
+        {
+          "number": 1065,
+          "title": "[Feature] arctan2",
+          "url": "https://github.com/ml-explore/mlx/issues/1065",
+          "state": "closed"
+        }
+      ]
+    },
+    "overflow": {
+      "total_count": 0,
+      "items": []
+    },
+    "derivative": {
+      "total_count": 1,
+      "items": [
+        {
+          "number": 4227,
+          "title": "Add multi-point closed-form gradient reference tests",
+          "url": "https://github.com/ml-explore/mlx/pull/4227",
+          "state": "closed"
+        }
+      ]
+    }
+  },
+  "github_catalog_exact_slug": false,
+  "gero_catalog_exact_slug": false,
+  "exact_duplicate_found": false,
+  "absolute_priority_claim": false,
+  "related_distinct": [
+    3778,
+    3779,
+    4227,
+    "mlx-arctan2-scale-autodiff",
+    "mlx-rsqrt-directional-derivative-scale"
+  ],
+  "publication_decision": "Novel within bounded checked sources; publish with explicit scope and no absolute priority claim."
+}

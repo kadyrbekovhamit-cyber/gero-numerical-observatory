@@ -1,0 +1,17 @@
+{
+  "title": "MLX arctan: finite weighted derivatives collapse to zero after intermediate overflow",
+  "case_id": "mlx-arctan-directional-derivative-scale",
+  "author": "Xamit Kadirbekov",
+  "date": "2026-09-24",
+  "language": "English",
+  "summary": "In Apple MLX CPU float32, arctan differentiation forms 1+x\u00b2 before division. For finite x=-2^64 and seed=-2^120, x\u00b2 overflows and the JVP/VJP becomes signed zero although the correctly rounded result is -0.00390625. A scale-aware research candidate reduces 352 discrepancies per tested layout to zero, with documented higher-order residuals.",
+  "keywords": [
+    "MLX",
+    "arctan",
+    "automatic differentiation",
+    "float32",
+    "numerical stability",
+    "intermediate overflow",
+    "reproducibility"
+  ]
+}
