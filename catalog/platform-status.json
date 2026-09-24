@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-23T14:59:36.496779+00:00",
+  "checked_at": "2026-09-24T02:21:37.496419+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 122,
     "huggingface": 122,
     "zenodo": 122,
-    "github_catalog_report": 122,
+    "github_catalog_report": 123,
     "zenodo_records_including_collection": 122,
-    "unique_individual_publications": 122,
+    "unique_individual_publications": 123,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "122 canonical reports; bond_pricing immediate-start annuity audit added. Counts track reports, not independent defects.",
+  "github_status": "123 canonical reports; Direct endowment second-moment audit added. Other platform additions are pending.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -20,9 +20,15 @@
     "zenodo_owner_search": "https://zenodo.org/search?q=owners%3A1848583"
   },
   "missing": {
-    "gero": [],
-    "huggingface": [],
-    "zenodo": []
+    "gero": [
+      "actuarialmath-direct-endowment-second-moment"
+    ],
+    "huggingface": [
+      "actuarialmath-direct-endowment-second-moment"
+    ],
+    "zenodo": [
+      "actuarialmath-direct-endowment-second-moment"
+    ]
   },
   "deduplication_notes": [
     "All 97 previous report IDs preserved; one CIR pricing component report appended.",
@@ -49,7 +55,7 @@
     "20 September 2026: one actuarialmath continuous-annuity selection-duration defect.648/648/0/648failures across2160calls current/release/candidate/restored;1512passing controls unchanged. Independent Decimal reference and synthetic memo/read-back ceiling checks retained; vendorissue7precedes publication.",
     "21 September 2026: one MLX log10 derivative intermediate-overflow report; 66 of 294 distinct primitive inputs fail in each layout/direction; candidate removes those 66 but introduces 4 other boundary errors. Three independent extreme-scale classifier steps make 65 parameters and 108 predictions nonfinite. No production-harm claim. Independent publication authorized before personally authored vendor notice."
   ],
-  "parity_complete": true,
+  "parity_complete": false,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
   "archival_backfill": {
     "date": "2026-09-16",
@@ -494,6 +500,18 @@
       "upstream_report_sent": true,
       "case_id": "bond-pricing-annuity-immediate-start",
       "instagram_status": "public_verified"
+    },
+    "actuarialmath-direct-endowment-second-moment": {
+      "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-direct-endowment-second-moment.md",
+      "vendor_issue": "https://github.com/terence-lim/actuarialmath/issues/8",
+      "remaining": [
+        "gero",
+        "huggingface",
+        "zenodo",
+        "linkedin",
+        "youtube"
+      ],
+      "status": "github_verified_other_destinations_pending"
     }
   }
 }

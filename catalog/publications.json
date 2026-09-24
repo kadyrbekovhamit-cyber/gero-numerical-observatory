@@ -2443,5 +2443,26 @@
     "measured_chain": "Immediate-start flag ignored -> instalment 121 instead of 110 -> round-trip PV 231 instead of 210 (synthetic example)",
     "zenodo_doi": "10.5281/zenodo.22919559",
     "instagram": "https://www.instagram.com/gero.math.tech/reel/Ddok5Onzp-J/"
+  },
+  {
+    "id": "actuarialmath-direct-endowment-second-moment",
+    "title": "actuarialmath direct endowment second moments omit the benefit power",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-24",
+    "kind": "published_report",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-direct-endowment-second-moment.md",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-direct-endowment-second-moment.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-direct-endowment-second-moment.md",
+    "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/reports/actuarialmath-direct-endowment-second-moment/gero-actuarialmath-direct-endowment-second-moment-2026-09-24.zip",
+    "evidence_archive_sha256": "ecc98650dc611bccd882731c926e41c8ba57792263677980a7d51845ef6470e5",
+    "source_pin": "7d18f11ad304898f177b7922b3c53f70e4c2b4f4",
+    "implementation_defects_in_this_report": 1,
+    "released_package_affected": true,
+    "maintainer_issue": "https://github.com/terence-lim/actuarialmath/issues/8",
+    "mirror_sha256": "f888be49bad9b47ac7bb77c65a62e5136b81e4eefade9ca0dbdf35263f1e6e57",
+    "distribution_status": "GitHub published; other five requested destinations pending",
+    "video_status": "not_produced"
   }
 ]

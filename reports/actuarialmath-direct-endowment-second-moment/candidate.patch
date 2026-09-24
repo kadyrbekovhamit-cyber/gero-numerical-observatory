@@ -1,0 +1,11 @@
+--- a/src/actuarialmath/insurance.py
++++ b/src/actuarialmath/insurance.py
+@@ -64,7 +64,7 @@
+         """
+         assert moment >= 1
+         if t >=0 and endowment > 0:
+-            E = self.E_x(x, s=s, t=t+u, moment=moment) * endowment
++            E = self.E_x(x, s=s, t=t+u, moment=moment) * endowment**moment
+         else:
+             E = 0
+         t = self.max_term(x+s+u, t=t)
