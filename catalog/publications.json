@@ -2590,18 +2590,19 @@
     "predecessor_id": "black-scholes-sensitivities-v4",
     "gero": null,
     "huggingface": null,
-    "zenodo": null,
-    "linkedin": null,
+    "zenodo": "https://zenodo.org/records/22976977",
+    "linkedin": "https://www.linkedin.com/posts/khamit-kadirbekov-9473a129_quantitativefinance-blackscholes-impliedvolatility-activity-7509586229076672512-gFLl",
     "youtube": null,
     "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-interval-iv-v5",
     "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/black-scholes-interval-iv-v5.md",
-    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-interval-iv-v5/TECHNICAL_NOTE_V5.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/reports/black-scholes-interval-iv-v5/TECHNICAL_NOTE_V5.md",
     "source_text_sha256": "96eb245103e1e72c450698981a9a3e00a1cd45b5bdd91d2c4d4faa203bf3c7f8",
     "mirror_sha256": "96eb245103e1e72c450698981a9a3e00a1cd45b5bdd91d2c4d4faa203bf3c7f8",
     "evidence_archive": "https://raw.githubusercontent.com/kadyrbekovhamit-cyber/gero-numerical-observatory/main/reports/black-scholes-interval-iv-v5/black-scholes-interval-iv-v5.0.zip",
     "evidence_archive_sha256": "a5e5240b8186293eb61b0fe8a7833fed3fbdd40e9deb451e4bbf227f792abdd2",
     "implementation_defects_in_this_report": 0,
-    "publication_status": "GitHub working paper; additional distribution pending; no peer review claimed",
-    "limits": "Interval IV with exact quotes and Arb sign witnesses. Final fresh64/64 gates pass:56resolved+8explicit budget limits. Earlier158/160 and82/96 are retained test-harness failures; unchanged solver. Certification conditional on Arb and implementation. No new model, novelty, market or external-review claim."
+    "publication_status": "GitHub, Zenodo and v5 LinkedIn post verified; v5 video not produced (two-upload daily cadence already reached); SSRN not submitted; no peer review claimed",
+    "limits": "Interval IV with exact quotes and Arb sign witnesses. Final fresh64/64 gates pass:56resolved+8explicit budget limits. Earlier158/160 and82/96 are retained test-harness failures; unchanged solver. Certification conditional on Arb and implementation. No new model, novelty, market or external-review claim.",
+    "zenodo_doi": "10.5281/zenodo.22976977"
   }
 ]

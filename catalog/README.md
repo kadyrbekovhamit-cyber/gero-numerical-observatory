@@ -1,6 +1,6 @@
 # GERO — publication catalogue
 
-Updated 26 September 2026. **127 distinct catalogue publications.** Report counts are not independent-defect counts. All 125 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
+Updated 26 September 2026. **128 distinct catalogue publications.** Report counts are not independent-defect counts. All 125 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
 
 [Machine-readable catalogue](publications.json) · [Coverage](platform-status.json) · [Checksums](SHA256SUMS).
 
@@ -8,8 +8,8 @@ Updated 26 September 2026. **127 distinct catalogue publications.** Report count
 |---|---:|
 |gero|122|
 |huggingface|122|
-|zenodo|125|
-|github_catalog_report|127|
+|zenodo|126|
+|github_catalog_report|128|
 
 The FinancePy FXForward and MLX sigmoid reports each have GERO, GitHub, LinkedIn, Zenodo, Hugging Face and YouTube publications. Overall coverage is shown above; no equal count across all external account collections is claimed.
 
@@ -165,5 +165,6 @@ Black–Scholes v3: [Video](https://youtube.com/shorts/OSHkYbf0GlQ). LinkedIn no
 | 127 | [Black-Scholes beyond price accuracy: model sensitivities and lost volatility information](reports/black-scholes-sensitivities-v4.md) | Pending | Pending | [DOI](https://zenodo.org/records/22976212) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-sensitivities-v4) |
 
 Black-Scholes v4: [DOI](https://zenodo.org/records/22976212), [combined v3/v4 LinkedIn post](https://www.linkedin.com/feed/update/urn:li:activity:7509576364153319424/). No v4 video yet; two technical videos already published today. Research versions are not additional vendor defects.
+| 128 | [Black-Scholes implied volatility as a range: exact quotes, rounding cells and auditable bounds](reports/black-scholes-interval-iv-v5.md) | Pending | Pending | [DOI](https://zenodo.org/records/22976977) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-interval-iv-v5) |
 
-| 128 | [Black-Scholes implied volatility as a range: exact quotes, rounding cells and auditable bounds](reports/black-scholes-interval-iv-v5.md) | Pending | Pending | Pending | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-interval-iv-v5) |
+Black-Scholes v5: [DOI](https://zenodo.org/records/22976977), [LinkedIn post](https://www.linkedin.com/posts/khamit-kadirbekov-9473a129_quantitativefinance-blackscholes-impliedvolatility-activity-7509586229076672512-gFLl). No v5 video yet; two technical videos already published today. Research versions are not additional vendor defects.

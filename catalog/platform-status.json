@@ -1,12 +1,12 @@
 {
-  "checked_at": "2026-09-26T12:11:32.942515+00:00",
+  "checked_at": "2026-09-26T12:17:03.267418+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 122,
     "huggingface": 122,
-    "zenodo": 125,
+    "zenodo": 126,
     "github_catalog_report": 128,
-    "zenodo_records_including_collection": 125,
+    "zenodo_records_including_collection": 126,
     "unique_individual_publications": 128,
     "legacy_github_accounts_required_after_copy": 0
   },
@@ -38,8 +38,7 @@
     ],
     "zenodo": [
       "actuarialmath-direct-endowment-second-moment",
-      "mlx-arctan-directional-derivative-scale",
-      "black-scholes-interval-iv-v5"
+      "mlx-arctan-directional-derivative-scale"
     ]
   },
   "deduplication_notes": [
@@ -612,16 +611,23 @@
     "black-scholes-interval-iv-v5": {
       "case_id": "black-scholes-interval-iv-v5",
       "public": [
-        "github"
+        "github",
+        "zenodo",
+        "linkedin"
       ],
       "pending": [
-        "zenodo",
-        "linkedin",
-        "youtube"
+        "youtube",
+        "ssrn"
       ],
       "links": {
-        "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-interval-iv-v5"
-      }
+        "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-interval-iv-v5",
+        "zenodo": "https://zenodo.org/records/22976977",
+        "linkedin": "https://www.linkedin.com/posts/khamit-kadirbekov-9473a129_quantitativefinance-blackscholes-impliedvolatility-activity-7509586229076672512-gFLl"
+      },
+      "zenodo_doi": "10.5281/zenodo.22976977",
+      "peer_reviewed": false,
+      "scope": "Standard-BSM interval-IV research utility; no new vendor defect, model or market claim.",
+      "video_status": "outline only; two technical uploads already published today"
     }
   }
 }

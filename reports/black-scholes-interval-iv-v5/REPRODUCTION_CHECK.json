@@ -1,0 +1,36 @@
+{
+  "status": "same_host_fresh_archive_replay_pass",
+  "checks": [
+    {
+      "tests": "iv-tests",
+      "exit_code": 0
+    },
+    {
+      "tests": "iv-tests-v3",
+      "exit_code": 0
+    },
+    {
+      "corpus": 1,
+      "rows": 160,
+      "identical": true,
+      "expected_exit_code": 1
+    },
+    {
+      "corpus": 2,
+      "rows": 96,
+      "identical": true,
+      "expected_exit_code": 1
+    },
+    {
+      "corpus": 3,
+      "rows": 64,
+      "identical": true,
+      "expected_exit_code": 0
+    },
+    {
+      "cli_smoke": "passed"
+    }
+  ],
+  "time_utc": "2026-09-26T12:11:10.033252+00:00",
+  "external_review": false
+}
