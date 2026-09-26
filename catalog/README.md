@@ -1,6 +1,6 @@
 # GERO — publication catalogue
 
-Updated 26 September 2026. **126 distinct catalogue publications.** Report counts are not independent-defect counts. All 125 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
+Updated 26 September 2026. **127 distinct catalogue publications.** Report counts are not independent-defect counts. All 125 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
 
 [Machine-readable catalogue](publications.json) · [Coverage](platform-status.json) · [Checksums](SHA256SUMS).
 
@@ -8,8 +8,8 @@ Updated 26 September 2026. **126 distinct catalogue publications.** Report count
 |---|---:|
 |gero|122|
 |huggingface|122|
-|zenodo|124|
-|github_catalog_report|126|
+|zenodo|125|
+|github_catalog_report|127|
 
 The FinancePy FXForward and MLX sigmoid reports each have GERO, GitHub, LinkedIn, Zenodo, Hugging Face and YouTube publications. Overall coverage is shown above; no equal count across all external account collections is claimed.
 
@@ -161,6 +161,7 @@ BondZero archives an already corrected upstream issue. [Source fix](https://gith
 Black–Scholes v2: [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7509495438547333120/) · [Video](https://youtube.com/shorts/F6Wx5byxJtM).
 | 126 | [A hybrid Black–Scholes evaluator: recovering speed with bounded synthetic accuracy evidence](reports/black-scholes-hybrid-v3.md) | Pending | Pending | [DOI](https://zenodo.org/records/22973900) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-hybrid-v3) |
 
-Black–Scholes v3: [Video](https://youtube.com/shorts/OSHkYbf0GlQ). LinkedIn pending browser access. Version 3 of the same Zenodo research concept; not a new vendor defect.
+Black–Scholes v3: [Video](https://youtube.com/shorts/OSHkYbf0GlQ). LinkedIn now covered in the combined v3/v4 post linked below. Version 3 of the same Zenodo research concept; not a new vendor defect.
+| 127 | [Black-Scholes beyond price accuracy: model sensitivities and lost volatility information](reports/black-scholes-sensitivities-v4.md) | Pending | Pending | [DOI](https://zenodo.org/records/22976212) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-sensitivities-v4) |
 
-| 127 | [Black-Scholes beyond price accuracy: model sensitivities and lost volatility information](reports/black-scholes-sensitivities-v4.md) | Pending | Pending | Pending | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-sensitivities-v4) |
+Black-Scholes v4: [DOI](https://zenodo.org/records/22976212), [combined v3/v4 LinkedIn post](https://www.linkedin.com/feed/update/urn:li:activity:7509576364153319424/). No v4 video yet; two technical videos already published today. Research versions are not additional vendor defects.

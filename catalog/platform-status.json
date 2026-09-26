@@ -1,12 +1,12 @@
 {
-  "checked_at": "2026-09-26T11:32:20.642420+00:00",
+  "checked_at": "2026-09-26T11:37:29.916354+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 122,
     "huggingface": 122,
-    "zenodo": 124,
+    "zenodo": 125,
     "github_catalog_report": 127,
-    "zenodo_records_including_collection": 124,
+    "zenodo_records_including_collection": 125,
     "unique_individual_publications": 127,
     "legacy_github_accounts_required_after_copy": 0
   },
@@ -36,8 +36,7 @@
     ],
     "zenodo": [
       "actuarialmath-direct-endowment-second-moment",
-      "mlx-arctan-directional-derivative-scale",
-      "black-scholes-sensitivities-v4"
+      "mlx-arctan-directional-derivative-scale"
     ]
   },
   "deduplication_notes": [
@@ -569,34 +568,43 @@
       "public": [
         "github",
         "zenodo",
-        "youtube"
+        "youtube",
+        "linkedin"
       ],
       "pending": [
-        "linkedin",
         "ssrn"
       ],
       "links": {
         "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-hybrid-v3",
         "zenodo": "https://zenodo.org/records/22973900",
-        "youtube": "https://youtube.com/shorts/OSHkYbf0GlQ"
+        "youtube": "https://youtube.com/shorts/OSHkYbf0GlQ",
+        "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7509576364153319424/"
       },
       "zenodo_doi": "10.5281/zenodo.22973900",
       "peer_reviewed": false,
-      "scope": "Selected synthetic numerical experiment; not a vendor defect or new financial model."
+      "scope": "Selected synthetic numerical experiment; not a vendor defect or new financial model.",
+      "linkedin_note": "covered in combined v3/v4 post, not a separate post"
     },
     "black-scholes-sensitivities-v4": {
       "case_id": "black-scholes-sensitivities-v4",
       "public": [
-        "github"
+        "github",
+        "zenodo",
+        "linkedin"
       ],
       "pending": [
-        "zenodo",
-        "linkedin",
-        "youtube"
+        "youtube",
+        "ssrn"
       ],
       "links": {
-        "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-sensitivities-v4"
-      }
+        "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-sensitivities-v4",
+        "zenodo": "https://zenodo.org/records/22976212",
+        "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7509576364153319424/"
+      },
+      "zenodo_doi": "10.5281/zenodo.22976212",
+      "peer_reviewed": false,
+      "scope": "Synthetic standard-BSM sensitivity experiment, not a vendor defect. LinkedIn URL shared with v3; count as one post.",
+      "video_status": "outline only; two technical uploads already published today"
     }
   }
 }

@@ -2535,7 +2535,7 @@
     "gero": null,
     "huggingface": null,
     "zenodo": "https://zenodo.org/records/22973900",
-    "linkedin": null,
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7509576364153319424/",
     "youtube": "https://youtube.com/shorts/OSHkYbf0GlQ",
     "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-hybrid-v3",
     "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/black-scholes-hybrid-v3.md",
@@ -2545,7 +2545,7 @@
     "evidence_archive": "https://raw.githubusercontent.com/kadyrbekovhamit-cyber/gero-numerical-observatory/main/reports/black-scholes-hybrid-v3/black-scholes-hybrid-v3.0.zip",
     "evidence_archive_sha256": "c9036214a918e21752d586c13d111c421ea9533f5d7c45a09cd021f42bdc1828",
     "implementation_defects_in_this_report": 0,
-    "publication_status": "GitHub, Zenodo and YouTube verified; LinkedIn blocked by browser access; SSRN not submitted; no peer review claimed",
+    "publication_status": "GitHub, Zenodo, YouTube and coverage in combined v3/v4 LinkedIn post verified; SSRN not submitted; no peer review claimed",
     "limits": "480 new synthetic cases pass mixed gates; detailed Python v3 4.583x faster than v2 on this machine, but not uniformly closer to the reference. Historical comparator; no novelty, market-model or production-throughput claim.",
     "zenodo_doi": "10.5281/zenodo.22973900"
   },
@@ -2562,18 +2562,19 @@
     "predecessor_id": "black-scholes-hybrid-v3",
     "gero": null,
     "huggingface": null,
-    "zenodo": null,
-    "linkedin": null,
+    "zenodo": "https://zenodo.org/records/22976212",
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7509576364153319424/",
     "youtube": null,
     "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-sensitivities-v4",
     "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/black-scholes-sensitivities-v4.md",
-    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-sensitivities-v4/TECHNICAL_NOTE_V4.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/reports/black-scholes-sensitivities-v4/TECHNICAL_NOTE_V4.md",
     "source_text_sha256": "5ed44b7a4edd5a7b6c4b6c4310b4127df35f6074edcdb5c6ea1be6b22a03ad80",
     "mirror_sha256": "5ed44b7a4edd5a7b6c4b6c4310b4127df35f6074edcdb5c6ea1be6b22a03ad80",
     "evidence_archive": "https://raw.githubusercontent.com/kadyrbekovhamit-cyber/gero-numerical-observatory/main/reports/black-scholes-sensitivities-v4/black-scholes-sensitivities-v4.0.zip",
     "evidence_archive_sha256": "bb0baa03a9bb88c39d0f8ad55e922be80d8e143762eaf40baf509fabcbb8ba5f",
     "implementation_defects_in_this_report": 0,
-    "publication_status": "GitHub working paper; additional distribution pending; no peer review claimed",
-    "limits": "384 new exact-input Greek cases pass mixed value/log/range gates. 60 exploratory stencils distinguish finite-step/rounding/kernel errors. Six rounded ITM prices lose IV information. Standard BSM; no executed AD vendor defect, new model, novelty or interval-IV solver claimed."
+    "publication_status": "GitHub, Zenodo and combined v3/v4 LinkedIn post verified; v4 video not produced (two-upload daily cadence already reached); SSRN not submitted; no peer review claimed",
+    "limits": "384 new exact-input Greek cases pass mixed value/log/range gates. 60 exploratory stencils distinguish finite-step/rounding/kernel errors. Six rounded ITM prices lose IV information. Standard BSM; no executed AD vendor defect, new model, novelty or interval-IV solver claimed.",
+    "zenodo_doi": "10.5281/zenodo.22976212"
   }
 ]
