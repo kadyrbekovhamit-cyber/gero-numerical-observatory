@@ -165,3 +165,5 @@ Black–Scholes v3: [Video](https://youtube.com/shorts/OSHkYbf0GlQ). LinkedIn no
 | 127 | [Black-Scholes beyond price accuracy: model sensitivities and lost volatility information](reports/black-scholes-sensitivities-v4.md) | Pending | Pending | [DOI](https://zenodo.org/records/22976212) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-sensitivities-v4) |
 
 Black-Scholes v4: [DOI](https://zenodo.org/records/22976212), [combined v3/v4 LinkedIn post](https://www.linkedin.com/feed/update/urn:li:activity:7509576364153319424/). No v4 video yet; two technical videos already published today. Research versions are not additional vendor defects.
+
+| 128 | [Black-Scholes implied volatility as a range: exact quotes, rounding cells and auditable bounds](reports/black-scholes-interval-iv-v5.md) | Pending | Pending | Pending | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-interval-iv-v5) |

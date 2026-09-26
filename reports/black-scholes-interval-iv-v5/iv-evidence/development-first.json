@@ -1,0 +1,138 @@
+{
+  "contract": {
+    "s": "200",
+    "k": "100",
+    "t": "1",
+    "r": "0",
+    "q": "0",
+    "option": "call"
+  },
+  "quote": {
+    "lower": "14073748835532799/140737488355328",
+    "upper": "14073748835532801/140737488355328",
+    "lower_closed": true,
+    "upper_closed": true,
+    "origin": "binary64 nearest-even cell"
+  },
+  "certification": "conditional on Arb enclosure contract; not an independent formal verification",
+  "tolerance": "1/1000000000000000",
+  "boundary_comparisons": [
+    {
+      "kind": "intrinsic",
+      "target": "14073748835532799/140737488355328",
+      "sigma": null,
+      "precision_bits": 128,
+      "difference_lower": {
+        "mantissa": "1",
+        "exponent": "-47"
+      },
+      "difference_upper": {
+        "mantissa": "1",
+        "exponent": "-47"
+      },
+      "sign": 1
+    },
+    {
+      "kind": "intrinsic",
+      "target": "14073748835532801/140737488355328",
+      "sigma": null,
+      "precision_bits": 128,
+      "difference_lower": {
+        "mantissa": "-1",
+        "exponent": "-47"
+      },
+      "difference_upper": {
+        "mantissa": "-1",
+        "exponent": "-47"
+      },
+      "sign": -1
+    },
+    {
+      "kind": "ceiling",
+      "target": "14073748835532799/140737488355328",
+      "sigma": null,
+      "precision_bits": 128,
+      "difference_lower": {
+        "mantissa": "14073748835532801",
+        "exponent": "-47"
+      },
+      "difference_upper": {
+        "mantissa": "14073748835532801",
+        "exponent": "-47"
+      },
+      "sign": 1
+    },
+    {
+      "kind": "ceiling",
+      "target": "14073748835532801/140737488355328",
+      "sigma": null,
+      "precision_bits": 128,
+      "difference_lower": {
+        "mantissa": "14073748835532799",
+        "exponent": "-47"
+      },
+      "difference_upper": {
+        "mantissa": "14073748835532799",
+        "exponent": "-47"
+      },
+      "sign": 1
+    }
+  ],
+  "status": "interval",
+  "resolved": true,
+  "lower_endpoint": {
+    "kind": "zero",
+    "lower": "0",
+    "upper": "0",
+    "state": "exact"
+  },
+  "upper_endpoint": {
+    "kind": "root",
+    "lower": "25166026716071/281474976710656",
+    "upper": "100664106864285/1125899906842624",
+    "state": "converged",
+    "target": "14073748835532801/140737488355328",
+    "certified_bracket": true,
+    "lower_witness": {
+      "kind": "price",
+      "target": "14073748835532801/140737488355328",
+      "sigma": "25166026716071/281474976710656",
+      "precision_bits": 128,
+      "difference_lower": {
+        "mantissa": "-179991151553218819",
+        "exponent": "-148"
+      },
+      "difference_upper": {
+        "mantissa": "-179991150108931837",
+        "exponent": "-148"
+      },
+      "sign": -1
+    },
+    "upper_witness": {
+      "kind": "price",
+      "target": "14073748835532801/140737488355328",
+      "sigma": "100664106864285/1125899906842624",
+      "precision_bits": 128,
+      "difference_lower": {
+        "mantissa": "1407013961428432637",
+        "exponent": "-148"
+      },
+      "difference_upper": {
+        "mantissa": "1407013962872719619",
+        "exponent": "-148"
+      },
+      "sign": 1
+    },
+    "iterations": 50,
+    "bracket_expansions": 0
+  },
+  "lower_endpoint_closed": true,
+  "upper_endpoint_closed": true,
+  "outer_lower": "0",
+  "outer_upper": "100664106864285/1125899906842624",
+  "zero_included": true,
+  "unbounded": false,
+  "comparisons": 57,
+  "arb_evaluations": 57,
+  "highest_precision_bits": 128
+}

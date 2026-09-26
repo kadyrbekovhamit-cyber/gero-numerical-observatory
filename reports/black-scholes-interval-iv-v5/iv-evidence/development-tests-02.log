@@ -1,0 +1,29 @@
+test_below_intrinsic (test_iv_interval.Intervals.test_below_intrinsic) ... ok
+test_boundary_unknown (test_iv_interval.Intervals.test_boundary_unknown) ... ok
+test_even_cell (test_iv_interval.Intervals.test_even_cell) ... ok
+test_exact_inputs (test_iv_interval.Intervals.test_exact_inputs) ... ok
+test_excluded_intrinsic (test_iv_interval.Intervals.test_excluded_intrinsic) ... ok
+test_expiry_all_and_empty (test_iv_interval.Intervals.test_expiry_all_and_empty) ... ok
+test_intrinsic_singleton (test_iv_interval.Intervals.test_intrinsic_singleton) ... ok
+test_invalid_inputs (test_iv_interval.Intervals.test_invalid_inputs) ... ok
+test_iteration_budget (test_iv_interval.Intervals.test_iteration_budget) ... ok
+test_lost_information (test_iv_interval.Intervals.test_lost_information) ... ok
+test_maximum_cell (test_iv_interval.Intervals.test_maximum_cell) ... ok
+test_monetary_scale (test_iv_interval.Intervals.test_monetary_scale) ... ok
+test_odd_cell (test_iv_interval.Intervals.test_odd_cell) ... ok
+test_open_point_empty (test_iv_interval.Intervals.test_open_point_empty) ... ok
+test_put_call_parity (test_iv_interval.Intervals.test_put_call_parity) ... ok
+test_regular_interval (test_iv_interval.Intervals.test_regular_interval) ... ok
+test_sigma_budget (test_iv_interval.Intervals.test_sigma_budget) ... ok
+test_smallest_subnormal_cell (test_iv_interval.Intervals.test_smallest_subnormal_cell) ... ok
+test_time_scaling (test_iv_interval.Intervals.test_time_scaling) ... ok
+test_unattained_ceiling (test_iv_interval.Intervals.test_unattained_ceiling) ... ok
+test_unbounded_and_open_zero (test_iv_interval.Intervals.test_unbounded_and_open_zero) ... ok
+test_uncertain_first_bracket (test_iv_interval.Intervals.test_uncertain_first_bracket) ... ok
+test_uncertain_inside_bracket (test_iv_interval.Intervals.test_uncertain_inside_bracket) ... ok
+test_zero_cell (test_iv_interval.Intervals.test_zero_cell) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.036s
+
+OK

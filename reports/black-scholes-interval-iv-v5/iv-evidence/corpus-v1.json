@@ -1,0 +1,3673 @@
+[
+  {
+    "id": "iv-001",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1339/20",
+      "k": "103",
+      "t": "1/8",
+      "r": "-1/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "0",
+      "upper": "103/1000000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-002",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1339/20",
+      "k": "103",
+      "t": "1/8",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "309/400",
+      "upper": "1957/2500",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-003",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1339/20",
+      "k": "103",
+      "t": "1/2",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "103/200000",
+      "upper": "309/500000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-004",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1339/20",
+      "k": "103",
+      "t": "1/2",
+      "r": "-1/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "15553/2500",
+      "upper": "12463/2000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-005",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1339/20",
+      "k": "103",
+      "t": "7/4",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "283147/1000000",
+      "upper": "1133/4000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-006",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1339/20",
+      "k": "103",
+      "t": "7/4",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "50161/2500",
+      "upper": "200747/10000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-007",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1339/20",
+      "k": "103",
+      "t": "13/4",
+      "r": "-1/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "562277/1000000",
+      "upper": "28119/50000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-008",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1339/20",
+      "k": "103",
+      "t": "13/4",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "299009/10000",
+      "upper": "37389/1250",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-009",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10197/100",
+      "k": "103",
+      "t": "1/8",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "416841/200000",
+      "upper": "521077/250000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-010",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10197/100",
+      "k": "103",
+      "t": "1/8",
+      "r": "-1/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "113197/10000",
+      "upper": "1133/100",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-011",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10197/100",
+      "k": "103",
+      "t": "1/2",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "4860261/1000000",
+      "upper": "1215091/250000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-012",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10197/100",
+      "k": "103",
+      "t": "1/2",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "234119/10000",
+      "upper": "117111/5000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-013",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10197/100",
+      "k": "103",
+      "t": "7/4",
+      "r": "-1/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "3525793/500000",
+      "upper": "7051689/1000000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-014",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10197/100",
+      "k": "103",
+      "t": "7/4",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "425081/10000",
+      "upper": "26574/625",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-015",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10197/100",
+      "k": "103",
+      "t": "13/4",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "726253/50000",
+      "upper": "14525163/1000000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-016",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10197/100",
+      "k": "103",
+      "t": "13/4",
+      "r": "-1/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "65199/1250",
+      "upper": "104339/2000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-017",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10403/100",
+      "k": "103",
+      "t": "1/8",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "792791/250000",
+      "upper": "3171267/1000000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-018",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10403/100",
+      "k": "103",
+      "t": "1/8",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "7931/625",
+      "upper": "126999/10000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-019",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10403/100",
+      "k": "103",
+      "t": "1/2",
+      "r": "-1/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "4958523/1000000",
+      "upper": "2479313/500000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-020",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10403/100",
+      "k": "103",
+      "t": "1/2",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "246891/10000",
+      "upper": "123497/5000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-021",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10403/100",
+      "k": "103",
+      "t": "7/4",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "11375011/1000000",
+      "upper": "5687557/500000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-022",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10403/100",
+      "k": "103",
+      "t": "7/4",
+      "r": "-1/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "209399/5000",
+      "upper": "418901/10000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-023",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10403/100",
+      "k": "103",
+      "t": "13/4",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "15806277/1000000",
+      "upper": "790319/50000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-024",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10403/100",
+      "k": "103",
+      "t": "13/4",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "1133/20",
+      "upper": "566603/10000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-025",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1751/10",
+      "k": "103",
+      "t": "1/8",
+      "r": "-1/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "574019/8000",
+      "upper": "35876239/500000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-026",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1751/10",
+      "k": "103",
+      "t": "1/8",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "727901/10000",
+      "upper": "182001/2500",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-027",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1751/10",
+      "k": "103",
+      "t": "1/2",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "72760127/1000000",
+      "upper": "7276023/100000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-028",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1751/10",
+      "k": "103",
+      "t": "1/2",
+      "r": "-1/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "785993/10000",
+      "upper": "49131/625",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-029",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1751/10",
+      "k": "103",
+      "t": "7/4",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "74385879/1000000",
+      "upper": "37192991/500000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-030",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1751/10",
+      "k": "103",
+      "t": "7/4",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "997967/10000",
+      "upper": "99807/1000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-031",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1751/10",
+      "k": "103",
+      "t": "13/4",
+      "r": "-1/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "64242439/1000000",
+      "upper": "32121271/500000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-032",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1751/10",
+      "k": "103",
+      "t": "13/4",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "1142373/10000",
+      "upper": "285619/2500",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-033",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1339/20",
+      "k": "103",
+      "t": "1/8",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "35748107/1000000",
+      "upper": "3574821/100000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-034",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1339/20",
+      "k": "103",
+      "t": "1/8",
+      "r": "-1/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "370079/10000",
+      "upper": "185091/5000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-035",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1339/20",
+      "k": "103",
+      "t": "1/2",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "34850977/1000000",
+      "upper": "871277/25000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-036",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1339/20",
+      "k": "103",
+      "t": "1/2",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "206927/5000",
+      "upper": "413957/10000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-037",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1339/20",
+      "k": "103",
+      "t": "7/4",
+      "r": "-1/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "39159879/1000000",
+      "upper": "19579991/500000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-038",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1339/20",
+      "k": "103",
+      "t": "7/4",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "520047/10000",
+      "upper": "10403/200",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-039",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1339/20",
+      "k": "103",
+      "t": "13/4",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "29967541/1000000",
+      "upper": "7491911/250000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-040",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1339/20",
+      "k": "103",
+      "t": "13/4",
+      "r": "-1/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "43466/625",
+      "upper": "695559/10000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-041",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10197/100",
+      "k": "103",
+      "t": "1/8",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "2856087/1000000",
+      "upper": "285619/100000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-042",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10197/100",
+      "k": "103",
+      "t": "1/8",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "24617/2000",
+      "upper": "30797/2500",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-043",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10197/100",
+      "k": "103",
+      "t": "1/2",
+      "r": "-1/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "240299/40000",
+      "upper": "3003789/500000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-044",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10197/100",
+      "k": "103",
+      "t": "1/2",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "117111/5000",
+      "upper": "9373/400",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-045",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10197/100",
+      "k": "103",
+      "t": "7/4",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "7679989/1000000",
+      "upper": "1920023/250000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-046",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10197/100",
+      "k": "103",
+      "t": "7/4",
+      "r": "-1/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "450831/10000",
+      "upper": "225467/5000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-047",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10197/100",
+      "k": "103",
+      "t": "13/4",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "462367/50000",
+      "upper": "9247443/1000000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-048",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10197/100",
+      "k": "103",
+      "t": "13/4",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "99601/2000",
+      "upper": "124527/2500",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-049",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10403/100",
+      "k": "103",
+      "t": "1/8",
+      "r": "-1/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "423021/200000",
+      "upper": "264401/125000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-050",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10403/100",
+      "k": "103",
+      "t": "1/8",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "28531/2500",
+      "upper": "114227/10000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-051",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10403/100",
+      "k": "103",
+      "t": "1/2",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "1978527/500000",
+      "upper": "3957157/1000000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-052",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10403/100",
+      "k": "103",
+      "t": "1/2",
+      "r": "-1/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "238857/10000",
+      "upper": "2987/125",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-053",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10403/100",
+      "k": "103",
+      "t": "7/4",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "6881739/1000000",
+      "upper": "3440921/500000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-054",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10403/100",
+      "k": "103",
+      "t": "7/4",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "49337/1250",
+      "upper": "394799/10000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-055",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10403/100",
+      "k": "103",
+      "t": "13/4",
+      "r": "-1/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "15662283/1000000",
+      "upper": "7831193/500000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-056",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "10403/100",
+      "k": "103",
+      "t": "13/4",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "246891/5000",
+      "upper": "98777/2000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-057",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1751/10",
+      "k": "103",
+      "t": "1/8",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "0",
+      "upper": "103/1000000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-058",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1751/10",
+      "k": "103",
+      "t": "1/8",
+      "r": "-1/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "2781/5000",
+      "upper": "1133/2000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-059",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1751/10",
+      "k": "103",
+      "t": "1/2",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "0",
+      "upper": "103/1000000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-060",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1751/10",
+      "k": "103",
+      "t": "1/2",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "9167/1250",
+      "upper": "73439/10000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-061",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1751/10",
+      "k": "103",
+      "t": "7/4",
+      "r": "-1/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "14523/100000",
+      "upper": "145333/1000000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-062",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1751/10",
+      "k": "103",
+      "t": "7/4",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "31827/1250",
+      "upper": "254719/10000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-063",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1751/10",
+      "k": "103",
+      "t": "13/4",
+      "r": "3/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "18849/50000",
+      "upper": "377083/1000000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "17/100"
+  },
+  {
+    "id": "iv-064",
+    "family": "decimal_quote",
+    "contract": {
+      "s": "1751/10",
+      "k": "103",
+      "t": "13/4",
+      "r": "-1/100",
+      "q": "1/100",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "29149/625",
+      "upper": "466487/10000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "83/100"
+  },
+  {
+    "id": "iv-065",
+    "family": "rounded_quote",
+    "contract": {
+      "s": "119/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "k": "101/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "t": "7/4",
+      "r": "1/100",
+      "q": "1/50",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "14071954482705933/86182066610968551542636378241108028056376767329454880514019834315878107616003372189510312530372009184902888961739623919010110377987011442493486117202360415845666384627768436296772219009176743399772868636439042064384",
+      "upper": "14071954482705935/86182066610968551542636378241108028056376767329454880514019834315878107616003372189510312530372009184902888961739623919010110377987011442493486117202360415845666384627768436296772219009176743399772868636439042064384",
+      "lower_closed": false,
+      "upper_closed": false,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "9/100"
+  },
+  {
+    "id": "iv-066",
+    "family": "rounded_quote",
+    "contract": {
+      "s": "119/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "k": "101/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "t": "7/4",
+      "r": "1/100",
+      "q": "1/50",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "11335733743539239/43091033305484275771318189120554014028188383664727440257009917157939053808001686094755156265186004592451444480869811959505055188993505721246743058601180207922833192313884218148386109504588371699886434318219521032192",
+      "upper": "11335733743539241/43091033305484275771318189120554014028188383664727440257009917157939053808001686094755156265186004592451444480869811959505055188993505721246743058601180207922833192313884218148386109504588371699886434318219521032192",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "31/100"
+  },
+  {
+    "id": "iv-067",
+    "family": "rounded_quote",
+    "contract": {
+      "s": "119/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "k": "101/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "t": "7/4",
+      "r": "1/100",
+      "q": "1/50",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "14943335596643163/21545516652742137885659094560277007014094191832363720128504958578969526904000843047377578132593002296225722240434905979752527594496752860623371529300590103961416596156942109074193054752294185849943217159109760516096",
+      "upper": "14943335596643165/21545516652742137885659094560277007014094191832363720128504958578969526904000843047377578132593002296225722240434905979752527594496752860623371529300590103961416596156942109074193054752294185849943217159109760516096",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "6/5"
+  },
+  {
+    "id": "iv-068",
+    "family": "rounded_quote",
+    "contract": {
+      "s": "119",
+      "k": "101",
+      "t": "7/4",
+      "r": "1/100",
+      "q": "1/50",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "9191942630414835/562949953421312",
+      "upper": "9191942630414837/562949953421312",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "9/100"
+  },
+  {
+    "id": "iv-069",
+    "family": "rounded_quote",
+    "contract": {
+      "s": "119",
+      "k": "101",
+      "t": "7/4",
+      "r": "1/100",
+      "q": "1/50",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "14809231279468135/562949953421312",
+      "upper": "14809231279468137/562949953421312",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "31/100"
+  },
+  {
+    "id": "iv-070",
+    "family": "rounded_quote",
+    "contract": {
+      "s": "119",
+      "k": "101",
+      "t": "7/4",
+      "r": "1/100",
+      "q": "1/50",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "9761137564805909/140737488355328",
+      "upper": "9761137564805911/140737488355328",
+      "lower_closed": false,
+      "upper_closed": false,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "6/5"
+  },
+  {
+    "id": "iv-071",
+    "family": "rounded_quote",
+    "contract": {
+      "s": "1190000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "k": "1010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "t": "7/4",
+      "r": "1/100",
+      "q": "1/50",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "163281701589121209509863411149936567463379275672309337973590860976863979493834731179911733068672532480",
+      "upper": "163281701589121240592565686761601702174769784848611844252100285811096319522833287002380296352008503296",
+      "lower_closed": false,
+      "upper_closed": false,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "9/100"
+  },
+  {
+    "id": "iv-072",
+    "family": "rounded_quote",
+    "contract": {
+      "s": "1190000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "k": "1010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "t": "7/4",
+      "r": "1/100",
+      "q": "1/50",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "263064792695433436106489873531582484223765524450921412504098976181556812562961574255283639474462916608",
+      "upper": "263064792695433467189192149143247618935156033627223918782608401015789152591960130077752202757798887424",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "31/100"
+  },
+  {
+    "id": "iv-073",
+    "family": "rounded_quote",
+    "contract": {
+      "s": "1190000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "k": "1010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "t": "7/4",
+      "r": "1/100",
+      "q": "1/50",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "693570538942787324881263654880438230196436021955180418598368841214130538501335279709002428157893017600",
+      "upper": "693570538942787449212072757327098769041998058660390443712406540551059898617329502998876681291236900864",
+      "lower_closed": false,
+      "upper_closed": false,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "6/5"
+  },
+  {
+    "id": "iv-074",
+    "family": "rounded_quote",
+    "contract": {
+      "s": "119/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "k": "101/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "t": "7/4",
+      "r": "1/100",
+      "q": "1/50",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "16524292162745007/101201126653655309176247673359458653524778324882071059178450679013715169783997673445980191850718562247593538932158405955694904368692896738433506699970369254960758712138283180682233453871046608170619883839236372534281003741712346349309051677824579778170405028256179384776166707307615251266093163754323003131653853870546747392",
+      "upper": "16524292162745009/101201126653655309176247673359458653524778324882071059178450679013715169783997673445980191850718562247593538932158405955694904368692896738433506699970369254960758712138283180682233453871046608170619883839236372534281003741712346349309051677824579778170405028256179384776166707307615251266093163754323003131653853870546747392",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "9/100"
+  },
+  {
+    "id": "iv-075",
+    "family": "rounded_quote",
+    "contract": {
+      "s": "119/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "k": "101/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "t": "7/4",
+      "r": "1/100",
+      "q": "1/50",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "13311226701844069/50600563326827654588123836679729326762389162441035529589225339506857584891998836722990095925359281123796769466079202977847452184346448369216753349985184627480379356069141590341116726935523304085309941919618186267140501870856173174654525838912289889085202514128089692388083353653807625633046581877161501565826926935273373696",
+      "upper": "13311226701844071/50600563326827654588123836679729326762389162441035529589225339506857584891998836722990095925359281123796769466079202977847452184346448369216753349985184627480379356069141590341116726935523304085309941919618186267140501870856173174654525838912289889085202514128089692388083353653807625633046581877161501565826926935273373696",
+      "lower_closed": false,
+      "upper_closed": false,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "31/100"
+  },
+  {
+    "id": "iv-076",
+    "family": "rounded_quote",
+    "contract": {
+      "s": "119/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "k": "101/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "t": "7/4",
+      "r": "1/100",
+      "q": "1/50",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "17547529988698247/25300281663413827294061918339864663381194581220517764794612669753428792445999418361495047962679640561898384733039601488923726092173224184608376674992592313740189678034570795170558363467761652042654970959809093133570250935428086587327262919456144944542601257064044846194041676826903812816523290938580750782913463467636686848",
+      "upper": "17547529988698249/25300281663413827294061918339864663381194581220517764794612669753428792445999418361495047962679640561898384733039601488923726092173224184608376674992592313740189678034570795170558363467761652042654970959809093133570250935428086587327262919456144944542601257064044846194041676826903812816523290938580750782913463467636686848",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "6/5"
+  },
+  {
+    "id": "iv-077",
+    "family": "rounded_quote",
+    "contract": {
+      "s": "119/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "k": "101/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "t": "7/4",
+      "r": "1/100",
+      "q": "1/50",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "9224948079324253/1378913065775496824682182051857728448902028277271278088224317349054049721856053955032165000485952146958446223387833982704161766047792183079895777875237766653530662154044294980748355504146827894396365898183024673030144",
+      "upper": "9224948079324255/1378913065775496824682182051857728448902028277271278088224317349054049721856053955032165000485952146958446223387833982704161766047792183079895777875237766653530662154044294980748355504146827894396365898183024673030144",
+      "lower_closed": false,
+      "upper_closed": false,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "9/100"
+  },
+  {
+    "id": "iv-078",
+    "family": "rounded_quote",
+    "contract": {
+      "s": "119/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "k": "101/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "t": "7/4",
+      "r": "1/100",
+      "q": "1/50",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "9176072259330311/86182066610968551542636378241108028056376767329454880514019834315878107616003372189510312530372009184902888961739623919010110377987011442493486117202360415845666384627768436296772219009176743399772868636439042064384",
+      "upper": "9176072259330313/86182066610968551542636378241108028056376767329454880514019834315878107616003372189510312530372009184902888961739623919010110377987011442493486117202360415845666384627768436296772219009176743399772868636439042064384",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "31/100"
+  },
+  {
+    "id": "iv-079",
+    "family": "rounded_quote",
+    "contract": {
+      "s": "119/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "k": "101/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "t": "7/4",
+      "r": "1/100",
+      "q": "1/50",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "11569486789706121/21545516652742137885659094560277007014094191832363720128504958578969526904000843047377578132593002296225722240434905979752527594496752860623371529300590103961416596156942109074193054752294185849943217159109760516096",
+      "upper": "11569486789706123/21545516652742137885659094560277007014094191832363720128504958578969526904000843047377578132593002296225722240434905979752527594496752860623371529300590103961416596156942109074193054752294185849943217159109760516096",
+      "lower_closed": false,
+      "upper_closed": false,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "6/5"
+  },
+  {
+    "id": "iv-080",
+    "family": "rounded_quote",
+    "contract": {
+      "s": "119",
+      "k": "101",
+      "t": "7/4",
+      "r": "1/100",
+      "q": "1/50",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "12051658299195773/18014398509481984",
+      "upper": "12051658299195775/18014398509481984",
+      "lower_closed": false,
+      "upper_closed": false,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "9/100"
+  },
+  {
+    "id": "iv-081",
+    "family": "rounded_quote",
+    "contract": {
+      "s": "119",
+      "k": "101",
+      "t": "7/4",
+      "r": "1/100",
+      "q": "1/50",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "11987805941806337/1125899906842624",
+      "upper": "11987805941806339/1125899906842624",
+      "lower_closed": false,
+      "upper_closed": false,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "31/100"
+  },
+  {
+    "id": "iv-082",
+    "family": "rounded_quote",
+    "contract": {
+      "s": "119",
+      "k": "101",
+      "t": "7/4",
+      "r": "1/100",
+      "q": "1/50",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "15114610975329335/281474976710656",
+      "upper": "15114610975329337/281474976710656",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "6/5"
+  },
+  {
+    "id": "iv-083",
+    "family": "rounded_quote",
+    "contract": {
+      "s": "1190000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "k": "1010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "t": "7/4",
+      "r": "1/100",
+      "q": "1/50",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "6690014264341000141363610045512199559554429309762507750425041122927526714241197833072275223813816320",
+      "upper": "6690014264341001112698056158376735019285382721521961071628460648997287340147402702524417826418065408",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "9/100"
+  },
+  {
+    "id": "iv-084",
+    "family": "rounded_quote",
+    "contract": {
+      "s": "1190000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "k": "1010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "t": "7/4",
+      "r": "1/100",
+      "q": "1/50",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "106473105370653240822339541063693880486039502558886655438382739455631888859008011515500249367365812224",
+      "upper": "106473105370653256363690678869526447841734757147037908577637451872748058873507289426734531009033797632",
+      "lower_closed": false,
+      "upper_closed": false,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "31/100"
+  },
+  {
+    "id": "iv-085",
+    "family": "rounded_quote",
+    "contract": {
+      "s": "1190000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "k": "1010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "t": "7/4",
+      "r": "1/100",
+      "q": "1/50",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "536978851618007106285086615703800775425167118180918781823770535862531359775632800102367615588293935104",
+      "upper": "536978851618007168450491166927131044847948136533523794380789385530996039833629911747304742154965876736",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "6/5"
+  },
+  {
+    "id": "iv-086",
+    "family": "rounded_quote",
+    "contract": {
+      "s": "119/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "k": "101/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "t": "7/4",
+      "r": "1/100",
+      "q": "1/50",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "2708147923521335/404804506614621236704990693437834614099113299528284236713802716054860679135990693783920767402874248990374155728633623822779617474771586953734026799881477019843034848553132722728933815484186432682479535356945490137124014966849385397236206711298319112681620113024717539104666829230461005064372655017292012526615415482186989568",
+      "upper": "2708147923521337/404804506614621236704990693437834614099113299528284236713802716054860679135990693783920767402874248990374155728633623822779617474771586953734026799881477019843034848553132722728933815484186432682479535356945490137124014966849385397236206711298319112681620113024717539104666829230461005064372655017292012526615415482186989568",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "9/100"
+  },
+  {
+    "id": "iv-087",
+    "family": "rounded_quote",
+    "contract": {
+      "s": "119/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "k": "101/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "t": "7/4",
+      "r": "1/100",
+      "q": "1/50",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "10775198221823465/101201126653655309176247673359458653524778324882071059178450679013715169783997673445980191850718562247593538932158405955694904368692896738433506699970369254960758712138283180682233453871046608170619883839236372534281003741712346349309051677824579778170405028256179384776166707307615251266093163754323003131653853870546747392",
+      "upper": "10775198221823467/101201126653655309176247673359458653524778324882071059178450679013715169783997673445980191850718562247593538932158405955694904368692896738433506699970369254960758712138283180682233453871046608170619883839236372534281003741712346349309051677824579778170405028256179384776166707307615251266093163754323003131653853870546747392",
+      "lower_closed": false,
+      "upper_closed": false,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "31/100"
+  },
+  {
+    "id": "iv-088",
+    "family": "rounded_quote",
+    "contract": {
+      "s": "119/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "k": "101/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "t": "7/4",
+      "r": "1/100",
+      "q": "1/50",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "13585716193232079/25300281663413827294061918339864663381194581220517764794612669753428792445999418361495047962679640561898384733039601488923726092173224184608376674992592313740189678034570795170558363467761652042654970959809093133570250935428086587327262919456144944542601257064044846194041676826903812816523290938580750782913463467636686848",
+      "upper": "13585716193232081/25300281663413827294061918339864663381194581220517764794612669753428792445999418361495047962679640561898384733039601488923726092173224184608376674992592313740189678034570795170558363467761652042654970959809093133570250935428086587327262919456144944542601257064044846194041676826903812816523290938580750782913463467636686848",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "compatible_sigma": "6/5"
+  },
+  {
+    "id": "iv-089",
+    "family": "boundaries",
+    "contract": {
+      "s": "127",
+      "k": "103",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "22",
+      "upper": "23",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "empty",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-090",
+    "family": "boundaries",
+    "contract": {
+      "s": "127",
+      "k": "103",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "24",
+      "upper": "24",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "singleton_zero",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-091",
+    "family": "boundaries",
+    "contract": {
+      "s": "127",
+      "k": "103",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "23",
+      "upper": "24",
+      "lower_closed": true,
+      "upper_closed": false,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "empty",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-092",
+    "family": "boundaries",
+    "contract": {
+      "s": "127",
+      "k": "103",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "24",
+      "upper": "127",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-093",
+    "family": "boundaries",
+    "contract": {
+      "s": "127",
+      "k": "103",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "24",
+      "upper": "127",
+      "lower_closed": false,
+      "upper_closed": false,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-094",
+    "family": "boundaries",
+    "contract": {
+      "s": "127",
+      "k": "103",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "127",
+      "upper": "128",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "empty",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-095",
+    "family": "boundaries",
+    "contract": {
+      "s": "127",
+      "k": "103",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "26",
+      "upper": "26",
+      "lower_closed": false,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "empty",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-096",
+    "family": "boundaries",
+    "contract": {
+      "s": "127",
+      "k": "103",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "-4",
+      "upper": "-3",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "empty",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-097",
+    "family": "boundaries",
+    "contract": {
+      "s": "127",
+      "k": "103",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "-2",
+      "upper": "-1",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "empty",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-098",
+    "family": "boundaries",
+    "contract": {
+      "s": "127",
+      "k": "103",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "0",
+      "upper": "0",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "singleton_zero",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-099",
+    "family": "boundaries",
+    "contract": {
+      "s": "127",
+      "k": "103",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "-1",
+      "upper": "0",
+      "lower_closed": true,
+      "upper_closed": false,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "empty",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-100",
+    "family": "boundaries",
+    "contract": {
+      "s": "127",
+      "k": "103",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "0",
+      "upper": "103",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-101",
+    "family": "boundaries",
+    "contract": {
+      "s": "127",
+      "k": "103",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "0",
+      "upper": "103",
+      "lower_closed": false,
+      "upper_closed": false,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-102",
+    "family": "boundaries",
+    "contract": {
+      "s": "127",
+      "k": "103",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "103",
+      "upper": "104",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "empty",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-103",
+    "family": "boundaries",
+    "contract": {
+      "s": "127",
+      "k": "103",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "2",
+      "upper": "2",
+      "lower_closed": false,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "empty",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-104",
+    "family": "boundaries",
+    "contract": {
+      "s": "127",
+      "k": "103",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "-4",
+      "upper": "-3",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "empty",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-105",
+    "family": "expiry",
+    "contract": {
+      "s": "81",
+      "k": "101",
+      "t": "0",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "0",
+      "upper": "0",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "all_volatilities",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-106",
+    "family": "expiry",
+    "contract": {
+      "s": "81",
+      "k": "101",
+      "t": "0",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "1",
+      "upper": "2",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "empty",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-107",
+    "family": "expiry",
+    "contract": {
+      "s": "107",
+      "k": "101",
+      "t": "0",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "6",
+      "upper": "6",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "all_volatilities",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-108",
+    "family": "expiry",
+    "contract": {
+      "s": "107",
+      "k": "101",
+      "t": "0",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "7",
+      "upper": "8",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "empty",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-109",
+    "family": "expiry",
+    "contract": {
+      "s": "81",
+      "k": "101",
+      "t": "0",
+      "r": "0",
+      "q": "0",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "20",
+      "upper": "20",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "all_volatilities",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-110",
+    "family": "expiry",
+    "contract": {
+      "s": "81",
+      "k": "101",
+      "t": "0",
+      "r": "0",
+      "q": "0",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "21",
+      "upper": "22",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "empty",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-111",
+    "family": "expiry",
+    "contract": {
+      "s": "107",
+      "k": "101",
+      "t": "0",
+      "r": "0",
+      "q": "0",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "0",
+      "upper": "0",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "all_volatilities",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-112",
+    "family": "expiry",
+    "contract": {
+      "s": "107",
+      "k": "101",
+      "t": "0",
+      "r": "0",
+      "q": "0",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "1",
+      "upper": "2",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "empty",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-113",
+    "family": "rounded_boundary",
+    "contract": {
+      "s": "184",
+      "k": "93",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "12807111440334847/140737488355328",
+      "upper": "12807111440334849/140737488355328",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-114",
+    "family": "rounded_boundary",
+    "contract": {
+      "s": "184",
+      "k": "93",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "12947848928690175/70368744177664",
+      "upper": "12947848928690177/70368744177664",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-115",
+    "family": "rounded_boundary",
+    "contract": {
+      "s": "221",
+      "k": "117",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "14636698788954111/140737488355328",
+      "upper": "14636698788954113/140737488355328",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-116",
+    "family": "rounded_boundary",
+    "contract": {
+      "s": "221",
+      "k": "117",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "15551492463263743/70368744177664",
+      "upper": "15551492463263745/70368744177664",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-117",
+    "family": "rounded_boundary",
+    "contract": {
+      "s": "103",
+      "k": "219",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "0",
+      "upper": "1/404804506614621236704990693437834614099113299528284236713802716054860679135990693783920767402874248990374155728633623822779617474771586953734026799881477019843034848553132722728933815484186432682479535356945490137124014966849385397236206711298319112681620113024717539104666829230461005064372655017292012526615415482186989568",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-118",
+    "family": "rounded_boundary",
+    "contract": {
+      "s": "103",
+      "k": "219",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "14495961300598783/140737488355328",
+      "upper": "14495961300598785/140737488355328",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-119",
+    "family": "rounded_boundary",
+    "contract": {
+      "s": "88",
+      "k": "201",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "0",
+      "upper": "1/404804506614621236704990693437834614099113299528284236713802716054860679135990693783920767402874248990374155728633623822779617474771586953734026799881477019843034848553132722728933815484186432682479535356945490137124014966849385397236206711298319112681620113024717539104666829230461005064372655017292012526615415482186989568",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-120",
+    "family": "rounded_boundary",
+    "contract": {
+      "s": "88",
+      "k": "201",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "12384898975268863/140737488355328",
+      "upper": "12384898975268865/140737488355328",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-121",
+    "family": "rounded_boundary",
+    "contract": {
+      "s": "184",
+      "k": "93",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "0",
+      "upper": "1/404804506614621236704990693437834614099113299528284236713802716054860679135990693783920767402874248990374155728633623822779617474771586953734026799881477019843034848553132722728933815484186432682479535356945490137124014966849385397236206711298319112681620113024717539104666829230461005064372655017292012526615415482186989568",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-122",
+    "family": "rounded_boundary",
+    "contract": {
+      "s": "184",
+      "k": "93",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "13088586417045503/140737488355328",
+      "upper": "13088586417045505/140737488355328",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-123",
+    "family": "rounded_boundary",
+    "contract": {
+      "s": "221",
+      "k": "117",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "0",
+      "upper": "1/404804506614621236704990693437834614099113299528284236713802716054860679135990693783920767402874248990374155728633623822779617474771586953734026799881477019843034848553132722728933815484186432682479535356945490137124014966849385397236206711298319112681620113024717539104666829230461005064372655017292012526615415482186989568",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-124",
+    "family": "rounded_boundary",
+    "contract": {
+      "s": "221",
+      "k": "117",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "16466286137573375/140737488355328",
+      "upper": "16466286137573377/140737488355328",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-125",
+    "family": "rounded_boundary",
+    "contract": {
+      "s": "103",
+      "k": "219",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "16325548649218047/140737488355328",
+      "upper": "16325548649218049/140737488355328",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-126",
+    "family": "rounded_boundary",
+    "contract": {
+      "s": "103",
+      "k": "219",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "15410754974908415/70368744177664",
+      "upper": "15410754974908417/70368744177664",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-127",
+    "family": "rounded_boundary",
+    "contract": {
+      "s": "88",
+      "k": "201",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "15903336184152063/140737488355328",
+      "upper": "15903336184152065/140737488355328",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-128",
+    "family": "rounded_boundary",
+    "contract": {
+      "s": "88",
+      "k": "201",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "14144117579710463/70368744177664",
+      "upper": "14144117579710465/70368744177664",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "binary64 nearest-even cell"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-129",
+    "family": "point_quote",
+    "contract": {
+      "s": "79",
+      "k": "101",
+      "t": "5/4",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "13/4",
+      "upper": "13/4",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-130",
+    "family": "point_quote",
+    "contract": {
+      "s": "109",
+      "k": "101",
+      "t": "5/4",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "45/4",
+      "upper": "45/4",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-131",
+    "family": "point_quote",
+    "contract": {
+      "s": "139",
+      "k": "101",
+      "t": "5/4",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "165/4",
+      "upper": "165/4",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-132",
+    "family": "point_quote",
+    "contract": {
+      "s": "189",
+      "k": "101",
+      "t": "5/4",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "365/4",
+      "upper": "365/4",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-133",
+    "family": "point_quote",
+    "contract": {
+      "s": "79",
+      "k": "101",
+      "t": "5/4",
+      "r": "0",
+      "q": "0",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "101/4",
+      "upper": "101/4",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-134",
+    "family": "point_quote",
+    "contract": {
+      "s": "109",
+      "k": "101",
+      "t": "5/4",
+      "r": "0",
+      "q": "0",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "13/4",
+      "upper": "13/4",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-135",
+    "family": "point_quote",
+    "contract": {
+      "s": "139",
+      "k": "101",
+      "t": "5/4",
+      "r": "0",
+      "q": "0",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "13/4",
+      "upper": "13/4",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-136",
+    "family": "point_quote",
+    "contract": {
+      "s": "189",
+      "k": "101",
+      "t": "5/4",
+      "r": "0",
+      "q": "0",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "13/4",
+      "upper": "13/4",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {}
+  },
+  {
+    "id": "iv-137",
+    "family": "budget_sigma",
+    "contract": {
+      "s": "137",
+      "k": "113",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "26",
+      "upper": "27",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": false,
+    "kwargs": {
+      "max_sigma": "1/1000"
+    },
+    "expected_endpoint_state": "sigma_budget_exhausted"
+  },
+  {
+    "id": "iv-138",
+    "family": "budget_sigma",
+    "contract": {
+      "s": "138",
+      "k": "113",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "27",
+      "upper": "28",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": false,
+    "kwargs": {
+      "max_sigma": "1/2000"
+    },
+    "expected_endpoint_state": "sigma_budget_exhausted"
+  },
+  {
+    "id": "iv-139",
+    "family": "budget_iterations",
+    "contract": {
+      "s": "138",
+      "k": "115",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "26",
+      "upper": "27",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": false,
+    "kwargs": {
+      "max_steps": 1
+    },
+    "expected_endpoint_state": "iteration_budget_exhausted"
+  },
+  {
+    "id": "iv-140",
+    "family": "budget_iterations",
+    "contract": {
+      "s": "139",
+      "k": "115",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "27",
+      "upper": "28",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": false,
+    "kwargs": {
+      "max_steps": 2
+    },
+    "expected_endpoint_state": "iteration_budget_exhausted"
+  },
+  {
+    "id": "iv-141",
+    "family": "budget_precision",
+    "contract": {
+      "s": "106",
+      "k": "106",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "2029502089504538898559668872448380042766183060878526130300227112399051431306563166667555236490196151/50000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "upper": "2029502089504538898559668872448380042766183060878526130300227112399051431306563166667555236490196151/50000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": false,
+    "kwargs": {
+      "precisions": [
+        64
+      ]
+    },
+    "expected_endpoint_state": "unresolved_bracketing"
+  },
+  {
+    "id": "iv-142",
+    "family": "budget_precision",
+    "contract": {
+      "s": "107",
+      "k": "107",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "2048648335631940208923439333509213816754543278433983923982304726666967010847191121070079342494820643/50000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "upper": "2048648335631940208923439333509213816754543278433983923982304726666967010847191121070079342494820643/50000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": false,
+    "kwargs": {
+      "precisions": [
+        64
+      ]
+    },
+    "expected_endpoint_state": "unresolved_bracketing"
+  },
+  {
+    "id": "iv-143",
+    "family": "budget_precision",
+    "contract": {
+      "s": "108",
+      "k": "108",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "2132056634751152443602441898150328768492225594806279111401746807111144789163500361770408408300627367/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "upper": "2132056634751152443602441898150328768492225594806279111401746807111144789163500361770408408300627367/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": false,
+    "kwargs": {
+      "precisions": [
+        64
+      ]
+    },
+    "expected_endpoint_state": "precision_budget_exhausted"
+  },
+  {
+    "id": "iv-144",
+    "family": "budget_boundary",
+    "contract": {
+      "s": "91",
+      "k": "91",
+      "t": "1",
+      "r": "1/100000000000000000000000000000000",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "1/1000000000000000000000000000000",
+      "upper": "10",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "unresolved",
+    "expected_resolved": false,
+    "kwargs": {
+      "precisions": [
+        64
+      ]
+    }
+  },
+  {
+    "id": "iv-145",
+    "family": "symmetry",
+    "contract": {
+      "s": "143",
+      "k": "101",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "50",
+      "upper": "51",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "symmetry_group": "symmetry-0",
+    "sigma_multiplier": "1"
+  },
+  {
+    "id": "iv-146",
+    "family": "symmetry",
+    "contract": {
+      "s": "143",
+      "k": "101",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "8",
+      "upper": "9",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "symmetry_group": "symmetry-0",
+    "sigma_multiplier": "1"
+  },
+  {
+    "id": "iv-147",
+    "family": "symmetry",
+    "contract": {
+      "s": "143000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "k": "101000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "50000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "upper": "51000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "symmetry_group": "symmetry-0",
+    "sigma_multiplier": "1"
+  },
+  {
+    "id": "iv-148",
+    "family": "symmetry",
+    "contract": {
+      "s": "143",
+      "k": "101",
+      "t": "4",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "50",
+      "upper": "51",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "symmetry_group": "symmetry-0",
+    "sigma_multiplier": "2"
+  },
+  {
+    "id": "iv-149",
+    "family": "symmetry",
+    "contract": {
+      "s": "160",
+      "k": "101",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "68",
+      "upper": "69",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "symmetry_group": "symmetry-1",
+    "sigma_multiplier": "1"
+  },
+  {
+    "id": "iv-150",
+    "family": "symmetry",
+    "contract": {
+      "s": "160",
+      "k": "101",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "9",
+      "upper": "10",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "symmetry_group": "symmetry-1",
+    "sigma_multiplier": "1"
+  },
+  {
+    "id": "iv-151",
+    "family": "symmetry",
+    "contract": {
+      "s": "1/6250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "k": "101/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "17/250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "upper": "69/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "symmetry_group": "symmetry-1",
+    "sigma_multiplier": "1"
+  },
+  {
+    "id": "iv-152",
+    "family": "symmetry",
+    "contract": {
+      "s": "160",
+      "k": "101",
+      "t": "4",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "68",
+      "upper": "69",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "symmetry_group": "symmetry-1",
+    "sigma_multiplier": "2"
+  },
+  {
+    "id": "iv-153",
+    "family": "symmetry",
+    "contract": {
+      "s": "177",
+      "k": "101",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "86",
+      "upper": "87",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "symmetry_group": "symmetry-2",
+    "sigma_multiplier": "1"
+  },
+  {
+    "id": "iv-154",
+    "family": "symmetry",
+    "contract": {
+      "s": "177",
+      "k": "101",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "10",
+      "upper": "11",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "symmetry_group": "symmetry-2",
+    "sigma_multiplier": "1"
+  },
+  {
+    "id": "iv-155",
+    "family": "symmetry",
+    "contract": {
+      "s": "177000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "k": "101000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "86000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "upper": "87000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "symmetry_group": "symmetry-2",
+    "sigma_multiplier": "1"
+  },
+  {
+    "id": "iv-156",
+    "family": "symmetry",
+    "contract": {
+      "s": "177",
+      "k": "101",
+      "t": "4",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "86",
+      "upper": "87",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "symmetry_group": "symmetry-2",
+    "sigma_multiplier": "2"
+  },
+  {
+    "id": "iv-157",
+    "family": "symmetry",
+    "contract": {
+      "s": "194",
+      "k": "101",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "104",
+      "upper": "105",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "symmetry_group": "symmetry-3",
+    "sigma_multiplier": "1"
+  },
+  {
+    "id": "iv-158",
+    "family": "symmetry",
+    "contract": {
+      "s": "194",
+      "k": "101",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "put"
+    },
+    "quote": {
+      "lower": "11",
+      "upper": "12",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "symmetry_group": "symmetry-3",
+    "sigma_multiplier": "1"
+  },
+  {
+    "id": "iv-159",
+    "family": "symmetry",
+    "contract": {
+      "s": "97/500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "k": "101/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "t": "1",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "13/125000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "upper": "21/200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "symmetry_group": "symmetry-3",
+    "sigma_multiplier": "1"
+  },
+  {
+    "id": "iv-160",
+    "family": "symmetry",
+    "contract": {
+      "s": "194",
+      "k": "101",
+      "t": "4",
+      "r": "0",
+      "q": "0",
+      "option": "call"
+    },
+    "quote": {
+      "lower": "104",
+      "upper": "105",
+      "lower_closed": true,
+      "upper_closed": true,
+      "origin": "explicit exact price interval"
+    },
+    "expected_status": "interval",
+    "expected_resolved": true,
+    "kwargs": {},
+    "symmetry_group": "symmetry-3",
+    "sigma_multiplier": "2"
+  }
+]

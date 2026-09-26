@@ -1,0 +1,27 @@
+{
+  "case": "iv-086",
+  "precision_controls": [
+    {
+      "dps": 180,
+      "mpf_to_float_hex": "0x0.4cf85e97d879cp-1022",
+      "decimal_fraction_to_float_hex": "0x0.4cf85e97d879dp-1022",
+      "ulp_difference": -1.0
+    },
+    {
+      "dps": 260,
+      "mpf_to_float_hex": "0x0.4cf85e97d879cp-1022",
+      "decimal_fraction_to_float_hex": "0x0.4cf85e97d879dp-1022",
+      "ulp_difference": -1.0
+    },
+    {
+      "dps": 360,
+      "mpf_to_float_hex": "0x0.4cf85e97d879cp-1022",
+      "decimal_fraction_to_float_hex": "0x0.4cf85e97d879dp-1022",
+      "ulp_difference": -1.0
+    }
+  ],
+  "arb_seed_vs_old_cell": {
+    "above_lower": true,
+    "below_upper": false
+  }
+}

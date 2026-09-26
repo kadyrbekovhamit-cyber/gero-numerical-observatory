@@ -1,0 +1,889 @@
+{
+  "purpose": "post-confirmation illustrations",
+  "rows": [
+    {
+      "name": "rounded_ITM_call_100",
+      "result": {
+        "contract": {
+          "s": "200",
+          "k": "100",
+          "t": "1",
+          "r": "0",
+          "q": "0",
+          "option": "call"
+        },
+        "quote": {
+          "lower": "14073748835532799/140737488355328",
+          "upper": "14073748835532801/140737488355328",
+          "lower_closed": true,
+          "upper_closed": true,
+          "origin": "binary64 nearest-even cell"
+        },
+        "certification": "conditional on Arb enclosure contract; not an independent formal verification",
+        "tolerance": "1/1000000000000000000000000",
+        "boundary_comparisons": [
+          {
+            "kind": "intrinsic",
+            "target": "14073748835532799/140737488355328",
+            "sigma": null,
+            "precision_bits": 128,
+            "difference_lower": {
+              "mantissa": "1",
+              "exponent": "-47"
+            },
+            "difference_upper": {
+              "mantissa": "1",
+              "exponent": "-47"
+            },
+            "sign": 1
+          },
+          {
+            "kind": "intrinsic",
+            "target": "14073748835532801/140737488355328",
+            "sigma": null,
+            "precision_bits": 128,
+            "difference_lower": {
+              "mantissa": "-1",
+              "exponent": "-47"
+            },
+            "difference_upper": {
+              "mantissa": "-1",
+              "exponent": "-47"
+            },
+            "sign": -1
+          },
+          {
+            "kind": "ceiling",
+            "target": "14073748835532799/140737488355328",
+            "sigma": null,
+            "precision_bits": 128,
+            "difference_lower": {
+              "mantissa": "14073748835532801",
+              "exponent": "-47"
+            },
+            "difference_upper": {
+              "mantissa": "14073748835532801",
+              "exponent": "-47"
+            },
+            "sign": 1
+          },
+          {
+            "kind": "ceiling",
+            "target": "14073748835532801/140737488355328",
+            "sigma": null,
+            "precision_bits": 128,
+            "difference_lower": {
+              "mantissa": "14073748835532799",
+              "exponent": "-47"
+            },
+            "difference_upper": {
+              "mantissa": "14073748835532799",
+              "exponent": "-47"
+            },
+            "sign": 1
+          }
+        ],
+        "status": "interval",
+        "resolved": true,
+        "lower_endpoint": {
+          "kind": "zero",
+          "lower": "0",
+          "upper": "0",
+          "state": "exact"
+        },
+        "upper_endpoint": {
+          "kind": "root",
+          "lower": "54043630857893672196549/604462909807314587353088",
+          "upper": "108087261715787344393099/1208925819614629174706176",
+          "state": "converged",
+          "target": "14073748835532801/140737488355328",
+          "certified_bracket": true,
+          "lower_witness": {
+            "kind": "price",
+            "target": "14073748835532801/140737488355328",
+            "sigma": "54043630857893672196549/604462909807314587353088",
+            "precision_bits": 256,
+            "difference_lower": {
+              "mantissa": "-187921295635587388929452533690675302113653490819",
+              "exponent": "-276"
+            },
+            "difference_upper": {
+              "mantissa": "-187921295635587388929452533690675302112209206141",
+              "exponent": "-276"
+            },
+            "sign": -1
+          },
+          "upper_witness": {
+            "kind": "price",
+            "target": "14073748835532801/140737488355328",
+            "sigma": "108087261715787344393099/1208925819614629174706176",
+            "precision_bits": 256,
+            "difference_lower": {
+              "mantissa": "315020700320853654948701166670362864294183631743",
+              "exponent": "-276"
+            },
+            "difference_upper": {
+              "mantissa": "315020700320853654948701166670362864295091045505",
+              "exponent": "-276"
+            },
+            "sign": 1
+          },
+          "iterations": 80,
+          "bracket_expansions": 0
+        },
+        "lower_endpoint_closed": true,
+        "upper_endpoint_closed": true,
+        "outer_lower": "0",
+        "outer_upper": "108087261715787344393099/1208925819614629174706176",
+        "zero_included": true,
+        "unbounded": false,
+        "comparisons": 87,
+        "arb_evaluations": 91,
+        "highest_precision_bits": 256
+      },
+      "controls": [
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        },
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        },
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        },
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        },
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        },
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "rounded_OTM_put_same_contract_sigma_5pct",
+      "result": {
+        "contract": {
+          "s": "200",
+          "k": "100",
+          "t": "1",
+          "r": "0",
+          "q": "0",
+          "option": "put"
+        },
+        "quote": {
+          "lower": "10769867822219013/401734511064747568885490523085290650630550748445698208825344",
+          "upper": "10769867822219015/401734511064747568885490523085290650630550748445698208825344",
+          "lower_closed": false,
+          "upper_closed": false,
+          "origin": "binary64 nearest-even cell"
+        },
+        "certification": "conditional on Arb enclosure contract; not an independent formal verification",
+        "tolerance": "1/100000000000000000000",
+        "boundary_comparisons": [
+          {
+            "kind": "intrinsic",
+            "target": "10769867822219013/401734511064747568885490523085290650630550748445698208825344",
+            "sigma": null,
+            "precision_bits": 128,
+            "difference_lower": {
+              "mantissa": "-10769867822219013",
+              "exponent": "-198"
+            },
+            "difference_upper": {
+              "mantissa": "-10769867822219013",
+              "exponent": "-198"
+            },
+            "sign": -1
+          },
+          {
+            "kind": "intrinsic",
+            "target": "10769867822219015/401734511064747568885490523085290650630550748445698208825344",
+            "sigma": null,
+            "precision_bits": 128,
+            "difference_lower": {
+              "mantissa": "-10769867822219015",
+              "exponent": "-198"
+            },
+            "difference_upper": {
+              "mantissa": "-10769867822219015",
+              "exponent": "-198"
+            },
+            "sign": -1
+          },
+          {
+            "kind": "ceiling",
+            "target": "10769867822219013/401734511064747568885490523085290650630550748445698208825344",
+            "sigma": null,
+            "precision_bits": 128,
+            "difference_lower": {
+              "mantissa": "132922799578491587290380706028034457599",
+              "exponent": "-120"
+            },
+            "difference_upper": {
+              "mantissa": "25",
+              "exponent": "2"
+            },
+            "sign": 1
+          },
+          {
+            "kind": "ceiling",
+            "target": "10769867822219015/401734511064747568885490523085290650630550748445698208825344",
+            "sigma": null,
+            "precision_bits": 128,
+            "difference_lower": {
+              "mantissa": "132922799578491587290380706028034457599",
+              "exponent": "-120"
+            },
+            "difference_upper": {
+              "mantissa": "25",
+              "exponent": "2"
+            },
+            "sign": 1
+          }
+        ],
+        "status": "interval",
+        "resolved": true,
+        "lower_endpoint": {
+          "kind": "root",
+          "lower": "7378697629483820643/147573952589676412928",
+          "upper": "1844674407370955161/36893488147419103232",
+          "state": "converged",
+          "target": "10769867822219013/401734511064747568885490523085290650630550748445698208825344",
+          "certified_bracket": true,
+          "lower_witness": {
+            "kind": "price",
+            "target": "10769867822219013/401734511064747568885490523085290650630550748445698208825344",
+            "sigma": "7378697629483820643/147573952589676412928",
+            "precision_bits": 128,
+            "difference_lower": {
+              "mantissa": "-6889529975724995818666553",
+              "exponent": "-283"
+            },
+            "difference_upper": {
+              "mantissa": "-6889529975724994271790535",
+              "exponent": "-283"
+            },
+            "sign": -1
+          },
+          "upper_witness": {
+            "kind": "price",
+            "target": "10769867822219013/401734511064747568885490523085290650630550748445698208825344",
+            "sigma": "1844674407370955161/36893488147419103232",
+            "precision_bits": 128,
+            "difference_lower": {
+              "mantissa": "4129664764877112095950279",
+              "exponent": "-283"
+            },
+            "difference_upper": {
+              "mantissa": "4129664764877113642826297",
+              "exponent": "-283"
+            },
+            "sign": 1
+          },
+          "iterations": 67,
+          "bracket_expansions": 0
+        },
+        "upper_endpoint": {
+          "kind": "root",
+          "lower": "3689348814741910325/73786976294838206464",
+          "upper": "7378697629483820651/147573952589676412928",
+          "state": "converged",
+          "target": "10769867822219015/401734511064747568885490523085290650630550748445698208825344",
+          "certified_bracket": true,
+          "lower_witness": {
+            "kind": "price",
+            "target": "10769867822219015/401734511064747568885490523085290650630550748445698208825344",
+            "sigma": "3689348814741910325/73786976294838206464",
+            "precision_bits": 128,
+            "difference_lower": {
+              "mantissa": "-7126419246846502220446265",
+              "exponent": "-283"
+            },
+            "difference_upper": {
+              "mantissa": "-7126419246846500673570247",
+              "exponent": "-283"
+            },
+            "sign": -1
+          },
+          "upper_witness": {
+            "kind": "price",
+            "target": "10769867822219015/401734511064747568885490523085290650630550748445698208825344",
+            "sigma": "7378697629483820651/147573952589676412928",
+            "precision_bits": 128,
+            "difference_lower": {
+              "mantissa": "3892775493755607595763143",
+              "exponent": "-283"
+            },
+            "difference_upper": {
+              "mantissa": "3892775493755609142639161",
+              "exponent": "-283"
+            },
+            "sign": 1
+          },
+          "iterations": 67,
+          "bracket_expansions": 0
+        },
+        "lower_endpoint_closed": false,
+        "upper_endpoint_closed": false,
+        "outer_lower": "7378697629483820643/147573952589676412928",
+        "outer_upper": "7378697629483820651/147573952589676412928",
+        "zero_included": false,
+        "unbounded": false,
+        "comparisons": 144,
+        "arb_evaluations": 144,
+        "highest_precision_bits": 128
+      },
+      "controls": [
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        },
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        },
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        },
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        },
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        },
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        },
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        },
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "ATM_price_band_7_to_9",
+      "result": {
+        "contract": {
+          "s": "100",
+          "k": "100",
+          "t": "1",
+          "r": "0",
+          "q": "0",
+          "option": "call"
+        },
+        "quote": {
+          "lower": "7",
+          "upper": "9",
+          "lower_closed": true,
+          "upper_closed": true,
+          "origin": "explicit exact price interval"
+        },
+        "certification": "conditional on Arb enclosure contract; not an independent formal verification",
+        "tolerance": "1/1000000000000",
+        "boundary_comparisons": [
+          {
+            "kind": "intrinsic",
+            "target": "7",
+            "sigma": null,
+            "precision_bits": 128,
+            "difference_lower": {
+              "mantissa": "-7",
+              "exponent": "0"
+            },
+            "difference_upper": {
+              "mantissa": "-7",
+              "exponent": "0"
+            },
+            "sign": -1
+          },
+          {
+            "kind": "intrinsic",
+            "target": "9",
+            "sigma": null,
+            "precision_bits": 128,
+            "difference_lower": {
+              "mantissa": "-9",
+              "exponent": "0"
+            },
+            "difference_upper": {
+              "mantissa": "-9",
+              "exponent": "0"
+            },
+            "sign": -1
+          },
+          {
+            "kind": "ceiling",
+            "target": "7",
+            "sigma": null,
+            "precision_bits": 128,
+            "difference_lower": {
+              "mantissa": "93",
+              "exponent": "0"
+            },
+            "difference_upper": {
+              "mantissa": "93",
+              "exponent": "0"
+            },
+            "sign": 1
+          },
+          {
+            "kind": "ceiling",
+            "target": "9",
+            "sigma": null,
+            "precision_bits": 128,
+            "difference_lower": {
+              "mantissa": "91",
+              "exponent": "0"
+            },
+            "difference_upper": {
+              "mantissa": "91",
+              "exponent": "0"
+            },
+            "sign": 1
+          }
+        ],
+        "status": "interval",
+        "resolved": true,
+        "lower_endpoint": {
+          "kind": "root",
+          "lower": "193172841413/1099511627776",
+          "upper": "96586420707/549755813888",
+          "state": "converged",
+          "target": "7",
+          "certified_bracket": true,
+          "lower_witness": {
+            "kind": "price",
+            "target": "7",
+            "sigma": "193172841413/1099511627776",
+            "precision_bits": 128,
+            "difference_lower": {
+              "mantissa": "-1402876407961605274971754232177203",
+              "exponent": "-147"
+            },
+            "difference_upper": {
+              "mantissa": "-1402876407961605274971753922534861",
+              "exponent": "-147"
+            },
+            "sign": -1
+          },
+          "upper_witness": {
+            "kind": "price",
+            "target": "7",
+            "sigma": "96586420707/549755813888",
+            "precision_bits": 128,
+            "difference_lower": {
+              "mantissa": "5045404349984973581555276947234253",
+              "exponent": "-147"
+            },
+            "difference_upper": {
+              "mantissa": "5045404349984973581555277256876595",
+              "exponent": "-147"
+            },
+            "sign": 1
+          },
+          "iterations": 40,
+          "bracket_expansions": 0
+        },
+        "upper_endpoint": {
+          "kind": "root",
+          "lower": "248574379651/1099511627776",
+          "upper": "62143594913/274877906944",
+          "state": "converged",
+          "target": "9",
+          "certified_bracket": true,
+          "lower_witness": {
+            "kind": "price",
+            "target": "9",
+            "sigma": "248574379651/1099511627776",
+            "precision_bits": 128,
+            "difference_lower": {
+              "mantissa": "-188771771189128761013387321957945",
+              "exponent": "-146"
+            },
+            "difference_upper": {
+              "mantissa": "-188771771189128761013387162001863",
+              "exponent": "-146"
+            },
+            "sign": -1
+          },
+          "upper_witness": {
+            "kind": "price",
+            "target": "9",
+            "sigma": "62143594913/274877906944",
+            "precision_bits": 128,
+            "difference_lower": {
+              "mantissa": "3027220240861604196357587286598087",
+              "exponent": "-146"
+            },
+            "difference_upper": {
+              "mantissa": "3027220240861604196357587446554169",
+              "exponent": "-146"
+            },
+            "sign": 1
+          },
+          "iterations": 40,
+          "bracket_expansions": 0
+        },
+        "lower_endpoint_closed": true,
+        "upper_endpoint_closed": true,
+        "outer_lower": "193172841413/1099511627776",
+        "outer_upper": "62143594913/274877906944",
+        "zero_included": false,
+        "unbounded": false,
+        "comparisons": 90,
+        "arb_evaluations": 90,
+        "highest_precision_bits": 128
+      },
+      "controls": [
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        },
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        },
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        },
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        },
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        },
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        },
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        },
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "adaptive_precision_near_sigma_half",
+      "result": {
+        "contract": {
+          "s": "113",
+          "k": "113",
+          "t": "1",
+          "r": "0",
+          "q": "0",
+          "option": "call"
+        },
+        "quote": {
+          "lower": "557690740108519041960823922432840626943568269011827637936105067600831854572860048333463310504562251/25000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "upper": "557690740108519041960823922432840626943568269011827637936105067600831854572860048333463310504562251/25000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "lower_closed": true,
+          "upper_closed": true,
+          "origin": "explicit exact price interval"
+        },
+        "certification": "conditional on Arb enclosure contract; not an independent formal verification",
+        "tolerance": "1/1000000000000",
+        "boundary_comparisons": [
+          {
+            "kind": "intrinsic",
+            "target": "557690740108519041960823922432840626943568269011827637936105067600831854572860048333463310504562251/25000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "sigma": null,
+            "precision_bits": 64,
+            "difference_lower": {
+              "mantissa": "-12859472943824396725",
+              "exponent": "-59"
+            },
+            "difference_upper": {
+              "mantissa": "-12859472943824396723",
+              "exponent": "-59"
+            },
+            "sign": -1
+          },
+          {
+            "kind": "intrinsic",
+            "target": "557690740108519041960823922432840626943568269011827637936105067600831854572860048333463310504562251/25000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "sigma": null,
+            "precision_bits": 64,
+            "difference_lower": {
+              "mantissa": "-12859472943824396725",
+              "exponent": "-59"
+            },
+            "difference_upper": {
+              "mantissa": "-12859472943824396723",
+              "exponent": "-59"
+            },
+            "sign": -1
+          },
+          {
+            "kind": "ceiling",
+            "target": "557690740108519041960823922432840626943568269011827637936105067600831854572860048333463310504562251/25000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "sigma": null,
+            "precision_bits": 64,
+            "difference_lower": {
+              "mantissa": "6535074008307807177",
+              "exponent": "-56"
+            },
+            "difference_upper": {
+              "mantissa": "3267537004153903589",
+              "exponent": "-55"
+            },
+            "sign": 1
+          },
+          {
+            "kind": "ceiling",
+            "target": "557690740108519041960823922432840626943568269011827637936105067600831854572860048333463310504562251/25000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "sigma": null,
+            "precision_bits": 64,
+            "difference_lower": {
+              "mantissa": "6535074008307807177",
+              "exponent": "-56"
+            },
+            "difference_upper": {
+              "mantissa": "3267537004153903589",
+              "exponent": "-55"
+            },
+            "sign": 1
+          }
+        ],
+        "status": "interval",
+        "resolved": true,
+        "lower_endpoint": {
+          "kind": "root",
+          "lower": "549755813887/1099511627776",
+          "upper": "1/2",
+          "state": "converged",
+          "target": "557690740108519041960823922432840626943568269011827637936105067600831854572860048333463310504562251/25000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "certified_bracket": true,
+          "lower_witness": {
+            "kind": "price",
+            "target": "557690740108519041960823922432840626943568269011827637936105067600831854572860048333463310504562251/25000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "sigma": "549755813887/1099511627776",
+            "precision_bits": 64,
+            "difference_lower": {
+              "mantissa": "-1537329202628691",
+              "exponent": "-85"
+            },
+            "difference_upper": {
+              "mantissa": "-1537327289169837",
+              "exponent": "-85"
+            },
+            "sign": -1
+          },
+          "upper_witness": {
+            "kind": "price",
+            "target": "557690740108519041960823922432840626943568269011827637936105067600831854572860048333463310504562251/25000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "sigma": "1/2",
+            "precision_bits": 512,
+            "difference_lower": {
+              "mantissa": "59326790948840696544666611757822758414790095815301497328597011",
+              "exponent": "-533"
+            },
+            "difference_upper": {
+              "mantissa": "59326790948840696544666611757822758414790095815301499242055661",
+              "exponent": "-533"
+            },
+            "sign": 1
+          },
+          "iterations": 40,
+          "bracket_expansions": 0
+        },
+        "upper_endpoint": {
+          "kind": "root",
+          "lower": "549755813887/1099511627776",
+          "upper": "1/2",
+          "state": "converged",
+          "target": "557690740108519041960823922432840626943568269011827637936105067600831854572860048333463310504562251/25000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "certified_bracket": true,
+          "lower_witness": {
+            "kind": "price",
+            "target": "557690740108519041960823922432840626943568269011827637936105067600831854572860048333463310504562251/25000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "sigma": "549755813887/1099511627776",
+            "precision_bits": 64,
+            "difference_lower": {
+              "mantissa": "-1537329202628691",
+              "exponent": "-85"
+            },
+            "difference_upper": {
+              "mantissa": "-1537327289169837",
+              "exponent": "-85"
+            },
+            "sign": -1
+          },
+          "upper_witness": {
+            "kind": "price",
+            "target": "557690740108519041960823922432840626943568269011827637936105067600831854572860048333463310504562251/25000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "sigma": "1/2",
+            "precision_bits": 512,
+            "difference_lower": {
+              "mantissa": "59326790948840696544666611757822758414790095815301497328597011",
+              "exponent": "-533"
+            },
+            "difference_upper": {
+              "mantissa": "59326790948840696544666611757822758414790095815301499242055661",
+              "exponent": "-533"
+            },
+            "sign": 1
+          },
+          "iterations": 40,
+          "bracket_expansions": 0
+        },
+        "lower_endpoint_closed": true,
+        "upper_endpoint_closed": true,
+        "outer_lower": "549755813887/1099511627776",
+        "outer_upper": "1/2",
+        "zero_included": false,
+        "unbounded": false,
+        "comparisons": 90,
+        "arb_evaluations": 102,
+        "highest_precision_bits": 512
+      },
+      "controls": [
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        },
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        },
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        },
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        },
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        },
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        },
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        },
+        {
+          "checked": true,
+          "contained": true,
+          "reference_converged": true,
+          "witness_sign_valid": true,
+          "pass": true
+        }
+      ]
+    }
+  ]
+}
