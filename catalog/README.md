@@ -159,3 +159,5 @@ BondZero archives an already corrected upstream issue. [Source fix](https://gith
 | 125 | [Positive-payoff quadrature for Black–Scholes: a frozen binary64 prototype](reports/black-scholes-positive-payoff-v2.md) | Pending | Pending | [DOI](https://zenodo.org/records/22972343) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-positive-payoff-v2) |
 
 Black–Scholes v2: [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7509495438547333120/) · [Video](https://youtube.com/shorts/F6Wx5byxJtM).
+
+| 126 | [A hybrid Black–Scholes evaluator: recovering speed with bounded synthetic accuracy evidence](reports/black-scholes-hybrid-v3.md) | Pending | Pending | Pending | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-hybrid-v3) |

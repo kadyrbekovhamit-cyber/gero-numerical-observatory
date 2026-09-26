@@ -1,0 +1,32 @@
+{
+  "status": "post-accuracy descriptive timing; unequal achieved accuracy",
+  "platform": "macOS-15.5-arm64-arm-64bit",
+  "cases": 106,
+  "selection": "all v1 fixtures at indices 0,3,6,...",
+  "warmup_batches_per_method": 1,
+  "timed_batches_per_method": 5,
+  "alternating_method_order": true,
+  "nanoseconds_per_call": {
+    "v0_detailed": [
+      5929.245283018868,
+      6012.584905660377,
+      5794.415094339623,
+      6235.8490566037735,
+      5884.830188679245
+    ],
+    "v2_detailed": [
+      90535.37735849057,
+      89892.2924528302,
+      93435.52830188679,
+      92171.37735849057,
+      91339.62264150943
+    ]
+  },
+  "median_nanoseconds_per_call": {
+    "v0_detailed": 5929.245283018868,
+    "v2_detailed": 91339.62264150943
+  },
+  "candidate_sha256": "536509e79dc52cd22af5b6dadbc4aeac9c46f573df30e522d91e6ba5a3572b78",
+  "limitations": "Python API costs on this machine; no native C++ timing; no equal-accuracy or production throughput claim",
+  "median_v2_over_v0": 15.404932378679396
+}

@@ -1,0 +1,2380 @@
+{
+  "contract": {
+    "precision_digits": 100,
+    "spot": "exp(log_forward_moneyness)",
+    "strike": 1.0,
+    "time": 1.0,
+    "rate": 0.0,
+    "dividend_yield": 0.0,
+    "evaluated_leg": "OTM call for m<=0, OTM put for m>0"
+  },
+  "cases": 117,
+  "absolute_error_wins": {
+    "stable": 21,
+    "naive": 5,
+    "tie": 91
+  },
+  "representable_absolute_error_wins": {
+    "stable": 21,
+    "naive": 5,
+    "tie": 21
+  },
+  "reference_representability": {
+    "float64_representable": 47,
+    "below_float64": 70
+  },
+  "log_contract": {
+    "finite_comparisons": 117,
+    "max_absolute_log_error": 256.0,
+    "max_log_error_in_float64_ulps": 480374.0,
+    "below_float64_comparisons": 70,
+    "below_float64_max_absolute_log_error": 256.0,
+    "below_float64_max_log_error_in_float64_ulps": 4.0
+  },
+  "finite_or_nonnegative_violations": {
+    "stable": 0,
+    "naive": 0
+  },
+  "rows": [
+    {
+      "log_forward_moneyness": -100.0,
+      "total_volatility": 1e-10,
+      "otm_option": "call",
+      "reference": "3.577389120988100649712341e-217147240951625913782379",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -5e+23,
+      "reference_log_otm_value": -5e+23,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -100.0,
+      "total_volatility": 1e-08,
+      "otm_option": "call",
+      "reference": "4.507676167509761074418491e-21714724095162591429",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -5e+19,
+      "reference_log_otm_value": -5e+19,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -100.0,
+      "total_volatility": 1e-05,
+      "otm_option": "call",
+      "reference": "1.971549740485815020180823e-21714724095204",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -50000000000094.68,
+      "reference_log_otm_value": -50000000000094.67,
+      "log_absolute_error": 0.0078125,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -100.0,
+      "total_volatility": 0.001,
+      "otm_option": "call",
+      "reference": "2.343833614182264820014692e-2171472445",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -5000000080.852546,
+      "reference_log_otm_value": -5000000080.852545,
+      "log_absolute_error": 9.5367431640625e-07,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -100.0,
+      "total_volatility": 0.05,
+      "otm_option": "call",
+      "reference": "1.045089386712405362613849e-868619",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -2000069.1167889754,
+      "reference_log_otm_value": -2000069.1167889757,
+      "log_absolute_error": 2.3283064365386963e-10,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -100.0,
+      "total_volatility": 0.2,
+      "otm_option": "call",
+      "reference": "9.48115801482273740672543e-54316",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -125064.9626046023,
+      "reference_log_otm_value": -125064.96260460232,
+      "log_absolute_error": 1.4551915228366852e-11,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -100.0,
+      "total_volatility": 1.0,
+      "otm_option": "call",
+      "reference": "2.287548187436489415897952e-2198",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -5060.254553817421,
+      "reference_log_otm_value": -5060.254553817421,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -100.0,
+      "total_volatility": 3.0,
+      "otm_option": "call",
+      "reference": "3.580652539187096259871228e-267",
+      "reference_float64_representable": true,
+      "naive": 3.580652539185907e-267,
+      "stable": 3.580652539185362e-267,
+      "stable_log_otm_value": -613.5146747720916,
+      "reference_log_otm_value": -613.5146747720914,
+      "log_absolute_error": 1.1368683772161603e-13,
+      "naive_error": {
+        "absolute": 1.1890724513408876e-279,
+        "relative": 3.320677066653843e-13
+      },
+      "stable_error": {
+        "absolute": 1.7343789608882973e-279,
+        "relative": 4.843903056439558e-13
+      }
+    },
+    {
+      "log_forward_moneyness": -100.0,
+      "total_volatility": 10.0,
+      "otm_option": "call",
+      "reference": "6.992690061051240286360579e-51",
+      "reference_float64_representable": true,
+      "naive": 6.992690061051156e-51,
+      "stable": 6.992690061051278e-51,
+      "stable_log_otm_value": -115.48697441627081,
+      "reference_log_otm_value": -115.48697441627081,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 8.477277340626543e-65,
+        "relative": 1.2101430968414206e-14
+      },
+      "stable_error": {
+        "absolute": 3.7482661320391976e-65,
+        "relative": 5.329070518200751e-15
+      }
+    },
+    {
+      "log_forward_moneyness": -50.0,
+      "total_volatility": 1e-10,
+      "otm_option": "call",
+      "reference": "1.153294893838593880289969e-54286810237906478437316",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -1.25e+23,
+      "reference_log_otm_value": -1.25e+23,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -50.0,
+      "total_volatility": 1e-08,
+      "otm_option": "call",
+      "reference": "4.154125786627329700729802e-5428681023790647883",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -1.25e+19,
+      "reference_log_otm_value": -1.25e+19,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -50.0,
+      "total_volatility": 1e-05,
+      "otm_option": "call",
+      "reference": "4.986137865076721479356658e-5428681023821",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -12500000000068.28,
+      "reference_log_otm_value": -12500000000068.281,
+      "log_absolute_error": 0.001953125,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -50.0,
+      "total_volatility": 0.001,
+      "otm_option": "call",
+      "reference": "9.258554138055849500946754e-542868127",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -1250000054.4662504,
+      "reference_log_otm_value": -1250000054.4662504,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -50.0,
+      "total_volatility": 0.05,
+      "otm_option": "call",
+      "reference": "1.590118085107636194797718e-217166",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -500042.7304968642,
+      "reference_log_otm_value": -500042.73049686407,
+      "log_absolute_error": 1.1641532182693481e-10,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -50.0,
+      "total_volatility": 0.2,
+      "otm_option": "call",
+      "reference": "3.499018768713655155422564e-13589",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -31288.576346118694,
+      "reference_log_otm_value": -31288.576346118694,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -50.0,
+      "total_volatility": 1.0,
+      "otm_option": "call",
+      "reference": "2.646925421897038638737213e-558",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -1283.8690831424055,
+      "reference_log_otm_value": -1283.8690831424055,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -50.0,
+      "total_volatility": 3.0,
+      "otm_option": "call",
+      "reference": "9.300905126168513453623023e-75",
+      "reference_float64_representable": true,
+      "naive": 9.30090512616776e-75,
+      "stable": 9.30090512616822e-75,
+      "stable_log_otm_value": -170.463770253737,
+      "reference_log_otm_value": -170.46377025373556,
+      "log_absolute_error": 1.4495071809506044e-12,
+      "naive_error": {
+        "absolute": 7.541829865470761e-88,
+        "relative": 8.104628079763643e-14
+      },
+      "stable_error": {
+        "absolute": 2.9272820080908976e-88,
+        "relative": 3.141931159689193e-14
+      }
+    },
+    {
+      "log_forward_moneyness": -50.0,
+      "total_volatility": 10.0,
+      "otm_option": "call",
+      "reference": "8.881763937403536393402666e-23",
+      "reference_float64_representable": true,
+      "naive": 8.88176393740353e-23,
+      "stable": 8.88176393740353e-23,
+      "stable_log_otm_value": -50.77545695998611,
+      "reference_log_otm_value": -50.7754569599861,
+      "log_absolute_error": 7.105427357601002e-15,
+      "naive_error": {
+        "absolute": 6.153921549651677e-38,
+        "relative": 6.661338147750939e-16
+      },
+      "stable_error": {
+        "absolute": 6.153921549651677e-38,
+        "relative": 6.661338147750939e-16
+      }
+    },
+    {
+      "log_forward_moneyness": -20.0,
+      "total_volatility": 1e-10,
+      "otm_option": "call",
+      "reference": "6.333897998061410421567908e-8685889638065036480564",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -2e+22,
+      "reference_log_otm_value": -2e+22,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -20.0,
+      "total_volatility": 1e-08,
+      "otm_option": "call",
+      "reference": "4.011620408402411016980931e-868588963806503680",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -2e+18,
+      "reference_log_otm_value": -2e+18,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -20.0,
+      "total_volatility": 1e-05,
+      "otm_option": "call",
+      "reference": "1.419898181151306281650677e-868588963829",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -2000000000051.4487,
+      "reference_log_otm_value": -2000000000051.4492,
+      "log_absolute_error": 0.00048828125,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -20.0,
+      "total_volatility": 0.001,
+      "otm_option": "call",
+      "reference": "1.884754691877429613768739e-86858913",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -200000037.63366908,
+      "reference_log_otm_value": -200000037.63366905,
+      "log_absolute_error": 2.9802322387695312e-08,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -20.0,
+      "total_volatility": 0.05,
+      "otm_option": "call",
+      "reference": "1.563576556281837145933976e-34755",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -80025.89793114665,
+      "reference_log_otm_value": -80025.89793114665,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -20.0,
+      "total_volatility": 0.2,
+      "otm_option": "call",
+      "reference": "1.21418383050521657025256e-2181",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -5021.744015713384,
+      "reference_log_otm_value": -5021.744015713382,
+      "log_absolute_error": 1.8189894035458565e-12,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -20.0,
+      "total_volatility": 1.0,
+      "otm_option": "call",
+      "reference": "5.492369878500419748607159e-95",
+      "reference_float64_representable": true,
+      "naive": 5.4923698785016416e-95,
+      "stable": 5.4923698784983876e-95,
+      "stable_log_otm_value": -217.04222400019844,
+      "reference_log_otm_value": -217.0422240001984,
+      "log_absolute_error": 5.684341886080802e-14,
+      "naive_error": {
+        "absolute": 1.2218657223697991e-107,
+        "relative": 2.2248869413488137e-13
+      },
+      "stable_error": {
+        "absolute": 2.03214702411143e-107,
+        "relative": 3.700373341075647e-13
+      }
+    },
+    {
+      "log_forward_moneyness": -20.0,
+      "total_volatility": 3.0,
+      "otm_option": "call",
+      "reference": "8.707868282268292796101848e-17",
+      "reference_float64_representable": true,
+      "naive": 8.707868282268419e-17,
+      "stable": 8.707868282268419e-17,
+      "stable_log_otm_value": -36.97971956370101,
+      "reference_log_otm_value": -36.97971956370102,
+      "log_absolute_error": 7.105427357601002e-15,
+      "naive_error": {
+        "absolute": 1.2589010849590744e-30,
+        "relative": 1.4432899320127035e-14
+      },
+      "stable_error": {
+        "absolute": 1.2589010849590744e-30,
+        "relative": 1.4432899320127035e-14
+      }
+    },
+    {
+      "log_forward_moneyness": -20.0,
+      "total_volatility": 10.0,
+      "otm_option": "call",
+      "reference": "2.05709146267685511651685e-9",
+      "reference_float64_representable": true,
+      "naive": 2.0570914626768548e-09,
+      "stable": 2.0570914626768548e-09,
+      "stable_log_otm_value": -20.001972763152835,
+      "reference_log_otm_value": -20.001972763152832,
+      "log_absolute_error": 3.552713678800501e-15,
+      "naive_error": {
+        "absolute": 3.5740792544176036e-25,
+        "relative": 2.220446049250313e-16
+      },
+      "stable_error": {
+        "absolute": 3.5740792544176036e-25,
+        "relative": 2.220446049250313e-16
+      }
+    },
+    {
+      "log_forward_moneyness": -10.0,
+      "total_volatility": 1e-10,
+      "otm_option": "call",
+      "reference": "1.773203084213454406449436e-2171472409516259114716",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -5e+21,
+      "reference_log_otm_value": -5e+21,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -10.0,
+      "total_volatility": 1e-08,
+      "otm_option": "call",
+      "reference": "9.147861661899882758747014e-217147240951625941",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -5.0000000000000006e+17,
+      "reference_log_otm_value": -5.0000000000000006e+17,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -10.0,
+      "total_volatility": 1e-05,
+      "otm_option": "call",
+      "reference": "6.361011609068799030562926e-217147240972",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -500000000045.0627,
+      "reference_log_otm_value": -500000000045.06287,
+      "log_absolute_error": 0.00018310546875,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -10.0,
+      "total_volatility": 0.001,
+      "otm_option": "call",
+      "reference": "2.159111138377402540468292e-21714738",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -50000031.24737471,
+      "reference_log_otm_value": -50000031.24737471,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -10.0,
+      "total_volatility": 0.05,
+      "otm_option": "call",
+      "reference": "4.33053272470499645940757e-8695",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -20019.51169301767,
+      "reference_log_otm_value": -20019.51169301767,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -10.0,
+      "total_volatility": 0.2,
+      "otm_option": "call",
+      "reference": "2.895576867854036371519842e-550",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -1265.358616792043,
+      "reference_log_otm_value": -1265.358616792043,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -10.0,
+      "total_volatility": 1.0,
+      "otm_option": "call",
+      "reference": "4.454961553187778981344208e-27",
+      "reference_float64_representable": true,
+      "naive": 4.454961553188014e-27,
+      "stable": 4.454961553187633e-27,
+      "stable_log_otm_value": -60.67577908340338,
+      "reference_log_otm_value": -60.675779079990114,
+      "log_absolute_error": 3.4132625614802237e-09,
+      "naive_error": {
+        "absolute": 2.3490671198807728e-40,
+        "relative": 5.262457136723242e-14
+      },
+      "stable_error": {
+        "absolute": 1.4606710410483937e-40,
+        "relative": 3.275157922644212e-14
+      }
+    },
+    {
+      "log_forward_moneyness": -10.0,
+      "total_volatility": 3.0,
+      "otm_option": "call",
+      "reference": "0.0000008439626442586511146062296",
+      "reference_float64_representable": true,
+      "naive": 8.439626442586519e-07,
+      "stable": 8.439626442586519e-07,
+      "stable_log_otm_value": -13.985157603687021,
+      "reference_log_otm_value": -13.985157603687021,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 7.758258190904538e-22,
+        "relative": 8.881784197001252e-16
+      },
+      "stable_error": {
+        "absolute": 7.758258190904538e-22,
+        "relative": 8.881784197001252e-16
+      }
+    },
+    {
+      "log_forward_moneyness": -10.0,
+      "total_volatility": 10.0,
+      "otm_option": "call",
+      "reference": "0.00004539750530268510198538077",
+      "reference_float64_representable": true,
+      "naive": 4.53975053026851e-05,
+      "stable": 4.53975053026851e-05,
+      "stable_log_otm_value": -10.000053403706803,
+      "reference_log_otm_value": -10.000053403706803,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 1.3940610827408341e-21,
+        "relative": 0.0
+      },
+      "stable_error": {
+        "absolute": 1.3940610827408341e-21,
+        "relative": 0.0
+      }
+    },
+    {
+      "log_forward_moneyness": -2.0,
+      "total_volatility": 1e-10,
+      "otm_option": "call",
+      "reference": "6.494080597150444875352591e-86858896380650360360",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -2e+20,
+      "reference_log_otm_value": -2e+20,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -2.0,
+      "total_volatility": 1e-08,
+      "otm_option": "call",
+      "reference": "3.402360978218385061407456e-8685889638065062",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -2.0000000000000056e+16,
+      "reference_log_otm_value": -2.0000000000000056e+16,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -2.0,
+      "total_volatility": 1e-05,
+      "otm_option": "call",
+      "reference": "3.158781310569960168602177e-8685889655",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -20000000037.844,
+      "reference_log_otm_value": -20000000037.84401,
+      "log_absolute_error": 7.62939453125e-06,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -2.0,
+      "total_volatility": 0.001,
+      "otm_option": "call",
+      "reference": "3.987940857724900415568154e-868600",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -2000024.028499606,
+      "reference_log_otm_value": -2000024.028499606,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -2.0,
+      "total_volatility": 0.05,
+      "otm_option": "call",
+      "reference": "1.678541204680950880537755e-353",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -812.2946127412475,
+      "reference_log_otm_value": -812.2946127412474,
+      "log_absolute_error": 1.1368683772161603e-13,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -2.0,
+      "total_volatility": 0.2,
+      "otm_option": "call",
+      "reference": "5.472557675330300208788167e-26",
+      "reference_float64_representable": true,
+      "naive": 5.472557675329181e-26,
+      "stable": 5.47255767533105e-26,
+      "stable_log_otm_value": -58.16746633137156,
+      "reference_log_otm_value": -58.16746632836656,
+      "log_absolute_error": 3.0049989163671853e-09,
+      "naive_error": {
+        "absolute": 1.1189039078360398e-38,
+        "relative": 2.0450308113595383e-13
+      },
+      "stable_error": {
+        "absolute": 7.499484389790814e-39,
+        "relative": 1.3700152123874432e-13
+      }
+    },
+    {
+      "log_forward_moneyness": -2.0,
+      "total_volatility": 1.0,
+      "otm_option": "call",
+      "reference": "0.002831706180190162554240709",
+      "reference_float64_representable": true,
+      "naive": 0.002831706180190164,
+      "stable": 0.002831706180190164,
+      "stable_log_otm_value": -5.866875858465912,
+      "reference_log_otm_value": -5.866875858465913,
+      "log_absolute_error": 8.881784197001252e-16,
+      "naive_error": {
+        "absolute": 1.2573201241928056e-18,
+        "relative": 4.440892098500626e-16
+      },
+      "stable_error": {
+        "absolute": 1.2573201241928056e-18,
+        "relative": 4.440892098500626e-16
+      }
+    },
+    {
+      "log_forward_moneyness": -2.0,
+      "total_volatility": 3.0,
+      "otm_option": "call",
+      "reference": "0.09282297448185697776327607",
+      "reference_float64_representable": true,
+      "naive": 0.09282297448185696,
+      "stable": 0.09282297448185696,
+      "stable_log_otm_value": -2.3770610999827433,
+      "reference_log_otm_value": -2.3770610999827433,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 1.8113436861876307e-17,
+        "relative": 2.220446049250313e-16
+      },
+      "stable_error": {
+        "absolute": 1.8113436861876307e-17,
+        "relative": 2.220446049250313e-16
+      }
+    },
+    {
+      "log_forward_moneyness": -2.0,
+      "total_volatility": 10.0,
+      "otm_option": "call",
+      "reference": "0.1353350762270593834695648",
+      "reference_float64_representable": true,
+      "naive": 0.1353350762270594,
+      "stable": 0.1353350762270594,
+      "stable_log_otm_value": -2.0000015296063722,
+      "reference_log_otm_value": -2.0000015296063722,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 1.418816117384253e-17,
+        "relative": 0.0
+      },
+      "stable_error": {
+        "absolute": 1.418816117384253e-17,
+        "relative": 0.0
+      }
+    },
+    {
+      "log_forward_moneyness": -0.1,
+      "total_volatility": 1e-10,
+      "otm_option": "call",
+      "reference": "3.867714803573689290134777e-217147240951626294",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -5.0000000000000064e+17,
+      "reference_log_otm_value": -5.000000000000009e+17,
+      "log_absolute_error": 256.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -0.1,
+      "total_volatility": 1e-08,
+      "otm_option": "call",
+      "reference": "8.968011729981635560996379e-21714724095186",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -50000000000051.68,
+      "reference_log_otm_value": -50000000000051.7,
+      "log_absolute_error": 0.0234375,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -0.1,
+      "total_volatility": 1e-05,
+      "otm_option": "call",
+      "reference": "3.048124503483442308984477e-21714738",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -50000030.902544826,
+      "reference_log_otm_value": -50000030.902544856,
+      "log_absolute_error": 2.9802322387695312e-08,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -0.1,
+      "total_volatility": 0.001,
+      "otm_option": "call",
+      "reference": "1.278366933052827775949244e-2179",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -5017.087334204212,
+      "reference_log_otm_value": -5017.087334204215,
+      "log_absolute_error": 2.7284841053187847e-12,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": -0.1,
+      "total_volatility": 0.05,
+      "otm_option": "call",
+      "reference": "0.0004037310949709328642614609",
+      "reference_float64_representable": true,
+      "naive": 0.00040373109497092094,
+      "stable": 0.0004037310949709307,
+      "stable_log_otm_value": -7.814761508125077,
+      "reference_log_otm_value": -7.814761508125072,
+      "log_absolute_error": 5.329070518200751e-15,
+      "naive_error": {
+        "absolute": 1.1924703959277489e-17,
+        "relative": 2.9531932455029164e-14
+      },
+      "stable_error": {
+        "absolute": 2.166884406907949e-18,
+        "relative": 5.329070518200751e-15
+      }
+    },
+    {
+      "log_forward_moneyness": -0.1,
+      "total_volatility": 0.2,
+      "otm_option": "call",
+      "reference": "0.03753418388256840041500017",
+      "reference_float64_representable": true,
+      "naive": 0.03753418388256835,
+      "stable": 0.03753418388256835,
+      "stable_log_otm_value": -3.282503191031746,
+      "reference_log_otm_value": -3.282503191031744,
+      "log_absolute_error": 2.220446049250313e-15,
+      "naive_error": {
+        "absolute": 4.993843948551811e-17,
+        "relative": 1.3322676295501878e-15
+      },
+      "stable_error": {
+        "absolute": 4.993843948551811e-17,
+        "relative": 1.3322676295501878e-15
+      }
+    },
+    {
+      "log_forward_moneyness": -0.1,
+      "total_volatility": 1.0,
+      "otm_option": "call",
+      "reference": "0.3187969986532439389962743",
+      "reference_float64_representable": true,
+      "naive": 0.3187969986532438,
+      "stable": 0.31879699865324385,
+      "stable_log_otm_value": -1.1432007466234309,
+      "reference_log_otm_value": -1.1432007466234304,
+      "log_absolute_error": 4.440892098500626e-16,
+      "naive_error": {
+        "absolute": 1.4850713187896622e-16,
+        "relative": 4.440892098500626e-16
+      },
+      "stable_error": {
+        "absolute": 9.299598064770839e-17,
+        "relative": 3.3306690738754696e-16
+      }
+    },
+    {
+      "log_forward_moneyness": -0.1,
+      "total_volatility": 3.0,
+      "otm_option": "call",
+      "reference": "0.7777859199478004354505637",
+      "reference_float64_representable": true,
+      "naive": 0.7777859199478003,
+      "stable": 0.7777859199478004,
+      "stable_log_otm_value": -0.25130395983138565,
+      "reference_log_otm_value": -0.25130395983138565,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 1.049743795502405e-16,
+        "relative": 1.1102230246251565e-16
+      },
+      "stable_error": {
+        "absolute": 6.047922912275146e-18,
+        "relative": 0.0
+      }
+    },
+    {
+      "log_forward_moneyness": -0.1,
+      "total_volatility": 10.0,
+      "otm_option": "call",
+      "reference": "0.9048368727185665528637464",
+      "reference_float64_representable": true,
+      "naive": 0.9048368727185666,
+      "stable": 0.9048368727185666,
+      "stable_log_otm_value": -0.10000060266910543,
+      "reference_log_otm_value": -0.10000060266910549,
+      "log_absolute_error": 5.551115123125783e-17,
+      "naive_error": {
+        "absolute": 5.652221307082527e-17,
+        "relative": 0.0
+      },
+      "stable_error": {
+        "absolute": 5.652221307082527e-17,
+        "relative": 0.0
+      }
+    },
+    {
+      "log_forward_moneyness": 0.0,
+      "total_volatility": 1e-10,
+      "otm_option": "call",
+      "reference": "3.989422804014326779397798e-11",
+      "reference_float64_representable": true,
+      "naive": 3.9894254566519294e-11,
+      "stable": 3.9894228040143264e-11,
+      "stable_log_otm_value": -23.94478946314513,
+      "reference_log_otm_value": -23.94478946314513,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 2.652637602600916e-17,
+        "relative": 6.649176416129166e-07
+      },
+      "stable_error": {
+        "absolute": 3.4439866625410205e-27,
+        "relative": 1.1102230246251565e-16
+      }
+    },
+    {
+      "log_forward_moneyness": 0.0,
+      "total_volatility": 1e-08,
+      "otm_option": "call",
+      "reference": "3.989422804014326762776866e-9",
+      "reference_float64_representable": true,
+      "naive": 3.98942279211667e-09,
+      "stable": 3.989422804014327e-09,
+      "stable_log_otm_value": -19.339619277157038,
+      "reference_log_otm_value": -19.339619277157038,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 1.1897656482838604e-17,
+        "relative": 2.982300184584119e-09
+      },
+      "stable_error": {
+        "absolute": 9.513318621633835e-26,
+        "relative": 0.0
+      }
+    },
+    {
+      "log_forward_moneyness": 0.0,
+      "total_volatility": 1e-05,
+      "otm_option": "call",
+      "reference": "0.000003989422803997704184382797",
+      "reference_float64_representable": true,
+      "naive": 3.989422804051568e-06,
+      "stable": 3.989422803997704e-06,
+      "stable_log_otm_value": -12.431863998179068,
+      "reference_log_otm_value": -12.431863998179068,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 5.386361027589819e-17,
+        "relative": 1.3501644247071454e-11
+      },
+      "stable_error": {
+        "absolute": 6.187295001982547e-23,
+        "relative": 0.0
+      }
+    },
+    {
+      "log_forward_moneyness": 0.0,
+      "total_volatility": 0.001,
+      "otm_option": "call",
+      "reference": "0.0003989422637788382845608791",
+      "reference_float64_representable": true,
+      "naive": 0.0003989422637787343,
+      "stable": 0.00039894226377883824,
+      "stable_log_otm_value": -7.826693853853476,
+      "reference_log_otm_value": -7.826693853853476,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 1.0396612519763803e-16,
+        "relative": 2.6056934387952424e-13
+      },
+      "stable_error": {
+        "absolute": 4.534696490243509e-20,
+        "relative": 1.1102230246251565e-16
+      }
+    },
+    {
+      "log_forward_moneyness": 0.0,
+      "total_volatility": 0.05,
+      "otm_option": "call",
+      "reference": "0.01994503639047608558208311",
+      "reference_float64_representable": true,
+      "naive": 0.019945036390476067,
+      "stable": 0.01994503639047608,
+      "stable_log_otm_value": -3.914774969085139,
+      "reference_log_otm_value": -3.914774969085139,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 1.8114935199311922e-17,
+        "relative": 8.881784197001252e-16
+      },
+      "stable_error": {
+        "absolute": 4.2371473914974644e-18,
+        "relative": 2.220446049250313e-16
+      }
+    },
+    {
+      "log_forward_moneyness": 0.0,
+      "total_volatility": 0.2,
+      "otm_option": "call",
+      "reference": "0.07965567455405796293080924",
+      "reference_float64_representable": true,
+      "naive": 0.07965567455405798,
+      "stable": 0.07965567455405795,
+      "stable_log_otm_value": -2.5300420015472387,
+      "reference_log_otm_value": -2.5300420015472387,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 1.2880551611250428e-17,
+        "relative": 2.220446049250313e-16
+      },
+      "stable_error": {
+        "absolute": 1.4875024004378485e-17,
+        "relative": 2.220446049250313e-16
+      }
+    },
+    {
+      "log_forward_moneyness": 0.0,
+      "total_volatility": 1.0,
+      "otm_option": "call",
+      "reference": "0.3829249225480262072754092",
+      "reference_float64_representable": true,
+      "naive": 0.38292492254802607,
+      "stable": 0.3829249225480261,
+      "stable_log_otm_value": -0.9599163336956226,
+      "reference_log_otm_value": -0.9599163336956223,
+      "log_absolute_error": 2.220446049250313e-16,
+      "naive_error": {
+        "absolute": 1.3739589714237489e-16,
+        "relative": 3.3306690738754696e-16
+      },
+      "stable_error": {
+        "absolute": 8.188474591111705e-17,
+        "relative": 2.220446049250313e-16
+      }
+    },
+    {
+      "log_forward_moneyness": 0.0,
+      "total_volatility": 3.0,
+      "otm_option": "call",
+      "reference": "0.8663855974622838679910119",
+      "reference_float64_representable": true,
+      "naive": 0.8663855974622838,
+      "stable": 0.8663855974622838,
+      "stable_log_otm_value": -0.14342520686117716,
+      "reference_log_otm_value": -0.1434252068611771,
+      "log_absolute_error": 5.551115123125783e-17,
+      "naive_error": {
+        "absolute": 3.836260749898595e-17,
+        "relative": 0.0
+      },
+      "stable_error": {
+        "absolute": 3.836260749898595e-17,
+        "relative": 0.0
+      }
+    },
+    {
+      "log_forward_moneyness": 0.0,
+      "total_volatility": 10.0,
+      "otm_option": "call",
+      "reference": "0.9999994266968562416121767",
+      "reference_float64_representable": true,
+      "naive": 0.9999994266968562,
+      "stable": 0.9999994266968563,
+      "stable_log_otm_value": -5.733033080743582e-07,
+      "reference_log_otm_value": -5.733033080966979e-07,
+      "log_absolute_error": 2.2339752830003324e-17,
+      "naive_error": {
+        "absolute": 8.868254999259771e-17,
+        "relative": 1.1102230246251565e-16
+      },
+      "stable_error": {
+        "absolute": 2.2339752469917943e-17,
+        "relative": 0.0
+      }
+    },
+    {
+      "log_forward_moneyness": 0.1,
+      "total_volatility": 1e-10,
+      "otm_option": "put",
+      "reference": "2.151359784766458224223721e-217147240951626238",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -5.000000000000008e+17,
+      "reference_log_otm_value": -5.000000000000008e+17,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 0.1,
+      "total_volatility": 1e-08,
+      "otm_option": "put",
+      "reference": "1.003912354258191297748452e-21714724095185",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -50000000000051.62,
+      "reference_log_otm_value": -50000000000051.59,
+      "log_absolute_error": 0.0234375,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 0.1,
+      "total_volatility": 1e-05,
+      "otm_option": "put",
+      "reference": "3.368698599129996711389055e-21714738",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -50000030.80254485,
+      "reference_log_otm_value": -50000030.80254484,
+      "log_absolute_error": 7.450580596923828e-09,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 0.1,
+      "total_volatility": 0.001,
+      "otm_option": "put",
+      "reference": "1.412813957041356155016131e-2179",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -5016.987334204214,
+      "reference_log_otm_value": -5016.987334204214,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 0.1,
+      "total_volatility": 0.05,
+      "otm_option": "put",
+      "reference": "0.0004461918648847126952045333",
+      "reference_float64_representable": true,
+      "naive": 0.00044619186488470755,
+      "stable": 0.00044619186488470755,
+      "stable_log_otm_value": -7.71476150812507,
+      "reference_log_otm_value": -7.714761508125071,
+      "log_absolute_error": 8.881784197001252e-16,
+      "naive_error": {
+        "absolute": 5.144395493472904e-18,
+        "relative": 1.1546319456101628e-14
+      },
+      "stable_error": {
+        "absolute": 5.144395493472904e-18,
+        "relative": 1.1546319456101628e-14
+      }
+    },
+    {
+      "log_forward_moneyness": 0.1,
+      "total_volatility": 0.2,
+      "otm_option": "put",
+      "reference": "0.04148168846071830238602945",
+      "reference_float64_representable": true,
+      "naive": 0.0414816884607182,
+      "stable": 0.0414816884607182,
+      "stable_log_otm_value": -3.182503191031746,
+      "reference_log_otm_value": -3.182503191031744,
+      "log_absolute_error": 2.220446049250313e-15,
+      "naive_error": {
+        "absolute": 1.0001460498554157e-16,
+        "relative": 2.4424906541753444e-15
+      },
+      "stable_error": {
+        "absolute": 1.0001460498554157e-16,
+        "relative": 2.4424906541753444e-15
+      }
+    },
+    {
+      "log_forward_moneyness": 0.1,
+      "total_volatility": 1.0,
+      "otm_option": "put",
+      "reference": "0.3523251716813666358597908",
+      "reference_float64_representable": true,
+      "naive": 0.3523251716813665,
+      "stable": 0.35232517168136657,
+      "stable_log_otm_value": -1.0432007466234305,
+      "reference_log_otm_value": -1.0432007466234303,
+      "log_absolute_error": 2.220446049250313e-16,
+      "naive_error": {
+        "absolute": 1.2454829574544206e-16,
+        "relative": 3.3306690738754696e-16
+      },
+      "stable_error": {
+        "absolute": 6.903714451418424e-17,
+        "relative": 2.220446049250313e-16
+      }
+    },
+    {
+      "log_forward_moneyness": 0.1,
+      "total_volatility": 3.0,
+      "otm_option": "put",
+      "reference": "0.8595863792150228471763281",
+      "reference_float64_representable": true,
+      "naive": 0.8595863792150228,
+      "stable": 0.8595863792150228,
+      "stable_log_otm_value": -0.15130395983138561,
+      "reference_log_otm_value": -0.15130395983138556,
+      "log_absolute_error": 5.551115123125783e-17,
+      "naive_error": {
+        "absolute": 5.828525184619485e-17,
+        "relative": 1.1102230246251565e-16
+      },
+      "stable_error": {
+        "absolute": 5.828525184619485e-17,
+        "relative": 1.1102230246251565e-16
+      }
+    },
+    {
+      "log_forward_moneyness": 0.1,
+      "total_volatility": 10.0,
+      "otm_option": "put",
+      "reference": "0.9999993973310761939946908",
+      "reference_float64_representable": true,
+      "naive": 0.9999993973310762,
+      "stable": 0.9999993973310762,
+      "stable_log_otm_value": -6.026691053709143e-07,
+      "reference_log_otm_value": -6.026691054109942e-07,
+      "log_absolute_error": 4.0079904998178983e-17,
+      "naive_error": {
+        "absolute": 4.0079796512581624e-17,
+        "relative": 0.0
+      },
+      "stable_error": {
+        "absolute": 4.0079796512581624e-17,
+        "relative": 0.0
+      }
+    },
+    {
+      "log_forward_moneyness": 2.0,
+      "total_volatility": 1e-10,
+      "otm_option": "put",
+      "reference": "2.078267280987249473143805e-86858896380650362890",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -2e+20,
+      "reference_log_otm_value": -2e+20,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 2.0,
+      "total_volatility": 1e-08,
+      "otm_option": "put",
+      "reference": "1.40356655834627266986365e-8685889638065061",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -2.0000000000000056e+16,
+      "reference_log_otm_value": -2.0000000000000056e+16,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 2.0,
+      "total_volatility": 1e-05,
+      "otm_option": "put",
+      "reference": "2.334039870368047438630566e-8685889654",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -20000000035.84401,
+      "reference_log_otm_value": -20000000035.84401,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 2.0,
+      "total_volatility": 0.001,
+      "otm_option": "put",
+      "reference": "2.946711871522935774353627e-868599",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -2000022.0284996065,
+      "reference_log_otm_value": -2000022.0284996063,
+      "log_absolute_error": 2.3283064365386963e-10,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 2.0,
+      "total_volatility": 0.05,
+      "otm_option": "put",
+      "reference": "1.240283512575389091028541e-352",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -810.2946127412475,
+      "reference_log_otm_value": -810.2946127412474,
+      "log_absolute_error": 1.1368683772161603e-13,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 2.0,
+      "total_volatility": 0.2,
+      "otm_option": "put",
+      "reference": "4.043703566764903406411618e-25",
+      "reference_float64_representable": true,
+      "naive": 4.043703566764044e-25,
+      "stable": 4.0437035667654638e-25,
+      "stable_log_otm_value": -56.16746633137156,
+      "reference_log_otm_value": -56.16746632836656,
+      "log_absolute_error": 3.0049989163671853e-09,
+      "naive_error": {
+        "absolute": 8.594226485749256e-38,
+        "relative": 2.1249668691325496e-13
+      },
+      "stable_error": {
+        "absolute": 5.603541220276186e-38,
+        "relative": 1.3855583347321954e-13
+      }
+    },
+    {
+      "log_forward_moneyness": 2.0,
+      "total_volatility": 1.0,
+      "otm_option": "put",
+      "reference": "0.02092363582111373283062867",
+      "reference_float64_representable": true,
+      "naive": 0.020923635821113735,
+      "stable": 0.020923635821113732,
+      "stable_log_otm_value": -3.866875858465913,
+      "reference_log_otm_value": -3.8668758584659124,
+      "log_absolute_error": 4.440892098500626e-16,
+      "naive_error": {
+        "absolute": 2.6583676857108187e-18,
+        "relative": 2.220446049250313e-16
+      },
+      "stable_error": {
+        "absolute": 8.110792662427957e-19,
+        "relative": 0.0
+      }
+    },
+    {
+      "log_forward_moneyness": 2.0,
+      "total_volatility": 3.0,
+      "otm_option": "put",
+      "reference": "0.685874165716049369860264",
+      "reference_float64_representable": true,
+      "naive": 0.6858741657160492,
+      "stable": 0.6858741657160492,
+      "stable_log_otm_value": -0.37706109998274345,
+      "reference_log_otm_value": -0.37706109998274323,
+      "log_absolute_error": 2.220446049250313e-16,
+      "naive_error": {
+        "absolute": 1.6984578267622382e-16,
+        "relative": 2.220446049250313e-16
+      },
+      "stable_error": {
+        "absolute": 1.6984578267622382e-16,
+        "relative": 2.220446049250313e-16
+      }
+    },
+    {
+      "log_forward_moneyness": 2.0,
+      "total_volatility": 10.0,
+      "otm_option": "put",
+      "reference": "0.999998470394797529581246",
+      "reference_float64_representable": true,
+      "naive": 0.9999984703947976,
+      "stable": 0.9999984703947976,
+      "stable_log_otm_value": -1.5296063722355484e-06,
+      "reference_log_otm_value": -1.5296063723176494e-06,
+      "log_absolute_error": 8.210099775322801e-17,
+      "naive_error": {
+        "absolute": 8.210099007667825e-17,
+        "relative": 0.0
+      },
+      "stable_error": {
+        "absolute": 8.210099007667825e-17,
+        "relative": 0.0
+      }
+    },
+    {
+      "log_forward_moneyness": 10.0,
+      "total_volatility": 1e-10,
+      "otm_option": "put",
+      "reference": "1.19458784058925968294636e-2171472409516259167527",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -5e+21,
+      "reference_log_otm_value": -5e+21,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 10.0,
+      "total_volatility": 1e-08,
+      "otm_option": "put",
+      "reference": "1.053690243788904088127981e-217147240951625941",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -5.0000000000000006e+17,
+      "reference_log_otm_value": -5.0000000000000006e+17,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 10.0,
+      "total_volatility": 1e-05,
+      "otm_option": "put",
+      "reference": "1.401089007217670981910496e-217147240967",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -500000000035.0628,
+      "reference_log_otm_value": -500000000035.06287,
+      "log_absolute_error": 6.103515625e-05,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 10.0,
+      "total_volatility": 0.001,
+      "otm_option": "put",
+      "reference": "4.755758757882021116699803e-21714734",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -50000021.24737471,
+      "reference_log_otm_value": -50000021.24737471,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 10.0,
+      "total_volatility": 0.05,
+      "otm_option": "put",
+      "reference": "9.538633093395933326026346e-8691",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -20009.51169301767,
+      "reference_log_otm_value": -20009.51169301767,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 10.0,
+      "total_volatility": 0.2,
+      "otm_option": "put",
+      "reference": "6.377932483601855978794139e-546",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -1255.358616792043,
+      "reference_log_otm_value": -1255.358616792043,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 10.0,
+      "total_volatility": 1.0,
+      "otm_option": "put",
+      "reference": "9.812705826846949543955114e-23",
+      "reference_float64_representable": true,
+      "naive": 9.812705826847468e-23,
+      "stable": 9.812705826846641e-23,
+      "stable_log_otm_value": -50.67577908340338,
+      "reference_log_otm_value": -50.675779079990114,
+      "log_absolute_error": 3.4132625614802237e-09,
+      "naive_error": {
+        "absolute": 5.1798953732168524e-36,
+        "relative": 5.284661597215745e-14
+      },
+      "stable_error": {
+        "absolute": 3.083829913063829e-36,
+        "relative": 3.141931159689193e-14
+      }
+    },
+    {
+      "log_forward_moneyness": 10.0,
+      "total_volatility": 3.0,
+      "otm_option": "put",
+      "reference": "0.01858951431585780506191408",
+      "reference_float64_representable": true,
+      "naive": 0.018589514315857782,
+      "stable": 0.018589514315857782,
+      "stable_log_otm_value": -3.9851576036870227,
+      "reference_log_otm_value": -3.9851576036870213,
+      "log_absolute_error": 1.3322676295501878e-15,
+      "naive_error": {
+        "absolute": 2.2733557929324826e-17,
+        "relative": 1.2212453270876722e-15
+      },
+      "stable_error": {
+        "absolute": 2.2733557929324826e-17,
+        "relative": 1.2212453270876722e-15
+      }
+    },
+    {
+      "log_forward_moneyness": 10.0,
+      "total_volatility": 10.0,
+      "otm_option": "put",
+      "reference": "0.9999465977191498783087978",
+      "reference_float64_representable": true,
+      "naive": 0.9999465977191498,
+      "stable": 0.9999465977191498,
+      "stable_log_otm_value": -5.340370680272294e-05,
+      "reference_log_otm_value": -5.3403706802687996e-05,
+      "log_absolute_error": 3.4945191271923415e-17,
+      "naive_error": {
+        "absolute": 3.4944747342973745e-17,
+        "relative": 0.0
+      },
+      "stable_error": {
+        "absolute": 3.4944747342973745e-17,
+        "relative": 0.0
+      }
+    },
+    {
+      "log_forward_moneyness": 20.0,
+      "total_volatility": 1e-10,
+      "otm_option": "put",
+      "reference": "9.102470797365267259259708e-8685889638065036592494",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -2e+22,
+      "reference_log_otm_value": -2e+22,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 20.0,
+      "total_volatility": 1e-08,
+      "otm_option": "put",
+      "reference": "1.245536990599965652428231e-868588963806503682",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -2e+18,
+      "reference_log_otm_value": -2e+18,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 20.0,
+      "total_volatility": 1e-05,
+      "otm_option": "put",
+      "reference": "6.888674228723124155842433e-868588963821",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -2000000000031.4487,
+      "reference_log_otm_value": -2000000000031.4492,
+      "log_absolute_error": 0.00048828125,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 20.0,
+      "total_volatility": 0.001,
+      "otm_option": "put",
+      "reference": "9.144173760273397936065757e-86858905",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -200000017.63366902,
+      "reference_log_otm_value": -200000017.63366905,
+      "log_absolute_error": 2.9802322387695312e-08,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 20.0,
+      "total_volatility": 0.05,
+      "otm_option": "put",
+      "reference": "7.585929254658623380819995e-34747",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -80005.89793114664,
+      "reference_log_otm_value": -80005.89793114665,
+      "log_absolute_error": 1.4551915228366852e-11,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 20.0,
+      "total_volatility": 0.2,
+      "otm_option": "put",
+      "reference": "5.890797353904330979047601e-2173",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -5001.744015713382,
+      "reference_log_otm_value": -5001.744015713382,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 20.0,
+      "total_volatility": 1.0,
+      "otm_option": "put",
+      "reference": "2.664706705365495281094177e-86",
+      "reference_float64_representable": true,
+      "naive": 2.664706705366098e-86,
+      "stable": 2.6647067053645165e-86,
+      "stable_log_otm_value": -197.04222400019844,
+      "reference_log_otm_value": -197.0422240001984,
+      "log_absolute_error": 5.684341886080802e-14,
+      "naive_error": {
+        "absolute": 6.028739808789698e-99,
+        "relative": 2.262634524186069e-13
+      },
+      "stable_error": {
+        "absolute": 9.787348218078782e-99,
+        "relative": 3.672617765460018e-13
+      }
+    },
+    {
+      "log_forward_moneyness": 20.0,
+      "total_volatility": 3.0,
+      "otm_option": "put",
+      "reference": "4.224754616769409736918653e-8",
+      "reference_float64_representable": true,
+      "naive": 4.224754616769438e-08,
+      "stable": 4.2247546167693985e-08,
+      "stable_log_otm_value": -16.97971956370102,
+      "reference_log_otm_value": -16.979719563701018,
+      "log_absolute_error": 3.552713678800501e-15,
+      "naive_error": {
+        "absolute": 2.841878913999873e-22,
+        "relative": 6.661338147750939e-15
+      },
+      "stable_error": {
+        "absolute": 1.1285880262546602e-22,
+        "relative": 2.6645352591003757e-15
+      }
+    },
+    {
+      "log_forward_moneyness": 20.0,
+      "total_volatility": 10.0,
+      "otm_option": "put",
+      "reference": "0.9980291814654276335094058",
+      "reference_float64_representable": true,
+      "naive": 0.9980291814654276,
+      "stable": 0.9980291814654276,
+      "stable_log_otm_value": -0.001972763152833681,
+      "reference_log_otm_value": -0.0019727631528336756,
+      "log_absolute_error": 5.204170427930421e-18,
+      "naive_error": {
+        "absolute": 5.17023488787586e-18,
+        "relative": 0.0
+      },
+      "stable_error": {
+        "absolute": 5.17023488787586e-18,
+        "relative": 0.0
+      }
+    },
+    {
+      "log_forward_moneyness": 50.0,
+      "total_volatility": 1e-10,
+      "otm_option": "put",
+      "reference": "2.038936559648718822041287e-54286810237906478262044",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -1.25e+23,
+      "reference_log_otm_value": -1.25e+23,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 50.0,
+      "total_volatility": 1e-08,
+      "otm_option": "put",
+      "reference": "7.21534350936383435347646e-5428681023790647844",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -1.25e+19,
+      "reference_log_otm_value": -1.25e+19,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 50.0,
+      "total_volatility": 1e-05,
+      "otm_option": "put",
+      "reference": "2.585269976640366405078729e-5428681023799",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -12500000000018.285,
+      "reference_log_otm_value": -12500000000018.281,
+      "log_absolute_error": 0.00390625,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 50.0,
+      "total_volatility": 0.001,
+      "otm_option": "put",
+      "reference": "4.800287702000653412192337e-542868105",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -1250000004.466251,
+      "reference_log_otm_value": -1250000004.4662504,
+      "log_absolute_error": 4.76837158203125e-07,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 50.0,
+      "total_volatility": 0.05,
+      "otm_option": "put",
+      "reference": "8.244294026977157273547763e-217145",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -499992.7304968642,
+      "reference_log_otm_value": -499992.73049686407,
+      "log_absolute_error": 1.1641532182693481e-10,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 50.0,
+      "total_volatility": 0.2,
+      "otm_option": "put",
+      "reference": "1.814138195478144821523906e-13567",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -31238.576346118694,
+      "reference_log_otm_value": -31238.576346118694,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 50.0,
+      "total_volatility": 1.0,
+      "otm_option": "put",
+      "reference": "1.372352886866730025486814e-536",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -1233.8690831424055,
+      "reference_log_otm_value": -1233.8690831424055,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 50.0,
+      "total_volatility": 3.0,
+      "otm_option": "put",
+      "reference": "4.822245422850975385923324e-53",
+      "reference_float64_representable": true,
+      "naive": 4.822245422850583e-53,
+      "stable": 4.822245422850958e-53,
+      "stable_log_otm_value": -120.46377025373697,
+      "reference_log_otm_value": -120.46377025373556,
+      "log_absolute_error": 1.4068746168049984e-12,
+      "naive_error": {
+        "absolute": 3.9249164271111155e-66,
+        "relative": 8.137934770502397e-14
+      },
+      "stable_error": {
+        "absolute": 1.6934519954010135e-67,
+        "relative": 3.552713678800501e-15
+      }
+    },
+    {
+      "log_forward_moneyness": 50.0,
+      "total_volatility": 10.0,
+      "otm_option": "put",
+      "reference": "0.4604933058986140005917599",
+      "reference_float64_representable": true,
+      "naive": 0.46049330589861365,
+      "stable": 0.46049330589861365,
+      "stable_log_otm_value": -0.7754569599861056,
+      "reference_log_otm_value": -0.7754569599861049,
+      "log_absolute_error": 7.771561172376096e-16,
+      "naive_error": {
+        "absolute": 3.532161764775825e-16,
+        "relative": 7.771561172376096e-16
+      },
+      "stable_error": {
+        "absolute": 3.532161764775825e-16,
+        "relative": 7.771561172376096e-16
+      }
+    },
+    {
+      "log_forward_moneyness": 100.0,
+      "total_volatility": 1e-10,
+      "otm_option": "put",
+      "reference": "1.023946043662557686614261e-217147240951625914070483",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -5e+23,
+      "reference_log_otm_value": -5e+23,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 100.0,
+      "total_volatility": 1e-08,
+      "otm_option": "put",
+      "reference": "1.856109635520263426336575e-21714724095162591414",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -5e+19,
+      "reference_log_otm_value": -5e+19,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 100.0,
+      "total_volatility": 1e-05,
+      "otm_option": "put",
+      "reference": "5.299405033983506742766438e-21714724095161",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -49999999999994.66,
+      "reference_log_otm_value": -49999999999994.67,
+      "log_absolute_error": 0.015625,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 100.0,
+      "total_volatility": 0.001,
+      "otm_option": "put",
+      "reference": "6.300499274045330572423822e-2171472402",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -4999999980.852544,
+      "reference_log_otm_value": -4999999980.852545,
+      "log_absolute_error": 9.5367431640625e-07,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 100.0,
+      "total_volatility": 0.05,
+      "otm_option": "put",
+      "reference": "2.809322695144273272915731e-868576",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -1999969.116788976,
+      "reference_log_otm_value": -1999969.1167889757,
+      "log_absolute_error": 2.3283064365386963e-10,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 100.0,
+      "total_volatility": 0.2,
+      "otm_option": "put",
+      "reference": "2.548646338390821473238532e-54272",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -124964.96260460233,
+      "reference_log_otm_value": -124964.96260460232,
+      "log_absolute_error": 1.4551915228366852e-11,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 100.0,
+      "total_volatility": 1.0,
+      "otm_option": "put",
+      "reference": "6.149197495378416549053173e-2155",
+      "reference_float64_representable": false,
+      "naive": 0.0,
+      "stable": 0.0,
+      "stable_log_otm_value": -4960.254553817421,
+      "reference_log_otm_value": -4960.254553817421,
+      "log_absolute_error": 0.0,
+      "naive_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      },
+      "stable_error": {
+        "absolute": 0.0,
+        "relative": 1.0
+      }
+    },
+    {
+      "log_forward_moneyness": 100.0,
+      "total_volatility": 3.0,
+      "otm_option": "put",
+      "reference": "9.625213469476298242801513e-224",
+      "reference_float64_representable": true,
+      "naive": 9.62521346947309e-224,
+      "stable": 9.625213469472189e-224,
+      "stable_log_otm_value": -513.5146747720916,
+      "reference_log_otm_value": -513.5146747720914,
+      "log_absolute_error": 1.1368683772161603e-13,
+      "naive_error": {
+        "absolute": 3.209197460775304e-236,
+        "relative": 3.333999742949345e-13
+      },
+      "stable_error": {
+        "absolute": 4.109495452093129e-236,
+        "relative": 4.269917752708352e-13
+      }
+    },
+    {
+      "log_forward_moneyness": 100.0,
+      "total_volatility": 10.0,
+      "otm_option": "put",
+      "reference": "0.0000001879717002051915688977488",
+      "reference_float64_representable": true,
+      "naive": 1.8797170020518927e-07,
+      "stable": 1.879717002051916e-07,
+      "stable_log_otm_value": -15.486974416270812,
+      "reference_log_otm_value": -15.486974416270813,
+      "log_absolute_error": 1.7763568394002505e-15,
+      "naive_error": {
+        "absolute": 2.30324044234705e-21,
+        "relative": 1.2212453270876722e-14
+      },
+      "stable_error": {
+        "absolute": 2.610016260227564e-23,
+        "relative": 2.220446049250313e-16
+      }
+    }
+  ]
+}

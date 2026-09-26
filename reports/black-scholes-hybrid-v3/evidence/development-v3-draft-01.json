@@ -1,0 +1,6058 @@
+{
+  "candidate_sha256": "4bf8c51ca33082665b9c6902bb2a114604d937b6dd0ed67e0c17ece46b4547bc",
+  "status": "development; cached rounded decimal references",
+  "summary": {
+    "cases": 604,
+    "failures": 0,
+    "methods": {
+      "tail_difference_series": 232,
+      "v2_fallback": 95,
+      "conditioned_direct": 58,
+      "exact_atm": 24,
+      "small_v_moments": 195
+    }
+  },
+  "failures": [],
+  "rows": [
+    {
+      "source": "v1",
+      "id": "development-0000",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "28465629.57533728237"
+    },
+    {
+      "source": "v1",
+      "id": "development-0001",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "2019.08170854293303"
+    },
+    {
+      "source": "v1",
+      "id": "development-0002",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.019854722233999782965"
+    },
+    {
+      "source": "v1",
+      "id": "development-0003",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.0000010831814601031728563"
+    },
+    {
+      "source": "v1",
+      "id": "development-0004",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "3.33991573678215396125e-11"
+    },
+    {
+      "source": "v1",
+      "id": "development-0005",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.75776886572656137421875e-12"
+    },
+    {
+      "source": "v1",
+      "id": "development-0006",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.158240491311331913439453e-13"
+    },
+    {
+      "source": "v1",
+      "id": "development-0007",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.016752042556410893754728e-13",
+      "log_absolute_error": "1.141360509803593846639697e-13"
+    },
+    {
+      "source": "v1",
+      "id": "development-0008",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.206431357167372174835023e-16",
+      "log_absolute_error": "8.600713490625884572192383e-16"
+    },
+    {
+      "source": "v1",
+      "id": "development-0009",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "7108127.24723757476"
+    },
+    {
+      "source": "v1",
+      "id": "development-0010",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "443.792267867341114"
+    },
+    {
+      "source": "v1",
+      "id": "development-0011",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.000409254362529033505"
+    },
+    {
+      "source": "v1",
+      "id": "development-0012",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "3.45756449534788303e-8"
+    },
+    {
+      "source": "v1",
+      "id": "development-0013",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "9.40565981300705681278125e-11"
+    },
+    {
+      "source": "v1",
+      "id": "development-0014",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "4.386944867759288291429687e-12"
+    },
+    {
+      "source": "v1",
+      "id": "development-0015",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "3.882635559025812273632812e-15"
+    },
+    {
+      "source": "v1",
+      "id": "development-0016",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.105911836599320092098624e-14",
+      "log_absolute_error": "3.006606234172441078564453e-16"
+    },
+    {
+      "source": "v1",
+      "id": "development-0017",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "4.270176708726500435434654e-17",
+      "log_absolute_error": "3.475045004381199490275513e-15"
+    },
+    {
+      "source": "v1",
+      "id": "development-0018",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1497932.08246596762"
+    },
+    {
+      "source": "v1",
+      "id": "development-0019",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "15.5908157885369542"
+    },
+    {
+      "source": "v1",
+      "id": "development-0020",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.0001177212531534132777"
+    },
+    {
+      "source": "v1",
+      "id": "development-0021",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "3.732497648186121146e-8"
+    },
+    {
+      "source": "v1",
+      "id": "development-0022",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.890592994087798482825e-11"
+    },
+    {
+      "source": "v1",
+      "id": "development-0023",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.166243457378225988261914e-12"
+    },
+    {
+      "source": "v1",
+      "id": "development-0024",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "4.509965374252086299810463e-16",
+      "log_absolute_error": "6.56075503282974544213501e-15"
+    },
+    {
+      "source": "v1",
+      "id": "development-0025",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.076988134895064769516906e-15",
+      "log_absolute_error": "9.185003921533112812304077e-16"
+    },
+    {
+      "source": "v1",
+      "id": "development-0026",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "9.045066851959950070237231e-17",
+      "log_absolute_error": "1.752762557161083449566925e-15"
+    },
+    {
+      "source": "v1",
+      "id": "development-0027",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "422338.3656750939784"
+    },
+    {
+      "source": "v1",
+      "id": "development-0028",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "24.94600929724117143"
+    },
+    {
+      "source": "v1",
+      "id": "development-0029",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.00011439599686689015114"
+    },
+    {
+      "source": "v1",
+      "id": "development-0030",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "4.944324420049053956e-9"
+    },
+    {
+      "source": "v1",
+      "id": "development-0031",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.445206936701440673464844e-12"
+    },
+    {
+      "source": "v1",
+      "id": "development-0032",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "6.998751378249679804121094e-14"
+    },
+    {
+      "source": "v1",
+      "id": "development-0033",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "6.186022495295967929033558e-16",
+      "log_absolute_error": "1.417885654540682947542908e-15"
+    },
+    {
+      "source": "v1",
+      "id": "development-0034",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.166745676182019328844384e-16",
+      "log_absolute_error": "3.387066082020388820632935e-16"
+    },
+    {
+      "source": "v1",
+      "id": "development-0035",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.689401074899565922737383e-17",
+      "log_absolute_error": "1.17066461558564239548996e-16"
+    },
+    {
+      "source": "v1",
+      "id": "development-0036",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "29904.92576684125132"
+    },
+    {
+      "source": "v1",
+      "id": "development-0037",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.189929730343890616"
+    },
+    {
+      "source": "v1",
+      "id": "development-0038",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.000002706738097816053112"
+    },
+    {
+      "source": "v1",
+      "id": "development-0039",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "3.2507531975544110475e-11"
+    },
+    {
+      "source": "v1",
+      "id": "development-0040",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.590106649098287396739258e-13"
+    },
+    {
+      "source": "v1",
+      "id": "development-0041",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.21967994964669223986294e-14",
+      "log_absolute_error": "9.079473825335856288733765e-15"
+    },
+    {
+      "source": "v1",
+      "id": "development-0042",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.012349388497465320151504e-17",
+      "log_absolute_error": "4.189884762136354888452438e-16"
+    },
+    {
+      "source": "v1",
+      "id": "development-0043",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.150576535845037510167003e-16",
+      "log_absolute_error": "1.495144392554271437959045e-16"
+    },
+    {
+      "source": "v1",
+      "id": "development-0044",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "8.771081094198132501680431e-17",
+      "log_absolute_error": "1.030840906094935871749268e-17"
+    },
+    {
+      "source": "v1",
+      "id": "development-0045",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "3.29299686482602295"
+    },
+    {
+      "source": "v1",
+      "id": "development-0046",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.005459210295024734843"
+    },
+    {
+      "source": "v1",
+      "id": "development-0047",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "8.81301269710958362e-10"
+    },
+    {
+      "source": "v1",
+      "id": "development-0048",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "5.714224169686857837808594e-13"
+    },
+    {
+      "source": "v1",
+      "id": "development-0049",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "3.453661279286596857356461e-16",
+      "log_absolute_error": "1.141255370086793630666866e-15"
+    },
+    {
+      "source": "v1",
+      "id": "development-0050",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.51479195501950571651407e-15",
+      "log_absolute_error": "2.435980699591742293003691e-15"
+    },
+    {
+      "source": "v1",
+      "id": "development-0051",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "3.278553700006692855127254e-16",
+      "log_absolute_error": "4.267815846787493343504684e-16"
+    },
+    {
+      "source": "v1",
+      "id": "development-0052",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.321858578405774539093329e-17",
+      "log_absolute_error": "2.819729943135423437032139e-17"
+    },
+    {
+      "source": "v1",
+      "id": "development-0053",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "4.30361249147045682302046e-17",
+      "log_absolute_error": "3.460148200580191472596506e-16"
+    },
+    {
+      "source": "v1",
+      "id": "development-0054",
+      "method": "exact_atm",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "3.922691482454176331624963e-17",
+      "log_absolute_error": "1.690859433299174670930328e-15"
+    },
+    {
+      "source": "v1",
+      "id": "development-0055",
+      "method": "exact_atm",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.625745168925115249853668e-16",
+      "log_absolute_error": "3.013389141537605976072144e-15"
+    },
+    {
+      "source": "v1",
+      "id": "development-0056",
+      "method": "exact_atm",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.150073710051837040124246e-16",
+      "log_absolute_error": "4.291527484378111643952637e-16"
+    },
+    {
+      "source": "v1",
+      "id": "development-0057",
+      "method": "exact_atm",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.344846691063077035333164e-16",
+      "log_absolute_error": "1.43217225012446153536734e-16"
+    },
+    {
+      "source": "v1",
+      "id": "development-0058",
+      "method": "exact_atm",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.679407836947388092388804e-16",
+      "log_absolute_error": "9.03502584458452445332428e-17"
+    },
+    {
+      "source": "v1",
+      "id": "development-0059",
+      "method": "exact_atm",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.42067909050455363573795e-16",
+      "log_absolute_error": "2.279198982675366104876373e-16"
+    },
+    {
+      "source": "v1",
+      "id": "development-0060",
+      "method": "exact_atm",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.138402101546344643140955e-16",
+      "log_absolute_error": "2.507218664960446718767127e-16"
+    },
+    {
+      "source": "v1",
+      "id": "development-0061",
+      "method": "exact_atm",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "4.427890723409212687105495e-17",
+      "log_absolute_error": "5.728186334722448316745047e-17"
+    },
+    {
+      "source": "v1",
+      "id": "development-0062",
+      "method": "exact_atm",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.233976527737560585730004e-17",
+      "log_absolute_error": "2.23397777003953242688657e-17"
+    },
+    {
+      "source": "v1",
+      "id": "development-0063",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "53.81969264856546763"
+    },
+    {
+      "source": "v1",
+      "id": "development-0064",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.00925937987339896673"
+    },
+    {
+      "source": "v1",
+      "id": "development-0065",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "3.880257075830075537e-9"
+    },
+    {
+      "source": "v1",
+      "id": "development-0066",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "9.027846385378098653167969e-13"
+    },
+    {
+      "source": "v1",
+      "id": "development-0067",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.356836255792357846902223e-16",
+      "log_absolute_error": "1.034898701777497062465073e-16"
+    },
+    {
+      "source": "v1",
+      "id": "development-0068",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.427360235132636327005433e-15",
+      "log_absolute_error": "2.278073079444283174669801e-15"
+    },
+    {
+      "source": "v1",
+      "id": "development-0069",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "3.438189538007059518531996e-16",
+      "log_absolute_error": "3.840253202755089166165779e-16"
+    },
+    {
+      "source": "v1",
+      "id": "development-0070",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "6.690011682941299246727424e-17",
+      "log_absolute_error": "5.488139314680384855761244e-17"
+    },
+    {
+      "source": "v1",
+      "id": "development-0071",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "4.007982405350534143211137e-17",
+      "log_absolute_error": "3.456487044806765225406662e-16"
+    },
+    {
+      "source": "v1",
+      "id": "development-0072",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "9638.23763246547307"
+    },
+    {
+      "source": "v1",
+      "id": "development-0073",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.216798543781468632"
+    },
+    {
+      "source": "v1",
+      "id": "development-0074",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.000004733606911381324622"
+    },
+    {
+      "source": "v1",
+      "id": "development-0075",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.70179477062006138525e-10"
+    },
+    {
+      "source": "v1",
+      "id": "development-0076",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "7.780840765731517348392578e-14"
+    },
+    {
+      "source": "v1",
+      "id": "development-0077",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.096834985659146299836336e-15",
+      "log_absolute_error": "3.887445239851200213733765e-15"
+    },
+    {
+      "source": "v1",
+      "id": "development-0078",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "8.200741366532105807084862e-17",
+      "log_absolute_error": "1.197296942329524659452438e-16"
+    },
+    {
+      "source": "v1",
+      "id": "development-0079",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.386570366822484182808342e-16",
+      "log_absolute_error": "2.225067692617463560294493e-16"
+    },
+    {
+      "source": "v1",
+      "id": "development-0080",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.892131607461488327645808e-17",
+      "log_absolute_error": "3.093752367345759003691773e-16"
+    },
+    {
+      "source": "v1",
+      "id": "development-0081",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "301690.6567413614949"
+    },
+    {
+      "source": "v1",
+      "id": "development-0082",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "22.88023840386792268"
+    },
+    {
+      "source": "v1",
+      "id": "development-0083",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.00012646176776028529708"
+    },
+    {
+      "source": "v1",
+      "id": "development-0084",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "3.737747308813048306e-9"
+    },
+    {
+      "source": "v1",
+      "id": "development-0085",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "9.625542040941813144648437e-13"
+    },
+    {
+      "source": "v1",
+      "id": "development-0086",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "3.980121664865929944121094e-14"
+    },
+    {
+      "source": "v1",
+      "id": "development-0087",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "5.116204580312623747529789e-16",
+      "log_absolute_error": "1.900345436077442545429077e-16"
+    },
+    {
+      "source": "v1",
+      "id": "development-0088",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.935435420401227746328511e-16",
+      "log_absolute_error": "1.846336724211814138632935e-16"
+    },
+    {
+      "source": "v1",
+      "id": "development-0089",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "3.494671719732835257796281e-17",
+      "log_absolute_error": "3.972096828226308759893613e-16"
+    },
+    {
+      "source": "v1",
+      "id": "development-0090",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1459233.704906910674"
+    },
+    {
+      "source": "v1",
+      "id": "development-0091",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "31.7189780326312594"
+    },
+    {
+      "source": "v1",
+      "id": "development-0092",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.0001215930909093315934"
+    },
+    {
+      "source": "v1",
+      "id": "development-0093",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "3.693779269364922861e-8"
+    },
+    {
+      "source": "v1",
+      "id": "development-0094",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.875104380926465722525e-11"
+    },
+    {
+      "source": "v1",
+      "id": "development-0095",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.156551242153508905461914e-12"
+    },
+    {
+      "source": "v1",
+      "id": "development-0096",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.249124037659242066818583e-16",
+      "log_absolute_error": "6.96054712023390331213501e-15"
+    },
+    {
+      "source": "v1",
+      "id": "development-0097",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "8.762407187780485866659924e-16",
+      "log_absolute_error": "8.628948101500451782304077e-16"
+    },
+    {
+      "source": "v1",
+      "id": "development-0098",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "5.209321512706241157298581e-18",
+      "log_absolute_error": "2.188274558411014755562407e-16"
+    },
+    {
+      "source": "v1",
+      "id": "development-0099",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "7414947.93428145474"
+    },
+    {
+      "source": "v1",
+      "id": "development-0100",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "524.469336571729113"
+    },
+    {
+      "source": "v1",
+      "id": "development-0101",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.0003785772938246932"
+    },
+    {
+      "source": "v1",
+      "id": "development-0102",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "3.15079381307294814e-8"
+    },
+    {
+      "source": "v1",
+      "id": "development-0103",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "9.52836331887877389378125e-11"
+    },
+    {
+      "source": "v1",
+      "id": "development-0104",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "4.463589849951875976429687e-12"
+    },
+    {
+      "source": "v1",
+      "id": "development-0105",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "8.626208322855823736328125e-16"
+    },
+    {
+      "source": "v1",
+      "id": "development-0106",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.135163138287188520517648e-14",
+      "log_absolute_error": "1.420335417181096892956604e-14"
+    },
+    {
+      "source": "v1",
+      "id": "development-0107",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "4.301028644385897116528749e-17",
+      "log_absolute_error": "3.80623382072501958699344e-16"
+    },
+    {
+      "source": "v1",
+      "id": "development-0108",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "27444580.577650393"
+    },
+    {
+      "source": "v1",
+      "id": "development-0109",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "2016.966808774244089"
+    },
+    {
+      "source": "v1",
+      "id": "development-0110",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.019752607334231100835"
+    },
+    {
+      "source": "v1",
+      "id": "development-0111",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.0000010729699701331021675"
+    },
+    {
+      "source": "v1",
+      "id": "development-0112",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "3.74837465603623437125e-11"
+    },
+    {
+      "source": "v1",
+      "id": "development-0113",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.50248841453448609421875e-12"
+    },
+    {
+      "source": "v1",
+      "id": "development-0114",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.056193579207597347439453e-13"
+    },
+    {
+      "source": "v1",
+      "id": "development-0115",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.006368911835442021439262e-13",
+      "log_absolute_error": "1.130082405755458732339697e-13"
+    },
+    {
+      "source": "v1",
+      "id": "development-0116",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.256356793323597756865398e-19",
+      "log_absolute_error": "9.558957546938969382192383e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0117",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "3.156386341366789274733275e-17",
+      "log_absolute_error": "3.820306228556461497210449e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0118",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.51641839976807903645666e-16",
+      "log_absolute_error": "3.859198366198424186615921e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0119",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.484567575536830236691443e-16",
+      "log_absolute_error": "2.565517776318499592795044e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0120",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "6.185669772421689265600505e-16",
+      "log_absolute_error": "1.397848458424994830364453e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0121",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "3.664440731833951140199316e-16",
+      "log_absolute_error": "6.754967552492460632896423e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0122",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.670225599912128698212665e-18",
+      "log_absolute_error": "4.649898580945464900089478e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0123",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "4.994324551050963575276861e-17",
+      "log_absolute_error": "1.952224536308284569616699e-18"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0124",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.536142438686200467325694e-16",
+      "log_absolute_error": "2.010313804316842664632416e-17"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0125",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.68862263271706448362041e-16",
+      "log_absolute_error": "1.36796759782720986354126e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0126",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.607005338303177835090048e-14",
+      "log_absolute_error": "2.484093864228623396829102e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0127",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.070516602082176850062424e-16",
+      "log_absolute_error": "1.315101666660640612362671e-17"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0128",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.761910765343799732688185e-15",
+      "log_absolute_error": "4.646401403398741527122803e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0129",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.95538861321318036897411e-17",
+      "log_absolute_error": "5.328213343980102765050873e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0130",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "3.452268678680351807530325e-17",
+      "log_absolute_error": "5.238699506635570227006531e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0131",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "6.812647530238609875764793e-17",
+      "log_absolute_error": "2.316124609967160625449493e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0132",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.990701173892424679224694e-17",
+      "log_absolute_error": "1.071288936480164741551987e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0133",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "3.668482723655742973386404e-16",
+      "log_absolute_error": "5.103798297281782878312172e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0134",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "7.423487084227289561723145e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0135",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.17085211837226593845982e-15",
+      "log_absolute_error": "2.66729895566378985836792e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0136",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "4.17165381384010048299939e-15",
+      "log_absolute_error": "7.3916279869523143776922e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0137",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.551391895233611069878243e-16",
+      "log_absolute_error": "2.888285833529258792009033e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0138",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.074917240540126622535295e-16",
+      "log_absolute_error": "1.823112483960364294714355e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0139",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.782446073516874925813629e-16",
+      "log_absolute_error": "4.001199686558320909210205e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0140",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.499641213418608833522745e-16",
+      "log_absolute_error": "3.076263840645115891435242e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0141",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "5.05839856251492730425921e-17",
+      "log_absolute_error": "2.650179753221809498072815e-17"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0142",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "8.620414201988410525424292e-17",
+      "log_absolute_error": "8.615770104895947358504624e-17"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0143",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.068525465357100138526701e-16",
+      "log_absolute_error": "6.510012885062093896592419e-17"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0144",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.171882729423935146125126e-16",
+      "log_absolute_error": "6.012961684728788088435059e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0145",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.037959024368702089591602e-15",
+      "log_absolute_error": "2.262210003907304091491699e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0146",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.641860869881621334348756e-16",
+      "log_absolute_error": "1.797965454466635873375697e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0147",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.477638239927183333576903e-17",
+      "log_absolute_error": "7.622563781537126127905884e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0148",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "3.877892331745437597047495e-17",
+      "log_absolute_error": "1.342087635536826780332584e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0149",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.384687862495651293415875e-16",
+      "log_absolute_error": "1.238923258649944671278122e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0150",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.963221448838696565215505e-17",
+      "log_absolute_error": "1.469424979868562435270264e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0151",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.643620958920554332222233e-16",
+      "log_absolute_error": "1.018465080128878100711487e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0152",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "9.673205415742637744801616e-17",
+      "log_absolute_error": "3.837979403824017370062866e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0153",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.35120447417575351645816e-16",
+      "log_absolute_error": "1.752281022227986923314209e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0154",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "6.808404482221235633219311e-17",
+      "log_absolute_error": "2.527396197860719985600922e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0155",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.629280744808662638260332e-17",
+      "log_absolute_error": "2.276241648014171495292963e-17"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0156",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "6.019036779281104216275391e-13"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0157",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "6.787679482800829579895311e-15",
+      "log_absolute_error": "5.934844332952398656387939e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0158",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.411385511208024595657312e-16",
+      "log_absolute_error": "6.852475042952121902579346e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0159",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.410275195954218932283158e-14",
+      "log_absolute_error": "1.704021762334003971082153e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0160",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.03779168266201358542023e-16",
+      "log_absolute_error": "1.157249028693868743730827e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0161",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.660825732167939874115665e-16",
+      "log_absolute_error": "3.766861351766738612968185e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0162",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.405167210747817282483766e-16",
+      "log_absolute_error": "9.067976542142110141676636e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0163",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.31003689726625755850869e-16",
+      "log_absolute_error": "7.99284675645344972066391e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0164",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "3.999016363620382774107354e-17",
+      "log_absolute_error": "2.178721733837932925051697e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0165",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "8.419757894638907031974211e-17",
+      "log_absolute_error": "1.593705008414102514269943e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0166",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.578439457204546762022945e-15",
+      "log_absolute_error": "2.419484353584435586618896e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0167",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.808002270496232617992197e-16",
+      "log_absolute_error": "8.072770320480105880348755e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0168",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.007329970508085329807812e-12"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0169",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "8.341711433621769240128197e-17",
+      "log_absolute_error": "4.610571327777160573416809e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0170",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.597441235797153969506278e-16",
+      "log_absolute_error": "1.848231241819038049807976e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0171",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.228394930725762027172852e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0172",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.475394747443451238312954e-17",
+      "log_absolute_error": "1.803071869124072037757107e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0173",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.472355578274964476010173e-17",
+      "log_absolute_error": "4.370064184394837601069016e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0174",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "7.908401971263697397757324e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0175",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.559508611520957170479066e-17",
+      "log_absolute_error": "7.407177742278422540461426e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0176",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "5.565598844082226829879997e-15",
+      "log_absolute_error": "2.987629462476459858731018e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0177",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.38377764975392527514779e-16",
+      "log_absolute_error": "1.043182994644278334771271e-17"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0178",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.499119496491606217689261e-15",
+      "log_absolute_error": "3.749003990122839403976562e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0179",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "4.8965009570749022836025e-17",
+      "log_absolute_error": "1.270320144249284924804749e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0180",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.723792570096526160814235e-16",
+      "log_absolute_error": "2.11806490961147881044046e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0181",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.95863020414126695193471e-17",
+      "log_absolute_error": "1.556076421678480245806641e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0182",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.349450704341970384120635e-16",
+      "log_absolute_error": "3.235006707092835908799831e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0183",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "5.173878649563784631564292e-15",
+      "log_absolute_error": "1.451394379942189489102783e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0184",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "5.582622238733355232434363e-18",
+      "log_absolute_error": "1.265366653273658154973364e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0185",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "8.948368059945319092517578e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0186",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.124425186401344229856234e-16",
+      "log_absolute_error": "2.903987925612219420943008e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0187",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "3.013116579182034567106029e-17",
+      "log_absolute_error": "1.306392699961656689927887e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0188",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.79013625308196651150156e-14",
+      "log_absolute_error": "3.4485266054806377954021e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0189",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "6.715279053182028332674507e-17",
+      "log_absolute_error": "2.319961695120298662206726e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0190",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "6.014596427278536688958931e-14",
+      "log_absolute_error": "4.737632366120862750198486e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0191",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "9.444572916395814195333106e-17",
+      "log_absolute_error": "3.560454108601145763024597e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0192",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "4.123662013085143125918945e-13"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0193",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "6.652052036207252254105469e-13"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0194",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.669098760335483406309102e-16",
+      "log_absolute_error": "1.571647696259064361702301e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0195",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "2.352671253249050113407227e-13"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0196",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "9.799833004043070454235129e-17",
+      "log_absolute_error": "5.083331253048847502598572e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0197",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.922792085046670034225059e-13",
+      "log_absolute_error": "2.279979602861967932362012e-13"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0198",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.099049580049231029736493e-17",
+      "log_absolute_error": "7.602044549219565125127258e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0199",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "9.620146324323900021967773e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0200",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "6.51401724395728219461694e-17",
+      "log_absolute_error": "1.052400444434239373420914e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0201",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.380019948102576011416898e-16",
+      "log_absolute_error": "4.546140507625937669525757e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0202",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.406203075054292933494482e-16",
+      "log_absolute_error": "4.075351443773684166092041e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0203",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.506091912874818363531793e-16",
+      "log_absolute_error": "7.788615248778339746138321e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0204",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "4.120465228101458733238771e-16",
+      "log_absolute_error": "5.600593153412331475123901e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0205",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.882934899827999508517137e-15",
+      "log_absolute_error": "7.123374612192249797157959e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0206",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "6.036531018698476851671387e-13"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0207",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "3.15083411622902651565961e-19",
+      "log_absolute_error": "1.85780903619481042230896e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0208",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.813377358337730482445372e-16",
+      "log_absolute_error": "3.727838735259085830733643e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0209",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "9.507381226402744463030997e-17",
+      "log_absolute_error": "1.007107884122889131960022e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0210",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.796169495432354013906061e-17",
+      "log_absolute_error": "1.193595308081679242209283e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0211",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "3.1321769708987527883206e-17",
+      "log_absolute_error": "1.61750732334465093094705e-17"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0212",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.970434018847922283289509e-16",
+      "log_absolute_error": "1.233121716834499990959869e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0213",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.3343595515219625722"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0214",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "9.409305239769867769838043e-16",
+      "log_absolute_error": "2.591836890538458700187256e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0215",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.629355696933203109763354e-16",
+      "log_absolute_error": "5.034350050965225895180908e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0216",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.864401601334022483920878e-16",
+      "log_absolute_error": "4.63153023274177151314624e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0217",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.185219854142603498544826e-15",
+      "log_absolute_error": "4.086583724976336201460937e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0218",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.792873551969939087003509e-16",
+      "log_absolute_error": "5.041419419889118021855469e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0219",
+      "method": "exact_atm",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.191048526637357468176051e-16",
+      "log_absolute_error": "3.930518651398067588696045e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0220",
+      "method": "exact_atm",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.335073845936459390974597e-16",
+      "log_absolute_error": "4.184878778891135791460937e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0221",
+      "method": "exact_atm",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "3.3123590074814807949867e-17",
+      "log_absolute_error": "4.862670314186406391855469e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0222",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.950760320310441862668176e-16",
+      "log_absolute_error": "3.347996250460989023725586e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0223",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "4.180767841709442139629419e-16",
+      "log_absolute_error": "4.017297026260132198460937e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0224",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.78165366067792721826518e-16",
+      "log_absolute_error": "4.930084973605873821855469e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0225",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.1412123709620172628"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0226",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "9.409305239769867769838043e-16",
+      "log_absolute_error": "2.405418023166028388273926e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0227",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.629355696933203109763354e-16",
+      "log_absolute_error": "4.847931183592795582267578e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0228",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.053404397584890056"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0229",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "9.025165997547066757505948e-16",
+      "log_absolute_error": "4.841101644642204703649292e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0230",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.659460557598767090149339e-16",
+      "log_absolute_error": "8.837679470778540198557739e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0231",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.039017961355355843344155e-17",
+      "log_absolute_error": "1.112456693568834181528687e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0232",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "6.571421270270008413811587e-16",
+      "log_absolute_error": "1.028492197316619157908752e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0233",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.875972624851875394391629e-16",
+      "log_absolute_error": "6.864144370448540324890137e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0234",
+      "method": "exact_atm",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "8.148491672910180425458887e-17",
+      "log_absolute_error": "5.665138751248119535983887e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0235",
+      "method": "exact_atm",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.577034499574670773384126e-16",
+      "log_absolute_error": "1.108931723888456620908752e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0236",
+      "method": "exact_atm",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "8.614972329636431049269154e-17",
+      "log_absolute_error": "7.010423281392813044890137e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0237",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "9.730574700758650861935876e-17",
+      "log_absolute_error": "3.504637205912207982873535e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0238",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.39396999774053077783034e-15",
+      "log_absolute_error": "9.717915901091811979087524e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0239",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.048443201183618102237864e-16",
+      "log_absolute_error": "6.955254653148262584890137e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0240",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.2534484218551646346"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0241",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "9.025165997547066757399915e-16",
+      "log_absolute_error": "7.505564396835495884639893e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0242",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.659460557598767089972392e-16",
+      "log_absolute_error": "3.508986570699160399731445e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0243",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.3173409527128257507"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0244",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "9.207044460033573618580108e-16",
+      "log_absolute_error": "1.491644270057230584626694e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0245",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.796338890835812892354642e-16",
+      "log_absolute_error": "2.849376318572479334677437e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0246",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.56455912080396441383429e-16",
+      "log_absolute_error": "5.10013230244903672737854e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0247",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "6.845543014686353645557641e-16",
+      "log_absolute_error": "9.685693102440499938818153e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0248",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "9.262148160828718566536129e-17",
+      "log_absolute_error": "6.451638523230183293650522e-17"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0249",
+      "method": "exact_atm",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.625745168925115249853668e-16",
+      "log_absolute_error": "3.013389141537605976072144e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0250",
+      "method": "exact_atm",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.42067909050455363573795e-16",
+      "log_absolute_error": "2.279198982675366104876373e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0251",
+      "method": "exact_atm",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "6.682018864549984191349397e-17",
+      "log_absolute_error": "9.031767819508917118414206e-17"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0252",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.237661305806150896165371e-17",
+      "log_absolute_error": "1.711039527842460097759186e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0253",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "4.645787797838621968454546e-18",
+      "log_absolute_error": "1.666570744303547749734573e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0254",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.778424911080155095026625e-16",
+      "log_absolute_error": "2.052485459632879953276868e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0255",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.1241937721528804413"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0256",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "9.207044460033573618368043e-16",
+      "log_absolute_error": "1.579476104381283243082184e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0257",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.796338890835812892531589e-16",
+      "log_absolute_error": "1.971057975331952756022536e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0258",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.1880863030105414735"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0259",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "9.08643635961215132400223e-16",
+      "log_absolute_error": "1.610986652156056184959717e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0260",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.469712441695355422427366e-16",
+      "log_absolute_error": "5.607564478292391669868164e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0261",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.043472086258357262139082e-16",
+      "log_absolute_error": "2.116043486599504693996338e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0262",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.487603074846393767028422e-16",
+      "log_absolute_error": "1.298953786194919779645386e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0263",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.235300342880940467754565e-16",
+      "log_absolute_error": "4.226275364509706283842773e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0264",
+      "method": "exact_atm",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.223987302799435344371626e-17",
+      "log_absolute_error": "2.435023758761971015294312e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0265",
+      "method": "exact_atm",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.007635620588674345374939e-16",
+      "log_absolute_error": "1.085775161687110103546143e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0266",
+      "method": "exact_atm",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.31499994268554043470069e-17",
+      "log_absolute_error": "3.970316441323042143842773e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0267",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.033446711218425821906114e-16",
+      "log_absolute_error": "2.323735366347183001996338e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0268",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.934915111769156402778899e-16",
+      "log_absolute_error": "1.091261911853526419645386e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0269",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.269959365975519589406179e-16",
+      "log_absolute_error": "4.018583490168313163842773e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0270",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.0050608775494038359"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0271",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "9.086436359612151324214295e-16",
+      "log_absolute_error": "3.475175325880359304093018e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0272",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.469712441695355422427366e-16",
+      "log_absolute_error": "7.471753152016694799001465e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0273",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.3003223539036889774"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0274",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.059134161356966106126092e-15",
+      "log_absolute_error": "1.829168302448595226305908e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0275",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.774177899190166881952846e-16",
+      "log_absolute_error": "6.133448579781719676877441e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0276",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "8.246840378416576554031461e-17",
+      "log_absolute_error": "9.396284680241376531188965e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0277",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.413213449726063123405148e-16",
+      "log_absolute_error": "3.513114077328414820322266e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0278",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.451219023067886304571023e-16",
+      "log_absolute_error": "4.928218562784855477678711e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0279",
+      "method": "exact_atm",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.356997302796841733614057e-16",
+      "log_absolute_error": "4.904865415889863377971191e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0280",
+      "method": "exact_atm",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.92944941633469609396713e-16",
+      "log_absolute_error": "2.361264140959181350322266e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0281",
+      "method": "exact_atm",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "8.114137127561859409968408e-17",
+      "log_absolute_error": "4.907272224405694566678711e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0282",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "9.372142508311125519352956e-17",
+      "log_absolute_error": "9.226320518919460341188965e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0283",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.779270204841529805462315e-16",
+      "log_absolute_error": "3.343149919627049160322266e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0284",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.661234501263013415840818e-16",
+      "log_absolute_error": "4.911222147014718928678711e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0285",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.1071751733437436679"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0286",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.059134161356966106115489e-15",
+      "log_absolute_error": "2.015587169821025539219238e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0287",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.774177899190166882129793e-16",
+      "log_absolute_error": "4.269259906057416557744141e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0288",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.21883796879488222475746e-16",
+      "log_absolute_error": "7.833087962660458137897171e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0289",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.589967152579365525516471e-16",
+      "log_absolute_error": "1.103321877986979234097945e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0290",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.69542409679585438414792e-17",
+      "log_absolute_error": "6.77176793108649399264217e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0291",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.453079944597186554177189e-16",
+      "log_absolute_error": "9.564987440494071196216553e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0292",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "8.719098565663075659536514e-16",
+      "log_absolute_error": "1.509135482558241118122899e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0293",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.332712558469036826617082e-16",
+      "log_absolute_error": "4.245000063827010679254097e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0294",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "3.143186784607302314125e-11"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0295",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.10464433265818668813125e-10"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0296",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.149795754001798109484656e-16",
+      "log_absolute_error": "6.198714072572352247158775e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0297",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "3.796650628763180059610125e-16",
+      "log_absolute_error": "4.850464443129153904354439e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0298",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.889961962832666873044458e-16",
+      "log_absolute_error": "5.435839602229027568798508e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0299",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "5.499805549996417659059605e-16",
+      "log_absolute_error": "1.518595607747986907644936e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0300",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "8.36791558327965284334375e-11"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0301",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.22807529209715503153125e-10"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0302",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "5.516003231455082020080955e-16",
+      "log_absolute_error": "2.90423361596773795791803e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0303",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "5.744290295046524102008259e-16",
+      "log_absolute_error": "3.029268279701783930209801e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0304",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.765645604821326805563419e-16",
+      "log_absolute_error": "4.163250977862541766775566e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0305",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.653600627053092866957131e-17",
+      "log_absolute_error": "1.587130134786182643958832e-16"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0306",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "6.024188861698802651234848e-16",
+      "log_absolute_error": "3.761670765288516162290039e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0307",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "0.0000002246904994263063935830176",
+      "log_absolute_error": "1.04986400684454207403418e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0308",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "3.98164648948578136639209e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0309",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "4.099717110783285966144531e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0310",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.697262999294584391337891e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0311",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.976663818319246669308087e-15",
+      "log_absolute_error": "1.573062420331899242290039e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0312",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "8.997909769880291167414422e-17",
+      "log_absolute_error": "9.162476546360041240341797e-15"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0313",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "8.609701769746937256852037e-16",
+      "log_absolute_error": "3.91474238324051905539209e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0314",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "0.000000208838451067560070787291",
+      "log_absolute_error": "3.946497985424976920144531e-14"
+    },
+    {
+      "source": "v1",
+      "id": "confirmation-0315",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.611343685122587463337891e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0000",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.163194120422462117672864e-16",
+      "log_absolute_error": "3.051955669382824781224121e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0001",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.925731945581950199080222e-16",
+      "log_absolute_error": "3.464367053013526029934082e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0002",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.276704698195898800066662e-16",
+      "log_absolute_error": "6.825680498589698067155762e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0003",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "3.374166552587360203927637e-17",
+      "log_absolute_error": "6.920174672528694643657532e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0004",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.726520177681914574596981e-16",
+      "log_absolute_error": "1.044253918575204535369873e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0005",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.983346989624583447551785e-16",
+      "log_absolute_error": "3.316381005416554900085937e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0006",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "5.913448433913915292732779e-17",
+      "log_absolute_error": "8.468531341848351859990234e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0007",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.612667213201935641916344e-16",
+      "log_absolute_error": "1.993857555611558835498047e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0008",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "9.656791355759780733213898e-17",
+      "log_absolute_error": "1.174355515646402072609863e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0009",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.690962807934198943757626e-16",
+      "log_absolute_error": "2.635996784447241951782227e-17"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0010",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.486672169569958806170248e-16",
+      "log_absolute_error": "2.073214140882770314854736e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0011",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "3.725547426320922244372506e-17",
+      "log_absolute_error": "9.941605376862773764259766e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0012",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.068360628878424637863882e-16",
+      "log_absolute_error": "2.835176898433977836906006e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0013",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.867042471630918872322832e-16",
+      "log_absolute_error": "4.79767994173745987429541e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0014",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.957974844484555173151325e-16",
+      "log_absolute_error": "2.766464438679400103919922e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0015",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.610203801470782554364766e-16",
+      "log_absolute_error": "3.424621918932090617211914e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0016",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "3.300943445354691499140371e-16",
+      "log_absolute_error": "7.900314158469083566828003e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0017",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "5.853737296365510386596585e-17",
+      "log_absolute_error": "1.340523435668510855535675e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0018",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.131662889937444464644606e-17",
+      "log_absolute_error": "7.011764196334576772339844e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0019",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.507008772582255832988052e-17",
+      "log_absolute_error": "2.760989898706473866075195e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0020",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "6.035301270680068258026001e-17",
+      "log_absolute_error": "1.637156973064088217864746e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0021",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.89405882689948138863927e-17",
+      "log_absolute_error": "4.992753166835204746536133e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0022",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.654266722117991180377644e-17",
+      "log_absolute_error": "1.490059699359445411574951e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0023",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "4.115462889104403490473424e-17",
+      "log_absolute_error": "8.225614295852524491154785e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0024",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.046035166522296478764824e-16",
+      "log_absolute_error": "1.325059807351386118852173e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0025",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.99419067949617768584947e-17",
+      "log_absolute_error": "1.355526439537826792441846e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0026",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.693903385637176061624188e-16",
+      "log_absolute_error": "1.167337508098846861032227e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0027",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "5.576086695711043825452258e-17",
+      "log_absolute_error": "7.556141085149755538706055e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0028",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.893255602761594708704165e-16",
+      "log_absolute_error": "1.580109746417421434005371e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0029",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.415343970345901022703428e-16",
+      "log_absolute_error": "3.619231401088076778045898e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0030",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "9.547464835026921379388605e-17",
+      "log_absolute_error": "1.274536518972010242184082e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0031",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.698205271127192034072452e-17",
+      "log_absolute_error": "3.694612768331373952821045e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0032",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.492587456215917303425065e-17",
+      "log_absolute_error": "2.770874231238338817314453e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0033",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.788871077279268167986896e-16",
+      "log_absolute_error": "3.152797371827123864415283e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0034",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.351736320038555837109302e-16",
+      "log_absolute_error": "1.236189891993935986400879e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0035",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.352202107139210434975437e-16",
+      "log_absolute_error": "3.328093635111171227583984e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0036",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.338234884219432261911887e-16",
+      "log_absolute_error": "2.770957970858206661625e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0037",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "5.786115664807170952619148e-17",
+      "log_absolute_error": "1.203017118612226683485107e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0038",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.734502075095010038645686e-17",
+      "log_absolute_error": "2.445483921508255298958252e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0039",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.660034475704245590124593e-17",
+      "log_absolute_error": "8.213928599494729052384521e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0040",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "5.628441011117738574355808e-17",
+      "log_absolute_error": "1.293098573533633204953613e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0041",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "9.697819337422824183203374e-17",
+      "log_absolute_error": "6.667892917308048777011719e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0042",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.214148431908953029384581e-16",
+      "log_absolute_error": "3.618144077723454431533691e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0043",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.623170437248337116227021e-16",
+      "log_absolute_error": "3.229574276072962051420166e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0044",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.765325013834275572522531e-17",
+      "log_absolute_error": "2.302079283573741110175781e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0045",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.382367907692411678392428e-16",
+      "log_absolute_error": "1.06169877837101062089335e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0046",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.316470545343546713371833e-16",
+      "log_absolute_error": "5.528824894458383382810059e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0047",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "6.577424957748990468264785e-17",
+      "log_absolute_error": "1.15020105764851360495752e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0048",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.571145784188435613141948e-17",
+      "log_absolute_error": "5.21845813866462997996875e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0049",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.65645454565469840751517e-16",
+      "log_absolute_error": "7.771820235646825221347656e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0050",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "9.846637713572643045652386e-17",
+      "log_absolute_error": "3.330448465543587731966553e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0051",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "3.751192380691177037289101e-17",
+      "log_absolute_error": "1.505130243983665957967651e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0052",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.144601017719249631659828e-18",
+      "log_absolute_error": "2.934596528296492252475586e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0053",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "5.045814846802014834805234e-17",
+      "log_absolute_error": "7.527353045864939863832153e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0054",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.256842139674204020336385e-16",
+      "log_absolute_error": "2.884109565032167077631348e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0055",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.17045341436707790434777e-16",
+      "log_absolute_error": "1.419135458057647498766602e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0056",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "5.685258397559008005904682e-17",
+      "log_absolute_error": "3.645292959085812201300781e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0057",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.008598082715699760745158e-16",
+      "log_absolute_error": "5.940147233562720439597168e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0058",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.600277995652931135003252e-17",
+      "log_absolute_error": "9.830650917452986146708984e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0059",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.623234422252756455093702e-16",
+      "log_absolute_error": "3.390916095527395722029877e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0060",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "3.725940941075924567605733e-16",
+      "log_absolute_error": "7.808129891312204154024414e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0061",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.276376586317269805704419e-16",
+      "log_absolute_error": "5.05060668974431862918457e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0062",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "8.773482432704039702787397e-17",
+      "log_absolute_error": "5.427075880362488089873047e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0063",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.496592676279297772509967e-16",
+      "log_absolute_error": "1.652382213302864482900391e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0064",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.721455432861503365246307e-16",
+      "log_absolute_error": "3.546607572027057165408447e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0065",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.529528883298813959710686e-16",
+      "log_absolute_error": "1.195908875401774648718506e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0066",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.031639940860589853425748e-16",
+      "log_absolute_error": "1.369053270370561613369141e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0067",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.573885686337645020976835e-17",
+      "log_absolute_error": "7.34701039890709262255249e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0068",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.741362780653754265958708e-16",
+      "log_absolute_error": "7.635941425273184939326172e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0069",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.416101791752603909282958e-17",
+      "log_absolute_error": "1.97149381574536375772998e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0070",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "3.197469921885936977163586e-17",
+      "log_absolute_error": "5.341581039857853334959473e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0071",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.206106386920972044002886e-16",
+      "log_absolute_error": "2.319435759137539788617676e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0072",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.533201323499196308985785e-17",
+      "log_absolute_error": "7.477324641287186481623535e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0073",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.978856998203268650501534e-16",
+      "log_absolute_error": "2.579414033343921565878174e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0074",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "9.118343258160338668054854e-17",
+      "log_absolute_error": "1.618051896444931311079956e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0075",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.496666358214817292076428e-16",
+      "log_absolute_error": "1.476251291792329504456543e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0076",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.630020226534174307070971e-16",
+      "log_absolute_error": "4.175540617908277201358887e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0077",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.017827542843936420446965e-16",
+      "log_absolute_error": "5.916771605903719668637695e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0078",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.045207744027656586227687e-16",
+      "log_absolute_error": "1.433469127862146664135742e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0079",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.163305316497652274268747e-16",
+      "log_absolute_error": "5.618642622244383925281982e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0080",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.491758189200698986252797e-16",
+      "log_absolute_error": "3.860124035374021954625549e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0081",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.017036547365736372513477e-16",
+      "log_absolute_error": "6.222019580852815137046631e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0082",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "8.155693957432143532377973e-17",
+      "log_absolute_error": "1.229723155738648251626953e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0083",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "8.968828680476207733745556e-17",
+      "log_absolute_error": "2.654226127543909803717773e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0084",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.618416776264373532629521e-16",
+      "log_absolute_error": "3.080399913758516944881836e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0085",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "6.136622181389801704355214e-17",
+      "log_absolute_error": "4.427449385611882630913086e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0086",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "4.2181366488478130188882e-18",
+      "log_absolute_error": "6.697782643165828462026367e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0087",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.302844940987517120743709e-16",
+      "log_absolute_error": "1.797145486724752601374817e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0088",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "3.962238548423865838069308e-17",
+      "log_absolute_error": "4.39770401042392657133728e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0089",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "3.272330430859291349612988e-17",
+      "log_absolute_error": "3.49896884241921918437915e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0090",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.103669613792931240141013e-17",
+      "log_absolute_error": "1.158220818861262726511719e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0091",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "4.062554485035693413378647e-18",
+      "log_absolute_error": "3.194282345245685372400879e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0092",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.116031485913288062921501e-16",
+      "log_absolute_error": "1.142162593824149267157227e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0093",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "8.457649432333673707150207e-17",
+      "log_absolute_error": "4.540838812131162625202637e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0094",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.557516849346208161740791e-17",
+      "log_absolute_error": "1.246705218622209361091263e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0095",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.25358611349043006057801e-17",
+      "log_absolute_error": "2.891006608818699459562988e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0096",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.631910503039374681350298e-17",
+      "log_absolute_error": "3.63512687531520997118399e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0097",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.652616381131777244766187e-16",
+      "log_absolute_error": "1.903872494206572432300156e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0098",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.652689237106878872863123e-14",
+      "log_absolute_error": "1.242903406376173136575745e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0099",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.227961029831384211222909e-14",
+      "log_absolute_error": "5.772096899603563322622925e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0100",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.238506498249753569218523e-15",
+      "log_absolute_error": "6.056759288858401245918457e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0101",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "6.488794333797336695564453e-13"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0102",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "3.924999825075415022814168e-14",
+      "log_absolute_error": "5.21941901972922610761499e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0103",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "5.517282476363516736216797e-13"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0104",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.475913637202728643687081e-14",
+      "log_absolute_error": "2.002175597422551777046008e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0105",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.421258513323108855150645e-16",
+      "log_absolute_error": "1.170449704333835505807068e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0106",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.574977112040032721944081e-16",
+      "log_absolute_error": "3.409957155529822341101929e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0107",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "3.788707515064563278082911e-16",
+      "log_absolute_error": "2.373072633483917872390747e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0108",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "5.533172438502636943517747e-17",
+      "log_absolute_error": "1.059543314441719533159576e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0109",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.667062144255715618331522e-16",
+      "log_absolute_error": "1.245466246725951684416656e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0110",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "5.635277745600362490761719e-13"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0111",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.480095705740283139259874e-16",
+      "log_absolute_error": "3.283845153741254290977173e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0112",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.040223337304104812271233e-15",
+      "log_absolute_error": "2.216060131991253700028931e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0113",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.723588784603337437853991e-15",
+      "log_absolute_error": "8.95919505746212877192688e-17"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0114",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.887433924159397722020019e-14",
+      "log_absolute_error": "6.158777249269522389262695e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0115",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.593224349406444678587811e-16",
+      "log_absolute_error": "4.432854066107487533957291e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0116",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.184651138155744690049218e-14",
+      "log_absolute_error": "9.289032550571138169595703e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0117",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.596356608559218546182987e-14",
+      "log_absolute_error": "1.343754653546436972707397e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0118",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.015030983203104868735786e-16",
+      "log_absolute_error": "2.188051151521898274966797e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0119",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.252281519759108671007547e-16",
+      "log_absolute_error": "5.71783009758124864460495e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0120",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.090876757441807035504671e-13",
+      "log_absolute_error": "1.112964424908598445087378e-13"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0121",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.669378108081151508023338e-17",
+      "log_absolute_error": "4.425668337782366471701916e-17"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0122",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.659022031696656332478468e-14",
+      "log_absolute_error": "6.848110657934186608048828e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0123",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.800990077160269982832377e-16",
+      "log_absolute_error": "4.822686114540241672026474e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0124",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "6.907600477036960315040802e-17",
+      "log_absolute_error": "5.411489342989928826722717e-17"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0125",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.271295373113009258168455e-16",
+      "log_absolute_error": "6.28742782394628229096756e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0126",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.476197994026089655276562e-16",
+      "log_absolute_error": "3.140933178837526102545654e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0127",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "5.213873702253247163212837e-16",
+      "log_absolute_error": "6.774779949798592175814819e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0128",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.961882738550701759138351e-16",
+      "log_absolute_error": "5.835024562070264838685303e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0129",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "8.618993648444596472982016e-14",
+      "log_absolute_error": "5.205139443547278907755859e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0130",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "6.434032450263363119873205e-17",
+      "log_absolute_error": "1.790864173998815373238342e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0131",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "2.123955594662463532302734e-12"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0132",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.069717290331389980227192e-16",
+      "log_absolute_error": "3.082299976877062375691772e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0133",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.48738726832173339214502e-13"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0134",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.042101127366278032739443e-16",
+      "log_absolute_error": "1.874968632660354491715942e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0135",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "4.200023994926014258444399e-17",
+      "log_absolute_error": "2.074348409845000218935974e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0136",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "2.321770324650602559270996e-13"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0137",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.428108895228167329042299e-15",
+      "log_absolute_error": "1.838632577878044566094818e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0138",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.87634511026308223904297e-16",
+      "log_absolute_error": "3.485657126354630456525917e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0139",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "8.176268757162438555973037e-17",
+      "log_absolute_error": "2.224643134440797592221943e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0140",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.064206932243915758942818e-16",
+      "log_absolute_error": "2.698554044775145162104797e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0141",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.853342760275157636799155e-16",
+      "log_absolute_error": "2.912860681464955869428101e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0142",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.264181223775457287127187e-16",
+      "log_absolute_error": "2.160723890654084962005722e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0143",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.954546559201463208063674e-16",
+      "log_absolute_error": "6.899611592262487055487885e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0144",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "7.752318603045151009382324e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0145",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.965002569387933081042699e-16",
+      "log_absolute_error": "6.726065083188431296486145e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0146",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.64484450543903238830796e-16",
+      "log_absolute_error": "1.412507104137513445153503e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0147",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "9.176146613037066836430091e-17",
+      "log_absolute_error": "9.399767931556889130204926e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0148",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.601735751753478920065578e-17",
+      "log_absolute_error": "1.917137092645359252064713e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0149",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "8.902420841898969908134852e-17",
+      "log_absolute_error": "2.531913903358485750520782e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0150",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.710700135513093579035874e-17",
+      "log_absolute_error": "9.676671769356677371274414e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0151",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "5.35297886163453709034022e-14",
+      "log_absolute_error": "5.541637727529607006720703e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0152",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.229984927566090255419067e-15",
+      "log_absolute_error": "1.058105521553506060247925e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0153",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "9.990241492943994344281881e-17",
+      "log_absolute_error": "6.041905748147098882056091e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0154",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.061657211002924038848267e-17",
+      "log_absolute_error": "1.28629514557650339108429e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0155",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.182799074458862886415932e-16",
+      "log_absolute_error": "1.181381443112015722316467e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0156",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "4.431858337578278377984375e-12"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0157",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.830298266990833705087594e-17",
+      "log_absolute_error": "7.883760067410338629501038e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0158",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "3.98058367223085431783665e-17",
+      "log_absolute_error": "6.634779273435060403505096e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0159",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "3.464963230633552502289062e-12"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0160",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "3.455822891922443992957283e-15",
+      "log_absolute_error": "5.101265426876506378581909e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0161",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.015373229659189968646671e-16",
+      "log_absolute_error": "1.372425602128390202758789e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0162",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "5.323038817960645436777853e-17",
+      "log_absolute_error": "1.164586120338328641958466e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0163",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "5.289046454388696390846947e-17",
+      "log_absolute_error": "1.198115046332901542542255e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0164",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.018889373682461792495355e-16",
+      "log_absolute_error": "1.506894785245671700531219e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0165",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "5.133598127264854169101562e-13"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0166",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.921414025849898860134925e-16",
+      "log_absolute_error": "4.228699878502310402960762e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0167",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.762638120006027023743555e-12"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0168",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "5.2087755154592818311558e-17",
+      "log_absolute_error": "5.203705169180390287944539e-17"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0169",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "8.696814675361505677513366e-17",
+      "log_absolute_error": "1.473575683004025975995544e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0170",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "4.256927815406744880027381e-17",
+      "log_absolute_error": "1.48571946161311012773838e-17"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0171",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "6.618607868422882287717754e-17",
+      "log_absolute_error": "1.24002758170232565113407e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0172",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.238495750248097647728976e-16",
+      "log_absolute_error": "5.36217132472052853649353e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0173",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.200025109714473923739062e-12"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0174",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "9.758855459579732524705005e-17",
+      "log_absolute_error": "1.572438599338579860543854e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0175",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "4.520111483112745345750488e-13"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0176",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.049026648749010194297932e-17",
+      "log_absolute_error": "1.960114727210982798386353e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0177",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "4.399234932456583310749527e-16",
+      "log_absolute_error": "4.229278227102972895192871e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0178",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.89661565764431294796716e-14",
+      "log_absolute_error": "1.182540058861724184778076e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0179",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.506095895569661574560547e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0180",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.212782716844711545921943e-16",
+      "log_absolute_error": "6.468717742965189726629486e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0181",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "5.673041113789417063982604e-15",
+      "log_absolute_error": "5.582066233366851774481201e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0182",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.456787812801315461878136e-16",
+      "log_absolute_error": "4.49923264481052586382341e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0183",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.748128632448736582082802e-16",
+      "log_absolute_error": "5.163802067347980673976585e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0184",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.032915040063517911645718e-17",
+      "log_absolute_error": "1.993654047097253051809387e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0185",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.562290604059269092126777e-17",
+      "log_absolute_error": "4.088528804012518927978912e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0186",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.44748106221846927240643e-18",
+      "log_absolute_error": "8.253216934298018066766052e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0187",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.832759264182338489236778e-16",
+      "log_absolute_error": "5.730004757092705534367432e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0188",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.121143808597085366225435e-16",
+      "log_absolute_error": "8.087868478429086276928711e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0189",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "9.266516887427259563193858e-17",
+      "log_absolute_error": "5.609544584328028508816528e-17"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0190",
+      "method": "small_v_moments",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.829448242678262468753927e-17",
+      "log_absolute_error": "8.59288085982009688734436e-18"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0191",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.161720946970713189907479e-15",
+      "log_absolute_error": "1.241669856562191295322891e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0192",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "2.9961856742034040985e-11"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0193",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.00003228145052684122717"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0194",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "4.97016378138720708078125e-11"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0195",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "5.400345997351163834523437e-13"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0196",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "9.378837069586966786875e-11"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0197",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "9.161591404367307759248131e-15",
+      "log_absolute_error": "1.193355256917614300489001e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0198",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "4.5019612998065167925e-12"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0199",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "3.13525291619402666275e-10"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0200",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.709866788121152479148872e-16",
+      "log_absolute_error": "3.205459979888946340380859e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0201",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.34642694792428694213125e-11"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0202",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.0000005288600413933633286"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0203",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "9.360110061441560353125e-12"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0204",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "6.280081595190167369019557e-17",
+      "log_absolute_error": "1.127925667481201674361816e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0205",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "6.31880223029357127e-10"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0206",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.0000026294902571365006609"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0207",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "6.3564587325190377105e-9"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0208",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.000014699919465699710345"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0209",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.000021746225726464549301"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0210",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "8.18850785939405536146875e-11"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0211",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.000002018621051308269153"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0212",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "3.015925497234244006466797e-13"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0213",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "3.184113996457441372e-9"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0214",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "4.565723533967646851992187e-12"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0215",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "8.075137548215834977078125e-12"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0216",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "9.368587443094085277e-8"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0217",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "7.9673133695888262765e-11"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0218",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "5.222884628931175539347656e-12"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0219",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "2.849955288687712376e-8"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0220",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "3.64546795556957862425e-10"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0221",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.61349760744334938299403e-14",
+      "log_absolute_error": "2.382189529965665200416174e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0222",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "2.18874896530531003803125e-13"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0223",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "2.307872894532279110794727e-12"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0224",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.0545342629975418818125e-9"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0225",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "5.982847590590976887591797e-13"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0226",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "8.6922902677784952e-10"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0227",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "3.666663777193341019414062e-13"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0228",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "6.165637623143700908567521e-14",
+      "log_absolute_error": "2.964457315634985187895508e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0229",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "6.342629599164219887666992e-13"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0230",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "9.646597207363472547e-8"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0231",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "2.696215827740034437625e-10"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0232",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "3.911547461480871260834375e-11"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0233",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "5.981711850882648370320312e-12"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0234",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.174392536959278601952172e-16",
+      "log_absolute_error": "1.111744171808143651695557e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0235",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "6.837977736051571311e-8"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0236",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.002369326209764915875"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0237",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "8.843225956491297732072266e-12"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0238",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "8.964789745705206950707031e-12"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0239",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.0001118287997473212852"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0240",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.0000001982674432906901316"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0241",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "2.0618966235922903754e-9"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0242",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "8.455033703024621883369344e-17",
+      "log_absolute_error": "1.000582839168269620846436e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0243",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "2.921602969485998751e-8"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0244",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "5.412449519508006570433779e-15",
+      "log_absolute_error": "6.476796611383372714427612e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0245",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "3.851471237893847020425e-10"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0246",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "2.7403233800962023465e-9"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0247",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "3.441503756650036052859375e-11"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0248",
+      "method": "v2_fallback",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "8.395890697670927547552812e-16",
+      "log_absolute_error": "6.267686101978618755918579e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0249",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.0000304799182018332351"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0250",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.0000005070074683152642289"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0251",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "4.24145319881629424046875e-13"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0252",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.00000549905204148663109"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0253",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.000002109314638236791791"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0254",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.218293088568247503975e-10"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0255",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.000001161985795165003478"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0256",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "4.02229939772707228747291e-16",
+      "log_absolute_error": "9.041592848624496118850098e-16"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0257",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.808098032362356831875e-10"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0258",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.837241072190662946467411e-14",
+      "log_absolute_error": "2.21441896800530265878125e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0259",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.06105352178783587e-10"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0260",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.0004324218320219337849"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0261",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "0.0000003240897544369822913"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0262",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.965607742251375161648288e-14",
+      "log_absolute_error": "2.585925200351087261356934e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0263",
+      "method": "conditioned_direct",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.576500841978133785415818e-16",
+      "log_absolute_error": "5.997879265477656249044556e-15"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0264",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "6.102719223532940022410156e-13"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0265",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.003534210232696689516119e-14",
+      "log_absolute_error": "4.711665274287209659367187e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0266",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.187253952315213657406781e-13",
+      "log_absolute_error": "1.009773329611222147905425e-13"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0267",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.19415013300613932892627e-13"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0268",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "6.433339825924035563605957e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0269",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.135056419000293610827509e-13",
+      "log_absolute_error": "1.523129631518452968224316e-13"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0270",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "5.437418181361034308671875e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0271",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.02471299835216814985083e-13"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0272",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.133733287451742617984084e-13",
+      "log_absolute_error": "1.395197847049258782911523e-13"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0273",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "2.83516545176468497237207e-13"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0274",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "2.44245441627410458288818e-13",
+      "log_absolute_error": "1.813367468283091431485498e-13"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0275",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "8.777873128534233102029297e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0276",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.81398689014480566731543e-13"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0277",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "7.54924981860469719894043e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0278",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "5.676257572618613063166603e-14",
+      "log_absolute_error": "2.10135629817318533751123e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0279",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "1.530988209395257588679687e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0280",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "7.88972587381179007209364e-17",
+      "log_absolute_error": "4.146077923293749564736328e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0281",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "8.682972913942632888796809e-15",
+      "log_absolute_error": "1.878013085136482730868652e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0282",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "7.663599358886494579707031e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0283",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "4.124701729548932398402344e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0284",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "4.090007680062061915044274e-14",
+      "log_absolute_error": "7.717158910117716465240234e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0285",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.0",
+      "log_absolute_error": "3.218176867756300796422363e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0286",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "1.652757238585542190695576e-14",
+      "log_absolute_error": "4.089547027081047829400879e-14"
+    },
+    {
+      "source": "v2",
+      "id": "v2-0287",
+      "method": "tail_difference_series",
+      "price_pass": true,
+      "log_pass": true,
+      "correct_side": true,
+      "relative_error": "5.32433847271363176332122e-15",
+      "log_absolute_error": "2.036656892013426675745117e-14"
+    }
+  ]
+}

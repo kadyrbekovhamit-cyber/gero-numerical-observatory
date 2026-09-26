@@ -1,0 +1,3752 @@
+{
+  "cases": [
+    {
+      "binary64_hex": {
+        "k": "0x1.6e93f5da2824cp-831",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.6e93f5da2824ep-831",
+        "sigma": "0x1.027b0b79b804dp-26",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0000",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.a2fe76a3f9475p-499",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.a2fe76a3f9474p-499",
+        "sigma": "0x1.82e130742ae0ep-40",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0001",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.dee7a4ad4b81fp-167",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.dee7a4ad4b81dp-167",
+        "sigma": "0x1.8a708ce24e5c9p-18",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0002",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.ffffffffffffep-1",
+        "sigma": "0x1.d1f83ed230c44p-40",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0003",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.11b0ec57e649ap+166",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.11b0ec57e649cp+166",
+        "sigma": "0x1.36f3141f296d5p-36",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0004",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.38d352e5096afp+498",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.38d352e5096b3p+498",
+        "sigma": "0x1.28a665c2fac44p-32",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0005",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.658e3ab795204p+830",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.658e3ab795205p+830",
+        "sigma": "0x1.31a2d8c06283dp-17",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0006",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.6e93f5da2824cp-831",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.6e93f5da2824bp-831",
+        "sigma": "0x1.46aa9580edfcap-30",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0007",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.a2fe76a3f9475p-499",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.a2fe76a3f9473p-499",
+        "sigma": "0x1.3659b3537d2cdp-29",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0008",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.dee7a4ad4b81fp-167",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.dee7a4ad4b81dp-167",
+        "sigma": "0x1.5c7e6c57309ccp-11",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0009",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.0000000000002p+0",
+        "sigma": "0x1.00aae78a1cc35p-36",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0010",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.11b0ec57e649ap+166",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.11b0ec57e649bp+166",
+        "sigma": "0x1.1fc040b44fb8fp-31",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0011",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.38d352e5096afp+498",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.38d352e5096b1p+498",
+        "sigma": "0x1.fa1fba9ab3ec2p-29",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0012",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.658e3ab795204p+830",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.658e3ab795202p+830",
+        "sigma": "0x1.b3ad8dd41b8dep-38",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0013",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.6e93f5da2824cp-831",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.6e93f5da2824ap-831",
+        "sigma": "0x1.6455e6cbe5f9bp-13",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0014",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.a2fe76a3f9475p-499",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.a2fe76a3f9472p-499",
+        "sigma": "0x1.814e9dcb73703p-14",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0015",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.dee7a4ad4b81fp-167",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.dee7a4ad4b823p-167",
+        "sigma": "0x1.280b7b495ae2cp-17",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0016",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.0000000000002p+0",
+        "sigma": "0x1.760f52b3a2514p-27",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0017",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.11b0ec57e649ap+166",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.11b0ec57e6499p+166",
+        "sigma": "0x1.d7a8ef0133e3fp-32",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0018",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.38d352e5096afp+498",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.38d352e5096aep+498",
+        "sigma": "0x1.7ba7fd7dc9a12p-25",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0019",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.658e3ab795204p+830",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.658e3ab795205p+830",
+        "sigma": "0x1.52b294ebe3d76p-12",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0020",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.6e93f5da2824cp-831",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.6e93f5da28249p-831",
+        "sigma": "0x1.0bf4c90906f9ep-25",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0021",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.a2fe76a3f9475p-499",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.a2fe76a3f9471p-499",
+        "sigma": "0x1.e24df8f563817p-35",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0022",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.dee7a4ad4b81fp-167",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.dee7a4ad4b820p-167",
+        "sigma": "0x1.423c190afe738p-30",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0023",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.0000000000001p+0",
+        "sigma": "0x1.f4f21f15c1df7p-38",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0024",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.11b0ec57e649ap+166",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.11b0ec57e6499p+166",
+        "sigma": "0x1.2460b3bb66404p-24",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0025",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.38d352e5096afp+498",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.38d352e5096acp+498",
+        "sigma": "0x1.6372cfcf75788p-17",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0026",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.658e3ab795204p+830",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.658e3ab795202p+830",
+        "sigma": "0x1.2481db1299f38p-39",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0027",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.6e93f5da2824cp-831",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.6e93f5da2824bp-831",
+        "sigma": "0x1.61d4af5b2d5eep-38",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0028",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.a2fe76a3f9475p-499",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.a2fe76a3f9474p-499",
+        "sigma": "0x1.bc60770610606p-19",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0029",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.dee7a4ad4b81fp-167",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.dee7a4ad4b823p-167",
+        "sigma": "0x1.9cea645830af3p-36",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0030",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.0000000000004p+0",
+        "sigma": "0x1.61b9bcf1847cep-24",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0031",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.11b0ec57e649ap+166",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.11b0ec57e649bp+166",
+        "sigma": "0x1.3f0448685827dp-40",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0032",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.38d352e5096afp+498",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.38d352e5096b1p+498",
+        "sigma": "0x1.a643b973a99e8p-23",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0033",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.658e3ab795204p+830",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.658e3ab795207p+830",
+        "sigma": "0x1.5a9d459ecceb1p-17",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0034",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.6e93f5da2824cp-831",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.6e93f5da2824bp-831",
+        "sigma": "0x1.202d8f479ed49p-37",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0035",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.a2fe76a3f9475p-499",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.a2fe76a3f9477p-499",
+        "sigma": "0x1.05a77f4412d78p-14",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0036",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.dee7a4ad4b81fp-167",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.dee7a4ad4b81dp-167",
+        "sigma": "0x1.bb66dc6e83c60p-30",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0037",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.0000000000001p+0",
+        "sigma": "0x1.61a814cde3517p-36",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0038",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.11b0ec57e649ap+166",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.11b0ec57e649bp+166",
+        "sigma": "0x1.75848c255745ap-28",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0039",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.38d352e5096afp+498",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.38d352e5096b2p+498",
+        "sigma": "0x1.904c925045e91p-14",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0040",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.658e3ab795204p+830",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.658e3ab795203p+830",
+        "sigma": "0x1.d73910f780ccep-39",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0041",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.6e93f5da2824cp-831",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.6e93f5da28249p-831",
+        "sigma": "0x1.d94fb099c9c93p-16",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0042",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.a2fe76a3f9475p-499",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.a2fe76a3f9478p-499",
+        "sigma": "0x1.a6ca728d1235dp-20",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0043",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.dee7a4ad4b81fp-167",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.dee7a4ad4b821p-167",
+        "sigma": "0x1.d33a6605d939cp-39",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0044",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.0000000000003p+0",
+        "sigma": "0x1.27d3aceca2b37p-12",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0045",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.11b0ec57e649ap+166",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.11b0ec57e6499p+166",
+        "sigma": "0x1.e0bca58906076p-37",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0046",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.38d352e5096afp+498",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.38d352e5096aep+498",
+        "sigma": "0x1.2860c1dbb8164p-31",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0047",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.658e3ab795204p+830",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.658e3ab795200p+830",
+        "sigma": "0x1.c6c56d2b9eae0p-22",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0048",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.6e93f5da2824cp-831",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.6e93f5da2824bp-831",
+        "sigma": "0x1.5de878ea8cdd2p-25",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0049",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.a2fe76a3f9475p-499",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.a2fe76a3f9479p-499",
+        "sigma": "0x1.3d0261c90fc34p-18",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0050",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.dee7a4ad4b81fp-167",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.dee7a4ad4b81bp-167",
+        "sigma": "0x1.1a2b3a7bcff09p-22",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0051",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.0000000000004p+0",
+        "sigma": "0x1.71eeff981b07ep-28",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0052",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.11b0ec57e649ap+166",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.11b0ec57e6499p+166",
+        "sigma": "0x1.9ed54cbadd775p-33",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0053",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.38d352e5096afp+498",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.38d352e5096aep+498",
+        "sigma": "0x1.e092bfbbe3014p-27",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0054",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.658e3ab795204p+830",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.658e3ab795205p+830",
+        "sigma": "0x1.098812f1bcd6cp-22",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0055",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.6e93f5da2824cp-831",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.6e93f5da2824bp-831",
+        "sigma": "0x1.4659f1c309eafp-13",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0056",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.a2fe76a3f9475p-499",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.a2fe76a3f9478p-499",
+        "sigma": "0x1.d3f2fb40a65a7p-39",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0057",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.dee7a4ad4b81fp-167",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.dee7a4ad4b81ep-167",
+        "sigma": "0x1.cd3f857f2c8ccp-12",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0058",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.ffffffffffffdp-1",
+        "sigma": "0x1.e10fff3d7c9dcp-13",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0059",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.11b0ec57e649ap+166",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.11b0ec57e649bp+166",
+        "sigma": "0x1.af8b5245245a0p-26",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0060",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.38d352e5096afp+498",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.38d352e5096abp+498",
+        "sigma": "0x1.cc73a2d84b1c4p-40",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0061",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.658e3ab795204p+830",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.658e3ab795202p+830",
+        "sigma": "0x1.3a558bb2f4546p-11",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0062",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.6e93f5da2824cp-831",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.6e93f5da2824ap-831",
+        "sigma": "0x1.c35705d2fc66cp-14",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0063",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.a2fe76a3f9475p-499",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.a2fe76a3f9474p-499",
+        "sigma": "0x1.db31c2b2ffc0ap-36",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0064",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.dee7a4ad4b81fp-167",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.dee7a4ad4b81ep-167",
+        "sigma": "0x1.625cb92f8ba09p-35",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0065",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.ffffffffffffdp-1",
+        "sigma": "0x1.5f285dad5658dp-33",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0066",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.11b0ec57e649ap+166",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.11b0ec57e6498p+166",
+        "sigma": "0x1.1dc6d5d39c426p-28",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0067",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.38d352e5096afp+498",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.38d352e5096aep+498",
+        "sigma": "0x1.b967bd00508c6p-18",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0068",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.658e3ab795204p+830",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.658e3ab795202p+830",
+        "sigma": "0x1.7f63f7b1f98bdp-40",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0069",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.6e93f5da2824cp-831",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.6e93f5da28249p-831",
+        "sigma": "0x1.2fa04a1a9f76ap-24",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0070",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.a2fe76a3f9475p-499",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.a2fe76a3f9471p-499",
+        "sigma": "0x1.4f00b00af1964p-23",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0071",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.dee7a4ad4b81fp-167",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.dee7a4ad4b822p-167",
+        "sigma": "0x1.f2b66c4b67ca1p-38",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0072",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.fffffffffffffp-1",
+        "sigma": "0x1.4e0174ccefcfbp-23",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0073",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.11b0ec57e649ap+166",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.11b0ec57e6497p+166",
+        "sigma": "0x1.1e3b047b98423p-38",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0074",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.38d352e5096afp+498",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.38d352e5096b0p+498",
+        "sigma": "0x1.7ee2052439700p-29",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0075",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.658e3ab795204p+830",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.658e3ab795200p+830",
+        "sigma": "0x1.df7bdbf099205p-27",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0076",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.6e93f5da2824cp-831",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.6e93f5da2824dp-831",
+        "sigma": "0x1.b9bfdd204cce6p-16",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0077",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.a2fe76a3f9475p-499",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.a2fe76a3f9474p-499",
+        "sigma": "0x1.64b664c6bbf70p-25",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0078",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.dee7a4ad4b81fp-167",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.dee7a4ad4b820p-167",
+        "sigma": "0x1.082f6935eb2a2p-23",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0079",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.ffffffffffffdp-1",
+        "sigma": "0x1.e16400a3f8bb2p-34",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0080",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.11b0ec57e649ap+166",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.11b0ec57e6497p+166",
+        "sigma": "0x1.b91553bf77050p-33",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0081",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.38d352e5096afp+498",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.38d352e5096b1p+498",
+        "sigma": "0x1.13b0d4fd4f6c1p-21",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0082",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.658e3ab795204p+830",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.658e3ab795201p+830",
+        "sigma": "0x1.4090a1246a0e6p-22",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0083",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.6e93f5da2824cp-831",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.6e93f5da28248p-831",
+        "sigma": "0x1.c468fb57c6068p-23",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0084",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.a2fe76a3f9475p-499",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.a2fe76a3f9474p-499",
+        "sigma": "0x1.78bc3661552eep-29",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0085",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.dee7a4ad4b81fp-167",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.dee7a4ad4b81bp-167",
+        "sigma": "0x1.e51f2655f5e91p-27",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0086",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.ffffffffffffdp-1",
+        "sigma": "0x1.85d6245b2a44dp-36",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0087",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.11b0ec57e649ap+166",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.11b0ec57e649bp+166",
+        "sigma": "0x1.5cfc334aa7fabp-18",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0088",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.38d352e5096afp+498",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.38d352e5096adp+498",
+        "sigma": "0x1.01ff77e329f84p-26",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0089",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.658e3ab795204p+830",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.658e3ab795202p+830",
+        "sigma": "0x1.b2688300d64c8p-15",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0090",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.6e93f5da2824cp-831",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.6e93f5da28250p-831",
+        "sigma": "0x1.0b10b29c16dc7p-19",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0091",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.a2fe76a3f9475p-499",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.a2fe76a3f9477p-499",
+        "sigma": "0x1.24aac57b7f99fp-36",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0092",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.dee7a4ad4b81fp-167",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.dee7a4ad4b81ep-167",
+        "sigma": "0x1.a0f6a2349d68bp-34",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0093",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.0000000000003p+0",
+        "sigma": "0x1.07b000aff769ap-19",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0094",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.11b0ec57e649ap+166",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.11b0ec57e649ep+166",
+        "sigma": "0x1.d1c1aa77fb5f7p-21",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "near_atm",
+      "id": "v2-0095",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.ffffffffffe4cp-1",
+        "sigma": "0x1.88f31e515c7d5p-39",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0096",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.fb0fe9192d5bfp-1",
+        "sigma": "0x1.08f357557eb31p-7",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0097",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.1224ead1f9d3ap+0",
+        "sigma": "0x1.6f4507533bed5p-8",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0098",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.6d4a0bcc6fe88p+0",
+        "sigma": "0x1.ea3adb083e5a0p-6",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0099",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.ffffffffc5c8fp-1",
+        "sigma": "0x1.6f64d69a9b1a3p-38",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0100",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.ff2abdddb721cp-1",
+        "sigma": "0x1.00f0cd6a11095p-16",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0101",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.fd8bface2a316p-1",
+        "sigma": "0x1.cd2b9830d7666p-13",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0102",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.ffffffff34346p-1",
+        "sigma": "0x1.6bcf283783f36p-40",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0103",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.00000006a7efbp+0",
+        "sigma": "0x1.3ec55916f35c0p-33",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0104",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.00000000207e2p+0",
+        "sigma": "0x1.18422646b6b63p-37",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0105",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.0000000d10433p+0",
+        "sigma": "0x1.8be7e5b3e0fe3p-24",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0106",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.000289bacd0c2p+0",
+        "sigma": "0x1.2cb12e5c5a4c1p-17",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0107",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.000000000f5bbp+0",
+        "sigma": "0x1.56906ae6716e0p-28",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0108",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.0000000001cc7p+0",
+        "sigma": "0x1.ea65bd0370799p-32",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0109",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.928d984cf7e89p-4",
+        "sigma": "0x1.f9c168935e56ap-7",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0110",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.0000000150979p+0",
+        "sigma": "0x1.b52e065610a44p-32",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0111",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.fffd2c551fc13p-1",
+        "sigma": "0x1.04d216908ec8ap-18",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0112",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.ffffffcb84330p-1",
+        "sigma": "0x1.0a0a440f3e367p-29",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0113",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.1da875fbef4cap+3",
+        "sigma": "0x1.e6d0f2c736d0ep-5",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0114",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.0004e528b2a50p+0",
+        "sigma": "0x1.6f6169f0587c8p-7",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0115",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.00001a9b3fbcap+0",
+        "sigma": "0x1.cf4bd0ea4dec0p-25",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0116",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.fffffff4ae541p-1",
+        "sigma": "0x1.8b4c736f1ddc5p-34",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0117",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.e2e5da8a4a9c2p-1",
+        "sigma": "0x1.b7c95c491d7a1p-5",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0118",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.ffffffe2b0061p-1",
+        "sigma": "0x1.f081dd0e64dc5p-20",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0119",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.007635307422cp-1",
+        "sigma": "0x1.681599f02595ap-6",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0120",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.8b0ac2eac46edp+0",
+        "sigma": "0x1.bfd8089927ba9p+0",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0121",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.ffef75d21dcfap-1",
+        "sigma": "0x1.7145a8cd45667p-18",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0122",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.12aafef85b6bap+0",
+        "sigma": "0x1.895725d46b2fep-4",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0123",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.0000005926759p+0",
+        "sigma": "0x1.0f2b91aa06de7p-19",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0124",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.0000aea4aa432p+0",
+        "sigma": "0x1.c925e016362a0p-18",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0125",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.000e098091d81p+0",
+        "sigma": "0x1.a10235ee12a51p-8",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0126",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.6f5743a80747cp-22",
+        "sigma": "0x1.17fa7df5a1442p+0",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0127",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.00000003e58f5p+0",
+        "sigma": "0x1.44cc62ed42ba6p-28",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0128",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.026d2777654d6p+0",
+        "sigma": "0x1.175cfd2b832c6p-12",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0129",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.001db92579c2dp+0",
+        "sigma": "0x1.872c2164fa735p-9",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0130",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.0000003fc6da5p+0",
+        "sigma": "0x1.6b855de1a5d80p-34",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0131",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.fffe3072a905dp-1",
+        "sigma": "0x1.061939578ca70p-12",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0132",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.4dd4d0d12c071p-866",
+        "sigma": "0x1.d01fb7a9362e7p+3",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0133",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.ffffffc822ef4p-1",
+        "sigma": "0x1.019783fc2d78cp-24",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0134",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.0681c163bf9b5p-9",
+        "sigma": "0x1.888503911547ep+3",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0135",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.ffffc724d9f89p-1",
+        "sigma": "0x1.111e95a1fe07ep-25",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0136",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.c27dd74a4ba48p-1",
+        "sigma": "0x1.761353a464ba6p-6",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0137",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.0644fee4fbd3fp+0",
+        "sigma": "0x1.c444b41f31dffp-1",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0138",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.35f7155694d45p+8",
+        "sigma": "0x1.65d57f8926473p+1",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0139",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.fffffe7573298p-1",
+        "sigma": "0x1.5a17744cfd1ccp-21",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0140",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.fffffdcf77a45p-1",
+        "sigma": "0x1.a0bbe4b5da305p-22",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0141",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.f6764fb606924p-1",
+        "sigma": "0x1.4b15fa6a5a379p-8",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0142",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.03b550a516752p+0",
+        "sigma": "0x1.5492023d2b7bcp-6",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0143",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.0000d80eb43b3p+0",
+        "sigma": "0x1.51ffee46c19f0p-22",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0144",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.001b69a975a80p+0",
+        "sigma": "0x1.e35fd75245daap-12",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0145",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.0000000000cf7p+0",
+        "sigma": "0x1.5e2b5ce024b5fp-33",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0146",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.0000005b4fbccp+0",
+        "sigma": "0x1.e94bc787d4907p-18",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0147",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.7c8427bde1814p+0",
+        "sigma": "0x1.1d17f12ed7a41p-2",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0148",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.fffffffdfd79ep-1",
+        "sigma": "0x1.00057c7a72c49p-28",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0149",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.fffffffffe6d0p-1",
+        "sigma": "0x1.c21555748b08ep-38",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0150",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.5beb2ec77dda8p-10",
+        "sigma": "0x1.a6f89a40fce4dp-3",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0151",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.1face4c4d46d2p+49",
+        "sigma": "0x1.c0fbd48c3c6f8p+0",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0152",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.00084d2758536p+0",
+        "sigma": "0x1.1fdb38eda2989p-12",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0153",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.000000008159bp+0",
+        "sigma": "0x1.79ec8a81c90b7p-26",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0154",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.7101892077bc1p-59",
+        "sigma": "0x1.6cdab72f64fabp+3",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0155",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.ffffffc5490c3p-1",
+        "sigma": "0x1.f7e543c9773b3p-36",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0156",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.ffffffffffb4fp-1",
+        "sigma": "0x1.071b6fc618b14p-38",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0157",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.1ae42c00fd6d3p+0",
+        "sigma": "0x1.2cf893e1dacb4p-5",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0158",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.02eb328dcba21p+0",
+        "sigma": "0x1.4805108d534e4p-14",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0159",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.fc65f097bf701p-1",
+        "sigma": "0x1.4449145bbb6fcp-10",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0160",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.000339b92ba2ap+0",
+        "sigma": "0x1.554c002d36d6ep-16",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0161",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.000054ec9552dp+0",
+        "sigma": "0x1.15c54170f6a4bp-12",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0162",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.0eccdf575a28cp+0",
+        "sigma": "0x1.4763d24707e79p+3",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0163",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.ffffffffd4478p-1",
+        "sigma": "0x1.1d457cb865eaep-36",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0164",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.846ebd03b861bp-1",
+        "sigma": "0x1.6407ba8ae8f06p-10",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0165",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.f32a52ee20d0fp-1",
+        "sigma": "0x1.bec44d269d925p-3",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0166",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.0000001434251p+0",
+        "sigma": "0x1.8bea46b704aa4p-35",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0167",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.077e728da05e7p+0",
+        "sigma": "0x1.b9a2001643a46p+2",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0168",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.fffffffffed36p-1",
+        "sigma": "0x1.326d12dabbc1ap-36",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0169",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.a04daf4742b0cp-2",
+        "sigma": "0x1.9650d03db426dp+1",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0170",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.00000981db6e1p+0",
+        "sigma": "0x1.22f992c5032b4p-12",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0171",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.ffffffd0283c4p-1",
+        "sigma": "0x1.d90c0107ac215p-27",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0172",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.c358714ff2406p+0",
+        "sigma": "0x1.1787277a73609p-8",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0173",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.0000000008329p+0",
+        "sigma": "0x1.5b6f1af2c9540p-31",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0174",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.08c0877fa48d1p+195",
+        "sigma": "0x1.2eecdd4eb036cp+1",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0175",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.0000000000112p+0",
+        "sigma": "0x1.fa687acaf97b1p-35",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0176",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.f9829955b52cap-1",
+        "sigma": "0x1.1b1043c544518p-8",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0177",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.001246ebf64a6p+0",
+        "sigma": "0x1.7f9a1d5838863p-17",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0178",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.00027c8178d8fp+0",
+        "sigma": "0x1.bcd38b7230ac5p-21",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0179",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.fffffb60b0f57p-1",
+        "sigma": "0x1.7d81cb96ca487p-15",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0180",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.0000000017b45p+0",
+        "sigma": "0x1.50106f49220a4p-40",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0181",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.fff6e010d92a8p-1",
+        "sigma": "0x1.c508fa2d606e6p-10",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0182",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.450fcf4f6cfdep-4",
+        "sigma": "0x1.2920f920e0e9ap+4",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0183",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.fffffff8d341ap-1",
+        "sigma": "0x1.79d5af387f5c9p-31",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0184",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.ffff7844bb9fep-1",
+        "sigma": "0x1.a4ac6ebc9a4f2p-11",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0185",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.fffffb0081f28p-1",
+        "sigma": "0x1.a04a4a8297d45p-17",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0186",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.ffc4d4f6fe782p-1",
+        "sigma": "0x1.0b60da2069869p-11",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0187",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.0000000048555p+0",
+        "sigma": "0x1.b864db6596d6ap-37",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0188",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.000000000184cp+0",
+        "sigma": "0x1.161533e315a45p-34",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0189",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.fffffec877dcap-1",
+        "sigma": "0x1.086210e7ac00cp-20",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0190",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.e28ee192d41a0p-1",
+        "sigma": "0x1.189eb2659637bp-6",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "normalized",
+      "id": "v2-0191",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.603194b7149bfp+17",
+        "q": "-0x1.7b5eef6e43127p-5",
+        "r": "-0x1.c7bb4076af110p-8",
+        "s": "0x1.26fc963f38b4dp+17",
+        "sigma": "0x1.a87daac12d9d7p-12",
+        "t": "0x1.89cd9cf24bfecp-4"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0192",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.c20b36818d76bp+97",
+        "q": "-0x1.8ce77fa9c6a00p-10",
+        "r": "0x1.a499c311824ccp-5",
+        "s": "0x1.b4fbbaaa8e4b3p+99",
+        "sigma": "0x1.5e8720dc45f9ep-10",
+        "t": "0x1.7bc32df1a8965p-19"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0193",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.5196dc15b95eap+265",
+        "q": "-0x1.37503f95ef570p-7",
+        "r": "-0x1.a3df4ffaefe98p-7",
+        "s": "0x1.a6ece64ed5dedp+264",
+        "sigma": "0x1.7c5294758eb03p-7",
+        "t": "0x1.3c34ebc9cba20p-7"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0194",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.b394328ccb3b6p-398",
+        "q": "0x1.cfa95aa6b01b4p-5",
+        "r": "-0x1.ab9ea2a046e35p-4",
+        "s": "0x1.32ab9e8e51bb6p-398",
+        "sigma": "0x1.9f2455c3b7d1ap-2",
+        "t": "0x1.995204654b22cp-15"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0195",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.a00636711f176p+125",
+        "q": "0x1.cef6c6992b740p-6",
+        "r": "-0x1.3df7e4e67b9a8p-5",
+        "s": "0x1.4d4bec8f9e367p+125",
+        "sigma": "0x1.0af193209e771p-5",
+        "t": "0x1.80e0185c31185p-16"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0196",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.27fead21fd4eep+188",
+        "q": "-0x1.e079b91ee0392p-5",
+        "r": "0x1.52cbebd65982cp-5",
+        "s": "0x1.214f7d09f9606p+190",
+        "sigma": "0x1.69e5250ecc9f8p-4",
+        "t": "0x1.b309d9add3b13p+1"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0197",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.71a93313c6ea4p+277",
+        "q": "-0x1.7ce11ce808eb4p-7",
+        "r": "-0x1.abbe615194b30p-7",
+        "s": "0x1.1ffb8b5f2cdc8p+278",
+        "sigma": "0x1.43e444686798bp-10",
+        "t": "0x1.72584384253d1p-2"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0198",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.03984a30940a9p+424",
+        "q": "0x1.24f2ef1e32f18p-7",
+        "r": "0x1.afdd2cdca3744p-4",
+        "s": "0x1.b713a53e6fc11p+426",
+        "sigma": "0x1.fe1ef698f0740p-2",
+        "t": "0x1.f0c10fefa29d9p-19"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0199",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0ae36786ba7bdp-347",
+        "q": "-0x1.ffb8a14c3b1ddp-6",
+        "r": "-0x1.c26140b547988p-5",
+        "s": "0x1.260d023462ac1p-347",
+        "sigma": "0x1.0ceb8e1ded331p-3",
+        "t": "0x1.84040e6142edcp-5"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0200",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.2ad7233f44bfbp+396",
+        "q": "0x1.d63b279d88b92p-5",
+        "r": "-0x1.8d6baa3635a40p-4",
+        "s": "0x1.df0d6ad773d7cp+395",
+        "sigma": "0x1.7b6d56fc8370ep-10",
+        "t": "0x1.b8e974a9f9d04p-1"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0201",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.e5e66fddb23cbp+88",
+        "q": "-0x1.5699b3fdc7e94p-5",
+        "r": "-0x1.796858ce53a48p-6",
+        "s": "0x1.c35e11457db51p+90",
+        "sigma": "0x1.cec13ac01b322p-13",
+        "t": "0x1.63fc35fe1efb5p-8"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0202",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.a496dbea8e2cbp-239",
+        "q": "-0x1.2cf98592a0346p-6",
+        "r": "-0x1.42c305a590c44p-5",
+        "s": "0x1.8caf1e841d043p-239",
+        "sigma": "0x1.39652407188c5p-13",
+        "t": "0x1.619517b72cd1cp-3"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0203",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.7a1a0eabf26dbp-431",
+        "q": "0x1.c7b0902b466bcp-6",
+        "r": "0x1.21dc1d67cee56p-4",
+        "s": "0x1.189cec9a48320p-431",
+        "sigma": "0x1.9fa5c26b3f60dp-3",
+        "t": "0x1.d057406e02944p+0"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0204",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.1a4f7ba8d0ea7p+3",
+        "q": "-0x1.df87c3866e581p-5",
+        "r": "0x1.824ee692ee4d2p-4",
+        "s": "0x1.f484851f59da1p+2",
+        "sigma": "0x1.1668831986e8dp-7",
+        "t": "0x1.742f79aab78b0p-19"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0205",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.ca983522f73a1p+120",
+        "q": "-0x1.56de23d2c8633p-5",
+        "r": "-0x1.95ab1f05c94a6p-4",
+        "s": "0x1.90d24b217481fp+123",
+        "sigma": "0x1.8d984e6a9618ap-9",
+        "t": "0x1.c3f6e36245918p-16"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0206",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.1dd7438315f42p-6",
+        "q": "0x1.73bfeb367c02ep-5",
+        "r": "-0x1.168e3cd721fd0p-6",
+        "s": "0x1.950bf1277d40cp-5",
+        "sigma": "0x1.62b25cf5ecf9fp-10",
+        "t": "0x1.50b4ccd3bcbd9p-7"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0207",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.67ec64b0ff087p-447",
+        "q": "-0x1.77d7b9c7a6d0cp-7",
+        "r": "0x1.b7f385b5b2258p-6",
+        "s": "0x1.8b6238d214e0ap-450",
+        "sigma": "0x1.68bb984006bbfp-11",
+        "t": "0x1.558f1a4f390cap-14"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0208",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.6ca4b293ad235p+290",
+        "q": "-0x1.0715a0b008f08p-6",
+        "r": "-0x1.2339b064b9218p-5",
+        "s": "0x1.de1438e030002p+292",
+        "sigma": "0x1.b8841a2e7e30dp-11",
+        "t": "0x1.4bd8f1f2f105ep-15"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0209",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.56ca598ee4798p+210",
+        "q": "0x1.77c7c48cdbf80p-9",
+        "r": "0x1.e2128492beac0p-7",
+        "s": "0x1.8c04877c512b7p+209",
+        "sigma": "0x1.7ccde992f2c18p-9",
+        "t": "0x1.7f21b0a98e8a0p-5"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0210",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.14ab99f5f33c4p-332",
+        "q": "0x1.e5158123e4498p-7",
+        "r": "-0x1.948df451cf146p-4",
+        "s": "0x1.d58ec23ddb061p-330",
+        "sigma": "0x1.5cf988c7c8737p-12",
+        "t": "0x1.1ec46302ee983p-8"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0211",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.45a96c5f43780p-454",
+        "q": "-0x1.1687b3ef2dcfep-5",
+        "r": "0x1.96aa147f21fd6p-4",
+        "s": "0x1.50ea92a768bd1p-454",
+        "sigma": "0x1.4e42985c8fa18p-8",
+        "t": "0x1.81d822df22acfp+0"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0212",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.799a1190a9928p-58",
+        "q": "0x1.79ab11d4cae12p-5",
+        "r": "-0x1.726479e87bb1cp-4",
+        "s": "0x1.9791fb08cbf9bp-56",
+        "sigma": "0x1.fff2d7265bfffp-11",
+        "t": "0x1.284def6c5eeccp-5"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0213",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.3ba26ed6e267bp+207",
+        "q": "-0x1.7a24f4f663930p-8",
+        "r": "-0x1.8af2fb0323728p-5",
+        "s": "0x1.1f5613744db39p+209",
+        "sigma": "0x1.aacdf45590b09p-7",
+        "t": "0x1.91482a3e9c539p-3"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0214",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.dec7bc79bc0a6p+291",
+        "q": "-0x1.121c180cb673ap-5",
+        "r": "-0x1.1950fd7c84080p-4",
+        "s": "0x1.170ae419ea1dbp+293",
+        "sigma": "0x1.5856e9d180aa3p-2",
+        "t": "0x1.b028539c27099p-15"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0215",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.d10571ca19a94p+297",
+        "q": "0x1.0521d9cb7ff80p-5",
+        "r": "-0x1.ebc445360a9c0p-7",
+        "s": "0x1.5122217ee0547p+296",
+        "sigma": "0x1.46de7c4f76116p-8",
+        "t": "0x1.db6c21c5b27e4p-15"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0216",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.1ebb33b8b79efp+419",
+        "q": "-0x1.ea6b6115954e4p-5",
+        "r": "-0x1.3c49b977ac4f0p-6",
+        "s": "0x1.402697a3a4ac9p+416",
+        "sigma": "0x1.a260b52f51aa5p-11",
+        "t": "0x1.bbea1bcc25d64p+2"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0217",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.9dccc6ef506a0p-239",
+        "q": "0x1.c7f0de2e0b6e8p-6",
+        "r": "0x1.ba6f9fdb76470p-4",
+        "s": "0x1.d171f906c5a14p-241",
+        "sigma": "0x1.9ef6ef7e7114ap-8",
+        "t": "0x1.1bd9563a876a4p+0"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0218",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.3b16c8efb9660p+293",
+        "q": "-0x1.8f99f8fb220e2p-6",
+        "r": "0x1.457b6acd06100p-11",
+        "s": "0x1.4bac269c8e947p+291",
+        "sigma": "0x1.ca1107190a2e6p-14",
+        "t": "0x1.1aae19732d170p-1"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0219",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.75ffa0dcdb57cp+21",
+        "q": "0x1.0e2937b4ec178p-7",
+        "r": "0x1.b367b755d9710p-7",
+        "s": "0x1.a55b13d831325p+19",
+        "sigma": "0x1.50289059daf47p-4",
+        "t": "0x1.88587269c54dbp-15"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0220",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.ef6755a25ee70p-56",
+        "q": "-0x1.b760e98ae189cp-5",
+        "r": "-0x1.e8f44d7e92f18p-7",
+        "s": "0x1.c98f94acf0882p-57",
+        "sigma": "0x1.28ee4bcaa8dedp-3",
+        "t": "0x1.85d9b8d393fe9p-2"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0221",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.c333dcfeeeb18p+259",
+        "q": "-0x1.9cab81dd46b54p-7",
+        "r": "-0x1.5a1d193a6f115p-4",
+        "s": "0x1.ee195d19dc585p+259",
+        "sigma": "0x1.4fba4a22f10c8p-9",
+        "t": "0x1.e0e8ee0883e61p-3"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0222",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.d0e064693e59cp+273",
+        "q": "0x1.548ae028c2210p-7",
+        "r": "0x1.cd641ffd417f0p-6",
+        "s": "0x1.8966ecc4875cbp+275",
+        "sigma": "0x1.4d745aa83e7dbp-5",
+        "t": "0x1.ab17b5c6813bfp-4"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0223",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.42d1eaab93b95p+333",
+        "q": "-0x1.eb7084b42ee49p-6",
+        "r": "0x1.930c47a94f4e0p-7",
+        "s": "0x1.4ca0693229befp+332",
+        "sigma": "0x1.ffcc1a5288fe8p-4",
+        "t": "0x1.2f81009b91fa3p-18"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0224",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0205f6ba52a5bp-227",
+        "q": "0x1.a8a689d1c01d4p-5",
+        "r": "0x1.3f477abce436ap-4",
+        "s": "0x1.428e250dd2e6dp-230",
+        "sigma": "0x1.484c88e450537p-5",
+        "t": "0x1.5a85fa3e09f2dp-2"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0225",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.80baf38527b0ep-33",
+        "q": "-0x1.3c71bcaf43b54p-7",
+        "r": "-0x1.4f66f1102952cp-4",
+        "s": "0x1.42064bf2e37dap-31",
+        "sigma": "0x1.e519797a08237p-6",
+        "t": "0x1.584ab012f24d5p-14"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0226",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.1dc24a0afea16p-106",
+        "q": "-0x1.8a75b64fc9fd4p-7",
+        "r": "0x1.0e9a619afb6e6p-4",
+        "s": "0x1.90462a6fa5d01p-105",
+        "sigma": "0x1.39c1a4e965857p+0",
+        "t": "0x1.d3788a09beb43p-17"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0227",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.f4e4907e55785p-475",
+        "q": "0x1.38f163eff6bccp-6",
+        "r": "-0x1.1761dc1feb7c0p-8",
+        "s": "0x1.06a683fa8a349p-474",
+        "sigma": "0x1.f62dc56c0f0bdp-10",
+        "t": "0x1.0bb84b5edf14cp-1"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0228",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.ea7241a61a92ap+471",
+        "q": "0x1.3cd2e1b1826e0p-8",
+        "r": "0x1.abed22dce0200p-7",
+        "s": "0x1.681db7b07ec63p+474",
+        "sigma": "0x1.e25497dddc4bap-6",
+        "t": "0x1.ccebd074e8d57p-1"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0229",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.e2ede4604d07cp+276",
+        "q": "-0x1.4ab1b7420fd5cp-5",
+        "r": "0x1.fadfe70ca86a0p-5",
+        "s": "0x1.a76dc8d67f16ap+276",
+        "sigma": "0x1.46dd97497ee0ep-9",
+        "t": "0x1.2409c85aeb623p-19"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0230",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.3c19767cc881cp-397",
+        "q": "-0x1.95e80c9df9648p-6",
+        "r": "0x1.70c9a8554a400p-9",
+        "s": "0x1.640eb67231ef4p-399",
+        "sigma": "0x1.d722687f0bc2fp-5",
+        "t": "0x1.fa99c922f6911p-14"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0231",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.3dc9afdf02696p-9",
+        "q": "-0x1.8fb63ea206d9cp-7",
+        "r": "-0x1.1a40c4335bbaap-4",
+        "s": "0x1.7c727add9813cp-9",
+        "sigma": "0x1.d9db397f7bb98p-10",
+        "t": "0x1.a4eb86f40eb9fp-5"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0232",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.2d660cea7f5ecp+442",
+        "q": "0x1.9259d63d59ad0p-8",
+        "r": "0x1.494ef754a3596p-4",
+        "s": "0x1.5512227399899p+443",
+        "sigma": "0x1.7df3851a98b39p-9",
+        "t": "0x1.e188a23673c88p-1"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0233",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.ac0373bdeacd5p-200",
+        "q": "0x1.3804d8ff89466p-5",
+        "r": "-0x1.0ccfc0424d096p-4",
+        "s": "0x1.9994e1f65f374p-199",
+        "sigma": "0x1.b841781fa8a8cp-2",
+        "t": "0x1.e81380d591abbp+2"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0234",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.63021cb1684a7p-118",
+        "q": "-0x1.d937ef794649cp-5",
+        "r": "-0x1.3a4420eeaa026p-4",
+        "s": "0x1.b9fa7d91629dep-119",
+        "sigma": "0x1.139d243f1efdap-9",
+        "t": "0x1.64acedade7580p-13"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0235",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.7559024889319p+10",
+        "q": "0x1.fdd71765b9258p-7",
+        "r": "-0x1.192d830d1159ap-5",
+        "s": "0x1.2e3f461ad8d0cp+8",
+        "sigma": "0x1.1df10f2406be8p-13",
+        "t": "0x1.2896d69e5450ap-20"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0236",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.e7c9ac9ebcb98p-449",
+        "q": "0x1.bace08cddda80p-9",
+        "r": "-0x1.77575c004c7d8p-5",
+        "s": "0x1.1b353c3eb4071p-449",
+        "sigma": "0x1.6a8fb6a42d2b7p-1",
+        "t": "0x1.c4acf9d652f55p-16"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0237",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.d9b18d6c9b9eep+278",
+        "q": "-0x1.7c7ace390c7a0p-5",
+        "r": "0x1.1758cd6115078p-6",
+        "s": "0x1.6fad7cab1eaf9p+279",
+        "sigma": "0x1.9e01f2dae171dp-1",
+        "t": "0x1.a58f129100c9bp-18"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0238",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.dd5fcf4172597p-178",
+        "q": "0x1.46e43814aaf60p-5",
+        "r": "0x1.1a8b60f67e9e4p-5",
+        "s": "0x1.6f0bb8545a922p-175",
+        "sigma": "0x1.208e09634d4d9p-13",
+        "t": "0x1.280c8af91cc8fp-14"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0239",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.451aca011d24dp-427",
+        "q": "-0x1.d75d75628d0ddp-5",
+        "r": "0x1.23c96e0a54b92p-4",
+        "s": "0x1.90d7b772f9a29p-428",
+        "sigma": "0x1.79fe93564c98ep-12",
+        "t": "0x1.e42627bc8004bp-14"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0240",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.a228789ecf5dfp+454",
+        "q": "0x1.37156509936d4p-6",
+        "r": "-0x1.6cfc9ccd71f64p-5",
+        "s": "0x1.df9e83c3f0357p+451",
+        "sigma": "0x1.8a56d8e4a2aa3p-3",
+        "t": "0x1.2a5a1f8594787p-17"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0241",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.26cd722578ef8p-73",
+        "q": "0x1.096c83910f43ap-5",
+        "r": "0x1.524d7225177a0p-6",
+        "s": "0x1.4aca3f8936300p-74",
+        "sigma": "0x1.66bcf7b61c274p-1",
+        "t": "0x1.f172a27c77e32p-2"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0242",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.7e8c962c53595p-278",
+        "q": "0x1.a15117a645d4ap-5",
+        "r": "0x1.35965ca86de60p-5",
+        "s": "0x1.701b68be86b2ep-279",
+        "sigma": "0x1.6dec75faeb868p-13",
+        "t": "0x1.6dff2ec91020fp-6"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0243",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.99cdeb7ba44f2p-12",
+        "q": "-0x1.4ad217831a3f2p-6",
+        "r": "0x1.6d94f0449b418p-5",
+        "s": "0x1.738adf2c9e774p-10",
+        "sigma": "0x1.1cac96529d256p+0",
+        "t": "0x1.66020fafa04cap-6"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0244",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.eff1d4920138cp-69",
+        "q": "0x1.11f86257e36d8p-5",
+        "r": "0x1.f992a6c13f010p-7",
+        "s": "0x1.316eb3e4869abp-69",
+        "sigma": "0x1.ff262a38ed79ep-6",
+        "t": "0x1.18f9029d3ed36p-13"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0245",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.a5bee0bc57e7ap-72",
+        "q": "-0x1.a7cacc7acdc50p-8",
+        "r": "0x1.6fee108d74518p-6",
+        "s": "0x1.34851f66a75e5p-69",
+        "sigma": "0x1.9c30d3ee50f8bp-4",
+        "t": "0x1.8bc12578434e1p-17"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0246",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.8132854e72335p+48",
+        "q": "0x1.8be7a66537e80p-5",
+        "r": "0x1.62ffdf5dc9240p-6",
+        "s": "0x1.981219aec4189p+46",
+        "sigma": "0x1.744e42d8a9ab9p-8",
+        "t": "0x1.0bad86efdd834p-3"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0247",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.e23ea768d4405p+33",
+        "q": "-0x1.3bba156528558p-8",
+        "r": "-0x1.c07c92e5e72d8p-5",
+        "s": "0x1.e1814998afc71p+34",
+        "sigma": "0x1.0fa8c07d70608p-2",
+        "t": "0x1.9893d23601a57p-1"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0248",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.7e54ba91eb11ap-438",
+        "q": "0x1.c2b71f415df60p-7",
+        "r": "-0x1.62f5bf9d93ee8p-4",
+        "s": "0x1.4ea6eb14d4e98p-435",
+        "sigma": "0x1.30ebe865b5765p-13",
+        "t": "0x1.748898405b711p-15"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0249",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.33b158720016ep-102",
+        "q": "0x1.843f77966e772p-5",
+        "r": "-0x1.2b1540bcde3d8p-6",
+        "s": "0x1.0843949d6c993p-102",
+        "sigma": "0x1.f3f9c17f61e6ap-11",
+        "t": "0x1.1b5d88264dfa7p-17"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0250",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.cfe7176724bafp-304",
+        "q": "0x1.a97de60fa33bep-5",
+        "r": "-0x1.404c2c7774b94p-5",
+        "s": "0x1.027b9195b4464p-306",
+        "sigma": "0x1.c34a5590e5732p-2",
+        "t": "0x1.b10e4ece21a88p-11"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0251",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.dfa1a940dd8dbp+450",
+        "q": "-0x1.2a713c547e804p-5",
+        "r": "0x1.9f15647c0a892p-4",
+        "s": "0x1.3b11cc54f8fcfp+452",
+        "sigma": "0x1.21bc042338f80p-13",
+        "t": "0x1.cab320516243fp-14"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0252",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.8d8fd8e6eae99p+199",
+        "q": "-0x1.5f9051e8eae17p-5",
+        "r": "0x1.d4b8fb568819ep-4",
+        "s": "0x1.0e5c2be03a28cp+199",
+        "sigma": "0x1.202b9a806f906p-11",
+        "t": "0x1.11d73157e9ed6p-17"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0253",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.69da55f50ef15p-204",
+        "q": "0x1.7625dab898140p-5",
+        "r": "0x1.9604dc0465012p-4",
+        "s": "0x1.f48094c5faa58p-205",
+        "sigma": "0x1.b706837a22975p-8",
+        "t": "0x1.40d2ae2f9371ep-9"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0254",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.04b645f503bb9p+416",
+        "q": "-0x1.61115d2d1906ep-5",
+        "r": "0x1.0b62cdde81f56p-4",
+        "s": "0x1.47623b74996fep+413",
+        "sigma": "0x1.10775d6ea78eep-9",
+        "t": "0x1.8c1c86412d714p-17"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0255",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.a1af1c6e93b71p-128",
+        "q": "-0x1.f7e9ff51755cbp-6",
+        "r": "-0x1.7d2e6a8ad19b4p-6",
+        "s": "0x1.4b5572d603099p-128",
+        "sigma": "0x1.44f03b48ff7e9p-2",
+        "t": "0x1.448407d32fa78p+2"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0256",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.2630ef20a33f7p+465",
+        "q": "-0x1.e7c9ed6f03600p-11",
+        "r": "0x1.e3796a16cbcc4p-4",
+        "s": "0x1.43b3e79d58497p+467",
+        "sigma": "0x1.67029fc3dfec1p-6",
+        "t": "0x1.c99dab5c430a0p-11"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0257",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.5410f20a959b2p-212",
+        "q": "-0x1.9ec32ec841024p-6",
+        "r": "0x1.d36463067f5a8p-6",
+        "s": "0x1.3c5334b2af9cep-212",
+        "sigma": "0x1.09a8fba2d2890p-1",
+        "t": "0x1.0fb5a1a616ba3p-14"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0258",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.87b7c11ce6527p+452",
+        "q": "0x1.e3bc5b7531624p-6",
+        "r": "0x1.c2010709ffd64p-4",
+        "s": "0x1.1139c230d3a3ap+453",
+        "sigma": "0x1.dc0a221ab12e8p-6",
+        "t": "0x1.960704f503181p-19"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0259",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.8977bdbae0239p+454",
+        "q": "-0x1.72838bd5ed6c4p-6",
+        "r": "0x1.613ad60b51908p-4",
+        "s": "0x1.421701522bde9p+452",
+        "sigma": "0x1.57ff162e94e2bp-13",
+        "t": "0x1.df13bb30d8fbfp-17"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0260",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.318fa4fff8f25p-135",
+        "q": "-0x1.d82527c2ebb4cp-5",
+        "r": "-0x1.8fe63724ffbbep-4",
+        "s": "0x1.a1ecc13457961p-135",
+        "sigma": "0x1.4084ad68e7d49p-9",
+        "t": "0x1.2fe4941a6a1fep-18"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0261",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.ff291a812b24cp-274",
+        "q": "0x1.037e4ac458e00p-11",
+        "r": "-0x1.7d53f623b2934p-4",
+        "s": "0x1.3047299963856p-274",
+        "sigma": "0x1.1c16dd842047bp-5",
+        "t": "0x1.9eb7152c50bfdp-2"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0262",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.d04037b2b4afdp+132",
+        "q": "-0x1.fc5a4e50701b3p-6",
+        "r": "0x1.297ccdb8691f0p-4",
+        "s": "0x1.22c6612585c8fp+132",
+        "sigma": "0x1.5c585ec40e574p-1",
+        "t": "0x1.28645e45e9b2cp+3"
+      },
+      "family": "nonzero_carry",
+      "id": "v2-0263",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.87e92154ef7acp-665",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.9f3683afa8589p-604",
+        "sigma": "0x1.82671439d0d49p-1",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "tail_and_range",
+      "id": "v2-0264",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.5ecb25ec437e9p-56",
+        "sigma": "0x1.3747476b0bfc2p+0",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "tail_and_range",
+      "id": "v2-0265",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.4e718d7d7625ap+664",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.c35de600f7b9dp+611",
+        "sigma": "0x1.255d090fdb52ep+0",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "tail_and_range",
+      "id": "v2-0266",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.87e92154ef7acp-665",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.c382a51f26592p-609",
+        "sigma": "0x1.e00261416d0dbp-1",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "tail_and_range",
+      "id": "v2-0267",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.58f33b99dc1f3p+52",
+        "sigma": "0x1.bf199408d66ddp-1",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "tail_and_range",
+      "id": "v2-0268",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.4e718d7d7625ap+664",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.c4548487d7423p+604",
+        "sigma": "0x1.16f4a6af7b584p+0",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "tail_and_range",
+      "id": "v2-0269",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.87e92154ef7acp-665",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.97488d39b5bfbp-607",
+        "sigma": "0x1.bb05bfd59b1d2p-1",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "tail_and_range",
+      "id": "v2-0270",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.a1a9244d59fcdp-54",
+        "sigma": "0x1.a9615bba0b8f3p-1",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "tail_and_range",
+      "id": "v2-0271",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.4e718d7d7625ap+664",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.94b80c009e4eap+725",
+        "sigma": "0x1.dfd13e7140efcp-1",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "tail_and_range",
+      "id": "v2-0272",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.87e92154ef7acp-665",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.41d39416c92c3p-606",
+        "sigma": "0x1.0df57e064bd68p+0",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "tail_and_range",
+      "id": "v2-0273",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.f7612184a5482p+58",
+        "sigma": "0x1.120e439d10296p+0",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "tail_and_range",
+      "id": "v2-0274",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.4e718d7d7625ap+664",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.1c1b5cb38ca41p+607",
+        "sigma": "0x1.a276c39ee6a4bp-1",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "tail_and_range",
+      "id": "v2-0275",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.87e92154ef7acp-665",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.ea99930b7fc11p-611",
+        "sigma": "0x1.dd55d03f9b625p-1",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "tail_and_range",
+      "id": "v2-0276",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.15eec5a57a0d1p-62",
+        "sigma": "0x1.6fe14698899a8p-1",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "tail_and_range",
+      "id": "v2-0277",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.4e718d7d7625ap+664",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.482d68080257bp+716",
+        "sigma": "0x1.0d09d5c6e468fp+0",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "tail_and_range",
+      "id": "v2-0278",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.87e92154ef7acp-665",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.34fe862625bbdp-612",
+        "sigma": "0x1.1f44dce60ea27p+0",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "tail_and_range",
+      "id": "v2-0279",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.17f7e8ad98b3cp+54",
+        "sigma": "0x1.0d7075e1999bbp+0",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "tail_and_range",
+      "id": "v2-0280",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.4e718d7d7625ap+664",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.27094f28953e3p+610",
+        "sigma": "0x1.3bb7d81de75a4p+0",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "tail_and_range",
+      "id": "v2-0281",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.87e92154ef7acp-665",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.6243a3974a660p-721",
+        "sigma": "0x1.ac8d1ae558b66p-1",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "tail_and_range",
+      "id": "v2-0282",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.24e592a5f9b4dp+61",
+        "sigma": "0x1.16c956833210dp+0",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "tail_and_range",
+      "id": "v2-0283",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.4e718d7d7625ap+664",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.32a0e506b9b1ep+717",
+        "sigma": "0x1.06cca8bfd2a82p+0",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "tail_and_range",
+      "id": "v2-0284",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.87e92154ef7acp-665",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.b3be7ff4a024cp-718",
+        "sigma": "0x1.41d495db7429ap+0",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "tail_and_range",
+      "id": "v2-0285",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.0000000000000p+0",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.d23f9fccf41e0p+55",
+        "sigma": "0x1.11857fbe15210p+0",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "tail_and_range",
+      "id": "v2-0286",
+      "partition": "confirmation_v2"
+    },
+    {
+      "binary64_hex": {
+        "k": "0x1.4e718d7d7625ap+664",
+        "q": "0x0.0p+0",
+        "r": "0x0.0p+0",
+        "s": "0x1.e5cb78e1a8edap+605",
+        "sigma": "0x1.471a664bbcee4p+0",
+        "t": "0x1.0000000000000p+0"
+      },
+      "family": "tail_and_range",
+      "id": "v2-0287",
+      "partition": "confirmation_v2"
+    }
+  ],
+  "input_contract": "exact binary64 BSM inputs",
+  "schema": 2,
+  "seed": 2026092602,
+  "status": "frozen before first candidate evaluation"
+}

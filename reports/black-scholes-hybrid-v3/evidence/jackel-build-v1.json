@@ -1,0 +1,94 @@
+{
+  "compiler": "Apple clang version 17.0.0 (clang-1700.0.13.5)\nTarget: arm64-apple-darwin24.5.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin\n",
+  "platform": "macOS-15.5-arm64-arm-64bit",
+  "flags": [
+    "-std=c++11",
+    "-O2",
+    "-DNDEBUG",
+    "-ffp-contract=off"
+  ],
+  "commands": [
+    [
+      "clang++",
+      "-std=c++11",
+      "-O2",
+      "-DNDEBUG",
+      "-ffp-contract=off",
+      "-c",
+      "/Users/khamit/Documents/pilory/black-scholes-book/vendor/jackel/erf_cody.cpp",
+      "-o",
+      "/Users/khamit/Documents/pilory/black-scholes-book/build/erf_cody.o"
+    ],
+    [
+      "clang++",
+      "-std=c++11",
+      "-O2",
+      "-DNDEBUG",
+      "-ffp-contract=off",
+      "-c",
+      "/Users/khamit/Documents/pilory/black-scholes-book/vendor/jackel/normaldistribution.cpp",
+      "-o",
+      "/Users/khamit/Documents/pilory/black-scholes-book/build/normaldistribution.o"
+    ],
+    [
+      "clang++",
+      "-std=c++11",
+      "-O2",
+      "-DNDEBUG",
+      "-ffp-contract=off",
+      "-c",
+      "/Users/khamit/Documents/pilory/black-scholes-book/vendor/jackel/rationalcubic.cpp",
+      "-o",
+      "/Users/khamit/Documents/pilory/black-scholes-book/build/rationalcubic.o"
+    ],
+    [
+      "clang++",
+      "-std=c++11",
+      "-O2",
+      "-DNDEBUG",
+      "-ffp-contract=off",
+      "-c",
+      "/Users/khamit/Documents/pilory/black-scholes-book/vendor/jackel/LetsBeRational.cpp",
+      "-o",
+      "/Users/khamit/Documents/pilory/black-scholes-book/build/LetsBeRational.o"
+    ],
+    [
+      "clang++",
+      "-std=c++11",
+      "-O2",
+      "-DNDEBUG",
+      "-ffp-contract=off",
+      "-c",
+      "/Users/khamit/Documents/pilory/black-scholes-book/lab/jackel_cli.cpp",
+      "-o",
+      "/Users/khamit/Documents/pilory/black-scholes-book/build/jackel_cli.o"
+    ],
+    [
+      "clang++",
+      "/Users/khamit/Documents/pilory/black-scholes-book/build/erf_cody.o",
+      "/Users/khamit/Documents/pilory/black-scholes-book/build/normaldistribution.o",
+      "/Users/khamit/Documents/pilory/black-scholes-book/build/rationalcubic.o",
+      "/Users/khamit/Documents/pilory/black-scholes-book/build/LetsBeRational.o",
+      "/Users/khamit/Documents/pilory/black-scholes-book/build/jackel_cli.o",
+      "-o",
+      "/Users/khamit/Documents/pilory/black-scholes-book/build/jackel_cli"
+    ]
+  ],
+  "upstream_commit": "83ae882df8e19323798c7ebfb8898f94d2d92ade",
+  "source_sha256": {
+    "vendor/jackel/LetsBeRational.cpp": "d00aff9ba397de6eff750e944262926940635cdf15a7056e6566e3cd9f85da31",
+    "vendor/jackel/erf_cody.cpp": "a881e52a6d3b887c8f9bd36ad9611cb799f4af596b9d89db59d5bda16744fb7c",
+    "vendor/jackel/importexport.h": "d6965a60cffb586a2ab7a80d7a0b5fe36653d2528ff5f9cef7ea05ef0da94fc6",
+    "vendor/jackel/normaldistribution.cpp": "c40654cdb00d257e39d06d4c279337699a8af0e4bf6f991618e70260319ccf90",
+    "vendor/jackel/normaldistribution.h": "60d29c69fd9575bc435be465739dc085223f8809025518bc374ff304ed8c43a7",
+    "vendor/jackel/rationalcubic.cpp": "5ec4f344abd8d631ada63ff8a8079c4687951ac1a5d432a5bcbb7acbb651d1d1",
+    "vendor/jackel/rationalcubic.h": "157a5332f060b91e9a1506348f09e76158dd5ee57c1cfe9bc46076d8eaeb8726",
+    "vendor/jackel/version.h": "843378acabfc6126af78a8c07fc2d305335ddeda4de83b867dd9d00a1433a0e1"
+  },
+  "wrapper_sha256": "a77ed09831da81a0277c42e7c08cda8e7a5c7d6877277b16e4e7052ba82bd08f",
+  "binary_sha256": "4451c773e3378aef5bdd4634f655ba7b9c8cf0521cc96de1820e0520e9245bc1",
+  "floating_environment": {
+    "nearest_even": true,
+    "gradual_underflow_probe": true
+  }
+}

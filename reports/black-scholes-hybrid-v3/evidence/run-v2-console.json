@@ -1,0 +1,87 @@
+{
+  "cases": 288,
+  "oracle_failures": 0,
+  "rounding_classes": {
+    "normal": 201,
+    "rounds_to_zero": 86,
+    "subnormal": 1
+  },
+  "oracle_precision_increased": 0,
+  "integral_checks": 10,
+  "integral_failures": 0,
+  "v2_exceptions": 0,
+  "v2_orientation_mismatches": 0,
+  "gates": {
+    "price": {
+      "passed": 288,
+      "failed_ids": []
+    },
+    "log": {
+      "passed": 288,
+      "failed_ids": []
+    },
+    "finite_nonnegative_both_legs": {
+      "passed": 288,
+      "failed_ids": []
+    },
+    "correct_otm_side": {
+      "passed": 288,
+      "failed_ids": []
+    },
+    "no_unexpected_zero": {
+      "passed": 288,
+      "failed_ids": []
+    }
+  },
+  "comparisons_nonzero": {
+    "candidate_v0": {
+      "candidate_closer": 192,
+      "equal_error": 7,
+      "other_closer": 3
+    },
+    "jackel_native": {
+      "candidate_closer": 146,
+      "equal_error": 26,
+      "other_closer": 30
+    }
+  },
+  "methods": {
+    "candidate_v0": {
+      "nonfinite": 0,
+      "negative": 0,
+      "unexpected_zero": 1,
+      "max_relative_nonzero": "35.218521839853608788528527349128121",
+      "max_relative_case": "v2-0274",
+      "max_relative_normal": "1.0",
+      "max_relative_normal_case": "v2-0272",
+      "rounding_matches_nonzero": 8
+    },
+    "candidate_v2": {
+      "nonfinite": 0,
+      "negative": 0,
+      "unexpected_zero": 0,
+      "max_relative_nonzero": "2.4424544162741045828880750498183126e-13",
+      "max_relative_case": "v2-0274",
+      "max_relative_normal": "1.1840369127644076969315556085694766e-13",
+      "max_relative_normal_case": "v2-0266",
+      "rounding_matches_nonzero": 73
+    },
+    "jackel_native": {
+      "nonfinite": 0,
+      "negative": 0,
+      "unexpected_zero": 1,
+      "max_relative_nonzero": "1.0",
+      "max_relative_case": "v2-0272",
+      "max_relative_normal": "1.0",
+      "max_relative_normal_case": "v2-0272",
+      "rounding_matches_nonzero": 27
+    }
+  },
+  "v2_log": {
+    "comparable": 288,
+    "max_real_ulp": "2263175.3349697225095232843864021385",
+    "max_real_ulp_case": "v2-0163"
+  },
+  "max_quadrature_evaluations": 480,
+  "all_practical_gates_passed": true
+}

@@ -2520,5 +2520,32 @@
     "publication_status": "GitHub, Zenodo, LinkedIn and YouTube verified; SSRN not submitted; no peer review claimed",
     "limits": "Selected synthetic cases, empirical reference, historical Jaeckel source, Python v2 15.4x slower than own Python v0. No new financial model, novelty or market-accuracy claim.",
     "zenodo_doi": "10.5281/zenodo.22972343"
+  },
+  {
+    "id": "black-scholes-hybrid-v3",
+    "title": "A hybrid Black–Scholes evaluator: recovering speed with bounded synthetic accuracy evidence",
+    "authors": [
+      "Khamit Kadyrbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-09-26",
+    "kind": "working_paper_version",
+    "version": "3.0",
+    "predecessor_id": "black-scholes-positive-payoff-v2",
+    "gero": null,
+    "huggingface": null,
+    "zenodo": null,
+    "linkedin": null,
+    "youtube": null,
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-hybrid-v3",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/black-scholes-hybrid-v3.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-hybrid-v3/TECHNICAL_NOTE_V3.md",
+    "source_text_sha256": "fce734c8d07a87866360be7b19a680e613ffa083458036ea942b3bfd786f8bdd",
+    "mirror_sha256": "fce734c8d07a87866360be7b19a680e613ffa083458036ea942b3bfd786f8bdd",
+    "evidence_archive": "https://raw.githubusercontent.com/kadyrbekovhamit-cyber/gero-numerical-observatory/main/reports/black-scholes-hybrid-v3/black-scholes-hybrid-v3.0.zip",
+    "evidence_archive_sha256": "c9036214a918e21752d586c13d111c421ea9533f5d7c45a09cd021f42bdc1828",
+    "implementation_defects_in_this_report": 0,
+    "publication_status": "GitHub working paper; additional distribution pending; no peer review claimed",
+    "limits": "480 new synthetic cases pass mixed gates; detailed Python v3 4.583x faster than v2 on this machine, but not uniformly closer to the reference. Historical comparator; no novelty, market-model or production-throughput claim."
   }
 ]

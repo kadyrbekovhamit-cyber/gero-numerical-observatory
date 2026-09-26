@@ -1,13 +1,13 @@
 {
-  "checked_at": "2026-09-26T06:18:06.538022+00:00",
+  "checked_at": "2026-09-26T08:04:53.119510+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 122,
     "huggingface": 122,
     "zenodo": 123,
-    "github_catalog_report": 125,
+    "github_catalog_report": 126,
     "zenodo_records_including_collection": 123,
-    "unique_individual_publications": 125,
+    "unique_individual_publications": 126,
     "legacy_github_accounts_required_after_copy": 0
   },
   "github_status": "124 canonical reports; MLX arctan directional-derivative scale audit added. Counts track reports, not independent defects.",
@@ -23,16 +23,19 @@
     "gero": [
       "actuarialmath-direct-endowment-second-moment",
       "mlx-arctan-directional-derivative-scale",
-      "black-scholes-positive-payoff-v2"
+      "black-scholes-positive-payoff-v2",
+      "black-scholes-hybrid-v3"
     ],
     "huggingface": [
       "actuarialmath-direct-endowment-second-moment",
       "mlx-arctan-directional-derivative-scale",
-      "black-scholes-positive-payoff-v2"
+      "black-scholes-positive-payoff-v2",
+      "black-scholes-hybrid-v3"
     ],
     "zenodo": [
       "actuarialmath-direct-endowment-second-moment",
-      "mlx-arctan-directional-derivative-scale"
+      "mlx-arctan-directional-derivative-scale",
+      "black-scholes-hybrid-v3"
     ]
   },
   "deduplication_notes": [
@@ -558,6 +561,20 @@
       "zenodo_doi": "10.5281/zenodo.22972343",
       "peer_reviewed": false,
       "scope": "Selected synthetic numerical experiment; not a vendor defect or new financial model."
+    },
+    "black-scholes-hybrid-v3": {
+      "case_id": "black-scholes-hybrid-v3",
+      "public": [
+        "github"
+      ],
+      "pending": [
+        "zenodo",
+        "linkedin",
+        "youtube"
+      ],
+      "links": {
+        "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-hybrid-v3"
+      }
     }
   }
 }
