@@ -2494,5 +2494,30 @@
     "source_pin": "59d600b5e64c238427d0f8d897ab7c682ef4d3d2",
     "limits": "In Apple MLX CPU float32, arctan differentiation forms 1+x² before division. For finite x=-2^64 and seed=-2^120, x² overflows and the JVP/VJP becomes signed zero although the correctly rounded result is -0.00390625. A scale-aware research candidate reduces 352 discrepancies per tested layout to zero, with documented higher-order residuals. CPU float32 only; no real model/device/customer impact; candidate has documented higher-order residuals.",
     "measured_chain": "v/(1+x^2) -> x*x overflows -> -0.0 instead of -0.00390625 -> synthetic update 1.0 instead of 1.5 and threshold decision flips."
+  },
+  {
+    "id": "black-scholes-positive-payoff-v2",
+    "title": "Positive-payoff quadrature for Black–Scholes: a frozen binary64 prototype",
+    "authors": [
+      "Khamit Kadyrbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-09-26",
+    "kind": "working_paper",
+    "gero": null,
+    "huggingface": null,
+    "zenodo": null,
+    "linkedin": null,
+    "youtube": null,
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-positive-payoff-v2",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/black-scholes-positive-payoff-v2.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-positive-payoff-v2/TECHNICAL_NOTE_V2.md",
+    "source_text_sha256": "d6b56156002240ceccdea6464e18626073f51a0afff0dbb21ad0c921aca9aaae",
+    "mirror_sha256": "d6b56156002240ceccdea6464e18626073f51a0afff0dbb21ad0c921aca9aaae",
+    "evidence_archive": "https://raw.githubusercontent.com/kadyrbekovhamit-cyber/gero-numerical-observatory/main/reports/black-scholes-positive-payoff-v2/black-scholes-positive-payoff-v2.0.zip",
+    "evidence_archive_sha256": "b53787dc54dd318db35bca9a5c40f185187f037023819c8d7084d5670bc9d770",
+    "implementation_defects_in_this_report": 0,
+    "publication_status": "GitHub working paper; additional distribution pending; no peer review claimed",
+    "limits": "Selected synthetic cases, empirical reference, historical Jaeckel source, Python v2 15.4x slower than own Python v0. No new financial model, novelty or market-accuracy claim."
   }
 ]

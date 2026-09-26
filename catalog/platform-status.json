@@ -1,13 +1,13 @@
 {
-  "checked_at": "2026-09-24T11:28:54.289398+00:00",
+  "checked_at": "2026-09-26T05:56:04.275529+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 122,
     "huggingface": 122,
     "zenodo": 122,
-    "github_catalog_report": 124,
+    "github_catalog_report": 125,
     "zenodo_records_including_collection": 122,
-    "unique_individual_publications": 124,
+    "unique_individual_publications": 125,
     "legacy_github_accounts_required_after_copy": 0
   },
   "github_status": "124 canonical reports; MLX arctan directional-derivative scale audit added. Counts track reports, not independent defects.",
@@ -22,15 +22,18 @@
   "missing": {
     "gero": [
       "actuarialmath-direct-endowment-second-moment",
-      "mlx-arctan-directional-derivative-scale"
+      "mlx-arctan-directional-derivative-scale",
+      "black-scholes-positive-payoff-v2"
     ],
     "huggingface": [
       "actuarialmath-direct-endowment-second-moment",
-      "mlx-arctan-directional-derivative-scale"
+      "mlx-arctan-directional-derivative-scale",
+      "black-scholes-positive-payoff-v2"
     ],
     "zenodo": [
       "actuarialmath-direct-endowment-second-moment",
-      "mlx-arctan-directional-derivative-scale"
+      "mlx-arctan-directional-derivative-scale",
+      "black-scholes-positive-payoff-v2"
     ]
   },
   "deduplication_notes": [
@@ -535,6 +538,20 @@
       "vendor_channel": "opensource@apple.com",
       "vendor_message_id": "D9308A2F-D7AA-4D3F-9F4B-CD969B905FD5@icloud.com",
       "upstream_acceptance_claimed": false
+    },
+    "black-scholes-positive-payoff-v2": {
+      "case_id": "black-scholes-positive-payoff-v2",
+      "public": [
+        "github"
+      ],
+      "pending": [
+        "zenodo",
+        "linkedin",
+        "youtube"
+      ],
+      "links": {
+        "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-positive-payoff-v2"
+      }
     }
   }
 }

@@ -1,0 +1,77 @@
+{
+  "status": "post-hoc diagnostic, not an additional holdout",
+  "rows": [
+    {
+      "id": "confirmation-0158",
+      "precision_levels": [
+        260,
+        360
+      ],
+      "price_relative_change": "3.3665474969913293083167351038447413e-250",
+      "log_absolute_change": "3.3665474971929354079449397793089305e-250",
+      "integral_dps": 120,
+      "integral_log_absolute_difference": "5.8719313963714573516710094888120339e-120",
+      "reference_otm": "3.7003311140740252424577206190763483e-17",
+      "reference_moneyness": "0.00000000073077233126938598808600256579716115",
+      "candidate_moneyness_hex": "0x1.91bf0ffd8987ep-31",
+      "normalized_price_exact_inputs": "3.7003311127219754453544709214498119e-17",
+      "normalized_rounding_class": "normal",
+      "final_price_rounding_class": "normal",
+      "passed": true
+    },
+    {
+      "id": "confirmation-0197",
+      "precision_levels": [
+        260,
+        360
+      ],
+      "price_relative_change": "4.5071556795856712048993635125818757e-258",
+      "log_absolute_change": "4.9667755192136733767049771783781553e-258",
+      "integral_dps": 120,
+      "integral_log_absolute_difference": "4.403334019924776275834367605124617e-119",
+      "reference_otm": "1.2387371182270394170163415216537196e-300",
+      "reference_moneyness": "299.99999999999999994263285652689206",
+      "candidate_moneyness_hex": "0x1.2c00000000000p+8",
+      "normalized_price_exact_inputs": "8.8880577088001169653575083161352847e-366",
+      "normalized_rounding_class": "rounds_to_zero",
+      "final_price_rounding_class": "normal",
+      "passed": true
+    },
+    {
+      "id": "confirmation-0222",
+      "precision_levels": [
+        260,
+        360
+      ],
+      "price_relative_change": "1.8204511815704998386438522146112416e-254",
+      "log_absolute_change": "1.8204478223012720373567962499076203e-254",
+      "integral_dps": 120,
+      "integral_log_absolute_difference": "4.3705728753690050518519754980622375e-114",
+      "reference_otm": "3.9894226589725530390103308901410296e-209",
+      "reference_moneyness": "2.9008355198595574673559806779681699e-16",
+      "candidate_moneyness_hex": "0x0.0p+0",
+      "normalized_price_exact_inputs": "0.0000000039894226589725525317870020208961102",
+      "normalized_rounding_class": "normal",
+      "final_price_rounding_class": "normal",
+      "passed": true
+    },
+    {
+      "id": "confirmation-0314",
+      "precision_levels": [
+        260,
+        360
+      ],
+      "price_relative_change": "1.373364450188089708774437544882969e-257",
+      "log_absolute_change": "1.3571822597728062293756527296459573e-257",
+      "integral_dps": 120,
+      "integral_log_absolute_difference": "6.1954555083718844936488365396268241e-119",
+      "reference_otm": "7.3887106652572840497445191845940358e-318",
+      "reference_moneyness": "38.500000000000000035084724162525757",
+      "candidate_moneyness_hex": "0x1.3400000000000p+5",
+      "normalized_price_exact_inputs": "3.224036008577270354166906026436611e-326",
+      "normalized_rounding_class": "rounds_to_zero",
+      "final_price_rounding_class": "subnormal",
+      "passed": true
+    }
+  ]
+}
