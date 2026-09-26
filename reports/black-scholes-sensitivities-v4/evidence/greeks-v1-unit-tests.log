@@ -1,0 +1,39 @@
+test_atm_small_total_volatility_keeps_time_value (test_black_scholes.BlackScholesTests) ... ok
+test_frozen_property_sample (test_black_scholes.BlackScholesTests) ... ok
+test_invalid_inputs_fail_explicitly (test_black_scholes.BlackScholesTests) ... ok
+test_log_contract_preserves_unrepresentable_tail (test_black_scholes.BlackScholesTests) ... ok
+test_put_call_parity (test_black_scholes.BlackScholesTests) ... ok
+test_textbook_case_matches_direct_formula (test_black_scholes.BlackScholesTests) ... ok
+test_zero_volatility_is_discounted_deterministic_payoff (test_black_scholes.BlackScholesTests) ... ok
+test_atm_model_derivatives_not_restricted_leaf (test_black_scholes_greeks.GreekTests) ... ok
+test_boundary_contract (test_black_scholes_greeks.GreekTests) ... ok
+test_model_differentiation_crosscheck (test_black_scholes_greeks.GreekTests) ... ok
+test_product_range_without_early_underflow (test_black_scholes_greeks.GreekTests) ... ok
+test_scaling_and_call_put_delta_identity (test_black_scholes_greeks.GreekTests) ... ok
+test_tail_switch_and_inverse_vega (test_black_scholes_greeks.GreekTests) ... ok
+test_atm_erf_identity_across_scales (test_black_scholes_v2.V2Tests) ... ok
+test_deterministic_limits (test_black_scholes_v2.V2Tests) ... ok
+test_exponential_reconstruction_preserves_monetary_range (test_black_scholes_v2.V2Tests) ... ok
+test_invalid_input_is_explicit (test_black_scholes_v2.V2Tests) ... ok
+test_legendre_rules_integrate_polynomial_moments (test_black_scholes_v2.V2Tests) ... ok
+test_near_atm_moneyness_survives_exact_power_two_rescaling (test_black_scholes_v2.V2Tests) ... ok
+test_positive_volatility_underflow_is_not_a_deterministic_contract (test_black_scholes_v2.V2Tests) ... ok
+test_reciprocal_call_put_symmetry (test_black_scholes_v2.V2Tests) ... ok
+test_v1_failure_regressions (test_black_scholes_v2.V2Tests) ... ok
+test_volatility_monotonicity_and_bounds (test_black_scholes_v2.V2Tests) ... ok
+test_analytic_regions_and_fallback (test_black_scholes_v3.V3Tests) ... ok
+test_atm_subnormal_volatility_survives_large_cash_scale (test_black_scholes_v3.V3Tests) ... ok
+test_input_limits_are_explicit (test_black_scholes_v3.V3Tests) ... ok
+test_positive_integral_series_components (test_black_scholes_v3.V3Tests) ... ok
+test_scaling_parity_symmetry_and_monotonicity (test_black_scholes_v3.V3Tests) ... ok
+test_switching_neighborhoods (test_black_scholes_v3.V3Tests) ... ok
+test_exact_binary_input_atm_identity (test_measurement.MeasurementTests) ... ok
+test_half_subnormal_ties_round_even (test_measurement.MeasurementTests) ... ok
+test_instrumentation_does_not_change_frozen_candidate (test_measurement.MeasurementTests) ... ok
+test_positive_integral_agrees_in_central_and_far_tail (test_measurement.MeasurementTests) ... ok
+test_relative_error_keeps_small_difference (test_measurement.MeasurementTests) ... ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 1.543s
+
+OK

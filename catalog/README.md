@@ -162,3 +162,5 @@ Black–Scholes v2: [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activ
 | 126 | [A hybrid Black–Scholes evaluator: recovering speed with bounded synthetic accuracy evidence](reports/black-scholes-hybrid-v3.md) | Pending | Pending | [DOI](https://zenodo.org/records/22973900) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-hybrid-v3) |
 
 Black–Scholes v3: [Video](https://youtube.com/shorts/OSHkYbf0GlQ). LinkedIn pending browser access. Version 3 of the same Zenodo research concept; not a new vendor defect.
+
+| 127 | [Black-Scholes beyond price accuracy: model sensitivities and lost volatility information](reports/black-scholes-sensitivities-v4.md) | Pending | Pending | Pending | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-sensitivities-v4) |
