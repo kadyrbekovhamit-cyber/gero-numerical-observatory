@@ -2506,18 +2506,19 @@
     "kind": "working_paper",
     "gero": null,
     "huggingface": null,
-    "zenodo": null,
-    "linkedin": null,
-    "youtube": null,
+    "zenodo": "https://zenodo.org/records/22972343",
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7509495438547333120/",
+    "youtube": "https://youtube.com/shorts/F6Wx5byxJtM",
     "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-positive-payoff-v2",
     "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/black-scholes-positive-payoff-v2.md",
-    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/black-scholes-positive-payoff-v2/TECHNICAL_NOTE_V2.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/reports/black-scholes-positive-payoff-v2/TECHNICAL_NOTE_V2.md",
     "source_text_sha256": "d6b56156002240ceccdea6464e18626073f51a0afff0dbb21ad0c921aca9aaae",
     "mirror_sha256": "d6b56156002240ceccdea6464e18626073f51a0afff0dbb21ad0c921aca9aaae",
     "evidence_archive": "https://raw.githubusercontent.com/kadyrbekovhamit-cyber/gero-numerical-observatory/main/reports/black-scholes-positive-payoff-v2/black-scholes-positive-payoff-v2.0.zip",
     "evidence_archive_sha256": "b53787dc54dd318db35bca9a5c40f185187f037023819c8d7084d5670bc9d770",
     "implementation_defects_in_this_report": 0,
-    "publication_status": "GitHub working paper; additional distribution pending; no peer review claimed",
-    "limits": "Selected synthetic cases, empirical reference, historical Jaeckel source, Python v2 15.4x slower than own Python v0. No new financial model, novelty or market-accuracy claim."
+    "publication_status": "GitHub, Zenodo, LinkedIn and YouTube verified; SSRN not submitted; no peer review claimed",
+    "limits": "Selected synthetic cases, empirical reference, historical Jaeckel source, Python v2 15.4x slower than own Python v0. No new financial model, novelty or market-accuracy claim.",
+    "zenodo_doi": "10.5281/zenodo.22972343"
   }
 ]
