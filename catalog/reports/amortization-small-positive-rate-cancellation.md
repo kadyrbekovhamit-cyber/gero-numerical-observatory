@@ -87,11 +87,16 @@ Independent GERO research by Xamit Kadirbekov. AI-assisted experiment and archiv
 ## Verified publication and reproduction links
 
 - [GitHub report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/amortization-small-positive-rate-cancellation.md)
+- [GERO article](https://www.gero.uz/research/articles/amortization-small-positive-rate-cancellation.html)
+- [Hugging Face evidence page](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/amortization-small-positive-rate-cancellation.md)
+- [Zenodo record and DOI](https://zenodo.org/records/22989976)
+- [LinkedIn publication](https://www.linkedin.com/feed/update/urn:li:share:7509851799693197312/)
+- [YouTube Short](https://www.youtube.com/shorts/3pYoawlyKOk)
 - [Upstream issue #314](https://github.com/roniemartinez/amortization/issues/314)
 - [Proposed upstream correction #315](https://github.com/roniemartinez/amortization/pull/315)
 - [Complete reproducibility ZIP](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/amortization-small-positive-rate-cancellation/gero-amortization-small-positive-rate-evidence-2026-09-27.zip)
 
 Archive SHA-256: `3c6de391f39322022b61f84b256046349a10ab70e2505f88d5c63f08cbe78f27`.
 
-The maintainer requested a GitHub issue and optional PR before publication. Both are public; acceptance or merge is not claimed. Other platform links are pending verification.
+The maintainer requested a GitHub issue and optional PR before publication. Both are public; acceptance or merge is not claimed. All six publication destinations above were independently verified.
 <!-- GERO_PUBLICATION_LINKS_END -->

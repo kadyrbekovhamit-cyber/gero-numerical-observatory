@@ -1,12 +1,12 @@
 {
-  "checked_at": "2026-09-27T05:04:22.234097+00:00",
+  "checked_at": "2026-09-27T07:26:00.754517+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 122,
-    "huggingface": 122,
-    "zenodo": 126,
+    "gero": 123,
+    "huggingface": 123,
+    "zenodo": 127,
     "github_catalog_report": 129,
-    "zenodo_records_including_collection": 126,
+    "zenodo_records_including_collection": 127,
     "unique_individual_publications": 129,
     "legacy_github_accounts_required_after_copy": 0
   },
@@ -26,8 +26,7 @@
       "black-scholes-positive-payoff-v2",
       "black-scholes-hybrid-v3",
       "black-scholes-sensitivities-v4",
-      "black-scholes-interval-iv-v5",
-      "amortization-small-positive-rate-cancellation"
+      "black-scholes-interval-iv-v5"
     ],
     "huggingface": [
       "actuarialmath-direct-endowment-second-moment",
@@ -35,13 +34,11 @@
       "black-scholes-positive-payoff-v2",
       "black-scholes-hybrid-v3",
       "black-scholes-sensitivities-v4",
-      "black-scholes-interval-iv-v5",
-      "amortization-small-positive-rate-cancellation"
+      "black-scholes-interval-iv-v5"
     ],
     "zenodo": [
       "actuarialmath-direct-endowment-second-moment",
-      "mlx-arctan-directional-derivative-scale",
-      "amortization-small-positive-rate-cancellation"
+      "mlx-arctan-directional-derivative-scale"
     ]
   },
   "deduplication_notes": [
@@ -274,7 +271,7 @@
   ],
   "coverage_scope": "Canonical report IDs; separate Collatz map outside this subset. Report counts are not independent bugs or raw Zenodo version-object counts.",
   "latest_completed_distribution": {
-    "case_id": "strata-normal-implied-volatility-initial-guess",
+    "case_id": "amortization-small-positive-rate-cancellation",
     "public": [
       "github",
       "gero",
@@ -285,18 +282,20 @@
     ],
     "pending": [],
     "links": {
-      "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/strata-normal-implied-volatility-initial-guess.md",
-      "gero": "https://www.gero.uz/research/articles/strata-normal-implied-volatility-initial-guess.html",
-      "zenodo": "https://zenodo.org/records/22827735",
-      "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7506643504564154368/",
-      "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/strata-normal-implied-volatility-initial-guess.md",
-      "youtube": "https://youtube.com/shorts/sXnQ7zmC8uc"
+      "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/amortization-small-positive-rate-cancellation.md",
+      "gero": "https://www.gero.uz/research/articles/amortization-small-positive-rate-cancellation.html",
+      "zenodo": "https://zenodo.org/records/22989976",
+      "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7509851799693197312/",
+      "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/amortization-small-positive-rate-cancellation.md",
+      "youtube": "https://www.youtube.com/shorts/3pYoawlyKOk"
     },
-    "zenodo_doi": "10.5281/zenodo.22827735",
-    "archive_sha256": "5590298a94cda06cb5f1de33d17a85753f4938b7e533d4359dfae716b0084153",
-    "video_sha256": "788e817ebc6a7dae3c3f648b32904a068475d57d74e6bb0cc2d8761b93befa56",
-    "video_published_at": "2026-09-19T05:35:21.222516+00:00",
-    "new_case": false
+    "archive_sha256": "3c6de391f39322022b61f84b256046349a10ab70e2505f88d5c63f08cbe78f27",
+    "upstream_report_sent": true,
+    "maintainer_issue": "https://github.com/roniemartinez/amortization/issues/314",
+    "maintainer_pull_request": "https://github.com/roniemartinez/amortization/pull/315",
+    "upstream_acceptance_claimed": false,
+    "zenodo_doi": "10.5281/zenodo.22989976",
+    "huggingface_commit": "500fc21036bb9f9f15ed583a3c40e704d1a48513"
   },
   "latest_distribution_progress": {
     "case_id": "strata-black-adjoint2-zero-volatility-hessian",
@@ -635,23 +634,29 @@
     "amortization-small-positive-rate-cancellation": {
       "case_id": "amortization-small-positive-rate-cancellation",
       "public": [
-        "github"
-      ],
-      "pending": [
+        "github",
         "gero",
         "zenodo",
-        "huggingface",
         "linkedin",
+        "huggingface",
         "youtube"
       ],
+      "pending": [],
       "links": {
-        "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/amortization-small-positive-rate-cancellation.md"
+        "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/amortization-small-positive-rate-cancellation.md",
+        "gero": "https://www.gero.uz/research/articles/amortization-small-positive-rate-cancellation.html",
+        "zenodo": "https://zenodo.org/records/22989976",
+        "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7509851799693197312/",
+        "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/amortization-small-positive-rate-cancellation.md",
+        "youtube": "https://www.youtube.com/shorts/3pYoawlyKOk"
       },
       "archive_sha256": "3c6de391f39322022b61f84b256046349a10ab70e2505f88d5c63f08cbe78f27",
       "upstream_report_sent": true,
       "maintainer_issue": "https://github.com/roniemartinez/amortization/issues/314",
       "maintainer_pull_request": "https://github.com/roniemartinez/amortization/pull/315",
-      "upstream_acceptance_claimed": false
+      "upstream_acceptance_claimed": false,
+      "zenodo_doi": "10.5281/zenodo.22989976",
+      "huggingface_commit": "500fc21036bb9f9f15ed583a3c40e704d1a48513"
     }
   }
 }
