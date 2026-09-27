@@ -1,0 +1,75 @@
+{
+  "version": "3.0.0",
+  "payment_frequency": "MONTHLY",
+  "amounts": [
+    {
+      "principal": 100000,
+      "annual_rate": 0.0,
+      "periods": 360,
+      "actual": 277.78,
+      "reference": "277.78"
+    },
+    {
+      "principal": 100000,
+      "annual_rate": 1e-15,
+      "periods": 360,
+      "actual": {
+        "error": "ZeroDivisionError",
+        "message": "float division by zero"
+      },
+      "reference": "277.78"
+    },
+    {
+      "principal": 100000,
+      "annual_rate": 1e-12,
+      "periods": 360,
+      "actual": 278.0,
+      "reference": "277.78"
+    },
+    {
+      "principal": 150000,
+      "annual_rate": 0.1,
+      "periods": 36,
+      "actual": 4840.08,
+      "reference": "4840.08"
+    }
+  ],
+  "schedule": {
+    "input": [
+      100,
+      0.0,
+      360
+    ],
+    "tail": [
+      {
+        "number": 357,
+        "amount": 0.28,
+        "interest": 0.0,
+        "principal": 0.28,
+        "balance": 0.039999999999673186
+      },
+      {
+        "number": 358,
+        "amount": 0.28,
+        "interest": 0.0,
+        "principal": 0.28,
+        "balance": -0.24000000000032684
+      },
+      {
+        "number": 359,
+        "amount": 0.28,
+        "interest": -0.0,
+        "principal": 0.28,
+        "balance": -0.5200000000003269
+      },
+      {
+        "number": 360,
+        "amount": -0.5200000000003269,
+        "interest": -0.0,
+        "principal": -0.5200000000003269,
+        "balance": 0.0
+      }
+    ],
+    "negative_rows": 3
+  }
+}

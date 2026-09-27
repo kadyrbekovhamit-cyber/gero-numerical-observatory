@@ -1,0 +1,17 @@
+{
+  "case_id": "amortization-small-positive-rate-cancellation",
+  "title": "amortization 3.0.0: small positive rates can erase interest or alter the rounded payment",
+  "author": "Xamit Kadirbekov",
+  "publication_date": "2026-09-27",
+  "upstream": "roniemartinez/amortization",
+  "version": "3.0.0",
+  "source_commit": "df32787c23d1e9d721eb302559dcea06b988b9ab",
+  "runtime": "CPython 3.12.13 on macOS",
+  "issue": "https://github.com/roniemartinez/amortization/issues/314",
+  "pull_request": "https://github.com/roniemartinez/amortization/pull/315",
+  "implementation_defects_in_report": 1,
+  "production_impact_measured": false,
+  "upstream_acceptance_claimed": false,
+  "summary": "A small positive periodic rate can be rounded away inside the annuity formula, causing ZeroDivisionError or a cent-level payment error; an equivalent log1p/expm1 form passes the project suite and an independent Decimal grid."
+}
+

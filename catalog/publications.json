@@ -2604,5 +2604,35 @@
     "publication_status": "GitHub, Zenodo and v5 LinkedIn post verified; v5 video not produced (two-upload daily cadence already reached); SSRN not submitted; no peer review claimed",
     "limits": "Interval IV with exact quotes and Arb sign witnesses. Final fresh64/64 gates pass:56resolved+8explicit budget limits. Earlier158/160 and82/96 are retained test-harness failures; unchanged solver. Certification conditional on Arb and implementation. No new model, novelty, market or external-review claim.",
     "zenodo_doi": "10.5281/zenodo.22976977"
+  },
+  {
+    "id": "amortization-small-positive-rate-cancellation",
+    "title": "amortization 3.0.0: small positive rates can erase interest or alter the rounded payment",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-27",
+    "kind": "published_report",
+    "gero": null,
+    "huggingface": null,
+    "zenodo": null,
+    "linkedin": null,
+    "youtube": null,
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/amortization-small-positive-rate-cancellation",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/amortization-small-positive-rate-cancellation.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/amortization-small-positive-rate-cancellation.md",
+    "source_text_sha256": "eaa643f08bb2d785a7dca9897b6fdc67aacf63e6d118267e731799ca96864e46",
+    "mirror_sha256": "eaa643f08bb2d785a7dca9897b6fdc67aacf63e6d118267e731799ca96864e46",
+    "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/amortization-small-positive-rate-cancellation/gero-amortization-small-positive-rate-evidence-2026-09-27.zip",
+    "evidence_archive_sha256": "3c6de391f39322022b61f84b256046349a10ab70e2505f88d5c63f08cbe78f27",
+    "maintainer_issue": "https://github.com/roniemartinez/amortization/issues/314",
+    "maintainer_pull_request": "https://github.com/roniemartinez/amortization/pull/315",
+    "upstream_report_sent": true,
+    "upstream_acceptance_claimed": false,
+    "implementation_defects_in_this_report": 1,
+    "publication_status": "GitHub public after maintainer requested an issue and optional PR; other platforms pending",
+    "source_pin": "df32787c23d1e9d721eb302559dcea06b988b9ab",
+    "limits": "Synthetic small-rate cases in the public Python implementation. Production frequency, customer loss, contractual impact and upstream acceptance were not measured.",
+    "measured_chain": "annuity formula loses small periodic increment -> 1e-15 prevents schedule generation; 1e-12 changes 359 regular rows by 0.22 and shifts 78.98 into the final row"
   }
 ]

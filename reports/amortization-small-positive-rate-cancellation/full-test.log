@@ -1,0 +1,47 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.12.13, pytest-9.1.1, pluggy-1.6.0 -- /private/tmp/amortization-pr-work/.venv/bin/python3.12
+cachedir: .pytest_cache
+rootdir: /private/tmp/amortization-pr-work
+configfile: pyproject.toml
+plugins: cov-7.1.0, platformdirs-4.12.0
+collecting ... collected 22 items
+
+amortization/amount.py::amortization.amount.calculate_amortization_amount PASSED [  4%]
+amortization/period.py::amortization.period.calculate_amortization_period PASSED [  9%]
+tests/test_amortization.py::test_calculate_amortization_amount[150000-0.1-36-PaymentFrequency.MONTHLY-4840.08] PASSED [ 13%]
+tests/test_amortization.py::test_calculate_amortization_amount[150000-0.1-36-PaymentFrequency.SEMIMONTHLY-4495.63] PASSED [ 18%]
+tests/test_amortization.py::test_calculate_amortization_amount[150000-0.0-36-PaymentFrequency.MONTHLY-4166.67] PASSED [ 22%]
+tests/test_amortization.py::test_calculate_amortization_amount[100000-1e-15-360-PaymentFrequency.MONTHLY-277.78] PASSED [ 27%]
+tests/test_amortization.py::test_calculate_amortization_amount[100000-1e-12-360-PaymentFrequency.MONTHLY-277.78] PASSED [ 31%]
+tests/test_amortization.py::test_calculate_amortization_amount[10000-0.1-1-PaymentFrequency.MONTHLY-10083.33] PASSED [ 36%]
+tests/test_amortization.py::test_calculate_amortization_amount_validation[0-0.1-36-principal must be positive] PASSED [ 40%]
+tests/test_amortization.py::test_calculate_amortization_amount_validation[-1000-0.1-36-principal must be positive] PASSED [ 45%]
+tests/test_amortization.py::test_calculate_amortization_amount_validation[150000--0.1-36-interest_rate must be non-negative] PASSED [ 50%]
+tests/test_amortization.py::test_calculate_amortization_amount_validation[150000-0.1-0-period must be positive] PASSED [ 54%]
+tests/test_amortization.py::test_calculate_amortization_period[150000-0.1-4840.08-PaymentFrequency.MONTHLY-36] PASSED [ 59%]
+tests/test_amortization.py::test_calculate_amortization_period[150000-0.1-4500-PaymentFrequency.WEEKLY-34] PASSED [ 63%]
+tests/test_amortization.py::test_calculate_amortization_period[150000-0.0-5000-PaymentFrequency.MONTHLY-30] PASSED [ 68%]
+tests/test_amortization.py::test_calculate_amortization_period_validation[0-0.1-5000-principal must be positive] PASSED [ 72%]
+tests/test_amortization.py::test_calculate_amortization_period_validation[150000--0.1-5000-interest_rate must be non-negative] PASSED [ 77%]
+tests/test_amortization.py::test_calculate_amortization_period_validation[150000-0.1-0-amount must be positive] PASSED [ 81%]
+tests/test_amortization.py::test_calculate_amortization_period_validation[150000-0.1-1000-amount must exceed the first period's interest] PASSED [ 86%]
+tests/test_amortization.py::test_amortization_schedule PASSED            [ 90%]
+tests/test_amortization.py::test_schedule_returns_named_tuples PASSED    [ 95%]
+tests/test_amortization.py::test_schedule_final_balance_is_zero PASSED   [100%]
+
+================================ tests coverage ================================
+______________ coverage: platform darwin, python 3.12.13-final-0 _______________
+
+Name                       Stmts   Miss  Cover   Missing
+--------------------------------------------------------
+amortization/__init__.py       5      0   100%
+amortization/amortize.py       1      0   100%
+amortization/amount.py        14      0   100%
+amortization/enums.py         10      0   100%
+amortization/period.py        16      0   100%
+amortization/schedule.py      21      0   100%
+--------------------------------------------------------
+TOTAL                         67      0   100%
+Coverage HTML written to dir htmlcov
+Coverage XML written to file coverage.xml
+============================== 22 passed in 0.08s ==============================

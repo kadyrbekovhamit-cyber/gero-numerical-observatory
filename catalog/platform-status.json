@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-26T12:17:03.267418+00:00",
+  "checked_at": "2026-09-27T05:04:22.234097+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 122,
     "huggingface": 122,
     "zenodo": 126,
-    "github_catalog_report": 128,
+    "github_catalog_report": 129,
     "zenodo_records_including_collection": 126,
-    "unique_individual_publications": 128,
+    "unique_individual_publications": 129,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "124 canonical reports; MLX arctan directional-derivative scale audit added. Counts track reports, not independent defects.",
+  "github_status": "129 canonical reports; amortization small-positive-rate cancellation audit added. Counts track reports, not independent defects.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -26,7 +26,8 @@
       "black-scholes-positive-payoff-v2",
       "black-scholes-hybrid-v3",
       "black-scholes-sensitivities-v4",
-      "black-scholes-interval-iv-v5"
+      "black-scholes-interval-iv-v5",
+      "amortization-small-positive-rate-cancellation"
     ],
     "huggingface": [
       "actuarialmath-direct-endowment-second-moment",
@@ -34,11 +35,13 @@
       "black-scholes-positive-payoff-v2",
       "black-scholes-hybrid-v3",
       "black-scholes-sensitivities-v4",
-      "black-scholes-interval-iv-v5"
+      "black-scholes-interval-iv-v5",
+      "amortization-small-positive-rate-cancellation"
     ],
     "zenodo": [
       "actuarialmath-direct-endowment-second-moment",
-      "mlx-arctan-directional-derivative-scale"
+      "mlx-arctan-directional-derivative-scale",
+      "amortization-small-positive-rate-cancellation"
     ]
   },
   "deduplication_notes": [
@@ -628,6 +631,27 @@
       "peer_reviewed": false,
       "scope": "Standard-BSM interval-IV research utility; no new vendor defect, model or market claim.",
       "video_status": "outline only; two technical uploads already published today"
+    },
+    "amortization-small-positive-rate-cancellation": {
+      "case_id": "amortization-small-positive-rate-cancellation",
+      "public": [
+        "github"
+      ],
+      "pending": [
+        "gero",
+        "zenodo",
+        "huggingface",
+        "linkedin",
+        "youtube"
+      ],
+      "links": {
+        "github": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/amortization-small-positive-rate-cancellation.md"
+      },
+      "archive_sha256": "3c6de391f39322022b61f84b256046349a10ab70e2505f88d5c63f08cbe78f27",
+      "upstream_report_sent": true,
+      "maintainer_issue": "https://github.com/roniemartinez/amortization/issues/314",
+      "maintainer_pull_request": "https://github.com/roniemartinez/amortization/pull/315",
+      "upstream_acceptance_claimed": false
     }
   }
 }

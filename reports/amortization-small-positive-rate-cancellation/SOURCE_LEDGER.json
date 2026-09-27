@@ -1,0 +1,21 @@
+{
+  "sources": [
+    {
+      "role": "executed upstream source",
+      "url": "https://github.com/roniemartinez/amortization/tree/df32787c23d1e9d721eb302559dcea06b988b9ab",
+      "commit": "df32787c23d1e9d721eb302559dcea06b988b9ab"
+    },
+    {
+      "role": "public maintainer report",
+      "url": "https://github.com/roniemartinez/amortization/issues/314"
+    },
+    {
+      "role": "proposed correction",
+      "url": "https://github.com/roniemartinez/amortization/pull/315",
+      "commit": "8e6045b5c00de0eddd84bfb8bcf563111627f813"
+    }
+  ],
+  "oracle": "Equivalent annuity formula evaluated with Python Decimal at precision 80 and rounded to cents",
+  "claims_boundary": "Public source and synthetic inputs only; no production systems or customer records examined."
+}
+
