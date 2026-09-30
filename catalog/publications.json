@@ -2664,5 +2664,34 @@
     "source_pin": "7d18f11ad304898f177b7922b3c53f70e4c2b4f4",
     "limits": "Finite supported Uniform-law inputs and unit continuous annuity benefits; no full upstream suite, insurer deployment, policy loss, regulatory finding or accepted fix claimed.",
     "measured_chain": "Uniform shortcut expressions -> public class calls -> 275 of 468 oracle disagreements in current and release -> 0 of 468 with local candidate -> 275 of 468 after exact restoration."
+  },
+  {
+    "id": "actuarialmath-whole-life-annuity-zero-interest-benefit",
+    "title": "actuarialmath whole_life_annuity ignores benefit b at zero interest",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-30",
+    "kind": "published_report",
+    "gero": null,
+    "huggingface": null,
+    "zenodo": null,
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/actuarialmath-whole-life-annuity-zero-interest-benefit",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-whole-life-annuity-zero-interest-benefit.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-whole-life-annuity-zero-interest-benefit.md",
+    "source_text_sha256": "4ac5c859f66327c34ea0725193ab60bffb549502146ebf0e6549178502d1c72c",
+    "mirror_sha256": "4ac5c859f66327c34ea0725193ab60bffb549502146ebf0e6549178502d1c72c",
+    "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/actuarialmath-whole-life-annuity-zero-interest-benefit/gero-actuarialmath-whole-life-annuity-zero-interest-benefit-evidence-2026-09-30.zip",
+    "evidence_archive_sha256": "78c8f63ac33d1806b6bc23d4e97fdc3476de0f210c20009e8abcd4ccfc22cf8e",
+    "linkedin": null,
+    "youtube": null,
+    "maintainer_issue": "https://github.com/terence-lim/actuarialmath/issues/10",
+    "upstream_report_sent": true,
+    "upstream_acceptance_claimed": false,
+    "implementation_defects_in_this_report": 1,
+    "publication_status": "developer_issue_and_github_public_verified; other destinations pending",
+    "source_pin": "7d18f11ad304898f177b7922b3c53f70e4c2b4f4",
+    "limits": "One explicit finite-support Beta(2) survival law, nonnegative benefits, zero interest and positive-interest controls; no full upstream suite, insurer deployment, policy loss, regulatory finding or accepted fix claimed.",
+    "measured_chain": "Annuity.whole_life_annuity zero-interest branch -> 48 of 90 exact-oracle disagreements in current and release -> 0 of 90 with the local candidate -> 48 of 90 after exact restoration."
   }
 ]

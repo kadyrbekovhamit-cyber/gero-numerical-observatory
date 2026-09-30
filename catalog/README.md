@@ -171,3 +171,5 @@ Black-Scholes v4: [DOI](https://zenodo.org/records/22976212), [combined v3/v4 Li
 Black-Scholes v5: [DOI](https://zenodo.org/records/22976977), [LinkedIn post](https://www.linkedin.com/posts/khamit-kadirbekov-9473a129_quantitativefinance-blackscholes-impliedvolatility-activity-7509586229076672512-gFLl). No v5 video yet; two technical videos already published today. Research versions are not additional vendor defects.
 
 | 130 | [actuarialmath Uniform shortcuts use the wrong conditioning age and reverse limited-life weights](reports/actuarialmath-uniform-shortcuts-conditioning.md) | Pending | Pending | Pending | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/actuarialmath-uniform-shortcuts-conditioning) |
+
+| 131 | [actuarialmath whole_life_annuity ignores benefit b at zero interest](reports/actuarialmath-whole-life-annuity-zero-interest-benefit.md) | Pending | Pending | Pending | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/actuarialmath-whole-life-annuity-zero-interest-benefit) |

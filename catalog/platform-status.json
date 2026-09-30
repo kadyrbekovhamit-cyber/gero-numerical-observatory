@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-30T01:08:54.297386+00:00",
+  "checked_at": "2026-09-30T03:55:48.673677+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 123,
     "huggingface": 123,
     "zenodo": 127,
-    "github_catalog_report": 130,
+    "github_catalog_report": 131,
     "zenodo_records_including_collection": 127,
-    "unique_individual_publications": 130,
+    "unique_individual_publications": 131,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "130 canonical reports; actuarialmath-uniform-shortcuts-conditioning added after developer issue #9. Counts track reports, not independent test failures.",
+  "github_status": "131 canonical reports; actuarialmath-whole-life-annuity-zero-interest-benefit added after developer issue #10. Counts track reports, not independent test failures.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -27,7 +27,8 @@
       "black-scholes-hybrid-v3",
       "black-scholes-sensitivities-v4",
       "black-scholes-interval-iv-v5",
-      "actuarialmath-uniform-shortcuts-conditioning"
+      "actuarialmath-uniform-shortcuts-conditioning",
+      "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "huggingface": [
       "actuarialmath-direct-endowment-second-moment",
@@ -36,12 +37,14 @@
       "black-scholes-hybrid-v3",
       "black-scholes-sensitivities-v4",
       "black-scholes-interval-iv-v5",
-      "actuarialmath-uniform-shortcuts-conditioning"
+      "actuarialmath-uniform-shortcuts-conditioning",
+      "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "zenodo": [
       "actuarialmath-direct-endowment-second-moment",
       "mlx-arctan-directional-derivative-scale",
-      "actuarialmath-uniform-shortcuts-conditioning"
+      "actuarialmath-uniform-shortcuts-conditioning",
+      "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ]
   },
   "deduplication_notes": [
@@ -68,7 +71,8 @@
     "20 September 2026: one FinancePy floating-lookback intermediate-overflow defect shared by equity/FX APIs. 52/0/52/52 failures per600-call grid,548 finite rows unchanged within each current/candidate environment. Supported NumPy/Numba runtimes and bounded prior-art review retained; vendor issue272 precedes publication.",
     "20 September 2026: one actuarialmath continuous-annuity selection-duration defect.648/648/0/648failures across2160calls current/release/candidate/restored;1512passing controls unchanged. Independent Decimal reference and synthetic memo/read-back ceiling checks retained; vendorissue7precedes publication.",
     "21 September 2026: one MLX log10 derivative intermediate-overflow report; 66 of 294 distinct primitive inputs fail in each layout/direction; candidate removes those 66 but introduces 4 other boundary errors. Three independent extreme-scale classifier steps make 65 parameters and 108 predictions nonfinite. No production-harm claim. Independent publication authorized before personally authored vendor notice.",
-    "30 September 2026: actuarialmath Uniform shortcut conditioning report added after developer issue 9. One implementation-defect family; 275 failures are comparisons, not independent bugs. No production insurer impact or upstream acceptance claimed."
+    "30 September 2026: actuarialmath Uniform shortcut conditioning report added after developer issue 9. One implementation-defect family; 275 failures are comparisons, not independent bugs. No production insurer impact or upstream acceptance claimed.",
+    "30 September 2026: actuarialmath zero-interest annuity benefit report added after developer issue 10. One implementation defect; 48 failures are comparisons, not independent bugs. No production insurer impact or upstream acceptance claimed."
   ],
   "parity_complete": false,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
@@ -81,6 +85,35 @@
     "fresh_numerical_runs": false
   },
   "latest_reports": [
+    {
+      "id": "actuarialmath-whole-life-annuity-zero-interest-benefit",
+      "title": "actuarialmath whole_life_annuity ignores benefit b at zero interest",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "publication_date": "2026-09-30",
+      "kind": "published_report",
+      "gero": null,
+      "huggingface": null,
+      "zenodo": null,
+      "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/actuarialmath-whole-life-annuity-zero-interest-benefit",
+      "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-whole-life-annuity-zero-interest-benefit.md",
+      "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-whole-life-annuity-zero-interest-benefit.md",
+      "source_text_sha256": "4ac5c859f66327c34ea0725193ab60bffb549502146ebf0e6549178502d1c72c",
+      "mirror_sha256": "4ac5c859f66327c34ea0725193ab60bffb549502146ebf0e6549178502d1c72c",
+      "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/actuarialmath-whole-life-annuity-zero-interest-benefit/gero-actuarialmath-whole-life-annuity-zero-interest-benefit-evidence-2026-09-30.zip",
+      "evidence_archive_sha256": "78c8f63ac33d1806b6bc23d4e97fdc3476de0f210c20009e8abcd4ccfc22cf8e",
+      "linkedin": null,
+      "youtube": null,
+      "maintainer_issue": "https://github.com/terence-lim/actuarialmath/issues/10",
+      "upstream_report_sent": true,
+      "upstream_acceptance_claimed": false,
+      "implementation_defects_in_this_report": 1,
+      "publication_status": "developer_issue_and_github_public_verified; other destinations pending",
+      "source_pin": "7d18f11ad304898f177b7922b3c53f70e4c2b4f4",
+      "limits": "One explicit finite-support Beta(2) survival law, nonnegative benefits, zero interest and positive-interest controls; no full upstream suite, insurer deployment, policy loss, regulatory finding or accepted fix claimed.",
+      "measured_chain": "Annuity.whole_life_annuity zero-interest branch -> 48 of 90 exact-oracle disagreements in current and release -> 0 of 90 with the local candidate -> 48 of 90 after exact restoration."
+    },
     {
       "id": "actuarialmath-uniform-shortcuts-conditioning",
       "title": "actuarialmath Uniform shortcuts use the wrong conditioning age and reverse limited-life weights",

@@ -1,0 +1,11 @@
+--- a/actuarialmath/annuity.py
++++ b/actuarialmath/annuity.py
+@@ -131,7 +131,7 @@
+             A = self.whole_life_insurance(x, s=s, discrete=discrete)
+             return b * (1 - A) / interest if interest > 0 else b * (1 - A)
+         else:  # when interest=1, annuity is expected life time (+1 if discrete)
+-            return discrete + self.e_x(x=x, s=s, curtate=discrete)
++            return b * (discrete + self.e_x(x=x, s=s, curtate=discrete))
+ 
+             
+     def temporary_annuity(self, x: int, s: int = 0, t: int = Insurance.WHOLE, 
