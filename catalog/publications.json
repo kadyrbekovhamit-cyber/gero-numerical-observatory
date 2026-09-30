@@ -2635,5 +2635,34 @@
     "limits": "Synthetic small-rate cases in the public Python implementation. Production frequency, customer loss, contractual impact and upstream acceptance were not measured.",
     "measured_chain": "annuity formula loses small periodic increment -> 1e-15 prevents schedule generation; 1e-12 changes 359 regular rows by 0.22 and shifts 78.98 into the final row",
     "zenodo_doi": "10.5281/zenodo.22989976"
+  },
+  {
+    "id": "actuarialmath-uniform-shortcuts-conditioning",
+    "title": "actuarialmath Uniform shortcuts use the wrong conditioning age and reverse limited-life weights",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-09-30",
+    "kind": "published_report",
+    "gero": null,
+    "huggingface": null,
+    "zenodo": null,
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/actuarialmath-uniform-shortcuts-conditioning",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-uniform-shortcuts-conditioning.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-uniform-shortcuts-conditioning.md",
+    "source_text_sha256": "8f07a01a0f56d87868ed1afa042771f13ebe71b31c8fa303a6af339991b6dea0",
+    "mirror_sha256": "8f07a01a0f56d87868ed1afa042771f13ebe71b31c8fa303a6af339991b6dea0",
+    "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/actuarialmath-uniform-shortcuts-conditioning/gero-actuarialmath-uniform-shortcuts-conditioning-evidence-2026-09-30.zip",
+    "evidence_archive_sha256": "ec9f55b79b3a9f35e16ed984ec923536b0b128ba2adbde0eedd3b37c36b4b36f",
+    "linkedin": null,
+    "youtube": null,
+    "maintainer_issue": "https://github.com/terence-lim/actuarialmath/issues/9",
+    "upstream_report_sent": true,
+    "upstream_acceptance_claimed": false,
+    "implementation_defects_in_this_report": 1,
+    "publication_status": "developer_issue_and_github_public_verified; other destinations pending",
+    "source_pin": "7d18f11ad304898f177b7922b3c53f70e4c2b4f4",
+    "limits": "Finite supported Uniform-law inputs and unit continuous annuity benefits; no full upstream suite, insurer deployment, policy loss, regulatory finding or accepted fix claimed.",
+    "measured_chain": "Uniform shortcut expressions -> public class calls -> 275 of 468 oracle disagreements in current and release -> 0 of 468 with local candidate -> 275 of 468 after exact restoration."
   }
 ]

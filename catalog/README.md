@@ -1,6 +1,6 @@
 # GERO — publication catalogue
 
-Updated 26 September 2026. **129 distinct catalogue publications.** Report counts are not independent-defect counts. All 128 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
+Updated 30 September 2026. **130 distinct catalogue publications.** Report counts are not independent-defect counts. All 129 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
 
 [Machine-readable catalogue](publications.json) · [Coverage](platform-status.json) · [Checksums](SHA256SUMS).
 
@@ -9,7 +9,7 @@ Updated 26 September 2026. **129 distinct catalogue publications.** Report count
 |gero|122|
 |huggingface|122|
 |zenodo|126|
-|github_catalog_report|129|
+|github_catalog_report|130|
 
 The FinancePy FXForward and MLX sigmoid reports each have GERO, GitHub, LinkedIn, Zenodo, Hugging Face and YouTube publications. Overall coverage is shown above; no equal count across all external account collections is claimed.
 
@@ -169,3 +169,5 @@ Black-Scholes v4: [DOI](https://zenodo.org/records/22976212), [combined v3/v4 Li
 | 129 | [amortization 3.0.0: small positive rates can erase interest or alter the rounded payment](reports/amortization-small-positive-rate-cancellation.md) | [Page](https://www.gero.uz/research/articles/amortization-small-positive-rate-cancellation.html) | [Record](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/amortization-small-positive-rate-cancellation.md) | [DOI](https://zenodo.org/records/22989976) | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/amortization-small-positive-rate-cancellation) |
 
 Black-Scholes v5: [DOI](https://zenodo.org/records/22976977), [LinkedIn post](https://www.linkedin.com/posts/khamit-kadirbekov-9473a129_quantitativefinance-blackscholes-impliedvolatility-activity-7509586229076672512-gFLl). No v5 video yet; two technical videos already published today. Research versions are not additional vendor defects.
+
+| 130 | [actuarialmath Uniform shortcuts use the wrong conditioning age and reverse limited-life weights](reports/actuarialmath-uniform-shortcuts-conditioning.md) | Pending | Pending | Pending | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/actuarialmath-uniform-shortcuts-conditioning) |

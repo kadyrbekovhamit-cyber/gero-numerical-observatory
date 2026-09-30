@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-27T07:26:00.754517+00:00",
+  "checked_at": "2026-09-30T01:08:54.297386+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 123,
     "huggingface": 123,
     "zenodo": 127,
-    "github_catalog_report": 129,
+    "github_catalog_report": 130,
     "zenodo_records_including_collection": 127,
-    "unique_individual_publications": 129,
+    "unique_individual_publications": 130,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "129 canonical reports; amortization small-positive-rate cancellation audit added. Counts track reports, not independent defects.",
+  "github_status": "130 canonical reports; actuarialmath-uniform-shortcuts-conditioning added after developer issue #9. Counts track reports, not independent test failures.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -26,7 +26,8 @@
       "black-scholes-positive-payoff-v2",
       "black-scholes-hybrid-v3",
       "black-scholes-sensitivities-v4",
-      "black-scholes-interval-iv-v5"
+      "black-scholes-interval-iv-v5",
+      "actuarialmath-uniform-shortcuts-conditioning"
     ],
     "huggingface": [
       "actuarialmath-direct-endowment-second-moment",
@@ -34,11 +35,13 @@
       "black-scholes-positive-payoff-v2",
       "black-scholes-hybrid-v3",
       "black-scholes-sensitivities-v4",
-      "black-scholes-interval-iv-v5"
+      "black-scholes-interval-iv-v5",
+      "actuarialmath-uniform-shortcuts-conditioning"
     ],
     "zenodo": [
       "actuarialmath-direct-endowment-second-moment",
-      "mlx-arctan-directional-derivative-scale"
+      "mlx-arctan-directional-derivative-scale",
+      "actuarialmath-uniform-shortcuts-conditioning"
     ]
   },
   "deduplication_notes": [
@@ -64,7 +67,8 @@
     "20 September 2026: CentroidKNN zero-sample positive score; one source-pinned implementation report, 1548/0/1548 component mismatches and 2/0/2 public-model decision mismatches. Bounded prior-art review retains ambiguity of historical issue1521. Developer report4341 verified before distribution.",
     "20 September 2026: one FinancePy floating-lookback intermediate-overflow defect shared by equity/FX APIs. 52/0/52/52 failures per600-call grid,548 finite rows unchanged within each current/candidate environment. Supported NumPy/Numba runtimes and bounded prior-art review retained; vendor issue272 precedes publication.",
     "20 September 2026: one actuarialmath continuous-annuity selection-duration defect.648/648/0/648failures across2160calls current/release/candidate/restored;1512passing controls unchanged. Independent Decimal reference and synthetic memo/read-back ceiling checks retained; vendorissue7precedes publication.",
-    "21 September 2026: one MLX log10 derivative intermediate-overflow report; 66 of 294 distinct primitive inputs fail in each layout/direction; candidate removes those 66 but introduces 4 other boundary errors. Three independent extreme-scale classifier steps make 65 parameters and 108 predictions nonfinite. No production-harm claim. Independent publication authorized before personally authored vendor notice."
+    "21 September 2026: one MLX log10 derivative intermediate-overflow report; 66 of 294 distinct primitive inputs fail in each layout/direction; candidate removes those 66 but introduces 4 other boundary errors. Three independent extreme-scale classifier steps make 65 parameters and 108 predictions nonfinite. No production-harm claim. Independent publication authorized before personally authored vendor notice.",
+    "30 September 2026: actuarialmath Uniform shortcut conditioning report added after developer issue 9. One implementation-defect family; 275 failures are comparisons, not independent bugs. No production insurer impact or upstream acceptance claimed."
   ],
   "parity_complete": false,
   "github_commit_email": "kadyrbekovhamit@gmail.com",
@@ -77,6 +81,35 @@
     "fresh_numerical_runs": false
   },
   "latest_reports": [
+    {
+      "id": "actuarialmath-uniform-shortcuts-conditioning",
+      "title": "actuarialmath Uniform shortcuts use the wrong conditioning age and reverse limited-life weights",
+      "authors": [
+        "Xamit Kadirbekov"
+      ],
+      "publication_date": "2026-09-30",
+      "kind": "published_report",
+      "gero": null,
+      "huggingface": null,
+      "zenodo": null,
+      "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/actuarialmath-uniform-shortcuts-conditioning",
+      "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-uniform-shortcuts-conditioning.md",
+      "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-uniform-shortcuts-conditioning.md",
+      "source_text_sha256": "8f07a01a0f56d87868ed1afa042771f13ebe71b31c8fa303a6af339991b6dea0",
+      "mirror_sha256": "8f07a01a0f56d87868ed1afa042771f13ebe71b31c8fa303a6af339991b6dea0",
+      "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/actuarialmath-uniform-shortcuts-conditioning/gero-actuarialmath-uniform-shortcuts-conditioning-evidence-2026-09-30.zip",
+      "evidence_archive_sha256": "ec9f55b79b3a9f35e16ed984ec923536b0b128ba2adbde0eedd3b37c36b4b36f",
+      "linkedin": null,
+      "youtube": null,
+      "maintainer_issue": "https://github.com/terence-lim/actuarialmath/issues/9",
+      "upstream_report_sent": true,
+      "upstream_acceptance_claimed": false,
+      "implementation_defects_in_this_report": 1,
+      "publication_status": "developer_issue_and_github_public_verified; other destinations pending",
+      "source_pin": "7d18f11ad304898f177b7922b3c53f70e4c2b4f4",
+      "limits": "Finite supported Uniform-law inputs and unit continuous annuity benefits; no full upstream suite, insurer deployment, policy loss, regulatory finding or accepted fix claimed.",
+      "measured_chain": "Uniform shortcut expressions -> public class calls -> 275 of 468 oracle disagreements in current and release -> 0 of 468 with local candidate -> 275 of 468 after exact restoration."
+    },
     {
       "id": "actuarialmath-endowment-variance-benefit-scale",
       "title": "Endowment variance scales the benefit twice in actuarialmath",

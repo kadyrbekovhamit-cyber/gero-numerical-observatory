@@ -1,0 +1,39 @@
+--- a/src/actuarialmath/mortalitylaws.py
++++ b/src/actuarialmath/mortalitylaws.py
+@@ -179,16 +179,17 @@
+           moment : whether to compute first (1) or second (2) moment
+         """
+         if moment in [1, self.VARIANCE] and not curtate:
++            remaining = self.omega_ - (x + s)
+             if t < 0:
+                 if moment == self.VARIANCE:
+-                    return (self.omega_ - x)**2 / 12  # complete shortcut
++                    return remaining**2 / 12  # complete shortcut
+                 else:
+-                    return (self.omega_ - x) / 2
++                    return remaining / 2
+             elif moment == 1:         # temporary expectation shortcut
+                 # (Pr[die within n years] * n/2) plus (Pr[survive n years] * n)
+                 t = self.max_term(x+s, t)
+-                t_p_x = t / (self.omega_ - x)
+-                return t_p_x * t  + (1 - t_p_x) * (t / 2)
++                t_q_x = t / remaining
++                return t_q_x * (t / 2) + (1 - t_q_x) * t
+         return super().e_x(x=x, s=s, t=t, curtate=curtate, moment=moment)
+ 
+     
+@@ -209,11 +210,11 @@
+         if t < 0:
+             return 0.
+         t = self.max_term(x+s, t)
+-        t_p_x = (self.omega_ - x - t) / (self.omega_ - x)
++        remaining = self.omega_ - (x + s)
++        t_p_x = (remaining - t) / remaining
+         if moment == self.VARIANCE:  # Bernoulli shortcut for variance
+             return self.interest.v_t(t)**2 * t_p_x * (1 - t_p_x)
+-        return (self.interest.v_t(t)**moment * (self.omega_ - x - t) 
+-                / (self.omega_ - x))
++        return self.interest.v_t(t)**moment * t_p_x
+ 
+     def whole_life_insurance(self, x: int, s: int = 0, moment: int = 1, 
+                              b: int = 1, discrete: bool = True) -> float:
