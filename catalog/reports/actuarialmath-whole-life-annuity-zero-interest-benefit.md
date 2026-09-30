@@ -112,6 +112,9 @@ The reproducer, derivation, candidate diff and validation totals were sent as [a
 
 - [Developer issue](https://github.com/terence-lim/actuarialmath/issues/10)
 - [GitHub report](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-whole-life-annuity-zero-interest-benefit.md)
+- [GERO article](https://www.gero.uz/research/articles/actuarialmath-whole-life-annuity-zero-interest-benefit.html)
+- [Hugging Face artifact](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/actuarialmath-whole-life-annuity-zero-interest-benefit.md)
+- [Zenodo record](https://doi.org/10.5281/zenodo.23051379)
+- [LinkedIn technical note](https://www.linkedin.com/feed/update/urn:li:share:7510919041625128962/)
+- [YouTube short](https://www.youtube.com/shorts/4VntbtPs6PA)
 - [Complete evidence archive](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/actuarialmath-whole-life-annuity-zero-interest-benefit/gero-actuarialmath-whole-life-annuity-zero-interest-benefit-evidence-2026-09-30.zip) — SHA-256 `78c8f63ac33d1806b6bc23d4e97fdc3476de0f210c20009e8abcd4ccfc22cf8e`
-
-GERO, Hugging Face, Zenodo, LinkedIn and media links are added only after each destination is independently verified.
