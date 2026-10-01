@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-09-29T08:08:29+05:00",
+  "case_id": "amortization-small-positive-rate-cancellation",
+  "status": "upstream_fix_merged_and_released_verified",
+  "issue": {
+    "url": "https://github.com/roniemartinez/amortization/issues/314",
+    "state": "closed",
+    "state_reason": "completed",
+    "closed_at": "2026-09-28T22:26:19Z"
+  },
+  "pull_request": {
+    "url": "https://github.com/roniemartinez/amortization/pull/315",
+    "merged": true,
+    "merged_at": "2026-09-28T22:26:18Z",
+    "merge_commit_sha": "3adf7c24c83c2f319116083b0e858851ba69dfa0"
+  },
+  "release": {
+    "version": "3.0.1",
+    "github": "https://github.com/roniemartinez/amortization/releases/tag/3.0.1",
+    "published_at": "2026-09-28T22:43:23Z",
+    "pypi_wheel_sha256": "b48eb6e98d0d4a709ec19cb05ed74eca292c4210532cf26e585c4ac2434992f5",
+    "pypi_upload_time": "2026-09-28T22:43:36.706204Z"
+  },
+  "verification": {
+    "corpus_cases": 640,
+    "release_3_0_0_mismatches": 180,
+    "release_3_0_1_mismatches": 0,
+    "restored_3_0_0_mismatches": 180,
+    "restored_outputs_identical": true,
+    "limits": "Synthetic binary64/Fraction corpus; no production-loss or customer-frequency claim."
+  },
+  "recorded_results": {
+    "schema_version": 1,
+    "corpus_cases": 640,
+    "contract": "Exact binary64 inputs, independent Fraction discounted-payment enumeration, nearest cent ties-to-even, tolerance 0.0051 currency units",
+    "old_wheel": "amortization-3.0.0-py3-none-any.whl",
+    "old_wheel_sha256": "0fe14ff73f0b00d77ca56a0927daa5cc02f8c3cd3031d0f3e6b6c059c1409e25",
+    "new_wheel": "amortization-3.0.1-py3-none-any.whl",
+    "new_wheel_sha256": "b48eb6e98d0d4a709ec19cb05ed74eca292c4210532cf26e585c4ac2434992f5",
+    "input_sha256": "05a29934e631491b456106ac38b439e1486aebe91ffcd31f3972dd57e24cb5de",
+    "release_3_0_0_mismatches": 180,
+    "release_3_0_1_mismatches": 0,
+    "restored_3_0_0_mismatches": 180,
+    "restored_outputs_identical": true,
+    "anchors": [
+      {
+        "input": {
+          "principal": 100000.0,
+          "annual_rate": 1e-15,
+          "periods": 360,
+          "frequency": "MONTHLY"
+        },
+        "expected": "277.78",
+        "release_3_0_0": {
+          "error": "ZeroDivisionError: float division by zero",
+          "value": null
+        },
+        "release_3_0_1": {
+          "error": null,
+          "value": 277.78
+        }
+      },
+      {
+        "input": {
+          "principal": 100000.0,
+          "annual_rate": 1e-12,
+          "periods": 360,
+          "frequency": "MONTHLY"
+        },
+        "expected": "277.78",
+        "release_3_0_0": {
+          "error": null,
+          "value": 278.0
+        },
+        "release_3_0_1": {
+          "error": null,
+          "value": 277.78
+        }
+      },
+      {
+        "input": {
+          "principal": 100.0,
+          "annual_rate": 0.03,
+          "periods": 1,
+          "frequency": "SEMIMONTHLY"
+        },
+        "expected": "100.12",
+        "release_3_0_0": {
+          "error": null,
+          "value": 100.13
+        },
+        "release_3_0_1": {
+          "error": null,
+          "value": 100.12
+        }
+      }
+    ],
+    "first_old_mismatches": [
+      {
+        "input": {
+          "principal": 1.0,
+          "annual_rate": 1e-18,
+          "periods": 1,
+          "frequency": "MONTHLY"
+        },
+        "expected": "1.00",
+        "actual": null,
+        "error": "ZeroDivisionError: float division by zero"
+      },
+      {
+        "input": {
+          "principal": 1.0,
+          "annual_rate": 1e-18,
+          "periods": 1,
+          "frequency": "SEMIMONTHLY"
+        },
+        "expected": "1.00",
+        "actual": null,
+        "error": "ZeroDivisionError: float division by zero"
+      },
+      {
+        "input": {
+          "principal": 1.0,
+          "annual_rate": 1e-18,
+          "periods": 1,
+          "frequency": "WEEKLY"
+        },
+        "expected": "1.00",
+        "actual": null,
+        "error": "ZeroDivisionError: float division by zero"
+      },
+      {
+        "input": {
+          "principal": 1.0,
+          "annual_rate": 1e-18,
+          "periods": 1,
+          "frequency": "YEARLY"
+        },
+        "expected": "1.00",
+        "actual": null,
+        "error": "ZeroDivisionError: float division by zero"
+      },
+      {
+        "input": {
+          "principal": 1.0,
+          "annual_rate": 1e-18,
+          "periods": 12,
+          "frequency": "MONTHLY"
+        },
+        "expected": "0.08",
+        "actual": null,
+        "error": "ZeroDivisionError: float division by zero"
+      },
+      {
+        "input": {
+          "principal": 1.0,
+          "annual_rate": 1e-18,
+          "periods": 12,
+          "frequency": "SEMIMONTHLY"
+        },
+        "expected": "0.08",
+        "actual": null,
+        "error": "ZeroDivisionError: float division by zero"
+      },
+      {
+        "input": {
+          "principal": 1.0,
+          "annual_rate": 1e-18,
+          "periods": 12,
+          "frequency": "WEEKLY"
+        },
+        "expected": "0.08",
+        "actual": null,
+        "error": "ZeroDivisionError: float division by zero"
+      },
+      {
+        "input": {
+          "principal": 1.0,
+          "annual_rate": 1e-18,
+          "periods": 12,
+          "frequency": "YEARLY"
+        },
+        "expected": "0.08",
+        "actual": null,
+        "error": "ZeroDivisionError: float division by zero"
+      },
+      {
+        "input": {
+          "principal": 1.0,
+          "annual_rate": 1e-18,
+          "periods": 120,
+          "frequency": "MONTHLY"
+        },
+        "expected": "0.01",
+        "actual": null,
+        "error": "ZeroDivisionError: float division by zero"
+      },
+      {
+        "input": {
+          "principal": 1.0,
+          "annual_rate": 1e-18,
+          "periods": 120,
+          "frequency": "SEMIMONTHLY"
+        },
+        "expected": "0.01",
+        "actual": null,
+        "error": "ZeroDivisionError: float division by zero"
+      },
+      {
+        "input": {
+          "principal": 1.0,
+          "annual_rate": 1e-18,
+          "periods": 120,
+          "frequency": "WEEKLY"
+        },
+        "expected": "0.01",
+        "actual": null,
+        "error": "ZeroDivisionError: float division by zero"
+      },
+      {
+        "input": {
+          "principal": 1.0,
+          "annual_rate": 1e-18,
+          "periods": 120,
+          "frequency": "YEARLY"
+        },
+        "expected": "0.01",
+        "actual": null,
+        "error": "ZeroDivisionError: float division by zero"
+      }
+    ],
+    "fixed_mismatches": []
+  }
+}

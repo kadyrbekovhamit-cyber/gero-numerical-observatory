@@ -1,10 +1,20 @@
 # bond_pricing 0.7.3 ignores immediate-start annuity payments
 
+## Release update — 1 October 2026
+
+**The reported immediate-start payment defect is fixed in bond_pricing 1.0.0**, released on 27 September 2026. The maintainer closed [issue #8](https://github.com/jrvarma/bond_pricing/issues/8) and included the fix in [commit db17cf45](https://github.com/jrvarma/bond_pricing/commit/db17cf45d29acef80d810a8a32bd4e0257ea3e39). The [release changelog](https://github.com/jrvarma/bond_pricing/blob/db17cf45d29acef80d810a8a32bd4e0257ea3e39/CHANGELOG.md) also records separate maintainer changes for #9 and #10.
+
+A fresh execution of the unchanged 1.0.0 PyPI wheel on 1 October returns **109.99999999999994 (approximately 110), with reconstructed present value exactly 210.0**, for the two-payment example below. [Input, result and wheel checksum](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/reports/release-verification-2026-10-01/bond-pricing-1.0.0.json).
+
+The maintainer implemented a revised expression and clarified future-value timing. The 720-scenario results in the original report describe GERO's original proposed patch, not a fresh 720-case validation of the maintainer's release. The new release check is limited to the stated witness. This is an update to the existing finding, not a new defect; no customer loss or reward is claimed. The original archive is unchanged.
+
+---
+
 Xamit Kadirbekov · GERO Research · 23 September 2026
 
 The released `bond_pricing.present_value.annuity_instalment` accepts `immediate_start=True` but calculates the same payment as for an ordinary, end-of-period annuity. At ordinary inputs, this changes a payment of approximately **110 into 121**. The result does not satisfy the requested present value when checked with the package's existing `annuity_pv` API.
 
-This is one reproducible implementation defect on synthetic cash flows. No deployed bank system, customer loss or bounty entitlement is claimed. The correction below is proposed and has not been accepted upstream.
+This is one reproducible implementation defect on synthetic cash flows. No deployed bank system, customer loss or bounty entitlement is claimed. The correction below is the original GERO proposal; the maintainer's subsequent released correction is recorded above.
 
 ## Minimal example
 
@@ -70,4 +80,4 @@ Publication status, maintainer receipt and verified distribution links are recor
 - [youtube](https://www.youtube.com/shorts/E-sES3VgLOA)
 - [instagram](https://www.instagram.com/gero.math.tech/reel/Ddok5Onzp-J/)
 
-Maintainer issue: https://github.com/jrvarma/bond_pricing/issues/8 . Proposed correction only; no upstream acceptance or reward is claimed.
+Maintainer issue: https://github.com/jrvarma/bond_pricing/issues/8 . The reported defect is fixed in 1.0.0, with the verification limits stated above. No reward is claimed.

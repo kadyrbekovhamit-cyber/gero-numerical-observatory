@@ -1,10 +1,20 @@
 # amortization 3.0.0: small positive rates can erase interest or alter the rounded payment
 
+## Release update — 1 October 2026
+
+**Fixed in amortization 3.0.1.** The maintainer merged [PR #315](https://github.com/roniemartinez/amortization/pull/315) on 28 September 2026 and published [release 3.0.1](https://github.com/roniemartinez/amortization/releases/tag/3.0.1). Issue #314 is closed. The merge is `3adf7c24c83c2f319116083b0e858851ba69dfa0`.
+
+A separate release verification on 29 September compared the real 3.0.1 wheel against 3.0.0 using the same independent Fraction reference and 640 synthetic binary64 cases: **180 mismatches in 3.0.0, zero in 3.0.1, and the identical 180 after restoring 3.0.0**. The three checked anchors include the `1e-15` exception, the `1e-12` rounded payment, and a one-period rounding-boundary case. [Verification receipt and recorded examples](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/reports/release-verification-2026-10-01/amortization-3.0.1.json).
+
+The upstream status was checked again on 1 October. This update records an accepted and released fix; it is not a new defect. The original frozen archive remains unchanged and documents the affected version and proposed correction. These bounded synthetic checks establish neither production frequency nor customer loss.
+
+---
+
 Xamit Kadirbekov · Independent GERO research · 27 September 2026
 
 **The public Python package `amortization` loses sufficiently small positive periodic rates while evaluating its annuity formula.** With principal `100000`, 360 monthly periods and annual rate `1e-15`, version 3.0.0 and current `master` at `df32787c23d1e9d721eb302559dcea06b988b9ab` raise `ZeroDivisionError`. At rate `1e-12`, they return `278.00`; an 80-digit Decimal evaluation of the same formula rounds to `277.78`.
 
-The maintainer asked for a public GitHub report and, if possible, a pull request. [Issue #314](https://github.com/roniemartinez/amortization/issues/314) and [PR #315](https://github.com/roniemartinez/amortization/pull/315) are open. The pull request is a proposal and is not claimed as accepted or merged.
+The maintainer asked for a public GitHub report and, if possible, a pull request. [Issue #314](https://github.com/roniemartinez/amortization/issues/314) and [PR #315](https://github.com/roniemartinez/amortization/pull/315) were open at the original publication on 27 September. They are now resolved as described in the release update above.
 
 ## Formula → changed schedule → measured consequence
 
@@ -77,7 +87,7 @@ Install the pinned package or check out the pinned commit, then run `reproduce.p
 - The rates are deliberate numerical stress cases. Their production frequency was not measured.
 - The schedule comparison is synthetic and uses the package's own cent-rounding behavior.
 - No customer loss, contractual error, regulatory breach or production exposure is claimed.
-- PR #315 remains open at publication time; upstream acceptance is not claimed.
+- PR #315 was open at the original publication; its subsequent merge and release are recorded above.
 
 ## Disclosure
 
@@ -98,5 +108,5 @@ Independent GERO research by Xamit Kadirbekov. AI-assisted experiment and archiv
 
 Archive SHA-256: `3c6de391f39322022b61f84b256046349a10ab70e2505f88d5c63f08cbe78f27`.
 
-The maintainer requested a GitHub issue and optional PR before publication. Both are public; acceptance or merge is not claimed. All six publication destinations above were independently verified.
+The maintainer requested a GitHub issue and optional PR before publication. Both are public; PR #315 has since been merged and released in 3.0.1. All six publication destinations above were independently verified.
 <!-- GERO_PUBLICATION_LINKS_END -->

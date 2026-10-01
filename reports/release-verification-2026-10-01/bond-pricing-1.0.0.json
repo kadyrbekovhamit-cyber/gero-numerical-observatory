@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "instalment": 109.99999999999994,
+  "expected_instalment": 110.0,
+  "roundtrip_pv": 210.0,
+  "expected_pv": 210.0,
+  "bounded_check": true,
+  "checked_date": "2026-10-01",
+  "source_commit": "db17cf45d29acef80d810a8a32bd4e0257ea3e39",
+  "wheel_sha256": "a8a5ae52ab1f792cd7e666ff01d64f02b18faa3df3f217034a938eb8d72d69a9",
+  "input": {
+    "rate": 0.1,
+    "n_periods": 2,
+    "pv": 210.0,
+    "immediate_start": true
+  },
+  "replay": "from bond_pricing import annuity_instalment, annuity_pv; p = annuity_instalment(rate=0.1, n_periods=2, pv=210., immediate_start=True); print(p, annuity_pv(rate=0.1, n_periods=2, instalment=p, immediate_start=True))",
+  "scope": "One release witness; not the full original proposed-patch corpus. No customer loss claim."
+}
