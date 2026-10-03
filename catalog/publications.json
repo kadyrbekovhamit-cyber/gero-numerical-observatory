@@ -1,5 +1,24 @@
 [
   {
+    "id": "loan-calculator-iof-grossup-net-reconstruction",
+    "title": "When gross-up does not return the requested net: two loan-calculator defects",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-10-03",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/loan-calculator-iof-grossup-net-reconstruction.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/loan-calculator-iof-grossup-net-reconstruction",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/loan-calculator-iof-grossup-net-reconstruction.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/loan-calculator-iof-grossup-net-reconstruction.md",
+    "mirror_sha256": "7eeb8606255c28ef05a4df4a140aa1e5b52598d14a8fce00577a0af16c423ca6",
+    "maintainer_issue": "https://github.com/yanomateus/loan-calculator/issues/15",
+    "implementation_defects_proposed": 2,
+    "upstream_status": "Reproduced locally; reported upstream; no maintainer acknowledgment or accepted fix claimed.",
+    "archive_sha256": "80608e172aed71939e72de11889d00f24e06b3d29d0af24f73b10ab289ed19a8",
+    "ai_assistance_disclosed": true
+  },
+  {
     "id": "actuarialmath-whole-life-variance",
     "title": "actuarialmath whole-life variance squares the mean twice",
     "authors": [

@@ -1,0 +1,19 @@
+--- a/loan_calculator/grossup/functions.py
++++ b/loan_calculator/grossup/functions.py
+@@ -155,8 +155,8 @@
+ 
+     # iof coefficient
+     iof_coef = sum(
+-        float(min(n * d_iof, 0.015)) / (1 + d) ** n
+-        for n in pmt_days[::-1]
++        float(min(n * d_iof, 0.015)) / (1 + d) ** discount_day
++        for n, discount_day in zip(pmt_days, reversed(pmt_days))
+     )
+ 
+     return p / (1 - (iof_coef / transport_coef) - c_iof - s_fee)
+@@ -217,4 +217,4 @@
+         for n in pmt_days
+     )
+ 
+-    return p / (1 - (iof_coef / transport_coef) - c_iof - s_fee)
++    return p / (1 - iof_coef - c_iof - s_fee)

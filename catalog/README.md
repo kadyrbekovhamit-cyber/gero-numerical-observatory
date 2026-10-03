@@ -173,3 +173,7 @@ Black-Scholes v5: [DOI](https://zenodo.org/records/22976977), [LinkedIn post](ht
 | 130 | [actuarialmath Uniform shortcuts use the wrong conditioning age and reverse limited-life weights](reports/actuarialmath-uniform-shortcuts-conditioning.md) | Pending | Pending | Pending | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/actuarialmath-uniform-shortcuts-conditioning) |
 
 | 131 | [actuarialmath whole_life_annuity ignores benefit b at zero interest](reports/actuarialmath-whole-life-annuity-zero-interest-benefit.md) | Pending | Pending | Pending | [Source](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/actuarialmath-whole-life-annuity-zero-interest-benefit) |
+
+## 3 October 2026: loan-calculator gross-up
+
+[When gross-up does not return the requested net: two loan-calculator defects](reports/loan-calculator-iof-grossup-net-reconstruction.md) — two reproduced formula defects; maintainer issue #15 open. [Portable evidence](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/loan-calculator-iof-grossup-net-reconstruction).
