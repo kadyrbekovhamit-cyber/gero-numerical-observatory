@@ -177,3 +177,7 @@ Black-Scholes v5: [DOI](https://zenodo.org/records/22976977), [LinkedIn post](ht
 ## 3 October 2026: loan-calculator gross-up
 
 [When gross-up does not return the requested net: two loan-calculator defects](reports/loan-calculator-iof-grossup-net-reconstruction.md) — two reproduced formula defects; maintainer issue #15 open. [Portable evidence](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/loan-calculator-iof-grossup-net-reconstruction).
+
+## 3 October 2026: loan-calculator IRR derivative
+
+[A one-payment loan breaks IRR: an incorrect derivative in loan-calculator](reports/loan-calculator-irr-single-payment-derivative.md) — one reproduced derivative-construction defect; maintainer issue #16 open. [Portable evidence](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/loan-calculator-irr-single-payment-derivative).

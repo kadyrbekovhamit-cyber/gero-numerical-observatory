@@ -1,0 +1,33 @@
+--- a/loan_calculator/irr.py
++++ b/loan_calculator/irr.py
+@@ -145,24 +145,15 @@
+         Python callable implementing the return polynomial for the given
+         parameters
+     """
+-    derivative_coefficients_vec = [
+-        net_principal * (return_days[-1] - return_days[-2])
+-    ] + [
+-        r * (return_days[-1] - r_day)
+-        # last term does not need to be evaluated
+-        for r, r_day in zip(returns[:-1], return_days[:-1])
+-    ]
++    last_day = return_days[-1]
++    coefficients = [net_principal] + [-r for r in returns]
++    exponents = [last_day - day for day in [0] + return_days]
+ 
+     def return_polynomial_derivative(irr_):
+-
+-        powers_vec = [
+-            (1 + irr_) ** (return_days[-1] - r_day - 1)
+-            for r_day in return_days
+-        ]
+-
+         return sum(
+-            coef * power
+-            for coef, power in zip(derivative_coefficients_vec, powers_vec)
++            coefficient * exponent * (1 + irr_) ** (exponent - 1)
++            for coefficient, exponent in zip(coefficients, exponents)
++            if exponent != 0
+         )
+ 
+     return return_polynomial_derivative

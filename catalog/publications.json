@@ -1,5 +1,24 @@
 [
   {
+    "id": "loan-calculator-irr-single-payment-derivative",
+    "title": "A one-payment loan breaks IRR: an incorrect derivative in loan-calculator",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-10-03",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/loan-calculator-irr-single-payment-derivative.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/loan-calculator-irr-single-payment-derivative",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/loan-calculator-irr-single-payment-derivative.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/loan-calculator-irr-single-payment-derivative.md",
+    "mirror_sha256": "4bfda19f4f3f3f888059a9f4c21c82fb05b03e2a05767ae14df8b20a70871fb5",
+    "maintainer_issue": "https://github.com/yanomateus/loan-calculator/issues/16",
+    "implementation_defects_proposed": 1,
+    "upstream_status": "Reproduced locally; reported upstream; no maintainer acknowledgment or accepted fix claimed.",
+    "archive_sha256": "25d2ec08fb54db5f0f114ee24d83fe018fcefea144fdd409d3d79d07508e4e92",
+    "ai_assistance_disclosed": true
+  },
+  {
     "id": "loan-calculator-iof-grossup-net-reconstruction",
     "title": "When gross-up does not return the requested net: two loan-calculator defects",
     "authors": [
