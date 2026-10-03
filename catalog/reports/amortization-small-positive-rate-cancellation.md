@@ -1,12 +1,12 @@
 # amortization 3.0.0: small positive rates can erase interest or alter the rounded payment
 
-## Release update — 1 October 2026
+## Release update — 3 October 2026
 
 **Fixed in amortization 3.0.1.** The maintainer merged [PR #315](https://github.com/roniemartinez/amortization/pull/315) on 28 September 2026 and published [release 3.0.1](https://github.com/roniemartinez/amortization/releases/tag/3.0.1). Issue #314 is closed. The merge is `3adf7c24c83c2f319116083b0e858851ba69dfa0`.
 
 A separate release verification on 29 September compared the real 3.0.1 wheel against 3.0.0 using the same independent Fraction reference and 640 synthetic binary64 cases: **180 mismatches in 3.0.0, zero in 3.0.1, and the identical 180 after restoring 3.0.0**. The three checked anchors include the `1e-15` exception, the `1e-12` rounded payment, and a one-period rounding-boundary case. [Verification receipt and recorded examples](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/reports/release-verification-2026-10-01/amortization-3.0.1.json).
 
-The upstream status was checked again on 1 October. This update records an accepted and released fix; it is not a new defect. The original frozen archive remains unchanged and documents the affected version and proposed correction. These bounded synthetic checks establish neither production frequency nor customer loss.
+The upstream merge and release status was checked again on 3 October; the numerical release experiment was executed on 29 September. This update records an accepted and released fix; it is not a new defect. The original frozen archive remains unchanged and documents the affected version and proposed correction. These bounded synthetic checks establish neither production frequency nor customer loss.
 
 ---
 
@@ -100,7 +100,8 @@ Independent GERO research by Xamit Kadirbekov. AI-assisted experiment and archiv
 - [GERO article](https://www.gero.uz/research/articles/amortization-small-positive-rate-cancellation.html)
 - [Hugging Face evidence page](https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/amortization-small-positive-rate-cancellation.md)
 - [Zenodo record and DOI](https://zenodo.org/records/22989976)
-- [LinkedIn publication](https://www.linkedin.com/feed/update/urn:li:share:7509851799693197312/)
+- [Original LinkedIn publication](https://www.linkedin.com/feed/update/urn:li:share:7509851799693197312/)
+- [Released-fix follow-up on LinkedIn, 3 October](https://www.linkedin.com/feed/update/urn:li:share:7512066965876801536/)
 - [YouTube Short](https://www.youtube.com/shorts/3pYoawlyKOk)
 - [Upstream issue #314](https://github.com/roniemartinez/amortization/issues/314)
 - [Proposed upstream correction #315](https://github.com/roniemartinez/amortization/pull/315)
