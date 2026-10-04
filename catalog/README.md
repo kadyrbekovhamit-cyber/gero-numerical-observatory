@@ -181,3 +181,7 @@ Black-Scholes v5: [DOI](https://zenodo.org/records/22976977), [LinkedIn post](ht
 ## 3 October 2026: loan-calculator IRR derivative
 
 [A one-payment loan breaks IRR: an incorrect derivative in loan-calculator](reports/loan-calculator-irr-single-payment-derivative.md) — one reproduced derivative-construction defect; maintainer issue #16 open. [Portable evidence](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/loan-calculator-irr-single-payment-derivative).
+
+## 4 October 2026: penaltyblog partial hedging
+
+[A zero guarantee with a minus-200 outcome: penaltyblog partial hedging](reports/penaltyblog-partial-hedge-payoff.md) — one reproduced payoff inconsistency; maintainer issue #50 open. [Portable evidence](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/penaltyblog-partial-hedge-payoff).

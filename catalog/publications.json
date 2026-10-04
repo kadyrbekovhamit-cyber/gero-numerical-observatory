@@ -1,5 +1,25 @@
 [
   {
+    "id": "penaltyblog-partial-hedge-payoff",
+    "title": "A zero guarantee with a minus-200 outcome: penaltyblog partial hedging",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-04",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/penaltyblog-partial-hedge-payoff.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/penaltyblog-partial-hedge-payoff",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/penaltyblog-partial-hedge-payoff.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/penaltyblog-partial-hedge-payoff.md",
+    "mirror_sha256": "0503ccb8665988c733a7afc3abe139bc37d98eb20e4b57aa0ce756dda2d4c5e3",
+    "maintainer_issue": "https://github.com/martineastwood/penaltyblog/issues/50",
+    "reproduced_defects": 1,
+    "upstream_status": "Reproduced locally; reported upstream; no maintainer acknowledgment or accepted fix claimed.",
+    "archive_sha256": "bb155c7345db7b2c5308a86ed92bf818ce7cdcd388b1e39b09ca8a127b1500b0",
+    "ai_assistance_disclosed": true
+  },
+  {
     "id": "loan-calculator-irr-single-payment-derivative",
     "title": "A one-payment loan breaks IRR: an incorrect derivative in loan-calculator",
     "authors": [
