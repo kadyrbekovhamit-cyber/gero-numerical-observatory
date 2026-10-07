@@ -52,7 +52,7 @@
     "archive_sha256": "25d2ec08fb54db5f0f114ee24d83fe018fcefea144fdd409d3d79d07508e4e92",
     "ai_assistance_disclosed": true,
     "zenodo": "https://zenodo.org/records/23218634",
-    "distribution_checked_at": "2026-10-07T16:48:51.757025+00:00",
+    "distribution_checked_at": "2026-10-07T16:51:16.572601+00:00",
     "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7513640381062746113/",
     "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/loan-calculator-irr-single-payment-derivative.md"
   },
@@ -2371,7 +2371,7 @@
     "limits": "Synthetic CPU scalar calls; no real trade, bank integration or customer loss; no full-suite or complete-stability claim. GERO quote adapter, not an upstream order subsystem.",
     "measured_chain": "Intermediate power overflow -> actual public pricing exception/NaN -> synthetic GERO quote document UNAVAILABLE instead of READY.",
     "zenodo_doi": "10.5281/zenodo.22858372",
-    "distribution_checked_at": "2026-10-07T16:48:51.757572+00:00"
+    "distribution_checked_at": "2026-10-07T16:51:16.573140+00:00"
   },
   {
     "id": "actuarialmath-continuous-annuity-selection-duration",
@@ -2819,7 +2819,7 @@
       "caaecb4482fdc60a035d83a3ef4b390f225b67d3",
       "f340425d5bc73d2a0816c522a32fad0ee4171806"
     ],
-    "distribution_checked_at": "2026-10-07T16:48:51.757593+00:00",
+    "distribution_checked_at": "2026-10-07T16:51:16.573164+00:00",
     "upstream_status": "Fixed in official Frappe Lending v16.6.1 (2026-10-07); extracted-method replay: seven of eight day-count mismatches before, zero after. Upstream implementation credited to Nihantra Patel and Frappe contributors; GERO attribution not claimed.",
     "fixed_release": "https://github.com/frappe/lending/releases/tag/v16.6.1"
   }
