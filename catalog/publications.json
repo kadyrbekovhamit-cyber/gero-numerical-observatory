@@ -2779,5 +2779,40 @@
     "source_pin": "7d18f11ad304898f177b7922b3c53f70e4c2b4f4",
     "limits": "One explicit finite-support Beta(2) survival law, nonnegative benefits, zero interest and positive-interest controls; no full upstream suite, insurer deployment, policy loss, regulatory finding or accepted fix claimed.",
     "measured_chain": "Annuity.whole_life_annuity zero-interest branch -> 48 of 90 exact-oracle disagreements in current and release -> 0 of 90 with the local candidate -> 48 of 90 after exact restoration."
+  },
+  {
+    "id": "frappe-lending-quarterly-day-count",
+    "title": "Frappe Lending quarterly schedules used three days after the first repayment",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-07",
+    "kind": "published_report",
+    "gero": null,
+    "huggingface": null,
+    "zenodo": null,
+    "linkedin": null,
+    "youtube": null,
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/frappe-lending-quarterly-day-count",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/frappe-lending-quarterly-day-count.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/frappe-lending-quarterly-day-count.md",
+    "source_text_sha256": "0dd8a8933af53ce7ac2fa73e4f9ebd0e25fca94e4983074b621f9342ca213d67",
+    "mirror_sha256": "57486ac3df55e4d3f4f3bb189e0b4f5a4573b7685a0ea916b90252c0f28d680d",
+    "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/frappe-lending-quarterly-day-count/gero-frappe-lending-quarterly-day-count-evidence-2026-10-07.zip",
+    "evidence_archive_sha256": "cd5a09c4f972cb8a73bdfd6478c78550217ede8c166300133276efaf17fbeb69",
+    "maintainer_issue": null,
+    "maintainer_pull_request": "https://github.com/frappe/lending/pull/1483",
+    "upstream_report_sent": true,
+    "upstream_acceptance_claimed": false,
+    "implementation_defects_in_this_report": 1,
+    "publication_status": "GitHub report and portable evidence public; correction merged into develop and version-16-hotfix without public attribution to this report; latest tagged release v16.6.0 predates the correction; other publication destinations pending",
+    "source_pin": "605ae2a866aade812a4a147938b8a4f3b7aaa760",
+    "limits": "Synthetic extracted-method and local Frappe-site checks. No production loan, accounting posting, customer outcome, financial loss, full upstream suite or fixed official release was measured.",
+    "measured_chain": "quarterly frequency value 3 reused as day count -> later 90-92 day intervals store 3 days -> second-row interest 874.98 instead of 26541.05 under the same /365 convention and opening balance",
+    "upstream_fix_commits": [
+      "caaecb4482fdc60a035d83a3ef4b390f225b67d3",
+      "f340425d5bc73d2a0816c522a32fad0ee4171806"
+    ]
   }
 ]

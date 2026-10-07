@@ -1,0 +1,62 @@
+{
+  "repo": "frappe/lending",
+  "review_at": "2026-10-05T02:11:12.221996+00:00",
+  "searches": [
+    {
+      "query": "\"quarterly\"",
+      "total": 4,
+      "returned": 4
+    },
+    {
+      "query": "\"get_non_monthly_days\"",
+      "total": 0,
+      "returned": 0
+    }
+  ],
+  "files": {
+    "pyproject.toml": {
+      "blob_sha": "412795f9cda6606d2f3f2b8efcab472551b8fc15",
+      "bytes": 815
+    },
+    "lending/loan_management/doctype/loan_repayment_schedule/loan_repayment_schedule.py": {
+      "blob_sha": "6aaf3459494ccae0372b57fe575aebd4424a9a7c",
+      "bytes": 40160
+    },
+    "lending/loan_management/doctype/loan_repayment_schedule/utils.py": {
+      "blob_sha": "f8217cf8610818ba62cc73885f9cb47c3a54dd99",
+      "bytes": 5252
+    }
+  },
+  "limits": "Bounded indexed search; read relevant returned issues/comments and PR diffs separately. Absence does not establish global novelty.",
+  "head": "605ae2a866aade812a4a147938b8a4f3b7aaa760",
+  "hits": [
+    {
+      "n": 2,
+      "title": "Add dinamic payments periods and interest calculations Loan module ",
+      "state": "closed",
+      "url": "https://github.com/frappe/lending/issues/2",
+      "comments": 3
+    },
+    {
+      "n": 100,
+      "title": "feat: Loan booking updates",
+      "state": "closed",
+      "url": "https://github.com/frappe/lending/pull/100",
+      "comments": 4
+    },
+    {
+      "n": 221,
+      "title": "feat: Add Bi-Weekly option to repayment frequency and update related functions",
+      "state": "closed",
+      "url": "https://github.com/frappe/lending/pull/221",
+      "comments": 2
+    },
+    {
+      "n": 217,
+      "title": "Feature Request: Add Bi-Weekly Frequency Option for Loan Interest Calculation",
+      "state": "closed",
+      "url": "https://github.com/frappe/lending/issues/217",
+      "comments": 0
+    }
+  ]
+}

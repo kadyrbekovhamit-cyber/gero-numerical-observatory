@@ -1,15 +1,15 @@
 # GERO — publication catalogue
 
-Updated 30 September 2026. **130 distinct catalogue publications.** Report counts are not independent-defect counts. All 129 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
+Updated 7 October 2026. **135 distinct catalogue publications.** Report counts are not independent-defect counts. All 134 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
 
 [Machine-readable catalogue](publications.json) · [Coverage](platform-status.json) · [Checksums](SHA256SUMS).
 
 |Platform|Verified catalogue reports|
 |---|---:|
-|gero|122|
-|huggingface|122|
-|zenodo|126|
-|github_catalog_report|130|
+|gero|126|
+|huggingface|125|
+|zenodo|129|
+|github_catalog_report|135|
 
 The FinancePy FXForward and MLX sigmoid reports each have GERO, GitHub, LinkedIn, Zenodo, Hugging Face and YouTube publications. Overall coverage is shown above; no equal count across all external account collections is claimed.
 
@@ -185,3 +185,7 @@ Black-Scholes v5: [DOI](https://zenodo.org/records/22976977), [LinkedIn post](ht
 ## 4 October 2026: penaltyblog partial hedging
 
 [A zero guarantee with a minus-200 outcome: penaltyblog partial hedging](reports/penaltyblog-partial-hedge-payoff.md) — one reproduced payoff inconsistency; maintainer issue #50 open. [Portable evidence](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/penaltyblog-partial-hedge-payoff).
+
+## 7 October 2026: Frappe Lending quarterly day count
+
+[Frappe Lending quarterly schedules used three days after the first repayment](reports/frappe-lending-quarterly-day-count.md) — one reproduced day-count defect in `v16.6.0`; corrections merged into `develop` and `version-16-hotfix`, while the latest tagged release checked still predates them. [Portable evidence](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/frappe-lending-quarterly-day-count).

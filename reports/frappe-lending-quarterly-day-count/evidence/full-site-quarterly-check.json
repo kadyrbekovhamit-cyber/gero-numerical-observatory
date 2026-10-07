@@ -1,0 +1,107 @@
+{
+  "date": "2026-10-05",
+  "timezone": "Asia/Tashkent",
+  "site": "lending.lab",
+  "apps": {
+    "frappe": "16.36.1",
+    "erpnext": "16.37.0",
+    "lending": "16.6.0"
+  },
+  "loan": "ACC-LOAN-2026-00003",
+  "disbursement": "LM-DIS-00003",
+  "disbursement_frequency": "Quarterly",
+  "schedule": "LN-RS-2026-00003",
+  "schedule_status": "Active",
+  "inputs": {
+    "principal": 1000000,
+    "annual_rate_pct": 12,
+    "periods": 8,
+    "frequency": "Quarterly",
+    "posting_date": "2026-01-01",
+    "repayment_start_date": "2026-04-01"
+  },
+  "rows": [
+    {
+      "payment_date": "2026-04-01",
+      "site_number_of_days": 90,
+      "actual_days": 90,
+      "site_interest": 29589.04,
+      "expected_interest_actual_days": 29589.04,
+      "site_principal": 112867.96,
+      "site_total": 142457.0,
+      "site_balance_after": 887132.04
+    },
+    {
+      "payment_date": "2026-07-01",
+      "site_number_of_days": 3,
+      "actual_days": 91,
+      "site_interest": 874.98,
+      "expected_interest_actual_days": 26541.05,
+      "site_principal": 141582.02,
+      "site_total": 142457.0,
+      "site_balance_after": 745550.02
+    },
+    {
+      "payment_date": "2026-10-01",
+      "site_number_of_days": 3,
+      "actual_days": 92,
+      "site_interest": 735.34,
+      "expected_interest_actual_days": 22550.33,
+      "site_principal": 141721.66,
+      "site_total": 142457.0,
+      "site_balance_after": 603828.36
+    },
+    {
+      "payment_date": "2027-01-01",
+      "site_number_of_days": 3,
+      "actual_days": 92,
+      "site_interest": 595.56,
+      "expected_interest_actual_days": 18263.74,
+      "site_principal": 141861.44,
+      "site_total": 142457.0,
+      "site_balance_after": 461966.92
+    },
+    {
+      "payment_date": "2027-04-01",
+      "site_number_of_days": 3,
+      "actual_days": 90,
+      "site_interest": 455.64,
+      "expected_interest_actual_days": 13669.16,
+      "site_principal": 142001.36,
+      "site_total": 142457.0,
+      "site_balance_after": 319965.56
+    },
+    {
+      "payment_date": "2027-07-01",
+      "site_number_of_days": 3,
+      "actual_days": 91,
+      "site_interest": 315.58,
+      "expected_interest_actual_days": 9572.67,
+      "site_principal": 142141.42,
+      "site_total": 142457.0,
+      "site_balance_after": 177824.14
+    },
+    {
+      "payment_date": "2027-10-01",
+      "site_number_of_days": 3,
+      "actual_days": 92,
+      "site_interest": 175.39,
+      "expected_interest_actual_days": 5378.57,
+      "site_principal": 142281.61,
+      "site_total": 142457.0,
+      "site_balance_after": 35542.53
+    },
+    {
+      "payment_date": "2028-01-01",
+      "site_number_of_days": 3,
+      "actual_days": 92,
+      "site_interest": 35.06,
+      "expected_interest_actual_days": 1075.04,
+      "site_principal": 35542.53,
+      "site_total": 35577.59,
+      "site_balance_after": 0.0
+    }
+  ],
+  "site_total_interest": 32776.59,
+  "expected_total_interest_on_site_balances": 126639.6
+}

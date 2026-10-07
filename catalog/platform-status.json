@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-09-30T03:55:48.673677+00:00",
+  "checked_at": "2026-10-07T04:27:26+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 123,
-    "huggingface": 123,
-    "zenodo": 127,
-    "github_catalog_report": 131,
-    "zenodo_records_including_collection": 127,
-    "unique_individual_publications": 131,
+    "gero": 126,
+    "huggingface": 125,
+    "zenodo": 129,
+    "github_catalog_report": 135,
+    "zenodo_records_including_collection": 129,
+    "unique_individual_publications": 135,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "131 canonical reports; actuarialmath-whole-life-annuity-zero-interest-benefit added after developer issue #10. Counts track reports, not independent test failures.",
+  "github_status": "135 canonical reports; Frappe Lending quarterly day-count report added with a portable replay and the merged upstream correction status. Counts track reports, not independent test failures.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -28,9 +28,11 @@
       "black-scholes-sensitivities-v4",
       "black-scholes-interval-iv-v5",
       "actuarialmath-uniform-shortcuts-conditioning",
-      "actuarialmath-whole-life-annuity-zero-interest-benefit"
+      "actuarialmath-whole-life-annuity-zero-interest-benefit",
+      "frappe-lending-quarterly-day-count"
     ],
     "huggingface": [
+      "loan-calculator-irr-single-payment-derivative",
       "actuarialmath-direct-endowment-second-moment",
       "mlx-arctan-directional-derivative-scale",
       "black-scholes-positive-payoff-v2",
@@ -38,13 +40,16 @@
       "black-scholes-sensitivities-v4",
       "black-scholes-interval-iv-v5",
       "actuarialmath-uniform-shortcuts-conditioning",
-      "actuarialmath-whole-life-annuity-zero-interest-benefit"
+      "actuarialmath-whole-life-annuity-zero-interest-benefit",
+      "frappe-lending-quarterly-day-count"
     ],
     "zenodo": [
+      "loan-calculator-irr-single-payment-derivative",
       "actuarialmath-direct-endowment-second-moment",
       "mlx-arctan-directional-derivative-scale",
       "actuarialmath-uniform-shortcuts-conditioning",
-      "actuarialmath-whole-life-annuity-zero-interest-benefit"
+      "actuarialmath-whole-life-annuity-zero-interest-benefit",
+      "frappe-lending-quarterly-day-count"
     ]
   },
   "deduplication_notes": [

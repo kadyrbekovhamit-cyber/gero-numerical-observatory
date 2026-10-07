@@ -1,0 +1,86 @@
+{
+  "scope": "Unchanged extracted methods with framework doubles; site/database not started",
+  "quarterly_emi": 142456,
+  "rows": [
+    {
+      "date": "2026-04-01",
+      "balance_before": 1000000.0,
+      "days": 90,
+      "denominator": 365,
+      "interest": 29589.04,
+      "principal": 112866.95999999999,
+      "balance_after": 887133.04
+    },
+    {
+      "date": "2026-07-01",
+      "balance_before": 887133.04,
+      "days": 3,
+      "denominator": 365,
+      "interest": 874.98,
+      "principal": 141581.02,
+      "balance_after": 745552.02
+    },
+    {
+      "date": "2026-10-01",
+      "balance_before": 745552.02,
+      "days": 3,
+      "denominator": 365,
+      "interest": 735.34,
+      "principal": 141720.66,
+      "balance_after": 603831.36
+    },
+    {
+      "date": "2027-01-01",
+      "balance_before": 603831.36,
+      "days": 3,
+      "denominator": 365,
+      "interest": 595.56,
+      "principal": 141860.44,
+      "balance_after": 461970.92
+    },
+    {
+      "date": "2027-04-01",
+      "balance_before": 461970.92,
+      "days": 3,
+      "denominator": 365,
+      "interest": 455.64,
+      "principal": 142000.36,
+      "balance_after": 319970.56
+    },
+    {
+      "date": "2027-07-01",
+      "balance_before": 319970.56,
+      "days": 3,
+      "denominator": 365,
+      "interest": 315.59,
+      "principal": 142140.41,
+      "balance_after": 177830.15
+    },
+    {
+      "date": "2027-10-01",
+      "balance_before": 177830.15,
+      "days": 3,
+      "denominator": 365,
+      "interest": 175.39,
+      "principal": 142280.61,
+      "balance_after": 35549.54
+    },
+    {
+      "date": "2028-01-01",
+      "balance_before": 35549.54,
+      "days": 3,
+      "denominator": 365,
+      "interest": 35.06,
+      "principal": 35549.54000000001,
+      "balance_after": 0.0
+    }
+  ],
+  "interest_total": 32776.6,
+  "independent_single_period_comparison": {
+    "balance": 1000000,
+    "rate_percent": 12,
+    "upstream_3_days": 986.3,
+    "91_actual_days_365": 29917.81,
+    "nominal_quarter": 30000
+  }
+}
