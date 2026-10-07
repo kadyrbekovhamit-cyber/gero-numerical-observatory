@@ -69,7 +69,7 @@ checks a zero final balance.
   `f340425d5bc73d2a0816c522a32fad0ee4171806`.
 - The latest tagged release checked on 7 October 2026 was still
   [`v16.6.0`](https://github.com/frappe/lending/releases/tag/v16.6.0), published
-  before those merges. A fixed official release was therefore not confirmed.
+  before those merges. A fixed official release was therefore not confirmed at that earlier check. See the dated correction below.
 
 The pull request describes a user report with the same example numbers but does
 not publicly identify its source. This report does not claim public attribution
@@ -84,8 +84,17 @@ No email contents or private correspondence are included.
 
 This is one day-count defect in a specific schedule path. It is not a finding
 about Frappe Lending as a whole. No production loan, accounting posting,
-customer outcome, financial loss, full upstream test suite, or fixed release
-was measured here.
+customer outcome, financial loss, full upstream test suite, was measured in the original evidence package.
 
 Original report: CC BY 4.0. Original GERO replay: MIT. Vendored Frappe Lending
 source retains GPL-3.0.
+
+## Release verification update — 7 October 2026
+
+This update supersedes the earlier statement that a fixed official release had not been confirmed. [Frappe Lending v16.6.1](https://github.com/frappe/lending/releases/tag/v16.6.1), published on 7 October at 05:30:52 UTC, explicitly includes backport PR #1484. The release tag contains the calendar-day correction. Credit for the upstream implementation remains with Nihantra Patel and the Frappe contributors; public attribution of the report to GERO is not claimed.
+
+A bounded comparison of unchanged methods extracted from v16.6.0 and v16.6.1, using minimal framework doubles, checks the same eight quarterly calendar intervals. The old version has seven day-count mismatches; the new release has zero. The isolated constant-balance example is 986.30 for three days versus 29,917.81 for 91 actual days on a balance of 1,000,000 at 12% annually. Decimal arithmetic independently checks the latter value. This is not a corrected full amortization schedule.
+
+The original immutable archive remains unchanged. A separately named release-verification supplement adds the tag source, replay, results and public release/PR metadata. No private correspondence is included. These checks do not establish deployed customer impact or full upstream-suite correctness.
+
+[Short explanation on Technology Product](https://youtube.com/shorts/7CYnCfdLQaM). Narration is synthetic; no customer loss is asserted.

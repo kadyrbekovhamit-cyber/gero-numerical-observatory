@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-10-07T04:27:26+00:00",
+  "checked_at": "2026-10-07T16:42:08.955282+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 126,
     "huggingface": 125,
-    "zenodo": 129,
+    "zenodo": 131,
     "github_catalog_report": 135,
     "zenodo_records_including_collection": 129,
     "unique_individual_publications": 135,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "135 canonical reports; Frappe Lending quarterly day-count report added with a portable replay and the merged upstream correction status. Counts track reports, not independent test failures.",
+  "github_status": "135 canonical reports; dated Frappe v16.6.1 correction and verified distribution links. Counts track reports, not independent defects.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -44,12 +44,10 @@
       "frappe-lending-quarterly-day-count"
     ],
     "zenodo": [
-      "loan-calculator-irr-single-payment-derivative",
       "actuarialmath-direct-endowment-second-moment",
       "mlx-arctan-directional-derivative-scale",
       "actuarialmath-uniform-shortcuts-conditioning",
-      "actuarialmath-whole-life-annuity-zero-interest-benefit",
-      "frappe-lending-quarterly-day-count"
+      "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ]
   },
   "deduplication_notes": [
@@ -729,5 +727,21 @@
       "zenodo_doi": "10.5281/zenodo.22989976",
       "huggingface_commit": "500fc21036bb9f9f15ed583a3c40e704d1a48513"
     }
+  },
+  "latest_distribution_reconciliation": {
+    "date": "2026-10-07",
+    "verified_links": {
+      "frappe-lending-quarterly-day-count": {
+        "zenodo": "https://zenodo.org/records/23218489",
+        "youtube": "https://youtube.com/shorts/7CYnCfdLQaM"
+      },
+      "loan-calculator-irr-single-payment-derivative": {
+        "zenodo": "https://zenodo.org/records/23218634"
+      },
+      "financepy-float-lookback-intermediate-overflow": {
+        "youtube": "https://youtube.com/shorts/PZfQIDgz8Wc"
+      }
+    },
+    "scope": "Existing report records. Frappe release correction and IRR distribution; FinancePy lookback video link repaired. No new defect count."
   }
 }
