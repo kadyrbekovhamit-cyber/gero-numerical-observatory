@@ -1,9 +1,9 @@
 {
-  "checked_at": "2026-10-07T16:42:08.955282+00:00",
+  "checked_at": "2026-10-07T16:48:54.262669+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 126,
-    "huggingface": 125,
+    "gero": 127,
+    "huggingface": 127,
     "zenodo": 131,
     "github_catalog_report": 135,
     "zenodo_records_including_collection": 129,
@@ -28,11 +28,9 @@
       "black-scholes-sensitivities-v4",
       "black-scholes-interval-iv-v5",
       "actuarialmath-uniform-shortcuts-conditioning",
-      "actuarialmath-whole-life-annuity-zero-interest-benefit",
-      "frappe-lending-quarterly-day-count"
+      "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "huggingface": [
-      "loan-calculator-irr-single-payment-derivative",
       "actuarialmath-direct-endowment-second-moment",
       "mlx-arctan-directional-derivative-scale",
       "black-scholes-positive-payoff-v2",
@@ -40,8 +38,7 @@
       "black-scholes-sensitivities-v4",
       "black-scholes-interval-iv-v5",
       "actuarialmath-uniform-shortcuts-conditioning",
-      "actuarialmath-whole-life-annuity-zero-interest-benefit",
-      "frappe-lending-quarterly-day-count"
+      "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "zenodo": [
       "actuarialmath-direct-endowment-second-moment",
@@ -733,10 +730,15 @@
     "verified_links": {
       "frappe-lending-quarterly-day-count": {
         "zenodo": "https://zenodo.org/records/23218489",
-        "youtube": "https://youtube.com/shorts/7CYnCfdLQaM"
+        "youtube": "https://youtube.com/shorts/7CYnCfdLQaM",
+        "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7513640060383281153/",
+        "gero": "https://www.gero.uz/research/articles/frappe-lending-quarterly-day-count.html",
+        "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/frappe-lending-quarterly-day-count.md"
       },
       "loan-calculator-irr-single-payment-derivative": {
-        "zenodo": "https://zenodo.org/records/23218634"
+        "zenodo": "https://zenodo.org/records/23218634",
+        "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7513640381062746113/",
+        "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/loan-calculator-irr-single-payment-derivative.md"
       },
       "financepy-float-lookback-intermediate-overflow": {
         "youtube": "https://youtube.com/shorts/PZfQIDgz8Wc"

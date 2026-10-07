@@ -26,9 +26,13 @@ replay is released under MIT.
 Current correction status is documented in the report and in the saved public
 pull-request metadata under `evidence/upstream-fix/`.
 
+
 ## Distribution and release update — 7 October 2026
 
 Official v16.6.1 contains the calendar-day correction. See the dated report update and separate release-verification archive; the original evidence ZIP is unchanged.
 
 - zenodo: https://zenodo.org/records/23218489
 - youtube: https://youtube.com/shorts/7CYnCfdLQaM
+- linkedin: https://www.linkedin.com/feed/update/urn:li:share:7513640060383281153/
+- gero: https://www.gero.uz/research/articles/frappe-lending-quarterly-day-count.html
+- huggingface: https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/frappe-lending-quarterly-day-count.md

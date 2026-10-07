@@ -52,7 +52,9 @@
     "archive_sha256": "25d2ec08fb54db5f0f114ee24d83fe018fcefea144fdd409d3d79d07508e4e92",
     "ai_assistance_disclosed": true,
     "zenodo": "https://zenodo.org/records/23218634",
-    "distribution_checked_at": "2026-10-07T16:42:07.166854+00:00"
+    "distribution_checked_at": "2026-10-07T16:48:51.757025+00:00",
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7513640381062746113/",
+    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/loan-calculator-irr-single-payment-derivative.md"
   },
   {
     "id": "loan-calculator-iof-grossup-net-reconstruction",
@@ -2369,7 +2371,7 @@
     "limits": "Synthetic CPU scalar calls; no real trade, bank integration or customer loss; no full-suite or complete-stability claim. GERO quote adapter, not an upstream order subsystem.",
     "measured_chain": "Intermediate power overflow -> actual public pricing exception/NaN -> synthetic GERO quote document UNAVAILABLE instead of READY.",
     "zenodo_doi": "10.5281/zenodo.22858372",
-    "distribution_checked_at": "2026-10-07T16:42:07.167281+00:00"
+    "distribution_checked_at": "2026-10-07T16:48:51.757572+00:00"
   },
   {
     "id": "actuarialmath-continuous-annuity-selection-duration",
@@ -2792,10 +2794,10 @@
     ],
     "publication_date": "2026-10-07",
     "kind": "published_report",
-    "gero": null,
-    "huggingface": null,
+    "gero": "https://www.gero.uz/research/articles/frappe-lending-quarterly-day-count.html",
+    "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/frappe-lending-quarterly-day-count.md",
     "zenodo": "https://zenodo.org/records/23218489",
-    "linkedin": null,
+    "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7513640060383281153/",
     "youtube": "https://youtube.com/shorts/7CYnCfdLQaM",
     "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/frappe-lending-quarterly-day-count",
     "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/frappe-lending-quarterly-day-count.md",
@@ -2809,7 +2811,7 @@
     "upstream_report_sent": true,
     "upstream_acceptance_claimed": false,
     "implementation_defects_in_this_report": 1,
-    "publication_status": "Public distribution in progress; see individual verified destination links.",
+    "publication_status": "public_verified_6_of_six",
     "source_pin": "605ae2a866aade812a4a147938b8a4f3b7aaa760",
     "limits": "Synthetic original local-site evidence plus bounded extracted-method release comparison; no production customer losses, reconstructed full corrected schedule or full upstream-suite verification.",
     "measured_chain": "quarterly frequency value 3 reused as day count -> later 90-92 day intervals store 3 days -> second-row interest 874.98 instead of 26541.05 under the same /365 convention and opening balance",
@@ -2817,7 +2819,7 @@
       "caaecb4482fdc60a035d83a3ef4b390f225b67d3",
       "f340425d5bc73d2a0816c522a32fad0ee4171806"
     ],
-    "distribution_checked_at": "2026-10-07T16:42:07.167296+00:00",
+    "distribution_checked_at": "2026-10-07T16:48:51.757593+00:00",
     "upstream_status": "Fixed in official Frappe Lending v16.6.1 (2026-10-07); extracted-method replay: seven of eight day-count mismatches before, zero after. Upstream implementation credited to Nihantra Patel and Frappe contributors; GERO attribution not claimed.",
     "fixed_release": "https://github.com/frappe/lending/releases/tag/v16.6.1"
   }
