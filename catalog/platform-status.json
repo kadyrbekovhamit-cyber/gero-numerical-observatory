@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-07T16:51:18.859629+00:00",
+  "checked_at": "2026-10-08T01:48:58.608746+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 127,
@@ -726,7 +726,7 @@
     }
   },
   "latest_distribution_reconciliation": {
-    "date": "2026-10-07",
+    "date": "2026-10-08",
     "verified_links": {
       "frappe-lending-quarterly-day-count": {
         "zenodo": "https://zenodo.org/records/23218489",
@@ -738,12 +738,20 @@
       "loan-calculator-irr-single-payment-derivative": {
         "zenodo": "https://zenodo.org/records/23218634",
         "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7513640381062746113/",
-        "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/loan-calculator-irr-single-payment-derivative.md"
+        "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/loan-calculator-irr-single-payment-derivative.md",
+        "youtube": "https://youtube.com/shorts/BDT0dzyeti4"
       },
       "financepy-float-lookback-intermediate-overflow": {
         "youtube": "https://youtube.com/shorts/PZfQIDgz8Wc"
       }
     },
     "scope": "Existing report records. Frappe release correction and IRR distribution; FinancePy lookback video link repaired. No new defect count."
+  },
+  "latest_youtube_reconciliation": {
+    "case": "loan-calculator-irr-single-payment-derivative",
+    "video": "https://youtube.com/shorts/BDT0dzyeti4",
+    "published_on": "2026-10-06",
+    "checked_on": "2026-10-08",
+    "new_upload": false
   }
 }
