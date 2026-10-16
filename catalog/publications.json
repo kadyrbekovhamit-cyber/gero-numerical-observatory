@@ -20,13 +20,16 @@
     "upstream_status": "Reproduced; fix proposed; upstream review pending",
     "archive_sha256": "fb2ca2766e867155318ca6a82b6575d034493c06494c99d08224170c60d4e654",
     "ai_assistance_disclosed": true,
-    "publication_status": "Upstream PR open; evidence distribution in progress",
-    "huggingface": [],
+    "publication_status": "GERO_GitHub_HuggingFace_LinkedIn_verified; Zenodo and YouTube pending access",
+    "huggingface": [
+      "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/coremltools-shared-convolution-bias.md"
+    ],
     "zenodo": [],
     "linkedin": [
       "https://www.linkedin.com/feed/update/urn:li:share:7516999517725208577/"
     ],
-    "youtube": []
+    "youtube": [],
+    "distribution_checked_at": "2026-10-16T23:33:28.604284+00:00"
   },
   {
     "id": "quantstats-initial-drawdown-recovery-sign",
@@ -50,11 +53,16 @@
     "upstream_status": "Reproduced; fix proposed; upstream review pending",
     "archive_sha256": "acbdc5c30dbb23f8398f9639558c4e35d83341b462f67af8338fc0198351f16f",
     "ai_assistance_disclosed": true,
-    "publication_status": "Upstream PR open; evidence distribution in progress",
-    "huggingface": [],
+    "publication_status": "GERO_GitHub_HuggingFace_LinkedIn_verified; Zenodo and YouTube pending access",
+    "huggingface": [
+      "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/quantstats-initial-drawdown-recovery-sign.md"
+    ],
     "zenodo": [],
-    "linkedin": [],
-    "youtube": []
+    "linkedin": [
+      "https://www.linkedin.com/feed/update/urn:li:share:7517003290811789312/"
+    ],
+    "youtube": [],
+    "distribution_checked_at": "2026-10-16T23:33:29.845067+00:00"
   },
   {
     "id": "chainladder-off-grid-rate-changes",
@@ -77,11 +85,16 @@
     "upstream_status": "Reproduced; fix proposed; upstream review pending",
     "archive_sha256": "c4d28e2c79874ded82fb73e287c3e254ed803408cfd8f22ec15028c05de07125",
     "ai_assistance_disclosed": true,
-    "publication_status": "Upstream PR open; evidence distribution in progress",
-    "huggingface": [],
+    "publication_status": "GERO_GitHub_HuggingFace_LinkedIn_verified; Zenodo and YouTube pending access",
+    "huggingface": [
+      "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/chainladder-off-grid-rate-changes.md"
+    ],
     "zenodo": [],
-    "linkedin": [],
-    "youtube": []
+    "linkedin": [
+      "https://www.linkedin.com/feed/update/urn:li:share:7517003625924169728/"
+    ],
+    "youtube": [],
+    "distribution_checked_at": "2026-10-16T23:33:31.105355+00:00"
   },
   {
     "id": "penaltyblog-partial-hedge-payoff",

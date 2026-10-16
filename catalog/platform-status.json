@@ -1,9 +1,9 @@
 {
-  "checked_at": "2026-10-16T23:24:51.830027+00:00",
+  "checked_at": "2026-10-16T23:33:33.469219+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 130,
-    "huggingface": 127,
+    "huggingface": 130,
     "zenodo": 131,
     "github_catalog_report": 138,
     "zenodo_records_including_collection": 129,
@@ -31,9 +31,6 @@
       "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "huggingface": [
-      "coremltools-shared-convolution-bias",
-      "quantstats-initial-drawdown-recovery-sign",
-      "chainladder-off-grid-rate-changes",
       "actuarialmath-direct-endowment-second-moment",
       "mlx-arctan-directional-derivative-scale",
       "black-scholes-positive-payoff-v2",
@@ -732,26 +729,28 @@
     }
   },
   "latest_distribution_reconciliation": {
-    "date": "2026-10-08",
+    "date": "2026-10-17",
     "verified_links": {
-      "frappe-lending-quarterly-day-count": {
-        "zenodo": "https://zenodo.org/records/23218489",
-        "youtube": "https://youtube.com/shorts/7CYnCfdLQaM",
-        "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7513640060383281153/",
-        "gero": "https://www.gero.uz/research/articles/frappe-lending-quarterly-day-count.html",
-        "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/frappe-lending-quarterly-day-count.md"
+      "coremltools-shared-convolution-bias": {
+        "gero": "https://www.gero.uz/research/articles/coremltools-shared-convolution-bias.html",
+        "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7516999517725208577/",
+        "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/coremltools-shared-convolution-bias.md",
+        "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/coremltools-shared-convolution-bias.md"
       },
-      "loan-calculator-irr-single-payment-derivative": {
-        "zenodo": "https://zenodo.org/records/23218634",
-        "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7513640381062746113/",
-        "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/loan-calculator-irr-single-payment-derivative.md",
-        "youtube": "https://youtube.com/shorts/BDT0dzyeti4"
+      "quantstats-initial-drawdown-recovery-sign": {
+        "gero": "https://www.gero.uz/research/articles/quantstats-initial-drawdown-recovery-sign.html",
+        "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/quantstats-initial-drawdown-recovery-sign.md",
+        "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/quantstats-initial-drawdown-recovery-sign.md",
+        "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7517003290811789312/"
       },
-      "financepy-float-lookback-intermediate-overflow": {
-        "youtube": "https://youtube.com/shorts/PZfQIDgz8Wc"
+      "chainladder-off-grid-rate-changes": {
+        "gero": "https://www.gero.uz/research/articles/chainladder-off-grid-rate-changes.html",
+        "github_catalog": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/chainladder-off-grid-rate-changes.md",
+        "huggingface": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/chainladder-off-grid-rate-changes.md",
+        "linkedin": "https://www.linkedin.com/feed/update/urn:li:share:7517003625924169728/"
       }
     },
-    "scope": "Existing report records. Frappe release correction and IRR distribution; FinancePy lookback video link repaired. No new defect count."
+    "scope": "Only this three-report batch; other entries unchanged. Four proposed defects, four upstream PRs."
   },
   "latest_youtube_reconciliation": {
     "case": "loan-calculator-irr-single-payment-derivative",
