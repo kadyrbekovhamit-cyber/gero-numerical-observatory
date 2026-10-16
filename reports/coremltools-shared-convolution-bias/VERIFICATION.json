@@ -1,0 +1,57 @@
+{
+  "checked_date": "2026-10-17",
+  "upstream_sha": "a207b1a3452eafe02f2d870f486287834af2c82d",
+  "fix_sha": "c76a9a3865606ba0d6920f59f08d295b076900c9",
+  "new_regressions": {
+    "before": {
+      "failed": 6,
+      "passed": 0
+    },
+    "after": {
+      "failed": 0,
+      "passed": 6
+    }
+  },
+  "existing_TestConvBiasFusion": {
+    "failed": 0,
+    "passed": 323
+  },
+  "runtime_before": {
+    "version": "9.0",
+    "macOS": "15.5",
+    "compute_units": "CPU_ONLY",
+    "precision": "FLOAT32",
+    "pipelines": {
+      "EMPTY": {
+        "out_a": 0.0,
+        "out_b": 0.0
+      },
+      "DEFAULT": {
+        "out_a": 256.0,
+        "out_b": 256.0
+      }
+    }
+  },
+  "runtime_after": {
+    "version": "9.1.dev1",
+    "macOS": "15.5",
+    "compute_units": "CPU_ONLY",
+    "precision": "FLOAT32",
+    "pipelines": {
+      "EMPTY": {
+        "out_a": 0.0,
+        "out_b": 0.0
+      },
+      "DEFAULT": {
+        "out_a": 0.0,
+        "out_b": 0.0
+      }
+    }
+  },
+  "limitations": [
+    "Full suite not run",
+    "macOS CPU only; no physical iPhone, GPU or ANE testing",
+    "Native libraries from coremltools 9.0 wheel for patched main"
+  ],
+  "upstream_pr": "https://github.com/apple/coremltools/pull/2901"
+}

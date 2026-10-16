@@ -1,0 +1,70 @@
+{
+  "checked_date": "2026-10-17",
+  "base_sha": "9ef4c6d0a4ffe7831f6ebba6a5824fd33a90c05a",
+  "prs": [
+    "https://github.com/ranaroussi/quantstats/pull/577",
+    "https://github.com/ranaroussi/quantstats/pull/578"
+  ],
+  "public_api_results": {
+    "original": {
+      "quantstats": "0.0.86",
+      "reference_max_drawdown_fraction": "-39/400",
+      "reference_recovery_factor_fraction": "-32/39",
+      "max_drawdown": -0.09750000000000003,
+      "recovery_factor": 0.8205128205128203,
+      "drawdown_details": []
+    },
+    "drawdown_fix": {
+      "quantstats": "0.0.86",
+      "reference_max_drawdown_fraction": "-39/400",
+      "reference_recovery_factor_fraction": "-32/39",
+      "max_drawdown": -0.09750000000000003,
+      "recovery_factor": 0.8205128205128203,
+      "drawdown_details": [
+        {
+          "start": "2024-01-01",
+          "valley": "2024-01-02",
+          "end": "2024-01-03",
+          "days": 3,
+          "max drawdown": -9.750000000000004,
+          "99% max drawdown": -7.945000000000002
+        }
+      ]
+    },
+    "recovery_fix": {
+      "quantstats": "0.0.86",
+      "reference_max_drawdown_fraction": "-39/400",
+      "reference_recovery_factor_fraction": "-32/39",
+      "max_drawdown": -0.09750000000000003,
+      "recovery_factor": -0.8205128205128203,
+      "drawdown_details": []
+    }
+  },
+  "drawdown": {
+    "fix_sha": "79107ee48c9bbbd0b01934368a9d69dded265346",
+    "new_before": {
+      "failed": 4,
+      "passed": 3
+    },
+    "after_full_suite": {
+      "passed": 232,
+      "failed": 0
+    }
+  },
+  "recovery": {
+    "fix_sha": "6d96feba3f0d70436de963b2566ff98a2fd1c774",
+    "new_before": {
+      "failed": 5,
+      "passed": 2
+    },
+    "after_full_suite": {
+      "passed": 232,
+      "failed": 0
+    }
+  },
+  "limits": [
+    "Separate isolated patch executions",
+    "Synthetic returns only",
+    "Existing total-return convention retained"
+  ]
+}

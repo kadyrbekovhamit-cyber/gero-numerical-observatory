@@ -1,5 +1,12 @@
 # GERO — publication catalogue
 
+## New reports — 17 October 2026
+
+- [A shared constant flips two convolution biases in coremltools](reports/coremltools-shared-convolution-bias.md) — proposed fix; upstream review pending.
+- [A missing drawdown and a positive score for a loss in quantstats](reports/quantstats-initial-drawdown-recovery-sign.md) — proposed fix; upstream review pending.
+- [A mid-month rate increase disappears from chainladder on-level factors](reports/chainladder-off-grid-rate-changes.md) — proposed fix; upstream review pending.
+
+
 Updated 7 October 2026. **135 distinct catalogue publications.** Report counts are not independent-defect counts. All 134 prior IDs are preserved. The Collatz research map has a separate repository and is outside this catalogue subset; see the [GERO master](https://www.gero.uz/research/publication-records.html) for all publication links.
 
 [Machine-readable catalogue](publications.json) · [Coverage](platform-status.json) · [Checksums](SHA256SUMS).

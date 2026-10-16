@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-10-08T01:48:58.608746+00:00",
+  "checked_at": "2026-10-16T23:24:51.830027+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 127,
+    "gero": 130,
     "huggingface": 127,
     "zenodo": 131,
-    "github_catalog_report": 135,
+    "github_catalog_report": 138,
     "zenodo_records_including_collection": 129,
-    "unique_individual_publications": 135,
+    "unique_individual_publications": 138,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "135 canonical reports; dated Frappe v16.6.1 correction and verified distribution links. Counts track reports, not independent defects.",
+  "github_status": "138 canonical reports; added three AI-assisted audit reports covering four proposed defects and four upstream PRs. Report counts are not independent-defect counts.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -31,6 +31,9 @@
       "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "huggingface": [
+      "coremltools-shared-convolution-bias",
+      "quantstats-initial-drawdown-recovery-sign",
+      "chainladder-off-grid-rate-changes",
       "actuarialmath-direct-endowment-second-moment",
       "mlx-arctan-directional-derivative-scale",
       "black-scholes-positive-payoff-v2",
@@ -41,6 +44,9 @@
       "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "zenodo": [
+      "coremltools-shared-convolution-bias",
+      "quantstats-initial-drawdown-recovery-sign",
+      "chainladder-off-grid-rate-changes",
       "actuarialmath-direct-endowment-second-moment",
       "mlx-arctan-directional-derivative-scale",
       "actuarialmath-uniform-shortcuts-conditioning",

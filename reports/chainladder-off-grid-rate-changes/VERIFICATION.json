@@ -1,0 +1,60 @@
+{
+  "checked_date": "2026-10-17",
+  "base_sha": "90c7b3532499b662e57b5be2275a848ce90d5a70",
+  "prs": [
+    "https://github.com/casact/chainladder-python/pull/1491"
+  ],
+  "public_api_results": {
+    "original": {
+      "version": "0.10.1",
+      "exact_2000_factor": "6/5",
+      "results": {
+        "M": {
+          "2000": 1.0,
+          "2001": 1.0,
+          "2002": 1.0,
+          "2003": 1.0
+        },
+        "D": {
+          "2000": 1.2,
+          "2001": 1.1745215442824084,
+          "2002": 1.0243644576865778,
+          "2003": 1.0
+        }
+      }
+    },
+    "patched": {
+      "version": "0.10.1",
+      "exact_2000_factor": "6/5",
+      "results": {
+        "M": {
+          "2000": 1.2,
+          "2001": 1.1795221843003412,
+          "2002": 1.0291840381179274,
+          "2003": 1.0
+        },
+        "D": {
+          "2000": 1.2,
+          "2001": 1.1745215442824084,
+          "2002": 1.0243644576865778,
+          "2003": 1.0
+        }
+      }
+    }
+  },
+  "fix_sha": "5e52da14c362b59870f6591c3cc4bf37d30d30dd",
+  "new_before": {
+    "failed": 2,
+    "passed": 0
+  },
+  "selected_suite_after": {
+    "passed": 126,
+    "skipped": 1,
+    "failed": 0
+  },
+  "limits": [
+    "Full suite not run",
+    "Monthly approximation remains monthly",
+    "Human authorship/review declarations intentionally unchecked"
+  ]
+}
