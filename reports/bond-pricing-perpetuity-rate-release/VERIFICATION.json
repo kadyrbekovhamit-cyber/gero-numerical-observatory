@@ -1,0 +1,14 @@
+{
+  "replayed_at": "2026-10-22",
+  "release": "1.0.1",
+  "status": "fixed_released",
+  "before": {
+    "perpetuity_mismatches": 288,
+    "finite_controls_pass": 18
+  },
+  "after": {
+    "perpetuity_mismatches": 0,
+    "finite_controls_pass": 18
+  },
+  "public_credit": "https://github.com/jrvarma/bond_pricing/issues/11"
+}

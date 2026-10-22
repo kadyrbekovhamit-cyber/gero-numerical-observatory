@@ -2,6 +2,13 @@
 
 ## New reports — 22 October 2026
 
+- [bond_pricing: perpetuity-rate inversion fixed in release 1.0.1](reports/bond-pricing-perpetuity-rate-release.md) — status and verification in the report.
+- [actuarialmath: the variance selector rejected before its own branch](reports/actuarialmath-uniform-variance-selector.md) — status and verification in the report.
+- [Curo: fortnightly payments collapse onto monthly dates](reports/curo-fortnightly-schedules.md) — status and verification in the report.
+
+
+## New reports — 22 October 2026
+
 - [Samsung ONE: Gather slices and Mean axes changed by compiler passes](reports/samsung-one-gather-mean-axis.md) — patch available; upstream routing pending.
 
 

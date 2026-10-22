@@ -1,5 +1,84 @@
 [
   {
+    "id": "bond-pricing-perpetuity-rate-release",
+    "title": "bond_pricing: perpetuity-rate inversion fixed in release 1.0.1",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-10-22",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/bond-pricing-perpetuity-rate-release.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/bond-pricing-perpetuity-rate-release",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/bond-pricing-perpetuity-rate-release.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/bond-pricing-perpetuity-rate-release.md",
+    "mirror_sha256": "a0f096970326682eba37ad9a05be5dcd68281be1bcbba450c5056577e2a17cdb",
+    "maintainer_pull_requests": [
+      "https://github.com/jrvarma/bond_pricing/issues/11"
+    ],
+    "reproduced_defects": 1,
+    "upstream_status": "Fixed in official release 1.0.1; independently replayed",
+    "archive_sha256": "4fa5786905fb258eb0206ce0d3a4b92060693122fbb7fdad8465971741d61be8",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Fixed in official release 1.0.1; independently replayed",
+    "huggingface": [],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
+    "id": "actuarialmath-uniform-variance-selector",
+    "title": "actuarialmath: the variance selector rejected before its own branch",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-10-22",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/actuarialmath-uniform-variance-selector.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/actuarialmath-uniform-variance-selector",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-uniform-variance-selector.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-uniform-variance-selector.md",
+    "mirror_sha256": "df41c8098d2e7aecfc05fb7fc6635bfc10c50ad925647da00ecac429e1a5bcdc",
+    "maintainer_pull_requests": [
+      "https://github.com/terence-lim/actuarialmath/issues/11"
+    ],
+    "reproduced_defects": 1,
+    "upstream_status": "Reproduced; no reply visible on issue 11 as of 22 October 2026; candidate not accepted",
+    "archive_sha256": "a9fca57f19463d59b4b4c66d9298af108a22cbd7a8abe393e8265590a0d53e36",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Reproduced; no reply visible on issue 11 as of 22 October 2026; candidate not accepted",
+    "huggingface": [],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
+    "id": "curo-fortnightly-schedules",
+    "title": "Curo: fortnightly payments collapse onto monthly dates",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-22",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/curo-fortnightly-schedules.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/curo-fortnightly-schedules",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/curo-fortnightly-schedules.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/curo-fortnightly-schedules.md",
+    "mirror_sha256": "f1855882b0e06777fc316619972ea00161e17fe3b32ea901fe27e91921d51f72",
+    "maintainer_pull_requests": [
+      "https://github.com/andrewmurphy353/curo_python/issues/2"
+    ],
+    "reproduced_defects": 2,
+    "upstream_status": "Reproduced; no reply visible on issue 2 as of 22 October 2026; candidate not accepted",
+    "archive_sha256": "e964420e828fe27a95ed5a14379c9a79ea353f902d3d18608cc4a887af522f5b",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Reproduced; no reply visible on issue 2 as of 22 October 2026; candidate not accepted",
+    "huggingface": [],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
     "id": "samsung-one-gather-mean-axis",
     "title": "Samsung ONE: Gather slices and Mean axes changed by compiler passes",
     "authors": [

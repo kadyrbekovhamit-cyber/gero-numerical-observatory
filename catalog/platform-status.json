@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-10-22T06:28:53.472022+00:00",
+  "checked_at": "2026-10-22T06:50:10.024058+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 134,
+    "gero": 137,
     "huggingface": 130,
     "zenodo": 131,
-    "github_catalog_report": 142,
+    "github_catalog_report": 145,
     "zenodo_records_including_collection": 129,
-    "unique_individual_publications": 142,
+    "unique_individual_publications": 145,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "142 canonical reports; added one AI-assisted source audit covering two proposed defects; upstream routing pending. Report counts are not independent-defect counts.",
+  "github_status": "145 canonical reports; added three source-pinned retrospective audits; one released fix and two unanswered reports. Report counts are not independent-defect counts.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -31,6 +31,9 @@
       "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "huggingface": [
+      "bond-pricing-perpetuity-rate-release",
+      "actuarialmath-uniform-variance-selector",
+      "curo-fortnightly-schedules",
       "samsung-one-gather-mean-axis",
       "pypfopt-lp-ticker-alignment",
       "riskfolio-bop-target-normalization",
@@ -45,6 +48,9 @@
       "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "zenodo": [
+      "bond-pricing-perpetuity-rate-release",
+      "actuarialmath-uniform-variance-selector",
+      "curo-fortnightly-schedules",
       "samsung-one-gather-mean-axis",
       "pypfopt-lp-ticker-alignment",
       "riskfolio-bop-target-normalization",
