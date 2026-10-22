@@ -1,0 +1,8 @@
+{
+  "upstream": "https://github.com/stefan-jansen/empyrical-reloaded/pull/124",
+  "scope": "Exactly constant returns can produce huge finite ratios instead of the documented signed infinity. A focused fix passes all 860 package tests.",
+  "ai_assisted": true,
+  "human_review_pending": true,
+  "base": "a54620d",
+  "fixed_commit": "6d255c828b2f668b7a739101ff963d4fde023742"
+}

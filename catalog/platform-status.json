@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-10-17T05:22:21.596886+00:00",
+  "checked_at": "2026-10-22T06:21:30.901587+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 130,
+    "gero": 133,
     "huggingface": 130,
     "zenodo": 131,
-    "github_catalog_report": 138,
+    "github_catalog_report": 141,
     "zenodo_records_including_collection": 129,
-    "unique_individual_publications": 138,
+    "unique_individual_publications": 141,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "138 canonical reports; added three AI-assisted audit reports covering four proposed defects and four upstream PRs. Report counts are not independent-defect counts.",
+  "github_status": "141 canonical reports; added three AI-assisted audit reports covering three proposed defects and three upstream PRs. Report counts are not independent-defect counts.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -31,6 +31,9 @@
       "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "huggingface": [
+      "pypfopt-lp-ticker-alignment",
+      "riskfolio-bop-target-normalization",
+      "empyrical-constant-return-dispersion",
       "actuarialmath-direct-endowment-second-moment",
       "mlx-arctan-directional-derivative-scale",
       "black-scholes-positive-payoff-v2",
@@ -41,6 +44,9 @@
       "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "zenodo": [
+      "pypfopt-lp-ticker-alignment",
+      "riskfolio-bop-target-normalization",
+      "empyrical-constant-return-dispersion",
       "coremltools-shared-convolution-bias",
       "quantstats-initial-drawdown-recovery-sign",
       "chainladder-off-grid-rate-changes",

@@ -1,5 +1,12 @@
 # GERO — publication catalogue
 
+## New reports — 22 October 2026
+
+- [PyPortfolioOpt: a ticker-order mismatch breaks the allocation budget](reports/pypfopt-lp-ticker-alignment.md) — proposed fix; upstream review pending.
+- [Riskfolio BOP: correcting the shrinkage target denominator](reports/riskfolio-bop-target-normalization.md) — proposed fix; upstream review pending.
+- [Empyrical: constant returns and floating-point Sharpe ratios](reports/empyrical-constant-return-dispersion.md) — proposed fix; upstream review pending.
+
+
 ## New reports — 17 October 2026
 
 - [A shared constant flips two convolution biases in coremltools](reports/coremltools-shared-convolution-bias.md) — proposed fix; upstream review pending.

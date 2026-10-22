@@ -1,5 +1,83 @@
 [
   {
+    "id": "pypfopt-lp-ticker-alignment",
+    "title": "PyPortfolioOpt: a ticker-order mismatch breaks the allocation budget",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-10-22",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/pypfopt-lp-ticker-alignment.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/pypfopt-lp-ticker-alignment",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/pypfopt-lp-ticker-alignment.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/pypfopt-lp-ticker-alignment.md",
+    "mirror_sha256": "27eded4db6bacca7e5a2ccf1a5a2bd3705512d668f71c9f5ebc869ee10865665",
+    "maintainer_pull_requests": [
+      "https://github.com/PyPortfolio/PyPortfolioOpt/pull/767"
+    ],
+    "reproduced_defects": 1,
+    "upstream_status": "upstream_pr_open",
+    "archive_sha256": "5f06e7e057a18d5bf7221e2fa4a7cdaba0e835b47986928aaa84f8da46aa2725",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Upstream PR open; evidence distribution in progress",
+    "huggingface": [],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
+    "id": "riskfolio-bop-target-normalization",
+    "title": "Riskfolio BOP: correcting the shrinkage target denominator",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-10-22",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/riskfolio-bop-target-normalization.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/riskfolio-bop-target-normalization",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/riskfolio-bop-target-normalization.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/riskfolio-bop-target-normalization.md",
+    "mirror_sha256": "dd0919b92a547b6ba1f39391bb87b165bb603b0f2c6ce14b3ba2282cf2c9e069",
+    "maintainer_pull_requests": [
+      "https://github.com/dcajasn/Riskfolio-Lib/pull/265"
+    ],
+    "reproduced_defects": 1,
+    "upstream_status": "upstream_pr_open",
+    "archive_sha256": "657ed88d2e8218a7add35f4170fee3e76734959d8aabd942e92bc5a07f051ec7",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Upstream PR open; evidence distribution in progress",
+    "huggingface": [],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
+    "id": "empyrical-constant-return-dispersion",
+    "title": "Empyrical: constant returns and floating-point Sharpe ratios",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-10-22",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/empyrical-constant-return-dispersion.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/empyrical-constant-return-dispersion",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/empyrical-constant-return-dispersion.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/empyrical-constant-return-dispersion.md",
+    "mirror_sha256": "b410900f685f7aac580f86bd4af761a5c86d03af91b7345180627a5482650041",
+    "maintainer_pull_requests": [
+      "https://github.com/stefan-jansen/empyrical-reloaded/pull/124"
+    ],
+    "reproduced_defects": 1,
+    "upstream_status": "upstream_pr_open",
+    "archive_sha256": "33c325e612a6a6be657225ebaa87dfabe3c0ad0bdff908167caba20a30f4cd8e",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Upstream PR open; evidence distribution in progress",
+    "huggingface": [],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
     "id": "coremltools-shared-convolution-bias",
     "title": "A shared constant flips two convolution biases in coremltools",
     "authors": [
