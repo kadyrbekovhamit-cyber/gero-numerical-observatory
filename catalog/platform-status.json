@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-10-22T06:21:30.901587+00:00",
+  "checked_at": "2026-10-22T06:28:53.472022+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 133,
+    "gero": 134,
     "huggingface": 130,
     "zenodo": 131,
-    "github_catalog_report": 141,
+    "github_catalog_report": 142,
     "zenodo_records_including_collection": 129,
-    "unique_individual_publications": 141,
+    "unique_individual_publications": 142,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "141 canonical reports; added three AI-assisted audit reports covering three proposed defects and three upstream PRs. Report counts are not independent-defect counts.",
+  "github_status": "142 canonical reports; added one AI-assisted source audit covering two proposed defects; upstream routing pending. Report counts are not independent-defect counts.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -31,6 +31,7 @@
       "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "huggingface": [
+      "samsung-one-gather-mean-axis",
       "pypfopt-lp-ticker-alignment",
       "riskfolio-bop-target-normalization",
       "empyrical-constant-return-dispersion",
@@ -44,6 +45,7 @@
       "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "zenodo": [
+      "samsung-one-gather-mean-axis",
       "pypfopt-lp-ticker-alignment",
       "riskfolio-bop-target-normalization",
       "empyrical-constant-return-dispersion",

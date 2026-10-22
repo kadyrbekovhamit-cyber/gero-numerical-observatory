@@ -1,5 +1,29 @@
 [
   {
+    "id": "samsung-one-gather-mean-axis",
+    "title": "Samsung ONE: Gather slices and Mean axes changed by compiler passes",
+    "authors": [
+      "Xamit Kadirbekov"
+    ],
+    "publication_date": "2026-10-22",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/samsung-one-gather-mean-axis.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/samsung-one-gather-mean-axis",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/samsung-one-gather-mean-axis.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/samsung-one-gather-mean-axis.md",
+    "mirror_sha256": "d50974eb075d2e3db750968c7fb3030175c1cc76faf0c6cdd29fe080996e35ae",
+    "maintainer_pull_requests": [],
+    "reproduced_defects": 2,
+    "upstream_status": "reproduced_patch_ready_upstream_routing_pending",
+    "archive_sha256": "bd12d25041e5475ed9a9e9df13a27e8c617e892d54af658cf6e532b2465f6fc7",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Reproduced; patch ready; upstream routing pending",
+    "huggingface": [],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
     "id": "pypfopt-lp-ticker-alignment",
     "title": "PyPortfolioOpt: a ticker-order mismatch breaks the allocation budget",
     "authors": [

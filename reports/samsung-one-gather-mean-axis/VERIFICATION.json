@@ -1,0 +1,17 @@
+{
+  "source": "de7f4736dc4c4f5e47f72a4022a9aa9ac6d1ad1a",
+  "tested": "2026-10-22",
+  "scope": "Native pass binaries and selected regression modules; not full conversion pipeline or devices",
+  "foldgather": {
+    "before_fail": 1,
+    "before_pass": 5,
+    "after_pass": 6
+  },
+  "fusemean": {
+    "before_fail": 4,
+    "before_pass": 3,
+    "after_pass": 7
+  },
+  "upstream_pr": null,
+  "maintainer_acceptance": false
+}

@@ -2,6 +2,11 @@
 
 ## New reports — 22 October 2026
 
+- [Samsung ONE: Gather slices and Mean axes changed by compiler passes](reports/samsung-one-gather-mean-axis.md) — patch available; upstream routing pending.
+
+
+## New reports — 22 October 2026
+
 - [PyPortfolioOpt: a ticker-order mismatch breaks the allocation budget](reports/pypfopt-lp-ticker-alignment.md) — proposed fix; upstream review pending.
 - [Riskfolio BOP: correcting the shrinkage target denominator](reports/riskfolio-bop-target-normalization.md) — proposed fix; upstream review pending.
 - [Empyrical: constant returns and floating-point Sharpe ratios](reports/empyrical-constant-return-dispersion.md) — proposed fix; upstream review pending.
