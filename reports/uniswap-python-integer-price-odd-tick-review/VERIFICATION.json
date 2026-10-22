@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-10-22T07:01:32.058526+00:00",
+  "status": "Reproduced in main; public contributor PR 482 fixes the illustrated cases; not merged",
+  "scope": "Fresh isolated-method replay of main and PR 482; the contributor credits GERO, and merge is still pending.",
+  "files_sha256": {
+    "before.txt": "877204ead7ea15de0548826a7ddccf3967ba00b8225d7c4ce71193be23dc3393",
+    "repro.py": "5b07875643063927892b3f8b49cba23693a9a582892fcf36736e24511213389d",
+    "candidate.txt": "f8a784acb1c190e34890cdb6c28f231c13a5d87933807b90dd4f77bee657982d",
+    "source/LICENSE": "5e1595e7b21db70ff9531f3040f0ae47e1b7f1220ee1174cc7c94e585a71cffa",
+    "source/pyproject.toml": "3bff4f69dedc6a6305e4bd04a2f3ff7d51a65b01836eacd10cf8af2a730a7f63",
+    "source/uniswap/uniswap.py": "e5d90216fd75211f48c2a9e19ac741ddd180ba0a564786251473b7bedd27cb52",
+    "source/uniswap/uniswap4.py": "52200f0df3356760b02917fbc60005d89a34d3f39d26a7c6ee60789afe7f8231",
+    "candidate/uniswap/uniswap.py": "bad7f4b310c2046260882724ffc2ad5ccaac9fbdb9d740a880e3f645fe50046f",
+    "candidate/uniswap/uniswap4.py": "2a786caf27e3b3c1cbafeb07a776a52fef37831726761898412e92549554d119"
+  },
+  "ai_assisted": true
+}

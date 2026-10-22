@@ -2,6 +2,17 @@
 
 ## New reports — 22 October 2026
 
+- [uniswap-python: integer price flooring and odd-tick liquidity, with a public patch](reports/uniswap-python-integer-price-odd-tick-review.md) — status and verification in the report.
+- [shin: a default probability result can hide non-convergence](reports/shin-python-convergence-contract.md) — status and verification in the report.
+- [penaltyblog: positive expected log growth at a ruin boundary](reports/penaltyblog-log-growth-ruin-boundary.md) — status and verification in the report.
+- [web3-ethereum-defi: zero depth inside an active liquidity interval](reports/web3-ethereum-defi-liquidity-depth-boundary.md) — status and verification in the report.
+- [PolicyEngine UK: Child Benefit charge rounding now corrected upstream](reports/policyengine-uk-child-benefit-rounding-fix.md) — status and verification in the report.
+- [Historical IRS Direct File source: a joint-filer credit and a rounding witness](reports/irs-direct-file-historical-credit-factgraph.md) — status and verification in the report.
+- [Provably fair does not mean a constant expected return](reports/provably-fair-parameter-versus-return-curve.md) — status and verification in the report.
+
+
+## New reports — 22 October 2026
+
 - [bond_pricing: perpetuity-rate inversion fixed in release 1.0.1](reports/bond-pricing-perpetuity-rate-release.md) — status and verification in the report.
 - [actuarialmath: the variance selector rejected before its own branch](reports/actuarialmath-uniform-variance-selector.md) — status and verification in the report.
 - [Curo: fortnightly payments collapse onto monthly dates](reports/curo-fortnightly-schedules.md) — status and verification in the report.

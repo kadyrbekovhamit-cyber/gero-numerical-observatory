@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-10-22T07:01:32.071646+00:00",
+  "status": "Reproduced in current modules; extra report unanswered in reviewed channel; no validated repair",
+  "scope": "A capped stake leaves a positive probability of zero wealth, while one reported growth field remains positive.",
+  "files_sha256": {
+    "repro.py": "9d817111e2c1fd1a6e1184b63a1de7531ce8929ceb56d283d46eca2eee311a2b",
+    "observed.txt": "456e29632131c9e345c6720e048e9d277b69068aed62fcf4d38228b0ad9f785f",
+    "source/LICENCE": "e1b183921d93c7f19a1bacfb248d809b0eea839c09232f6ec0234fae4561a0a7",
+    "source/docs/betting/arbitrage_hedging.rst": "27e4a4bcd43668a2800312563b2f1924b7af4a7fa34426cf83a7cbecf49a538d",
+    "source/penaltyblog/betting/arbitrage.py": "56c3d26df9450da95885f4a6ef50a116b3baf736486657edd111fda62aad1952",
+    "source/penaltyblog/betting/kelly.py": "2985ade5c369dccd3dc9dd4bfc35ca6488a840de39160eac5832115c24388dee"
+  },
+  "ai_assisted": true
+}

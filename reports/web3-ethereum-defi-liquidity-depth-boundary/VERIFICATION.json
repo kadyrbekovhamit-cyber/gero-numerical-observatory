@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-10-22T07:01:32.075523+00:00",
+  "status": "Reproduced in isolated function with mocked pool state; no response found in reviewed channel",
+  "scope": "An isolated current-source depth routine returns zero against a nonzero integral reference; live RPC applicability is untested.",
+  "files_sha256": {
+    "repro.py": "4a51389cf80914f7866d4e80e79d9bb5815809eee93f0c2207b7c5421e3cecfe",
+    "observed.txt": "f0205d3f0d5659700efa6e5f67f1424d3be8c22933ff5f02291c7710e25dfab9",
+    "source/pyproject.toml": "1fd5bd394b522ff25101c3cba79158374c1e98f226cc8cc59480701e70e1055b",
+    "source/LICENSE.txt": "94377c9d3db806c31725f425faffc2d8a02624264f481e7c36bd6709d51c8a8d",
+    "source/eth_defi/uniswap_v3/liquidity.py": "9f34a13460c12540889eeaac6e11024aee2557b05d030c0590f78e2766979497",
+    "source/eth_defi/uniswap_v3/utils.py": "1c38d4dd6b05b4e3a79b8989817248938b1af8d6e400c4a01745e130c63a1623"
+  },
+  "ai_assisted": true
+}

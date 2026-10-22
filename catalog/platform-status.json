@@ -1,16 +1,16 @@
 {
-  "checked_at": "2026-10-22T06:50:10.024058+00:00",
+  "checked_at": "2026-10-22T07:03:05.892590+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 137,
+    "gero": 144,
     "huggingface": 130,
     "zenodo": 131,
-    "github_catalog_report": 145,
+    "github_catalog_report": 152,
     "zenodo_records_including_collection": 129,
-    "unique_individual_publications": 145,
+    "unique_individual_publications": 152,
     "legacy_github_accounts_required_after_copy": 0
   },
-  "github_status": "145 canonical reports; added three source-pinned retrospective audits; one released fix and two unanswered reports. Report counts are not independent-defect counts.",
+  "github_status": "152 canonical reports; added seven source-pinned retrospective reports with individual response and verification status. Report counts are not independent-defect counts.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -31,6 +31,13 @@
       "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "huggingface": [
+      "uniswap-python-integer-price-odd-tick-review",
+      "shin-python-convergence-contract",
+      "penaltyblog-log-growth-ruin-boundary",
+      "web3-ethereum-defi-liquidity-depth-boundary",
+      "policyengine-uk-child-benefit-rounding-fix",
+      "irs-direct-file-historical-credit-factgraph",
+      "provably-fair-parameter-versus-return-curve",
       "bond-pricing-perpetuity-rate-release",
       "actuarialmath-uniform-variance-selector",
       "curo-fortnightly-schedules",
@@ -48,6 +55,13 @@
       "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "zenodo": [
+      "uniswap-python-integer-price-odd-tick-review",
+      "shin-python-convergence-contract",
+      "penaltyblog-log-growth-ruin-boundary",
+      "web3-ethereum-defi-liquidity-depth-boundary",
+      "policyengine-uk-child-benefit-rounding-fix",
+      "irs-direct-file-historical-credit-factgraph",
+      "provably-fair-parameter-versus-return-curve",
       "bond-pricing-perpetuity-rate-release",
       "actuarialmath-uniform-variance-selector",
       "curo-fortnightly-schedules",

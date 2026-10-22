@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-10-22T07:01:32.079350+00:00",
+  "status": "Upstream PR 2323 merged 12 October; helper checks pass; full simulation not rerun",
+  "scope": "A public merged fix implements the statutory staircase; 33 current-helper checks agree with an independent Decimal reference.",
+  "files_sha256": {
+    "replay_helpers.py": "988b92fa9148795e1959fdc138c9b5096d134d0b849442d941d99664433230aa",
+    "observed.json": "e3f62dd320e68463d26366ca87048a95a73f979b54db479b5478dd387bf975bf",
+    "source/LICENSE": "76a97c878c9c7a8321bb395c2b44d3fe2f8d81314d219b20138ed0e2dddd5182",
+    "source/README.md": "e3598e6922e8372ec780e43533f896a7af43e7887a9f67f2105c1d94f341b3eb",
+    "source/policyengine_uk/utils/child_benefit.py": "5dbc9d9830bb6f3ad7aafa70259b0c6391354bbc0a93732f3ad2f0439daa4b8f",
+    "source/policyengine_uk/variables/gov/hmrc/income_tax/charges/child_benefit_hitc.py": "b01810fb61277b21ae525e7733c526367908db3ebf84ac8d5a2bee1d732cc1d1"
+  },
+  "ai_assisted": true
+}

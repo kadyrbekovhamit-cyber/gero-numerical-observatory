@@ -1,5 +1,188 @@
 [
   {
+    "id": "uniswap-python-integer-price-odd-tick-review",
+    "title": "uniswap-python: integer price flooring and odd-tick liquidity, with a public patch",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-22",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/uniswap-python-integer-price-odd-tick-review.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/uniswap-python-integer-price-odd-tick-review",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/uniswap-python-integer-price-odd-tick-review.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/uniswap-python-integer-price-odd-tick-review.md",
+    "mirror_sha256": "88ce8faba875481681b7b9a0072824795895ce86b9c66f8c4b94ccbd3730ab02",
+    "maintainer_pull_requests": [
+      "https://github.com/uniswap-python/uniswap-python/pull/482",
+      "https://github.com/uniswap-python/uniswap-python/issues/269"
+    ],
+    "reproduced_defects": 2,
+    "upstream_status": "Reproduced in main; public contributor PR 482 fixes the illustrated cases; not merged",
+    "archive_sha256": "48d6302c6f797ec00734b027991feb5a8c9d6fcba547b13dbb5dbe2ae67f5a06",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Reproduced in main; public contributor PR 482 fixes the illustrated cases; not merged",
+    "huggingface": [],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
+    "id": "shin-python-convergence-contract",
+    "title": "shin: a default probability result can hide non-convergence",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-22",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/shin-python-convergence-contract.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/shin-python-convergence-contract",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/shin-python-convergence-contract.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/shin-python-convergence-contract.md",
+    "mirror_sha256": "cd6b52bcb1df702f28dc5709fe61a626509b6d82cbccd76aec76bcf44a865159",
+    "maintainer_pull_requests": [],
+    "reproduced_defects": 1,
+    "upstream_status": "Reproduced Python failure-reporting gap; no reply found in the reviewed channel by 22 October",
+    "archive_sha256": "56e35a12b7aab0607ea3009e5019dc6baa6216e4e609726cc45bc90d532b22ad",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Reproduced Python failure-reporting gap; no reply found in the reviewed channel by 22 October",
+    "huggingface": [],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
+    "id": "penaltyblog-log-growth-ruin-boundary",
+    "title": "penaltyblog: positive expected log growth at a ruin boundary",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-22",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/penaltyblog-log-growth-ruin-boundary.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/penaltyblog-log-growth-ruin-boundary",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/penaltyblog-log-growth-ruin-boundary.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/penaltyblog-log-growth-ruin-boundary.md",
+    "mirror_sha256": "49a8253c1306d6c4b51b0c6ccfa82bcb3f877e5c561fa863e3632226e8573ca5",
+    "maintainer_pull_requests": [
+      "https://github.com/martineastwood/penaltyblog/issues/50"
+    ],
+    "reproduced_defects": 1,
+    "upstream_status": "Reproduced in current modules; extra report unanswered in reviewed channel; no validated repair",
+    "archive_sha256": "504991c213d397e7c1d764928936700846ae162e941845f740480165aa3dd7d6",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Reproduced in current modules; extra report unanswered in reviewed channel; no validated repair",
+    "huggingface": [],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
+    "id": "web3-ethereum-defi-liquidity-depth-boundary",
+    "title": "web3-ethereum-defi: zero depth inside an active liquidity interval",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-22",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/web3-ethereum-defi-liquidity-depth-boundary.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/web3-ethereum-defi-liquidity-depth-boundary",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/web3-ethereum-defi-liquidity-depth-boundary.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/web3-ethereum-defi-liquidity-depth-boundary.md",
+    "mirror_sha256": "24ccfb828d0a2771e1fe28f83f013d1cefa365eac0b41cc77d85d93718933c26",
+    "maintainer_pull_requests": [],
+    "reproduced_defects": 1,
+    "upstream_status": "Reproduced in isolated function with mocked pool state; no response found in reviewed channel",
+    "archive_sha256": "0c432dff48e6ee8d26ac63b1759951a074469e844290ad359983ed132c36097c",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Reproduced in isolated function with mocked pool state; no response found in reviewed channel",
+    "huggingface": [],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
+    "id": "policyengine-uk-child-benefit-rounding-fix",
+    "title": "PolicyEngine UK: Child Benefit charge rounding now corrected upstream",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-22",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/policyengine-uk-child-benefit-rounding-fix.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/policyengine-uk-child-benefit-rounding-fix",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/policyengine-uk-child-benefit-rounding-fix.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/policyengine-uk-child-benefit-rounding-fix.md",
+    "mirror_sha256": "c59414c53933eebd91b1c0da2bace94f9f1e8657ec0b2ae0700f5e6972fbdcd2",
+    "maintainer_pull_requests": [
+      "https://github.com/PolicyEngine/policyengine-uk/pull/2323",
+      "https://github.com/PolicyEngine/policyengine-uk/issues/2321"
+    ],
+    "reproduced_defects": 1,
+    "upstream_status": "Upstream PR 2323 merged 12 October; helper checks pass; full simulation not rerun",
+    "archive_sha256": "c9a605c1c835998934e814c520c1ca7ea42d0888345ea30446898fb5a4023c95",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Upstream PR 2323 merged 12 October; helper checks pass; full simulation not rerun",
+    "huggingface": [],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
+    "id": "irs-direct-file-historical-credit-factgraph",
+    "title": "Historical IRS Direct File source: a joint-filer credit and a rounding witness",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-22",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/irs-direct-file-historical-credit-factgraph.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/irs-direct-file-historical-credit-factgraph",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/irs-direct-file-historical-credit-factgraph.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/irs-direct-file-historical-credit-factgraph.md",
+    "mirror_sha256": "92583f0056ee15f502e3c8d3c0e47b8784465a5e21fd4ca9e24499c461a60b37",
+    "maintainer_pull_requests": [],
+    "reproduced_defects": 2,
+    "upstream_status": "Historical public-source replay; report unanswered in reviewed channel; production applicability unestablished",
+    "archive_sha256": "b9295068be0832bf876feedebc3f98d5fb250b3877c3499e9f8b5d29e5e0d681",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Historical public-source replay; report unanswered in reviewed channel; production applicability unestablished",
+    "huggingface": [],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
+    "id": "provably-fair-parameter-versus-return-curve",
+    "title": "Provably fair does not mean a constant expected return",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-22",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/provably-fair-parameter-versus-return-curve.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/provably-fair-parameter-versus-return-curve",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/provably-fair-parameter-versus-return-curve.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/provably-fair-parameter-versus-return-curve.md",
+    "mirror_sha256": "b7a68b6a48b2c464f2299c226384cea1dfa15cc8fea106229c1789467c6979b8",
+    "maintainer_pull_requests": [],
+    "reproduced_defects": 0,
+    "upstream_status": "Qualified educational analysis; no live-operator defect or monetary loss claimed",
+    "archive_sha256": "004b8dddc5133354f6a28444e3b7b719a273d56a6945ed88c46c121d7f8d6e89",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Qualified educational analysis; no live-operator defect or monetary loss claimed",
+    "huggingface": [],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
     "id": "bond-pricing-perpetuity-rate-release",
     "title": "bond_pricing: perpetuity-rate inversion fixed in release 1.0.1",
     "authors": [
