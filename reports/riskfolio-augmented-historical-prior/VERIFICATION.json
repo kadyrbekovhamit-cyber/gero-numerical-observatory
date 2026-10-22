@@ -1,0 +1,14 @@
+{
+  "verified_at": "2026-10-22T16:55:47.415900+00:00",
+  "source_commit": "7b1b26ac9760974c12ecefe290a9d3bd37b66b7a",
+  "patch_commit": "eea2e33eec41e6117bab4238db6134572e485f6a",
+  "pull_request": "https://github.com/dcajasn/Riskfolio-Lib/pull/267",
+  "status": "OPEN",
+  "scope": "The archived harness compiles the actual unchanged function bodies and their historical-moment helpers from the pinned source. It uses real numpy/pandas/scipy; no numerical stub substitutes their results. This is an isolated source-level run, not a full Riskfolio installation or compiled-extension test. Copy the supplied normal pytest test into the repository tests directory. Run before and after applying proposed.patch.",
+  "local_tests": {
+    "before": "riskfolio-abl-before.txt",
+    "after": "riskfolio-abl-after-expanded.txt"
+  },
+  "production_impact_demonstrated": false,
+  "ai_assisted": true
+}

@@ -1,5 +1,140 @@
 [
   {
+    "id": "pypfopt-bl-excess-return-singular-system",
+    "title": "Black–Litterman weights: excess returns and the singular fallback",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-22",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/pypfopt-bl-excess-return-singular-system.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/pypfopt-bl-excess-return-singular-system",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/pypfopt-bl-excess-return-singular-system.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/pypfopt-bl-excess-return-singular-system.md",
+    "mirror_sha256": "01ec0ae1fb4ad1087e4563c1404839feae23463ce22f4c0241b244650784795a",
+    "maintainer_pull_requests": [
+      "https://github.com/PyPortfolio/PyPortfolioOpt/pull/769"
+    ],
+    "reproduced_defects": 2,
+    "upstream_status": "Reproduced within stated scope; upstream PR open, not accepted",
+    "archive_sha256": "471589d5c8ac3278dcc225cbf9610bf2f661ce0ee47a3bd8b649640f453d6083",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Reproduced within stated scope; upstream PR open, not accepted",
+    "huggingface": [],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
+    "id": "pypfopt-neutral-risk-feasibility",
+    "title": "Market-neutral portfolios rejected by a fully-invested risk bound",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-22",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/pypfopt-neutral-risk-feasibility.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/pypfopt-neutral-risk-feasibility",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/pypfopt-neutral-risk-feasibility.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/pypfopt-neutral-risk-feasibility.md",
+    "mirror_sha256": "d39bcd58eebc6cdfc7d51918c31ee80ddba9e49319ec15b0780eed130ffcfb02",
+    "maintainer_pull_requests": [
+      "https://github.com/PyPortfolio/PyPortfolioOpt/pull/770"
+    ],
+    "reproduced_defects": 1,
+    "upstream_status": "Reproduced within stated scope; upstream PR open, not accepted",
+    "archive_sha256": "b7c8631c97dcac6b48ef3110f118a1f5e72118283357183f7b6fa601960b955e",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Reproduced within stated scope; upstream PR open, not accepted",
+    "huggingface": [],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
+    "id": "pypfopt-missing-return-estimation",
+    "title": "Missing observations are not zero returns: a PyPortfolioOpt correction",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-22",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/pypfopt-missing-return-estimation.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/pypfopt-missing-return-estimation",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/pypfopt-missing-return-estimation.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/pypfopt-missing-return-estimation.md",
+    "mirror_sha256": "c3e03661305c994ebbb8f0a8f581709a35f7cff4ef6dca70b527e6bc4b725345",
+    "maintainer_pull_requests": [
+      "https://github.com/PyPortfolio/PyPortfolioOpt/pull/771"
+    ],
+    "reproduced_defects": 1,
+    "upstream_status": "Reproduced within stated scope; upstream PR open, not accepted",
+    "archive_sha256": "8c909b90f39ce7b0d8ba75ed660c95ecb1ca429991d6b016c327bea948167442",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Reproduced within stated scope; upstream PR open, not accepted",
+    "huggingface": [],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
+    "id": "riskfolio-bayesian-bl-excess-weights",
+    "title": "Riskfolio Bayesian Black–Litterman: equilibrium weights use excess returns",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-22",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/riskfolio-bayesian-bl-excess-weights.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/riskfolio-bayesian-bl-excess-weights",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/riskfolio-bayesian-bl-excess-weights.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/riskfolio-bayesian-bl-excess-weights.md",
+    "mirror_sha256": "1cfa87bf547b0571b273d8bc3571b0385187fc34021b70176c73f70ee057efaa",
+    "maintainer_pull_requests": [
+      "https://github.com/dcajasn/Riskfolio-Lib/pull/266"
+    ],
+    "reproduced_defects": 1,
+    "upstream_status": "Reproduced within stated scope; upstream PR open, not accepted",
+    "archive_sha256": "acbfa9798744396d65dd7d765ce723bfc973fafed57ff683bae9f9a62036d35d",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Reproduced within stated scope; upstream PR open, not accepted",
+    "huggingface": [],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
+    "id": "riskfolio-augmented-historical-prior",
+    "title": "Augmented Black–Litterman: historical prior must retain the joint state",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-22",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/riskfolio-augmented-historical-prior.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/riskfolio-augmented-historical-prior",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/riskfolio-augmented-historical-prior.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/riskfolio-augmented-historical-prior.md",
+    "mirror_sha256": "abd4e8d64b700af8e105cc7dc84e3550b6afb0d009c7ccf4f8db04ffbb5654c5",
+    "maintainer_pull_requests": [
+      "https://github.com/dcajasn/Riskfolio-Lib/pull/267"
+    ],
+    "reproduced_defects": 1,
+    "upstream_status": "Reproduced within stated scope; upstream PR open, not accepted",
+    "archive_sha256": "6aaf9bd87fb70c55ab0edf50eeaa31f335e241d0feda3f26e0444c7a46e790fd",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Reproduced within stated scope; upstream PR open, not accepted",
+    "huggingface": [],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
     "id": "uniswap-python-integer-price-odd-tick-review",
     "title": "uniswap-python: integer price flooring and odd-tick liquidity, with a public patch",
     "authors": [

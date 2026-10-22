@@ -1,18 +1,18 @@
 {
-  "checked_at": "2026-10-22T07:24:10.399086+00:00",
+  "checked_at": "2026-10-22T16:57:35.930259+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 144,
+    "gero": 149,
     "huggingface": 144,
     "zenodo": 131,
-    "github_catalog_report": 152,
+    "github_catalog_report": 157,
     "zenodo_records_including_collection": 129,
-    "unique_individual_publications": 152,
+    "unique_individual_publications": 157,
     "legacy_github_accounts_required_after_copy": 0,
     "linkedin": 58,
     "youtube": 52
   },
-  "github_status": "152 canonical reports; fourteen reports published 22 October have verified GERO, GitHub, HF and LinkedIn links. Counts are documents, not independent defects.",
+  "github_status": "157 canonical reports; added five source-pinned reports with open PRs and scoped verification. Report counts are not independent-defect counts.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -33,6 +33,11 @@
       "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "huggingface": [
+      "pypfopt-bl-excess-return-singular-system",
+      "pypfopt-neutral-risk-feasibility",
+      "pypfopt-missing-return-estimation",
+      "riskfolio-bayesian-bl-excess-weights",
+      "riskfolio-augmented-historical-prior",
       "actuarialmath-direct-endowment-second-moment",
       "mlx-arctan-directional-derivative-scale",
       "black-scholes-positive-payoff-v2",
@@ -43,6 +48,11 @@
       "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "zenodo": [
+      "pypfopt-bl-excess-return-singular-system",
+      "pypfopt-neutral-risk-feasibility",
+      "pypfopt-missing-return-estimation",
+      "riskfolio-bayesian-bl-excess-weights",
+      "riskfolio-augmented-historical-prior",
       "uniswap-python-integer-price-odd-tick-review",
       "shin-python-convergence-contract",
       "penaltyblog-log-growth-ruin-boundary",

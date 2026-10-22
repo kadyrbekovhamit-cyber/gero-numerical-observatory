@@ -2,6 +2,15 @@
 
 ## New reports — 22 October 2026
 
+- [Black–Litterman weights: excess returns and the singular fallback](reports/pypfopt-bl-excess-return-singular-system.md) — status and verification in the report.
+- [Market-neutral portfolios rejected by a fully-invested risk bound](reports/pypfopt-neutral-risk-feasibility.md) — status and verification in the report.
+- [Missing observations are not zero returns: a PyPortfolioOpt correction](reports/pypfopt-missing-return-estimation.md) — status and verification in the report.
+- [Riskfolio Bayesian Black–Litterman: equilibrium weights use excess returns](reports/riskfolio-bayesian-bl-excess-weights.md) — status and verification in the report.
+- [Augmented Black–Litterman: historical prior must retain the joint state](reports/riskfolio-augmented-historical-prior.md) — status and verification in the report.
+
+
+## New reports — 22 October 2026
+
 - [uniswap-python: integer price flooring and odd-tick liquidity, with a public patch](reports/uniswap-python-integer-price-odd-tick-review.md) — status and verification in the report.
 - [shin: a default probability result can hide non-convergence](reports/shin-python-convergence-contract.md) — status and verification in the report.
 - [penaltyblog: positive expected log growth at a ruin boundary](reports/penaltyblog-log-growth-ruin-boundary.md) — status and verification in the report.

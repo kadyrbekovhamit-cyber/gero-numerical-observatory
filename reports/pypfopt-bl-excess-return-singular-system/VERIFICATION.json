@@ -1,0 +1,14 @@
+{
+  "verified_at": "2026-10-22T16:55:47.335080+00:00",
+  "source_commit": "a6638d2e06dae6f444fd022cfd4b3c528902a85b",
+  "patch_commit": "98358abad21061d3a9299e3dd9d5df68e5df9b42",
+  "pull_request": "https://github.com/PyPortfolio/PyPortfolioOpt/pull/769",
+  "status": "OPEN",
+  "scope": "The PyPortfolioOpt package was imported normally. The module-level test counts above include existing tests, not just new counterexamples. No market data was downloaded during reproduction.",
+  "local_tests": {
+    "before": "pypfopt-bl-before.txt",
+    "after": "pypfopt-bl-after-expanded.txt"
+  },
+  "production_impact_demonstrated": false,
+  "ai_assisted": true
+}
