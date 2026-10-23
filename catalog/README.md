@@ -1,5 +1,15 @@
 # GERO — publication catalogue
 
+## New reports — 23 October 2026
+
+- [OpenCV RANSAC: preserve the camera-pose initial guess](reports/opencv-pnp-extrinsic-guess.md) — status and verification in the report.
+- [OpenCV Rodrigues: accuracy at small angles and near pi](reports/opencv-rodrigues-boundary-accuracy.md) — status and verification in the report.
+- [OpenCV SQPnP: conditioning across units and coordinate origins](reports/opencv-sqpnp-coordinate-normalization.md) — status and verification in the report.
+- [OpenCV iterative PnP: solve near the object instead of a distant origin](reports/opencv-iterative-centered-frame.md) — status and verification in the report.
+- [OpenCV RQ decomposition: a scale-aware zero check](reports/opencv-rq-relative-tolerance.md) — status and verification in the report.
+- [PoseLib: valid camera geometry lost through coordinate singularities](reports/poselib-rig-frame-singularities.md) — status and verification in the report.
+
+
 ## New reports — 22 October 2026
 
 - [Black–Litterman weights: excess returns and the singular fallback](reports/pypfopt-bl-excess-return-singular-system.md) — status and verification in the report.

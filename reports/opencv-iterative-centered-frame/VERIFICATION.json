@@ -1,0 +1,19 @@
+{
+  "checked_at": "2026-10-23T14:03:32.848176+00:00",
+  "upstream": "opencv/opencv",
+  "baseline": "4ffd42f66ae8e554819d86647753f2cec6380748",
+  "patch_commit": "ec857112e683d48cdba7d57bcb12e2784944bb4f",
+  "pr": "https://github.com/opencv/opencv/pull/30484",
+  "status": "DRAFT proposed fix; not merged. Native OpenCV accuracy tests outstanding.",
+  "local_logs": [
+    "mirror-414.txt"
+  ],
+  "full_upstream_suite_run_locally": false,
+  "real_device_tested": false,
+  "customer_loss_claimed": false,
+  "authors": [
+    "Xamit Kadirbekov",
+    "Daniyal Kadirbekov"
+  ],
+  "ai_assistance_disclosed": true
+}

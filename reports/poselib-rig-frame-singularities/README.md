@@ -1,0 +1,9 @@
+# PoseLib: valid camera geometry lost through coordinate singularities
+
+Five minimal pose solvers can lose solutions in special rig frames; actual-source regression tests pass after conditional frame changes.
+
+- Upstream PR: https://github.com/PoseLib/PoseLib/pull/217
+
+- GERO: https://www.gero.uz/research/articles/poselib-rig-frame-singularities.html
+
+See REPORT_EN.md and the reproduction archive. See the report for the exact upstream status; all six new reports have open proposed fixes; no merge or corrected release is claimed. AI assistance is disclosed. Report CC BY 4.0; original reproduction MIT; upstream licenses are retained.

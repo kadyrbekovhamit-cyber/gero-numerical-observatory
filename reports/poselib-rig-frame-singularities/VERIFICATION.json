@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-10-23T14:03:32.914151+00:00",
+  "upstream": "PoseLib/PoseLib",
+  "baseline": "6a636b1d84273d5e3ba97676463476569611572a",
+  "patch_commit": "21682ed9c37f2b75534646cfdac5647a87b70907",
+  "pr": "https://github.com/PoseLib/PoseLib/pull/217",
+  "status": "OPEN proposed fix; not merged. Full-suite/cross-platform validation outstanding.",
+  "local_logs": [
+    "poselib-test-before.txt",
+    "poselib-test-after.txt",
+    "poselib-build-before.txt",
+    "poselib-build-after.txt"
+  ],
+  "full_upstream_suite_run_locally": false,
+  "real_device_tested": false,
+  "customer_loss_claimed": false,
+  "authors": [
+    "Xamit Kadirbekov",
+    "Daniyal Kadirbekov"
+  ],
+  "ai_assistance_disclosed": true
+}

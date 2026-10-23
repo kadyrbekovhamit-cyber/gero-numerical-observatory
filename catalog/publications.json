@@ -1,5 +1,191 @@
 [
   {
+    "id": "opencv-pnp-extrinsic-guess",
+    "title": "OpenCV RANSAC: preserve the camera-pose initial guess",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-23",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/opencv-pnp-extrinsic-guess.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/opencv-pnp-extrinsic-guess",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/opencv-pnp-extrinsic-guess.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/opencv-pnp-extrinsic-guess.md",
+    "mirror_sha256": "e4aab38b9ef6df2240e6b1c87f00d0d49fd009839948b86b7d4e42f0dfc9d285",
+    "maintainer_pull_requests": [
+      "https://github.com/opencv/opencv/pull/30481"
+    ],
+    "reproduced_defects": 1,
+    "upstream_status": "DRAFT proposed fix; not merged. Native OpenCV accuracy tests outstanding.",
+    "archive_sha256": "a3e2efaab14ca19252e8ad489f99e94574ec4cf8a92624844451b6bab90a8f19",
+    "ai_assistance_disclosed": true,
+    "publication_status": "DRAFT proposed fix; not merged. Native OpenCV accuracy tests outstanding.",
+    "huggingface": [
+      "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/opencv-pnp-extrinsic-guess.md"
+    ],
+    "zenodo": [],
+    "linkedin": [
+      "https://www.linkedin.com/feed/update/urn:li:activity:7519404471349768193/"
+    ],
+    "youtube": []
+  },
+  {
+    "id": "opencv-rodrigues-boundary-accuracy",
+    "title": "OpenCV Rodrigues: accuracy at small angles and near pi",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-23",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/opencv-rodrigues-boundary-accuracy.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/opencv-rodrigues-boundary-accuracy",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/opencv-rodrigues-boundary-accuracy.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/opencv-rodrigues-boundary-accuracy.md",
+    "mirror_sha256": "2c2f3f80647ff865c4602c2bb646f687b8f8699ad612934795c1147eed82b637",
+    "maintainer_pull_requests": [
+      "https://github.com/opencv/opencv/pull/30482"
+    ],
+    "reproduced_defects": 1,
+    "upstream_status": "DRAFT proposed fix; not merged. Native OpenCV accuracy tests outstanding.",
+    "archive_sha256": "561c757fe3041430464b63267715712aef8fa7e1dfb4e4ab7579a204db14126b",
+    "ai_assistance_disclosed": true,
+    "publication_status": "DRAFT proposed fix; not merged. Native OpenCV accuracy tests outstanding.",
+    "huggingface": [
+      "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/opencv-rodrigues-boundary-accuracy.md"
+    ],
+    "zenodo": [],
+    "linkedin": [
+      "https://www.linkedin.com/feed/update/urn:li:activity:7519404471349768193/"
+    ],
+    "youtube": []
+  },
+  {
+    "id": "opencv-sqpnp-coordinate-normalization",
+    "title": "OpenCV SQPnP: conditioning across units and coordinate origins",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-23",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/opencv-sqpnp-coordinate-normalization.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/opencv-sqpnp-coordinate-normalization",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/opencv-sqpnp-coordinate-normalization.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/opencv-sqpnp-coordinate-normalization.md",
+    "mirror_sha256": "9383affe7d4ff2d0a1d5e6b285637efa7ffc74687edda58468e5350456835688",
+    "maintainer_pull_requests": [
+      "https://github.com/opencv/opencv/pull/30483"
+    ],
+    "reproduced_defects": 2,
+    "upstream_status": "DRAFT proposed fix; not merged. Native OpenCV accuracy tests outstanding.",
+    "archive_sha256": "853325b7a56a823f57b9008856b23e153a4bcaf507481fdefae042a9834ef1f6",
+    "ai_assistance_disclosed": true,
+    "publication_status": "DRAFT proposed fix; not merged. Native OpenCV accuracy tests outstanding.",
+    "huggingface": [
+      "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/opencv-sqpnp-coordinate-normalization.md"
+    ],
+    "zenodo": [],
+    "linkedin": [
+      "https://www.linkedin.com/feed/update/urn:li:activity:7519404471349768193/"
+    ],
+    "youtube": []
+  },
+  {
+    "id": "opencv-iterative-centered-frame",
+    "title": "OpenCV iterative PnP: solve near the object instead of a distant origin",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-23",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/opencv-iterative-centered-frame.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/opencv-iterative-centered-frame",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/opencv-iterative-centered-frame.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/opencv-iterative-centered-frame.md",
+    "mirror_sha256": "9eccadf628645106ac43ccde828f3461b37966652be59e618662916ff5aa6622",
+    "maintainer_pull_requests": [
+      "https://github.com/opencv/opencv/pull/30484"
+    ],
+    "reproduced_defects": 1,
+    "upstream_status": "DRAFT proposed fix; not merged. Native OpenCV accuracy tests outstanding.",
+    "archive_sha256": "303a3b40b7338aa2cb77296b935bff8277f563259a7cc6b19fe6a46867879384",
+    "ai_assistance_disclosed": true,
+    "publication_status": "DRAFT proposed fix; not merged. Native OpenCV accuracy tests outstanding.",
+    "huggingface": [
+      "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/opencv-iterative-centered-frame.md"
+    ],
+    "zenodo": [],
+    "linkedin": [
+      "https://www.linkedin.com/feed/update/urn:li:activity:7519404471349768193/"
+    ],
+    "youtube": []
+  },
+  {
+    "id": "opencv-rq-relative-tolerance",
+    "title": "OpenCV RQ decomposition: a scale-aware zero check",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-23",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/opencv-rq-relative-tolerance.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/opencv-rq-relative-tolerance",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/opencv-rq-relative-tolerance.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/opencv-rq-relative-tolerance.md",
+    "mirror_sha256": "cdb90f965b17872c14461de70694d4b129e9a255bc62a1b7349853bafc418c45",
+    "maintainer_pull_requests": [
+      "https://github.com/opencv/opencv/pull/30485"
+    ],
+    "reproduced_defects": 1,
+    "upstream_status": "DRAFT proposed fix; not merged. Native OpenCV accuracy tests outstanding.",
+    "archive_sha256": "1243d92e0e30a64d6b2552212235beecc8ffe23527fd823655d62bd5d0e04fa5",
+    "ai_assistance_disclosed": true,
+    "publication_status": "DRAFT proposed fix; not merged. Native OpenCV accuracy tests outstanding.",
+    "huggingface": [
+      "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/opencv-rq-relative-tolerance.md"
+    ],
+    "zenodo": [],
+    "linkedin": [
+      "https://www.linkedin.com/feed/update/urn:li:activity:7519404471349768193/"
+    ],
+    "youtube": []
+  },
+  {
+    "id": "poselib-rig-frame-singularities",
+    "title": "PoseLib: valid camera geometry lost through coordinate singularities",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-23",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/poselib-rig-frame-singularities.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/poselib-rig-frame-singularities",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/poselib-rig-frame-singularities.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/poselib-rig-frame-singularities.md",
+    "mirror_sha256": "3d308c6fd3fd0bcb3578fb0421b1ea6eece83ac15963275efc123604220d7af5",
+    "maintainer_pull_requests": [
+      "https://github.com/PoseLib/PoseLib/pull/217"
+    ],
+    "reproduced_defects": 2,
+    "upstream_status": "OPEN proposed fix; not merged. Full-suite/cross-platform validation outstanding.",
+    "archive_sha256": "ad3dd1bc18f7ee3d32b91c96deaa16b3e80266ee9b6cf931b78d875e31bb0759",
+    "ai_assistance_disclosed": true,
+    "publication_status": "OPEN proposed fix; not merged. Full-suite/cross-platform validation outstanding.",
+    "huggingface": [
+      "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/poselib-rig-frame-singularities.md"
+    ],
+    "zenodo": [],
+    "linkedin": [
+      "https://www.linkedin.com/feed/update/urn:li:activity:7519404471349768193/"
+    ],
+    "youtube": []
+  },
+  {
     "id": "pypfopt-bl-excess-return-singular-system",
     "title": "Black–Litterman weights: excess returns and the singular fallback",
     "authors": [
