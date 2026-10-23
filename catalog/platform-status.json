@@ -1,18 +1,18 @@
 {
-  "checked_at": "2026-10-23T14:30:03.551127+00:00",
+  "checked_at": "2026-10-23T15:07:45.878830+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 155,
     "huggingface": 155,
-    "zenodo": 136,
+    "zenodo": 142,
     "github_catalog_report": 163,
     "zenodo_records_including_collection": 129,
     "unique_individual_publications": 163,
     "legacy_github_accounts_required_after_copy": 0,
-    "linkedin": 63,
-    "youtube": 57
+    "linkedin": 69,
+    "youtube": 58
   },
-  "github_status": "163 canonical reports; added six source-pinned reports with open PRs and scoped verification. Report counts are not independent-defect counts.",
+  "github_status": "163 canonical reports; six PnP reports published 23 October have verified GERO, GitHub, HF, LinkedIn and Zenodo links. Counts are documents, not independent defects.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -43,12 +43,6 @@
       "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "zenodo": [
-      "opencv-pnp-extrinsic-guess",
-      "opencv-rodrigues-boundary-accuracy",
-      "opencv-sqpnp-coordinate-normalization",
-      "opencv-iterative-centered-frame",
-      "opencv-rq-relative-tolerance",
-      "poselib-rig-frame-singularities",
       "uniswap-python-integer-price-odd-tick-review",
       "shin-python-convergence-contract",
       "penaltyblog-log-growth-ruin-boundary",
@@ -168,6 +162,11 @@
       "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "youtube": [
+      "opencv-pnp-extrinsic-guess",
+      "opencv-rodrigues-boundary-accuracy",
+      "opencv-sqpnp-coordinate-normalization",
+      "opencv-iterative-centered-frame",
+      "opencv-rq-relative-tolerance",
       "loan-calculator-iof-grossup-net-reconstruction",
       "actuarialmath-whole-life-variance",
       "financepy-cash-settled-annuity",
