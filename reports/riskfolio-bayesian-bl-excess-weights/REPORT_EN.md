@@ -6,6 +6,10 @@ AI-assisted investigation, test development and writing. This report is not inde
 
 **Status:** reproduced within the scope below; [upstream PR #266](https://github.com/dcajasn/Riskfolio-Lib/pull/266) is open, not accepted or released as of 2026-10-22T16:54:43.377920+00:00.
 
+## Status update before Zenodo deposit
+
+The archived proposal is commit `bf6ee21bda17ef91a895726955c36d187bbc04aa`, which passes all four archived tests. The maintainer subsequently changed the PR head to `700fc19ee6955ed9d0e43623c500898ace22371d`; that version yields 2 passed / 2 failed on the same tests because it omits alpha from the weight formula. The intended alpha convention remains to be clarified. See [the status supplement](https://zenodo.org/records/23591085/files/STATUS_2026-10-23.md?download=1) for the exact distinction. The ZIP preserves the original 22 October evidence unchanged.
+
 ## Finding and correction
 
 `black_litterman_bayesian` adds `rf` to its posterior return and then uses that total return in `inv(delta*cov) @ mu.T`. Its returned unconstrained equilibrium weights should instead satisfy `delta*cov @ w = mu.T - rf`, consistent with the excess-return inversion used by the adjacent BL routines.

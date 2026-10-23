@@ -1,10 +1,10 @@
 {
-  "checked_at": "2026-10-22T17:11:34.486104+00:00",
+  "checked_at": "2026-10-23T08:54:54.238215+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 149,
     "huggingface": 149,
-    "zenodo": 131,
+    "zenodo": 136,
     "github_catalog_report": 157,
     "zenodo_records_including_collection": 129,
     "unique_individual_publications": 157,
@@ -12,7 +12,7 @@
     "linkedin": 63,
     "youtube": 57
   },
-  "github_status": "157 canonical reports; five additional reports published 22 October have verified GERO, GitHub, HF and LinkedIn links. Counts are documents, not independent defects.",
+  "github_status": "157 canonical reports; five additional reports published 22 October have verified GERO, GitHub, HF, LinkedIn and Zenodo links. Counts are documents, not independent defects.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -43,11 +43,6 @@
       "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "zenodo": [
-      "pypfopt-bl-excess-return-singular-system",
-      "pypfopt-neutral-risk-feasibility",
-      "pypfopt-missing-return-estimation",
-      "riskfolio-bayesian-bl-excess-weights",
-      "riskfolio-augmented-historical-prior",
       "uniswap-python-integer-price-odd-tick-review",
       "shin-python-convergence-contract",
       "penaltyblog-log-growth-ruin-boundary",
