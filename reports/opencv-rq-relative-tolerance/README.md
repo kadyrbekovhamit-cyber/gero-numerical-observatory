@@ -11,5 +11,5 @@ See REPORT_EN.md and the reproduction archive. See the report for the exact upst
 Publication links verified 23 October 2026:
 - github_catalog: https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/opencv-rq-relative-tolerance.md
 - huggingface: https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/opencv-rq-relative-tolerance.md
-- linkedin: https://www.linkedin.com/feed/update/urn:li:activity:7519404471349768193/
+- linkedin: https://www.linkedin.com/feed/update/urn:li:activity:7519420557763854336/
 - zenodo: https://doi.org/10.5281/zenodo.23599315
