@@ -12,3 +12,4 @@ Publication links verified 24 October 2026:
 - github_catalog: https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/policyengine-us-tips-overtime-fix.md
 - linkedin: https://www.linkedin.com/feed/update/urn:li:activity:7519742371853660160/
 - huggingface: https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/policyengine-us-tips-overtime-fix.md
+- zenodo: https://zenodo.org/records/23618606

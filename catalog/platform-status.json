@@ -1,10 +1,10 @@
 {
-  "checked_at": "2026-10-24T12:59:07.926608+00:00",
+  "checked_at": "2026-10-24T13:05:09.242502+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 156,
     "huggingface": 156,
-    "zenodo": 142,
+    "zenodo": 143,
     "github_catalog_report": 164,
     "zenodo_records_including_collection": 129,
     "unique_individual_publications": 164,
@@ -12,7 +12,7 @@
     "linkedin": 70,
     "youtube": 58
   },
-  "github_status": "164 canonical reports; PolicyEngine-US accepted-fix report has verified GERO, GitHub, HF and LinkedIn links. Counts are documents, not independent defects.",
+  "github_status": "164 canonical reports; PolicyEngine-US accepted-fix report has verified GERO, GitHub, HF, LinkedIn and Zenodo links. Counts are documents, not independent defects.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -43,7 +43,6 @@
       "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "zenodo": [
-      "policyengine-us-tips-overtime-fix",
       "uniswap-python-integer-price-odd-tick-review",
       "shin-python-convergence-contract",
       "penaltyblog-log-growth-ruin-boundary",
