@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-24T17:13:14.014906+00:00",
+  "checked_at": "2026-10-24T17:16:04.857967+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 160,
@@ -9,10 +9,10 @@
     "zenodo_records_including_collection": 129,
     "unique_individual_publications": 168,
     "legacy_github_accounts_required_after_copy": 0,
-    "linkedin": 70,
+    "linkedin": 74,
     "youtube": 58
   },
-  "github_status": "168 canonical reports; added source-pinned numerical reports with proposed fixes. Report counts are not independent-defect counts.",
+  "github_status": "168 canonical reports; Four numerical audit reports have verified GERO, GitHub, HF and LinkedIn links; Zenodo remains pending. Counts are documents, not independent defects.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -166,6 +166,10 @@
       "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "youtube": [
+      "pvlib-hour-angle-dst",
+      "formulajs-numerical-boundaries",
+      "statsmodels-continuity-power",
+      "lifelines-fixed-time-variance",
       "policyengine-us-tips-overtime-fix",
       "opencv-pnp-extrinsic-guess",
       "opencv-rodrigues-boundary-accuracy",
