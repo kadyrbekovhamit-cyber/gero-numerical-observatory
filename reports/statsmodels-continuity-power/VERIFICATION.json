@@ -1,0 +1,71 @@
+{
+  "status": "Open upstream PRs; not merged or released. Local regression checks and limitations documented.",
+  "pull_requests": [
+    {
+      "url": "https://github.com/statsmodels/statsmodels/pull/10551",
+      "head": "1f3fb5a711293de4fd76600f41a3e92c7ca781a0",
+      "status": "OPEN",
+      "at": "2026-10-24T17:03:28.850294+00:00"
+    },
+    {
+      "url": "https://github.com/statsmodels/statsmodels/pull/10552",
+      "head": "fbeb847c68b767cee7fb89d8240447fd9788afaa",
+      "status": "OPEN",
+      "at": "2026-10-24T17:03:36.019876+00:00"
+    }
+  ],
+  "local_validation": {
+    "stats-validation.json": {
+      "cmh": {
+        "lint": "All checks passed!\n",
+        "before": {
+          "returncode": 1,
+          "tail": "F                                                                        [100%]\n=================================== FAILURES ===================================\n____________________ test_null_odds_correction_no_overshoot ____________________\n\n    def test_null_odds_correction_no_overshoot():\n        # The continuity correction is only applied if |sum(a - E(a))| >= 0.5,\n        # as in R's mantelhaen.test; otherwise it would enlarge the statistic.\n        # Single rare event: sum(a - E(a)) = -0.01, R: X2 = 0.0101, p = 0.92\n        st = ctab.StratifiedTable([np.array([[0, 1], [1, 98]])])\n        r0 = st.test_null_odds(correction=False)\n        r1 = st.test_null_odds(correction=True)\n        assert_allclose(r0.statistic, 0.0001 / 0.0099, rtol=1e-10)\n>       assert_allclose(r1.statistic, r0.statistic, rtol=1e-12)\nE       AssertionError: \nE       Not equal to tolerance rtol=1e-12, atol=0\nE       \nE       Mismatched elements: 1 / 1 (100%)\nE       Max absolute difference among violations: 24.24242424\nE       Max relative difference among violations: 2400.\nE        ACTUAL: array(24.252525)\nE        DESIRED: array(0.010101)\n\noverlay-cmh/statsmodels/stats/tests/test_contingency_tables.py:804: AssertionError\n=========================== short test summary info ============================\nFAILED overlay-cmh/statsmodels/stats/tests/test_contingency_tables.py::test_null_odds_correction_no_overshoot\n1 failed, 90 deselected in 2.99s\n"
+        },
+        "after": {
+          "returncode": 0,
+          "tail": "........................................................................ [ 79%]\n...................                                                      [100%]\n=============================== warnings summary ===============================\nstats/tests/test_contingency_tables.py::TestStratified1::test_pandas\n  /Users/khamit/Documents/pilory/numerical-impact-desk/research/hunt-2026-10-24/submission-2026-10-24/overlay-cmh/statsmodels/stats/contingency_tables.py:1310: RuntimeWarning: divide by zero encountered in divide\n    1 / e11\n\nstats/tests/test_contingency_tables.py::TestStratified1::test_pandas\n  /Users/khamit/Documents/pilory/numerical-impact-desk/research/hunt-2026-10-24/submission-2026-10-24/overlay-cmh/statsmodels/stats/contingency_tables.py:1311: RuntimeWarning: divide by zero encountered in divide\n    + 1 / (self._apc - e11)\n\nstats/tests/test_contingency_tables.py::TestStratified1::test_pandas\n  /Users/khamit/Documents/pilory/numerical-impact-desk/research/hunt-2026-10-24/submission-2026-10-24/overlay-cmh/statsmodels/stats/contingency_tables.py:1312: RuntimeWarning: divide by zero encountered in divide\n    + 1 / (self._apb - e11)\n\nstats/tests/test_contingency_tables.py::TestStratified1::test_pandas\n  /Users/khamit/Documents/pilory/numerical-impact-desk/research/hunt-2026-10-24/submission-2026-10-24/overlay-cmh/statsmodels/stats/contingency_tables.py:1310: RuntimeWarning: invalid value encountered in add\n    1 / e11\n\nstats/tests/test_contingency_tables.py::TestStratified1::test_pandas\n  /Users/khamit/Documents/pilory/numerical-impact-desk/research/hunt-2026-10-24/submission-2026-10-24/overlay-cmh/statsmodels/stats/contingency_tables.py:1313: RuntimeWarning: divide by zero encountered in divide\n    + 1 / (self._dma + e11)\n\nstats/tests/test_contingency_tables.py::TestStratified1::test_pandas\n  /Users/khamit/Documents/pilory/numerical-impact-desk/research/hunt-2026-10-24/submission-2026-10-24/overlay-cmh/statsmodels/stats/contingency_tables.py:1317: RuntimeWarning: invalid value encountered in divide\n    statistic = np.sum((table[0, 0, :] - e11) ** 2 / v11)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n91 passed, 6 warnings in 1.12s\n"
+        }
+      },
+      "power": {
+        "lint": "All checks passed!\n",
+        "before": {
+          "returncode": 1,
+          "tail": " power function that is nan on part of the bracket must not produce\n        # a \"converged\" root at the nan boundary\n        class NanPower(smp.TTestIndPower):\n            def power(\n                self, effect_size, nobs1, alpha, ratio=1, df=None, alternative=\"two-sided\"\n            ):\n                if effect_size > 0.4:\n                    return np.nan\n                return super().power(\n                    effect_size, nobs1, alpha, ratio=ratio, df=df, alternative=alternative\n                )\n    \n        with warnings.catch_warnings():\n            warnings.simplefilter(\"ignore\")\n            es = NanPower().solve_power(\n                nobs1=1237, alpha=0.05, power=0.8, alternative=\"smaller\"\n            )\n        true = -smp.TTestIndPower().solve_power(\n            nobs1=1237, alpha=0.05, power=0.8, alternative=\"larger\"\n        )\n>       assert np.isnan(es) or abs(es - true) < 1e-5\nE       AssertionError: assert (np.False_ or 0.49806376631961885 < 1e-05)\nE        +  where np.False_ = <ufunc 'isnan'>(0.3980550938252759)\nE        +    where <ufunc 'isnan'> = np.isnan\nE        +  and   0.49806376631961885 = abs((0.3980550938252759 - -0.10000867249434296))\n\noverlay-power/statsmodels/stats/tests/test_power.py:1286: AssertionError\n=============================== warnings summary ===============================\noverlay-power/statsmodels/stats/tests/test_power.py:107\n  /Users/khamit/Documents/pilory/numerical-impact-desk/research/hunt-2026-10-24/submission-2026-10-24/overlay-power/statsmodels/stats/tests/test_power.py:107: PytestUnknownMarkWarning: Unknown pytest.mark.thread_unsafe - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html\n    @pytest.mark.thread_unsafe(reason=\"Uses matplotlib\")\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ============================\nFAILED overlay-power/statsmodels/stats/tests/test_power.py::test_ttest_power_far_tail_not_nan\nFAILED overlay-power/statsmodels/stats/tests/test_power.py::test_solve_effect_size_smaller[685]\nFAILED overlay-power/statsmodels/stats/tests/test_power.py::test_solve_effect_size_smaller[1237]\nFAILED overlay-power/statsmodels/stats/tests/test_power.py::test_solve_effect_size_smaller[1833]\nFAILED overlay-power/statsmodels/stats/tests/test_power.py::test_solve_power_rejects_jump_as_root\n5 failed, 2 passed, 115 deselected, 1 warning in 0.62s\n"
+        },
+        "after": {
+          "returncode": 0,
+          "tail": "..x.......................x............................................. [ 59%]\n.....s....s.......................................                       [100%]\n=============================== warnings summary ===============================\noverlay-power/statsmodels/stats/tests/test_power.py:107\n  /Users/khamit/Documents/pilory/numerical-impact-desk/research/hunt-2026-10-24/submission-2026-10-24/overlay-power/statsmodels/stats/tests/test_power.py:107: PytestUnknownMarkWarning: Unknown pytest.mark.thread_unsafe - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html\n    @pytest.mark.thread_unsafe(reason=\"Uses matplotlib\")\n\nstats/tests/test_power.py: 10 warnings\n  /Users/khamit/Documents/pilory/numerical-impact-desk/research/hunt-2026-10-24/submission-2026-10-24/overlay-power/statsmodels/stats/power.py:197: RuntimeWarning: invalid value encountered in sqrt\n    pow_ = stats.norm.sf(crit - d * np.sqrt(nobs) / sigma)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n118 passed, 2 skipped, 2 xfailed, 11 warnings in 0.85s\n"
+        }
+      }
+    },
+    "STATS_CHANGED_LINE_COVERAGE.json": {
+      "cmh": {
+        "returncode": 0,
+        "changed_executable_lines": [
+          1144
+        ],
+        "changed_missing": [],
+        "tail": "e\n    + 1 / (self._dma + e11)\n\nstats/tests/test_contingency_tables.py::TestStratified1::test_pandas\n  /Users/khamit/Documents/pilory/numerical-impact-desk/research/hunt-2026-10-24/submission-2026-10-24/overlay-cmh/statsmodels/stats/contingency_tables.py:1317: RuntimeWarning: invalid value encountered in divide\n    statistic = np.sum((table[0, 0, :] - e11) ** 2 / v11)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n================================ tests coverage ================================\n______________ coverage: platform darwin, python 3.12.13-final-0 _______________\n\nCoverage JSON written to file /Users/khamit/Documents/pilory/numerical-impact-desk/research/hunt-2026-10-24/submission-2026-10-24/evidence/stats-cmh-coverage.json\n91 passed, 6 warnings in 1.75s\n"
+      },
+      "power": {
+        "returncode": 0,
+        "changed_executable_lines": [
+          51,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          63,
+          610,
+          666,
+          701
+        ],
+        "changed_missing": [],
+        "tail": "t.mark.thread_unsafe(reason=\"Uses matplotlib\")\n\nstats/tests/test_power.py: 10 warnings\n  /Users/khamit/Documents/pilory/numerical-impact-desk/research/hunt-2026-10-24/submission-2026-10-24/overlay-power/statsmodels/stats/power.py:197: RuntimeWarning: invalid value encountered in sqrt\n    pow_ = stats.norm.sf(crit - d * np.sqrt(nobs) / sigma)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n================================ tests coverage ================================\n______________ coverage: platform darwin, python 3.12.13-final-0 _______________\n\nCoverage JSON written to file /Users/khamit/Documents/pilory/numerical-impact-desk/research/hunt-2026-10-24/submission-2026-10-24/evidence/stats-power-coverage.json\n118 passed, 2 skipped, 2 xfailed, 11 warnings in 1.26s\n"
+      }
+    }
+  }
+}

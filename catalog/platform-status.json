@@ -1,18 +1,18 @@
 {
-  "checked_at": "2026-10-24T13:05:09.242502+00:00",
+  "checked_at": "2026-10-24T17:08:32.363832+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 156,
-    "huggingface": 156,
+    "gero": 159,
+    "huggingface": 159,
     "zenodo": 143,
-    "github_catalog_report": 164,
+    "github_catalog_report": 167,
     "zenodo_records_including_collection": 129,
-    "unique_individual_publications": 164,
+    "unique_individual_publications": 167,
     "legacy_github_accounts_required_after_copy": 0,
     "linkedin": 70,
     "youtube": 58
   },
-  "github_status": "164 canonical reports; PolicyEngine-US accepted-fix report has verified GERO, GitHub, HF, LinkedIn and Zenodo links. Counts are documents, not independent defects.",
+  "github_status": "167 canonical reports; added source-pinned numerical reports with proposed fixes. Report counts are not independent-defect counts.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -43,6 +43,9 @@
       "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "zenodo": [
+      "formulajs-numerical-boundaries",
+      "statsmodels-continuity-power",
+      "lifelines-fixed-time-variance",
       "uniswap-python-integer-price-odd-tick-review",
       "shin-python-convergence-contract",
       "penaltyblog-log-growth-ruin-boundary",

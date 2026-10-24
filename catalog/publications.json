@@ -1,5 +1,99 @@
 [
   {
+    "id": "formulajs-numerical-boundaries",
+    "title": "Formula.js: seven proposed fixes for blanks, financial formulas and dates",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-24",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/formulajs-numerical-boundaries.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/formulajs-numerical-boundaries",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/formulajs-numerical-boundaries.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/formulajs-numerical-boundaries.md",
+    "mirror_sha256": "3305f0d736f23920d55528c2562ccfeba385d5cccb109225dba77275a6aef5ac",
+    "maintainer_pull_requests": [
+      "https://github.com/formulajs/formulajs/pull/258",
+      "https://github.com/formulajs/formulajs/pull/259",
+      "https://github.com/formulajs/formulajs/pull/260",
+      "https://github.com/formulajs/formulajs/pull/261",
+      "https://github.com/formulajs/formulajs/pull/262",
+      "https://github.com/formulajs/formulajs/pull/263",
+      "https://github.com/formulajs/formulajs/pull/264"
+    ],
+    "reproduced_defects": 7,
+    "upstream_status": "Open upstream PRs; not merged or released. Local regression checks and limitations documented.",
+    "archive_sha256": "1eba1f43b8c2795d9bcd0050930c089d3788c60e4da5bef7e686d847ee21114a",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Open upstream PRs; not merged or released. Local regression checks and limitations documented.",
+    "huggingface": [
+      "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/formulajs-numerical-boundaries.md"
+    ],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
+    "id": "statsmodels-continuity-power",
+    "title": "statsmodels: continuity correction and power inversion regressions",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-24",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/statsmodels-continuity-power.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/statsmodels-continuity-power",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/statsmodels-continuity-power.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/statsmodels-continuity-power.md",
+    "mirror_sha256": "16af69c2af26b7e96976450c5ecb2f11ef756f01a3d51f5ebaf49c74376ba3b1",
+    "maintainer_pull_requests": [
+      "https://github.com/statsmodels/statsmodels/pull/10551",
+      "https://github.com/statsmodels/statsmodels/pull/10552"
+    ],
+    "reproduced_defects": 2,
+    "upstream_status": "Open upstream PRs; not merged or released. Local regression checks and limitations documented.",
+    "archive_sha256": "b6b98400389241353de8b1b915623238c4cb8f7d6a2d2865e8cd158a04095a69",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Open upstream PRs; not merged or released. Local regression checks and limitations documented.",
+    "huggingface": [
+      "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/statsmodels-continuity-power.md"
+    ],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
+    "id": "lifelines-fixed-time-variance",
+    "title": "lifelines: keep fixed-time variance constant between observed events",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-24",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/lifelines-fixed-time-variance.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/lifelines-fixed-time-variance",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/lifelines-fixed-time-variance.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/lifelines-fixed-time-variance.md",
+    "mirror_sha256": "4f25861fc7cc5a7448f0fc8dabfdfb29a2f45341dfd0a7477efcd0e09b0ef2eb",
+    "maintainer_pull_requests": [
+      "https://github.com/CamDavidsonPilon/lifelines/pull/1709"
+    ],
+    "reproduced_defects": 1,
+    "upstream_status": "Open upstream PRs; not merged or released. Local regression checks and limitations documented.",
+    "archive_sha256": "cc3485b91e34319c8f640ff2daa4e5aafad3317a96eea12db2f64f2f24f5919b",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Open upstream PRs; not merged or released. Local regression checks and limitations documented.",
+    "huggingface": [
+      "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/lifelines-fixed-time-variance.md"
+    ],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
     "id": "policyengine-us-tips-overtime-fix",
     "title": "Two reported tax-model discrepancies corrected in PolicyEngine-US 2.60.3",
     "authors": [

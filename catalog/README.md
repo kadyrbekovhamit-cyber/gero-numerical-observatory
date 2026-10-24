@@ -2,6 +2,13 @@
 
 ## New reports — 24 October 2026
 
+- [Formula.js: seven proposed fixes for blanks, financial formulas and dates](reports/formulajs-numerical-boundaries.md) — status and verification in the report.
+- [statsmodels: continuity correction and power inversion regressions](reports/statsmodels-continuity-power.md) — status and verification in the report.
+- [lifelines: keep fixed-time variance constant between observed events](reports/lifelines-fixed-time-variance.md) — status and verification in the report.
+
+
+## New reports — 24 October 2026
+
 - [Two reported tax-model discrepancies corrected in PolicyEngine-US 2.60.3](reports/policyengine-us-tips-overtime-fix.md) — status and verification in the report.
 
 
