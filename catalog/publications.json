@@ -1,5 +1,34 @@
 [
   {
+    "id": "pvlib-hour-angle-dst",
+    "title": "pvlib: clock time and elapsed time diverge on DST-transition days",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-24",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/pvlib-hour-angle-dst.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/pvlib-hour-angle-dst",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/pvlib-hour-angle-dst.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/pvlib-hour-angle-dst.md",
+    "mirror_sha256": "576ec21fb22a88885bf0dbaab1299569eaea47f934f93f96f227bb7e115358d4",
+    "maintainer_pull_requests": [
+      "https://github.com/pvlib/pvlib-python/pull/2923"
+    ],
+    "reproduced_defects": 1,
+    "upstream_status": "Open upstream PR 2923; not merged or released.",
+    "archive_sha256": "7c1677f84981e10ad9ba792572dbf76d6010128695c5f87afe7a144e690e097b",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Open upstream PR 2923; not merged or released.",
+    "huggingface": [
+      "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/pvlib-hour-angle-dst.md"
+    ],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
     "id": "formulajs-numerical-boundaries",
     "title": "Formula.js: seven proposed fixes for blanks, financial formulas and dates",
     "authors": [

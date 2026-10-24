@@ -2,6 +2,11 @@
 
 ## New reports — 24 October 2026
 
+- [pvlib: clock time and elapsed time diverge on DST-transition days](reports/pvlib-hour-angle-dst.md) — status and verification in the report.
+
+
+## New reports — 24 October 2026
+
 - [Formula.js: seven proposed fixes for blanks, financial formulas and dates](reports/formulajs-numerical-boundaries.md) — status and verification in the report.
 - [statsmodels: continuity correction and power inversion regressions](reports/statsmodels-continuity-power.md) — status and verification in the report.
 - [lifelines: keep fixed-time variance constant between observed events](reports/lifelines-fixed-time-variance.md) — status and verification in the report.

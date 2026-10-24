@@ -1,18 +1,18 @@
 {
-  "checked_at": "2026-10-24T17:08:32.363832+00:00",
+  "checked_at": "2026-10-24T17:13:14.014906+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 159,
-    "huggingface": 159,
+    "gero": 160,
+    "huggingface": 160,
     "zenodo": 143,
-    "github_catalog_report": 167,
+    "github_catalog_report": 168,
     "zenodo_records_including_collection": 129,
-    "unique_individual_publications": 167,
+    "unique_individual_publications": 168,
     "legacy_github_accounts_required_after_copy": 0,
     "linkedin": 70,
     "youtube": 58
   },
-  "github_status": "167 canonical reports; added source-pinned numerical reports with proposed fixes. Report counts are not independent-defect counts.",
+  "github_status": "168 canonical reports; added source-pinned numerical reports with proposed fixes. Report counts are not independent-defect counts.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -43,6 +43,7 @@
       "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "zenodo": [
+      "pvlib-hour-angle-dst",
       "formulajs-numerical-boundaries",
       "statsmodels-continuity-power",
       "lifelines-fixed-time-variance",
