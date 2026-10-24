@@ -1,5 +1,10 @@
 # GERO — publication catalogue
 
+## New reports — 24 October 2026
+
+- [Two reported tax-model discrepancies corrected in PolicyEngine-US 2.60.3](reports/policyengine-us-tips-overtime-fix.md) — status and verification in the report.
+
+
 ## New reports — 23 October 2026
 
 - [OpenCV RANSAC: preserve the camera-pose initial guess](reports/opencv-pnp-extrinsic-guess.md) — status and verification in the report.

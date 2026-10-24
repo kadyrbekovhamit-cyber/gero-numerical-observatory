@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-10-24",
+  "authors": [
+    "Xamit Kadirbekov",
+    "Daniyal Kadirbekov"
+  ],
+  "upstream_pr": "https://github.com/PolicyEngine/policyengine-us/pull/10393",
+  "author": "MaxGhenis",
+  "merged_at": "2026-10-23T03:11:28Z",
+  "merge_commit": "647fec60f94c057e32569fe119c05d2c0c0a7635",
+  "release_source_inspection": {
+    "version": "2.60.3",
+    "url": "https://files.pythonhosted.org/packages/13/62/2b8c4d88cf3bebe12d846700e5ab8bc12838ea128bf3245534a912a47b09/policyengine_us-2.60.3-py3-none-any.whl",
+    "wheel_sha256": "560fc4571f334b1a526c6bcdc2bbd24f1c48f039945d8e29db763a1de0f204ce",
+    "files_sha256": {
+      "policyengine_us/parameters/gov/irs/deductions/auto_loan_interest/phase_out/increment.yaml": "98aa302239c973b4078da1e738e45740392f6fb6acfb14b6c09fbecff7deaaee",
+      "policyengine_us/parameters/gov/irs/deductions/itemized/interest/mortgage_insurance_premiums/phase_out/increment.yaml": "7581be2ec0b084659890388f9955c4a317ee5be00248673c2ece00b5001d7afc",
+      "policyengine_us/parameters/gov/irs/deductions/overtime_income/phase_out/increment.yaml": "e8816d0a179bb10a75dc40344624adb46859c38f0a5d9142933f48e9e8f91685",
+      "policyengine_us/parameters/gov/irs/deductions/tip_income/phase_out/increment.yaml": "dafcf9911b31c85a3c45f13dd95d78d6beeae4bd5b4c78a3e3387074a73bc301",
+      "policyengine_us/parameters/gov/states/al/tax/income/deductions/standard/phase_out/increment.yaml": "6ef946e70541a6aaba1131d0487da8501e4aa60460722ed69db8ef4792c058e0",
+      "policyengine_us/parameters/gov/states/ri/tax/income/deductions/standard/phase_out/increment.yaml": "56c4f2dea1d55bd3354a78e21fdb1be627ca73bdca757a41836fcf52e096bdcc",
+      "policyengine_us/variables/gov/irs/income/taxable_income/deductions/overtime_income/overtime_income_deduction.py": "8f0c3d77cccd15ce97f02f96443806646ab41e808fbbd67187db6c0f5875db6d",
+      "policyengine_us/variables/gov/irs/income/taxable_income/deductions/tip_income/tip_income_deduction.py": "d5667aabc8f3d69963476268e4c0424bc9edd23b647bd82c6c820296cb48eddb"
+    },
+    "verification": "Source inspection only; package not installed or executed."
+  },
+  "runtime_retest_performed": false,
+  "historical_package_version": "2.24.1",
+  "historical_result_scope": "Deduction variables with supplied AGI; synthetic households; no complete tax liability."
+}

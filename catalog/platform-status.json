@@ -1,18 +1,18 @@
 {
-  "checked_at": "2026-10-23T15:34:57.499941+00:00",
+  "checked_at": "2026-10-24T12:47:58.211888+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 155,
+    "gero": 156,
     "huggingface": 155,
     "zenodo": 142,
-    "github_catalog_report": 163,
+    "github_catalog_report": 164,
     "zenodo_records_including_collection": 129,
-    "unique_individual_publications": 163,
+    "unique_individual_publications": 164,
     "legacy_github_accounts_required_after_copy": 0,
     "linkedin": 69,
     "youtube": 58
   },
-  "github_status": "163 canonical reports; six PnP reports published 23 October have verified GERO, GitHub, HF, LinkedIn and Zenodo links. Counts are documents, not independent defects.",
+  "github_status": "164 canonical reports; added the PolicyEngine-US correction report with scoped verification. Report counts are not independent-defect counts.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -33,6 +33,7 @@
       "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "huggingface": [
+      "policyengine-us-tips-overtime-fix",
       "actuarialmath-direct-endowment-second-moment",
       "mlx-arctan-directional-derivative-scale",
       "black-scholes-positive-payoff-v2",
@@ -43,6 +44,7 @@
       "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "zenodo": [
+      "policyengine-us-tips-overtime-fix",
       "uniswap-python-integer-price-odd-tick-review",
       "shin-python-convergence-contract",
       "penaltyblog-log-growth-ruin-boundary",
