@@ -1,10 +1,10 @@
 {
-  "checked_at": "2026-10-24T17:16:04.857967+00:00",
+  "checked_at": "2026-10-24T18:06:13.433491+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 160,
     "huggingface": 160,
-    "zenodo": 143,
+    "zenodo": 147,
     "github_catalog_report": 168,
     "zenodo_records_including_collection": 129,
     "unique_individual_publications": 168,
@@ -12,7 +12,7 @@
     "linkedin": 74,
     "youtube": 58
   },
-  "github_status": "168 canonical reports; Four numerical audit reports have verified GERO, GitHub, HF and LinkedIn links; Zenodo remains pending. Counts are documents, not independent defects.",
+  "github_status": "168 canonical reports; Four numerical audit reports have verified GERO, GitHub, HF, LinkedIn and shared Zenodo archive links. Counts are documents, not independent defects.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -43,10 +43,6 @@
       "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "zenodo": [
-      "pvlib-hour-angle-dst",
-      "formulajs-numerical-boundaries",
-      "statsmodels-continuity-power",
-      "lifelines-fixed-time-variance",
       "uniswap-python-integer-price-odd-tick-review",
       "shin-python-convergence-contract",
       "penaltyblog-log-growth-ruin-boundary",

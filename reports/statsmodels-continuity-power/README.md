@@ -13,3 +13,4 @@ Publication links verified 24 October 2026:
 - github_catalog: https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/statsmodels-continuity-power.md
 - huggingface: https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/statsmodels-continuity-power.md
 - linkedin: https://www.linkedin.com/feed/update/urn:li:activity:7519808700740423681/
+- zenodo: https://doi.org/10.5281/zenodo.23623689
