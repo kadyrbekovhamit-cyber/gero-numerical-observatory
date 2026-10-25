@@ -1,18 +1,18 @@
 {
-  "checked_at": "2026-10-25T03:59:40.260395+00:00",
+  "checked_at": "2026-10-25T04:12:55.774479+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 164,
     "huggingface": 164,
-    "zenodo": 147,
+    "zenodo": 151,
     "github_catalog_report": 172,
     "zenodo_records_including_collection": 129,
     "unique_individual_publications": 172,
     "legacy_github_accounts_required_after_copy": 0,
-    "linkedin": 74,
+    "linkedin": 78,
     "youtube": 58
   },
-  "github_status": "172 canonical reports; added source-pinned numerical reports with proposed fixes. Report counts are not independent-defect counts.",
+  "github_status": "172 canonical reports; Four numerical audit reports have verified GERO, GitHub, HF, LinkedIn and shared Zenodo archive links. Counts are documents, not independent defects.",
   "github_account": "kadyrbekovhamit-cyber",
   "github_account_email_verified_in_settings": true,
   "sources": {
@@ -43,10 +43,6 @@
       "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "zenodo": [
-      "ethers-fixednumber-negative-rounding",
-      "decimal-logarithm-rounding-boundaries",
-      "luxon-calendar-boundary-count-diff",
-      "tax-calculator-schedule-d-amt",
       "uniswap-python-integer-price-odd-tick-review",
       "shin-python-convergence-contract",
       "penaltyblog-log-growth-ruin-boundary",
@@ -166,6 +162,10 @@
       "actuarialmath-whole-life-annuity-zero-interest-benefit"
     ],
     "youtube": [
+      "ethers-fixednumber-negative-rounding",
+      "decimal-logarithm-rounding-boundaries",
+      "luxon-calendar-boundary-count-diff",
+      "tax-calculator-schedule-d-amt",
       "pvlib-hour-angle-dst",
       "formulajs-numerical-boundaries",
       "statsmodels-continuity-power",
