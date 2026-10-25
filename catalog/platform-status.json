@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-25T08:35:17.271733+00:00",
+  "checked_at": "2026-10-25T08:38:36.023014+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 167,
@@ -9,7 +9,7 @@
     "zenodo_records_including_collection": 129,
     "unique_individual_publications": 173,
     "legacy_github_accounts_required_after_copy": 0,
-    "linkedin": 79,
+    "linkedin": 80,
     "youtube": 58
   },
   "github_status": "173 canonical reports; The SciPy numerical audit report has verified GERO, GitHub, HF, LinkedIn and shared Zenodo archive links. Counts are documents, not independent defects.",
@@ -142,7 +142,6 @@
       "self-correction-decomposition",
       "olympiad-to-research-gap",
       "financepy-baw-zero-rate",
-      "financepy-bond-principal-face-scaling",
       "onnx-lpnormalization-finite-range",
       "onnx-reducel2-finite-range",
       "onnx-reducemean-finite-range",
