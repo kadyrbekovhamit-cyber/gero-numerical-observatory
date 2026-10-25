@@ -2,6 +2,11 @@
 
 ## New reports — 25 October 2026
 
+- [SciPy exact-test boundaries: floating-point ties can change p-values](reports/scipy-exact-test-numerical-ties.md) — status and verification in the report.
+
+
+## New reports — 25 October 2026
+
 - [ethers: negative FixedNumber rounding can change integral values](reports/ethers-fixednumber-negative-rounding.md) — status and verification in the report.
 - [decimal.js: rounding boundaries in log2 and log10](reports/decimal-logarithm-rounding-boundaries.md) — status and verification in the report.
 - [Luxon: skipped midnights and clamped month-end differences](reports/luxon-calendar-boundary-count-diff.md) — status and verification in the report.

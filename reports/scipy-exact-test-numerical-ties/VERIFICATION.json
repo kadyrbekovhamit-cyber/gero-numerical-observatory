@@ -1,0 +1,28 @@
+{
+  "checked_at": "2026-10-25T06:16:50.746629+00:00",
+  "status": "open_pr_not_merged_or_released",
+  "pr": "https://github.com/scipy/scipy/pull/26496",
+  "base": "b9be93fce75058df3e6848bfb79e24fd272a06b5",
+  "head": "b2c2bc46d94e8f15f85fcdfe32da66586c6f94f9",
+  "authors": [
+    "Xamit Kadirbekov",
+    "Daniyal Kadirbekov"
+  ],
+  "targeted_before": {
+    "failed": 12,
+    "passed": 6
+  },
+  "targeted_after": {
+    "passed": 18
+  },
+  "module_after": {
+    "passed": 259,
+    "skipped": 3,
+    "failed": 1
+  },
+  "baseline_failure": "TestMannWhitneyU::test_gh24777[numpy]",
+  "fresh_native_build": false,
+  "full_suite": false,
+  "independent_human_review_claimed": false,
+  "ai_assistance_disclosed": true
+}
