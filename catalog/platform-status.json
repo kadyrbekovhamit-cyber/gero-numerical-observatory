@@ -1,10 +1,10 @@
 {
-  "checked_at": "2026-10-25T06:25:20.992851+00:00",
+  "checked_at": "2026-10-25T08:35:17.271733+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
-    "gero": 165,
-    "huggingface": 165,
-    "zenodo": 152,
+    "gero": 167,
+    "huggingface": 167,
+    "zenodo": 154,
     "github_catalog_report": 173,
     "zenodo_records_including_collection": 129,
     "unique_individual_publications": 173,
@@ -28,9 +28,7 @@
       "black-scholes-positive-payoff-v2",
       "black-scholes-hybrid-v3",
       "black-scholes-sensitivities-v4",
-      "black-scholes-interval-iv-v5",
-      "actuarialmath-uniform-shortcuts-conditioning",
-      "actuarialmath-whole-life-annuity-zero-interest-benefit"
+      "black-scholes-interval-iv-v5"
     ],
     "huggingface": [
       "actuarialmath-direct-endowment-second-moment",
@@ -38,9 +36,7 @@
       "black-scholes-positive-payoff-v2",
       "black-scholes-hybrid-v3",
       "black-scholes-sensitivities-v4",
-      "black-scholes-interval-iv-v5",
-      "actuarialmath-uniform-shortcuts-conditioning",
-      "actuarialmath-whole-life-annuity-zero-interest-benefit"
+      "black-scholes-interval-iv-v5"
     ],
     "zenodo": [
       "uniswap-python-integer-price-odd-tick-review",
@@ -61,9 +57,7 @@
       "quantstats-initial-drawdown-recovery-sign",
       "chainladder-off-grid-rate-changes",
       "actuarialmath-direct-endowment-second-moment",
-      "mlx-arctan-directional-derivative-scale",
-      "actuarialmath-uniform-shortcuts-conditioning",
-      "actuarialmath-whole-life-annuity-zero-interest-benefit"
+      "mlx-arctan-directional-derivative-scale"
     ],
     "linkedin": [
       "actuarialmath-whole-life-variance",

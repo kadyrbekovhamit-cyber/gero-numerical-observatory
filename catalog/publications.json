@@ -4002,9 +4002,13 @@
     ],
     "publication_date": "2026-09-30",
     "kind": "published_report",
-    "gero": null,
-    "huggingface": null,
-    "zenodo": null,
+    "gero": "https://www.gero.uz/research/articles/actuarialmath-uniform-shortcuts-conditioning.html",
+    "huggingface": [
+      "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/actuarialmath-uniform-shortcuts-conditioning.md"
+    ],
+    "zenodo": [
+      "https://zenodo.org/records/23050719"
+    ],
     "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/actuarialmath-uniform-shortcuts-conditioning",
     "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-uniform-shortcuts-conditioning.md",
     "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-uniform-shortcuts-conditioning.md",
@@ -4021,7 +4025,8 @@
     "publication_status": "developer_issue_and_github_public_verified; other destinations pending",
     "source_pin": "7d18f11ad304898f177b7922b3c53f70e4c2b4f4",
     "limits": "Finite supported Uniform-law inputs and unit continuous annuity benefits; no full upstream suite, insurer deployment, policy loss, regulatory finding or accepted fix claimed.",
-    "measured_chain": "Uniform shortcut expressions -> public class calls -> 275 of 468 oracle disagreements in current and release -> 0 of 468 with local candidate -> 275 of 468 after exact restoration."
+    "measured_chain": "Uniform shortcut expressions -> public class calls -> 275 of 468 oracle disagreements in current and release -> 0 of 468 with local candidate -> 275 of 468 after exact restoration.",
+    "huggingface_document": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/actuarialmath-uniform-shortcuts-conditioning.md"
   },
   {
     "id": "actuarialmath-whole-life-annuity-zero-interest-benefit",
@@ -4031,9 +4036,13 @@
     ],
     "publication_date": "2026-09-30",
     "kind": "published_report",
-    "gero": null,
-    "huggingface": null,
-    "zenodo": null,
+    "gero": "https://www.gero.uz/research/articles/actuarialmath-whole-life-annuity-zero-interest-benefit.html",
+    "huggingface": [
+      "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/actuarialmath-whole-life-annuity-zero-interest-benefit.md"
+    ],
+    "zenodo": [
+      "https://zenodo.org/records/23051379"
+    ],
     "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/actuarialmath-whole-life-annuity-zero-interest-benefit",
     "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-whole-life-annuity-zero-interest-benefit.md",
     "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/actuarialmath-whole-life-annuity-zero-interest-benefit.md",
@@ -4050,7 +4059,8 @@
     "publication_status": "developer_issue_and_github_public_verified; other destinations pending",
     "source_pin": "7d18f11ad304898f177b7922b3c53f70e4c2b4f4",
     "limits": "One explicit finite-support Beta(2) survival law, nonnegative benefits, zero interest and positive-interest controls; no full upstream suite, insurer deployment, policy loss, regulatory finding or accepted fix claimed.",
-    "measured_chain": "Annuity.whole_life_annuity zero-interest branch -> 48 of 90 exact-oracle disagreements in current and release -> 0 of 90 with the local candidate -> 48 of 90 after exact restoration."
+    "measured_chain": "Annuity.whole_life_annuity zero-interest branch -> 48 of 90 exact-oracle disagreements in current and release -> 0 of 90 with the local candidate -> 48 of 90 after exact restoration.",
+    "huggingface_document": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/actuarialmath-whole-life-annuity-zero-interest-benefit.md"
   },
   {
     "id": "frappe-lending-quarterly-day-count",
