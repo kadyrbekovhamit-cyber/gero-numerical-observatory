@@ -1,5 +1,13 @@
 # GERO — publication catalogue
 
+## New reports — 25 October 2026
+
+- [ethers: negative FixedNumber rounding can change integral values](reports/ethers-fixednumber-negative-rounding.md) — status and verification in the report.
+- [decimal.js: rounding boundaries in log2 and log10](reports/decimal-logarithm-rounding-boundaries.md) — status and verification in the report.
+- [Luxon: skipped midnights and clamped month-end differences](reports/luxon-calendar-boundary-count-diff.md) — status and verification in the report.
+- [Tax-Calculator: Schedule D and AMT rule alignment](reports/tax-calculator-schedule-d-amt.md) — status and verification in the report.
+
+
 ## New reports — 24 October 2026
 
 - [pvlib: clock time and elapsed time diverge on DST-transition days](reports/pvlib-hour-angle-dst.md) — status and verification in the report.

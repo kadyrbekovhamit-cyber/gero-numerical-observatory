@@ -1,0 +1,77 @@
+{
+  "status": "Open upstream PRs; not merged or released. Scoped checks and limitations documented.",
+  "source_base": "f427515a38f6a671f8de663e6bcc040ed81f114e",
+  "pull_requests": {
+    "luxon-count": {
+      "url": "https://github.com/moment/luxon/pull/1830",
+      "head": "7488b95fcca044f43bfddbe90a0f55918144c2b0",
+      "status": "OPEN",
+      "draft": false,
+      "at": "2026-10-25T08:48:29.425487+05:00",
+      "body_file": "pr-bodies/luxon-count.md",
+      "files": [
+        "src/interval.js",
+        "test/interval/countDstMidnight.test.js"
+      ],
+      "body_verified": true
+    },
+    "luxon-diff": {
+      "url": "https://github.com/moment/luxon/pull/1831",
+      "head": "a56621f33284e90b7acdf31683133ac0a48e5a8a",
+      "status": "OPEN",
+      "draft": false,
+      "at": "2026-10-25T08:48:38.973117+05:00",
+      "body_file": "pr-bodies/luxon-diff.md",
+      "files": [
+        "src/impl/diff.js",
+        "test/datetime/diffClampedFraction.test.js"
+      ],
+      "body_verified": true
+    }
+  },
+  "validation": {
+    "LUXON_INDEPENDENT_BRANCHES.json": {
+      "luxon-count": {
+        "exit": 1,
+        "tail": "                                              ^\n      553 |   expect(dt.reconfigure({ locale: \"en-US\" }).toLocaleString(DateTime.TIME_24_SIMPLE)).toBe(\"09:23\");\n      554 |\n      555 |   // France has 24-hour time by default\n\n      at Object.toBe (test/datetime/format.test.js:552:84)\n\n\nTest Suites: 2 failed, 57 passed, 59 total\nTests:       9 failed, 1220 passed, 1229 total\nSnapshots:   1 passed, 1 total\nTime:        2.483 s\nRan all test suites.\n"
+      },
+      "luxon-diff": {
+        "exit": 1,
+        "tail": "                                              ^\n      553 |   expect(dt.reconfigure({ locale: \"en-US\" }).toLocaleString(DateTime.TIME_24_SIMPLE)).toBe(\"09:23\");\n      554 |\n      555 |   // France has 24-hour time by default\n\n      at Object.toBe (test/datetime/format.test.js:552:84)\n\n\nTest Suites: 2 failed, 57 passed, 59 total\nTests:       9 failed, 1215 passed, 1224 total\nSnapshots:   1 passed, 1 total\nTime:        2.547 s\nRan all test suites.\n"
+      }
+    },
+    "LUXON_BASELINE_FAILURES.json": {
+      "baseline_failure_names": [
+        "DateTime#diff in months is monotonic across a clamped month end",
+        "DateTime#diff in quarters measures the fraction against start + (n+1) quarters",
+        "DateTime#toFormat('t') returns a short time representation",
+        "DateTime#toFormat('tt') returns a medium time representation",
+        "DateTime#toLocaleString uses locale-appropriate time formats",
+        "DateTime#toLocaleString() does the best it can with unsupported fixed-offset zone when showing the zone",
+        "DateTime#toLocaleString() does the best it can with unsupported fixed-offset zone with timeStyle full",
+        "DateTime#toLocaleString() shows things in the right custom zone",
+        "DateTime#toLocaleString() shows things in the right custom zone when showing the zone",
+        "DateTime#toLocaleString() shows things in the right custom zone with timeStyle full",
+        "DateTime#toLocaleString() shows things with UTC if fixed-offset zone with 0 offset is used",
+        "Interval#count('days') counts the DST-start day when its midnight is skipped (Africa/Cairo)",
+        "Interval#count('days') counts the DST-start day when its midnight is skipped (America/Havana)",
+        "Interval#count('days') counts the DST-start day when its midnight is skipped (America/Santiago)",
+        "Interval#count('days') counts the DST-start day when its midnight is skipped (Asia/Beirut)",
+        "Interval#count('days') counts the DST-start day when its midnight is skipped (Atlantic/Azores)",
+        "Interval#count('weeks') counts the week whose Monday midnight is skipped (Asia/Tehran 2016)"
+      ],
+      "patched_failure_names": [
+        "DateTime#toFormat('t') returns a short time representation",
+        "DateTime#toFormat('tt') returns a medium time representation",
+        "DateTime#toLocaleString uses locale-appropriate time formats",
+        "DateTime#toLocaleString() does the best it can with unsupported fixed-offset zone when showing the zone",
+        "DateTime#toLocaleString() does the best it can with unsupported fixed-offset zone with timeStyle full",
+        "DateTime#toLocaleString() shows things in the right custom zone",
+        "DateTime#toLocaleString() shows things in the right custom zone when showing the zone",
+        "DateTime#toLocaleString() shows things in the right custom zone with timeStyle full",
+        "DateTime#toLocaleString() shows things with UTC if fixed-offset zone with 0 offset is used"
+      ],
+      "all_remaining_failures_preexist": true
+    }
+  }
+}

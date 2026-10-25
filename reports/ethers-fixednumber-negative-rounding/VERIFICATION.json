@@ -1,0 +1,58 @@
+{
+  "status": "Open upstream PRs; not merged or released. Scoped checks and limitations documented.",
+  "source_base": "3ea4c226dd0b3a074abf90748de9d11192027f4f",
+  "pull_requests": {
+    "ethers": {
+      "url": "https://github.com/ethers-io/ethers.js/pull/5207",
+      "head": "b4b6bb03d6b836c66f5f9cbf19416030640091be",
+      "status": "OPEN",
+      "draft": false,
+      "at": "2026-10-25T08:44:03.032498+05:00",
+      "body_file": "pr-bodies/ethers-round.md",
+      "files": [
+        "src.ts/utils/fixednumber.ts",
+        "src.ts/_tests/test-utils-fixednumber-round.ts"
+      ],
+      "body_verified": true
+    }
+  },
+  "validation": {
+    "JS_VALIDATION.json": {
+      "ethers-before": {
+        "exit": 6,
+        "seconds": 0.477,
+        "command": [
+          "/opt/homebrew/bin/node",
+          "/private/tmp/claude-501/-Users-khamit/46bdb46e-e11a-40a9-bedc-c066ff970c16/scratchpad/h24b-jsnum/npm/node_modules/mocha/bin/mocha.js",
+          "lib.esm/_tests/test-utils-fixednumber.js"
+        ],
+        "cwd": "/Users/khamit/Documents/pilory/numerical-impact-desk/research/hunt-2026-10-24b/submission-2026-10-25/repos/ethers",
+        "tail": "mous> (file:///Users/khamit/Documents/pilory/numerical-impact-desk/research/hunt-2026-10-24b/submission-2026-10-25/repos/ethers/lib.esm/_tests/test-utils-fixednumber.js:28:20)\n      at process.processImmediate (node:internal/timers:574:21)\n\n  6) Tests FixedNumber.round\n       rounds -123.456 to 2 decimals:\n\n      AssertionError [ERR_ASSERTION]: '-123.45' == '-123.46'\n      + expected - actual\n\n      --123.45\n      +-123.46\n      \n      at Context.<anonymous> (file:///Users/khamit/Documents/pilory/numerical-impact-desk/research/hunt-2026-10-24b/submission-2026-10-25/repos/ethers/lib.esm/_tests/test-utils-fixednumber.js:28:20)\n      at process.processImmediate (node:internal/timers:574:21)\n\n\n\n"
+      },
+      "ethers-after": {
+        "exit": 0,
+        "seconds": 0.115,
+        "command": [
+          "/opt/homebrew/bin/node",
+          "/private/tmp/claude-501/-Users-khamit/46bdb46e-e11a-40a9-bedc-c066ff970c16/scratchpad/h24b-jsnum/npm/node_modules/mocha/bin/mocha.js",
+          "lib.esm/_tests/test-utils-fixednumber.js"
+        ],
+        "cwd": "/Users/khamit/Documents/pilory/numerical-impact-desk/research/hunt-2026-10-24b/submission-2026-10-25/repos/ethers",
+        "tail": "\n\n  Tests FixedNumber.round\n    \u2714 rounds 1.7 to 0 decimals\n    \u2714 rounds 1.2 to 0 decimals\n    \u2714 rounds 1.5 to 0 decimals\n    \u2714 rounds 3 to 0 decimals\n    \u2714 rounds -3 to 0 decimals\n    \u2714 rounds -1.7 to 0 decimals\n    \u2714 rounds -1.2 to 0 decimals\n    \u2714 rounds -0.6 to 0 decimals\n    \u2714 rounds -1.5 to 0 decimals\n    \u2714 rounds -2.5 to 0 decimals\n    \u2714 rounds -0.4 to 0 decimals\n    \u2714 rounds -1.26 to 1 decimals\n    \u2714 rounds -1.25 to 1 decimals\n    \u2714 rounds -123.456 to 2 decimals\n    \u2714 rounds -123.455 to 2 decimals\n    \u2714 rounds -0.000000000000000001 to 0 decimals\n\n\n  16 passing (5ms)\n\n"
+      },
+      "ethers-suite": {
+        "exit": 0,
+        "seconds": 0.126,
+        "command": [
+          "/opt/homebrew/bin/node",
+          "/private/tmp/claude-501/-Users-khamit/46bdb46e-e11a-40a9-bedc-c066ff970c16/scratchpad/h24b-jsnum/npm/node_modules/mocha/bin/mocha.js",
+          "lib.esm/_tests/test-utils-fixednumber.js",
+          "lib.esm/_tests/test-utils-units.js",
+          "lib.esm/_tests/test-utils-maths.js"
+        ],
+        "cwd": "/Users/khamit/Documents/pilory/numerical-impact-desk/research/hunt-2026-10-24b/submission-2026-10-25/repos/ethers",
+        "tail": "ectly fails on bad toBeHex values: width too short\n    \u2714 correctly fails on nad toBeArray values: negative value\n\n  Tests Twos Compliemnts Functions\n    \u2714 computes twos compliment values: 0[8 bits]\n    \u2714 computes twos compliment values: 1[8 bits]\n    \u2714 computes twos compliment values: -1[8 bits]\n    \u2714 computes twos compliment values: 127[8 bits]\n    \u2714 computes twos compliment values: -128[8 bits]\n    \u2714 computes values from twos compliment: 0[8 bits]\n    \u2714 computes values from twos compliment: 1[8 bits]\n    \u2714 computes values from twos compliment: -1[8 bits]\n    \u2714 computes values from twos compliment: 127[8 bits]\n    \u2714 computes values from twos compliment: -128[8 bits]\n\n\n  104 passing (12ms)\n\n"
+      }
+    }
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "status": "Open upstream PRs; not merged or released. Scoped checks and limitations documented.",
+  "source_base": "b1d1e311eb272b16f5b2ca0e0d1f4c4fa8558edf",
+  "pull_requests": {
+    "decimal-log": {
+      "url": "https://github.com/MikeMcl/decimal.js/pull/271",
+      "head": "e73eff7aa461bac37c87258af5d88cc89f5b5f54",
+      "status": "OPEN",
+      "draft": false,
+      "at": "2026-10-25T08:44:13.052649+05:00",
+      "body_file": "pr-bodies/decimal-log.md",
+      "files": [
+        "decimal.js",
+        "decimal.mjs",
+        "test/modules/log2.js",
+        "test/modules/log10.js"
+      ],
+      "body_verified": true
+    }
+  },
+  "validation": {
+    "DECIMAL_LOG_VALIDATION.json": {
+      "decimal-log2-before": {
+        "exit": 0,
+        "tail": " Testing log2...\n  Test number 201 failed: assertEqual\n  Expected: 5.64539e+1\n  Actual:   5.6454e+1\n  Test number 202 failed: assertEqual\n  Expected: 2.55e+1\n  Actual:   2.56e+1\n  Test number 203 failed: assertEqual\n  Expected: 7.9469e+0\n  Actual:   7.947e+0\n  Test number 204 failed: assertEqual\n  Expected: 1.8562961e+0\n  Actual:   1.856296e+0\n  Test number 205 failed: assertEqual\n  Expected: 6.738751e+1\n  Actual:   6.73875099e+1\n  Test number 206 failed: assertEqual\n  Expected: 6.833090559e+1\n  Actual:   6.833090558e+1\n  Test number 207 failed: assertEqual\n  Expected: 8.2e+1\n  Actual:   8.3e+1\n  Test number 208 failed: assertEqual\n  Expected: 2.19e+0\n  Actual:   2.18e+0\n  Test number 209 failed: assertEqual\n  Expected: 7.418e+1\n  Actual:   7.417e+1\n  Test number 210 failed: assertEqual\n  Expected: 6.8999e+1\n  Actual:   6.9e+1\n 200 of 210 tests passed in 47 ms"
+      },
+      "decimal-log10-before": {
+        "exit": 0,
+        "tail": " Testing log10...\n  Test number 501 failed: assertEqual\n  Expected: 1.08e+1\n  Actual:   1.07e+1\n  Test number 502 failed: assertEqual\n  Expected: 1e+1\n  Actual:   9.9e+0\n  Test number 503 failed: assertEqual\n  Expected: 4.867683e+0\n  Actual:   4.867682e+0\n  Test number 504 failed: assertEqual\n  Expected: 9.44759e+2\n  Actual:   9.44758e+2\n  Test number 505 failed: assertEqual\n  Expected: 2.629731e+1\n  Actual:   2.62973e+1\n  Test number 506 failed: assertEqual\n  Expected: 7.4093115139562513992e+2\n  Actual:   7.4093115139562513991e+2\n 500 of 506 tests passed in 33 ms"
+      },
+      "decimal-log2-after": {
+        "exit": 0,
+        "tail": " Testing log2... 210 of 210 tests passed in 38 ms"
+      },
+      "decimal-log10-after": {
+        "exit": 0,
+        "tail": " Testing log10... 506 of 506 tests passed in 34 ms"
+      },
+      "decimal-log-suite": {
+        "exit": 0,
+        "tail": "sign... 16 of 16 tests passed in 0 ms\n Testing sin... 100 of 100 tests passed in 33 ms\n Testing sinh... 100 of 100 tests passed in 12 ms\n Testing sqrt... 1000 of 1000 tests passed in 12 ms\n Testing sum... 37 of 37 tests passed in 0 ms\n Testing tan... 100 of 100 tests passed in 30 ms\n Testing tanh... 100 of 100 tests passed in 22 ms\n Testing times... 1000 of 1000 tests passed in 3 ms\n Testing toBinary... 327 of 327 tests passed in 6 ms\n Testing toDecimalPlaces... 500 of 500 tests passed in 1 ms\n Testing toExponential... 500 of 500 tests passed in 1 ms\n Testing toFixed... 500 of 500 tests passed in 1 ms\n Testing toHex... 309 of 309 tests passed in 2 ms\n Testing toNearest... 157 of 157 tests passed in 1 ms\n Testing toNumber... 40 of 40 tests passed in 0 ms\n Testing toOctal... 293 of 293 tests passed in 2 ms\n Testing toPrecision... 500 of 500 tests passed in 1 ms\n Testing toSignificantDigits... 500 of 500 tests passed in 1 ms\n Testing toString... 338 of 338 tests passed in 0 ms\n Testing trunc... 100 of 100 tests passed in 0 ms\n Testing valueOf... 40 of 40 tests passed in 0 ms\n\n In total, 22644 of 22644 tests passed in 0.567 secs.\n"
+      }
+    },
+    "DECIMAL_INDEPENDENT_ORACLES.json": [
+      {
+        "function": "log2",
+        "x": "98706868770123812.412",
+        "precision": 6,
+        "rounding": 3,
+        "expected": "5.64539e+1",
+        "oracle_300": "56.4539",
+        "oracle_450": "56.4539"
+      },
+      {
+        "function": "log2",
+        "x": "49126563.92678016387612",
+        "precision": 3,
+        "rounding": 7,
+        "expected": "2.55e+1",
+        "oracle_300": "25.5",
+        "oracle_450": "25.5"
+      },
+      {
+        "function": "log2",
+        "x": "246.76603078160465034012",
+        "precision": 5,
+        "rounding": 1,
+        "expected": "7.9469e+0",
+        "oracle_300": "7.9469",
+        "oracle_450": "7.9469"
+      },
+      {
+        "function": "log2",
+        "x": "3.6207687795871931496302",
+        "precision": 8,
+        "rounding": 6,
+        "expected": "1.8562961e+0",
+        "oracle_300": "1.8562961",
+        "oracle_450": "1.8562961"
+      },
+      {
+        "function": "log2",
+        "x": "193046453741657705320.479",
+        "precision": 9,
+        "rounding": 8,
+        "expected": "6.738751e+1",
+        "oracle_300": "67.3875100",
+        "oracle_450": "67.3875100"
+      },
+      {
+        "function": "log2",
+        "x": "371237818500141155940.865",
+        "precision": 10,
+        "rounding": 5,
+        "expected": "6.833090559e+1",
+        "oracle_300": "68.33090559",
+        "oracle_450": "68.33090559"
+      },
+      {
+        "function": "log2",
+        "x": "6838717160008073690000000",
+        "precision": 2,
+        "rounding": 4,
+        "expected": "8.2e+1",
+        "oracle_300": "82",
+        "oracle_450": "82"
+      },
+      {
+        "function": "log2",
+        "x": "4.531535541183194468316296",
+        "precision": 3,
+        "rounding": 2,
+        "expected": "2.19e+0",
+        "oracle_300": "2.19",
+        "oracle_450": "2.19"
+      },
+      {
+        "function": "log2",
+        "x": "21251753917450181594554.560",
+        "precision": 4,
+        "rounding": 0,
+        "expected": "7.418e+1",
+        "oracle_300": "74.18",
+        "oracle_450": "74.18"
+      },
+      {
+        "function": "log2",
+        "x": "590295810358705651711",
+        "precision": 5,
+        "rounding": 1,
+        "expected": "6.8999e+1",
+        "oracle_300": "68.999",
+        "oracle_450": "68.999"
+      },
+      {
+        "function": "log10",
+        "x": "56234132519.03490803949510398",
+        "precision": 3,
+        "rounding": 8,
+        "expected": "1.08e+1",
+        "oracle_300": "10.8",
+        "oracle_450": "10.8"
+      },
+      {
+        "function": "log10",
+        "x": "8912509381.337455299531086812",
+        "precision": 2,
+        "rounding": 5,
+        "expected": "1e+1",
+        "oracle_300": "10.0",
+        "oracle_450": "10.0"
+      },
+      {
+        "function": "log10",
+        "x": "73736.49670613394023405443387543",
+        "precision": 7,
+        "rounding": 4,
+        "expected": "4.867683e+0",
+        "oracle_300": "4.867683",
+        "oracle_450": "4.867683"
+      },
+      {
+        "function": "log10",
+        "x": "5.734558665459644944383750387E+944",
+        "precision": 6,
+        "rounding": 7,
+        "expected": "9.44759e+2",
+        "oracle_300": "944.759",
+        "oracle_450": "944.759"
+      },
+      {
+        "function": "log10",
+        "x": "198291911812331275913442521.0086827143186736526",
+        "precision": 7,
+        "rounding": 6,
+        "expected": "2.629731e+1",
+        "oracle_300": "26.29731",
+        "oracle_450": "26.29731"
+      },
+      {
+        "function": "log10",
+        "x": "8.53397557676161027218487058310699814173898e740",
+        "precision": 20,
+        "rounding": 4,
+        "expected": "7.4093115139562513992e+2",
+        "oracle_300": "740.93115139562513992",
+        "oracle_450": "740.93115139562513992"
+      }
+    ]
+  }
+}

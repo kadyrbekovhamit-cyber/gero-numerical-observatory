@@ -1,0 +1,62 @@
+{
+  "status": "Open upstream PRs; not merged or released. Scoped checks and limitations documented.",
+  "source_base": "f6ddd4ca74d6f2bf5a8e785b975f8681f030be9b",
+  "pull_requests": {
+    "taxcalc": {
+      "url": "https://github.com/PSLmodels/Tax-Calculator/pull/3196",
+      "head": "5ea15d1ceb8a944d5933ee3813d13300e76ae224",
+      "status": "OPEN",
+      "draft": false,
+      "at": "2026-10-25T08:54:29.505049+05:00",
+      "body_file": "pr-bodies/taxcalc-irs.md",
+      "files": [
+        "taxcalc/calcfunctions.py",
+        "taxcalc/policy_current_law.json",
+        "taxcalc/reforms/2017_law.json",
+        "taxcalc/reforms/NoOBBBA.json",
+        "taxcalc/reforms/OBBBA.json",
+        "taxcalc/reforms/TCJA.json",
+        "taxcalc/tests/test_calcfunctions.py",
+        "taxcalc/tests/test_hunt_regressions.py",
+        "update_pcl.py"
+      ],
+      "body_verified": true
+    }
+  },
+  "validation": {
+    "TAX_VALIDATION.json": {
+      "tax-before": {
+        "exit": 1,
+        "tail": "\nE         Expected: 1268500.0 \u00b1 1.2685\n\ntaxcalc/tests/test_hunt_regressions.py:40: AssertionError\n__________________ test_no_child_amt_exemption_cap_after_2017 __________________\n\n    def test_no_child_amt_exemption_cap_after_2017():\n        # 17-year-old dependent, 10,000 wages + 30,000 interest: AMTI 40,000\n        # is below the 88,100 exemption, so there is no AMT\n        calc = _calc(2025, age_head=17, DSI=1, e00200=10000., e00300=30000.)\n>       assert calc.array('c09600')[0] == pytest.approx(0.)\nE       assert np.float64(2009.5) == 0.0 \u00b1 1.0e-12\nE         \nE         comparison failed\nE         Obtained: 2009.5\nE         Expected: 0.0 \u00b1 1.0e-12\n\ntaxcalc/tests/test_hunt_regressions.py:50: AssertionError\n_____________________ test_amt_em_pe_2026_rev_proc_2025_32 _____________________\n\n    def test_amt_em_pe_2026_rev_proc_2025_32():\n        pol = tc.Policy()\n        pol.set_year(2026)\n        # Rev. Proc. 2025-32 sec. 3.10: MFS complete phaseout amount $640,200\n>       assert pol.AMT_em_pe.ravel()[0] == pytest.approx(640200.)\nE       assert np.float64(639200.0) == 640200.0 \u00b1 0.6402\nE         \nE         comparison failed\nE         Obtained: 639200.0\nE         Expected: 640200.0 \u00b1 0.6402\n\ntaxcalc/tests/test_hunt_regressions.py:57: AssertionError\n=========================== short test summary info ============================\nFAILED taxcalc/tests/test_hunt_regressions.py::test_schd_tw_line19_24pct_bracket[e24515]\nFAILED taxcalc/tests/test_hunt_regressions.py::test_schd_tw_line19_24pct_bracket[e24518]\nFAILED taxcalc/tests/test_hunt_regressions.py::test_amt_mfs_line4_addon - ass...\nFAILED taxcalc/tests/test_hunt_regressions.py::test_no_child_amt_exemption_cap_after_2017\nFAILED taxcalc/tests/test_hunt_regressions.py::test_amt_em_pe_2026_rev_proc_2025_32\n5 failed in 3.15s\n"
+      },
+      "tax-before-w1_schd.py": {
+        "exit": 0,
+        "tail": "{'e00200': 75750.0, 'p23250': 80000.0, 'e24515': 30000.0} taxable 140000.0 | taxcalc taxbc 23114.0 | IRS worksheet line 47 22214.0 | diff 900.0\n{'e00200': 75750.0, 'p23250': 80000.0, 'e24518': 30000.0} taxable 140000.0 | taxcalc taxbc 24014.0 | IRS worksheet line 47 22214.0 | diff 1800.0\n{'e00200': 40000.0, 'p23250': 50000.0, 'e24515': 50000.0} taxable 74250.0 | taxcalc taxbc 11249.0 | IRS worksheet line 47 11249.0 | diff 0.0\n{'MARS': 2, 'e00200': 150000.0, 'e00200s': 0.0, 'p23250': 100000.0, 'e24515': 40000.0} taxable 220800.0 | taxcalc taxbc 35682.0 | IRS worksheet line 47 34482.0 | diff 1200.0\n"
+      },
+      "tax-before-w2_amt_mfs.py": {
+        "exit": 0,
+        "tail": "MFS wages=400,000 AMT-pref=800,000: taxcalc AMTI=1,200,000.00 AMT=229,405.25 | IRS line4=1,268,500.00 AMT=248,585.25 | AMT understated by 19,180.00\nMFS wages=300,000 AMT-pref=650,000: taxcalc AMTI=950,000.00 AMT=194,574.25 | IRS line4=962,412.50 AMT=198,049.75 | AMT understated by 3,475.50\n"
+      },
+      "tax-before-w3_kiddie_amt.py": {
+        "exit": 0,
+        "tail": "2025 {'MARS': 1, 'age_head': 17, 'DSI': 1, 'e00200': 10000.0, 'e00300': 30000.0} | AMTI 40,000 regular tax 3,307.50 | taxcalc AMT 2,009.50 | Form 6251 AMT 0.00 | excess 2,009.50\n2024 {'MARS': 1, 'age_head': 17, 'DSI': 1, 'e00200': 10000.0, 'e00300': 30000.0} | AMTI 40,000 regular tax 3,314.00 | taxcalc AMT 2,081.00 | Form 6251 AMT 0.00 | excess 2,081.00\n2023 {'MARS': 1, 'age_head': 17, 'DSI': 1, 'e00200': 10000.0, 'e00300': 30000.0} | AMTI 40,000 regular tax 3,332.00 | taxcalc AMT 2,180.00 | Form 6251 AMT 0.00 | excess 2,180.00\n2025 {'MARS': 1, 'age_head': 18, 'e00200': 20000.0, 'e00300': 40000.0} | AMTI 60,000 regular tax 5,071.50 | taxcalc AMT 2,845.50 | Form 6251 AMT 0.00 | excess 2,845.50\n2025 {'MARS': 1, 'age_head': 25, 'DSI': 1, 'e00200': 10000.0, 'e00300': 30000.0} | AMTI 40,000 regular tax 3,307.50 | taxcalc AMT 0.00 | Form 6251 AMT 0.00 | excess 0.00\n"
+      },
+      "tax-after": {
+        "exit": 0,
+        "tail": "........................................................................ [ 14%]\n........................................................................ [ 29%]\n........................................................................ [ 44%]\n........................................................................ [ 58%]\n........................................................................ [ 73%]\n........................................................................ [ 88%]\n..........................................................               [100%]\n490 passed in 109.41s (0:01:49)\n"
+      },
+      "tax-after-w1_schd.py": {
+        "exit": 0,
+        "tail": "{'e00200': 75750.0, 'p23250': 80000.0, 'e24515': 30000.0} taxable 140000.0 | taxcalc taxbc 22214.0 | IRS worksheet line 47 22214.0 | diff 0.0\n{'e00200': 75750.0, 'p23250': 80000.0, 'e24518': 30000.0} taxable 140000.0 | taxcalc taxbc 22214.0 | IRS worksheet line 47 22214.0 | diff 0.0\n{'e00200': 40000.0, 'p23250': 50000.0, 'e24515': 50000.0} taxable 74250.0 | taxcalc taxbc 11249.0 | IRS worksheet line 47 11249.0 | diff 0.0\n{'MARS': 2, 'e00200': 150000.0, 'e00200s': 0.0, 'p23250': 100000.0, 'e24515': 40000.0} taxable 220800.0 | taxcalc taxbc 34482.0 | IRS worksheet line 47 34482.0 | diff 0.0\n"
+      },
+      "tax-after-w2_amt_mfs.py": {
+        "exit": 0,
+        "tail": "MFS wages=400,000 AMT-pref=800,000: taxcalc AMTI=1,268,500.00 AMT=248,585.25 | IRS line4=1,268,500.00 AMT=248,585.25 | AMT understated by 0.00\nMFS wages=300,000 AMT-pref=650,000: taxcalc AMTI=962,412.50 AMT=198,049.75 | IRS line4=962,412.50 AMT=198,049.75 | AMT understated by 0.00\n"
+      },
+      "tax-after-w3_kiddie_amt.py": {
+        "exit": 0,
+        "tail": "2025 {'MARS': 1, 'age_head': 17, 'DSI': 1, 'e00200': 10000.0, 'e00300': 30000.0} | AMTI 40,000 regular tax 3,307.50 | taxcalc AMT 0.00 | Form 6251 AMT 0.00 | excess 0.00\n2024 {'MARS': 1, 'age_head': 17, 'DSI': 1, 'e00200': 10000.0, 'e00300': 30000.0} | AMTI 40,000 regular tax 3,314.00 | taxcalc AMT 0.00 | Form 6251 AMT 0.00 | excess 0.00\n2023 {'MARS': 1, 'age_head': 17, 'DSI': 1, 'e00200': 10000.0, 'e00300': 30000.0} | AMTI 40,000 regular tax 3,332.00 | taxcalc AMT 0.00 | Form 6251 AMT 0.00 | excess 0.00\n2025 {'MARS': 1, 'age_head': 18, 'e00200': 20000.0, 'e00300': 40000.0} | AMTI 60,000 regular tax 5,071.50 | taxcalc AMT 0.00 | Form 6251 AMT 0.00 | excess 0.00\n2025 {'MARS': 1, 'age_head': 25, 'DSI': 1, 'e00200': 10000.0, 'e00300': 30000.0} | AMTI 40,000 regular tax 3,307.50 | taxcalc AMT 0.00 | Form 6251 AMT 0.00 | excess 0.00\n"
+      }
+    }
+  }
+}

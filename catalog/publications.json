@@ -1,5 +1,122 @@
 [
   {
+    "id": "ethers-fixednumber-negative-rounding",
+    "title": "ethers: negative FixedNumber rounding can change integral values",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-25",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/ethers-fixednumber-negative-rounding.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/ethers-fixednumber-negative-rounding",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/ethers-fixednumber-negative-rounding.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/ethers-fixednumber-negative-rounding.md",
+    "mirror_sha256": "1d5a5d071995b81432e71fb26ebe917f52b179a8bee7482445e80eca67e72729",
+    "maintainer_pull_requests": [
+      "https://github.com/ethers-io/ethers.js/pull/5207"
+    ],
+    "reproduced_defects": 1,
+    "upstream_status": "Open upstream PRs; not merged or released. Scoped checks and limitations documented.",
+    "archive_sha256": "fb5b742cf262b3fb49adfb531647f4928b3be4d0bb51dc56970ef0346748fc78",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Open upstream PRs; not merged or released. Scoped checks and limitations documented.",
+    "huggingface": [
+      "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/ethers-fixednumber-negative-rounding.md"
+    ],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
+    "id": "decimal-logarithm-rounding-boundaries",
+    "title": "decimal.js: rounding boundaries in log2 and log10",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-25",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/decimal-logarithm-rounding-boundaries.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/decimal-logarithm-rounding-boundaries",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/decimal-logarithm-rounding-boundaries.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/decimal-logarithm-rounding-boundaries.md",
+    "mirror_sha256": "974b95110c6a3226f69bf446dc1e5bfa7a45c7798565a741d9438dc2d41cbc91",
+    "maintainer_pull_requests": [
+      "https://github.com/MikeMcl/decimal.js/pull/271"
+    ],
+    "reproduced_defects": 2,
+    "upstream_status": "Open upstream PRs; not merged or released. Scoped checks and limitations documented.",
+    "archive_sha256": "e098ac1e14d6ed1b12e265239c72fc2239e7f6149cf2de1bcaf26857b2729881",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Open upstream PRs; not merged or released. Scoped checks and limitations documented.",
+    "huggingface": [
+      "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/decimal-logarithm-rounding-boundaries.md"
+    ],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
+    "id": "luxon-calendar-boundary-count-diff",
+    "title": "Luxon: skipped midnights and clamped month-end differences",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-25",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/luxon-calendar-boundary-count-diff.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/luxon-calendar-boundary-count-diff",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/luxon-calendar-boundary-count-diff.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/luxon-calendar-boundary-count-diff.md",
+    "mirror_sha256": "b464a7ecde0fc068b6e0f806083ee4f1f02947caf677a74620801bc387503af4",
+    "maintainer_pull_requests": [
+      "https://github.com/moment/luxon/pull/1830",
+      "https://github.com/moment/luxon/pull/1831"
+    ],
+    "reproduced_defects": 2,
+    "upstream_status": "Open upstream PRs; not merged or released. Scoped checks and limitations documented.",
+    "archive_sha256": "d14dced67305787bedd87574c0f14e85e35a0beff9e988400f2033955f23e897",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Open upstream PRs; not merged or released. Scoped checks and limitations documented.",
+    "huggingface": [
+      "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/luxon-calendar-boundary-count-diff.md"
+    ],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
+    "id": "tax-calculator-schedule-d-amt",
+    "title": "Tax-Calculator: Schedule D and AMT rule alignment",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-10-25",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/tax-calculator-schedule-d-amt.html",
+    "github_source": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/tree/main/reports/tax-calculator-schedule-d-amt",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/tax-calculator-schedule-d-amt.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/tax-calculator-schedule-d-amt.md",
+    "mirror_sha256": "01c2387eb7ffcd4b481effc45b60cc72070c79520e7df90fcc12a4c5ba554fcf",
+    "maintainer_pull_requests": [
+      "https://github.com/PSLmodels/Tax-Calculator/pull/3196"
+    ],
+    "reproduced_defects": 4,
+    "upstream_status": "Open upstream PRs; not merged or released. Scoped checks and limitations documented.",
+    "archive_sha256": "6aea6639843b6816d4ef481a1c387f73f8c2289853a30d0e6f8c153d3f09c95e",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Open upstream PRs; not merged or released. Scoped checks and limitations documented.",
+    "huggingface": [
+      "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/tax-calculator-schedule-d-amt.md"
+    ],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
     "id": "pvlib-hour-angle-dst",
     "title": "pvlib: clock time and elapsed time diverge on DST-transition days",
     "authors": [
