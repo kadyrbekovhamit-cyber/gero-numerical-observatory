@@ -1,15 +1,15 @@
 {
-  "checked_at": "2026-10-25T08:38:36.023014+00:00",
+  "checked_at": "2026-10-26T05:08:02.254015+00:00",
   "unit": "One distinct report, case-study publication, research experiment or mathematical preprint. Not one test, repository, independent defect, media asset or repost.",
   "counts": {
     "gero": 167,
-    "huggingface": 167,
-    "zenodo": 154,
+    "huggingface": 168,
+    "zenodo": 172,
     "github_catalog_report": 173,
     "zenodo_records_including_collection": 129,
     "unique_individual_publications": 173,
     "legacy_github_accounts_required_after_copy": 0,
-    "linkedin": 80,
+    "linkedin": 89,
     "youtube": 58
   },
   "github_status": "173 canonical reports; The SciPy numerical audit report has verified GERO, GitHub, HF, LinkedIn and shared Zenodo archive links. Counts are documents, not independent defects.",
@@ -31,7 +31,6 @@
       "black-scholes-interval-iv-v5"
     ],
     "huggingface": [
-      "actuarialmath-direct-endowment-second-moment",
       "mlx-arctan-directional-derivative-scale",
       "black-scholes-positive-payoff-v2",
       "black-scholes-hybrid-v3",
@@ -39,24 +38,6 @@
       "black-scholes-interval-iv-v5"
     ],
     "zenodo": [
-      "uniswap-python-integer-price-odd-tick-review",
-      "shin-python-convergence-contract",
-      "penaltyblog-log-growth-ruin-boundary",
-      "web3-ethereum-defi-liquidity-depth-boundary",
-      "policyengine-uk-child-benefit-rounding-fix",
-      "irs-direct-file-historical-credit-factgraph",
-      "provably-fair-parameter-versus-return-curve",
-      "bond-pricing-perpetuity-rate-release",
-      "actuarialmath-uniform-variance-selector",
-      "curo-fortnightly-schedules",
-      "samsung-one-gather-mean-axis",
-      "pypfopt-lp-ticker-alignment",
-      "riskfolio-bop-target-normalization",
-      "empyrical-constant-return-dispersion",
-      "coremltools-shared-convolution-bias",
-      "quantstats-initial-drawdown-recovery-sign",
-      "chainladder-off-grid-rate-changes",
-      "actuarialmath-direct-endowment-second-moment",
       "mlx-arctan-directional-derivative-scale"
     ],
     "linkedin": [
@@ -142,17 +123,8 @@
       "self-correction-decomposition",
       "olympiad-to-research-gap",
       "financepy-baw-zero-rate",
-      "onnx-lpnormalization-finite-range",
-      "onnx-reducel2-finite-range",
-      "onnx-reducemean-finite-range",
-      "fineract-calculation-contracts",
-      "spark-x25-financial-arithmetic-study",
-      "collatz-matrix-no-go",
-      "axisymmetric-p-harmonic-cones",
       "actuarialmath-direct-endowment-second-moment",
-      "mlx-arctan-directional-derivative-scale",
-      "actuarialmath-uniform-shortcuts-conditioning",
-      "actuarialmath-whole-life-annuity-zero-interest-benefit"
+      "mlx-arctan-directional-derivative-scale"
     ],
     "youtube": [
       "scipy-exact-test-numerical-ties",

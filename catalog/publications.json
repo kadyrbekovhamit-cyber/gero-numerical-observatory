@@ -17,7 +17,7 @@
       "https://github.com/scipy/scipy/pull/26496"
     ],
     "reproduced_defects": 2,
-    "upstream_status": "Open upstream PR; not accepted, merged or released",
+    "upstream_status": "Checked 26 October 2026: PR #26496 closed without merging on 25 October. The maintainer cited the AI-policy Responsibility and Communication requirements. No upstream acceptance or released fix is claimed.",
     "archive_sha256": "b71f5077ae58aaf62a2082821a53857c6279d3e341701ca7da0bf64b4f139b52",
     "ai_assistance_disclosed": true,
     "publication_status": "Open upstream PR; not accepted, merged or released",
@@ -256,7 +256,7 @@
       "https://github.com/statsmodels/statsmodels/pull/10552"
     ],
     "reproduced_defects": 2,
-    "upstream_status": "Open upstream PRs; not merged or released. Local regression checks and limitations documented.",
+    "upstream_status": "Checked 26 October 2026: continuity-correction PR #10551 merged on 25 October; power-solver PR #10552 remains open. A release containing the merged change has not been independently tested.",
     "archive_sha256": "b6b98400389241353de8b1b915623238c4cb8f7d6a2d2865e8cd158a04095a69",
     "ai_assistance_disclosed": true,
     "publication_status": "Open upstream PRs; not merged or released. Local regression checks and limitations documented.",
@@ -738,7 +738,9 @@
     "huggingface": [
       "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/uniswap-python-integer-price-odd-tick-review.md"
     ],
-    "zenodo": [],
+    "zenodo": [
+      "https://zenodo.org/records/23656455"
+    ],
     "linkedin": [
       "https://www.linkedin.com/feed/update/urn:li:share:7518934058622488576/"
     ],
@@ -769,7 +771,9 @@
     "huggingface": [
       "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/shin-python-convergence-contract.md"
     ],
-    "zenodo": [],
+    "zenodo": [
+      "https://zenodo.org/records/23656455"
+    ],
     "linkedin": [
       "https://www.linkedin.com/feed/update/urn:li:share:7518934058622488576/"
     ],
@@ -802,7 +806,9 @@
     "huggingface": [
       "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/penaltyblog-log-growth-ruin-boundary.md"
     ],
-    "zenodo": [],
+    "zenodo": [
+      "https://zenodo.org/records/23656455"
+    ],
     "linkedin": [
       "https://www.linkedin.com/feed/update/urn:li:share:7518934058622488576/"
     ],
@@ -833,7 +839,9 @@
     "huggingface": [
       "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/web3-ethereum-defi-liquidity-depth-boundary.md"
     ],
-    "zenodo": [],
+    "zenodo": [
+      "https://zenodo.org/records/23656455"
+    ],
     "linkedin": [
       "https://www.linkedin.com/feed/update/urn:li:share:7518934058622488576/"
     ],
@@ -867,7 +875,9 @@
     "huggingface": [
       "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/policyengine-uk-child-benefit-rounding-fix.md"
     ],
-    "zenodo": [],
+    "zenodo": [
+      "https://zenodo.org/records/23656455"
+    ],
     "linkedin": [
       "https://www.linkedin.com/feed/update/urn:li:share:7518934058622488576/"
     ],
@@ -898,7 +908,9 @@
     "huggingface": [
       "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/irs-direct-file-historical-credit-factgraph.md"
     ],
-    "zenodo": [],
+    "zenodo": [
+      "https://zenodo.org/records/23656455"
+    ],
     "linkedin": [
       "https://www.linkedin.com/feed/update/urn:li:share:7518934058622488576/"
     ],
@@ -929,7 +941,9 @@
     "huggingface": [
       "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/provably-fair-parameter-versus-return-curve.md"
     ],
-    "zenodo": [],
+    "zenodo": [
+      "https://zenodo.org/records/23656455"
+    ],
     "linkedin": [
       "https://www.linkedin.com/feed/update/urn:li:share:7518934058622488576/"
     ],
@@ -961,7 +975,9 @@
     "huggingface": [
       "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/bond-pricing-perpetuity-rate-release.md"
     ],
-    "zenodo": [],
+    "zenodo": [
+      "https://zenodo.org/records/23656514"
+    ],
     "linkedin": [
       "https://www.linkedin.com/feed/update/urn:li:share:7518928071333396498/"
     ],
@@ -993,7 +1009,9 @@
     "huggingface": [
       "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/actuarialmath-uniform-variance-selector.md"
     ],
-    "zenodo": [],
+    "zenodo": [
+      "https://zenodo.org/records/23656514"
+    ],
     "linkedin": [
       "https://www.linkedin.com/feed/update/urn:li:share:7518928071333396498/"
     ],
@@ -1026,7 +1044,9 @@
     "huggingface": [
       "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/curo-fortnightly-schedules.md"
     ],
-    "zenodo": [],
+    "zenodo": [
+      "https://zenodo.org/records/23656455"
+    ],
     "linkedin": [
       "https://www.linkedin.com/feed/update/urn:li:share:7518928071333396498/"
     ],
@@ -1056,7 +1076,9 @@
     "huggingface": [
       "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/samsung-one-gather-mean-axis.md"
     ],
-    "zenodo": [],
+    "zenodo": [
+      "https://zenodo.org/records/23656514"
+    ],
     "linkedin": [
       "https://www.linkedin.com/feed/update/urn:li:share:7518922927514476544/"
     ],
@@ -1088,7 +1110,9 @@
     "huggingface": [
       "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/pypfopt-lp-ticker-alignment.md"
     ],
-    "zenodo": [],
+    "zenodo": [
+      "https://zenodo.org/records/23656514"
+    ],
     "linkedin": [
       "https://www.linkedin.com/feed/update/urn:li:share:7518921028421697536/"
     ],
@@ -1120,7 +1144,9 @@
     "huggingface": [
       "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/riskfolio-bop-target-normalization.md"
     ],
-    "zenodo": [],
+    "zenodo": [
+      "https://zenodo.org/records/23656514"
+    ],
     "linkedin": [
       "https://www.linkedin.com/feed/update/urn:li:share:7518921028421697536/"
     ],
@@ -1152,7 +1178,9 @@
     "huggingface": [
       "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/empyrical-constant-return-dispersion.md"
     ],
-    "zenodo": [],
+    "zenodo": [
+      "https://zenodo.org/records/23656514"
+    ],
     "linkedin": [
       "https://www.linkedin.com/feed/update/urn:li:share:7518921028421697536/"
     ],
@@ -1185,7 +1213,9 @@
     "huggingface": [
       "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/coremltools-shared-convolution-bias.md"
     ],
-    "zenodo": [],
+    "zenodo": [
+      "https://zenodo.org/records/23656455"
+    ],
     "linkedin": [
       "https://www.linkedin.com/feed/update/urn:li:share:7516999517725208577/"
     ],
@@ -1220,7 +1250,9 @@
     "huggingface": [
       "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/quantstats-initial-drawdown-recovery-sign.md"
     ],
-    "zenodo": [],
+    "zenodo": [
+      "https://zenodo.org/records/23656455"
+    ],
     "linkedin": [
       "https://www.linkedin.com/feed/update/urn:li:share:7517003290811789312/"
     ],
@@ -1254,7 +1286,9 @@
     "huggingface": [
       "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/chainladder-off-grid-rate-changes.md"
     ],
-    "zenodo": [],
+    "zenodo": [
+      "https://zenodo.org/records/23656455"
+    ],
     "linkedin": [
       "https://www.linkedin.com/feed/update/urn:li:share:7517003625924169728/"
     ],
@@ -2785,7 +2819,10 @@
     "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-onnx-lpnormalization-range-audit/blob/main/README.md",
     "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/onnx-lpnormalization-finite-range.md",
     "mirror_sha256": "faeb1f2a5e13aa4271e1c2746f0df227e8c1c2504d3b12e460efe23d0873c963",
-    "source_text_sha256": "ad94c2ba9620a53cd6e9006421de99155f81908bb7133f672effa540cdb707b9"
+    "source_text_sha256": "ad94c2ba9620a53cd6e9006421de99155f81908bb7133f672effa540cdb707b9",
+    "linkedin": [
+      "https://www.linkedin.com/feed/update/urn:li:activity:7520346889234497536/"
+    ]
   },
   {
     "id": "onnx-reducel2-finite-range",
@@ -2801,7 +2838,10 @@
     "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-onnx-reducel2-range-audit/blob/main/README.md",
     "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/onnx-reducel2-finite-range.md",
     "mirror_sha256": "b91a39f70ddbaa964697af4afb5ca0a6e0092054fff49b7c601911b310575b4c",
-    "source_text_sha256": "e2a38958b5cf73e4c12c497d7ca7207677684b90709fdf42a5e1a962f07f3ef1"
+    "source_text_sha256": "e2a38958b5cf73e4c12c497d7ca7207677684b90709fdf42a5e1a962f07f3ef1",
+    "linkedin": [
+      "https://www.linkedin.com/feed/update/urn:li:activity:7520346889234497536/"
+    ]
   },
   {
     "id": "onnx-reducemean-finite-range",
@@ -2817,7 +2857,10 @@
     "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-onnx-reducemean-range-audit/blob/main/README.md",
     "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/onnx-reducemean-finite-range.md",
     "mirror_sha256": "c2ad4e9b7716c2e4a72c19237c5232131dfb0a6bb5a7078b5fcf72ab51021f8a",
-    "source_text_sha256": "866c93522630149f79fc8503067cb842d24075cff5b71608bfb4bbeec09e91bc"
+    "source_text_sha256": "866c93522630149f79fc8503067cb842d24075cff5b71608bfb4bbeec09e91bc",
+    "linkedin": [
+      "https://www.linkedin.com/feed/update/urn:li:activity:7520346889234497536/"
+    ]
   },
   {
     "id": "fineract-calculation-contracts",
@@ -2833,7 +2876,10 @@
     "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-fineract-calculation-contracts/blob/main/README.md",
     "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/fineract-calculation-contracts.md",
     "mirror_sha256": "219ac7b3dded26fb02296d1c81b0325b9bed737ea569b47aac51a0d53b1464b9",
-    "source_text_sha256": "284165257993a298a129660379adf2ba629735133ee5cf4a99a5553c097a4395"
+    "source_text_sha256": "284165257993a298a129660379adf2ba629735133ee5cf4a99a5553c097a4395",
+    "linkedin": [
+      "https://www.linkedin.com/feed/update/urn:li:activity:7520346889234497536/"
+    ]
   },
   {
     "id": "spark-x25-financial-arithmetic-study",
@@ -2849,7 +2895,10 @@
     "source_document_url": "https://github.com/kadyrbekovhamit-cyber/spark-x25-financial-arithmetic-study/blob/codex/spark-math-study/README.md",
     "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/spark-x25-financial-arithmetic-study.md",
     "mirror_sha256": "867768e9fed48845dad880b9ffb3ccf153d207b2d76b00a35556a4b4fffb96fc",
-    "source_text_sha256": "dd35f1256ec0ea925b81397b44fb9810ec69c7a6005145ce309fc879bb0fb714"
+    "source_text_sha256": "dd35f1256ec0ea925b81397b44fb9810ec69c7a6005145ce309fc879bb0fb714",
+    "linkedin": [
+      "https://www.linkedin.com/feed/update/urn:li:activity:7520346889234497536/"
+    ]
   },
   {
     "id": "collatz-matrix-no-go",
@@ -2867,7 +2916,10 @@
     "legacy_github_source": "https://github.com/kadirbekov-ship-it/collatz-matrix-no-go",
     "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/collatz-matrix-no-go.md",
     "mirror_sha256": "ce71ea819e46ccf1aac0a23a438cbc4e823d6ed4c2696a9d97f947fab840c2a5",
-    "source_text_sha256": "049922c37e8fa7f10f451748a3ad6faa575384d0822817322cabacb83af01db5"
+    "source_text_sha256": "049922c37e8fa7f10f451748a3ad6faa575384d0822817322cabacb83af01db5",
+    "linkedin": [
+      "https://www.linkedin.com/feed/update/urn:li:activity:7520347226804744192/"
+    ]
   },
   {
     "id": "axisymmetric-p-harmonic-cones",
@@ -2884,7 +2936,10 @@
     "source_document_url": "https://zenodo.org/records/22665694/files/main.pdf",
     "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/axisymmetric-p-harmonic-cones.md",
     "mirror_sha256": "53a403be3f4a0ff84252c9eb2b922bac61ba2f4f8438a5cd3d58da84a35e0f7c",
-    "source_text_sha256": "53a403be3f4a0ff84252c9eb2b922bac61ba2f4f8438a5cd3d58da84a35e0f7c"
+    "source_text_sha256": "53a403be3f4a0ff84252c9eb2b922bac61ba2f4f8438a5cd3d58da84a35e0f7c",
+    "linkedin": [
+      "https://www.linkedin.com/feed/update/urn:li:activity:7520347226804744192/"
+    ]
   },
   {
     "id": "pyliferisk-geometric-mortality",
@@ -3824,7 +3879,14 @@
     "maintainer_issue": "https://github.com/terence-lim/actuarialmath/issues/8",
     "mirror_sha256": "f888be49bad9b47ac7bb77c65a62e5136b81e4eefade9ca0dbdf35263f1e6e57",
     "distribution_status": "GitHub published; other five requested destinations pending",
-    "video_status": "not_produced"
+    "video_status": "not_produced",
+    "huggingface": [
+      "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/actuarialmath-direct-endowment-second-moment.md"
+    ],
+    "zenodo": [
+      "https://zenodo.org/records/23656514"
+    ],
+    "huggingface_document": "https://huggingface.co/datasets/XamitK/gero-research-evidence-2026-09/blob/main/actuarialmath-direct-endowment-second-moment.md"
   },
   {
     "id": "mlx-arctan-directional-derivative-scale",
@@ -4019,7 +4081,9 @@
     "mirror_sha256": "8f07a01a0f56d87868ed1afa042771f13ebe71b31c8fa303a6af339991b6dea0",
     "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/actuarialmath-uniform-shortcuts-conditioning/gero-actuarialmath-uniform-shortcuts-conditioning-evidence-2026-09-30.zip",
     "evidence_archive_sha256": "ec9f55b79b3a9f35e16ed984ec923536b0b128ba2adbde0eedd3b37c36b4b36f",
-    "linkedin": null,
+    "linkedin": [
+      "https://www.linkedin.com/feed/update/urn:li:activity:7520346889234497536/"
+    ],
     "youtube": null,
     "maintainer_issue": "https://github.com/terence-lim/actuarialmath/issues/9",
     "upstream_report_sent": true,
@@ -4053,7 +4117,9 @@
     "mirror_sha256": "4ac5c859f66327c34ea0725193ab60bffb549502146ebf0e6549178502d1c72c",
     "evidence_archive": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/raw/refs/heads/main/reports/actuarialmath-whole-life-annuity-zero-interest-benefit/gero-actuarialmath-whole-life-annuity-zero-interest-benefit-evidence-2026-09-30.zip",
     "evidence_archive_sha256": "78c8f63ac33d1806b6bc23d4e97fdc3476de0f210c20009e8abcd4ccfc22cf8e",
-    "linkedin": null,
+    "linkedin": [
+      "https://www.linkedin.com/feed/update/urn:li:activity:7520346889234497536/"
+    ],
     "youtube": null,
     "maintainer_issue": "https://github.com/terence-lim/actuarialmath/issues/10",
     "upstream_report_sent": true,

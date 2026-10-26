@@ -2,7 +2,7 @@
 
 **Authors:** Xamit Kadirbekov and Daniyal Kadirbekov (GERO). 24 October 2026.
 
-**Status:** Open upstream PRs; not merged or released. Local regression checks and limitations documented.
+**Status:** Checked 26 October 2026: continuity-correction PR #10551 merged on 25 October; power-solver PR #10552 remains open. A release containing the merged change has not been independently tested.
 
 Two proposed corrections: avoid overshooting a continuity adjustment and reject false numerical roots.
 

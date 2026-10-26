@@ -1,5 +1,7 @@
 # SciPy exact-test boundaries: floating-point ties can change p-values
 
+> Upstream status update — Checked 26 October 2026: PR #26496 closed without merging on 25 October. The maintainer cited the AI-policy Responsibility and Communication requirements. No upstream acceptance or released fix is claimed. Original evidence below is preserved as a dated submission record.
+
 Xamit Kadirbekov and Daniyal Kadirbekov · 25 October 2026 · GERO Research
 
 **Status: reproduced in a bounded local environment; proposed fix in [SciPy PR #26496](https://github.com/scipy/scipy/pull/26496). The PR is open, not accepted, merged or released as of this report.**
