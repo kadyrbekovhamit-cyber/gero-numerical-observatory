@@ -1,5 +1,11 @@
 # GERO — publication catalogue
 
+## New reports — 8 November 2026
+
+- [Apple MLX can sample tokens with probability zero](reports/mlx-categorical-num-samples-zero-probability.md) — status and verification in the report.
+- [One missing digit in NeqSim's ISO 6976:2016 table](reports/neqsim-iso6976-2016-decane-molar-mass.md) — status and verification in the report.
+
+
 ## New reports — 25 October 2026
 
 - [SciPy exact-test boundaries: floating-point ties can change p-values](reports/scipy-exact-test-numerical-ties.md) — status and verification in the report.

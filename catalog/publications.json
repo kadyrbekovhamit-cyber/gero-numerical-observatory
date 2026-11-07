@@ -1,5 +1,57 @@
 [
   {
+    "id": "mlx-categorical-num-samples-zero-probability",
+    "title": "Apple MLX can sample tokens with probability zero",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-11-08",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/mlx-categorical-num-samples-zero-probability.html",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-categorical-num-samples-zero-probability.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-categorical-num-samples-zero-probability.md",
+    "mirror_sha256": "6cde56696d06b52c4126e0064e9802e4354c027daaf1d5619314e11772c6472c",
+    "maintainer_pull_requests": [
+      "https://github.com/ml-explore/mlx/pull/4847"
+    ],
+    "reproduced_defects": 1,
+    "upstream_status": "PR #4847 open, review required, no review yet (checked 8 November 2026)",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Open upstream PR; not accepted, merged or released",
+    "upstream_acceptance_claimed": false,
+    "huggingface": [],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
+    "id": "neqsim-iso6976-2016-decane-molar-mass",
+    "title": "One missing digit in NeqSim's ISO 6976:2016 table",
+    "authors": [
+      "Xamit Kadirbekov",
+      "Daniyal Kadirbekov"
+    ],
+    "publication_date": "2026-11-08",
+    "kind": "numerical_audit",
+    "gero": "https://www.gero.uz/research/articles/neqsim-iso6976-2016-decane-molar-mass.html",
+    "github_catalog_report": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/neqsim-iso6976-2016-decane-molar-mass.md",
+    "source_document_url": "https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/neqsim-iso6976-2016-decane-molar-mass.md",
+    "mirror_sha256": "33eab8950906414c7a0fb1ff71aa8baec3f5ac950bcf06754881fc92d99400d4",
+    "maintainer_pull_requests": [
+      "https://github.com/equinor/neqsim/pull/4920"
+    ],
+    "reproduced_defects": 1,
+    "upstream_status": "PR #4920 open, review required, no review yet (checked 8 November 2026)",
+    "ai_assistance_disclosed": true,
+    "publication_status": "Open upstream PR; not accepted, merged or released",
+    "upstream_acceptance_claimed": false,
+    "huggingface": [],
+    "zenodo": [],
+    "linkedin": [],
+    "youtube": []
+  },
+  {
     "id": "scipy-exact-test-numerical-ties",
     "title": "SciPy exact-test boundaries: floating-point ties can change p-values",
     "authors": [
