@@ -8,6 +8,8 @@ Xamit Kadirbekov, Daniyal Kadirbekov · AI-assisted investigation and writing
 
 **Checked 8 November 2026: PR #4847 is open and not merged. It awaits maintainer review; no review has been posted yet. No upstream acceptance or released fix is claimed.**
 
+**Correction (8 Nov 2026):** an earlier version of this report said that ordinary text generation in mlx-lm is not affected. That was wrong. Logits of shape (1, V) — batch size 1, as passed by mlx-lm and by Ollama's MLX runner — take the same inverse-CDF path even without `num_samples`. On CPU this affects ordinary generation; on the default GPU device the effect is negligible. See "Who is affected".
+
 [Upstream pull request #4847](https://github.com/ml-explore/mlx/pull/4847) · [GitHub catalog](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/mlx-categorical-num-samples-zero-probability.md)
 
 **Authors:** Xamit Kadirbekov and Daniyal Kadirbekov (GERO Numerical Assurance). Published 8 November 2026.
@@ -60,9 +62,16 @@ MLX 0.32.4 from pip, MacBook Air M4. In every row the correct number of banned t
 
 ## Who is affected
 
-**Not affected:** ordinary text generation in mlx-lm, which does not pass `num_samples`; without it `categorical` uses a different method.
+**Ordinary generation on CPU is affected (corrected 8 November 2026).** The inverse-CDF path is chosen when `logits.size() == n && !shape.empty()` (`mlx/random.cpp:436`). For logits of shape `(1, V)` — batch size 1, which is what mlx-lm passes from `generate_step` (`mlx_lm/sample_utils.py:273`) and what Ollama's MLX runner passes — the output shape is `{1}`, which is not empty, so the call takes this path even without `num_samples`.
 
-**Affected:** code that draws many samples from one distribution in a single call — best-of-n and pass@k sampling, reinforcement-learning rollouts, and ports of `torch.multinomial(probs, k)`. In these settings a token that was deliberately masked out can still appear.
+- mlx-lm `make_sampler` on real Qwen2.5-0.5B logits, CPU, temperature 1.0: padding id 151935 sampled 15 times in 40,800 draws (3.7 × 10⁻⁴; its exact probability is 8.3 × 10⁻¹⁰).
+- Same, CPU, temperature 0.7: 2 times in 81,600 draws.
+- Same, GPU (Metal): 0 times in 408,000 draws.
+- Synthetic check: shape (1, V), last logit −inf, 100,000 calls of `mx.random.categorical` without `num_samples` on CPU — MLX 0.32.4: 18; local build with the fix: 0.
+
+In practice: on a Mac with the default GPU device the effect is negligible. On CPU — Linux `mlx[cpu]`, or after `mx.set_default_device(mx.cpu)` — ordinary mlx-lm generation at temperature 1 emits a non-existent padding token roughly once per 2,700 tokens. The fix in PR #4847 (`categorical_inverse_cdf`) covers this path too.
+
+**Also affected, on CPU and GPU:** code that draws many samples from one distribution in a single call — best-of-n and pass@k sampling, reinforcement-learning rollouts, and ports of `torch.multinomial(probs, k)`. In these settings a token that was deliberately masked out can still appear.
 
 ## Fix and tests
 
@@ -90,4 +99,4 @@ AI tools (Claude) assisted with the analysis, the reproduction and measurement s
 
 GERO page: [https://www.gero.uz/research/articles/mlx-categorical-num-samples-zero-probability.html](https://www.gero.uz/research/articles/mlx-categorical-num-samples-zero-probability.html)
 
-_Report CC BY 4.0. Upstream code retains its own licence. Synthetic logits; no measured model-quality or customer-loss claim._
+_Report CC BY 4.0. Upstream code retains its own licence. Synthetic logits, plus real Qwen2.5-0.5B logits for the correction; no measured model-quality or customer-loss claim._
