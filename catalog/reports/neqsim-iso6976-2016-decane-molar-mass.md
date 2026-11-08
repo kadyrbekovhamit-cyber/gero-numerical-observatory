@@ -6,7 +6,7 @@ NeqSim's ISO 6976:2016 constants give n-decane a molar mass of 42.28168 instead 
 
 Xamit Kadirbekov, Daniyal Kadirbekov · AI-assisted investigation and writing
 
-**Checked 8 November 2026: PR #4920 is open and not merged. It awaits maintainer review; no review has been posted yet. No upstream acceptance or released fix is claimed.**
+**Merged into NeqSim master on 8 November 2026 (PR #4920).**
 
 [Upstream pull request #4920](https://github.com/equinor/neqsim/pull/4920) · [GitHub catalog](https://github.com/kadyrbekovhamit-cyber/gero-numerical-observatory/blob/main/catalog/reports/neqsim-iso6976-2016-decane-molar-mass.md)
 
@@ -56,7 +56,7 @@ The impact is narrow. Only `Standard_ISO6976_2016` reads this table; the main Ne
 
 ## Upstream status
 
-As of 8 November 2026, PR #4920 is open and requires review; no review has been posted. Nothing has been merged or released.
+On 8 November 2026 Even Solbraa, NeqSim's maintainer, merged PR #4920 into master (merge commit `5f19b31`) after two approving reviews. The latest release at that date, NeqSim 3.28.0, does not yet contain the fix.
 
 ## Limits
 
